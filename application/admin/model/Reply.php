@@ -46,14 +46,14 @@ class Reply extends Model
 
 
 
-    public function user()
-    {
-        return $this->belongsTo('User', 'user_id', 'id', [], 'LEFT')->setEagerlyType(0);
-    }
-
-
     public function article()
     {
         return $this->belongsTo('Article', 'article_id', 'id', [], 'LEFT')->setEagerlyType(0);
+    }
+
+
+    public function user()
+    {
+        return $this->belongsTo('User', 'user_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 }

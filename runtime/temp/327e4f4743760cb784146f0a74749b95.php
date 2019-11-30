@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:64:"/www/wwwroot/app/public/../application/admin/view/reply/add.html";i:1575103817;s:59:"/www/wwwroot/app/application/admin/view/layout/default.html";i:1575082205;s:56:"/www/wwwroot/app/application/admin/view/common/meta.html";i:1575082205;s:58:"/www/wwwroot/app/application/admin/view/common/script.html";i:1575082205;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:66:"/www/wwwroot/app/public/../application/admin/view/article/add.html";i:1575101582;s:59:"/www/wwwroot/app/application/admin/view/layout/default.html";i:1575082205;s:56:"/www/wwwroot/app/application/admin/view/common/meta.html";i:1575082205;s:58:"/www/wwwroot/app/application/admin/view/common/script.html";i:1575082205;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -53,15 +53,27 @@
                                 <form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
 
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('User_id'); ?>:</label>
+        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Title'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-user_id" data-rule="required" data-source="user/user/index" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="">
+            <input id="c-title" data-rule="required" class="form-control" name="row[title]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Description'); ?>:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-description" data-rule="required" class="form-control" name="row[description]" type="text">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2"><?php echo __('Content'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-content" data-rule="required" class="form-control" name="row[content]" type="text">
+            <textarea id="c-content" data-rule="required" class="form-control editor" rows="5" name="row[content]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Create_time'); ?>:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-create_time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[create_time]" type="text" value="<?php echo date('Y-m-d H:i:s'); ?>">
         </div>
     </div>
     <div class="form-group">
@@ -70,22 +82,22 @@
             
             <div class="radio">
             <?php if(is_array($statusList) || $statusList instanceof \think\Collection || $statusList instanceof \think\Paginator): if( count($statusList)==0 ) : echo "" ;else: foreach($statusList as $key=>$vo): ?>
-            <label for="row[status]-<?php echo $key; ?>"><input id="row[status]-<?php echo $key; ?>" name="row[status]" type="radio" value="<?php echo $key; ?>" <?php if(in_array(($key), explode(',',"2"))): ?>checked<?php endif; ?> /> <?php echo $vo; ?></label> 
+            <label for="row[status]-<?php echo $key; ?>"><input id="row[status]-<?php echo $key; ?>" name="row[status]" type="radio" value="<?php echo $key; ?>" <?php if(in_array(($key), explode(',',"0"))): ?>checked<?php endif; ?> /> <?php echo $vo; ?></label> 
             <?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
 
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Parent_id'); ?>:</label>
+        <label class="control-label col-xs-12 col-sm-2"><?php echo __('User_id'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-parent_id" class="form-control" name="row[parent_id]" type="number" value="0">
+            <input id="c-user_id" data-rule="required" data-source="user/user/index" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Article_id'); ?>:</label>
+        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Articletype_ids'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-article_id" data-rule="required" data-source="article/index" class="form-control selectpage" name="row[article_id]" type="text" value="">
+            <input id="c-articletype_ids" data-rule="required" data-source="articletype/index" data-multiple="true" class="form-control selectpage" name="row[articletype_ids]" type="text" value="">
         </div>
     </div>
     <div class="form-group layer-footer">

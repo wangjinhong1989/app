@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:66:"/www/wwwroot/app/public/../application/admin/view/reply/index.html";i:1575103400;s:59:"/www/wwwroot/app/application/admin/view/layout/default.html";i:1575082205;s:56:"/www/wwwroot/app/application/admin/view/common/meta.html";i:1575082205;s:58:"/www/wwwroot/app/application/admin/view/common/script.html";i:1575082205;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:66:"/www/wwwroot/app/public/../application/admin/view/reply/index.html";i:1575103817;s:59:"/www/wwwroot/app/application/admin/view/layout/default.html";i:1575082205;s:56:"/www/wwwroot/app/application/admin/view/common/meta.html";i:1575082205;s:58:"/www/wwwroot/app/application/admin/view/common/script.html";i:1575082205;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
