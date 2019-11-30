@@ -3,32 +3,46 @@
 namespace app\admin\model;
 
 use think\Model;
-use think\Session;
+
 
 class Admin extends Model
 {
 
-    // 开启自动写入时间戳字段
+    
+
+    
+
+    // 表名
+    protected $name = 'admin';
+    
+    // 自动写入时间戳字段
     protected $autoWriteTimestamp = 'int';
+
     // 定义时间戳字段名
     protected $createTime = 'createtime';
     protected $updateTime = 'updatetime';
+    protected $deleteTime = false;
 
-    /**
-     * 重置用户密码
-     * @author baiyouwen
-     */
-    public function resetPassword($uid, $NewPassword)
+    // 追加属性
+    protected $append = [
+        'logintime_text'
+    ];
+    
+
+    
+
+
+
+    public function getLogintimeTextAttr($value, $data)
     {
-        $passwd = $this->encryptPassword($NewPassword);
-        $ret = $this->where(['id' => $uid])->update(['password' => $passwd]);
-        return $ret;
+        $value = $value ? $value : (isset($data['logintime']) ? $data['logintime'] : '');
+        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
     }
 
-    // 密码加密
-    protected function encryptPassword($password, $salt = '', $encrypt = 'md5')
+    protected function setLogintimeAttr($value)
     {
-        return $encrypt($password . $salt);
+        return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
     }
+
 
 }
