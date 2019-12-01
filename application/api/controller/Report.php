@@ -12,7 +12,7 @@ use think\Validate;
  */
 class Report extends Api
 {
-    protected $noNeedLogin = ['*'];
+    protected $noNeedLogin = [];
     protected $noNeedRight = ['*'];
 
     /**
@@ -35,13 +35,11 @@ class Report extends Api
         $data=[];
         $model=new Jubao();
         $user = $this->auth->getUser();
-            var_dump($user);die;
         $user_id=$user->id;
         $type=$this->request->request('type');
         $article_id=$this->request->request('article_id');
         $content=$this->request->request('content');
 
-        var_dump($user_id);die;
         if(!$user_id||!$type||!$article_id||!$content){
            return $this->error(__('参数存在空'));
         }
