@@ -45,14 +45,14 @@ class Report extends Api
         if ($user_id && !Validate::is($user_id, "number")) {
             $this->error(__('需要数字'));
         }
-        if ($type && !Validate::is($type, "required")) {
+        if ($type && !Validate::is($type, "require")) {
             $this->error(__('举报类型必须填写 |'.$type."|"));
         }
 
         if ($article_id && !Validate::is($article_id, "number")) {
             $this->error(__('文章ID必须为数字'));
         }
-        if ($content && !Validate::is($content, "required")) {
+        if ($content && !Validate::is($content, "require")) {
             $this->error(__('内容不能为空'));
         }
 
