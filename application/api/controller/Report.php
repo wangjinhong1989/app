@@ -61,7 +61,9 @@ class Report extends Api
             return $this->error(__('文章不存在'));
         }
 
-            $model->create(['user_id'=>$user_id,'article_id'=>$article_id,'content'=>$content,'type'=>$type]);
+            $model->create([
+                'user_id'=>$user_id,'article_id'=>$article_id,'content'=>$content,'type'=>$type,'time'=>time()
+            ]);
 
             return $this->success('123',$model->getLastSql());
         }catch (Exception $e){
