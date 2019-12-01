@@ -4,7 +4,6 @@ namespace app\api\controller;
 
 use app\admin\model\Problem;
 use app\common\controller\Api;
-use app\admin\model\Report;
 
 /**
  * 首页接口
