@@ -22,4 +22,13 @@ class Report extends Api
         $lists=(new Jubao())->where(['status'=>0])->select();
         $this->success($lists);
     }
+
+    public function add()
+    {
+
+        $model=new Jubao();
+        $model->save($this->request->post());
+        $this->success();
+
+    }
 }
