@@ -32,24 +32,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6004016" vertical-offset="0" max-vertical-offset="6417">
+            <state vertical-scroll-proportion="-9.34375" vertical-offset="0" max-vertical-offset="6417">
               <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyCollect.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyCollect.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/api/controller/MyCollect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-35.6875" vertical-offset="77" max-vertical-offset="1564">
-              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.49196786" vertical-offset="284" max-vertical-offset="1564">
+              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
               <folding>
                 <element signature="e#39#68#0#PHP" expanded="true" />
-                <element signature="e#507#1239#0#PHP" expanded="false" />
+                <element signature="e#495#1227#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -78,8 +78,8 @@
         <option value="$PROJECT_DIR$/application/api/controller/Report.php" />
         <option value="$PROJECT_DIR$/application/api/controller/Hot.php" />
         <option value="$PROJECT_DIR$/application/api/controller/ProblemPlatform.php" />
-        <option value="$PROJECT_DIR$/application/api/controller/MyCollect.php" />
         <option value="$PROJECT_DIR$/application/config.php" />
+        <option value="$PROJECT_DIR$/application/api/controller/MyCollect.php" />
       </list>
     </option>
   </component>
@@ -776,22 +776,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/MyCollect.php">
+    <entry file="file://$PROJECT_DIR$/application/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-35.6875" vertical-offset="77" max-vertical-offset="1564">
-          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding>
-            <element signature="e#39#68#0#PHP" expanded="true" />
-            <element signature="e#507#1239#0#PHP" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-9.34375" vertical-offset="0" max-vertical-offset="6417">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config.php">
+    <entry file="file://$PROJECT_DIR$/application/api/controller/MyCollect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6004016" vertical-offset="0" max-vertical-offset="6417">
-          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-          <folding />
+        <state vertical-scroll-proportion="0.49196786" vertical-offset="284" max-vertical-offset="1564">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+          <folding>
+            <element signature="e#39#68#0#PHP" expanded="true" />
+            <element signature="e#495#1227#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
