@@ -58,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/application/api/controller/Report.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.6420233" vertical-offset="360" max-vertical-offset="920">
-              <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+              <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
               <folding>
                 <element signature="e#38#64#0#PHP" expanded="true" />
               </folding>
@@ -788,7 +788,7 @@
     <entry file="file://$PROJECT_DIR$/application/api/controller/Report.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6420233" vertical-offset="360" max-vertical-offset="920">
-          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
           <folding>
             <element signature="e#38#64#0#PHP" expanded="true" />
           </folding>
