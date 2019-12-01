@@ -34,10 +34,10 @@ class Report extends Api
         $data=[];
         $model=new Jubao();
 
-        $user_id=$this->request->post('user_id');
-        $type=$this->request->post('type');
-        $article_id=$this->request->post('article_id');
-        $content=$this->request->post('content');
+        $user_id=$this->request->param('user_id');
+        $type=$this->request->param('type');
+        $article_id=$this->request->param('article_id');
+        $content=$this->request->param('content');
 
         if ($user_id && !Validate::is($user_id, "number")) {
             $this->error(__('需要数字'));
