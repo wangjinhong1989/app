@@ -39,6 +39,9 @@ class Report extends Api
         $article_id=$this->request->param('article_id');
         $content=$this->request->param('content');
 
+        if(!$user_id||!$type||!$article_id||!$content){
+            $this->error(__('参数存在空'));
+        }
         if ($user_id && !Validate::is($user_id, "number")) {
             $this->error(__('需要数字'));
         }
