@@ -44,14 +44,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProblemPlatform.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProblemPlatform.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/api/controller/ProblemPlatform.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18473895" vertical-offset="138" max-vertical-offset="713">
+            <state vertical-scroll-proportion="-2.875" vertical-offset="138" max-vertical-offset="713">
               <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
               <folding>
                 <element signature="e#39#69#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HotSearch.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/api/controller/HotSearch.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6305221" vertical-offset="192" max-vertical-offset="690">
+              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,6 +120,7 @@
         <option value="$PROJECT_DIR$/application/api/controller/Problem.php" />
         <option value="$PROJECT_DIR$/application/api/controller/Problem1.php" />
         <option value="$PROJECT_DIR$/application/api/controller/ProblemPlatform.php" />
+        <option value="$PROJECT_DIR$/application/api/controller/HotSearch.php" />
       </list>
     </option>
   </component>
@@ -779,11 +790,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/api/controller/ProblemPlatform.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18473895" vertical-offset="138" max-vertical-offset="713">
+        <state vertical-scroll-proportion="-2.875" vertical-offset="138" max-vertical-offset="713">
           <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
           <folding>
             <element signature="e#39#69#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/api/controller/HotSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6305221" vertical-offset="192" max-vertical-offset="690">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
