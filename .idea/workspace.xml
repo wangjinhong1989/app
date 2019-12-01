@@ -59,11 +59,9 @@
       <file leaf-file-name="Hot.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/api/controller/Hot.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32329318" vertical-offset="207" max-vertical-offset="713">
-              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-              <folding>
-                <element signature="e#39#72#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.2309237" vertical-offset="0" max-vertical-offset="713">
+              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,6 +131,7 @@
         <option value="$PROJECT_DIR$/application/api/controller/Problem1.php" />
         <option value="$PROJECT_DIR$/application/api/controller/ProblemPlatform.php" />
         <option value="$PROJECT_DIR$/application/api/controller/HotSearch.php" />
+        <option value="$PROJECT_DIR$/application/api/controller/Hot.php" />
       </list>
     </option>
   </component>
@@ -828,11 +827,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/api/controller/Hot.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32329318" vertical-offset="207" max-vertical-offset="713">
-          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-          <folding>
-            <element signature="e#39#72#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.2309237" vertical-offset="0" max-vertical-offset="713">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -3,7 +3,7 @@
 namespace app\api\controller;
 
 
-use app\admin\validate\HotSearch;
+use app\admin\model\HotSearch;
 use app\common\controller\Api;
 /**
  * 首页接口
