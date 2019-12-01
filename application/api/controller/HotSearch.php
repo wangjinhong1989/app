@@ -3,12 +3,12 @@
 namespace app\api\controller;
 
 
+use app\admin\validate\HotSearch;
 use app\common\controller\Api;
-use app\admin\model\Problem;
 /**
  * 首页接口
  */
-class HotSearch extends Api
+class Hot extends Api
 {
     protected $noNeedLogin = [];
     protected $noNeedRight = ['*'];
@@ -19,7 +19,7 @@ class HotSearch extends Api
      */
     public function Lists()
     {
-        $lists=(new app\admin\model\HotSearch())->where(['status'=>0])->select();
+        $lists=( new HotSearch())->where(['status'=>0])->select();
         $this->success($lists);
     }
 }
