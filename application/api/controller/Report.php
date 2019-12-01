@@ -27,7 +27,7 @@ class Report extends Api
     {
 
         $model=new Jubao();
-        $model->data(['user_id'=>$this->request->post('user_id')])->create();
+        $model->create(['user_id'=>$this->request->post('user_id')]);
         $this->success('123',$model->getLastSql());
 
     }
