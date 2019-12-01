@@ -31,6 +31,7 @@ class Report extends Api
     public function add()
     {
 
+        try{
         $data=[];
         $model=new Jubao();
         $user = $this->auth->getUser();
@@ -61,7 +62,7 @@ class Report extends Api
             return $this->error(__('文章不存在'));
         }
 
-        try{
+
 
             $model->create(['user_id'=>$user_id,'article_id'=>$article_id,'content'=>$content,'type'=>$type]);
             return $this->success('123',$model->getLastSql());
