@@ -34,13 +34,13 @@ class Report extends Api
         $data=[];
         $model=new Jubao();
 
-        $user_id=$this->request->param('user_id');
-        $type=$this->request->param('type');
-        $article_id=$this->request->param('article_id');
-        $content=$this->request->param('content');
+        $user_id=$this->request->request('user_id');
+        $type=$this->request->request('type');
+        $article_id=$this->request->request('article_id');
+        $content=$this->request->request('content');
 
-        var_dump($this->request->param());
-        var_dump($this->request->param('user_id'));
+        var_dump($this->request->request());
+        var_dump($this->request->request('user_id'));
         if(!$user_id||!$type||!$article_id||!$content){
             $this->error(__('参数存在空'));
         }
