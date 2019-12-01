@@ -38,7 +38,7 @@ class Report extends Api
             $model->create(['user_id'=>$this->request->post('user_id')]);
             $this->success('123',$model->getLastSql());
         }catch (Exception $e){
-            $this->error($e->getMessage(),$e->getTraceAsString());
+            $this->error($e->getMessage(),$e->getTrace());
         }
 
     }
