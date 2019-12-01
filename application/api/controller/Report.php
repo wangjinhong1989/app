@@ -2,7 +2,7 @@
 
 namespace app\api\controller;
 
-use app\admin\model\Problem;
+use app\admin\model\Jubao;
 use app\common\controller\Api;
 
 /**
@@ -19,7 +19,7 @@ class Report extends Api
      */
     public function Lists()
     {
-        $lists=(new Problem())->where(['status'=>0])->select();
+        $lists=(new Jubao())->where(['status'=>0])->select();
         $this->success($lists);
     }
 }
