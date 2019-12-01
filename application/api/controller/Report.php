@@ -46,7 +46,7 @@ class Report extends Api
             $this->error(__('需要数字'));
         }
         if ($type && !Validate::is($type, "required")) {
-            $this->error(__('举报类型必须填写'));
+            $this->error(__('举报类型必须填写 |'.$type."|"));
         }
 
         if ($article_id && !Validate::is($article_id, "number")) {
