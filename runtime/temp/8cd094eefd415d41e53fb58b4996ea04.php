@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:65:"/www/wwwroot/app/public/../application/admin/view/reply/edit.html";i:1575103817;s:59:"/www/wwwroot/app/application/admin/view/layout/default.html";i:1575082205;s:56:"/www/wwwroot/app/application/admin/view/common/meta.html";i:1575082205;s:58:"/www/wwwroot/app/application/admin/view/common/script.html";i:1575082205;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:70:"/www/wwwroot/app/public/../application/admin/view/articletype/add.html";i:1575101447;s:59:"/www/wwwroot/app/application/admin/view/layout/default.html";i:1575082205;s:56:"/www/wwwroot/app/application/admin/view/common/meta.html";i:1575082205;s:58:"/www/wwwroot/app/application/admin/view/common/script.html";i:1575082205;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -50,18 +50,12 @@
                             <!-- END RIBBON -->
                             <?php endif; ?>
                             <div class="content">
-                                <form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+                                <form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
 
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('User_id'); ?>:</label>
+        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Name'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-user_id" data-rule="required" data-source="user/user/index" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="<?php echo htmlentities($row['user_id']); ?>">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Content'); ?>:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-content" data-rule="required" class="form-control" name="row[content]" type="text" value="<?php echo htmlentities($row['content']); ?>">
+            <input id="c-name" data-rule="required" class="form-control" name="row[name]" type="text">
         </div>
     </div>
     <div class="form-group">
@@ -70,22 +64,16 @@
             
             <div class="radio">
             <?php if(is_array($statusList) || $statusList instanceof \think\Collection || $statusList instanceof \think\Paginator): if( count($statusList)==0 ) : echo "" ;else: foreach($statusList as $key=>$vo): ?>
-            <label for="row[status]-<?php echo $key; ?>"><input id="row[status]-<?php echo $key; ?>" name="row[status]" type="radio" value="<?php echo $key; ?>" <?php if(in_array(($key), is_array($row['status'])?$row['status']:explode(',',$row['status']))): ?>checked<?php endif; ?> /> <?php echo $vo; ?></label> 
+            <label for="row[status]-<?php echo $key; ?>"><input id="row[status]-<?php echo $key; ?>" name="row[status]" type="radio" value="<?php echo $key; ?>" <?php if(in_array(($key), explode(',',"0"))): ?>checked<?php endif; ?> /> <?php echo $vo; ?></label> 
             <?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
 
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Parent_id'); ?>:</label>
+        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Create_time'); ?>:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-parent_id" class="form-control" name="row[parent_id]" type="number" value="<?php echo htmlentities($row['parent_id']); ?>">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2"><?php echo __('Article_id'); ?>:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-article_id" data-rule="required" data-source="article/index" class="form-control selectpage" name="row[article_id]" type="text" value="<?php echo htmlentities($row['article_id']); ?>">
+            <input id="c-create_time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[create_time]" type="text" value="<?php echo date('Y-m-d H:i:s'); ?>">
         </div>
     </div>
     <div class="form-group layer-footer">
