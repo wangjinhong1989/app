@@ -56,14 +56,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HotSearch.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/api/controller/HotSearch.php">
+      <file leaf-file-name="Hot.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/api/controller/Hot.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9698795" vertical-offset="0" max-vertical-offset="713">
-              <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.32329318" vertical-offset="207" max-vertical-offset="713">
+              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
               <folding>
                 <element signature="e#39#72#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HotSearch.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/model/HotSearch.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="23.71875" vertical-offset="759" max-vertical-offset="1518">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -421,7 +431,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/application/api/controller/HotSearch.php</url>
+          <url>file://$PROJECT_DIR$/application/api/controller/Hot.php</url>
           <line>5</line>
         </line-breakpoint>
       </breakpoints>
@@ -808,18 +818,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/model/Hot.php">
+    <entry file="file://$PROJECT_DIR$/application/admin/model/HotSearch.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6012658" vertical-offset="759" max-vertical-offset="1518">
+        <state vertical-scroll-proportion="23.71875" vertical-offset="759" max-vertical-offset="1518">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/HotSearch.php">
+    <entry file="file://$PROJECT_DIR$/application/api/controller/Hot.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9698795" vertical-offset="0" max-vertical-offset="713">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.32329318" vertical-offset="207" max-vertical-offset="713">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
           <folding>
             <element signature="e#39#72#0#PHP" expanded="true" />
           </folding>
