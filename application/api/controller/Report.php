@@ -40,32 +40,32 @@ class Report extends Api
         $content=$this->request->request('content');
 
         if(!$user_id||!$type||!$article_id||!$content){
-            $this->error(__('参数存在空'));
+           return $this->error(__('参数存在空'));
         }
         if ($user_id && !Validate::is($user_id, "number")) {
-            $this->error(__('需要数字'));
+            return $this->error(__('需要数字'));
         }
         if ($type && !Validate::is($type, "require")) {
-            $this->error(__('举报类型必须填写 |'.$type."|"));
+            return $this->error(__('举报类型必须填写 |'.$type."|"));
         }
 
         if ($article_id && !Validate::is($article_id, "number")) {
-            $this->error(__('文章ID必须为数字'));
+            return $this->error(__('文章ID必须为数字'));
         }
         if ($content && !Validate::is($content, "require")) {
-            $this->error(__('内容不能为空'));
+            return $this->error(__('内容不能为空'));
         }
 
         if(!Article::getById($article_id)){
-            $this->error(__('文章不存在'));
+            return $this->error(__('文章不存在'));
         }
 
         try{
 
             $model->create(['user_id'=>$user_id,'article_id'=>$article_id,'content'=>$content,'type'=>$type]);
-            $this->success('123',$model->getLastSql());
+            return $this->success('123',$model->getLastSql());
         }catch (Exception $e){
-            $this->error($e->getMessage());
+            return  $this->error($e->getMessage());
         }
 
     }
