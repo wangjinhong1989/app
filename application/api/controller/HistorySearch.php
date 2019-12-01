@@ -54,4 +54,25 @@ class HistorySearch extends Api
         }
 
     }
+
+
+    /*
+*清除收藏
+* **/
+    public function delete()
+    {
+
+        try{
+            $model=new SearchHistory();
+            $user = $this->auth->getUser();
+            $user_id=$user->id;
+
+            $model->where(['user_id'=>$user_id])->delete();
+
+            return $this->success('123',$model->getLastSql());
+        }catch (Exception $e){
+            return  $this->error($e->getMessage());
+        }
+
+    }
 }
