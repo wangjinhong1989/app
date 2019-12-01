@@ -33,8 +33,8 @@ class Report extends Api
 
         $data=[];
         $model=new Jubao();
-
-        $user_id=$this->request->request('user_id');
+        $user = $this->auth->getUser();
+        $user_id=$user->id;
         $type=$this->request->request('type');
         $article_id=$this->request->request('article_id');
         $content=$this->request->request('content');
