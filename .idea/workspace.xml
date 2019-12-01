@@ -32,33 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Ad.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/api/controller/Ad.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.71875" vertical-offset="0" max-vertical-offset="713">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding>
-                <element signature="e#38#68#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SystemMessage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/model/SystemMessage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.03125" vertical-offset="0" max-vertical-offset="1610">
-              <caret line="7" column="19" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Report.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/api/controller/Report.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.77412283" vertical-offset="360" max-vertical-offset="943">
-              <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.4976852" vertical-offset="475" max-vertical-offset="920">
+              <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
               <folding>
                 <element signature="e#38#64#0#PHP" expanded="true" />
               </folding>
@@ -69,38 +47,78 @@
       <file leaf-file-name="Api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/common/controller/Api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="150.3125" vertical-offset="5155" max-vertical-offset="7337">
-              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+            <state vertical-scroll-proportion="106.8125" vertical-offset="3786" max-vertical-offset="7337">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Jubao.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/controller/Jubao.php">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/api/controller/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.3125" vertical-offset="138" max-vertical-offset="1932">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.9508197" vertical-offset="2488" max-vertical-offset="7406">
+              <caret line="120" column="33" selection-start-line="120" selection-start-column="33" selection-end-line="120" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/jubao/add.html">
+      <file leaf-file-name="Auth.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/common/library/Auth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.59375" vertical-offset="0" max-vertical-offset="1472">
-              <caret line="5" column="104" selection-start-line="5" selection-start-column="86" selection-end-line="5" selection-end-column="104" />
+            <state vertical-scroll-proportion="31.96875" vertical-offset="3714" max-vertical-offset="12903">
+              <caret line="125" column="20" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/jubao/edit.html">
+      <file leaf-file-name="Article.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/controller/Article.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.59375" vertical-offset="0" max-vertical-offset="1472">
-              <caret line="5" column="105" selection-start-line="5" selection-start-column="105" selection-end-line="5" selection-end-column="105" />
+            <state vertical-scroll-proportion="-7.75" vertical-offset="281" max-vertical-offset="1886">
+              <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Article.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/model/Article.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.03125" vertical-offset="0" max-vertical-offset="1748">
+              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thinkphp/library/think/Model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="258.375" vertical-offset="8544" max-vertical-offset="53705">
+              <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Backend.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/common/controller/Backend.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.3934426" vertical-offset="0" max-vertical-offset="12052">
+              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thinkphp/library/think/Controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="29.6875" vertical-offset="1157" max-vertical-offset="5198">
+              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -111,16 +129,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="18.90625" vertical-offset="605" max-vertical-offset="1173">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/problem/add.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.46875" vertical-offset="69" max-vertical-offset="1196">
-              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -269,102 +277,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="problem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jubao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -684,30 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/common/controller/Backend.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1842752" vertical-offset="1096" max-vertical-offset="12052">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8490196" vertical-offset="6003" max-vertical-offset="7406">
-          <caret line="306" column="6" selection-start-line="306" selection-start-column="6" selection-end-line="306" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thinkphp/library/think/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35412475" vertical-offset="38855" max-vertical-offset="53705">
-          <caret line="1718" column="27" selection-start-line="1718" selection-start-column="27" selection-end-line="1718" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/model/Guanggao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3156863" vertical-offset="0" max-vertical-offset="2116">
@@ -800,16 +688,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/common/controller/Api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="150.3125" vertical-offset="5155" max-vertical-offset="7337">
-          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        <state vertical-scroll-proportion="106.8125" vertical-offset="3786" max-vertical-offset="7337">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/controller/Backend.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3934426" vertical-offset="0" max-vertical-offset="12052">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thinkphp/library/think/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="29.6875" vertical-offset="1157" max-vertical-offset="5198">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/Article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.75" vertical-offset="281" max-vertical-offset="1886">
+          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/model/Article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.03125" vertical-offset="0" max-vertical-offset="1748">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thinkphp/library/think/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="258.375" vertical-offset="8544" max-vertical-offset="53705">
+          <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/api/controller/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9508197" vertical-offset="2488" max-vertical-offset="7406">
+          <caret line="120" column="33" selection-start-line="120" selection-start-column="33" selection-end-line="120" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/library/Auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="31.96875" vertical-offset="3714" max-vertical-offset="12903">
+          <caret line="125" column="20" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/api/controller/Report.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77412283" vertical-offset="360" max-vertical-offset="943">
-          <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.4976852" vertical-offset="475" max-vertical-offset="920">
+          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
           <folding>
             <element signature="e#38#64#0#PHP" expanded="true" />
           </folding>
