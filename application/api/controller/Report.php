@@ -39,6 +39,7 @@ class Report extends Api
         $article_id=$this->request->param('article_id');
         $content=$this->request->param('content');
 
+        var_dump($this->request->param());
         if(!$user_id||!$type||!$article_id||!$content){
             $this->error(__('参数存在空'));
         }
