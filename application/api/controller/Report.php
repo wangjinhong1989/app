@@ -41,6 +41,9 @@ class Report extends Api
 
         var_dump($this->request->request());
         var_dump($this->request->request('user_id'));
+        var_dump($this->request->post());
+        var_dump($_POST);
+        var_dump($_POST['user_id']);
         if(!$user_id||!$type||!$article_id||!$content){
             $this->error(__('参数存在空'));
         }
