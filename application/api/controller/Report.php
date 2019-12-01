@@ -56,7 +56,7 @@ class Report extends Api
             $this->error(__('内容不能为空'));
         }
 
-        if(Article::getById($article_id)){
+        if(!Article::getById($article_id)){
             $this->error(__('文章不存在'));
         }
 
