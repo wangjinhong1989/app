@@ -40,7 +40,7 @@ class MyCollect extends Api
 
 
             if(!$article_id){
-                return $this->error(__('参数存在空'));
+                return $this->error(__('参数存在空'));die;
             }
             if(!Article::getById($article_id)){
                 return $this->error(__('文章不存在'));
