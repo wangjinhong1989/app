@@ -6,7 +6,7 @@ use app\admin\model\Article;
 use app\admin\model\Jubao;
 use app\common\controller\Api;
 use Complex\Exception;
-
+use think\Validate;
 /**
  * 首页接口
  */
