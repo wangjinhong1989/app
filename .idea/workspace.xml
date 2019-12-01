@@ -55,11 +55,21 @@
       <file leaf-file-name="Ad.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/api/controller/Ad.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7294118" vertical-offset="203" max-vertical-offset="713">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.54901963" vertical-offset="203" max-vertical-offset="713">
+              <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
               <folding>
                 <element signature="e#38#68#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thinkphp/library/think/Model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.5" vertical-offset="38855" max-vertical-offset="53705">
+              <caret line="1718" column="27" selection-start-line="1718" selection-start-column="27" selection-end-line="1718" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -602,10 +612,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/thinkphp/library/think/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.5" vertical-offset="38855" max-vertical-offset="53705">
+          <caret line="1718" column="27" selection-start-line="1718" selection-start-column="27" selection-end-line="1718" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/api/controller/Ad.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7294118" vertical-offset="203" max-vertical-offset="713">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.54901963" vertical-offset="203" max-vertical-offset="713">
+          <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
           <folding>
             <element signature="e#38#68#0#PHP" expanded="true" />
           </folding>

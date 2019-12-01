@@ -19,7 +19,7 @@ class Ad extends Api
      */
     public function Lists()
     {
-        $lists=(new Guanggao())->where(['status'=>0])->all();
+        $lists=(new Guanggao())->where(['status'=>0])->select();
         $this->success($lists);
     }
 }
