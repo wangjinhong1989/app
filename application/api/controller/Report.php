@@ -28,7 +28,7 @@ class Report extends Api
 
         $model=new Jubao();
         $model->insert($_POST);
-        $this->success($_POST);
+        $this->success('123',$_POST);
 
     }
 }
