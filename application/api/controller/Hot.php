@@ -14,7 +14,7 @@ class Hot extends Api
     protected $noNeedRight = ['*'];
 
     /**
-     * 首页
+     * 热搜
      *
      */
     public function Lists()

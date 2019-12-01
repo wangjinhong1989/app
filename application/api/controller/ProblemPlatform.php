@@ -22,4 +22,6 @@ class ProblemPlatform extends Api
         $lists=(new Problem())->where(['status'=>0])->select();
         $this->success($lists);
     }
+
+
 }

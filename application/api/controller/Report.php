@@ -21,7 +21,9 @@ class Report extends Api
      */
     public function Lists()
     {
-        $lists=(new Jubao())->where(['status'=>0])->select();
+        $user = $this->auth->getUser();
+        $user_id=$user->id;
+        $lists=(new Jubao())->where(['status'=>0,'user_id'=>$user_id])->select();
         $this->success($lists);
     }
 
