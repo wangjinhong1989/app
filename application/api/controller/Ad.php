@@ -21,6 +21,7 @@ class Ad extends Api
      */
     public function Lists()
     {
+        phpinfo();
 
         Cache::store('redis')->clear();
         $lists=Cache::store('redis')->get('ad_list');
