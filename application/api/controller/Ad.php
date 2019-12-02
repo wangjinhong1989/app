@@ -26,7 +26,9 @@ class Ad extends Api
             Cache::store('redis')->set('ad_list',$lists,0);
             echo "2";
         }
+        $abc=Cache::store('redis')->get('abc');
 
+        var_dump($abc);
         $this->success($lists);
     }
 }
