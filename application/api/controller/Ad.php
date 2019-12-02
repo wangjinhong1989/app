@@ -19,10 +19,10 @@ class Ad extends Api
      */
     public function Lists()
     {
-        $lists=Cache::get('ad_list');
+        $lists=Cache::store('redis')->get('ad_list');
         if(!$lists){
             $lists=(new Guanggao())->where(['status'=>0])->select();
-            Cache::set('ad_list',$lists,0);
+            Cache::store('redis')->set('ad_list',$lists,0);
         }
 
         $this->success($lists);
