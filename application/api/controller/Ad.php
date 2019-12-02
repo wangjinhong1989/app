@@ -20,7 +20,6 @@ class Ad extends Api
     public function Lists()
     {
         Cache::store('redis')->clear();
-
         $lists=Cache::store('redis')->get('ad_list');
         if(!$lists){
             echo "设置";
