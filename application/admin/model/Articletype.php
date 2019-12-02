@@ -5,7 +5,7 @@ namespace app\admin\model;
 use think\Model;
 
 
-class Articletype extends Model
+class ArticleType extends Model
 {
 
     
@@ -13,7 +13,7 @@ class Articletype extends Model
     
 
     // 表名
-    protected $name = 'articletype';
+    protected $name = 'article_type';
     
     // 自动写入时间戳字段
     protected $autoWriteTimestamp = false;
