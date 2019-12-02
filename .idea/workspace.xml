@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76d4c41c-b4a4-4e30-adf4-6aa5512697b7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/bak.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/model/Articletype.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/model/Articletype.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/Ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/api/controller/Ajax.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +135,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575030970242</updated>
-      <workItem from="1575252516987" duration="2532000" />
+      <workItem from="1575252516987" duration="2839000" />
     </task>
     <servers />
   </component>
