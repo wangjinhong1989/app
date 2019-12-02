@@ -5,6 +5,8 @@ namespace app\api\controller;
 use app\common\controller\Api;
 use app\admin\model\Guanggao;
 use think\Cache;
+use think\Config;
+
 /**
  * 首页接口
  */
@@ -19,6 +21,9 @@ class Ad extends Api
      */
     public function Lists()
     {
+
+        var_dump(Config::get("cache"));
+        die;
         Cache::store('redis')->clear();
         $lists=Cache::store('redis')->get('ad_list');
         if(!$lists){
