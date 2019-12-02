@@ -177,17 +177,21 @@ return [
     'cache'                  => [
         // 驱动方式
         'type'   => 'complex',
-        // 缓存保存目录
-        'path'   => CACHE_PATH,
-        // 缓存前缀
-        'prefix' => '',
-        // 缓存有效期 0表示永久缓存
-        'expire' => 0,
         'redis'=>[
             'type'   => 'redis',
             'host'   => '127.0.0.1',
             'port'   => '6379',
             'password' => '',
+            // 缓存前缀
+            'prefix' => '',
+            // 缓存有效期 0表示永久缓存
+            'expire' => 0,
+        ],
+        'default'=>[
+            // 驱动方式
+            'type'   => 'file',
+            // 缓存保存目录
+            'path'   => CACHE_PATH,
             // 缓存前缀
             'prefix' => '',
             // 缓存有效期 0表示永久缓存
