@@ -27,7 +27,7 @@ class Article extends Frontend
         if($this->request->isPost()){
             $model=new \app\admin\model\Article();
             $lists=$model->where(['user_id'=>$this->auth->getUser()->id])->select();
-            return \GuzzleHttp\json_encode(['total'=>1,'rows'=>$lists]));
+            return \GuzzleHttp\json_encode(['total'=>1,'rows'=>$lists]);
         }else{
             $model=new \app\admin\model\Article();
             $lists=$model->where(['user_id'=>$this->auth->getUser()->id])->select();
