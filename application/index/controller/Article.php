@@ -24,11 +24,18 @@ class Article extends Frontend
      */
     public function index()
     {
-        $model=new \app\admin\model\Article();
-        $lists=$model->where(['user_id'=>$this->auth->getUser()->id])->select();
-        $this->view->assign('title', __(''));
-        $this->view->assign('lists', $lists);
-        return $this->view->fetch();
+        if($this->request->isPost()){
+            $model=new \app\admin\model\Article();
+            $lists=$model->where(['user_id'=>$this->auth->getUser()->id])->select();
+            return \GuzzleHttp\json_encode(['total'=>1,'rows'=>$lists]));
+        }else{
+            $model=new \app\admin\model\Article();
+            $lists=$model->where(['user_id'=>$this->auth->getUser()->id])->select();
+            $this->view->assign('title', __(''));
+            $this->view->assign('lists', $lists);
+            return $this->view->fetch();
+        }
+
     }
 
 }
