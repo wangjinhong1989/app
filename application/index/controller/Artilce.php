@@ -24,12 +24,13 @@ class Artilce extends Frontend
      */
     public function index()
     {
-        $model=new \app\admin\model\Article();
-        $lists=$model->where(['user_id'=>$this->auth->getUser()->id])->select();
-        $this->view->assign('title', __(''));
-        var_dump($lists);
-        $this->view->assign('lists', $lists);
-        return $this->view->fetch();
+        var_dump(1111);
+//        $model=new \app\admin\model\Article();
+//        $lists=$model->where(['user_id'=>$this->auth->getUser()->id])->select();
+//        $this->view->assign('title', __(''));
+//        var_dump($lists);
+//        $this->view->assign('lists', $lists);
+//        return $this->view->fetch();
     }
 
 }
