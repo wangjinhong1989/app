@@ -39,4 +39,39 @@ class Article extends Frontend
 
     }
 
+
+
+    /**
+     * add
+     */
+    public function add()
+    {
+        if($this->request->isPost()){
+            $model=new \app\admin\model\Article();
+            $res=$model->data($this->request->request('post.*'))->save();
+//            $lists = collection($lists)->toArray();
+            $this->success();
+        }else{
+            return $this->view->fetch();
+        }
+
+    }
+
+
+    /**
+     * 文章列表
+     */
+    public function edit()
+    {
+        if($this->request->isAjax()){
+            $model=new \app\admin\model\Article();
+            $lists=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id])->select();
+//            $lists = collection($lists)->toArray();
+            return json(['total'=>1,'rows'=>$lists]);
+        }else{
+            return $this->view->fetch();
+        }
+
+    }
+
 }
