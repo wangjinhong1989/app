@@ -1,6 +1,6 @@
 <?php
 
-namespace app\admin\validate\\article;
+namespace app\admin\validate\article;
 
 use think\Validate;
 
