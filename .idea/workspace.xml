@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="76d4c41c-b4a4-4e30-adf4-6aa5512697b7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/api/controller/Ad.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/api/controller/Ad.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,7 +10,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -86,17 +85,18 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/api/controller" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/js/frontend" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.splitter.main.proportions" value="0.3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\website\app\application\index\view\article" />
+      <recent name="D:\website\app\application\index\controller" />
       <recent name="D:\website\app\application\api\controller" />
       <recent name="D:\WWW\app\application\api\controller" />
       <recent name="D:\WWW\app\public" />
-      <recent name="D:\WWW\app" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -135,7 +135,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575030970242</updated>
-      <workItem from="1575252516987" duration="14670000" />
+      <workItem from="1575252516987" duration="16188000" />
+      <workItem from="1575336430233" duration="2627000" />
     </task>
     <servers />
   </component>
@@ -167,7 +168,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
