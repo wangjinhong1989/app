@@ -24,7 +24,7 @@ class Article extends Frontend
      */
     public function index()
     {
-        if($this->request->isPost()){
+        if($this->request->isAjax()){
             $model=new \app\admin\model\Article();
             $lists=$model->where(['user_id'=>$this->auth->getUser()->id])->select();
             return \GuzzleHttp\json_encode(['total'=>1,'rows'=>$lists]);
