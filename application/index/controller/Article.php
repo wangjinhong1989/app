@@ -15,7 +15,7 @@ use think\Validate;
  */
 class Article extends Frontend
 {
-    protected $layout = 'default';
+    protected $layout = '';
     protected $noNeedLogin = [];
     protected $noNeedRight = ['*'];
 
