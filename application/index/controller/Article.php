@@ -19,7 +19,14 @@ class Article extends Frontend
     protected $noNeedLogin = [];
     protected $noNeedRight = ['*'];
 
-    /**
+
+    public function _initialize()
+    {
+        parent::_initialize();
+        $this->model = new \app\admin\model\Article;
+        $this->view->assign("statusList", $this->model->getStatusList());
+    }
+        /**
      * 文章列表
      */
     public function index()
