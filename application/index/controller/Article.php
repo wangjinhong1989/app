@@ -26,12 +26,12 @@ class Article extends Frontend
     {
         if($this->request->isAjax()){
             $model=new \app\admin\model\Article();
-            $lists=$model->where(['user_id'=>$this->auth->getUser()->id])->select();
+            $lists=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id])->select();
 //            $lists = collection($lists)->toArray();
             return json(['total'=>1,'rows'=>$lists]);
         }else{
             $model=new \app\admin\model\Article();
-            $lists=$model->where(['user_id'=>$this->auth->getUser()->id])->select();
+            $lists=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id])->select();
             $this->view->assign('title', __(''));
             $this->view->assign('lists', $lists);
             return $this->view->fetch();
