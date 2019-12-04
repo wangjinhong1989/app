@@ -26,7 +26,7 @@ class Article extends Frontend
         $this->model = new \app\admin\model\Article;
         $model1=new \app\admin\model\Articletype();
         $this->view->assign("statusList", $this->model->getStatusList());
-        $this->view->assign("TypeList",$model1->where([])->select());
+        $this->view->assign("TypeList",$model1->where(['id'=>['gt',1]])->select());
     }
         /**
      * 文章列表
