@@ -57,9 +57,9 @@ class Article extends Frontend
     {
         if($this->request->isPost()){
             $model=new \app\admin\model\Article();
-            $data=$params = $this->request->post("row/a");
+            $data=$params = $this->request->param("row/a");
 
-            var_dump($this->request->post("row/a"));
+            var_dump($this->request->param("row/a"));
             $data['content']=($data['content']);
             $data['user_id']=$this->auth->getUser()->id;
             $data['create_time']=time();
