@@ -27,12 +27,10 @@
                     <div class="form-group">
                         <label class="control-label col-xs-12 col-sm-2">{:__('Articletype_ids')}:</label>
                         <div class="col-xs-12 col-sm-8">
-
-                            <select data-rule="required" class="form-control" multiple name="row[articletype_ids]">
+                            <select data-rule="required" class="form-control" multiple="multiple" style="display: none" name="row[articletype_ids]">
                                 {foreach name="TypeList" item="vo"}
                                 <option value="{$vo.id}"  >{$vo.name}</option>
                                 {/foreach}
-
                             </select>
 
                         </div>
