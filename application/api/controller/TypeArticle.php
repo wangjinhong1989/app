@@ -21,7 +21,7 @@ class TypeArticleController extends Api
     public function Lists()
     {
         $lists=( new Articletype())->where(['status'=>0])->select();
-        $this->success($lists);
+        $this->success(['total'=>count($lists),'rows'=>$lists]);
     }
 
 }
