@@ -9,7 +9,7 @@ use app\common\controller\Api;
 /**
  * 首页接口
  */
-class TypeArticleController extends Api
+class TypeArticle extends Api
 {
     protected $noNeedLogin = [];
     protected $noNeedRight = ['*'];
