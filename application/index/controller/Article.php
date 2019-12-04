@@ -58,8 +58,6 @@ class Article extends Frontend
         if($this->request->isPost()){
             $model=new \app\admin\model\Article();
             $data=$params = $_REQUEST['row'];
-
-            $this->success(11,22,$data);
             $data['articletype_ids']=implode(',',$data['articletype_ids']);
             $data['content']=($data['content']);
             $data['user_id']=$this->auth->getUser()->id;
