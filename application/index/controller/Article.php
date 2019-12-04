@@ -62,7 +62,7 @@ class Article extends Frontend
             $data['user_id']=$this->auth->getUser()->id;
             $data['create_time']=time();
             $res=$model->data($data)->save();
-            $this->success();
+            $this->success($res,$model->getLastSql());
         }else{
             return $this->view->fetch();
         }
