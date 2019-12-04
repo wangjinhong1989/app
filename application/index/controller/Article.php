@@ -57,7 +57,8 @@ class Article extends Frontend
     {
         if($this->request->isPost()){
             $model=new \app\admin\model\Article();
-            $res=$model->data($this->request->request('post.*'))->save();
+            $data=$params = $this->request->post("row/a");;
+            $res=$model->data($data)->save();
 //            $lists = collection($lists)->toArray();
             $this->success();
         }else{
