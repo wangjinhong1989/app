@@ -24,7 +24,9 @@ class Article extends Frontend
     {
         parent::_initialize();
         $this->model = new \app\admin\model\Article;
+        $model1=new \app\admin\model\Articletype();
         $this->view->assign("statusList", $this->model->getStatusList());
+        $this->view->assign("TypeList",$model1->where(['status'=>0])->select());
     }
         /**
      * 文章列表
