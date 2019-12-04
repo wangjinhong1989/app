@@ -1,3 +1,5 @@
+<script  src="/libs/fastadmin-selectpage/selectpage.js"></script>
+<style  src="/libs/fastadmin-selectpage/selectpage.js"></style>
 <style>
     .basicinfo {
         margin: 15px 0;
@@ -27,7 +29,7 @@
                         <label class="control-label col-xs-12 col-sm-2">{:__('Articletype_ids')}:</label>
                         <div class="col-xs-12 col-sm-8">
                             <input id="c-articletype_ids" data-rule="required" data-source="{:url('/api/type_article/index')}"
-                                   data-multiple="true" class="form-control selectpage" name="row[articletype_ids]"
+                                   data-multiple="true" class="form-control  selectpage" name="row[articletype_ids]"
                                    type="text" value="">
                         </div>
                     </div>
