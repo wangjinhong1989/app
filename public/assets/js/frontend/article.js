@@ -36,9 +36,9 @@ define(['jquery', 'bootstrap', 'frontend', 'table', 'form'], function ($, undefi
 
 
                             var str="";
-                            $(row.articletype).each(function(index,item){
-                                str=str+" "+item['name']
-                            });
+                            for(i=0;row.articletype.length;i++){
+                                str=str+row.articletype[i]['name']
+                            }
                             return str;
                         }},
                         // {field: 'articletype.status', title: __('Articletype.status'), formatter: Table.api.formatter.status},
