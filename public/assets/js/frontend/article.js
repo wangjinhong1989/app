@@ -31,8 +31,16 @@ define(['jquery', 'bootstrap', 'frontend', 'table', 'form'], function ($, undefi
                         {field: 'status', title: __('Status'), searchList: {"0":__('Status 0'),"1":__('Status 1')}, formatter: Table.api.formatter.status},
                         // {field: 'user_id', title: __('User_id')},
                         // {field: 'articletype_ids', title: __('Articletype_ids')},
-                        {field: 'articletype.id', title: __('Articletype.id')},
-                        {field: 'articletype.name', title: __('Articletype.name')},
+                        //{field: 'articletype.id', title: __('Articletype.id')},
+                        {field: 'articletype.name', title: __('Articletype.name'),formatter: function(index,row){
+
+
+                            var str="";
+                            $(row.articletype).each(function(){
+                                str=str+" "+$(this).name
+                            });
+                            return str;
+                        }},
                         // {field: 'articletype.status', title: __('Articletype.status'), formatter: Table.api.formatter.status},
                         // {field: 'articletype.create_time', title: __('Articletype.create_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         // {field: 'user.id', title: __('User.id')},
