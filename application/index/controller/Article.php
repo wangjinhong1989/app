@@ -37,15 +37,12 @@ class Article extends Frontend
             $model=new \app\admin\model\Article();
             $offset=$this->request->get('offset',1);
             $limit=$this->request->get('limit',10);
-            $lists=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id,'status'=>0])->limit($offset,$limit)->order('id desc')->select();
-            $total=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id,'status'=>0])->count();
+            $lists=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id,'article.status'=>0])->limit($offset,$limit)->order('id desc')->select();
+            $total=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id,'article.status'=>0])->count();
 //            $lists = collection($lists)->toArray();
             return json(['total'=>$total,'rows'=>$lists]);
         }else{
-            $model=new \app\admin\model\Article();
-            $lists=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id])->select();
             $this->view->assign('title', __(''));
-            $this->view->assign('lists', $lists);
             return $this->view->fetch();
         }
 
