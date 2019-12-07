@@ -63,7 +63,10 @@ define(['jquery', 'bootstrap', 'frontend', 'table', 'form'], function ($, undefi
                         // {field: 'user.token', title: __('User.token')},
                         // {field: 'user.status', title: __('User.status'), formatter: Table.api.formatter.status},
                         // {field: 'user.verification', title: __('User.verification')},
-                        {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
+                        {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: function(index,row){
+
+                            return index+" "+row.id;
+                        }}
                     ]
                 ]
             });

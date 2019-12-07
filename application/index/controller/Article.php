@@ -80,11 +80,19 @@ class Article extends Frontend
     public function edit()
     {
         if($this->request->isAjax()){
+
             $model=new \app\admin\model\Article();
-            $lists=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id])->select();
-//            $lists = collection($lists)->toArray();
-            return json(['total'=>1,'rows'=>$lists]);
+            $data=$params = $_REQUEST['row'];
+            $data['articletype_ids']=implode(',',$data['articletype_ids']);
+            $data['content']=($data['content']);
+            $data['user_id']=$this->auth->getUser()->id;
+            $data['create_time']=time();
+            $res=$model->data($data)->save();
+            $this->success($res,$model->getLastSql());
         }else{
+            $model=new \app\admin\model\Article();
+            $res=$model->where(['id'=>$this->request->param('id')])->find();
+            $this->view->assign('res',$res);
             return $this->view->fetch();
         }
 
