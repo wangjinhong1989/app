@@ -40,7 +40,7 @@ class Article extends Frontend
             $lists=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id,'article.status'=>0])->limit($offset,$limit)->order('id desc')->select();
             $total=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id,'article.status'=>0])->count();
 //            $lists = collection($lists)->toArray();
-            return json(['total'=>$total,'rows'=>$lists]);
+            return json(['total'=>$total,'rows'=>$lists,$model->getLastSql()]);
         }else{
             $this->view->assign('title', __(''));
             return $this->view->fetch();
