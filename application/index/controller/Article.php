@@ -35,7 +35,7 @@ class Article extends Frontend
     {
         if($this->request->isAjax()){
             $model=new \app\admin\model\Article();
-            $offset=$this->request->get('offset',0);
+            $offset=$this->request->get('offset',1);
             $limit=$this->request->get('limit',10);
             $lists=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id])->limit($offset,$limit)->select();
             $total=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id])->count();
