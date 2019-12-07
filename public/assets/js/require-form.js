@@ -61,10 +61,10 @@ define(['jquery', 'bootstrap', 'upload', 'validator'], function ($, undefined, U
                             var index = parent.Layer.getFrameIndex(window.name);
                             parent.Layer.close(index);
 
-                            var url = ret.hasOwnProperty("url") && ret.url !== "" ? ret.url :'';
+                            var url = ret.hasOwnProperty("url1") && ret.url1 !== "" ? ret.url1 :'';
 
                             if(url){
-                                window.history.back(-1);
+                                window.history.go(-1);
                             }
                             return false;
                         }, function (data, ret) {
