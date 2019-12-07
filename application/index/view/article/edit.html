@@ -17,7 +17,7 @@
                         <div class="col-xs-12 col-sm-8">
                             {foreach name="TypeList" item="vo"}
 
-                            <input type="checkbox" value="{$vo.id}" data-rule="required" {if res.articletype_ids=vo.id} {$res.articletype_ids}{/if} name="row[articletype_ids][]"/>{$vo.name}
+                            <input type="checkbox" value="{$vo.id}" data-rule="required" {if condition='$res.articletype_ids eq $vo.id'} {$res.articletype_ids}{/if} name="row[articletype_ids][]"/>{$vo.name}
                             {/foreach}
                             <!--                            <select data-rule="required" class="selectpicker form-control" multiple="multiple"  name="row[articletype_ids]">-->
                             <!--                                {foreach name="TypeList" item="vo"}-->
