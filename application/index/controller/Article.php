@@ -100,4 +100,19 @@ class Article extends Frontend
 
     }
 
+    /**
+     * 文章列表
+     */
+    public function delete()
+    {
+
+            $id=$this->request->get('id',0);
+            $model=new \app\admin\model\Article();
+
+            $model->delete(['id'=>$id]);
+
+            $this->redirect('/index/article');
+
+    }
+
 }
