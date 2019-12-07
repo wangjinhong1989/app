@@ -109,7 +109,7 @@ class Article extends Frontend
             $id=$this->request->get('id',0);
             $model=new \app\admin\model\Article();
 
-            $model->delete(['id'=>$id]);
+            $model->where(['id'=>$id])->delete();
 
             $this->redirect('/index/article');
 
