@@ -37,8 +37,8 @@ class Article extends Frontend
             $model=new \app\admin\model\Article();
             $offset=$this->request->get('offset',1);
             $limit=$this->request->get('limit',10);
-            $lists=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id])->limit($offset,$limit)->order('id desc')->select();
-            $total=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id])->count();
+            $lists=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id,'status'=>0])->limit($offset,$limit)->order('id desc')->select();
+            $total=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id,'status'=>0])->count();
 //            $lists = collection($lists)->toArray();
             return json(['total'=>$total,'rows'=>$lists]);
         }else{
@@ -109,7 +109,7 @@ class Article extends Frontend
             $id=$this->request->get('id',0);
             $model=new \app\admin\model\Article();
 
-            $model->where(['id'=>$id])->delete();
+            $model->save(['status'=>1],['id'=>$id]);
 
             $this->redirect('/index/article');
 
