@@ -91,7 +91,7 @@ class Article extends Frontend
             $this->success($res,$model->getLastSql());
         }else{
             $model=new \app\admin\model\Article();
-            $res=$model->where(['id'=>$this->request->param('id')])->find();
+            $res=$model->with("articletype")->where(['id'=>$this->request->param('id')])->find();
 
             var_dump($res);
             $this->view->assign('res',$res);
