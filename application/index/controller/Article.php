@@ -36,8 +36,9 @@ class Article extends Frontend
         if($this->request->isAjax()){
             $model=new \app\admin\model\Article();
             $lists=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id])->select();
+            $total=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id])->count();
 //            $lists = collection($lists)->toArray();
-            return json(['total'=>1,'rows'=>$lists]);
+            return json(['total'=>$total,'rows'=>$lists]);
         }else{
             $model=new \app\admin\model\Article();
             $lists=$model->with(['articletype','user'])->where(['user_id'=>$this->auth->getUser()->id])->select();
