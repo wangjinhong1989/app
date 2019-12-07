@@ -127,6 +127,7 @@ return [
     'Create_time'=>'创建时间',
     'Articletype.name'=>'文章类型',
     'User.username'=>'作者',
+    'User.avatar'=>'头像',
     'Articletype.id'=>'类型ID',
     'Articletype_ids'=>'文章类型',
     'Url'=>'链接',
