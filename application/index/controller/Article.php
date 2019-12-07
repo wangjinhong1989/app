@@ -92,6 +92,8 @@ class Article extends Frontend
         }else{
             $model=new \app\admin\model\Article();
             $res=$model->where(['id'=>$this->request->param('id')])->find();
+
+            var_dump($res);
             $this->view->assign('res',$res);
             return $this->view->fetch();
         }
