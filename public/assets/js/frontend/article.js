@@ -36,7 +36,7 @@ define(['jquery', 'bootstrap', 'frontend', 'table', 'form'], function ($, undefi
 
 
                             var str="";
-                            $(row.articletype).each(function(item){
+                            $(row.articletype).each(function(index,item){
                                 str=str+" "+item['name']
                             });
                             return str;
