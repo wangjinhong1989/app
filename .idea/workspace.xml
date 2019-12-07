@@ -61,8 +61,8 @@
       <file leaf-file-name="Article.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/index/controller/Article.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6936937" vertical-offset="597" max-vertical-offset="2645">
-              <caret line="42" column="76" selection-start-line="42" selection-start-column="76" selection-end-line="42" selection-end-column="76" />
+            <state vertical-scroll-proportion="0.5555556" vertical-offset="597" max-vertical-offset="2645">
+              <caret line="40" column="91" selection-start-line="40" selection-start-column="91" selection-end-line="40" selection-end-column="91" />
               <folding />
             </state>
           </provider>
@@ -934,8 +934,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/index/controller/Article.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6936937" vertical-offset="597" max-vertical-offset="2645">
-          <caret line="42" column="76" selection-start-line="42" selection-start-column="76" selection-end-line="42" selection-end-column="76" />
+        <state vertical-scroll-proportion="0.5555556" vertical-offset="597" max-vertical-offset="2645">
+          <caret line="40" column="91" selection-start-line="40" selection-start-column="91" selection-end-line="40" selection-end-column="91" />
           <folding />
         </state>
       </provider>
