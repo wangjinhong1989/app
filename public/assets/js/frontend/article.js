@@ -65,7 +65,7 @@ define(['jquery', 'bootstrap', 'frontend', 'table', 'form'], function ($, undefi
                         // {field: 'user.verification', title: __('User.verification')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: function(index,row){
 
-                            return '<a href="{:url(\'article/edit\',array("id"=>'+row.id+'))}">编辑</a>';
+                            return '<a href="/index/article/edit?id='+row.id+'">编辑</a>';
                         }}
                     ]
                 ]
