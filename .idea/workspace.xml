@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fdef63fa-da1e-403c-98db-8139fd1f613d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/index/controller/Article.php" afterPath="$PROJECT_DIR$/application/index/controller/Article.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/index/view/article/edit.html" afterPath="$PROJECT_DIR$/application/index/view/article/edit.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="bak.iws" />
@@ -59,11 +58,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Article.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Article.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/index/controller/Article.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.34375" vertical-offset="1661" max-vertical-offset="2346">
-              <caret line="94" column="73" selection-start-line="94" selection-start-column="73" selection-end-line="94" selection-end-column="73" />
+            <state vertical-scroll-proportion="0.45701358" vertical-offset="1799" max-vertical-offset="2346">
+              <caret line="93" column="33" selection-start-line="93" selection-start-column="33" selection-end-line="93" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -79,10 +78,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/index/view/article/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4162896" vertical-offset="276" max-vertical-offset="3220">
+            <state vertical-scroll-proportion="-5.75" vertical-offset="276" max-vertical-offset="3220">
               <caret line="20" column="69" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
               <folding />
             </state>
@@ -109,8 +108,8 @@
         <option value="$PROJECT_DIR$/application/index/view/layout/default.html" />
         <option value="$PROJECT_DIR$/application/index/view/article/index.html" />
         <option value="$PROJECT_DIR$/public/assets/js/frontend/article.js" />
-        <option value="$PROJECT_DIR$/application/index/controller/Article.php" />
         <option value="$PROJECT_DIR$/application/index/view/article/edit.html" />
+        <option value="$PROJECT_DIR$/application/index/controller/Article.php" />
       </list>
     </option>
   </component>
@@ -691,18 +690,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/index/controller/Article.php">
+    <entry file="file://$PROJECT_DIR$/application/index/view/article/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.34375" vertical-offset="1661" max-vertical-offset="2346">
-          <caret line="94" column="73" selection-start-line="94" selection-start-column="73" selection-end-line="94" selection-end-column="73" />
+        <state vertical-scroll-proportion="-5.75" vertical-offset="276" max-vertical-offset="3220">
+          <caret line="20" column="69" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/index/view/article/edit.html">
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Article.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4162896" vertical-offset="276" max-vertical-offset="3220">
-          <caret line="20" column="69" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.45701358" vertical-offset="1799" max-vertical-offset="2346">
+          <caret line="93" column="33" selection-start-line="93" selection-start-column="33" selection-end-line="93" selection-end-column="33" />
           <folding />
         </state>
       </provider>
