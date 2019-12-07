@@ -87,7 +87,7 @@ class Article extends Frontend
             $data['content']=($data['content']);
             $data['user_id']=$this->auth->getUser()->id;
             $data['create_time']=time();
-            $res=$model->save($data);
+            $res=$model->save($data,['id'=>$data['id']]);
             $this->success($res,$model->getLastSql());
         }else{
             $model=new \app\admin\model\Article();

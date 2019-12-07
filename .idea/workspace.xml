@@ -62,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/application/index/controller/Article.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.71719456" vertical-offset="1592" max-vertical-offset="2346">
-              <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
+              <caret line="89" column="52" selection-start-line="89" selection-start-column="52" selection-end-line="89" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -701,7 +701,7 @@
     <entry file="file://$PROJECT_DIR$/application/index/controller/Article.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71719456" vertical-offset="1592" max-vertical-offset="2346">
-          <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
+          <caret line="89" column="52" selection-start-line="89" selection-start-column="52" selection-end-line="89" selection-end-column="52" />
           <folding />
         </state>
       </provider>
