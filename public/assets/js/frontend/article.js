@@ -42,7 +42,7 @@ define(['jquery', 'bootstrap', 'frontend', 'table', 'form'], function ($, undefi
                         // {field: 'user.salt', title: __('User.salt')},
                         // {field: 'user.email', title: __('User.email')},
                         // {field: 'user.mobile', title: __('User.mobile')},
-                        {field: 'user.avatar', title: __('User.avatar'), events: Table.api.events.image, formatter: Table.api.formatter.image},
+                        {field: 'img', title: __('img'), events: Table.api.events.image, formatter: Table.api.formatter.image},
                         // {field: 'user.level', title: __('User.level')},
                         // {field: 'user.gender', title: __('User.gender')},
                         // {field: 'user.birthday', title: __('User.birthday'), operate:'RANGE', addclass:'datetimerange'},
