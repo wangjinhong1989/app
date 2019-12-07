@@ -88,9 +88,8 @@ class Article extends Frontend
             $data['user_id']=$this->auth->getUser()->id;
             $data['create_time']=time();
             $res=$model->save($data,['id'=>$data['id']]);
-//            $this->success($res,$model->getLastSql());
+            $this->success($res,$model->getLastSql());
 
-            $this->redirect("/index/article/index");
         }else{
             $model=new \app\admin\model\Article();
             $res=$model->where(['id'=>$this->request->param('id')])->find();

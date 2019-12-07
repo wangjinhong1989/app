@@ -55,7 +55,7 @@ define(['jquery', 'bootstrap', 'upload', 'validator'], function ($, undefined, U
                             }
                             //提示及关闭当前窗口
                             var msg = ret.hasOwnProperty("msg") && ret.msg !== "" ? ret.msg : __('Operation completed');
-                            parent.Toastr.success(msg);
+                            parent.Toastr.success(msg+'gogogo');
                             parent.$(".btn-refresh").trigger("click");
                             var index = parent.Layer.getFrameIndex(window.name);
                             parent.Layer.close(index);
