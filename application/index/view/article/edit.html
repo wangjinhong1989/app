@@ -36,13 +36,13 @@
                     <div class="form-group">
                         <label for="content" class="control-label col-xs-12 col-sm-2">{:__('是否原创')}:</label>
                         <div class="col-xs-12 col-sm-8">
-                            {:build_radios('row[is_mine]', ['否'=>__('否'), '是'=>__('是')],$row['is_mine'])}
+                            {:build_radios('row[is_mine]', ['否'=>__('否'), '是'=>__('是')],$res['is_mine'])}
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="content" class="control-label col-xs-12 col-sm-2">{:__('是否允许回复')}:</label>
                         <div class="col-xs-12 col-sm-8">
-                            {:build_radios('row[is_reply]', ['否'=>__('否'), '是'=>__('是')],$row['is_reply'])}
+                            {:build_radios('row[is_reply]', ['否'=>__('否'), '是'=>__('是')],$res['is_reply'])}
                         </div>
                     </div>
                     <div class="form-group">
