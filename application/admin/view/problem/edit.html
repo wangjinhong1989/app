@@ -7,15 +7,15 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Reason')}:</label>
+        <label class="control-label col-xs-12 col-sm-2">{:__('Url')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-reason" data-rule="required" class="form-control" name="row[reason]" type="text" value="{$row.reason|htmlentities}">
+            <input id="c-url" data-rule="required" class="form-control" name="row[url]" type="text" value="{$row.url|htmlentities}">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Time')}:</label>
+        <label class="control-label col-xs-12 col-sm-2">{:__('Reason')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[time]" type="text" value="{:$row.time?datetime($row.time):''}">
+            <input id="c-reason" data-rule="required" class="form-control" name="row[reason]" type="text" value="{$row.reason|htmlentities}">
         </div>
     </div>
     <div class="form-group">
@@ -31,9 +31,9 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Url')}:</label>
+        <label class="control-label col-xs-12 col-sm-2">{:__('Time')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-url" data-rule="required" class="form-control" name="row[url]" type="text" value="{$row.url|htmlentities}">
+            <input id="c-time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[time]" type="text" value="{:$row.time?datetime($row.time):''}">
         </div>
     </div>
     <div class="form-group layer-footer">

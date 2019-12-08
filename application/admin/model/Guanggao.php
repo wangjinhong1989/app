@@ -25,17 +25,25 @@ class Guanggao extends Model
 
     // 追加属性
     protected $append = [
+        'status_text',
         'time_text',
         'last_time_text',
-        'start_time_text',
-        'status_text'
+        'start_time_text'
     ];
     
 
     
     public function getStatusList()
     {
-        return ['0' => __('Status 0'), '1' => __('Status 1')];
+        return ['显示' => __('显示'), '隐藏' => __('隐藏')];
+    }
+
+
+    public function getStatusTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['status']) ? $data['status'] : '');
+        $list = $this->getStatusList();
+        return isset($list[$value]) ? $list[$value] : '';
     }
 
 
@@ -57,14 +65,6 @@ class Guanggao extends Model
     {
         $value = $value ? $value : (isset($data['start_time']) ? $data['start_time'] : '');
         return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
-    }
-
-
-    public function getStatusTextAttr($value, $data)
-    {
-        $value = $value ? $value : (isset($data['status']) ? $data['status'] : '');
-        $list = $this->getStatusList();
-        return isset($list[$value]) ? $list[$value] : '';
     }
 
     protected function setTimeAttr($value)

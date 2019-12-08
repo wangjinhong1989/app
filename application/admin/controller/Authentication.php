@@ -22,6 +22,7 @@ class Authentication extends Backend
     {
         parent::_initialize();
         $this->model = new \app\admin\model\Authentication;
+        $this->view->assign("authenticationTypeList", $this->model->getAuthenticationTypeList());
         $this->view->assign("statusList", $this->model->getStatusList());
     }
     
@@ -65,7 +66,7 @@ class Authentication extends Backend
             foreach ($list as $row) {
                 
                 $row->getRelation('certificates')->visible(['name']);
-				$row->getRelation('user')->visible(['username','nickname']);
+				$row->getRelation('user')->visible(['username']);
             }
             $list = collection($list)->toArray();
             $result = array("total" => $total, "rows" => $list);

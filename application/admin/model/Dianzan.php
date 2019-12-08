@@ -45,4 +45,8 @@ class Dianzan extends Model
     }
 
 
+    public function user()
+    {
+        return $this->belongsTo('User', 'user_id', 'id', [], 'LEFT')->setEagerlyType(0);
+    }
 }

@@ -1,9 +1,14 @@
 <?php
 
 return [
-    'Status'          => '有效,无效,审核',
-    'Files'           => '认证文件',
-    'Certificates_id' => '证件类型',
-    'User.username'   => '用户名',
-    'User.nickname'   => '昵称'
+    'User_id'             => '用户',
+    'Authentication_type' => '认证类型',
+    'Status'              => '状态',
+    'Files'               => '认证文件',
+    'Certificates_id'     => '证件类型',
+    'Number'              => '证书号',
+    'Parent_id'           => '父级ID',
+    'Time'                => '创建时间',
+    'Certificates.name'   => '证件名称',
+    'User.username'       => '用户名'
 ];

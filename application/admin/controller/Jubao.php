@@ -51,21 +51,21 @@ class Jubao extends Backend
             }
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
             $total = $this->model
-                    ->with(['user','article'])
+                    ->with(['article'])
                     ->where($where)
                     ->order($sort, $order)
                     ->count();
 
             $list = $this->model
-                    ->with(['user','article'])
+                    ->with(['article'])
                     ->where($where)
                     ->order($sort, $order)
                     ->limit($offset, $limit)
                     ->select();
 
             foreach ($list as $row) {
-                
-                $row->getRelation('user')->visible(['username']);
+                $row->visible(['id','type','status','content']);
+                $row->visible(['article']);
 				$row->getRelation('article')->visible(['title']);
             }
             $list = collection($list)->toArray();

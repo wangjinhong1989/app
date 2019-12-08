@@ -25,22 +25,15 @@ class Problem extends Model
 
     // 追加属性
     protected $append = [
-        'time_text',
-        'status_text'
+        'status_text',
+        'time_text'
     ];
     
 
     
     public function getStatusList()
     {
-        return ['0' => __('Status 0'), '1' => __('Status 1')];
-    }
-
-
-    public function getTimeTextAttr($value, $data)
-    {
-        $value = $value ? $value : (isset($data['time']) ? $data['time'] : '');
-        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
+        return ['显示' => __('显示'), '隐藏' => __('隐藏')];
     }
 
 
@@ -49,6 +42,13 @@ class Problem extends Model
         $value = $value ? $value : (isset($data['status']) ? $data['status'] : '');
         $list = $this->getStatusList();
         return isset($list[$value]) ? $list[$value] : '';
+    }
+
+
+    public function getTimeTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['time']) ? $data['time'] : '');
+        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
     }
 
     protected function setTimeAttr($value)

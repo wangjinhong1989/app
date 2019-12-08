@@ -32,7 +32,7 @@ class Reply extends Model
     
     public function getStatusList()
     {
-        return ['0' => __('Status 0'), '1' => __('Status 1'), '2' => __('Status 2')];
+        return ['有效' => __('有效'), '无效' => __('无效'), '审核' => __('审核')];
     }
 
 

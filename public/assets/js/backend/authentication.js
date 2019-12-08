@@ -26,15 +26,15 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
                         {field: 'user_id', title: __('User_id')},
-                        {field: 'status', title: __('Status'), searchList: {"0":__('Status 0'),"1":__('Status 1'),"2":__('Status 2')}, formatter: Table.api.formatter.status},
-                        {field: 'time', title: __('Time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
+                        {field: 'authentication_type', title: __('Authentication_type'), searchList: {"个人认证":__('个人认证'),"企业认证":__('企业认证'),"媒体认证":__('媒体认证')}, formatter: Table.api.formatter.normal},
+                        {field: 'status', title: __('Status'), searchList: {"有效":__('有效'),"无效":__('无效'),"审核":__('审核')}, formatter: Table.api.formatter.status},
                         {field: 'files', title: __('Files')},
                         {field: 'certificates_id', title: __('Certificates_id')},
-                        {field: 'name', title: __('Name')},
                         {field: 'number', title: __('Number')},
+                        {field: 'parent_id', title: __('Parent_id')},
+                        {field: 'time', title: __('Time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'certificates.name', title: __('Certificates.name')},
                         {field: 'user.username', title: __('User.username')},
-                        {field: 'user.nickname', title: __('User.nickname')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]

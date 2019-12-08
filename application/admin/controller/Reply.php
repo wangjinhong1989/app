@@ -63,8 +63,10 @@ class Reply extends Backend
                     ->select();
 
             foreach ($list as $row) {
-                
-                $row->getRelation('article')->visible(['title']);
+                $row->visible(['id','status','parent_id','content','createtime']);
+                $row->visible(['article']);
+				$row->getRelation('article')->visible(['title']);
+				$row->visible(['user']);
 				$row->getRelation('user')->visible(['username']);
             }
             $list = collection($list)->toArray();

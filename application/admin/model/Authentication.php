@@ -25,15 +25,29 @@ class Authentication extends Model
 
     // 追加属性
     protected $append = [
+        'authentication_type_text',
         'status_text',
         'time_text'
     ];
     
 
     
+    public function getAuthenticationTypeList()
+    {
+        return ['个人认证' => __('个人认证'), '企业认证' => __('企业认证'), '媒体认证' => __('媒体认证')];
+    }
+
     public function getStatusList()
     {
-        return ['0' => __('Status 0'), '1' => __('Status 1'), '2' => __('Status 2')];
+        return ['有效' => __('有效'), '无效' => __('无效'), '审核' => __('审核')];
+    }
+
+
+    public function getAuthenticationTypeTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['authentication_type']) ? $data['authentication_type'] : '');
+        $list = $this->getAuthenticationTypeList();
+        return isset($list[$value]) ? $list[$value] : '';
     }
 
 

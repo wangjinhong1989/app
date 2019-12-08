@@ -25,9 +25,9 @@ class Jubao extends Model
 
     // 追加属性
     protected $append = [
-        'time_text',
         'type_text',
-        'status_text'
+        'status_text',
+        'time_text'
     ];
     
 
@@ -39,14 +39,7 @@ class Jubao extends Model
 
     public function getStatusList()
     {
-        return ['0' => __('Status 0'), '1' => __('Status 1'), '2' => __('Status 2')];
-    }
-
-
-    public function getTimeTextAttr($value, $data)
-    {
-        $value = $value ? $value : (isset($data['time']) ? $data['time'] : '');
-        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
+        return ['有效' => __('有效'), '无效' => __('无效'), '审核' => __('审核')];
     }
 
 
@@ -65,15 +58,16 @@ class Jubao extends Model
         return isset($list[$value]) ? $list[$value] : '';
     }
 
+
+    public function getTimeTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['time']) ? $data['time'] : '');
+        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
+    }
+
     protected function setTimeAttr($value)
     {
         return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
-    }
-
-
-    public function user()
-    {
-        return $this->belongsTo('User', 'user_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 
 

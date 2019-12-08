@@ -22,7 +22,7 @@ class Lihaokong extends Backend
     {
         parent::_initialize();
         $this->model = new \app\admin\model\Lihaokong;
-
+        $this->view->assign("isProfitList", $this->model->getIsProfitList());
     }
     
     /**
@@ -50,22 +50,24 @@ class Lihaokong extends Backend
             }
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
             $total = $this->model
-                    ->with(['article','user'])
+                    ->with(['user','article'])
                     ->where($where)
                     ->order($sort, $order)
                     ->count();
 
             $list = $this->model
-                    ->with(['article','user'])
+                    ->with(['user','article'])
                     ->where($where)
                     ->order($sort, $order)
                     ->limit($offset, $limit)
                     ->select();
 
             foreach ($list as $row) {
-                
-                $row->getRelation('article')->visible(['title']);
+                $row->visible(['id','is_profit','time']);
+                $row->visible(['user']);
 				$row->getRelation('user')->visible(['username']);
+				$row->visible(['article']);
+				$row->getRelation('article')->visible(['title']);
             }
             $list = collection($list)->toArray();
             $result = array("total" => $total, "rows" => $list);

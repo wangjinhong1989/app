@@ -25,12 +25,10 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'user_id', title: __('User_id')},
+                        {field: 'status', title: __('Status'), searchList: {"有效":__('有效'),"无效":__('无效'),"审核":__('审核')}, formatter: Table.api.formatter.status},
+                        {field: 'parent_id', title: __('Parent_id')},
                         {field: 'content', title: __('Content')},
                         {field: 'createtime', title: __('Createtime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'status', title: __('Status'), searchList: {"0":__('Status 0'),"1":__('Status 1'),"2":__('Status 2')}, formatter: Table.api.formatter.status},
-                        {field: 'parent_id', title: __('Parent_id')},
-                        {field: 'article_id', title: __('Article_id')},
                         {field: 'article.title', title: __('Article.title')},
                         {field: 'user.username', title: __('User.username')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
