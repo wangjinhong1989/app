@@ -63,6 +63,11 @@ class User extends Model
         return ['normal' => __('Normal'), 'hidden' => __('Hidden')];
     }
 
+
+    public function getIsKuaixunList()
+    {
+        return ['normal' => __('否'), 'hidden' => __('Hidden')];
+    }
     public function getPrevtimeTextAttr($value, $data)
     {
         $value = $value ? $value : $data['prevtime'];
