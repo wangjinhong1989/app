@@ -361,4 +361,29 @@ if (!function_exists('hsv2rgb')) {
             floor($b * 255)
         ];
     }
+
+
+}
+
+
+
+if (!function_exists('build_radios')) {
+
+    /**
+     * 生成单选按钮组
+     * @param string $name
+     * @param array $list
+     * @param mixed $selected
+     * @return string
+     */
+    function build_radios($name, $list = [], $selected = null)
+    {
+        $html = [];
+        $selected = is_null($selected) ? key($list) : $selected;
+        $selected = is_array($selected) ? $selected : explode(',', $selected);
+        foreach ($list as $k => $v) {
+            $html[] = sprintf(Form::label("{$name}-{$k}", "%s {$v}"), Form::radio($name, $k, in_array($k, $selected), ['id' => "{$name}-{$k}"]));
+        }
+        return '<div class="radio">' . implode(' ', $html) . '</div>';
+    }
 }
