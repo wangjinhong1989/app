@@ -22,12 +22,11 @@ class Ad extends Api
     public function Lists()
     {
         //phpinfo();
-
         Cache::store('redis')->clear();
         $lists=Cache::store('redis')->get('ad_list');
         if(!$lists){
             $lists=(new Guanggao())->where(['status'=>'有效'])->select();
-            Cache::store('redis')->set('ad_list',$lists,0);
+            Cache::store('redis')->set('ad_list',$lists,1);
         }
 
         $this->success($lists);
