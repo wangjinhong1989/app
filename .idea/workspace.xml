@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fdef63fa-da1e-403c-98db-8139fd1f613d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/api/controller/Ad.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/api/controller/Ad.php" afterDir="false" />
-    </list>
+    <list default="true" id="fdef63fa-da1e-403c-98db-8139fd1f613d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1575463409010</updated>
       <workItem from="1575969511325" duration="873000" />
-      <workItem from="1576027029682" duration="1785000" />
+      <workItem from="1576027029682" duration="1863000" />
     </task>
     <servers />
   </component>
