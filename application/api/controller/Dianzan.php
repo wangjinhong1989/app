@@ -26,7 +26,7 @@ class Dianzan extends Api
             ->with(['user'])
             ->field("dianzan.*,user.username,user.avatar")
             ->where(['dianzan.user_id' => $user_id])
-            ->where('user.id=dianzhan.at_id')
+            ->where('user.id=dianzan.at_id')
             ->select();
         foreach($lists as  $k=>$value){
             unset($lists[$k]['user']);
@@ -48,7 +48,7 @@ class Dianzan extends Api
             ->with(['user'])
             ->field("dianzan.*,user.username,user.avatar")
             ->where(['dianzan.at_id' => $user_id])
-            ->where('user.id=dianzhan.user_id')
+            ->where('user.id=dianzan.user_id')
             ->select();
         foreach($lists as  $k=>$value){
             unset($lists[$k]['user']);
