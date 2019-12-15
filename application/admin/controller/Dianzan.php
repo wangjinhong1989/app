@@ -50,22 +50,24 @@ class Dianzan extends Backend
             }
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
             $total = $this->model
-                    ->with(['user'])
+                    ->with(['user','article'])
                     ->where($where)
                     ->order($sort, $order)
                     ->count();
 
             $list = $this->model
-                    ->with(['user'])
+                    ->with(['user','article'])
                     ->where($where)
                     ->order($sort, $order)
                     ->limit($offset, $limit)
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(['id','time']);
+                $row->visible(['id','user_id','at_id','article_id','time']);
                 $row->visible(['user']);
 				$row->getRelation('user')->visible(['username']);
+				$row->visible(['article']);
+				$row->getRelation('article')->visible(['title']);
             }
             $list = collection($list)->toArray();
             $result = array("total" => $total, "rows" => $list);
