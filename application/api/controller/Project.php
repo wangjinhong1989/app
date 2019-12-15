@@ -51,9 +51,9 @@ class Project extends Api
 
             $info->hot=$info->hot+1;
             $info->rank=$info->rank+1;
-            $model->save(['hot'=>$info->hot,'rank'=>$info->rank],['id'=>$id]);
-
-            return $this->success($model->getLastSql());
+//            $model->save(['hot'=>$info->hot,'rank'=>$info->rank],['id'=>$id]);
+            $info->save();
+            return $this->success();
         }catch (Exception $e){
             return  $this->error($e->getMessage());
         }
