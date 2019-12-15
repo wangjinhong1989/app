@@ -40,7 +40,7 @@ class Dianzan extends Api
      * 点赞我的人
      *
      */
-    public function atMeLists()
+    public function at_me_lists()
     {
         $user = $this->auth->getUser();
         $user_id = $user->id;
