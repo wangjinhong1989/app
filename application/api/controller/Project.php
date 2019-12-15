@@ -47,7 +47,7 @@ class Project extends Api
             if(!$model::getById($id)){
                 return $this->error(__('项目不存在'));
             }
-            $model->update("hot=hot+1,rank=rank+1",'id='.$id);
+            $model->inc("hot",1)->where(['id'=>$id]);
 
             return $this->success($model->getLastSql());
         }catch (Exception $e){
