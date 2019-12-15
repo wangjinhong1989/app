@@ -33,6 +33,10 @@ class Guanzhu extends Api
             ->where(['guanzhu.user_id' => $user_id])
             ->where('user.id=guanzhu.follow_id')
             ->select();
+
+        foreach($lists as $k=>$value){
+            unset($lists[$k]['user']);
+        }
         $this->success("成功", $lists);
     }
 
