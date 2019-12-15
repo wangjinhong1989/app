@@ -33,7 +33,7 @@ class Articletype extends Model
     
     public function getStatusList()
     {
-        return ['0' => __('Status 0'), '1' => __('Status 1')];
+        return ['显示' => __('显示'), '隐藏' => __('隐藏')];
     }
 
 
