@@ -17,6 +17,8 @@ class Authentication extends Api
     public function Lists()
     {
         $authentication_type=$this->request->post("authentication_type");
+        if(!$authentication_type)
+            $this->error("缺少参数");
         $lists=( new \app\admin\model\Authentication())
             ->with("certificates")
             ->where(['authentication_type'=>$authentication_type])
