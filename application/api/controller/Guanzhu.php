@@ -18,7 +18,7 @@ class Guanzhu extends Api
     protected $noNeedRight = ['*'];
 
     /**
-     * 首页
+     * 我关注的人
      *
      */
     public function Lists()
@@ -39,6 +39,70 @@ class Guanzhu extends Api
         }
         $this->success("成功", $lists);
     }
+
+
+    /**
+     * 我关注个数
+     *
+     */
+    public function count()
+    {
+        $user = $this->auth->getUser();
+        $user_id = $user->id;
+
+        $model = (new \app\admin\model\Guanzhu());
+        $lists = $model
+            ->with(['user'])
+            ->field("guanzhu.id,guanzhu.follow_id,guanzhu.time,user.nickname,user.avatar")
+            ->where(['guanzhu.user_id' => $user_id])
+            ->where('user.id=guanzhu.follow_id')
+            ->count();
+        $this->success("成功", $lists);
+    }
+
+
+    /**
+     * 关注我的人
+     *
+     */
+    public function follow()
+    {
+        $user = $this->auth->getUser();
+        $user_id = $user->id;
+
+        $model = (new \app\admin\model\Guanzhu());
+        $lists = $model
+            ->with(['user'])
+            ->field("guanzhu.id,guanzhu.follow_id,guanzhu.time,user.nickname,user.avatar")
+            ->where(['guanzhu.follow_id' => $user_id])
+            ->where('user.id=guanzhu.user_id')
+            ->select();
+
+        foreach($lists as $k=>$value){
+            unset($lists[$k]['user']);
+        }
+        $this->success("成功", $lists);
+    }
+
+
+    /**
+     * 我关注个数
+     *
+     */
+    public function follow_count()
+    {
+        $user = $this->auth->getUser();
+        $user_id = $user->id;
+
+        $model = (new \app\admin\model\Guanzhu());
+        $lists = $model
+            ->with(['user'])
+            ->field("guanzhu.id,guanzhu.follow_id,guanzhu.time,user.nickname,user.avatar")
+            ->where(['guanzhu.follow_id' => $user_id])
+            ->count();
+        $this->success("成功", $lists);
+    }
+
 
     /*
     *添加关注
