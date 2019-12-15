@@ -22,7 +22,7 @@ class MyCollect extends Api
     {
         $user = $this->auth->getUser();
         $user_id=$user->id;
-        $lists=( new Shoucang())->alias("shoucang")->with(['article'])->where(['shoucang.user_id'=>$user_id,'article.id=shoucang.article_id'])->select("shoucang.*,article.title");
+        $lists=( new Shoucang())->alias("shoucang")->with(['article'])->where(['shoucang.user_id'=>$user_id,' article.id=shoucang.article_id'])->select("shoucang.*,article.title");
         $this->success($lists);
     }
 
