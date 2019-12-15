@@ -23,7 +23,9 @@ class Report extends Api
     {
         $user = $this->auth->getUser();
         $user_id=$user->id;
-        $lists=(new Jubao())->where(['user_id'=>$user_id])->select();
+        $lists=(new Jubao())->with(['article'])
+            ->where("jubao.article_id=article.id")
+            ->where(['jubao.user_id'=>$user_id])->select();
         $this->success($lists);
     }
 
