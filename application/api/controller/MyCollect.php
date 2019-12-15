@@ -22,13 +22,14 @@ class MyCollect extends Api
     {
         $user = $this->auth->getUser();
         $user_id=$user->id;
-        $lists=( new Shoucang())
+
+        $model=( new Shoucang());
 //            ->with(['article'])
-            ->where(['user_id'=>$user_id])
+       $lists= $model     ->where(['user_id'=>$user_id])
 //            ->where('article.id=shoucang.article_id')
 //            ->select("shoucang.*,article.title");
             ->select("shoucang.*");
-        $this->success($lists,$user_id);
+        $this->success($lists,$user_id,$model->getLastSql());
     }
 
     /*
