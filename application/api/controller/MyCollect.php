@@ -32,10 +32,7 @@ class MyCollect extends Api
             ->where('article.id=shoucang.article_id')
             ->select();
 
-        foreach ($lists as $row) {
-
-            $row->getRelation('articletype')->visible(['name']);
-        }
+        
         $this->success($lists,$user_id,$model->getLastSql());
     }
 
