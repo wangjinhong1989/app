@@ -6,6 +6,7 @@ namespace app\api\controller;
 use app\admin\model\Shoucang;
 use app\admin\model\Article;
 use app\common\controller\Api;
+
 /**
  * 首页接口
  */
@@ -21,16 +22,15 @@ class MyCollect extends Api
     public function Lists()
     {
         $user = $this->auth->getUser();
-        $user_id=$user->id;
+        $user_id = $user->id;
 
-        $model=( new Shoucang());
-//            ->with(['article'])
-       $lists= $model->alias('shoucang')
-           ->with(['article'])
-            ->where(['shoucang.user_id'=>$user_id])
+        $model = (new Shoucang());
+        $lists = $model->alias('shoucang')
+            ->with(['article'])
+            ->where(['shoucang.user_id' => $user_id])
             ->where('article.id=shoucang.article_id')
             ->select();
-        $this->success($lists,$user_id,$model->getLastSql());
+        $this->success("成功", $lists);
     }
 
     /*
@@ -39,28 +39,29 @@ class MyCollect extends Api
     public function add()
     {
 
-        try{
-            $data=[];
-            $model=new Shoucang();
+        try {
+            $data = [];
+            $model = new Shoucang();
             $user = $this->auth->getUser();
-            $user_id=$user->id;
-            $article_id=$this->request->request('article_id');
+            $user_id = $user->id;
+            $article_id = $this->request->request('article_id');
 
 
-            if(!$article_id){
-                return $this->error(__('参数存在空'));die;
+            if (!$article_id) {
+                return $this->error(__('参数存在空'));
+                die;
             }
-            if(!Article::getById($article_id)){
+            if (!Article::getById($article_id)) {
                 return $this->error(__('文章不存在'));
             }
 
             $model->create([
-                'user_id'=>$user_id,'article_id'=>$article_id,'time'=>time()
+                'user_id' => $user_id, 'article_id' => $article_id, 'time' => time()
             ]);
 
-            return $this->success('123',$model->getLastSql());
-        }catch (Exception $e){
-            return  $this->error($e->getMessage());
+            return $this->success();
+        } catch (Exception $e) {
+            return $this->error($e->getMessage());
         }
 
     }
@@ -71,25 +72,25 @@ class MyCollect extends Api
     public function delete()
     {
 
-        try{
-            $model=new Shoucang();
+        try {
+            $model = new Shoucang();
             $user = $this->auth->getUser();
-            $user_id=$user->id;
-            $article_id=$this->request->request('article_id');
+            $user_id = $user->id;
+            $article_id = $this->request->request('article_id');
 
 
-            if(!$article_id){
+            if (!$article_id) {
                 return $this->error(__('参数存在空'));
             }
-            if(!Article::getById($article_id)){
+            if (!Article::getById($article_id)) {
                 return $this->error(__('文章不存在'));
             }
 
-            $model->where(['user_id'=>$user_id,'article_id'=>$article_id])->delete();
+            $model->where(['user_id' => $user_id, 'article_id' => $article_id])->delete();
 
-            return $this->success('123',$model->getLastSql());
-        }catch (Exception $e){
-            return  $this->error($e->getMessage());
+            return $this->success();
+        } catch (Exception $e) {
+            return $this->error($e->getMessage());
         }
 
     }
