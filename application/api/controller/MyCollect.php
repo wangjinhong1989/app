@@ -28,7 +28,7 @@ class MyCollect extends Api
 //            ->where('article.id=shoucang.article_id')
 //            ->select("shoucang.*,article.title");
             ->select("shoucang.*");
-        $this->success($lists);
+        $this->success($lists,$user_id);
     }
 
     /*
