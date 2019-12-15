@@ -22,10 +22,10 @@ class Dianzan extends Api
         $user_id = $user->id;
 
         $model = (new \app\admin\model\Dianzan());
-        $lists = $model
+        $lists = $model->alias('dianzan')
             ->with(['user'])
             ->field("dianzan.*,user.username,user.avatar")
-            ->where(['dianzhan.user_id' => $user_id])
+            ->where(['dianzan.user_id' => $user_id])
             ->where('user.id=dianzhan.at_id')
             ->select();
         foreach($lists as  $k=>$value){
@@ -47,7 +47,7 @@ class Dianzan extends Api
         $lists = $model
             ->with(['user'])
             ->field("dianzan.*,user.username,user.avatar")
-            ->where(['dianzhan.at_id' => $user_id])
+            ->where(['dianzan.at_id' => $user_id])
             ->where('user.id=dianzhan.user_id')
             ->select();
         foreach($lists as  $k=>$value){
