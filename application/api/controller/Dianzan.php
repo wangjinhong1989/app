@@ -29,6 +29,7 @@ class Dianzan extends Api
             ->where('user.id=dianzan.at_id')
             ->where('article.id=dianzan.article_id')
             ->select();
+      echo   $model->getLastSql();
         foreach($lists as  $k=>$value){
             unset($lists[$k]['user']);
             unset($lists[$k]['article']);
@@ -53,7 +54,7 @@ class Dianzan extends Api
             ->where('user.id=dianzan.at_id')
             ->where('article.id=dianzan.article_id')
             ->count();
-     
+
         $this->success("成功", $lists);
     }
 
