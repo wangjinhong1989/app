@@ -30,6 +30,31 @@ class Project extends Api
         $this->success("成功", $lists);
     }
 
+    /*
+    *添加举报文章.
+    * **/
+    public function update()
+    {
+
+        try{
+            $model=new \app\admin\model\Project();
+            $user = $this->auth->getUser();
+            $id=$this->request->request('id');
+
+            if(!$id){
+                return $this->error(__('参数存在空'));
+            }
+            if(!$model::getById($id)){
+                return $this->error(__('项目不存在'));
+            }
+            $model->where(['id'=>$id])->inc("hot,rank",1);
+
+            return $this->success();
+        }catch (Exception $e){
+            return  $this->error($e->getMessage());
+        }
+
+    }
 
 
 }
