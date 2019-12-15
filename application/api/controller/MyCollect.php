@@ -33,7 +33,7 @@ class MyCollect extends Api
             ->select();
 
         $type=new Articletype();
-        $typeList=$type->where(["status"=>'显示'])->field("name")->select()->toArray();
+        $typeList=$type->where(["status"=>'显示'])->field("id,name")->select()->toArray();
 
         var_dump($typeList);
         $this->success("成功", $lists);
