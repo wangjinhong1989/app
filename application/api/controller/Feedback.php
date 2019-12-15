@@ -1,9 +1,6 @@
 <?php
 
 namespace app\api\controller;
-
-use app\admin\model\Shoucang;
-use app\admin\model\Article;
 use app\common\controller\Api;
 
 /**
