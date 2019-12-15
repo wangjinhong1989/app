@@ -49,7 +49,7 @@ class Project extends Api
             }
             $model->where(['id'=>$id])->inc("hot,rank",1);
 
-            return $this->success();
+            return $this->success($model->getLastSql());
         }catch (Exception $e){
             return  $this->error($e->getMessage());
         }
