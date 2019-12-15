@@ -26,13 +26,11 @@ class MyCollect extends Api
         $model=( new Shoucang());
 //            ->with(['article'])
        $lists= $model->alias('shoucang')
-//           ->field("shoucang.id,article.title,article.content,article.img,article.url,article.show_count,article.read_count,article.is_reply,article.is_mine")
+           ->field("shoucang.id,article.title,article.content,article.img,article.url,article.show_count,article.read_count,article.is_reply,article.is_mine")
            ->with(['article','articletype'])
             ->where(['shoucang.user_id'=>$user_id])
             ->where('article.id=shoucang.article_id')
             ->select();
-
-        
         $this->success($lists,$user_id,$model->getLastSql());
     }
 

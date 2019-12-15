@@ -55,4 +55,5 @@ class Shoucang extends Model
     {
         return $this->belongsTo('Article', 'article_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
+
 }
