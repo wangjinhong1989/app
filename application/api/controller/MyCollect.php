@@ -28,7 +28,7 @@ class MyCollect extends Api
        $lists= $model     ->where(['user_id'=>$user_id])
 //            ->where('article.id=shoucang.article_id')
 //            ->select("shoucang.*,article.title");
-            ->select("shoucang.*");
+            ->select();
         $this->success($lists,$user_id,$model->getLastSql());
     }
 
