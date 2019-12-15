@@ -67,7 +67,7 @@ class Report extends Api
                 'user_id'=>$user_id,'article_id'=>$article_id,'content'=>$content,'type'=>$type,'time'=>time()
             ]);
 
-            return $this->success('123',$model->getLastSql());
+            return $this->success();
         }catch (Exception $e){
             return  $this->error($e->getMessage());
         }
