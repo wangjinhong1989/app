@@ -31,7 +31,7 @@ class Project extends Api
     }
 
     /*
-    *添加举报文章.
+    *更新项目阅读
     * **/
     public function update()
     {
