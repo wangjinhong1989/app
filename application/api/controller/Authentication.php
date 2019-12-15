@@ -27,4 +27,43 @@ class Authentication extends Api
         $this->success($lists);
     }
 
+
+    /*
+    *添加反馈
+    * **/
+    public function add()
+    {
+
+        try{
+            $model=new \app\admin\model\Authentication();
+            $user = $this->auth->getUser();
+            $user_id = $user->id;
+            $authentication_type=$this->request->request('authentication_type');
+            $files=$this->request->request('files');
+            $certificates_id=$this->request->request('certificates_id');
+            $number=$this->request->request('number');
+            $parent_id=$this->request->input('parent_id',0);
+
+            if(!$authentication_type||!$certificates_id||!$number){
+                return $this->error(__('参数存在空'));
+            }
+
+            if($authentication_type!="个人认证"&&$parent_id==0){
+                return $this->error(__('参数存在空'));
+            }
+
+            $model->create([
+                'user_id'=>$user_id,'authentication_type'=>$authentication_type,
+                'number'=>$number,
+                'parent_id'=>$parent_id,
+                'files'=>$files,'certificates_id'=>$certificates_id,'time'=>time()
+            ]);
+
+            return $this->success();
+        }catch (Exception $e){
+            return  $this->error($e->getMessage());
+        }
+
+    }
+
 }
