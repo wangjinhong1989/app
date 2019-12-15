@@ -38,14 +38,14 @@ class HistorySearch extends Api
             $model=new SearchHistory();
             $user = $this->auth->getUser();
             $user_id = $user->id;
-            $content=$this->request->request('word');
+            $word=$this->request->request('word');
 
-            if(!$content){
+            if(!$word){
                 return $this->error(__('参数存在空'));die;
             }
 
             $model->create([
-                'user_id'=>$user_id,'word'=>$content,'time'=>time()
+                'user_id'=>$user_id,'word'=>$word,'time'=>time()
             ]);
 
             return $this->success('123',$model->getLastSql());
