@@ -31,12 +31,6 @@ class MyCollect extends Api
             ->where(['shoucang.user_id' => $user_id])
             ->where('article.id=shoucang.article_id')
             ->select();
-
-        $type=new Articletype();
-        $typeList=$type->where(["status"=>'显示'])->field("id,name")->select();
-
-        $typeList=array_combine(array_column($typeList, 'id'), $typeList);
-        var_dump($typeList[1]['name']);
         $this->success("成功", $lists);
     }
 
