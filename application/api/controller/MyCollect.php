@@ -30,7 +30,7 @@ class MyCollect extends Api
            ->with(['article','articletype'])
             ->where(['user_id'=>$user_id])
             ->where('article.id=shoucang.article_id')
-            ->whereIn('articletype.id','article_articletype_ids')
+            ->whereIn('articletype.id','article.articletype_ids')
 
             ->select();
 
