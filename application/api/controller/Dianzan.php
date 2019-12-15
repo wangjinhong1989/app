@@ -83,6 +83,9 @@ class Dianzan extends Api
                 return $this->error(__('文章不存在'));
             }
 
+            $info=(new \app\admin\model\Dianzan())->where(['article'=>$article_id,'user_id'=>$user_id])->select();
+            if($info)
+                return $this->error(__('已经关注，不需要关注了'));
             $model->create([
                 'user_id' => $user_id, 'article_id' => $article_id,'at_id'=>$article->user_id, 'time' => time()
             ]);
