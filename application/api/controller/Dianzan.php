@@ -23,13 +23,15 @@ class Dianzan extends Api
 
         $model = (new \app\admin\model\Dianzan());
         $lists = $model->alias('dianzan')
-            ->with(['user'])
-            ->field("dianzan.*,user.username,user.avatar")
+            ->with(['user','article'])
+            ->field("dianzan.*,user.username,user.avatar,article.title,article.img")
             ->where(['dianzan.user_id' => $user_id])
             ->where('user.id=dianzan.at_id')
+            ->where('article.id=dianzan.article_id')
             ->select();
         foreach($lists as  $k=>$value){
             unset($lists[$k]['user']);
+            unset($lists[$k]['article']);
         }
         $this->success("成功", $lists);
     }
@@ -45,13 +47,15 @@ class Dianzan extends Api
 
         $model = (new \app\admin\model\Dianzan());
         $lists = $model
-            ->with(['user'])
-            ->field("dianzan.*,user.username,user.avatar")
+            ->with(['user','article'])
+            ->field("dianzan.*,user.username,user.avatar,article.title,article.url")
             ->where(['dianzan.at_id' => $user_id])
             ->where('user.id=dianzan.user_id')
+            ->where('article.id=dianzan.article_id')
             ->select();
         foreach($lists as  $k=>$value){
             unset($lists[$k]['user']);
+            unset($lists[$k]['article']);
         }
         $this->success("成功", $lists);
     }
