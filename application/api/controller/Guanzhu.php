@@ -123,7 +123,10 @@ class Guanzhu extends Api
                 die;
             }
             if (!User::getById($follow_id)) {
-                return $this->error(__('被关注人'));
+                return $this->error(__('被关注人不存在'));
+            }
+            if ($model->where(['user_id'=>$user_id,'follow_id'=>$follow_id])->select()) {
+                return $this->error(__('已经关注了'));
             }
 
             $model->create([
