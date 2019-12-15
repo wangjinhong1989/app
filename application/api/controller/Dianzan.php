@@ -37,6 +37,27 @@ class Dianzan extends Api
     }
 
     /**
+     * 我点赞的列表
+     *
+     */
+    public function count()
+    {
+        $user = $this->auth->getUser();
+        $user_id = $user->id;
+
+        $model = (new \app\admin\model\Dianzan());
+        $lists = $model->alias('dianzan')
+            ->with(['user','article'])
+            ->field("dianzan.*,user.username,user.avatar,article.title,article.img")
+            ->where(['dianzan.user_id' => $user_id])
+            ->where('user.id=dianzan.at_id')
+            ->where('article.id=dianzan.article_id')
+            ->count();
+     
+        $this->success("成功", $lists);
+    }
+
+    /**
      * 点赞我的人
      *
      */
@@ -57,6 +78,27 @@ class Dianzan extends Api
             unset($lists[$k]['user']);
             unset($lists[$k]['article']);
         }
+        $this->success("成功", $lists);
+    }
+
+    /**
+     * 点赞我的人
+     *
+     */
+    public function at_me_count()
+    {
+        $user = $this->auth->getUser();
+        $user_id = $user->id;
+
+        $model = (new \app\admin\model\Dianzan());
+        $lists = $model
+            ->with(['user','article'])
+            ->field("dianzan.*,user.username,user.avatar,article.title,article.url")
+            ->where(['dianzan.at_id' => $user_id])
+            ->where('user.id=dianzan.user_id')
+            ->where('article.id=dianzan.article_id')
+            ->count();
+
         $this->success("成功", $lists);
     }
 
