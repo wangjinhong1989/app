@@ -1,10 +1,6 @@
 <?php
 
 namespace app\api\controller;
-
-
-use app\admin\model\Articletype;
-use app\admin\model\Shoucang;
 use app\admin\model\Article;
 use app\common\controller\Api;
 
@@ -17,7 +13,7 @@ class Dianzan extends Api
     protected $noNeedRight = ['*'];
 
     /**
-     * 首页
+     * 我点赞的列表
      *
      */
     public function Lists()
@@ -25,12 +21,38 @@ class Dianzan extends Api
         $user = $this->auth->getUser();
         $user_id = $user->id;
 
-        $model = (new Shoucang());
-        $lists = $model->alias('shoucang')
-            ->with(['article'])
-            ->where(['shoucang.user_id' => $user_id])
-            ->where('article.id=shoucang.article_id')
+        $model = (new \app\admin\model\Dianzan());
+        $lists = $model
+            ->with(['user'])
+            ->field("dianzan.*,user.username,user.avatar")
+            ->where(['dianzhan.user_id' => $user_id])
+            ->where('user.id=dianzhan.at_id')
             ->select();
+        foreach($lists as  $k=>$value){
+            unset($lists[$k]['user']);
+        }
+        $this->success("成功", $lists);
+    }
+
+    /**
+     * 点赞我的人
+     *
+     */
+    public function atMeLists()
+    {
+        $user = $this->auth->getUser();
+        $user_id = $user->id;
+
+        $model = (new \app\admin\model\Dianzan());
+        $lists = $model
+            ->with(['user'])
+            ->field("dianzan.*,user.username,user.avatar")
+            ->where(['dianzhan.at_id' => $user_id])
+            ->where('user.id=dianzhan.user_id')
+            ->select();
+        foreach($lists as  $k=>$value){
+            unset($lists[$k]['user']);
+        }
         $this->success("成功", $lists);
     }
 
@@ -42,7 +64,7 @@ class Dianzan extends Api
 
         try {
             $data = [];
-            $model = new Shoucang();
+            $model = new \app\admin\model\Dianzan();
             $user = $this->auth->getUser();
             $user_id = $user->id;
             $article_id = $this->request->request('article_id');
@@ -52,12 +74,13 @@ class Dianzan extends Api
                 return $this->error(__('参数存在空'));
                 die;
             }
-            if (!Article::getById($article_id)) {
+            $article=Article::getById($article_id);
+            if (!$article) {
                 return $this->error(__('文章不存在'));
             }
 
             $model->create([
-                'user_id' => $user_id, 'article_id' => $article_id, 'time' => time()
+                'user_id' => $user_id, 'article_id' => $article_id,'at_id'=>$article->user_id, 'time' => time()
             ]);
 
             return $this->success();
@@ -74,7 +97,7 @@ class Dianzan extends Api
     {
 
         try {
-            $model = new Shoucang();
+            $model = new \app\admin\model\Dianzan();
             $user = $this->auth->getUser();
             $user_id = $user->id;
             $article_id = $this->request->request('article_id');
