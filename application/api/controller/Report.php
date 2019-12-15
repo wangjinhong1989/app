@@ -23,7 +23,7 @@ class Report extends Api
     {
         $user = $this->auth->getUser();
         $user_id=$user->id;
-        $lists=(new Jubao())->where(['status'=>0,'user_id'=>$user_id])->select();
+        $lists=(new Jubao())->where(['user_id'=>$user_id])->select();
         $this->success($lists);
     }
 
