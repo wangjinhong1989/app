@@ -52,6 +52,9 @@ class Authentication extends Api
                 return $this->error(__('参数存在空'));
             }
 
+            if($model->where(['authentication_type'=>$authentication_type,'user_id'=>$user_id])->select()){
+                return $this->error(__('已上传，请不要重复提交'));
+            }
             $model->create([
                 'user_id'=>$user_id,'authentication_type'=>$authentication_type,
                 'number'=>$number,
