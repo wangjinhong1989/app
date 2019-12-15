@@ -3,6 +3,7 @@
 namespace app\api\controller;
 
 
+use app\admin\model\Articletype;
 use app\admin\model\Shoucang;
 use app\admin\model\Article;
 use app\common\controller\Api;
@@ -30,6 +31,11 @@ class MyCollect extends Api
             ->where(['shoucang.user_id' => $user_id])
             ->where('article.id=shoucang.article_id')
             ->select();
+
+        $type=new Articletype();
+        $typeList=$type->where(["status"=>'显示'])->field("name")->select()->toArray();
+
+        var_dump($typeList);
         $this->success("成功", $lists);
     }
 
