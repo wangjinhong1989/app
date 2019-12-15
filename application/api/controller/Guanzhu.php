@@ -29,7 +29,7 @@ class Guanzhu extends Api
         $model = (new \app\admin\model\Guanzhu());
         $lists = $model
             ->with(['user'])
-            ->field("guanzhu.*,user.nickname,user.avatar")
+            ->field("guanzhu.id,guanzhu.follow_id,guanzhu.time,user.nickname,user.avatar")
             ->where(['guanzhu.user_id' => $user_id])
             ->where('user.id=guanzhu.follow_id')
             ->select();
