@@ -45,4 +45,8 @@ class Guanzhu extends Model
     }
 
 
+    public function user()
+    {
+        return $this->belongsTo('User', 'follow_id', 'id', [], 'LEFT')->setEagerlyType(0);
+    }
 }
