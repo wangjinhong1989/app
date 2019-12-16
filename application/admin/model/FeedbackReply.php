@@ -5,7 +5,7 @@ namespace app\admin\model;
 use think\Model;
 
 
-class Shoucang extends Model
+class FeedbackReply extends Model
 {
 
     
@@ -13,7 +13,7 @@ class Shoucang extends Model
     
 
     // 表名
-    protected $name = 'shoucang';
+    protected $name = 'feedback_reply';
     
     // 自动写入时间戳字段
     protected $autoWriteTimestamp = false;
@@ -45,15 +45,8 @@ class Shoucang extends Model
     }
 
 
-    public function user()
+    public function feedback()
     {
-        return $this->belongsTo('User', 'user_id', 'id', [], 'LEFT')->setEagerlyType(0);
+        return $this->belongsTo('Feedback', 'feedback_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
-
-
-    public function article()
-    {
-        return $this->belongsTo('Article', 'article_id', 'id', [], 'LEFT')->setEagerlyType(0);
-    }
-
 }

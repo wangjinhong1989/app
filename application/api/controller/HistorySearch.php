@@ -38,17 +38,17 @@ class HistorySearch extends Api
             $model=new SearchHistory();
             $user = $this->auth->getUser();
             $user_id = $user->id;
-            $content=$this->request->request('word');
+            $word=$this->request->request('word');
 
-            if(!$content){
-                return $this->error(__('参数存在空'));die;
+            if(!$word){
+                return $this->error(__('参数存在空'));
             }
 
             $model->create([
-                'user_id'=>$user_id,'word'=>$content,'time'=>time()
+                'user_id'=>$user_id,'word'=>$word,'time'=>time()
             ]);
 
-            return $this->success('123',$model->getLastSql());
+            return $this->success();
         }catch (Exception $e){
             return  $this->error($e->getMessage());
         }
@@ -69,7 +69,7 @@ class HistorySearch extends Api
 
             $model->where(['user_id'=>$user_id])->delete();
 
-            return $this->success('123',$model->getLastSql());
+            return $this->success();
         }catch (Exception $e){
             return  $this->error($e->getMessage());
         }

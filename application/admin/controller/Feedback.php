@@ -9,20 +9,20 @@ use app\common\controller\Backend;
  *
  * @icon fa fa-circle-o
  */
-class Dianzan extends Backend
+class Feedback extends Backend
 {
     
     /**
-     * Dianzan模型对象
-     * @var \app\admin\model\Dianzan
+     * Feedback模型对象
+     * @var \app\admin\model\Feedback
      */
     protected $model = null;
 
     public function _initialize()
     {
         parent::_initialize();
-        $this->model = new \app\admin\model\Dianzan;
-
+        $this->model = new \app\admin\model\Feedback;
+        $this->view->assign("feedbackTypeList", $this->model->getFeedbackTypeList());
     }
     
     /**
@@ -50,24 +50,22 @@ class Dianzan extends Backend
             }
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
             $total = $this->model
-                    ->with(['user','article'])
+                    ->with(['user'])
                     ->where($where)
                     ->order($sort, $order)
                     ->count();
 
             $list = $this->model
-                    ->with(['user','article'])
+                    ->with(['user'])
                     ->where($where)
                     ->order($sort, $order)
                     ->limit($offset, $limit)
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(['id','user_id','at_id','article_id','time']);
+                $row->visible(['id','feedback_type','content','files','time']);
                 $row->visible(['user']);
 				$row->getRelation('user')->visible(['username']);
-				$row->visible(['article']);
-				$row->getRelation('article')->visible(['title']);
             }
             $list = collection($list)->toArray();
             $result = array("total" => $total, "rows" => $list);

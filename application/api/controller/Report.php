@@ -23,7 +23,9 @@ class Report extends Api
     {
         $user = $this->auth->getUser();
         $user_id=$user->id;
-        $lists=(new Jubao())->where(['status'=>0,'user_id'=>$user_id])->select();
+        $lists=(new Jubao())->with(['article'])
+            ->where("jubao.article_id=article.id")
+            ->where(['jubao.user_id'=>$user_id])->select();
         $this->success($lists);
     }
 
@@ -67,7 +69,7 @@ class Report extends Api
                 'user_id'=>$user_id,'article_id'=>$article_id,'content'=>$content,'type'=>$type,'time'=>time()
             ]);
 
-            return $this->success('123',$model->getLastSql());
+            return $this->success();
         }catch (Exception $e){
             return  $this->error($e->getMessage());
         }

@@ -5,7 +5,7 @@ namespace app\admin\model;
 use think\Model;
 
 
-class Shoucang extends Model
+class Feedback extends Model
 {
 
     
@@ -13,7 +13,7 @@ class Shoucang extends Model
     
 
     // 表名
-    protected $name = 'shoucang';
+    protected $name = 'feedback';
     
     // 自动写入时间戳字段
     protected $autoWriteTimestamp = false;
@@ -25,12 +25,24 @@ class Shoucang extends Model
 
     // 追加属性
     protected $append = [
+        'feedback_type_text',
         'time_text'
     ];
     
 
     
+    public function getFeedbackTypeList()
+    {
+        return ['功能反馈' => __('功能反馈'), '体验反馈' => __('体验反馈'), '其它' => __('其它')];
+    }
 
+
+    public function getFeedbackTypeTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['feedback_type']) ? $data['feedback_type'] : '');
+        $list = $this->getFeedbackTypeList();
+        return isset($list[$value]) ? $list[$value] : '';
+    }
 
 
     public function getTimeTextAttr($value, $data)
@@ -47,13 +59,6 @@ class Shoucang extends Model
 
     public function user()
     {
-        return $this->belongsTo('User', 'user_id', 'id', [], 'LEFT')->setEagerlyType(0);
+        return $this->belongsTo('User', 'id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
-
-
-    public function article()
-    {
-        return $this->belongsTo('Article', 'article_id', 'id', [], 'LEFT')->setEagerlyType(0);
-    }
-
 }

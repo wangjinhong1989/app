@@ -5,12 +5,12 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             // 初始化表格参数配置
             Table.api.init({
                 extend: {
-                    index_url: 'dianzan/index' + location.search,
-                    add_url: 'dianzan/add',
-                    edit_url: 'dianzan/edit',
-                    del_url: 'dianzan/del',
-                    multi_url: 'dianzan/multi',
-                    table: 'dianzan',
+                    index_url: 'feedback_reply/index' + location.search,
+                    add_url: 'feedback_reply/add',
+                    edit_url: 'feedback_reply/edit',
+                    del_url: 'feedback_reply/del',
+                    multi_url: 'feedback_reply/multi',
+                    table: 'feedback_reply',
                 }
             });
 
@@ -25,12 +25,9 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'user_id', title: __('User_id')},
-                        {field: 'at_id', title: __('At_id')},
-                        {field: 'article_id', title: __('Article_id')},
+                        {field: 'content', title: __('Content')},
                         {field: 'time', title: __('Time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'user.username', title: __('User.username')},
-                        {field: 'article.title', title: __('Article.title')},
+                        {field: 'feedback.content', title: __('Feedback.content')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
