@@ -21,7 +21,7 @@ class HistorySearch extends Api
     {
 
         $lists=( new SearchHistory())->where(['user_id'=>$this->auth->getUser()->id])->select();
-        $this->success($lists);
+        $this->success("成功",$lists);
     }
 
 

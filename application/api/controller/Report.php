@@ -26,7 +26,7 @@ class Report extends Api
         $lists=(new Jubao())->with(['article'])
             ->where("jubao.article_id=article.id")
             ->where(['jubao.user_id'=>$user_id])->select();
-        $this->success($lists);
+        $this->success("成功",$lists);
     }
 
     /*

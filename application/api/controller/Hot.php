@@ -20,6 +20,6 @@ class Hot extends Api
     public function Lists()
     {
         $lists=( new HotSearch())->where(['status'=>0])->select();
-        $this->success($lists);
+        $this->success("成功",$lists);
     }
 }

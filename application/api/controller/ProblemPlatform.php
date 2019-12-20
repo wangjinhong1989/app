@@ -20,7 +20,7 @@ class ProblemPlatform extends Api
     public function Lists()
     {
         $lists=(new Problem())->where(['status'=>'显示'])->select();
-        $this->success($lists);
+        $this->success("成功",$lists);
     }
 
 
