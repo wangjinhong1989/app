@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'Id'   => 'ID',
-    'File' => '图片',
-    'Url'  => '外链'
+    'Id'    => 'ID',
+    'Files' => '图片',
+    'Url'   => '外链'
 ];
