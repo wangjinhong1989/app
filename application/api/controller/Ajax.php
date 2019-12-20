@@ -206,7 +206,7 @@ class Ajax extends Api
         if ($splInfo) {
             $params = array(
                 'admin_id'    => 0,
-                'user_id'     => (int)$this->auth->getUser()->id,
+                'user_id'     => 0,
                 'filesize'    => $fileInfo['size'],
                 'imagewidth'  => $imagewidth,
                 'imageheight' => $imageheight,
