@@ -29,6 +29,6 @@ class Ad extends Api
             Cache::store('redis')->set('ad_list',$lists,60);
         }
 
-        $this->success($lists);
+        $this->success("成功",$lists);
     }
 }
