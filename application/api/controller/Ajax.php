@@ -17,7 +17,7 @@ use think\Lang;
 class Ajax extends Api
 {
 
-    protected $noNeedLogin = ['lang','front_upload'];
+    protected $noNeedLogin = ['*'];
     protected $noNeedRight = ['*'];
     protected $layout = '';
 
