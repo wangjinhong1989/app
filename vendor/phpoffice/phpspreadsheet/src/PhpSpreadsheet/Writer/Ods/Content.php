@@ -383,7 +383,7 @@ class Content extends WriterPart
         }
 
         $mergeRange = Coordinate::splitRange($cell->getMergeRange());
-        [$startCell, $endCell] = $mergeRange[0];
+        list($startCell, $endCell) = $mergeRange[0];
         $start = Coordinate::coordinateFromString($startCell);
         $end = Coordinate::coordinateFromString($endCell);
         $columnSpan = Coordinate::columnIndexFromString($end[0]) - Coordinate::columnIndexFromString($start[0]) + 1;

@@ -43,7 +43,7 @@ class Slk extends BaseReader
      */
     public function __construct()
     {
-        parent::__construct();
+        $this->readFilter = new DefaultReadFilter();
     }
 
     /**
@@ -384,7 +384,7 @@ class Slk extends BaseReader
 
                             break;
                         case 'W':
-                            [$startCol, $endCol, $columnWidth] = explode(' ', substr($rowDatum, 1));
+                            list($startCol, $endCol, $columnWidth) = explode(' ', substr($rowDatum, 1));
 
                             break;
                         case 'S':

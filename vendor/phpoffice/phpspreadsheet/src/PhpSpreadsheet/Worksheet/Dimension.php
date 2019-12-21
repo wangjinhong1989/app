@@ -64,7 +64,7 @@ abstract class Dimension
      */
     public function setVisible($pValue)
     {
-        $this->visible = (bool) $pValue;
+        $this->visible = $pValue;
 
         return $this;
     }
@@ -119,7 +119,7 @@ abstract class Dimension
      */
     public function setCollapsed($pValue)
     {
-        $this->collapsed = (bool) $pValue;
+        $this->collapsed = $pValue;
 
         return $this;
     }

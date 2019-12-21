@@ -417,7 +417,7 @@ class Financial
             return Functions::VALUE();
         }
 
-        if (($settlement >= $maturity) ||
+        if (($settlement > $maturity) ||
             (!self::isValidFrequency($frequency)) ||
             (($basis < 0) || ($basis > 4))) {
             return Functions::NAN();
@@ -476,7 +476,7 @@ class Financial
             return Functions::VALUE();
         }
 
-        if (($settlement >= $maturity) ||
+        if (($settlement > $maturity) ||
             (!self::isValidFrequency($frequency)) ||
             (($basis < 0) || ($basis > 4))) {
             return Functions::NAN();
@@ -550,7 +550,7 @@ class Financial
             return Functions::VALUE();
         }
 
-        if (($settlement >= $maturity) ||
+        if (($settlement > $maturity) ||
             (!self::isValidFrequency($frequency)) ||
             (($basis < 0) || ($basis > 4))) {
             return Functions::NAN();
@@ -610,7 +610,7 @@ class Financial
             return Functions::VALUE();
         }
 
-        if (($settlement >= $maturity) ||
+        if (($settlement > $maturity) ||
             (!self::isValidFrequency($frequency)) ||
             (($basis < 0) || ($basis > 4))) {
             return Functions::NAN();
@@ -667,22 +667,26 @@ class Financial
             return Functions::VALUE();
         }
 
-        if (($settlement >= $maturity) ||
+        if (($settlement > $maturity) ||
             (!self::isValidFrequency($frequency)) ||
             (($basis < 0) || ($basis > 4))) {
             return Functions::NAN();
         }
 
-        $daysPerYear = self::daysPerYear(DateTime::YEAR($settlement), $basis);
-        $daysBetweenSettlementAndMaturity = DateTime::YEARFRAC($settlement, $maturity, $basis) * $daysPerYear;
+        $settlement = self::couponFirstPeriodDate($settlement, $maturity, $frequency, true);
+        $daysBetweenSettlementAndMaturity = DateTime::YEARFRAC($settlement, $maturity, $basis) * 365;
 
         switch ($frequency) {
             case 1: // annual payments
+                return ceil($daysBetweenSettlementAndMaturity / 360);
             case 2: // half-yearly
+                return ceil($daysBetweenSettlementAndMaturity / 180);
             case 4: // quarterly
+                return ceil($daysBetweenSettlementAndMaturity / 90);
             case 6: // bimonthly
+                return ceil($daysBetweenSettlementAndMaturity / 60);
             case 12: // monthly
-                return ceil($daysBetweenSettlementAndMaturity / $daysPerYear * $frequency);
+                return ceil($daysBetweenSettlementAndMaturity / 30);
         }
 
         return Functions::VALUE();
@@ -736,7 +740,7 @@ class Financial
             return Functions::VALUE();
         }
 
-        if (($settlement >= $maturity) ||
+        if (($settlement > $maturity) ||
             (!self::isValidFrequency($frequency)) ||
             (($basis < 0) || ($basis > 4))) {
             return Functions::NAN();

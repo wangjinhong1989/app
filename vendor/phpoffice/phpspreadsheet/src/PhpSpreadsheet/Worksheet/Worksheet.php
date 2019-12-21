@@ -1096,7 +1096,7 @@ class Worksheet implements IComparable
      * @param string $column Return the highest data row for the specified column,
      *                                     or the highest data row of any column if no column letter is passed
      *
-     * @return int Highest row number that contains data
+     * @return string Highest row number that contains data
      */
     public function getHighestDataRow($column = null)
     {
@@ -1191,12 +1191,9 @@ class Worksheet implements IComparable
      */
     public function getCell($pCoordinate, $createIfNotExists = true)
     {
-        // Uppercase coordinate
-        $pCoordinateUpper = strtoupper($pCoordinate);
-
         // Check cell collection
-        if ($this->cellCollection->has($pCoordinateUpper)) {
-            return $this->cellCollection->get($pCoordinateUpper);
+        if ($this->cellCollection->has(strtoupper($pCoordinate))) {
+            return $this->cellCollection->get($pCoordinate);
         }
 
         // Worksheet reference?
@@ -1217,6 +1214,9 @@ class Worksheet implements IComparable
             }
         }
 
+        // Uppercase coordinate
+        $pCoordinate = strtoupper($pCoordinate);
+
         if (Coordinate::coordinateIsRange($pCoordinate)) {
             throw new Exception('Cell coordinate can not be a range of cells.');
         } elseif (strpos($pCoordinate, '$') !== false) {
@@ -1224,7 +1224,7 @@ class Worksheet implements IComparable
         }
 
         // Create new cell object, if required
-        return $createIfNotExists ? $this->createNewCell($pCoordinateUpper) : null;
+        return $createIfNotExists ? $this->createNewCell($pCoordinate) : null;
     }
 
     /**
@@ -1268,9 +1268,7 @@ class Worksheet implements IComparable
         if (Coordinate::columnIndexFromString($this->cachedHighestColumn) < Coordinate::columnIndexFromString($aCoordinates[0])) {
             $this->cachedHighestColumn = $aCoordinates[0];
         }
-        if ($aCoordinates[1] > $this->cachedHighestRow) {
-            $this->cachedHighestRow = $aCoordinates[1];
-        }
+        $this->cachedHighestRow = max($this->cachedHighestRow, $aCoordinates[1]);
 
         // Cell needs appropriate xfIndex from dimensions records
         //    but don't create dimension records if they don't already exist
@@ -1441,7 +1439,7 @@ class Worksheet implements IComparable
         $this->parent->setActiveSheetIndex($this->parent->getIndex($this));
 
         // set cell coordinate as active
-        $this->setSelectedCells($pCellCoordinate);
+        $this->setSelectedCells(strtoupper($pCellCoordinate));
 
         return $this->parent->getCellXfSupervisor();
     }
@@ -1561,7 +1559,7 @@ class Worksheet implements IComparable
         }
 
         // Calculate range outer borders
-        [$rangeStart, $rangeEnd] = Coordinate::rangeBoundaries($pRange . ':' . $pRange);
+        list($rangeStart, $rangeEnd) = Coordinate::rangeBoundaries($pRange . ':' . $pRange);
 
         // Make sure we can loop upwards on rows and columns
         if ($rangeStart[0] > $rangeEnd[0] && $rangeStart[1] > $rangeEnd[1]) {
@@ -1601,7 +1599,7 @@ class Worksheet implements IComparable
         }
 
         // Calculate range outer borders
-        [$rangeStart, $rangeEnd] = Coordinate::rangeBoundaries($pRange . ':' . $pRange);
+        list($rangeStart, $rangeEnd) = Coordinate::rangeBoundaries($pRange . ':' . $pRange);
 
         // Make sure we can loop upwards on rows and columns
         if ($rangeStart[0] > $rangeEnd[0] && $rangeStart[1] > $rangeEnd[1]) {
@@ -2064,7 +2062,7 @@ class Worksheet implements IComparable
     /**
      * Insert a new column, updating all possible related data.
      *
-     * @param string $pBefore Insert before this one, eg: 'A'
+     * @param int $pBefore Insert before this one, eg: 'A'
      * @param int $pNumCols Number of columns to insert
      *
      * @throws Exception
@@ -2115,10 +2113,6 @@ class Worksheet implements IComparable
     public function removeRow($pRow, $pNumRows = 1)
     {
         if ($pRow >= 1) {
-            for ($r = 0; $r < $pNumRows; ++$r) {
-                $this->getCellCollection()->removeRow($pRow + $r);
-            }
-
             $highestRow = $this->getHighestDataRow();
             $objReferenceHelper = ReferenceHelper::getInstance();
             $objReferenceHelper->insertNewBefore('A' . ($pRow + $pNumRows), 0, -$pNumRows, $this);
@@ -2428,7 +2422,7 @@ class Worksheet implements IComparable
         $pCoordinate = preg_replace('/^(\d+):(\d+)$/', 'A${1}:XFD${2}', $pCoordinate);
 
         if (Coordinate::coordinateIsRange($pCoordinate)) {
-            [$first] = Coordinate::splitRange($pCoordinate);
+            list($first) = Coordinate::splitRange($pCoordinate);
             $this->activeCell = $first[0];
         } else {
             $this->activeCell = $pCoordinate;
@@ -2497,7 +2491,7 @@ class Worksheet implements IComparable
         }
 
         // start coordinate
-        [$startColumn, $startRow] = Coordinate::coordinateFromString($startCell);
+        list($startColumn, $startRow) = Coordinate::coordinateFromString($startCell);
 
         // Loop through $source
         foreach ($source as $rowData) {
@@ -2539,7 +2533,7 @@ class Worksheet implements IComparable
         // Returnvalue
         $returnValue = [];
         //    Identify the range that we need to extract from the worksheet
-        [$rangeStart, $rangeEnd] = Coordinate::rangeBoundaries($pRange);
+        list($rangeStart, $rangeEnd) = Coordinate::rangeBoundaries($pRange);
         $minCol = Coordinate::stringFromColumnIndex($rangeStart[0]);
         $minRow = $rangeStart[1];
         $maxCol = Coordinate::stringFromColumnIndex($rangeEnd[0]);

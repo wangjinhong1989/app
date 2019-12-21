@@ -319,7 +319,7 @@ class GridLines extends Properties
      * Set Shadow Properties Values.
      *
      * @param array $properties_map
-     * @param mixed &$reference
+     * @param * $reference
      *
      * @return GridLines
      */
@@ -439,7 +439,7 @@ class GridLines extends Properties
     {
         if ($size !== null) {
             $this->activateObject();
-            $this->softEdges['size'] = (string) $this->getExcelPointsWidth($size);
+            $softEdges['size'] = (string) $this->getExcelPointsWidth($size);
         }
     }
 

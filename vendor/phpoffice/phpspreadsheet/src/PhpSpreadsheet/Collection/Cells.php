@@ -241,7 +241,7 @@ class Cells
      */
     public function getHighestColumn($row = null)
     {
-        if ($row === null) {
+        if ($row == null) {
             $colRow = $this->getHighestRowAndColumn();
 
             return $colRow['column'];
@@ -259,7 +259,7 @@ class Cells
             $columnList[] = Coordinate::columnIndexFromString($c);
         }
 
-        return Coordinate::stringFromColumnIndex(max($columnList));
+        return Coordinate::stringFromColumnIndex(max($columnList) + 1);
     }
 
     /**
@@ -272,7 +272,7 @@ class Cells
      */
     public function getHighestRow($column = null)
     {
-        if ($column === null) {
+        if ($column == null) {
             $colRow = $this->getHighestRowAndColumn();
 
             return $colRow['row'];
@@ -495,12 +495,15 @@ class Cells
     /**
      * Returns all known cache keys.
      *
-     * @return \Generator|string[]
+     * @return string[]
      */
     private function getAllCacheKeys()
     {
+        $keys = [];
         foreach ($this->getCoordinates() as $coordinate) {
-            yield $this->cachePrefix . $coordinate;
+            $keys[] = $this->cachePrefix . $coordinate;
         }
+
+        return $keys;
     }
 }
