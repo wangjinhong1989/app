@@ -3,6 +3,7 @@
 namespace app\api\controller;
 
 use app\admin\model\Article;
+use app\admin\model\Guanggao;
 use app\common\controller\Api;
 use think\Db;
 use think\db\Query;
@@ -63,6 +64,14 @@ class ArticleManager extends Api
             ->limit($offset,$page_size)->count();
 
 
+        $guanggao=new Guanggao();
+        $ad=$guanggao->where("rand()")->find()->toArray();
+
+        foreach ($data["rows"] as $key=>$value){
+            $data["rows"]["key"]["is_ad"]=false;
+        }
+        $ad["is_ad"]=true;
+        array_push($data["rows"],$ad);
 
         $data["page"]=$page;
 
