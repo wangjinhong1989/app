@@ -45,7 +45,7 @@ class ArticleManager extends Api
         }
 
 
-        $data["rows"]=Db::table("fa_article")->alias("article")
+        $data["rows"]=Db::table("fa_article")->alias("article")->field("article.*")
             ->where($where)
             ->join("fa_articletype  articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user  user","user.id=article.user_id","left")
