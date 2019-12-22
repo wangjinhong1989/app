@@ -80,7 +80,7 @@ class ArticleManager extends Api
         $model=new Article();
 
         $where=[];
-        $where["id"]=$id;
+        $where["article.id"]=$id;
 
         $query=new Query();
         $detail=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
