@@ -11,6 +11,8 @@ return [
     'Img'              => '封面',
     'Read_count'       => '阅读次数',
     'Show_count'       => '展示次数',
-    'Articletype.name' => '文章类型',
+    'Is_reply'         => '允许评论',
+    'Is_mine'          => '是否是原创',
+    'Articletype.name' => '分类名称',
     'User.username'    => '用户名'
 ];

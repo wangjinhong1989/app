@@ -5,7 +5,7 @@ namespace app\admin\controller;
 use app\common\controller\Backend;
 
 /**
- * 
+ * 启动页
  *
  * @icon fa fa-circle-o
  */

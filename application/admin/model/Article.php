@@ -26,15 +26,26 @@ class Article extends Model
     // 追加属性
     protected $append = [
         'create_time_text',
-        'status_text'
+        'status_text',
+        'is_reply_text',
+        'is_mine_text'
     ];
     
-
 
     
     public function getStatusList()
     {
-        return ['0' => __('Status 0'), '1' => __('Status 1')];
+        return ['显示' => __('显示'), '隐藏' => __('隐藏')];
+    }
+
+    public function getIsReplyList()
+    {
+        return ['是' => __('是'), '否' => __('否')];
+    }
+
+    public function getIsMineList()
+    {
+        return ['是' => __('是'), '否' => __('否')];
     }
 
 
@@ -49,6 +60,22 @@ class Article extends Model
     {
         $value = $value ? $value : (isset($data['status']) ? $data['status'] : '');
         $list = $this->getStatusList();
+        return isset($list[$value]) ? $list[$value] : '';
+    }
+
+
+    public function getIsReplyTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['is_reply']) ? $data['is_reply'] : '');
+        $list = $this->getIsReplyList();
+        return isset($list[$value]) ? $list[$value] : '';
+    }
+
+
+    public function getIsMineTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['is_mine']) ? $data['is_mine'] : '');
+        $list = $this->getIsMineList();
         return isset($list[$value]) ? $list[$value] : '';
     }
 

@@ -23,6 +23,8 @@ class Article extends Backend
         parent::_initialize();
         $this->model = new \app\admin\model\Article;
         $this->view->assign("statusList", $this->model->getStatusList());
+        $this->view->assign("isReplyList", $this->model->getIsReplyList());
+        $this->view->assign("isMineList", $this->model->getIsMineList());
     }
     
     /**
@@ -63,8 +65,10 @@ class Article extends Backend
                     ->select();
 
             foreach ($list as $row) {
-                
-                $row->getRelation('articletype')->visible(['name']);
+                $row->visible(['id','title','description','create_time','status','url','img','read_count','show_count','is_reply','is_mine']);
+                $row->visible(['articletype']);
+				$row->getRelation('articletype')->visible(['name']);
+				$row->visible(['user']);
 				$row->getRelation('user')->visible(['username']);
             }
             $list = collection($list)->toArray();
