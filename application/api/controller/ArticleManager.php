@@ -66,7 +66,7 @@ class ArticleManager extends Api
 
         $guanggao=new Guanggao();
 
-        $ad=Db::table($guanggao->getTable())->where([])->limit(1)->find()->toArray();
+        $ad=Db::table($guanggao->getTable())->where([])->limit(1)->find()->getAttr();
 
         foreach ($data["rows"] as $key=>$value){
             $data["rows"]["key"]["is_ad"]=false;
