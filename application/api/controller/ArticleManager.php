@@ -27,7 +27,7 @@ class ArticleManager extends Api
         $data["count"]=$model->where(['status'=>0])->count();
         $data["page"]=$page;
         $data["total_page"]=ceil($data["count"]/$page_size);
-        $this->success($data);
+        $this->success("成功",$data);
     }
 
 }
