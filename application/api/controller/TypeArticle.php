@@ -20,8 +20,8 @@ class TypeArticle extends Api
      */
     public function Lists()
     {
-        $lists=( new Articletype())->where(['status'=>0])->select();
-        $this->success(['total'=>count($lists),'rows'=>$lists]);
+        $lists=( new Articletype())->where(['status'=>"显示"])->select();
+        $this->success("",$lists);
     }
 
 }
