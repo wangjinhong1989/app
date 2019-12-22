@@ -6,6 +6,7 @@ use app\common\controller\Api;
 use app\common\library\Sms as Smslib;
 use app\common\model\User;
 use think\Hook;
+use think\Config;
 
 /**
  * 手机短信接口
