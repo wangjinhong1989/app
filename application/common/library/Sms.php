@@ -54,6 +54,11 @@ class Sms
         $ip = request()->ip();
         $sms = \app\common\model\Sms::create(['event' => $event, 'mobile' => $mobile, 'code' => $code, 'ip' => $ip, 'createtime' => $time]);
         $result = Hook::listen('sms_send', $sms, null, true);
+
+        $client =  new \JiGuang\JSMS(config("jiguang_app_key"), config("jiguang_master_secret"), [ 'disable_ssl' => true ]);
+
+        $ret=$client->sendCode($mobile,1,null);
+
         if (!$result) {
             $sms->delete();
             return false;
