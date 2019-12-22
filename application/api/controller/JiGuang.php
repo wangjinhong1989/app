@@ -29,7 +29,7 @@ class JiGuang extends Api
         echo config("jiguang_master_secret");
         $client =  new \JiGuang\JSMS(config("jiguang_app_key"), config("jiguang_master_secret"), [ 'disable_ssl' => true ]);
 
-        echo $client->sendCode($mobile, 1, $sign = null);
+        echo \GuzzleHttp\json_encode($client->sendCode($mobile, 1, $sign = null));
     }
 
     /**
