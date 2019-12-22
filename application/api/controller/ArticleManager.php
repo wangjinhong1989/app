@@ -66,15 +66,18 @@ class ArticleManager extends Api
 
         $guanggao=new Guanggao();
 
-        $ad=Db::table($guanggao->getTable())->where([])->limit(1)->find();
+        $ad=Db::table($guanggao->getTable())->where([])->limit(1)->select();
 
         foreach ($data["rows"] as $key=>$value){
             $data["rows"]["key"]["is_ad"]=false;
         }
-        $ad=$ad->toArray();
-        $ad["is_ad"]=true;
-        array_push($data["rows"],$ad);
 
+        if(!empty($ad)){
+
+            $ad[0]["is_ad"]=true;
+            array_push($data["rows"],$ad[0]);
+
+        }
         $data["page"]=$page;
 
         $data["total_page"]=ceil($data["count"]/$page_size);
