@@ -89,6 +89,12 @@ class ArticleManager extends Api
             ->join("fa_user user","user.id=article.user_id","left")
             ->find();
 
+        if($detail){
+            $article=$model->where(["id"=>$id])->find();
+            $article->read_count=$article->read_count+1;
+            $article->show_count=$article->show_count+1;
+            $article->save();
+        }
         $this->success("成功",$detail);
     }
 
