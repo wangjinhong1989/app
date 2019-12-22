@@ -25,7 +25,8 @@
         "karsonzhang/fastadmin-addons": "~1.1.9",
         "overtrue/pinyin": "~3.0",
         "phpoffice/phpspreadsheet": "^1.2",
-        "jiguang/jsms": "~1.0"
+        "jiguang/jsms": "~1.0",
+        "jpush/jpush": "*"
     },
     "config": {
         "preferred-install": "dist"

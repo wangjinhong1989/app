@@ -99,7 +99,7 @@ class JiGuang extends Api
         if($res["http_code"]==200){
             $this->success();
         }else{
-            $this->error("短信错误",$res,1001);
+            $this->error("认证失败",$res,1001);
         }
 
     }
