@@ -27,7 +27,7 @@ class ProblemPlatform extends Api
 
     public function detail()
     {
-        $id=$this->request->request("id",0)
+        $id=$this->request->request("id",0);
         $lists=(new Problem())->where(['id'=>$id])->find();
         $this->success("成功",$lists);
     }
