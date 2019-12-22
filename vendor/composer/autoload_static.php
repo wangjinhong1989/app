@@ -95,6 +95,7 @@ class ComposerStaticInitc2b0bef56335094f4a90d4285e30c29f
         'J' => 
         array (
             'JiGuang\\' => 8,
+            'JPush\\' => 6,
         ),
         'G' => 
         array (
@@ -183,6 +184,10 @@ class ComposerStaticInitc2b0bef56335094f4a90d4285e30c29f
         'JiGuang\\' => 
         array (
             0 => __DIR__ . '/..' . '/jiguang/jsms/src',
+        ),
+        'JPush\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jpush/jpush/src/JPush',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
