@@ -83,4 +83,8 @@ class Guanggao extends Model
     }
 
 
+    public function adtype()
+    {
+        return $this->belongsTo('Adtype', 'adtype_id', 'id', [], 'LEFT')->setEagerlyType(0);
+    }
 }
