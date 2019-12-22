@@ -31,7 +31,7 @@ class ArticleManager extends Api
 //        $data["count"]=$model->where(['status'=>0])->count();
 
         $query=new Query();
-        $query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar");
+        $query=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar");
 
 
         // 需要查找的类型.
