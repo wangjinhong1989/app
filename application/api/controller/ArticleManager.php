@@ -70,4 +70,26 @@ class ArticleManager extends Api
         $this->success("成功",$data);
     }
 
+    /**
+     * 详情页
+     *
+     */
+    public function detail()
+    {
+        $id=$this->request->request("id",0);
+        $model=new Article();
+
+        $where=[];
+        $where["id"]=$id;
+
+        $query=new Query();
+        $detail=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
+            ->where($where)
+            ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
+            ->join("fa_user user","user.id=article.user_id","left")
+            ->select();
+
+        $this->success("成功",$detail);
+    }
+
 }
