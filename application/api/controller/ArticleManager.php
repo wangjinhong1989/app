@@ -87,7 +87,7 @@ class ArticleManager extends Api
             ->where($where)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
-            ->select();
+            ->find();
 
         $this->success("成功",$detail);
     }
