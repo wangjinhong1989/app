@@ -25,9 +25,11 @@ class JiGuang extends Api
     {
         $mobile = $this->request->request("mobile");
 
+        echo config("jiguang_app_key");
+        echo config("jiguang_master_secret");
         $client =  new \JiGuang\JSMS(config("jiguang_app_key"), config("jiguang_master_secret"), [ 'disable_ssl' => true ]);
 
-        $this->success("",$client->sendCode($mobile, 1, $sign = null));
+        echo $client->sendCode($mobile, 1, $sign = null);
     }
 
     /**
