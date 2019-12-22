@@ -5,6 +5,7 @@ namespace app\api\controller;
 use app\admin\model\Article;
 use app\common\controller\Api;
 use think\Db;
+use think\db\Query;
 use think\view\driver\Think;
 
 /**
@@ -41,18 +42,20 @@ class ArticleManager extends Api
 
         $keyword=$this->request->request("keyword","");
         if($keyword){
-            $where[]=["article.title|article.content|article.content","like","%".$keyword."%"];
+            $where[]=["article.title|article.description|article.content","like","%".$keyword."%"];
         }
 
 
-        $data["rows"]=Db::table("fa_article")->alias("article")->field("article.*")
+        $query=new Query();
+        $data["rows"]=$query->table("fa_article")->alias("article")->field("article.*,fa_articletype.name as articletype_name,fa_user.username,fa_user.avatar")
             ->where($where)
             ->join("fa_articletype","fa_articletype.id=article.articletype_id","left")
             ->join("fa_user","fa_user.id=article.user_id","left")
             ->limit($offset,$page_size)->select();
 
 
-        $data["count"]=Db::table("fa_article")->alias("article")
+
+        $data["count"]=$query->table("fa_article")->alias("article")
             ->where($where)
             ->join("fa_articletype","fa_articletype.id=article.articletype_id","left")
             ->join("fa_user","fa_user.id=article.user_id","left")
@@ -62,13 +65,6 @@ class ArticleManager extends Api
 
         $data["page"]=$page;
 
-//        foreach ($data["rows"] as $key=>$value){
-//            $data["rows"][$key]["username"]=$data["rows"][$key]["user"]["username"];
-//            $data["rows"][$key]["avatar"]=$data["rows"][$key]["user"]["avatar"];
-//            $data["rows"][$key]["articletype_name"]=$data["rows"][$key]["articletype"]["name"];
-//            unset($data["rows"][$key]["user"]);
-//            unset($data["rows"][$key]["articletype"]);
-//        }
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);
     }
