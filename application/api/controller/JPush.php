@@ -26,7 +26,7 @@ class JPush extends Api
     {
 
 
-        $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"), [ 'disable_ssl' => true ]);
+        $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
 
         $client->push()
             ->setPlatform('all')
