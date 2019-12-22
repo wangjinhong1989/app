@@ -28,11 +28,18 @@ class JPush extends Api
 
         $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
 
-        $client->push()
-            ->setPlatform('all')
-            ->addAllAudience()
-            ->setNotificationAlert('Hello, JPush')
-            ->send();
+
+
+        try {
+            $client->push()
+                ->setPlatform('all')
+                ->addAllAudience()
+                ->setNotificationAlert('Hello, JPush')
+                ->send();
+        } catch (\JPush\Exceptions\JPushException $e) {
+            // try something else here
+            print $e;
+        }
 
     }
 
