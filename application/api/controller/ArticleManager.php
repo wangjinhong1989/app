@@ -31,19 +31,19 @@ class ArticleManager extends Api
 //        $data["count"]=$model->where(['status'=>0])->count();
 
         $where=[];
-        $where[]=['article.status'=>"显示"];
+        $where["article.status"]=["eq","显示"];
 
         // 需要查找的类型.
         $articletype_id=$this->request->request("articletype_id",0);
         if($articletype_id){
-            $where[]=["articletype.articletype_id"=>$articletype_id];
+            $where["articletype.articletype_id"]=["eq",$articletype_id];
         }
 
         // keyword 检索. 关键字检索.
 
         $keyword=$this->request->request("keyword","");
         if($keyword){
-            $where[]=["article.title|article.description|article.content"=>["like","%".$keyword."%"]];
+            $where["article.title|article.description|article.content"]=["like","%".$keyword."%"];
         }
 
 
