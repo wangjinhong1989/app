@@ -31,13 +31,12 @@ class ArticleManager extends Api
 //        $data["count"]=$model->where(['status'=>0])->count();
 
         $query=new Query();
-        $query=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar");
+        $query=$query->table("fa_article")->alias("article");
 
 
         // 需要查找的类型.
         $articletype_id=$this->request->request("articletype_id",0);
         if($articletype_id){
-            $where[]=["articletype.articletype_id"=>$articletype_id];
             $query=$query->where("articletype.articletype_id","=",$articletype_id);
         }
 
@@ -50,7 +49,7 @@ class ArticleManager extends Api
 
 
 
-        $data["rows"]=$query
+        $data["rows"]=$query->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
             ->limit($offset,$page_size)->select();
