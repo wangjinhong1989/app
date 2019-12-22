@@ -47,15 +47,15 @@ class ArticleManager extends Api
 
         $data["rows"]=Db::table("fa_article")->alias("article")->field("article.*")
             ->where($where)
-            ->join("fa_articletype","articletype.id=article.articletype_id","left")
-            ->join("fa_user","user.id=article.user_id","left")
+            ->join("fa_articletype","fa_articletype.id=article.articletype_id","left")
+            ->join("fa_user","fa_user.id=article.user_id","left")
             ->limit($offset,$page_size)->select();
 
 
         $data["count"]=Db::table("fa_article")->alias("article")
             ->where($where)
-            ->join("fa_articletype","articletype.id=article.articletype_id","left")
-            ->join("fa_user","user.id=article.user_id","left")
+            ->join("fa_articletype","fa_articletype.id=article.articletype_id","left")
+            ->join("fa_user","fa_user.id=article.user_id","left")
             ->limit($offset,$page_size)->count();
 
 
