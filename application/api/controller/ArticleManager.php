@@ -18,8 +18,16 @@ class ArticleManager extends Api
      */
     public function Lists()
     {
-        $lists=( new Article())->where(['status'=>0])->select();
-        $this->success($lists);
+        $page=$this->request->request("page",1);
+        $page_size=$this->request->request("page_size",5);
+        $offset=($page-1)*$page_size;
+        $model=new Article();
+        $data=[];
+        $data["rows"]=$model->where(['status'=>0])->limit($offset,$page_size)->select();
+        $data["count"]=$model->where(['status'=>0])->count();
+        $data["page"]=$page;
+        $data["total_page"]=ceil($data["count"]/$page_size);
+        $this->success($data);
     }
 
 }

@@ -62,7 +62,6 @@
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
           <root url="file://$MODULE_DIR$/vendor/karsonzhang/fastadmin-addons" />
           <root url="file://$MODULE_DIR$/vendor/markbaker/complex" />
-          <root url="file://$MODULE_DIR$/vendor/markbaker/matrix" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/mtdowling/cron-expression" />
           <root url="file://$MODULE_DIR$/vendor/overtrue/pinyin" />
@@ -94,7 +93,6 @@
           <root url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
           <root url="file://$MODULE_DIR$/vendor/karsonzhang/fastadmin-addons" />
           <root url="file://$MODULE_DIR$/vendor/markbaker/complex" />
-          <root url="file://$MODULE_DIR$/vendor/markbaker/matrix" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/mtdowling/cron-expression" />
           <root url="file://$MODULE_DIR$/vendor/overtrue/pinyin" />
