@@ -30,6 +30,7 @@ class ArticleManager extends Api
 //        $data["rows"]=$model->with("user,articletype")->where(['article.status'=>"显示"])->limit($offset,$page_size)->select();
 //        $data["count"]=$model->where(['status'=>0])->count();
 
+        $where=[];
         $where[]=['article.status'=>"显示"];
 
         // 需要查找的类型.
