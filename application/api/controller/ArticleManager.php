@@ -36,7 +36,7 @@ class ArticleManager extends Api
         // 需要查找的类型.
         $articletype_id=$this->request->request("articletype_id",0);
         if($articletype_id){
-            $where["articletype.articletype_id"]=["eq",$articletype_id];
+            $where["article.articletype_id"]=["eq",$articletype_id];
         }
 
         // keyword 检索. 关键字检索.
