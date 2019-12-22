@@ -294,4 +294,7 @@ return [
         //API接口地址
         'api_url'             => 'https://api.fastadmin.net',
     ],
+
+    "jiguang_app_key"=>"6215ae4917cb8c6db9262a45",
+    "jiguang_master_secret"=>"d536088255f79affba271290"
 ];
