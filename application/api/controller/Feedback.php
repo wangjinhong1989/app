@@ -21,8 +21,16 @@ class Feedback extends Api
         $user_id = $user->id;
 
         $model = (new \app\admin\model\Feedback());
-        $lists = $model->where(['user_id' => $user_id])
+
+
+        $page=$this->request->request("page",1);
+        $page_size=$this->request->request("page_size",5);
+        $offset=($page-1)*$page_size;
+
+        $lists = $model->where(['user_id' => $user_id])->limit($offset,$page_size)
             ->select();
+
+        $count = $model->where(['user_id' => $user_id])->count();
 
         $model1 = (new \app\admin\model\FeedbackReply());
         foreach($lists as $k=>$value){
@@ -31,7 +39,14 @@ class Feedback extends Api
                 ->select();
         }
 
-        $this->success("成功", $lists);
+        $data=[];
+
+        $data["page"]=$page;
+        $data["rows"]=$page;
+        $data["count"]=$count;
+
+        $data["total_page"]=ceil($data["count"]/$page_size);
+        $this->success("成功", $data);
     }
 
 
