@@ -33,7 +33,7 @@ class ProblemPlatform extends Api
         $data["page"]=$page;
 
         $data["total_page"]=ceil($data["count"]/$page_size);
-        $this->success("成功",$data["rows"]);
+        $this->success("成功",$data);
     }
 
     public function detail()
