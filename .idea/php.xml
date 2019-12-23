@@ -12,7 +12,6 @@
       <path value="$PROJECT_DIR$/vendor/overtrue/socialite" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/overtrue/pinyin" />
-      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/mtdowling/cron-expression" />
@@ -32,7 +31,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/jpush/jpush" />
+      <path value="$PROJECT_DIR$/vendor/jiguang/jsms" />
     </include_path>
   </component>
 </project>
-

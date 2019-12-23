@@ -25,6 +25,8 @@ class JiGuang extends Api
     public function send()
     {
 
+        return $this->success("","123456789");die;
+
         $mobile = $this->request->request("mobile");
         $event = $this->request->request("event");
 
@@ -67,6 +69,9 @@ class JiGuang extends Api
      */
     public function check()
     {
+
+
+        return $this->success();die;
 
         $mobile = $this->request->request("mobile");
         $event = $this->request->request("event");
