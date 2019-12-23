@@ -36,7 +36,7 @@ class AuthenticationMedia extends Api
             $user_id = $user->id;
 //            $type=$this->request->request('type','个人认证');
             $files=$this->request->request('files');
-            $certificates_type=$this->request->request('certificates_type');
+            $certificates_type=$this->request->request('certificates_type',"企业营业执照");
             $name=$this->request->request('name');
             $certificates_number=$this->request->request('certificates_number');
             $note=$this->request->input('note','');
