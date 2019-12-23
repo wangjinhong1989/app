@@ -20,20 +20,26 @@ class Project extends Api
      */
     public function Lists()
     {
-        $user = $this->auth->getUser();
-        $user_id = $user->id;
 
-        $model = (new \app\admin\model\Project());
-        $lists = $model
-            ->where(['status'=>'显示'])
-            ->select();
-        $this->success("成功", $lists);
+        $page=$this->request->request("page",1);
+        $page_size=$this->request->request("page_size",5);
+        $offset=($page-1)*$page_size;
+
+        $data=[];
+
+        $data["rows"]=(new \app\admin\model\Project())->where(['status'=>'显示'])->limit($offset,$page_size)->select();
+        $data["count"]=(new \app\admin\model\Project())->where(['status'=>'显示'])->count();
+
+        $data["page"]=$page;
+
+        $data["total_page"]=ceil($data["count"]/$page_size);
+        $this->success("成功",$data);
     }
 
     /*
     *更新项目阅读
     * **/
-    public function update()
+    public function detail()
     {
 
         try{
@@ -52,7 +58,7 @@ class Project extends Api
             $info->rank=$info->rank+1;
 //            $model->save(['hot'=>$info->hot,'rank'=>$info->rank],['id'=>$id]);
             $info->save();
-            return $this->success();
+            return $this->success("成功",$info);
         }catch (Exception $e){
             return  $this->error($e->getMessage());
         }
