@@ -92,6 +92,49 @@ class User extends Api
     }
 
     /**
+     * 手机验证码登录
+     *
+     * @param string $mobile  手机号
+     * @param string $captcha 验证码
+     */
+    public function mobile_register()
+    {
+        $mobile = $this->request->request('mobile');
+        $captcha = $this->request->request('captcha');
+        $password = $this->request->request('password');
+        $confirm_password = $this->request->request('confirm_password');
+
+        if (!$mobile || !$captcha||!$password||!$confirm_password) {
+            $this->error(__('Invalid parameters'));
+        }
+        if (!Validate::regex($mobile, "^1\d{10}$")) {
+            $this->error(__('Mobile is incorrect'));
+        }
+        // 取消验证 验证码.
+//        if (!Sms::check($mobile, $captcha, 'mobilelogin')) {
+//            $this->error(__('Captcha is incorrect'));
+//        }
+
+        if($password!=$confirm_password&&strlen($password)){
+            $this->error(__("密码错误"));
+        }
+        $user = \app\common\model\User::getByMobile($mobile);
+        if ($user) {
+            $this->error(__($mobile."手机号已经注册"));
+        } else {
+            $ret = $this->auth->register($mobile, $password, '', $mobile, []);
+        }
+        if ($ret) {
+            Sms::flush($mobile, 'mobilelogin');
+            $data = ['userinfo' => $this->auth->getUserinfo()];
+            $this->success(__('Logged in successful'), $data);
+        } else {
+            $this->error($this->auth->getError());
+        }
+    }
+
+
+    /**
      * 注册会员
      *
      * @param string $username 用户名
