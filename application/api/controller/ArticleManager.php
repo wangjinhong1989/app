@@ -112,4 +112,45 @@ class ArticleManager extends Api
         $this->success("成功",$detail);
     }
 
+    /*
+    *添加文章
+    * **/
+    public function add()
+    {
+
+        try{
+            $model=new \app\admin\model\Article();
+            $user = $this->auth->getUser();
+            $user_id = $user->id;
+
+            $data=[];
+            $data["files"]=$this->request->request('files','');
+            $data["img"]=$this->request->request('img','');
+            $data["title"]=$this->request->request('title','');
+            $data["description"]=$this->request->request('description','');
+            $data["content"]=$this->request->request('content','');
+            $data["user_id"]=$user_id;
+            $data["url"]=$this->request->request('url','');
+
+            $data["is_reply"]=$this->request->request('is_reply','是');
+            $data["is_mine"]=$this->request->request('is_mine','是');
+            // 默认文章类型.
+            $data["articletype_id"]=$this->request->request('articletype_id','1');
+            $data["create_time"]=time();
+
+            if(!$data["title"]||!$data["content"]){
+                return $this->error(__('参数存在空'));
+            }
+
+
+            $model->create($data);
+
+            return $this->success();
+        }catch (Exception $e){
+            return  $this->error($e->getMessage());
+        }
+
+    }
+
+
 }
