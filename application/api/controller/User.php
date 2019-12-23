@@ -115,7 +115,7 @@ class User extends Api
 //            $this->error(__('Captcha is incorrect'));
 //        }
 
-        if($password!=$confirm_password&&strlen($password)){
+        if($password!=$confirm_password&&strlen($password)>=6){
             $this->error(__("密码错误"));
         }
         $user = \app\common\model\User::getByMobile($mobile);
