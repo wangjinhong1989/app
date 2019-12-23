@@ -42,7 +42,7 @@ class Feedback extends Api
         $data=[];
 
         $data["page"]=$page;
-        $data["rows"]=$page;
+        $data["rows"]=$lists;
         $data["count"]=$count;
 
         $data["total_page"]=ceil($data["count"]/$page_size);
