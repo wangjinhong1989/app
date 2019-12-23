@@ -124,7 +124,7 @@ class ArticleManager extends Api
             $user_id = $user->id;
 
             $data=[];
-            $data["files"]=$this->request->request('files','');
+           // $data["files"]=$this->request->request('files','');
             $data["img"]=$this->request->request('img','');
             $data["title"]=$this->request->request('title','');
             $data["description"]=$this->request->request('description','');
