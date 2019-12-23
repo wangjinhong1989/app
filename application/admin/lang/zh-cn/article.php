@@ -6,7 +6,7 @@ return [
     'Content'          => '内容',
     'Status'           => '有效无效',
     'User_id'          => '作者ID',
-    'Articletype_ids'  => '文章类型',
+    'Articletype_id'   => '文章类型',
     'Url'              => '原文链接',
     'Img'              => '封面',
     'Read_count'       => '阅读次数',

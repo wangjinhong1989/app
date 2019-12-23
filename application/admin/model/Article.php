@@ -87,7 +87,7 @@ class Article extends Model
 
     public function articletype()
     {
-        return $this->belongsTo('Articletype', 'articletype_ids', 'id', [], 'LEFT')->setEagerlyType(0);
+        return $this->belongsTo('Articletype', 'articletype_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 
 
