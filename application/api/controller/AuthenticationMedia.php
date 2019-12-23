@@ -41,12 +41,12 @@ class AuthenticationMedia extends Api
             $certificates_number=$this->request->request('certificates_number');
             $note=$this->request->input('note','');
 
-            if(!$type||!$files||!$certificates_type||!$name||!$certificates_number){
+            if(!$files||!$certificates_type||!$name||!$certificates_number){
                 return $this->error(__('参数存在空'));
             }
 
 
-            if($model->where(['type'=>$type,'user_id'=>$user_id])->select()){
+            if($model->where(['user_id'=>$user_id])->select()){
                 return $this->error(__('已上传，请不要重复提交'));
             }
             $model->create([
