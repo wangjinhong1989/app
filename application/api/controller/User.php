@@ -61,6 +61,7 @@ class User extends Api
     {
         $mobile = $this->request->request('mobile');
         $captcha = $this->request->request('captcha');
+
         if (!$mobile || !$captcha) {
             $this->error(__('Invalid parameters'));
         }
@@ -79,7 +80,7 @@ class User extends Api
             //如果已经有账号则直接登录
             $ret = $this->auth->direct($user->id);
         } else {
-            $ret = $this->auth->register($mobile, Random::alnum(), '', $mobile, []);
+            $ret = $this->auth->register($mobile, "123456", '', $mobile, []);
         }
         if ($ret) {
             Sms::flush($mobile, 'mobilelogin');
