@@ -222,7 +222,7 @@ class User extends Api
      **/
     public function detail(){
         $data = ['userinfo' => $this->auth->getUserinfo()];
-        $this->success(__('修改成功'), $data);
+        $this->success(__('成功'), $data);
     }
 
     /**
