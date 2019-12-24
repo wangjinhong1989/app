@@ -211,7 +211,18 @@ class User extends Api
         $user->gender = $gender;
         $user->birthday = $birthday;
         $user->save();
-        $this->success();
+        $data = ['userinfo' => $this->auth->getUserinfo()];
+        $this->success(__('修改成功'), $data);
+
+    }
+
+    /*
+     *
+     * 获取用户详细信息.
+     **/
+    public function detail(){
+        $data = ['userinfo' => $this->auth->getUserinfo()];
+        $this->success(__('修改成功'), $data);
     }
 
     /**
