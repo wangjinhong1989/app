@@ -25,10 +25,10 @@ class Guanggao extends Model
 
     // 追加属性
     protected $append = [
+        'create_time_text',
         'status_text',
-        'time_text',
-        'last_time_text',
-        'start_time_text'
+        'is_reply_text',
+        'is_mine_text'
     ];
     
 
@@ -36,6 +36,23 @@ class Guanggao extends Model
     public function getStatusList()
     {
         return ['显示' => __('显示'), '隐藏' => __('隐藏')];
+    }
+
+    public function getIsReplyList()
+    {
+        return ['是' => __('是'), '否' => __('否')];
+    }
+
+    public function getIsMineList()
+    {
+        return ['是' => __('是'), '否' => __('否')];
+    }
+
+
+    public function getCreateTimeTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['create_time']) ? $data['create_time'] : '');
+        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
     }
 
 
@@ -47,44 +64,25 @@ class Guanggao extends Model
     }
 
 
-    public function getTimeTextAttr($value, $data)
+    public function getIsReplyTextAttr($value, $data)
     {
-        $value = $value ? $value : (isset($data['time']) ? $data['time'] : '');
-        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
+        $value = $value ? $value : (isset($data['is_reply']) ? $data['is_reply'] : '');
+        $list = $this->getIsReplyList();
+        return isset($list[$value]) ? $list[$value] : '';
     }
 
 
-    public function getLastTimeTextAttr($value, $data)
+    public function getIsMineTextAttr($value, $data)
     {
-        $value = $value ? $value : (isset($data['last_time']) ? $data['last_time'] : '');
-        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
+        $value = $value ? $value : (isset($data['is_mine']) ? $data['is_mine'] : '');
+        $list = $this->getIsMineList();
+        return isset($list[$value]) ? $list[$value] : '';
     }
 
-
-    public function getStartTimeTextAttr($value, $data)
-    {
-        $value = $value ? $value : (isset($data['start_time']) ? $data['start_time'] : '');
-        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
-    }
-
-    protected function setTimeAttr($value)
-    {
-        return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
-    }
-
-    protected function setLastTimeAttr($value)
-    {
-        return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
-    }
-
-    protected function setStartTimeAttr($value)
+    protected function setCreateTimeAttr($value)
     {
         return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
     }
 
 
-    public function adtype()
-    {
-        return $this->belongsTo('Adtype', 'adtype_id', 'id', [], 'LEFT')->setEagerlyType(0);
-    }
 }

@@ -5,7 +5,7 @@ namespace app\admin\controller;
 use app\common\controller\Backend;
 
 /**
- * 
+ * 广告类型
  *
  * @icon fa fa-circle-o
  */
@@ -23,6 +23,8 @@ class Guanggao extends Backend
         parent::_initialize();
         $this->model = new \app\admin\model\Guanggao;
         $this->view->assign("statusList", $this->model->getStatusList());
+        $this->view->assign("isReplyList", $this->model->getIsReplyList());
+        $this->view->assign("isMineList", $this->model->getIsMineList());
     }
     
     /**
@@ -38,7 +40,7 @@ class Guanggao extends Backend
     public function index()
     {
         //当前是否为关联查询
-        $this->relationSearch = true;
+        $this->relationSearch = false;
         //设置过滤方法
         $this->request->filter(['strip_tags', 'trim']);
         if ($this->request->isAjax())
@@ -50,21 +52,21 @@ class Guanggao extends Backend
             }
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
             $total = $this->model
-                    ->with(['adtype'])
+                    
                     ->where($where)
                     ->order($sort, $order)
                     ->count();
 
             $list = $this->model
-                    ->with(['adtype'])
+                    
                     ->where($where)
                     ->order($sort, $order)
                     ->limit($offset, $limit)
                     ->select();
 
             foreach ($list as $row) {
+                $row->visible(['id','title','description','content','create_time','status','url','img','read_count','show_count']);
                 
-                $row->getRelation('adtype')->visible(['name']);
             }
             $list = collection($list)->toArray();
             $result = array("total" => $total, "rows" => $list);
