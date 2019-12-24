@@ -53,7 +53,7 @@ class ArticleManager extends Api
             ->where($where)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
-            ->limit($offset,$page_size)->select();
+            ->limit($offset,$page_size)->order("article.id desc")->select();
 
 
 
