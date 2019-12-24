@@ -25,16 +25,14 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'adtype_id', title: __('Adtype_id')},
-                        {field: 'position', title: __('Position')},
-                        {field: 'name', title: __('Name')},
+                        {field: 'title', title: __('Title')},
+                        {field: 'description', title: __('Description')},
+                        {field: 'create_time', title: __('Create_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'status', title: __('Status'), searchList: {"显示":__('显示'),"隐藏":__('隐藏')}, formatter: Table.api.formatter.status},
                         {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
                         {field: 'img', title: __('Img')},
-                        {field: 'time', title: __('Time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'last_time', title: __('Last_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'start_time', title: __('Start_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'adtype.name', title: __('Adtype.name')},
+                        {field: 'read_count', title: __('Read_count')},
+                        {field: 'show_count', title: __('Show_count')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]

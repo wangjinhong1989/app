@@ -1,14 +1,15 @@
 <?php
 
 return [
-    'Adtype_id'   => '广告类型',
-    'Position'    => '广告位置',
-    'Name'        => '标题',
-    'Status'      => '状态',
-    'Url'         => '链接',
+    'Title'       => '标题',
+    'Description' => '描述',
+    'Content'     => '内容',
+    'Create_time' => '创建时间',
+    'Status'      => '有效无效',
+    'Url'         => '原文链接',
     'Img'         => '封面',
-    'Time'        => '创建时间',
-    'Last_time'   => '开始时间',
-    'Start_time'  => '结束时间',
-    'Adtype.name' => '广告名称'
+    'Read_count'  => '阅读次数',
+    'Show_count'  => '展示次数',
+    'Is_reply'    => '允许评论',
+    'Is_mine'     => '是否是原创'
 ];
