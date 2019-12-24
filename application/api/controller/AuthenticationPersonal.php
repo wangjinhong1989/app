@@ -47,7 +47,7 @@ class AuthenticationPersonal extends Api
 
 
             if($model->where(['type'=>$type,'user_id'=>$user_id])->select()){
-                return $this->error(__('已上传，请不要重复提交'));
+                return $this->success(__('已上传，请不要重复提交'));
             }
             $model->create([
                 'user_id'=>$user_id,'type'=>$type,'name'=>$name,
