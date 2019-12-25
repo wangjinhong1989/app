@@ -140,7 +140,7 @@ class ArticleManager extends Api
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
             ->find();
-        file_put_contents("1",$detail->getLastSql());
+//        file_put_contents("1",$detail->getLastSql());
         if($detail){
             $article=$model->where(["id"=>$id])->find();
             $article->read_count=$article->read_count+1;
