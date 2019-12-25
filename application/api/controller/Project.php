@@ -23,12 +23,19 @@ class Project extends Api
 
         $page=$this->request->request("page",1);
         $page_size=$this->request->request("page_size",5);
+        $keyword=$this->request->request("keyword","");
         $offset=($page-1)*$page_size;
 
+        $where=[];
+        $where["status"]=["eq","显示"];
+        $keyword=$this->request->request("keyword","");
+        if($keyword){
+            $where["name"]=["like","%".$keyword."%"];
+        }
         $data=[];
 
-        $data["rows"]=(new \app\admin\model\Project())->where(['status'=>'显示'])->limit($offset,$page_size)->select();
-        $data["count"]=(new \app\admin\model\Project())->where(['status'=>'显示'])->count();
+        $data["rows"]=(new \app\admin\model\Project())->where($where)->limit($offset,$page_size)->select();
+        $data["count"]=(new \app\admin\model\Project())->where($where)->count();
 
         $data["page"]=$page;
 
