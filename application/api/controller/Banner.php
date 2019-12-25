@@ -31,8 +31,8 @@ class Banner extends Api
             $where["url_type"]=["eq",$url_type];
         }
 
-        $lists=(new \app\admin\model\Banner())->where([$where])->limit($offset,$page_size)->select();
-        $count=(new \app\admin\model\Banner())->where([$where])->count();
+        $lists=(new \app\admin\model\Banner())->where($where)->limit($offset,$page_size)->select();
+        $count=(new \app\admin\model\Banner())->where($where)->count();
 
 
         $data["page"]=$page;

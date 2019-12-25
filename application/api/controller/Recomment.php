@@ -31,8 +31,8 @@ class Recomment extends Api
             $where["url_type"]=["eq",$url_type];
         }
 
-        $lists=(new \app\admin\model\Recomment())->where([$where])->limit($offset,$page_size)->select();
-        $count=(new \app\admin\model\Recomment())->where([$where])->count();
+        $lists=(new \app\admin\model\Recomment())->where($where)->limit($offset,$page_size)->select();
+        $count=(new \app\admin\model\Recomment())->where($where)->count();
 
 
         $data["page"]=$page;
