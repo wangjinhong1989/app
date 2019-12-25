@@ -64,7 +64,7 @@ class MyCollect extends Api
                 return $this->error(__('文章不存在'));
             }
 
-            if (!$model->where(["user_id"=>["=",$user_id],"article_id"=>["=",$article_id]])->find()) {
+            if ($model->where(["user_id"=>["=",$user_id],"article_id"=>["=",$article_id]])->find()) {
                 return $this->error(__('已经添加收藏'));
             }
 
