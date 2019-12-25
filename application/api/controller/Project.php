@@ -23,7 +23,7 @@ class Project extends Api
 
         $page=$this->request->request("page",1);
         $page_size=$this->request->request("page_size",5);
-        $keyword=$this->request->request("keyword","");
+
         $offset=($page-1)*$page_size;
 
         $where=[];
