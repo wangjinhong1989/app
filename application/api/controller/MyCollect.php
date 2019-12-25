@@ -33,13 +33,13 @@ class MyCollect extends Api
         $data=[];
 
         $model = (new Query());
-        $data["rows"] = $model->from("fa_shoucang")->alias('shoucang')
+        $data["rows"] = $model->table("fa_shoucang")->alias('shoucang')
                 ->join("fa_article article","article.id=shoucang.article_id")
                 ->where(['shoucang.user_id' => ["=",$user_id]])
                 ->limit($offset,$page_size)
                 ->select();
 
-        $data["count"] = $model->from("fa_shoucang")->alias('shoucang')
+        $data["count"] = $model->table("fa_shoucang")->alias('shoucang')
             ->join("fa_article article","article.id=shoucang.article_id")
             ->where(['shoucang.user_id' => ["=",$user_id]])
             ->count();
