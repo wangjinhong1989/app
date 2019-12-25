@@ -32,9 +32,9 @@ class MyCollect extends Api
         $data=[];
 
         $model = (new Shoucang());
-        $data["rows"] = $model->alias('shoucang')->with(['article'])->limit($offset,$page_size)->where(['shoucang.user_id' => $user_id])->where('article.id=shoucang.article_id')->select();
+        $data["rows"] = $model->alias('shoucang')->with(['article'])->limit($offset,$page_size)->where(['shoucang.user_id' => ["=",$user_id]])->where('article.id=shoucang.article_id')->select();
 
-        $data["count"] = $model->alias('shoucang')->with(['article'])->where(['shoucang.user_id' => $user_id])->where('article.id=shoucang.article_id')->count();
+        $data["count"] = $model->alias('shoucang')->with(['article'])->where(['shoucang.user_id' =>["=", $user_id]])->where('article.id=shoucang.article_id')->count();
 
         $data["page"]=$page;
 
