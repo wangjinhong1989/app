@@ -38,6 +38,7 @@ class MyCollect extends Api
                 ->where(['shoucang.user_id' => ["=",$user_id]])
                 ->limit($offset,$page_size)
                 ->select();
+        echo $model->getLastSql();
 
         $data["count"] = $model->table("fa_shoucang")->alias('shoucang')
             ->join("fa_article article","article.id=shoucang.article_id")
