@@ -152,7 +152,9 @@ class ArticleManager extends Api
             if($user_id!=$article->user_id){
                 // 增加阅读历史记录.
                 $his=new ReadHistory();
+
                 $his->create(["user_id"=>$user_id,"article_id"=>$article->id,"time"=>time()]);
+                file_put_contents("1",$his->getLastSql());
             }
         }
         $this->success("成功",$detail);
