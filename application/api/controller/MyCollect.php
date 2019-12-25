@@ -7,7 +7,6 @@ use app\admin\model\Articletype;
 use app\admin\model\Shoucang;
 use app\admin\model\Article;
 use app\common\controller\Api;
-use think\db\Query;
 
 /**
  * 首页接口
@@ -32,18 +31,10 @@ class MyCollect extends Api
 
         $data=[];
 
-        $model = (new Query());
-        $data["rows"] = $model->table("fa_shoucang")->alias('shoucang')
-                ->join("fa_article article","article.id=shoucang.article_id")
-                ->where(['shoucang.user_id' => ["=",$user_id]])
-                ->limit($offset,$page_size)
-                ->select();
-        echo $model->getLastSql();
+        $model = (new Shoucang());
+        $data["rows"] = $model->alias('shoucang')->with(['article'])->limit($offset,$page_size)->where(['shoucang.user_id' => $user_id])->where('article.id=shoucang.article_id')->select();
 
-        $data["count"] = $model->table("fa_shoucang")->alias('shoucang')
-            ->join("fa_article article","article.id=shoucang.article_id")
-            ->where(['shoucang.user_id' => ["=",$user_id]])
-            ->count();
+        $data["count"] = $model->alias('shoucang')->with(['article'])->where(['shoucang.user_id' => $user_id])->where('article.id=shoucang.article_id')->count();
 
         $data["page"]=$page;
 
