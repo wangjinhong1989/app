@@ -228,6 +228,9 @@ class User extends Api
         $data["follow_me"]=(new \app\admin\model\Guanzhu())->where(["follow_id"=>$this->auth->id])->count();
         $data["my_article"]=(new \app\admin\model\Article())->where(["user_id"=>$this->auth->id])->count();
         $data["my_search"]=(new \app\admin\model\SearchHistory())->where(["user_id"=>$this->auth->id])->count();
+        $data["auth_enterprise"]=(new \app\admin\model\AuthenticationEnterprise())->where(["user_id"=>$this->auth->id])->find();
+        $data["auth_media"]=(new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$this->auth->id])->find();
+        $data["auth_personal"]=(new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$this->auth->id])->find();
         $this->success(__('成功'), $data);
     }
 
