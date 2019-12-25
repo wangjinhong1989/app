@@ -25,13 +25,21 @@ class MyCollect extends Api
         $user = $this->auth->getUser();
         $user_id = $user->id;
 
+        $page=$this->request->request("page",1);
+        $page_size=$this->request->request("page_size",5);
+        $offset=($page-1)*$page_size;
+
+        $data=[];
+
         $model = (new Shoucang());
-        $lists = $model->alias('shoucang')
-            ->with(['article'])
-            ->where(['shoucang.user_id' => $user_id])
-            ->where('article.id=shoucang.article_id')
-            ->select();
-        $this->success("成功", $lists);
+        $data["rows"] = $model->alias('shoucang')->with(['article'])->limit($offset,$page_size)->where(['shoucang.user_id' => $user_id])->where('article.id=shoucang.article_id')->select();
+
+        $data["rows"] = $model->alias('shoucang')->with(['article'])->where(['shoucang.user_id' => $user_id])->where('article.id=shoucang.article_id')->count();
+
+        $data["page"]=$page;
+
+        $data["total_page"]=ceil($data["count"]/$page_size);
+        $this->success("成功", $data);
     }
 
     /*
