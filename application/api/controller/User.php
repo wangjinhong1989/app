@@ -222,6 +222,12 @@ class User extends Api
      **/
     public function detail(){
         $data = ['userinfo' => $this->auth->getUserinfo()];
+
+        //  获取我的粉丝数.
+        $data["my_follow"]=(new \app\admin\model\Guanzhu())->where(["user_id"=>$this->auth->id])->count();
+        $data["follow_me"]=(new \app\admin\model\Guanzhu())->where(["follow_id"=>$this->auth->id])->count();
+        $data["my_article"]=(new \app\admin\model\Article())->where(["user_id"=>$this->auth->id])->count();
+        $data["my_search"]=(new \app\admin\model\SearchHistory())->where(["user_id"=>$this->auth->id])->count();
         $this->success(__('成功'), $data);
     }
 
