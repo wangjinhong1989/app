@@ -5,6 +5,8 @@ namespace app\api\controller;
 
 use app\admin\model\SearchHistory;
 use app\common\controller\Api;
+use think\db\Query;
+
 /**
  * 首页接口
  */
@@ -24,8 +26,20 @@ class HistorySearch extends Api
         $page_size=$this->request->request("page_size",5);
         $offset=($page-1)*$page_size;
         $data=[];
-        $lists=( new SearchHistory())->where(['user_id'=>$this->auth->getUser()->id])->limit($offset,$page_size)->select();
-        $count=( new SearchHistory())->where(['user_id'=>$this->auth->getUser()->id])->count();
+        $query=new Query();
+        $lists= $query->table("fa_read_history")->alias("his")
+            ->field("article.*,user.username,user.avatar,articletype.name")
+            ->join("fa_article article","article.id=his.article_id","left")
+            ->join("fa_user user","user.id=article.user_id","left")
+            ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
+            ->where(['his.user_id'=>$this->auth->getUser()->id])
+            ->limit($offset,$page_size)->select();
+
+
+        $count= $query->table("fa_read_history")->alias("his")
+            ->where(['his.user_id'=>$this->auth->getUser()->id])
+            ->count();
+
 
 
         $data["page"]=$page;
