@@ -37,6 +37,7 @@ class Guanzhu extends Api
             ->field("guanzhu.id,guanzhu.follow_id,guanzhu.time,user.nickname,user.avatar")
             ->where(['guanzhu.user_id' => $user_id])
             ->where('user.id=guanzhu.follow_id')
+            ->limit($offset,$page_size)
             ->select();
 
         $count = $model
@@ -88,17 +89,36 @@ class Guanzhu extends Api
         $user = $this->auth->getUser();
         $user_id = $user->id;
 
+
+        $page=$this->request->request("page",1);
+        $page_size=$this->request->request("page_size",5);
+        $offset=($page-1)*$page_size;
+        $data=[];
+
         $model = (new \app\admin\model\Guanzhu());
         $lists = $model
             ->with(['user'])
             ->field("guanzhu.id,guanzhu.follow_id,guanzhu.time,user.nickname,user.avatar")
             ->where(['guanzhu.follow_id' => $user_id])
             ->where('user.id=guanzhu.user_id')
+            ->limit($offset,$page_size)
             ->select();
 
+        $count = $model
+            ->with(['user'])
+            ->field("guanzhu.id,guanzhu.follow_id,guanzhu.time,user.nickname,user.avatar")
+            ->where(['guanzhu.follow_id' => $user_id])
+            ->where('user.id=guanzhu.user_id')
+            ->count();
         foreach($lists as $k=>$value){
             unset($lists[$k]['user']);
         }
+
+        $data["page"]=$page;
+        $data["rows"]=$lists;
+        $data["count"]=$count;
+
+        $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功", $lists);
     }
 

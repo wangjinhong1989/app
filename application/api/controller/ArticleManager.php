@@ -4,6 +4,7 @@ namespace app\api\controller;
 
 use app\admin\model\Article;
 use app\admin\model\Guanggao;
+use app\admin\model\ReadHistory;
 use app\common\controller\Api;
 use think\Db;
 use think\db\Query;
@@ -28,8 +29,6 @@ class ArticleManager extends Api
         $offset=($page-1)*$page_size;
         $model=new Article();
         $data=[];
-//        $data["rows"]=$model->with("user,articletype")->where(['article.status'=>"显示"])->limit($offset,$page_size)->select();
-//        $data["count"]=$model->where(['status'=>0])->count();
 
         $where=[];
         $where["article.status"]=["eq","显示"];
@@ -45,6 +44,13 @@ class ArticleManager extends Api
         $keyword=$this->request->request("keyword","");
         if($keyword){
             $where["article.title|article.description|article.content"]=["like","%".$keyword."%"];
+        }
+
+
+        // 查询某个人的文章。
+        $user_id=$this->request->request("user_id","");
+        if($user_id){
+            $where["article.user_id"]=["eq",$user_id];
         }
 
 
@@ -108,6 +114,14 @@ class ArticleManager extends Api
             $article->read_count=$article->read_count+1;
             $article->show_count=$article->show_count+1;
             $article->save();
+
+            //  增加阅读历史。
+            $user_id=$this->auth->id;
+            if($user_id!=$article->user_id){
+                // 增加阅读历史记录.
+                $his=new ReadHistory();
+                $his->create(["user_id"=>$user_id,"article_id"=>$article->id,"time"=>time()]);
+            }
         }
         $this->success("成功",$detail);
     }
