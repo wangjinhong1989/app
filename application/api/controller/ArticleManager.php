@@ -160,13 +160,14 @@ class ArticleManager extends Api
                 }else
                     $his->create(["user_id"=>$user_id,"article_id"=>$article->id,"time"=>time()]);
             }
+            $label=new \app\admin\model\Label();
+            $detail->label_ids=[];
+            if($detail->label_ids){
+                $detail->label_ids=$label->where(['id'=>['in',$detail->label_ids]])->select();
+            }
+
         }
 
-        $label=new \app\admin\model\Label();
-        $detail->label_ids=[];
-        if($detail->label_ids){
-            $detail->label_ids=$label->where(['id'=>['in',$detail->label_ids]])->select();
-        }
 
         $this->success("成功",$detail);
     }
