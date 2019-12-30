@@ -5,6 +5,8 @@ namespace app\api\controller;
 
 use app\admin\model\SearchHistory;
 use app\common\controller\Api;
+use think\db\Query;
+
 /**
  * 首页接口
  */
