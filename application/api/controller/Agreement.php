@@ -24,7 +24,7 @@ class Agreement extends Api
 
         $id=$this->request->param("id","");
         $model= new \app\admin\model\Agreement();
-        $lists=$model->where(["oldversion"=>$id])->find();
+        $lists=$model->where(["id"=>$id])->find();
         $this->success("成功",$lists);
     }
 }
