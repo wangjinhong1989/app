@@ -166,7 +166,7 @@ class ArticleManager extends Api
             if($detail['label_ids']){
                 $detail['label_ids']=$label->where(['id'=>['in',explode(',',$detail['label_ids'])]])->select();
             }else
-                $detail['label_ids']=[];
+                $detail['label_ids']=null;
 
         }
 
