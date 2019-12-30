@@ -29,7 +29,7 @@ class Mylabel extends Api
 
         $query=new Query();
         $lists=$query->table("fa_mylabel")->alias("mylabel")->field("mylabel.*,label.name")
-            ->where(["mylabel.user_id"=>['eq',$this->auth->id],'label.id'=>['eq','mylable.label_id']])
+            ->where(["mylabel.user_id"=>['eq',$this->auth->id],'label.id=mylable.label_id'])
             ->join("fa_label label","label.id=mylabel.label_id","left")
             ->limit($offset,$page_size)->order("mylabel.id desc")->select();
 
