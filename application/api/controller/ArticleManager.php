@@ -159,10 +159,15 @@ class ArticleManager extends Api
                     $find->save();
                 }else
                     $his->create(["user_id"=>$user_id,"article_id"=>$article->id,"time"=>time()]);
-
-
             }
         }
+
+        $label=new \app\admin\model\Label();
+        $detail->label_ids=[];
+        if(!$detail->label_ids){
+            $detail->label_ids=$label->where(['id'=>['in',$detail->label_ids]])->select();
+        }
+
         $this->success("成功",$detail);
     }
 
@@ -178,24 +183,41 @@ class ArticleManager extends Api
             $user_id = $user->id;
 
             $data=[];
-           // $data["files"]=$this->request->request('files','');
+            // 封面
             $data["img"]=$this->request->request('img','');
             $data["title"]=$this->request->request('title','');
             $data["description"]=$this->request->request('description','');
             $data["content"]=$this->request->request('content','');
             $data["user_id"]=$user_id;
+            // 来源地址
             $data["url"]=$this->request->request('url','');
 
+            // 是否允许回复
             $data["is_reply"]=$this->request->request('is_reply','是');
+            // 是否原创
             $data["is_mine"]=$this->request->request('is_mine','是');
-            // 默认文章类型.
-            $data["articletype_id"]=$this->request->request('articletype_id','1');
+            // 默认文章类型.  资讯
+            $data["articletype_id"]=intval($this->request->request('articletype_id','1'));
+            // 标签ID .
+            $data["label_ids"]=$this->request->request('label_ids','');
             $data["create_time"]=time();
+            // 转载来源.
+            $data["come_from"]=$this->request->request('come_from','');
 
             if(!$data["title"]||!$data["content"]){
-                return $this->error(__('参数存在空'));
+                return $this->error(__('标题或者内容为空'));
             }
 
+            // 这里要求传描述
+            if($data["articletype_id"]==2){
+                if(!$data["description"]){
+                    return $this->error(__('描述不能为空'));
+                }
+            }else{
+                if(!$data["img"]){
+                    return $this->error(__('请上传封面'));
+                }
+            }
 
             $model->create($data);
 
