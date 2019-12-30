@@ -164,7 +164,7 @@ class ArticleManager extends Api
 
         $label=new \app\admin\model\Label();
         $detail->label_ids=[];
-        if(!$detail->label_ids){
+        if($detail->label_ids){
             $detail->label_ids=$label->where(['id'=>['in',$detail->label_ids]])->select();
         }
 
