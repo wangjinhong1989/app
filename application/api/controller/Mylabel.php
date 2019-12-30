@@ -24,7 +24,7 @@ class Mylabel extends Api
         $page_size=$this->request->request("page_size",5);
         $offset=($page-1)*$page_size;
         $data=[];
-        $lists=( new \app\admin\model\Mylabel())->with("label")->where(['mylable.user_id'=>$this->auth->getUser()->id])->limit($offset,$page_size)->select();
+        $lists=( new \app\admin\model\Mylabel())->with("label")->where(['mylabel.user_id'=>$this->auth->getUser()->id])->limit($offset,$page_size)->select();
         $count=( new \app\admin\model\Mylabel())->where(['user_id'=>$this->auth->getUser()->id])->count();
 
 
