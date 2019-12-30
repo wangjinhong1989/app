@@ -56,6 +56,9 @@ class Mylabel extends Api
                 return $this->error(__('参数存在空'));
             }
 
+            if($model->where(['user_id'=>$user_id,'label_id'=>$label_id])->find()){
+                return $this->error(__('已经添加了，请不要重复添加'));
+            }
             $model->create([
                 'user_id'=>$user_id,'label_id'=>$label_id,'time'=>time()
             ]);
