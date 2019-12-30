@@ -24,7 +24,7 @@ class Version extends Api
 
         $old_version=$this->request->param("oldversion","");
         $model= new \app\admin\model\Version();
-        $lists=$model->where(["oldversion"=>$old_version])->find();
+        $lists=$model->where(["oldversion"=>$old_version,"status"=>"normal"])->find();
         $this->success("成功",$lists);
     }
 }
