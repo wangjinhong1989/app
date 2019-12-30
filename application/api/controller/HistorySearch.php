@@ -51,13 +51,14 @@ class HistorySearch extends Api
             $user = $this->auth->getUser();
             $user_id = $user->id;
             $word=$this->request->request('word');
+            $type=$this->request->request('type',"其它");
 
             if(!$word){
                 return $this->error(__('参数存在空'));
             }
 
             $model->create([
-                'user_id'=>$user_id,'word'=>$word,'time'=>time()
+                'user_id'=>$user_id,'word'=>$word,'time'=>time(),'type'=>$type
             ]);
 
             return $this->success();
