@@ -22,7 +22,7 @@ class Agreement extends Api
     public function Lists()
     {
 
-        $id=$this->request->param("id","");
+        $id=$this->request->param("id",1);
         $model= new \app\admin\model\Agreement();
         $lists=$model->where(["id"=>$id])->find();
         $this->success("成功",$lists);
