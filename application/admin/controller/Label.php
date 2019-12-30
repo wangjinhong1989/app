@@ -5,24 +5,24 @@ namespace app\admin\controller;
 use app\common\controller\Backend;
 
 /**
- * 搜索历史
+ * 标签管理
  *
  * @icon fa fa-circle-o
  */
-class SearchHistory extends Backend
+class Label extends Backend
 {
     
     /**
-     * SearchHistory模型对象
-     * @var \app\admin\model\SearchHistory
+     * Label模型对象
+     * @var \app\admin\model\Label
      */
     protected $model = null;
 
     public function _initialize()
     {
         parent::_initialize();
-        $this->model = new \app\admin\model\SearchHistory;
-        $this->view->assign("typeList", $this->model->getTypeList());
+        $this->model = new \app\admin\model\Label;
+        $this->view->assign("statusList", $this->model->getStatusList());
     }
     
     /**

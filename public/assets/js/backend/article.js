@@ -29,6 +29,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'description', title: __('Description')},
                         {field: 'create_time', title: __('Create_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'status', title: __('Status'), searchList: {"显示":__('显示'),"隐藏":__('隐藏')}, formatter: Table.api.formatter.status},
+                        {field: 'come_from', title: __('Come_from')},
                         {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
                         {field: 'img', title: __('Img')},
                         {field: 'read_count', title: __('Read_count')},
@@ -36,6 +37,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'is_reply', title: __('Is_reply'), searchList: {"是":__('是'),"否":__('否')}, formatter: Table.api.formatter.normal},
                         {field: 'is_mine', title: __('Is_mine'), searchList: {"是":__('是'),"否":__('否')}, formatter: Table.api.formatter.normal},
                         {field: 'articletype.name', title: __('Articletype.name')},
+                        {field: 'label.name', title: __('Label.name')},
                         {field: 'user.username', title: __('User.username')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]

@@ -5,26 +5,24 @@ namespace app\admin\controller;
 use app\common\controller\Backend;
 
 /**
- * 
+ * 我的标签
  *
  * @icon fa fa-circle-o
  */
-class Article extends Backend
+class Mylabel extends Backend
 {
     
     /**
-     * Article模型对象
-     * @var \app\admin\model\Article
+     * Mylabel模型对象
+     * @var \app\admin\model\Mylabel
      */
     protected $model = null;
 
     public function _initialize()
     {
         parent::_initialize();
-        $this->model = new \app\admin\model\Article;
-        $this->view->assign("statusList", $this->model->getStatusList());
-        $this->view->assign("isReplyList", $this->model->getIsReplyList());
-        $this->view->assign("isMineList", $this->model->getIsMineList());
+        $this->model = new \app\admin\model\Mylabel;
+
     }
     
     /**
@@ -52,23 +50,21 @@ class Article extends Backend
             }
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
             $total = $this->model
-                    ->with(['articletype','label','user'])
+                    ->with(['label','user'])
                     ->where($where)
                     ->order($sort, $order)
                     ->count();
 
             $list = $this->model
-                    ->with(['articletype','label','user'])
+                    ->with(['label','user'])
                     ->where($where)
                     ->order($sort, $order)
                     ->limit($offset, $limit)
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(['id','title','description','create_time','status','come_from','url','img','read_count','show_count','is_reply','is_mine']);
-                $row->visible(['articletype']);
-				$row->getRelation('articletype')->visible(['name']);
-				$row->visible(['label']);
+                $row->visible(['id','time']);
+                $row->visible(['label']);
 				$row->getRelation('label')->visible(['name']);
 				$row->visible(['user']);
 				$row->getRelation('user')->visible(['username']);

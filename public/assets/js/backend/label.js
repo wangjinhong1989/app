@@ -5,12 +5,12 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             // 初始化表格参数配置
             Table.api.init({
                 extend: {
-                    index_url: 'search_history/index' + location.search,
-                    add_url: 'search_history/add',
-                    edit_url: 'search_history/edit',
-                    del_url: 'search_history/del',
-                    multi_url: 'search_history/multi',
-                    table: 'search_history',
+                    index_url: 'label/index' + location.search,
+                    add_url: 'label/add',
+                    edit_url: 'label/edit',
+                    del_url: 'label/del',
+                    multi_url: 'label/multi',
+                    table: 'label',
                 }
             });
 
@@ -25,10 +25,8 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'user_id', title: __('User_id')},
-                        {field: 'word', title: __('Word')},
-                        {field: 'type', title: __('Type'), searchList: {"作者":__('作者'),"标题":__('标题'),"描述":__('描述'),"内容":__('内容'),"标签":__('标签'),"全部":__('全部'),"其它":__('其它')}, operate:'FIND_IN_SET', formatter: Table.api.formatter.label},
-                        {field: 'time', title: __('Time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
+                        {field: 'name', title: __('Name')},
+                        {field: 'status', title: __('Status'), searchList: {"显示":__('显示'),"隐藏":__('隐藏')}, formatter: Table.api.formatter.status},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]

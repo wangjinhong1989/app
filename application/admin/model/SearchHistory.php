@@ -25,12 +25,25 @@ class SearchHistory extends Model
 
     // 追加属性
     protected $append = [
+        'type_text',
         'time_text'
     ];
     
 
     
+    public function getTypeList()
+    {
+        return ['作者' => __('作者'), '标题' => __('标题'), '描述' => __('描述'), '内容' => __('内容'), '标签' => __('标签'), '全部' => __('全部'), '其它' => __('其它')];
+    }
 
+
+    public function getTypeTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['type']) ? $data['type'] : '');
+        $valueArr = explode(',', $value);
+        $list = $this->getTypeList();
+        return implode(',', array_intersect_key($list, array_flip($valueArr)));
+    }
 
 
     public function getTimeTextAttr($value, $data)
@@ -39,14 +52,15 @@ class SearchHistory extends Model
         return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
     }
 
+    protected function setTypeAttr($value)
+    {
+        return is_array($value) ? implode(',', $value) : $value;
+    }
+
     protected function setTimeAttr($value)
     {
         return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
     }
 
 
-    public function user()
-    {
-        return $this->belongsTo('User', 'user_id', 'id', [], 'LEFT')->setEagerlyType(0);
-    }
 }

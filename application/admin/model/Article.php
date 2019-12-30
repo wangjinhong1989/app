@@ -91,6 +91,12 @@ class Article extends Model
     }
 
 
+    public function label()
+    {
+        return $this->belongsTo('Label', 'label_ids', 'id', [], 'LEFT')->setEagerlyType(0);
+    }
+
+
     public function user()
     {
         return $this->belongsTo('User', 'user_id', 'id', [], 'LEFT')->setEagerlyType(0);
