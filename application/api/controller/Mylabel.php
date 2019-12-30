@@ -1,0 +1,92 @@
+<?php
+
+namespace app\api\controller;
+
+
+use app\admin\model\SearchHistory;
+use app\common\controller\Api;
+/**
+ * 首页接口
+ */
+class Mylabel extends Api
+{
+    protected $noNeedLogin = [];
+    protected $noNeedRight = ['*'];
+
+    /**
+     * 热搜
+     *
+     */
+    public function Lists()
+    {
+
+        $page=$this->request->request("page",1);
+        $page_size=$this->request->request("page_size",5);
+        $offset=($page-1)*$page_size;
+        $data=[];
+        $lists=( new \app\admin\model\Mylabel())->where(['user_id'=>$this->auth->getUser()->id])->limit($offset,$page_size)->select();
+        $count=( new \app\admin\model\Mylabel())->where(['user_id'=>$this->auth->getUser()->id])->count();
+
+
+        $data["page"]=$page;
+        $data["rows"]=$lists;
+        $data["count"]=$count;
+
+        $data["total_page"]=ceil($data["count"]/$page_size);
+        $this->success("成功",$data);
+    }
+
+
+
+
+    /*
+    *添加收藏
+    * **/
+    public function add()
+    {
+
+        try{
+            $data=[];
+            $model=new \app\admin\model\Mylabel();
+            $user = $this->auth->getUser();
+            $user_id = $user->id;
+            $label_id=$this->request->request('label_id');
+
+            if(!$label_id){
+                return $this->error(__('参数存在空'));
+            }
+
+            $model->create([
+                'user_id'=>$user_id,'label_id'=>$label_id,'time'=>time()
+            ]);
+
+            return $this->success();
+        }catch (Exception $e){
+            return  $this->error($e->getMessage());
+        }
+
+    }
+
+
+    /*
+*清除收藏
+* **/
+    public function delete()
+    {
+
+        try{
+            $model=new \app\admin\model\Mylabel();
+            $user = $this->auth->getUser();
+            $user_id=$user->id;
+
+            $label_id=$this->request->request('label_id',0);
+
+            $model->where(['user_id'=>$user_id,'label_id'=>$label_id])->delete();
+
+            return $this->success();
+        }catch (Exception $e){
+            return  $this->error($e->getMessage());
+        }
+
+    }
+}
