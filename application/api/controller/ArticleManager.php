@@ -28,6 +28,9 @@ class ArticleManager extends Api
         $page_size=$this->request->request("page_size",5);
         $offset=($page-1)*$page_size;
 
+        if($offset<0){
+            $offset=0;
+        }
         $data=[];
         $where=[];
         $where["article.status"]=["eq","显示"];
