@@ -24,8 +24,20 @@ class Mylabel extends Api
         $page_size=$this->request->request("page_size",5);
         $offset=($page-1)*$page_size;
         $data=[];
-        $lists=( new \app\admin\model\Mylabel())->with("label")->where(['mylabel.user_id'=>$this->auth->getUser()->id])->limit($offset,$page_size)->select();
-        $count=( new \app\admin\model\Mylabel())->where(['user_id'=>$this->auth->getUser()->id])->count();
+
+        $query=new Query();
+        $lists=$query->table("fa_mylabel")->alias("mylabel")->field("mylabel.*,label.name")
+            ->where(["mylabel.user_id"=>['eq',$this->auth->id],'label.id'=>['eq','mylable.label_id']])
+            ->join("fa_label label","label.id=mylabel.label_id","left")
+            ->limit($offset,$page_size)->order("mylabel.id desc")->select();
+
+        $count=$query->table("fa_mylabel")->alias("mylabel")->field("mylabel.*,label.name")
+            ->where(["mylabel.user_id"=>['eq',$this->auth->id],'label.id'=>['eq','mylable.label_id']])
+            ->join("fa_label label","label.id=mylabel.label_id","left")
+            ->count();
+
+//        $lists=( new \app\admin\model\Mylabel())->with("label")->where(['mylabel.user_id'=>$this->auth->getUser()->id])->limit($offset,$page_size)->select();
+//        $count=( new \app\admin\model\Mylabel())->where(['user_id'=>$this->auth->getUser()->id])->count();
 
 
         $data["page"]=$page;
