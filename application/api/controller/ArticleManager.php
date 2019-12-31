@@ -68,6 +68,12 @@ class ArticleManager extends Api
             $where["article.user_id"]=["eq",$user_id];
         }
 
+        // 查询某个人的文章。
+        $username=$this->request->request("username","");
+        if($username){
+            $where["user.username"]=["like","%".$username."%"];
+        }
+
         // 查询我关注的人的文章列表.
         $my_follow=$this->request->request("my_follow",'');
         if($my_follow){
