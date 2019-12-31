@@ -77,7 +77,7 @@ class Subject extends Api
     public function detail()
     {
         $id=$this->request->request("id",0);
-        $model=new Subject();
+        $model=new \app\admin\model\Subject();
         $where=["status"=>"显示"];
         $where["id"]=$id;
         $detail=$model->where($where)->find();
