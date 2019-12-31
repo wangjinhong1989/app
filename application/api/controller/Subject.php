@@ -2,9 +2,6 @@
 
 namespace app\api\controller;
 
-use app\admin\model\Article;
-use app\admin\model\Guanggao;
-use app\admin\model\ReadHistory;
 use app\common\controller\Api;
 use think\Db;
 use think\db\Query;
@@ -60,7 +57,7 @@ class Subject extends Api
 
         $query=new Query();
         $data["rows"]=$query->table("fa_subject")->alias("subject")->where($where)
-            ->limit($offset,$page_size)->order(" `sort`  asc")->select();
+            ->limit($offset,$page_size)->select();
 
 
         $data["count"]=$query->table("subject")->alias("subject")->where($where)->count();
