@@ -97,7 +97,7 @@ class ArticleManager extends Api
             $label_ids=explode(",",$label_ids);
             foreach ($label_ids as $k=>$v){
 
-                    if($k!=count($label_ids)-2){
+                    if($k!=count($label_ids)-1){
                         $whereExp=$whereExp.'find_in_set('.$v.',article.label_ids),';
                     }else {
                         $whereExp=$whereExp.'find_in_set('.$v.',article.label_ids)';
