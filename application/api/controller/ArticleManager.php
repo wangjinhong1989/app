@@ -97,7 +97,7 @@ class ArticleManager extends Api
         if($label_ids){
 
             //$label_ids=explode(",",$label_ids);
-            $where[]=['exp','find_in_set(1,article.label_ids)','or'];
+            $where[]=['exp','find_in_set(1,article.label_ids)'];
         }
 
         // 请求的标签.
