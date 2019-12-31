@@ -96,15 +96,8 @@ class ArticleManager extends Api
         $label_ids=$this->request->request("label_ids",'');
         if($label_ids){
 
-            $label_ids=explode(",",$label_ids);
-
-            foreach ($label_ids as $k => $v){
-                if($k!=count($label_ids)-2){
-                    $str=$str.'FIND_IN_SET("'.$v.'","article.label_ids"),';
-                }else
-                    $str=$str.'FIND_IN_SET("'.$v.'","article.label_ids")';
-            }
-
+            //$label_ids=explode(",",$label_ids);
+            $where[]=['exp','find_in_set(1,article.label_ids)','or'];
         }
 
         // 请求的标签.
@@ -112,7 +105,6 @@ class ArticleManager extends Api
         $query=new Query();
         $data["rows"]=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
             ->where($where)
-            ->whereExp("article.label_ids",$str,"or")
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
             ->limit($offset,$page_size)->order("article.id desc")->select();
