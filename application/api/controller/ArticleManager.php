@@ -89,23 +89,21 @@ class ArticleManager extends Api
             $where["article.user_id"]=["in",$temp];
 
         }
-        $where=[];
 
-        // 我关注的标签.
-        $str="";
+        $whereExp=[];
         $label_ids=$this->request->request("label_ids",'');
         if($label_ids){
 
-            //$label_ids=explode(",",$label_ids);
-            $where[]=['exp','FIND_IN_SET(1,article.label_ids)'];
+            $label_ids=explode(",",$label_ids);
+            $whereExp=['','find_in_set(1,article.label_ids)'];
         }
 
         // 请求的标签.
 
         $query=new Query();
         $data["rows"]=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
-            ->where([])
-            ->whereExp("","FIND_IN_SET(1,article.label_ids)")
+            ->where($where)
+            ->whereExp($whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
             ->limit($offset,$page_size)->order("article.id desc")->select();
@@ -113,8 +111,8 @@ class ArticleManager extends Api
 
 
         $data["count"]=$query->table("fa_article")->alias("article")
-            ->where([])
-            ->whereExp("","FIND_IN_SET(1,article.label_ids)")
+            ->where($where)
+            ->whereExp($whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
             ->limit($offset,$page_size)->count();
