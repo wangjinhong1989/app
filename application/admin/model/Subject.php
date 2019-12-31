@@ -30,6 +30,14 @@ class Subject extends Model
     ];
     
 
+    protected static function init()
+    {
+        self::afterInsert(function ($row) {
+            $pk = $row->getPk();
+            $row->getQuery()->where($pk, $row[$pk])->update(['weigh' => $row[$pk]]);
+        });
+    }
+
     
     public function getStatusList()
     {
