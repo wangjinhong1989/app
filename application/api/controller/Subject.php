@@ -23,7 +23,7 @@ class Subject extends Api
     {
         $page=$this->request->request("page",1);
         $page_size=$this->request->request("page_size",5);
-        $sort=$this->request->request("sort",'sort');
+        $sort=$this->request->request("sort",'weigh');
         $order=$this->request->request("order",'asc');
         $offset=($page-1)*$page_size;
 
@@ -57,7 +57,7 @@ class Subject extends Api
 
         $query=new Query();
         $data["rows"]=$query->table("fa_subject")->alias("subject")->where($where)
-            ->order(" `sort` "," asc") ->limit($offset,$page_size)->select();
+            ->order($sort ,$order) ->limit($offset,$page_size)->select();
 
 
         $data["count"]=$query->table("fa_subject")->alias("subject")->where($where)->count();
