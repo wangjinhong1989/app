@@ -70,5 +70,25 @@ class Subject extends Api
     }
 
 
+    /**
+     * 详情页
+     *
+     */
+    public function detail()
+    {
+        $id=$this->request->request("id",0);
+        $model=new Subject();
+        $where=["status"=>"显示"];
+        $where["id"]=$id;
+        $detail=$model->where($where)->find();
+        if($detail) {
+            $detail->read_count = $detail->read_count + 1;
+            $detail->save();
+
+        }
+
+        $this->success("成功",$detail);
+    }
+
 
 }
