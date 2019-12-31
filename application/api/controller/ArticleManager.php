@@ -89,7 +89,7 @@ class ArticleManager extends Api
             $where["article.user_id"]=["in",$temp];
 
         }
-
+        $where=[];
 
         // 我关注的标签.
         $str="";
