@@ -104,13 +104,13 @@ class ArticleManager extends Api
 
         $query=new Query();
         $data["rows"]=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
-            ->where($where)
+            ->where('exp','FIND_IN_SET(1,article.label_ids)')
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
             ->limit($offset,$page_size)->order("article.id desc")->select();
 
 
-
+die;
         $data["count"]=$query->table("fa_article")->alias("article")
             ->where($where)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
