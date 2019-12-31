@@ -104,7 +104,8 @@ class ArticleManager extends Api
                     }
             }
 
-        }
+        }else
+            $whereExp=" 1 ";
 
         // 请求的标签.
 
