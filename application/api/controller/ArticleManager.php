@@ -90,12 +90,20 @@ class ArticleManager extends Api
 
         }
 
-        $whereExp=[];
+        $whereExp="";
         $label_ids=$this->request->request("label_ids",'');
         if($label_ids){
 
             $label_ids=explode(",",$label_ids);
-            $whereExp='find_in_set(1,article.label_ids)';
+            foreach ($label_ids as $k=>$v){
+
+                    if($k!=count($label_ids)-2){
+                        $whereExp=$whereExp.'find_in_set('.$v.',article.label_ids),';
+                    }else {
+                        $whereExp=$whereExp.'find_in_set('.$v.',article.label_ids)';
+                    }
+            }
+
         }
 
         // 请求的标签.
