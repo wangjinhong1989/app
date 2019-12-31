@@ -57,10 +57,10 @@ class Subject extends Api
 
         $query=new Query();
         $data["rows"]=$query->table("fa_subject")->alias("subject")->where($where)
-            ->limit($offset,$page_size)->select();
+            ->order(" `sort` "," asc") ->limit($offset,$page_size)->select();
 
 
-        $data["count"]=$query->table("subject")->alias("subject")->where($where)->count();
+        $data["count"]=$query->table("fa_subject")->alias("subject")->where($where)->count();
 
 
         $data["page"]=$page;
