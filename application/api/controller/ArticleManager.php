@@ -137,7 +137,13 @@ class ArticleManager extends Api
                 $data["rows"][$key]["is_ad"]=false;
             }
             if(!empty($ad)){
-
+                $ad[0]["label_ids"]="";
+                $ad[0]["user_id"]="";
+                $ad[0]["articletype_id"]="";
+                $ad[0]["come_from"]="";
+                $ad[0]["articletype_name"]="";
+                $ad[0]["username"]="";
+                $ad[0]["avatar"]="";
                 $ad[0]["is_ad"]=true;
                 array_push($data["rows"],$ad[0]);
             }
