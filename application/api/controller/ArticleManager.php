@@ -34,6 +34,7 @@ class ArticleManager extends Api
         $data=[];
         $where=[];
         $where["article.status"]=["eq","显示"];
+        $where["articletype.status"]=["eq","显示"];
 
         // 需要查找的类型. 可以设置多个.
         $articletype_id=$this->request->request("articletype_id","");
@@ -68,6 +69,12 @@ class ArticleManager extends Api
             $where["article.user_id"]=["eq",$user_id];
         }
 
+        // 查询某个人的文章。
+        $username=$this->request->request("username","");
+        if($username){
+            $where["user.username"]=["like","%".$username."%"];
+        }
+
         // 查询我关注的人的文章列表.
         $my_follow=$this->request->request("my_follow",'');
         if($my_follow){
@@ -83,9 +90,29 @@ class ArticleManager extends Api
 
         }
 
+        $whereExp="";
+        $label_ids=$this->request->request("label_ids",'');
+        if($label_ids){
+
+            $label_ids=explode(",",$label_ids);
+            foreach ($label_ids as $k=>$v){
+
+                    if($k!=count($label_ids)-1){
+                        $whereExp=$whereExp.'find_in_set('.$v.',article.label_ids) or ';
+                    }else {
+                        $whereExp=$whereExp.'find_in_set('.$v.',article.label_ids)';
+                    }
+            }
+
+        }else
+            $whereExp=" 1 ";
+
+        // 请求的标签.
+
         $query=new Query();
         $data["rows"]=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
             ->where($where)
+            ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
             ->limit($offset,$page_size)->order("article.id desc")->select();
@@ -94,6 +121,7 @@ class ArticleManager extends Api
 
         $data["count"]=$query->table("fa_article")->alias("article")
             ->where($where)
+            ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
             ->limit($offset,$page_size)->count();
