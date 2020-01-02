@@ -37,6 +37,9 @@ class Data extends Api
             $labels=collection($labels)->toArray();
             $article= new Article();
 
+
+            foreach ($i=0;$i<100;$i++){
+
             $time=time();
             $article->create(["title"=>"title".$time,
                 "description"=>" description".$time,
@@ -44,10 +47,14 @@ class Data extends Api
                 "content"=>" content".$time,
                 "is_mine"=>"是",
                 "is_reply"=>"是",
+                "create_time"=>$time,
                 'articletype_id'=>$types[rand(0,count($types)-1)]['id'],
                 'label_ids'=>$labels[rand(0,count($labels)-1)]['id'].",".$labels[rand(0,count($labels)-1)]['id'],
                 'user_id'=>$user[rand(0,count($user)-1)]['id']
             ]);
+
+            }
+
 
     }
 }
