@@ -66,12 +66,9 @@ class Data extends Api
                 "description"=>" description".$time,
                 "image"=>"http://app.luxiaogui.cn//uploads/20191230/8f4c7653f9b9333617a2664960298ddf.jpg",
                 "content"=>" content".$time,
-                "is_mine"=>"是",
-                "is_reply"=>"是",
                 'weigh'=>0,
                 "create_time"=>$time,
                 'read_count'=>rand(0,1000),
-                'show_count'=>rand(0,1000)
             ]);
         }
     }
