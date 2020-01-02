@@ -54,9 +54,11 @@ class Index extends Api
         // 发送模板短信
         echo "Sending TemplateSMS to $to <br/>";
         $result = $rest->sendTemplateSMS($to, $datas, $tempId);
+
+        var_dump($result);
         if ($result == NULL) {
             echo "result error!";
-            break;
+            return "";
         }
         if ($result->statusCode != 0) {
             echo "error code :" . $result->statusCode . "<br>";
