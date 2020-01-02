@@ -29,10 +29,12 @@ class Data extends Api
     // 根据分类添加各类文章.
     public function article(){
             $type=new Articletype();
-            $types=$type->where([])->select()->toArray();
+            $types=$type->where([])->select();
+            $types=collection($types)->toArray();
             $user=(new \app\admin\model\User())->where([])->select()->toArray();
+            $user=collection($user)->toArray();
             $labels=(new \app\admin\model\Label())->where([])->select()->toArray();
-
+            $labels=collection($labels)->toArray();
             $article= new Article();
 
             $time=time();
