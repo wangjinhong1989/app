@@ -31,9 +31,9 @@ class Data extends Api
             $type=new Articletype();
             $types=$type->where([])->select();
             $types=collection($types)->toArray();
-            $user=(new \app\admin\model\User())->where([])->select()->toArray();
+            $user=(new \app\admin\model\User())->where([])->select();
             $user=collection($user)->toArray();
-            $labels=(new \app\admin\model\Label())->where([])->select()->toArray();
+            $labels=(new \app\admin\model\Label())->where([])->select();
             $labels=collection($labels)->toArray();
             $article= new Article();
 
