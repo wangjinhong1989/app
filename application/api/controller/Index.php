@@ -47,7 +47,7 @@ class Index extends Api
 
         //REST版本号
         $softVersion = '2013-12-26';
-        $rest = new \yuntongxun\REST($serverIP, $serverPort, $softVersion);
+        $rest = new \app\common\library\REST($serverIP, $serverPort, $softVersion);
         $rest->setAccount($accountSid, $accountToken);
         $rest->setAppId($appId);
 
