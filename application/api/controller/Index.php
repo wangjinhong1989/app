@@ -3,7 +3,6 @@
 namespace app\api\controller;
 
 use app\common\controller\Api;
-use yuntongxun\REST;
 
 /**
  * 首页接口
