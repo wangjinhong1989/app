@@ -38,8 +38,7 @@ class Data extends Api
             $article= new Article();
 
 
-            foreach ($i=0;$i<100;$i++){
-
+            for ($i=0;$i<100;$i++){
             $time=time();
             $article->create(["title"=>"title".$time,
                 "description"=>" description".$time,
