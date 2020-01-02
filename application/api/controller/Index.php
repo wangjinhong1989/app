@@ -23,7 +23,7 @@ class Index extends Api
 
     public function test()
     {
-        $this->sendTemplateSMS("17380613281",['1234','5678'],1);
+        $this->sendTemplateSMS("15756425203",['1234','5678'],1);
 
     }
 
