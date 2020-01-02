@@ -5,24 +5,23 @@ namespace app\admin\controller;
 use app\common\controller\Backend;
 
 /**
- * 文章类型
+ * 
  *
  * @icon fa fa-circle-o
  */
-class Articletype extends Backend
+class ArticleType extends Backend
 {
-
-
+    
     /**
-     * Articletype模型对象
-     * @var \app\admin\model\Articletype
+     * ArticleType模型对象
+     * @var \app\admin\model\ArticleType
      */
     protected $model = null;
 
     public function _initialize()
     {
         parent::_initialize();
-        $this->model = new \app\admin\model\Articletype;
+        $this->model = new \app\admin\model\ArticleType;
         $this->view->assign("statusList", $this->model->getStatusList());
     }
     
