@@ -24,10 +24,13 @@ class Index extends Api
 
     public function test()
     {
-        if(! sendTemplateSMS("17380613281",['1234','5678'])){
-            $this->error("发送失败");
-        }else
+        $flag=sendTemplateSMS("17380613281",['1234','5678']);
+        if($flag){
             $this->success("发送成功");
+        }else{
+            $this->error("发送失败".$flag);
+        }
+
 
     }
 

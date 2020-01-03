@@ -414,13 +414,13 @@ if (!function_exists('sendTemplateSMS')) {
         $rest->setAppId($appId);
         $result = $rest->sendTemplateSMS($to, $datas, $tempId);
         if ($result == NULL) {
-            return "短信发送失败";
+            return false;
         }
         if ($result->statusCode != "000000") {
             dd($result);
-            return $result->statusMsg;
+            return false;
         } else {
-            return "";
+            return true;
         }
 
     }
