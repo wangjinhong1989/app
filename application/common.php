@@ -416,7 +416,7 @@ if (!function_exists('sendTemplateSMS')) {
         if ($result == NULL) {
             return "短信发送失败";
         }
-        if ($result->statusCode != 0) {
+        if ($result->statusCode != "000000") {
             dd($result);
             return $result->statusMsg;
         } else {
