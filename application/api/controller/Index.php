@@ -30,8 +30,6 @@ class Index extends Api
         }else{
             $this->error("发送失败".$flag);
         }
-
-
     }
 
 
