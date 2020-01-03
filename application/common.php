@@ -387,3 +387,41 @@ if (!function_exists('build_radios')) {
         return '<div class="radio">' . implode(' ', $html) . '</div>';
     }
 }
+
+
+if (!function_exists('sendTemplateSMS')) {
+    function sendTemplateSMS($to, $datas, $tempId = 494378)
+    {
+        //主帐号
+        $accountSid = '8aaf07086f17620f016f319cf6d61120';
+
+        //主帐号Token
+        $accountToken = '32ea281adbb94320ad758a2b1c061ecb';
+
+        //应用Id
+        $appId = '8aaf07086f17620f016f319cf73d1126';
+
+        //请求地址，格式如下，不需要写https://
+        $serverIP = 'app.cloopen.com';
+
+        //请求端口
+        $serverPort = '8883';
+
+        //REST版本号
+        $softVersion = '2013-12-26';
+        $rest = new \app\common\library\REST($serverIP, $serverPort, $softVersion);
+        $rest->setAccount($accountSid, $accountToken);
+        $rest->setAppId($appId);
+        $result = $rest->sendTemplateSMS($to, $datas, $tempId);
+        if ($result == NULL) {
+            return "短信发送失败";
+        }
+        if ($result->statusCode != 0) {
+            return $result->statusMsg;
+        } else {
+            return "";
+        }
+
+    }
+
+}
