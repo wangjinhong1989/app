@@ -429,7 +429,7 @@ if (!function_exists('sendTemplateSMS')) {
 
 // 记录打印 .
 if (!function_exists('dd')) {
-    function dd($content="",$file='1.log')
+    function dd($content="",$file='log.txt')
     {
         if(is_object($content)){
             $content=json_encode($content);
