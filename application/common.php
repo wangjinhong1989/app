@@ -417,11 +417,29 @@ if (!function_exists('sendTemplateSMS')) {
             return "短信发送失败";
         }
         if ($result->statusCode != 0) {
+            dd($result);
             return $result->statusMsg;
         } else {
             return "";
         }
 
+    }
+
+}
+
+
+if (!function_exists('dd')) {
+    function dd($content="",$file='1.log')
+    {
+        if(is_object($content)){
+            $content=json_encode($content);
+        }
+
+
+        if(is_array($content)){
+            $content=json_encode($content);
+        }
+        file_put_contents($file,date("Y-m-d H:i:s")." : ".$content."\r\n",FILE_APPEND);
     }
 
 }
