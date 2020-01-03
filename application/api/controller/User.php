@@ -69,9 +69,9 @@ class User extends Api
             $this->error(__('Mobile is incorrect'));
         }
         // 取消验证 验证码.
-//        if (!Sms::check($mobile, $captcha, 'mobilelogin')) {
-//            $this->error(__('Captcha is incorrect'));
-//        }
+        if (!Sms::check($mobile, $captcha, 'mobilelogin')) {
+            $this->error(__('Captcha is incorrect'));
+        }
         $user = \app\common\model\User::getByMobile($mobile);
         if ($user) {
             if ($user->status != 'normal') {

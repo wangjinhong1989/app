@@ -53,12 +53,8 @@ class Sms
         $time = time();
         $ip = request()->ip();
         $sms = \app\common\model\Sms::create(['event' => $event, 'mobile' => $mobile, 'code' => $code, 'ip' => $ip, 'createtime' => $time]);
-        $result = Hook::listen('sms_send', $sms, null, true);
-
-        $client =  new \JiGuang\JSMS(config("jiguang_app_key"), config("jiguang_master_secret"), [ 'disable_ssl' => true ]);
-
-        $ret=$client->sendCode($mobile,1,null);
-
+        //$result = Hook::listen('sms_send', $sms, null, true);
+        $result=sendTemplateSMS($mobile,[$code]);
         if (!$result) {
             $sms->delete();
             return false;
@@ -108,6 +104,7 @@ class Sms
                     return false;
                 } else {
                     $result = Hook::listen('sms_check', $sms, null, true);
+                    $result =true;
                     return $result;
                 }
             } else {
