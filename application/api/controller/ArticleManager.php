@@ -459,6 +459,13 @@ class ArticleManager extends Api
                 $detail['label_ids']=null;
 
 
+            $detail["企业认证"]=( new \app\admin\model\AuthenticationEnterprise())->where(["user_id"=>$detail->user_id])
+                ->find();
+
+            $detail["媒体认证"]=( new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$detail->user_id])
+                ->find();
+            $detail["个人认证"]=( new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$detail->user_id])
+                ->find();
 
 
         }
