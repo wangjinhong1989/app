@@ -28,7 +28,8 @@ class Article extends Model
         'create_time_text',
         'status_text',
         'is_reply_text',
-        'is_mine_text'
+        'is_mine_text',
+        'is_recommendation_text'
     ];
     
 
@@ -44,6 +45,11 @@ class Article extends Model
     }
 
     public function getIsMineList()
+    {
+        return ['是' => __('是'), '否' => __('否')];
+    }
+
+    public function getIsRecommendationList()
     {
         return ['是' => __('是'), '否' => __('否')];
     }
@@ -76,6 +82,14 @@ class Article extends Model
     {
         $value = $value ? $value : (isset($data['is_mine']) ? $data['is_mine'] : '');
         $list = $this->getIsMineList();
+        return isset($list[$value]) ? $list[$value] : '';
+    }
+
+
+    public function getIsRecommendationTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['is_recommendation']) ? $data['is_recommendation'] : '');
+        $list = $this->getIsRecommendationList();
         return isset($list[$value]) ? $list[$value] : '';
     }
 

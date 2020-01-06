@@ -25,6 +25,7 @@ class Article extends Backend
         $this->view->assign("statusList", $this->model->getStatusList());
         $this->view->assign("isReplyList", $this->model->getIsReplyList());
         $this->view->assign("isMineList", $this->model->getIsMineList());
+        $this->view->assign("isRecommendationList", $this->model->getIsRecommendationList());
     }
     
     /**
@@ -65,7 +66,7 @@ class Article extends Backend
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(['id','title','description','create_time','status','come_from','url','img','read_count','show_count','is_reply','is_mine']);
+                $row->visible(['id','title','description','status','come_from','label_ids','url','img','read_count','show_count']);
                 $row->visible(['articletype']);
 				$row->getRelation('articletype')->visible(['name']);
 				$row->visible(['label']);
