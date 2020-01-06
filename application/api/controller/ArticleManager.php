@@ -157,6 +157,153 @@ class ArticleManager extends Api
     }
 
 
+
+    /**
+     * 首页
+     *
+     */
+    public function recommendation()
+    {
+        $page=$this->request->request("page",1);
+        $page_size=$this->request->request("page_size",5);
+        $offset=($page-1)*$page_size;
+
+        if($offset<0){
+            $offset=0;
+        }
+        $data=[];
+        $where=[];
+        $where["article.status"]=["eq","显示"];
+        $where["articletype.status"]=["eq","显示"];
+
+        // 需要查找的类型. 可以设置多个.
+        $articletype_id=$this->request->request("articletype_id","");
+        if($articletype_id){
+            $where["article.articletype_id"]=["in",explode(",",$articletype_id)];
+        }
+
+        // keyword 检索. 关键字检索.
+
+        $keyword=$this->request->request("keyword","");
+        if($keyword){
+            $where["article.title|article.description|article.content"]=["like","%".$keyword."%"];
+        }
+
+
+        // 单独查询.
+        $title=$this->request->request("title","");
+        if($title){
+            $where["article.title"]=["like","%".$title."%"];
+        }
+        $description=$this->request->request("description","");
+        if($description){
+            $where["article.description"]=["like","%".$description."%"];
+        }
+        $content=$this->request->request("content","");
+        if($content){
+            $where["article.content"]=["like","%".$content."%"];
+        }
+        // 查询某个人的文章。
+        $user_id=$this->request->request("user_id","");
+        if($user_id){
+            $where["article.user_id"]=["eq",$user_id];
+        }
+
+        // 查询某个人的文章。
+        $is_recommendation=$this->request->request("is_recommendation","");
+        if($is_recommendation){
+            $where["article.is_recommendation"]=["eq",$is_recommendation];
+        }
+
+        // 查询某个人的文章。
+        $username=$this->request->request("username","");
+        if($username){
+            $where["user.username"]=["like","%".$username."%"];
+        }
+
+        // 查询我关注的人的文章列表.
+        $my_follow=$this->request->request("my_follow",'');
+        if($my_follow){
+            $my_follow=(new \app\admin\model\Guanzhu())->field("follow_id")->where(["user_id"=>$this->auth->id])->select();
+            $temp=array();
+            foreach ($my_follow as $value){
+                $temp[]=$value['follow_id'];
+            }
+            if(empty($temp)){
+                $temp=[0];
+            }
+            $where["article.user_id"]=["in",$temp];
+
+        }
+
+        $whereExp="";
+        $label_ids=$this->request->request("label_ids",'');
+        if($label_ids){
+
+            $label_ids=explode(",",$label_ids);
+            foreach ($label_ids as $k=>$v){
+
+                if($k!=count($label_ids)-1){
+                    $whereExp=$whereExp.'find_in_set('.$v.',article.label_ids) or ';
+                }else {
+                    $whereExp=$whereExp.'find_in_set('.$v.',article.label_ids)';
+                }
+            }
+
+        }else
+            $whereExp=" 1 ";
+
+        // 请求的标签.
+
+        $query=new Query();
+        $data["rows"]=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
+            ->where($where)
+            ->whereExp('',$whereExp)
+            ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
+            ->join("fa_user user","user.id=article.user_id","left")
+            ->limit($offset,$page_size)->order("article.id desc")->select();
+
+
+
+        $data["count"]=$query->table("fa_article")->alias("article")
+            ->where($where)
+            ->whereExp('',$whereExp)
+            ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
+            ->join("fa_user user","user.id=article.user_id","left")
+            ->limit($offset,$page_size)->count();
+
+
+
+        // 是否需要返回广告.
+        $need_ad=$this->request->request("need_ad",1);
+        if($need_ad){
+            $guanggao=new Guanggao();
+            $ad=Db::table($guanggao->getTable())->where([])->limit(1)->select();
+            foreach ($data["rows"] as $key=>$value){
+                $data["rows"][$key]["is_ad"]=false;
+            }
+            if(!empty($ad)){
+                $ad[0]["label_ids"]="";
+                $ad[0]["user_id"]="";
+                $ad[0]["articletype_id"]="";
+                $ad[0]["come_from"]="";
+                $ad[0]["articletype_name"]="";
+                $ad[0]["username"]="";
+                $ad[0]["avatar"]="";
+                $ad[0]["is_ad"]=true;
+                array_push($data["rows"],$ad[0]);
+            }
+        }
+        // 结束.
+
+        $data["page"]=$page;
+
+        $data["total_page"]=ceil($data["count"]/$page_size);
+        $this->success("成功",$data);
+    }
+
+
+
     /**
      * 包含搜索功能的页面.
      *
