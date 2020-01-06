@@ -437,12 +437,14 @@ class ArticleManager extends Api
 
             //  增加阅读历史。
             $user_id=$this->auth->id;
+            $detail['user']=null;
             if($user_id!=$article->user_id){
                 // 增加阅读历史记录.
                 $his=new ReadHistory();
 
                 $find=$his->where(["user_id"=>$user_id,"article_id"=>$article->id])->find();
                 if($find){
+                    $detail['user']=$find;
                     $find->time=time();
                     $find->save();
                 }else
@@ -455,6 +457,9 @@ class ArticleManager extends Api
                 $detail['label_ids']=$label->where(['id'=>['in',explode(',',$detail['label_ids'])]])->select();
             }else
                 $detail['label_ids']=null;
+
+
+
 
         }
 
