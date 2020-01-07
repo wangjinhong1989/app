@@ -13,7 +13,6 @@ class Articletype extends Backend
 {
     
     /**
-     *
      * Articletype模型对象
      * @var \app\admin\model\Articletype
      */
