@@ -47,7 +47,7 @@ class UserManager extends Api
             $where["guanzhu.follow_id"]=['is not ',null];
 
         }else if($follow_id=="未关注"){
-            $where["guanzhu.follow_id"]=['eq ',null];
+            $where["guanzhu.follow_id"]=['is',null];
         }
 
         $query=new Query();
