@@ -41,12 +41,12 @@ class UserManager extends Api
 
         }
 
-        //SELECT info.* , guanzhu.follow_id FROM `user_base_info` info LEFT JOIN  fa_guanzhu guanzhu on  guanzhu.user_id=1 and guanzhu.follow_id=info.id  group by info.id;
+        var_dump($this->auth->getUserinfo());
         $query=new Query();
-        $data["rows"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id")
+        $data["rows"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id ")
             ->where($where)
             ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
-            ->limit($offset,$page_size)->order("info.id desc")->group("info.id")->select();
+            ->limit($offset,$page_size)->order("info.id asc")->group("info.id")->select();
 
         $data["count"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id")
             ->where($where)
