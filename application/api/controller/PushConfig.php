@@ -37,32 +37,36 @@ class PushConfig extends Api
     /*
     *添加关注
     * **/
-    public function add()
+    public function update()
     {
 
         try {
             $data = [];
-            $model = new \app\admin\model\Guanzhu();
+            $model= new \app\admin\model\PushConfig();
             $user = $this->auth->getUser();
             $user_id = $user->id;
-            $follow_id = $this->request->request('follow_id');
+            $id = $this->request->request('id',"0");
+            $is_accept_notify = $this->request->request('is_accept_notify',"是");
+            $is_article_notify = $this->request->request('is_article_notify',"是");
+            $is_kuaixun_notify = $this->request->request('is_kuaixun_notify',"是");
+            $is_follow_notify= $this->request->request('is_follow_notify',"是");
 
+            $info=$model->where(["id"=>$id,"user_id"=>$user_id])->find();
 
-            if (!$follow_id) {
+            if(!$info||!$id||!$is_accept_notify||!$is_article_notify||!$is_kuaixun_notify||!$is_follow_notify){
                 return $this->error(__('参数存在空'));
                 die;
             }
-            if (!User::getById($follow_id)) {
-                return $this->error(__('被关注人不存在'));
-            }
-            if ($model->where(['user_id'=>$user_id,'follow_id'=>$follow_id])->select()) {
-                return $this->error(__('已经关注了'));
-            }
 
-            $model->create([
-                'user_id' => $user_id, 'follow_id' => $follow_id, 'time' => time()
-            ]);
-
+            $arr=["是","否"];
+            if(!in_array($is_accept_notify,$arr)||!in_array($is_article_notify,$arr)||!in_array($is_kuaixun_notify,$arr)||!in_array($is_follow_notify,$arr)){
+                return $this->error(__('参数存在错误'));
+            }
+            $info->is_accept_notify=$is_accept_notify;
+            $info->is_article_notify=$is_article_notify;
+            $info->is_kuaixun_notify=$is_kuaixun_notify;
+            $info->is_follow_notify=$is_follow_notify;
+            $info->save();
             return $this->success();
         } catch (Exception $e) {
             return $this->error($e->getMessage());
