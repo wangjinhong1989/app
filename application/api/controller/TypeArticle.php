@@ -20,7 +20,7 @@ class TypeArticle extends Api
      */
     public function Lists()
     {
-        $lists=( new Articletype())->where(['status'=>"显示"])->select();
+        $lists=( new Articletype())->where(['status'=>"显示"])->order("weigh","desc")->select();
         $this->success("",$lists);
     }
 
