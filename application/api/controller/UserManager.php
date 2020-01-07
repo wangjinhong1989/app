@@ -33,10 +33,12 @@ class UserManager extends Api
         }
         $data=[];
         $where=[];
-
+        // 不是自己.
+        $where["info.id"]=['<>',$this->auth->id];
         $username=$this->request->request("username","");
         if($username){
             $where["info.username"]=['like',"%".$username."%"];
+
         }
 
         //SELECT info.* , guanzhu.follow_id FROM `user_base_info` info LEFT JOIN  fa_guanzhu guanzhu on  guanzhu.user_id=1 and guanzhu.follow_id=info.id  group by info.id;
