@@ -56,6 +56,7 @@ class UserManager extends Api
             ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
             ->limit($offset,$page_size)->order("info.id asc")->group("info.id")->select();
 
+        echo $query->getLastSql();
         $data["count"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id")
             ->where($where)
             ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
