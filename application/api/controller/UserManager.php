@@ -61,7 +61,19 @@ class UserManager extends Api
                 ->whereNull("guanzhu.follow_id")
                 ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
                 ->group("info.id")->count();
+            foreach ($data["rows"] as $k=>&$value){
 
+                $data["rows"][$k]["authentication_type"]=null;
+                if($value["personal_id"]){
+                    $data["rows"][$k]["authentication_type"]="个人";
+                }
+                if($value["media_id"]){
+                    $data["rows"][$k]["authentication_type"]="媒体";
+                }
+                if($value["enterprise_id"]){
+                    $data["rows"][$k]["authentication_type"]="企业";
+                }
+            }
             $data["page"]=$page;
             $data["total_page"]=ceil($data["count"]/$page_size);
             $this->success("成功",$data);
@@ -79,6 +91,19 @@ class UserManager extends Api
             ->where($where)
             ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
             ->group("info.id")->count();
+        foreach ($data["rows"] as $k=>&$value){
+
+            $data["rows"][$k]["authentication_type"]=null;
+            if($value["personal_id"]){
+                $data["rows"][$k]["authentication_type"]="个人";
+            }
+            if($value["media_id"]){
+                $data["rows"][$k]["authentication_type"]="媒体";
+            }
+            if($value["enterprise_id"]){
+                $data["rows"][$k]["authentication_type"]="企业";
+            }
+        }
 
         $data["page"]=$page;
         $data["total_page"]=ceil($data["count"]/$page_size);
@@ -128,7 +153,19 @@ class UserManager extends Api
                 ->whereNull("guanzhu.follow_id")
                 ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
                 ->group("info.id")->count();
+            foreach ($data["rows"] as $k=>&$value){
 
+                $data["rows"][$k]["authentication_type"]=null;
+                if($value["personal_id"]){
+                    $data["rows"][$k]["authentication_type"]="个人";
+                }
+                if($value["media_id"]){
+                    $data["rows"][$k]["authentication_type"]="媒体";
+                }
+                if($value["enterprise_id"]){
+                    $data["rows"][$k]["authentication_type"]="企业";
+                }
+            }
             $data["page"]=$page;
             $data["total_page"]=ceil($data["count"]/$page_size);
             $this->success("成功",$data);
