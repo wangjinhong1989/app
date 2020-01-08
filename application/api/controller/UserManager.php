@@ -142,6 +142,19 @@ class UserManager extends Api
             ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
             ->limit($offset,$page_size)->order("info.id asc")->group("info.id")->select();
 
+        foreach ($data["rows"] as $k=>&$value){
+
+            $value["authentication_type"]=null;
+            if($value["personal_id"]){
+                $value["authentication_type"]="个人";
+            }
+            if($value["media_id"]){
+                $value["authentication_type"]="媒体";
+            }
+            if($value["enterprise_id"]){
+                $value["authentication_type"]="企业";
+            }
+        }
         $data["count"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id")
             ->where($where)
             ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
