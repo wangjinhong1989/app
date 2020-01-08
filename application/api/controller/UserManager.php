@@ -63,7 +63,7 @@ class UserManager extends Api
                 ->group("info.id")->count();
             foreach ($data["rows"] as $k=>&$value){
 
-                $data["rows"][$k]["authentication_type"]=null;
+                $data["rows"][$k]["authentication_type"]="";
                 if($value["personal_id"]){
                     $data["rows"][$k]["authentication_type"]="个人";
                 }
@@ -93,7 +93,7 @@ class UserManager extends Api
             ->group("info.id")->count();
         foreach ($data["rows"] as $k=>&$value){
 
-            $data["rows"][$k]["authentication_type"]=null;
+            $data["rows"][$k]["authentication_type"]="";
             if($value["personal_id"]){
                 $data["rows"][$k]["authentication_type"]="个人";
             }
