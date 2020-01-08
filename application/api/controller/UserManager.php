@@ -144,15 +144,15 @@ class UserManager extends Api
 
         foreach ($data["rows"] as $k=>&$value){
 
-            $value["authentication_type"]=null;
+            $data["rows"][$k]["authentication_type"]=null;
             if($value["personal_id"]){
-                $value["authentication_type"]="个人";
+                $data["rows"][$k]["authentication_type"]="个人";
             }
             if($value["media_id"]){
-                $value["authentication_type"]="媒体";
+                $data["rows"][$k]["authentication_type"]="媒体";
             }
             if($value["enterprise_id"]){
-                $value["authentication_type"]="企业";
+                $data["rows"][$k]["authentication_type"]="企业";
             }
         }
         $data["count"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id")
