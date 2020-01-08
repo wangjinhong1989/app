@@ -87,7 +87,70 @@ class UserManager extends Api
 
 
     public static function  re(){
-        (new UserManager())->Lists();
+        (new UserManager())->back_lists();
     }
+
+    /**
+     * 首页
+     *
+     */
+    public function back_lists()
+    {
+        $page=$this->request->request("page",1);
+        $page_size=$this->request->request("page_size",5);
+        $offset=($page-1)*$page_size;
+
+        if($offset<0){
+            $offset=0;
+        }
+        $data=[];
+        $where=[];
+        // 不是自己.
+        $where["info.id"]=['<>',$this->auth->id];
+
+        //  非空.
+        $follow_id=$this->request->request("follow_id","");
+        if($follow_id=="已关注"){
+            $where["guanzhu.follow_id"]=["gt",0];
+
+        }else if($follow_id=="未关注"){
+            //            $where["guanzhu.follow_id"]=["EXP","IS NULL"];
+
+            $query=new Query();
+            $data["rows"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id ")
+                ->where($where)
+                ->whereNull("guanzhu.follow_id")
+                ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
+                ->limit($offset,$page_size)->order("info.id asc")->group("info.id")->select();
+
+            $data["count"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id")
+                ->where($where)
+                ->whereNull("guanzhu.follow_id")
+                ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
+                ->group("info.id")->count();
+
+            $data["page"]=$page;
+            $data["total_page"]=ceil($data["count"]/$page_size);
+            $this->success("成功",$data);
+
+            die;
+
+        }
+        $query=new Query();
+        $data["rows"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id ")
+            ->where($where)
+            ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
+            ->limit($offset,$page_size)->order("info.id asc")->group("info.id")->select();
+
+        $data["count"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id")
+            ->where($where)
+            ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
+            ->group("info.id")->count();
+
+        $data["page"]=$page;
+        $data["total_page"]=ceil($data["count"]/$page_size);
+        $this->success("成功",$data);
+    }
+
 
 }
