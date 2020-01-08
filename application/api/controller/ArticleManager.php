@@ -86,6 +86,7 @@ class ArticleManager extends Api
             if(empty($temp)){
                 $temp=[0];
             }
+
             $where["article.user_id"]=["in",$temp];
 
         }
@@ -127,6 +128,11 @@ class ArticleManager extends Api
             ->join("fa_user user","user.id=article.user_id","left")
             ->count();
 
+
+        // 跳转到关注列表中.
+        if($my_follow&&$data["count"]==0){
+            $this->redirect("/index/user_manager/lists");
+        }
 
 
         // 是否需要返回广告.
@@ -257,11 +263,12 @@ class ArticleManager extends Api
         // 请求的标签.
 
         $query=new Query();
-        $data["rows"]=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
+        $data["rows"]=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.count_lihao,kong_hao.count_likong")
             ->where($where)
             ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
+            ->join("fa_kong_hao kong_hao","kong_hao.article_id=article.id","left")
             ->limit($offset,$page_size)->order("article.id desc")->select();
 
 
