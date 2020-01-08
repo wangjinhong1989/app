@@ -131,7 +131,7 @@ class ArticleManager extends Api
 
         // 跳转到关注列表中.
         if($my_follow&&$data["count"]==0){
-            redirect("/api/user_manager/lists");die;
+            UserManager::re();die;
         }
 
 

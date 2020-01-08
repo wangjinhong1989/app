@@ -86,5 +86,8 @@ class UserManager extends Api
     }
 
 
+    public static function  re(){
+        (new UserManager())->Lists();
+    }
 
 }
