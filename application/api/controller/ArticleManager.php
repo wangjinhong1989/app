@@ -130,9 +130,9 @@ class ArticleManager extends Api
 
 
         // 跳转到关注列表中.
-        if($my_follow&&$data["count"]==0){
-            UserManager::re();die;
-        }
+//        if($my_follow&&$data["count"]==0){
+//            UserManager::re();die;
+//        }
 
 
         // 是否需要返回广告.
