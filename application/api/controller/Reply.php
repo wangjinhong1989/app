@@ -120,4 +120,32 @@ class Reply extends Api
         }
 
     }
+
+
+    /*
+    *更新状态, 审核该文章.
+    * **/
+    public function update()
+    {
+
+        try{
+            $model=new \app\admin\model\Reply();
+            $user = $this->auth->getUser();
+            $user_id=$user->id;
+            $id=$this->request->request('id',0);
+            $status=$this->request->request('status',"有效");
+
+            $reply=$model->where(["id"=>$id,"user_id"=>$user_id])->find();
+            if(!$reply){
+                return  $this->error("文章不存在");
+            }
+            $reply->status=$status;
+            $reply->save();
+            return $this->success();
+        }catch (Exception $e){
+            return  $this->error($e->getMessage());
+        }
+
+    }
+
 }
