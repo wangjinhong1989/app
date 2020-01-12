@@ -49,6 +49,9 @@ class Reply extends Api
         }
 
 
+        if(!$article_id&&!$parent_id&&!$user_id){
+            $this->error("参数错误","");
+        }
         $query=new Query();
         $lists=$query->table("fa_reply_list")->alias("reply")->field("*")
             ->where($where)
