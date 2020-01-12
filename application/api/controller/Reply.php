@@ -83,7 +83,7 @@ class Reply extends Api
             $article_id=$this->request->request('article_id',0);
             $content=$this->request->request('content',"");
 
-            if(!$parent_id||$article_id||!$content){
+            if(!$article_id||!$content){
                 return $this->error(__('参数存在空'));
             }
 
