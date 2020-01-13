@@ -120,7 +120,9 @@ class Wechat
             "code"       => $code,
             "grant_type" => "authorization_code",
         );
+        dd($queryarr);
         $response = Http::post(self::GET_ACCESS_TOKEN_URL, $queryarr);
+        dd($response);
         $ret = json_decode($response, true);
         return $ret ? $ret : [];
     }
