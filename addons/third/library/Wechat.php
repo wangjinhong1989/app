@@ -66,7 +66,7 @@ class Wechat
         $params = $params ? $params : $_GET;
         var_dump($params);
         var_dump(Session::get('state'));
-        if (isset($params['access_token']) || (isset($params['state']) && $params['state'] == Session::get('state') && isset($params['code']))) {
+        if (isset($params['access_token']) || ( isset($params['code']))) {
             //获取access_token
             $data = isset($params['code']) ? $this->getAccessToken($params['code']) : $params;
             $access_token = isset($data['access_token']) ? $data['access_token'] : '';
