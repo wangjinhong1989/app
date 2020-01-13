@@ -327,9 +327,8 @@ class User extends Api
 
         var_dump($app);
         //通过code换access_token和绑定会员
-        $result = $app->{$platform}->getUserInfo(['code' => $code]);
+        $result = $app->wechat->getUserInfo(['code' => $code]);
 
-        dd($this->request);
         dd($result);
         if ($result) {
             $loginret = \addons\third\library\Service::connect($platform, $result);
