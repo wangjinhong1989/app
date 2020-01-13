@@ -314,18 +314,13 @@ class User extends Api
         $url = url('user/index');
         $platform = $this->request->request("platform");
         $code = $this->request->request("code");
-        dd($code);
-        dd($platform);
+
         $config = get_addon_config('third');
         if (!$config || !isset($config[$platform])) {
             dd($config);
             $this->error(__('Invalid parameters'));
         }
-
-        dd($config);
         $app = new \addons\third\library\Application($config);
-
-        var_dump($app);
         //通过code换access_token和绑定会员
         $result = $app->wechat->getUserInfo(['code' => $code]);
 
@@ -344,7 +339,6 @@ class User extends Api
                 $this->success(__('Logged in successful'), $data);
             }
         }
-        dd("error");
         $this->error(__('Operation failed'), $url);
     }
 
