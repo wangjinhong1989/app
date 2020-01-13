@@ -48,6 +48,8 @@ class Application
                 // 如果未定义回调地址则自动生成
                 $options['callback'] = isset($options['callback']) && $options['callback'] ? $options['callback'] : url('/', [], false, true);
                 $objname = __NAMESPACE__ . "\\{$v}";
+
+                var_dump($objname);
                 return new $objname($options);
             };
         }
