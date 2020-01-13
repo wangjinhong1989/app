@@ -313,8 +313,11 @@ class User extends Api
         $url = url('user/index');
         $platform = $this->request->request("platform");
         $code = $this->request->request("code");
+        dd($code);
+        dd($platform);
         $config = get_addon_config('third');
         if (!$config || !isset($config[$platform])) {
+            dd($config);
             $this->error(__('Invalid parameters'));
         }
         $app = new \addons\third\library\Application($config);
