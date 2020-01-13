@@ -492,7 +492,7 @@ class ArticleManager extends Api
             }
             // 是否关注了该用户.
 
-            $guanzhu=(new \app\admin\model\Guanzhu())->where(["user_id"=>$user_id,"at_id"=>$article->user_id])->find();
+            $guanzhu=(new \app\admin\model\Guanzhu())->where(["user_id"=>$user_id,"follow_id"=>$article->user_id])->find();
             if($guanzhu){
                 $detail["is_guanzhu"]="是";
             }else
