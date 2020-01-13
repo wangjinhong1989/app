@@ -2,6 +2,7 @@
 
 namespace app\api\controller;
 
+use addons\third\library\Wechat;
 use app\common\controller\Api;
 use app\common\library\Ems;
 use app\common\library\Sms;
@@ -323,7 +324,8 @@ class User extends Api
 
         dd($config);
         $app = new \addons\third\library\Application($config);
-        dd($app);
+
+        var_dump($app);
         //通过code换access_token和绑定会员
         $result = $app->{$platform}->getUserInfo(['code' => $code]);
 
