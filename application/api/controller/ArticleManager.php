@@ -475,7 +475,25 @@ class ArticleManager extends Api
             $detail["个人认证"]=( new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$detail['user_id']])
                 ->find();
 
+            $detail["authentication_type"]="";
+            if($detail["企业认证"]){
+                $detail["authentication_type"]="企业";
+            }
+            if($detail["媒体认证"]){
+                $detail["authentication_type"]="媒体";
+            }
 
+            if($detail["个人认证"]){
+                $detail["authentication_type"]="个人";
+            }
+
+            // 是否关注了该用户.
+
+            $guanzhu=(new \app\admin\model\Guanzhu())->where(["user_id"=>$user_id,"at_id"=>$article->user_id])->find();
+            if($guanzhu){
+                $detail["is_guanzhu"]="是";
+            }else
+                $detail["is_guanzhu"]="否";
         }
 
 
