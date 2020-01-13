@@ -129,6 +129,9 @@ class ArticleManager extends Api
             ->count();
 
 
+        foreach ($data["rows"] as $k=>&$v){
+            $data["rows"][$k]["content"]=htmlspecialchars($data["rows"][$k]["content"]);
+        }
         // 跳转到关注列表中.
 //        if($my_follow&&$data["count"]==0){
 //            UserManager::re();die;
