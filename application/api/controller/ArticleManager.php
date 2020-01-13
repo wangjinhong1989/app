@@ -130,7 +130,7 @@ class ArticleManager extends Api
 
 
         foreach ($data["rows"] as $k=>&$v){
-            $data["rows"][$k]["content"]=htmlspecialchars($data["rows"][$k]["content"]);
+            $data["rows"][$k]["content"]=$data["rows"][$k]["content"]|raw;
         }
         // 跳转到关注列表中.
 //        if($my_follow&&$data["count"]==0){
