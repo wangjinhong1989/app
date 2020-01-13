@@ -64,13 +64,9 @@ class Wechat
     public function getUserInfo($params = [])
     {
         $params = $params ? $params : $_GET;
-        var_dump($params);
-        var_dump(Session::get('state'));
-        if (isset($params['access_token']) || ( isset($params['code']))) {
+        if (isset($params['access_token']) || (isset($params['state']) && $params['state'] == Session::get('state') && isset($params['code']))) {
             //获取access_token
             $data = isset($params['code']) ? $this->getAccessToken($params['code']) : $params;
-
-            var_dump($data);
             $access_token = isset($data['access_token']) ? $data['access_token'] : '';
             $refresh_token = isset($data['refresh_token']) ? $data['refresh_token'] : '';
             $expires_in = isset($data['expires_in']) ? $data['expires_in'] : 0;
@@ -124,9 +120,7 @@ class Wechat
             "code"       => $code,
             "grant_type" => "authorization_code",
         );
-        dd($queryarr);
         $response = Http::post(self::GET_ACCESS_TOKEN_URL, $queryarr);
-        dd($response);
         $ret = json_decode($response, true);
         return $ret ? $ret : [];
     }
