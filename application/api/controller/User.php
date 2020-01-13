@@ -323,6 +323,7 @@ class User extends Api
 
         dd($config);
         $app = new \addons\third\library\Application($config);
+        dd($app);
         //通过code换access_token和绑定会员
         $result = $app->{$platform}->getUserInfo(['code' => $code]);
 
