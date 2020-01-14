@@ -49,7 +49,7 @@ class Application
                 $options['callback'] = isset($options['callback']) && $options['callback'] ? $options['callback'] : url('/', [], false, true);
                 $objname = __NAMESPACE__ . "\\{$v}";
 
-                var_dump($objname);
+                dd($objname);
                 return new $objname($options);
             };
         }
