@@ -69,8 +69,8 @@ class SearchHistory extends Model
                 $data["time"]=time();
                 self::create($data);
             }else {
-                $info->time=time();
-                self::save($info,["id"=>$info->id],"id");
+                $data["time"]=time();
+                self::save($data,["id"=>$info->id],"id");
             }
     }
 
