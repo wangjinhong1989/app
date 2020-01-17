@@ -8,6 +8,7 @@ use app\admin\model\Shoucang;
 use app\admin\model\Article;
 use app\admin\model\User;
 use app\common\controller\Api;
+use think\db\Query;
 
 /**
  * 首页接口
@@ -95,25 +96,21 @@ class Guanzhu extends Api
         $offset=($page-1)*$page_size;
         $data=[];
 
-        $model = (new \app\admin\model\Guanzhu());
-        $lists = $model
-            ->with(['user'])
-            ->field("guanzhu.id,guanzhu.follow_id,guanzhu.time,user.nickname,user.avatar")
+        =$query=new Query();
+        $lists = $query->table("fa_guanzhu")->alias("guanzhu")
+            ->field("guanzhu.*,user.nickname,user.avatar")
+            ->join("fa_user user","user.id=guanzhu.user_id","left")
             ->where(['guanzhu.follow_id' => $user_id])
-            ->where('user.id',"eq","guanzhu.user_id")
             ->limit($offset,$page_size)
             ->select();
 
-        dd($model->getLastSql());
-        $count = $model
-            ->with(['user'])
-            ->field("guanzhu.id,guanzhu.follow_id,guanzhu.time,user.nickname,user.avatar")
+        dd($query->getLastSql());
+        $count = $query
+            ->$query->table("fa_guanzhu")->alias("guanzhu")
+            ->field("guanzhu.*,user.nickname,user.avatar")
+            ->join("fa_user user","user.id=guanzhu.user_id","left")
             ->where(['guanzhu.follow_id' => $user_id])
-            ->where('user.id',"eq","guanzhu.user_id")
             ->count();
-        foreach($lists as $k=>$value){
-            unset($lists[$k]['user']);
-        }
 
         $data["page"]=$page;
         $data["rows"]=$lists;
