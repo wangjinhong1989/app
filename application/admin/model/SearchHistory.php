@@ -64,14 +64,13 @@ class SearchHistory extends Model
 
     public function save($data){
             // 查询是否存在， 不存在添加，存在更新时间.
-            $info=self::find($data);
+            $info=self::where($data)->limit(0,1)->find();
             if(empty($info)){
                 $data["time"]=time();
                 self::create($data);
             }else {
-                $temp=$data;
-                $temp["time"]=time();
-                self::update(array_merge($temp),$data);
+                $info->time=time();
+                $info->save();
             }
 
 
