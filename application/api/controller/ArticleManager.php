@@ -137,14 +137,6 @@ class ArticleManager extends Api
             ->join("fa_user user","user.id=article.user_id","left")
             ->count();
 
-
-        foreach ($data["rows"] as $k=>&$v){
-            foreach ($v as $key=>&$value){
-                if($value==null){
-                    $value="";
-                }
-            }
-        }
         // 跳转到关注列表中.
 //        if($my_follow&&$data["count"]==0){
 //            UserManager::re();die;
