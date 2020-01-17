@@ -36,15 +36,15 @@ class Guanzhu extends Api
         $query=new Query();
         $lists = $query->table("fa_guanzhu")->alias("guanzhu")
             ->field("guanzhu.*,user.nickname,user.avatar")
-            ->join("fa_user user","user.id=guanzhu.user_id","left")
-            ->where(['guanzhu.follow_id'=> $user_id])
+            ->join("fa_user user","user.id=guanzhu.follow_id","left")
+            ->where(['guanzhu.user_id'=> $user_id])
             ->limit($offset,$page_size)
             ->select();
-
+        dd($query->getLastSql());
         $count = $query->table("fa_guanzhu")->alias("guanzhu")
             ->field("guanzhu.*,user.nickname,user.avatar")
-            ->join("fa_user user","user.id=guanzhu.user_id","left")
-            ->where(['guanzhu.follow_id' => $user_id])
+            ->join("fa_user user","user.id=guanzhu.follow_id","left")
+            ->where(['guanzhu.user_id' => $user_id])
             ->count();
 
         $data["page"]=$page;
@@ -53,6 +53,7 @@ class Guanzhu extends Api
 
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功", $data);
+
     }
 
 
