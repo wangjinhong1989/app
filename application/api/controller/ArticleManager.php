@@ -105,7 +105,8 @@ class ArticleManager extends Api
         $whereExp="";
         $label_ids=$this->request->request("label_ids",'');
         if($label_ids){
-
+            $history=["user_id"=>$this->auth->id, "word"=>$label_ids, "type"=>"标签"];
+            $search->save_data($history);
             $label_ids=explode(",",$label_ids);
             foreach ($label_ids as $k=>$v){
 
