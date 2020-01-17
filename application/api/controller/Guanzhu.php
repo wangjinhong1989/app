@@ -100,7 +100,7 @@ class Guanzhu extends Api
             ->with(['user'])
             ->field("guanzhu.id,guanzhu.follow_id,guanzhu.time,user.nickname,user.avatar")
             ->where(['guanzhu.follow_id' => $user_id])
-            ->where('user.id=guanzhu.user_id')
+            ->join("user",'user.id=guanzhu.user_id',"left")
             ->limit($offset,$page_size)
             ->select();
 
@@ -109,7 +109,7 @@ class Guanzhu extends Api
             ->with(['user'])
             ->field("guanzhu.id,guanzhu.follow_id,guanzhu.time,user.nickname,user.avatar")
             ->where(['guanzhu.follow_id' => $user_id])
-            ->where('user.id=guanzhu.user_id')
+            ->join("user",'user.id=guanzhu.user_id',"left")
             ->count();
         foreach($lists as $k=>$value){
             unset($lists[$k]['user']);
