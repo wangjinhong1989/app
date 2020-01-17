@@ -1,0 +1,6 @@
+2020-01-13 17:31:03 : 0716K1mn1a4I3o0H5tmn158Tln16K1mP
+2020-01-13 17:31:03 : wechat
+2020-01-13 17:31:03 : {"qq":{"app_id":"wxb034a15d8808823e","app_secret":"266f2e0c4e026a054af2922eb6811dfc","scope":"get_user_info"},"wechat":{"app_id":"wxb034a15d8808823e","app_secret":"266f2e0c4e026a054af2922eb6811dfc","scope":"snsapi_base"},"weibo":{"app_id":"100000000","app_secret":"123456","scope":"get_user_info"},"rewrite":{"index\/index":"\/third$","index\/connect":"\/third\/connect\/[:platform]","index\/callback":"\/third\/callback\/[:platform]"}}
+2020-01-13 17:31:03 : {}
+2020-01-13 17:31:03 : []
+2020-01-13 17:31:03 : error

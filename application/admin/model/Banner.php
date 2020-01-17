@@ -60,6 +60,12 @@ class Banner extends Model
 
 
 
+    public function bannername()
+    {
+        return $this->belongsTo('Bannername', 'bannername_id', 'id', [], 'LEFT')->setEagerlyType(0);
+    }
+
+
     public function article()
     {
         return $this->belongsTo('Article', 'article_id', 'id', [], 'LEFT')->setEagerlyType(0);

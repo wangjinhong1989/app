@@ -8,6 +8,8 @@ return [
     'Status'      => '有效无效',
     'Url'         => '原文链接',
     'Img'         => '封面',
+    'Start_time'  => '开始时间',
+    'End_time'    => '结束时间',
     'Read_count'  => '阅读次数',
     'Show_count'  => '展示次数',
     'Is_reply'    => '允许评论',
