@@ -30,7 +30,7 @@ class Banner extends Api
         if($url_type){
             $where["url_type"]=["eq",$url_type];
         }
-        $name=$this->request->request("name","index");
+        $name=$this->request->request("name","");
         if($name){
             $where["bannername.name"]=["eq",$name];
         }
