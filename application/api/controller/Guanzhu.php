@@ -104,6 +104,7 @@ class Guanzhu extends Api
             ->limit($offset,$page_size)
             ->select();
 
+        dd($model->getLastSql());
         $count = $model
             ->with(['user'])
             ->field("guanzhu.id,guanzhu.follow_id,guanzhu.time,user.nickname,user.avatar")
