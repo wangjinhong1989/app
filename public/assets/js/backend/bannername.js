@@ -5,12 +5,12 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             // 初始化表格参数配置
             Table.api.init({
                 extend: {
-                    index_url: 'banner/index' + location.search,
-                    add_url: 'banner/add',
-                    edit_url: 'banner/edit',
-                    del_url: 'banner/del',
-                    multi_url: 'banner/multi',
-                    table: 'banner',
+                    index_url: 'bannername/index' + location.search,
+                    add_url: 'bannername/add',
+                    edit_url: 'bannername/edit',
+                    del_url: 'bannername/del',
+                    multi_url: 'bannername/multi',
+                    table: 'bannername',
                 }
             });
 
@@ -25,14 +25,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'bannername_id', title: __('Bannername_id')},
-                        {field: 'img', title: __('Img')},
-                        {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
-                        {field: 'article_id', title: __('Article_id')},
-                        {field: 'url_type', title: __('Url_type'), searchList: {"内链":__('内链'),"外链":__('外链')}, formatter: Table.api.formatter.normal},
-                        {field: 'status', title: __('Status'), searchList: {"显示":__('显示'),"隐藏":__('隐藏')}, formatter: Table.api.formatter.status},
-                        {field: 'bannername.name', title: __('Bannername.name')},
-                        {field: 'article.title', title: __('Article.title')},
+                        {field: 'name', title: __('Name')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]

@@ -4,7 +4,9 @@ namespace app\api\controller;
 
 use app\admin\model\Article;
 use app\admin\model\Guanggao;
+use app\admin\model\HotSearch;
 use app\admin\model\ReadHistory;
+use app\admin\model\SearchHistory;
 use app\common\controller\Api;
 use think\Db;
 use think\db\Query;
@@ -35,7 +37,7 @@ class ArticleManager extends Api
         $where=[];
         $where["article.status"]=["eq","显示"];
         $where["articletype.status"]=["eq","显示"];
-
+        $search=new SearchHistory();
         // 需要查找的类型. 可以设置多个.
         $articletype_id=$this->request->request("articletype_id","");
         if($articletype_id){
@@ -47,6 +49,9 @@ class ArticleManager extends Api
         $keyword=$this->request->request("keyword","");
         if($keyword){
             $where["article.title|article.description|article.content"]=["like","%".$keyword."%"];
+            //  写入关键字检索.
+            $history=["user_id"=>$this->auth->id, "word"=>$keyword, "type"=>"标题,描述,内容"];
+            $search->save_data($history);
         }
 
 
@@ -54,14 +59,20 @@ class ArticleManager extends Api
         $title=$this->request->request("title","");
         if($title){
             $where["article.title"]=["like","%".$title."%"];
+            $history=["user_id"=>$this->auth->id, "word"=>$title, "type"=>"标题"];
+            $search->save_data($history);
         }
         $description=$this->request->request("description","");
         if($description){
             $where["article.description"]=["like","%".$description."%"];
+            $history=["user_id"=>$this->auth->id, "word"=>$description, "type"=>"描述"];
+            $search->save_data($history);
         }
         $content=$this->request->request("content","");
         if($content){
             $where["article.content"]=["like","%".$content."%"];
+            $history=["user_id"=>$this->auth->id, "word"=>$content, "type"=>"内容"];
+            $search->save_data($history);
         }
         // 查询某个人的文章。
         $user_id=$this->request->request("user_id","");
@@ -94,7 +105,8 @@ class ArticleManager extends Api
         $whereExp="";
         $label_ids=$this->request->request("label_ids",'');
         if($label_ids){
-
+            $history=["user_id"=>$this->auth->id, "word"=>$label_ids, "type"=>"标签"];
+            $search->save_data($history);
             $label_ids=explode(",",$label_ids);
             foreach ($label_ids as $k=>$v){
 
@@ -128,10 +140,6 @@ class ArticleManager extends Api
             ->join("fa_user user","user.id=article.user_id","left")
             ->count();
 
-
-//        foreach ($data["rows"] as $k=>&$v){
-//            $data["rows"][$k]["content"]=$data["rows"][$k]["content"];
-//        }
         // 跳转到关注列表中.
 //        if($my_follow&&$data["count"]==0){
 //            UserManager::re();die;

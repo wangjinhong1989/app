@@ -30,11 +30,18 @@ class Banner extends Api
         if($url_type){
             $where["url_type"]=["eq",$url_type];
         }
+        $name=$this->request->request("name","");
+        if($name){
+            $where["bannername.name"]=["eq",$name];
+        }
 
-        $lists=(new \app\admin\model\Banner())->where($where)->limit($offset,$page_size)->select();
-        $count=(new \app\admin\model\Banner())->where($where)->count();
+        $lists=(new \app\admin\model\Banner())->with("bannername")->where($where)->limit($offset,$page_size)->select();
+        $count=(new \app\admin\model\Banner())->with("bannername")->where($where)->count();
 
 
+        foreach ($lists as &$l){
+            $l["img"]="http://app.biyouliao8.com".$l["img"];
+        }
         $data["page"]=$page;
         $data["rows"]=$lists;
         $data["count"]=$count;

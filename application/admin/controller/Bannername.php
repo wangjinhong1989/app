@@ -5,26 +5,24 @@ namespace app\admin\controller;
 use app\common\controller\Backend;
 
 /**
- * 广告类型
+ * 轮播分类管理
  *
  * @icon fa fa-circle-o
  */
-class Guanggao extends Backend
+class Bannername extends Backend
 {
     
     /**
-     * Guanggao模型对象
-     * @var \app\admin\model\Guanggao
+     * Bannername模型对象
+     * @var \app\admin\model\Bannername
      */
     protected $model = null;
 
     public function _initialize()
     {
         parent::_initialize();
-        $this->model = new \app\admin\model\Guanggao;
-        $this->view->assign("statusList", $this->model->getStatusList());
-        $this->view->assign("isReplyList", $this->model->getIsReplyList());
-        $this->view->assign("isMineList", $this->model->getIsMineList());
+        $this->model = new \app\admin\model\Bannername;
+
     }
     
     /**

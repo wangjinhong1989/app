@@ -51,21 +51,21 @@ class Banner extends Backend
             }
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
             $total = $this->model
-                    ->with(['article'])
+                    ->with(['bannername','article'])
                     ->where($where)
                     ->order($sort, $order)
                     ->count();
 
             $list = $this->model
-                    ->with(['article'])
+                    ->with(['bannername','article'])
                     ->where($where)
                     ->order($sort, $order)
                     ->limit($offset, $limit)
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(['id','img','url','url_type','status']);
-                $row->visible(['article']);
+                
+                $row->getRelation('bannername')->visible(['name']);
 				$row->getRelation('article')->visible(['title']);
             }
             $list = collection($list)->toArray();

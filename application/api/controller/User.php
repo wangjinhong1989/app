@@ -331,6 +331,7 @@ class User extends Api
                     'userinfo'  => $this->auth->getUserinfo(),
                     'thirdinfo' => $result
                 ];
+                dd($data);
                 $this->success(__('Logged in successful'), $data);
             }
         }
