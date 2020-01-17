@@ -96,11 +96,11 @@ class Guanzhu extends Api
         $offset=($page-1)*$page_size;
         $data=[];
 
-        =$query=new Query();
+        $query=new Query();
         $lists = $query->table("fa_guanzhu")->alias("guanzhu")
             ->field("guanzhu.*,user.nickname,user.avatar")
             ->join("fa_user user","user.id=guanzhu.user_id","left")
-            ->where(['guanzhu.follow_id' => $user_id])
+            ->where(['guanzhu.follow_id'=> $user_id])
             ->limit($offset,$page_size)
             ->select();
 
