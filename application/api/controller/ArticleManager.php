@@ -4,7 +4,9 @@ namespace app\api\controller;
 
 use app\admin\model\Article;
 use app\admin\model\Guanggao;
+use app\admin\model\HotSearch;
 use app\admin\model\ReadHistory;
+use app\admin\model\SearchHistory;
 use app\common\controller\Api;
 use think\Db;
 use think\db\Query;
@@ -47,6 +49,13 @@ class ArticleManager extends Api
         $keyword=$this->request->request("keyword","");
         if($keyword){
             $where["article.title|article.description|article.content"]=["like","%".$keyword."%"];
+            //  写入关键字检索.
+            $search=new SearchHistory();
+            $search->create(
+            ["user_id"=>$this->auth->id,
+                    "word"=>$keyword,
+                    "type"=>"标题,描述,内容","time"=>time()]
+            );
         }
 
 
@@ -129,9 +138,13 @@ class ArticleManager extends Api
             ->count();
 
 
-//        foreach ($data["rows"] as $k=>&$v){
-//            $data["rows"][$k]["content"]=$data["rows"][$k]["content"];
-//        }
+        foreach ($data["rows"] as $k=>&$v){
+            foreach ($v as $key=>&$value){
+                if($value==null){
+                    $value="";
+                }
+            }
+        }
         // 跳转到关注列表中.
 //        if($my_follow&&$data["count"]==0){
 //            UserManager::re();die;
