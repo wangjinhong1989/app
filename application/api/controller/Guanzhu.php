@@ -119,7 +119,7 @@ class Guanzhu extends Api
         $data["count"]=$count;
 
         $data["total_page"]=ceil($data["count"]/$page_size);
-        $this->success("成功", $lists);
+        $this->success("成功", $data);
     }
 
 
