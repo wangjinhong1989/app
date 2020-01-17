@@ -37,7 +37,7 @@ class ArticleManager extends Api
         $where=[];
         $where["article.status"]=["eq","显示"];
         $where["articletype.status"]=["eq","显示"];
-
+        $search=new SearchHistory();
         // 需要查找的类型. 可以设置多个.
         $articletype_id=$this->request->request("articletype_id","");
         if($articletype_id){
@@ -50,9 +50,8 @@ class ArticleManager extends Api
         if($keyword){
             $where["article.title|article.description|article.content"]=["like","%".$keyword."%"];
             //  写入关键字检索.
-            $search=new SearchHistory();
-            $data=["user_id"=>$this->auth->id, "word"=>$keyword, "type"=>"标题,描述,内容"];
-            $search->save_data($data);
+            $history=["user_id"=>$this->auth->id, "word"=>$keyword, "type"=>"标题,描述,内容"];
+            $search->save_data($history);
         }
 
 
@@ -60,14 +59,20 @@ class ArticleManager extends Api
         $title=$this->request->request("title","");
         if($title){
             $where["article.title"]=["like","%".$title."%"];
+            $history=["user_id"=>$this->auth->id, "word"=>$title, "type"=>"标题"];
+            $search->save_data($history);
         }
         $description=$this->request->request("description","");
         if($description){
             $where["article.description"]=["like","%".$description."%"];
+            $history=["user_id"=>$this->auth->id, "word"=>$description, "type"=>"描述"];
+            $search->save_data($history);
         }
         $content=$this->request->request("content","");
         if($content){
             $where["article.content"]=["like","%".$content."%"];
+            $history=["user_id"=>$this->auth->id, "word"=>$content, "type"=>"内容"];
+            $search->save_data($history);
         }
         // 查询某个人的文章。
         $user_id=$this->request->request("user_id","");
