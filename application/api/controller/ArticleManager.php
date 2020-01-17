@@ -51,11 +51,8 @@ class ArticleManager extends Api
             $where["article.title|article.description|article.content"]=["like","%".$keyword."%"];
             //  写入关键字检索.
             $search=new SearchHistory();
-            $search->create(
-            ["user_id"=>$this->auth->id,
-                    "word"=>$keyword,
-                    "type"=>"标题,描述,内容","time"=>time()]
-            );
+            $data=["user_id"=>$this->auth->id, "word"=>$keyword, "type"=>"标题,描述,内容"];
+            $search->save($data);
         }
 
 

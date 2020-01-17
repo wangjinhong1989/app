@@ -62,5 +62,17 @@ class SearchHistory extends Model
         return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
     }
 
+    public function save($data){
+            // 查询是否存在， 不存在添加，存在更新时间.
+            $info=self::find($data);
+            if(empty($info)){
+                $data["time"]=time();
+                self::create($data);
+            }else {
+                self::update(array_merge($data,["time"=>time()]),$data);
+            }
+
+
+    }
 
 }
