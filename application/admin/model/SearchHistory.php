@@ -70,7 +70,7 @@ class SearchHistory extends Model
                 self::create($data);
             }else {
                 $info->time=time();
-                $info->save();
+                self::save($info);
             }
 
 
