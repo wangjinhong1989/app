@@ -25,8 +25,8 @@ class Hot extends Api
         $offset=($page-1)*$page_size;
 
         $data=[];
-        $lists=( new HotSearch())->where(['status'=>0])->limit($offset,$page_size)->select();
-        $count=( new HotSearch())->where(['status'=>0])->count();
+        $lists=( new HotSearch())->where(['status'=>"显示"])->limit($offset,$page_size)->select();
+        $count=( new HotSearch())->where(['status'=>"显示"])->count();
 
 
         $data["page"]=$page;
@@ -35,8 +35,6 @@ class Hot extends Api
 
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);
-
-        $this->success("成功",$lists);
 
     }
 }
