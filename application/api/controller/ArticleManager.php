@@ -52,7 +52,7 @@ class ArticleManager extends Api
             //  写入关键字检索.
             $search=new SearchHistory();
             $data=["user_id"=>$this->auth->id, "word"=>$keyword, "type"=>"标题,描述,内容"];
-            $search->save($data);
+            $search->save_data($data);
         }
 
 
