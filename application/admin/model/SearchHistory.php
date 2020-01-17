@@ -69,7 +69,9 @@ class SearchHistory extends Model
                 $data["time"]=time();
                 self::create($data);
             }else {
-                self::update(array_merge($data,["time"=>time()]),$data);
+                $temp=$data;
+                $temp["time"]=time();
+                self::update(array_merge($temp),$data);
             }
 
 
