@@ -12,7 +12,14 @@ class Discover extends Api
 {
     protected $noNeedLogin = [];
     protected $noNeedRight = ['*'];
+    protected $model = null;
 
+
+    public function _initialize()
+    {
+        parent::_initialize();
+        $this->model = new \app\admin\model\Discover();
+    }
     /**
      * 热搜
      *
@@ -38,5 +45,14 @@ class Discover extends Api
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);
 
+    }
+
+    public function detail(){
+        $id=$this->request->request("id",0);
+        $detail=$this->model->where(["id"=>$id])->find();
+        if(empty($detail)){
+            return $this->error("找不到数据");
+        }
+        return $this->success("成功",$detail);
     }
 }
