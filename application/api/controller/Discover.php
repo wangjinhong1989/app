@@ -53,6 +53,9 @@ class Discover extends Api
         if(empty($detail)){
             return $this->error("找不到数据");
         }
+        $detail->read_count++;
+        $detail->show_count++;
+        $detail->save();
         return $this->success("成功",$detail);
     }
 }
