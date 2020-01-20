@@ -28,6 +28,7 @@ class Reply extends Api
         $offset=($page-1)*$page_size;
         $data=[];
 
+        $my_id=$this->auth->id;
         $where=[];
         $status=$this->request->request("status","");
         if($status){
@@ -60,6 +61,15 @@ class Reply extends Api
         $count=$query->table("fa_reply_list")->alias("reply")->field("*")
             ->where($status)
            ->count();
+
+        //  是我的文章，就标识 is_mine
+        foreach ($lists as &$l){
+            if($l["author_id"]==$my_id){
+                $l["is_my_article"]="是";
+            }else {
+                $l["is_my_article"]="否";
+            }
+        }
         $data["page"]=$page;
         $data["rows"]=$lists;
         $data["count"]=$count;
