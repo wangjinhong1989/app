@@ -124,7 +124,7 @@ class Ajax extends Api
             \think\Hook::listen("upload_after", $attachment);
             $this->success(__('Upload successful'), null, [
                 'url' => $uploadDir . $splInfo->getSaveName(),
-                'base_url' =>"http://app.luxiaogui.cn"
+                'base_url' =>Config::get('api_url')
             ]);
         } else {
             // 上传失败获取错误信息
