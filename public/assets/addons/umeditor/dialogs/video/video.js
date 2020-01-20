@@ -93,10 +93,10 @@
                 lang = me.lang,
                 conUrl = me.convert_url(url);
 
-            if(!me.endWith(conUrl,[".swf",".flv",".wmv"])){
-                $("#eduiVideoPreview", me.$widget).html( lang.urlError );
-                return;
-            }
+            // if(!me.endWith(conUrl,[".swf",".flv",".wmv"])){
+            //     $("#eduiVideoPreview", me.$widget).html( lang.urlError );
+            //     return;
+            // }
             $("#eduiVideoPreview", me.$widget)[0].innerHTML = '<embed type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"' +
                 ' src="' + url + '"' +
                 ' width="' + 420  + '"' +
