@@ -70,6 +70,44 @@ class Reply extends Api
 
 
 
+    // 文章评论接口， 显示标题和数字
+    public  function group_by_article(){
+
+        $page=$this->request->request("page",1);
+        $page_size=$this->request->request("page_size",5);
+        $offset=($page-1)*$page_size;
+        $data=[];
+
+        $where=[];
+
+        $user_id=$this->auth->id;
+        if($user_id){
+            $where["article.user_id"]=["eq",$user_id];
+        }
+
+        $query=new Query();
+        $lists=$query->table("fa_article")->alias("article")->field("article.*,user.username,user.avatar,count(reply.id) as reply_count")
+            ->join("fa_reply reply","reply.article_id=article.id")
+            ->join("fa_user user","user.id=article.user_id")
+            ->where($where)
+            ->limit($offset,$page_size)->order("article.id desc")->select();
+
+        $count=$query->table("fa_article")->alias("article")->field("article.*,user.username,user.avatar,count(reply.id) as reply_count")
+            ->join("fa_reply reply","reply.article_id=article.id")
+            ->join("fa_user user","user.id=article.user_id")
+            ->where($where)
+           ->count();
+
+
+        $data["page"]=$page;
+        $data["rows"]=$lists;
+        $data["count"]=$count;
+
+        $data["total_page"]=ceil($data["count"]/$page_size);
+        $this->success("成功",$data);
+
+    }
+
 
     /*
     *添加收藏
