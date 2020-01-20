@@ -60,7 +60,7 @@ class Reply extends Api
             ->limit($offset,$page_size)->order("reply.id desc")->select();
 
         $count=$query->table("fa_reply_list")->alias("reply")->field("*")
-            ->where($status)
+            ->where($where)
            ->count();
 
         //  是我的文章，就标识 is_mine
