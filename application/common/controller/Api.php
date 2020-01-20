@@ -111,7 +111,7 @@ class Api
         }
 
         //移除HTML标签
-        //$this->request->filter('trim,strip_tags,htmlspecialchars');
+        $this->request->filter('trim,strip_tags');
 
         $this->auth = Auth::instance();
 
