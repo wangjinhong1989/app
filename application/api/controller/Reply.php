@@ -134,7 +134,9 @@ class Reply extends Api
             $model=new \app\admin\model\Reply();
             $user = $this->auth->getUser();
             $user_id = $user->id;
-            $parent_id=$this->request->request('parent_id',0);
+
+            //  不需要
+            //$parent_id=$this->request->request('parent_id',0);
             $parent_id=0;
             $article_id=$this->request->request('article_id',0);
             $content=$this->request->request('content',"");
@@ -213,12 +215,14 @@ class Reply extends Api
             $user_id=$user->id;
             $id=$this->request->request('id',0);
             $reply_content=$this->request->request('reply_content',"");
+            $parent_id=$this->auth->id;
 
             $reply=$model->where(["id"=>$id])->find();
             if(!$reply){
                 return  $this->error("评论不存在");
             }
             $reply->reply_content=$reply_content;
+            $reply->parent_id=$parent_id;
             $reply->save();
             return $this->success();
         }catch (Exception $e){
