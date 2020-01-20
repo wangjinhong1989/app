@@ -23,10 +23,13 @@ class TypeArticle extends Api
         $show_page=$this->request->request("show_page","");
 
         $where=['status'=>"显示"];
+        $whereExp=" 1 ";
         if(!empty($show_page)){
-          $where["show_page"]=["in",$show_page];
+
+            $whereExp='find_in_set('.$show_page.',show_page)';
+
         }
-        $lists=( new Articletype())->where($where)->order("weigh","desc")->select();
+        $lists=( new Articletype())->where($where)->whereExp('',$whereExp)->order("weigh","desc")->select();
         $this->success("",$lists);
     }
 
