@@ -221,6 +221,17 @@ class Reply extends Api
             if(!$reply){
                 return  $this->error("评论不存在");
             }
+
+            // 检查文章用户.
+
+            $article=(new Article())->where(["id"=>$reply->article_id])->find();
+            if(empty($article)){
+                return  $this->error("文章不存在");
+            }
+            if($article->is_reply!="是"){
+                return  $this->error("不允许评论");
+            }
+
             $reply->reply_content=$reply_content;
             $reply->parent_id=$parent_id;
             $reply->reply_time=time();
