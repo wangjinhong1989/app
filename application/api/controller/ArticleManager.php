@@ -552,7 +552,7 @@ class ArticleManager extends Api
                 return $this->error(__('标题或者内容为空'));
             }
 
-            $data["content"]=htmlentities($data["content"]);
+            //$data["content"]=($data["content"]);
             // 这里要求传描述
             if($data["articletype_id"]==2){
                 if(!$data["description"]){
