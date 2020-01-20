@@ -26,7 +26,7 @@ class TypeArticle extends Api
         $whereExp=" 1 ";
         if(!empty($show_page)){
 
-            $whereExp='find_in_set('.$show_page.',show_page)';
+            $whereExp='find_in_set(\"'.$show_page.'\",show_page)';
 
         }
         $lists=( new Articletype())->where($where)->whereExp('',$whereExp)->order("weigh","desc")->select();
