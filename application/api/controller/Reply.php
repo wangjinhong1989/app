@@ -70,6 +70,11 @@ class Reply extends Api
             }else {
                 $l["is_my_article"]="否";
             }
+            foreach ($l as $key=>$value){
+                if(is_null($value)){
+                    $l[$key]="";
+                }
+            }
         }
         $data["page"]=$page;
         $data["rows"]=$lists;
