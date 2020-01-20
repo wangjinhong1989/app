@@ -27,6 +27,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'id', title: __('Id')},
                         {field: 'name', title: __('Name')},
                         {field: 'weigh', title: __('Weigh')},
+                        {field: 'show_page', title: __('Show_page'), searchList: {"全部页面":__('全部页面'),"文章页面":__('文章页面'),"快讯页面":__('快讯页面'),"其他页面":__('其他页面')}, operate:'FIND_IN_SET', formatter: Table.api.formatter.label},
                         {field: 'status', title: __('Status'), searchList: {"显示":__('显示'),"隐藏":__('隐藏')}, formatter: Table.api.formatter.status},
                         {field: 'create_time', title: __('Create_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}

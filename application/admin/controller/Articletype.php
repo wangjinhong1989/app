@@ -22,6 +22,7 @@ class Articletype extends Backend
     {
         parent::_initialize();
         $this->model = new \app\admin\model\Articletype;
+        $this->view->assign("showPageList", $this->model->getShowPageList());
         $this->view->assign("statusList", $this->model->getStatusList());
     }
     

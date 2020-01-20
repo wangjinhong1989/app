@@ -1,0 +1,1 @@
+2020-01-19 11:29:00 : SELECT `guanzhu`.*,`user`.`nickname`,`user`.`avatar` FROM `fa_guanzhu` `guanzhu` LEFT JOIN `fa_user` `user` ON `user`.`id`=`guanzhu`.`user_id` WHERE  `guanzhu`.`follow_id` = 10000 LIMIT 0,5

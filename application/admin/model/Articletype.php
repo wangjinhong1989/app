@@ -25,6 +25,7 @@ class Articletype extends Model
 
     // 追加属性
     protected $append = [
+        'show_page_text',
         'status_text',
         'create_time_text'
     ];
@@ -39,9 +40,23 @@ class Articletype extends Model
     }
 
     
+    public function getShowPageList()
+    {
+        return ['全部页面' => __('全部页面'), '文章页面' => __('文章页面'), '快讯页面' => __('快讯页面'), '其他页面' => __('其他页面')];
+    }
+
     public function getStatusList()
     {
         return ['显示' => __('显示'), '隐藏' => __('隐藏')];
+    }
+
+
+    public function getShowPageTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['show_page']) ? $data['show_page'] : '');
+        $valueArr = explode(',', $value);
+        $list = $this->getShowPageList();
+        return implode(',', array_intersect_key($list, array_flip($valueArr)));
     }
 
 
@@ -57,6 +72,11 @@ class Articletype extends Model
     {
         $value = $value ? $value : (isset($data['create_time']) ? $data['create_time'] : '');
         return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
+    }
+
+    protected function setShowPageAttr($value)
+    {
+        return is_array($value) ? implode(',', $value) : $value;
     }
 
     protected function setCreateTimeAttr($value)
