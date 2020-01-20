@@ -35,11 +35,10 @@ class Reply extends Api
             $where["status"]=["eq",$status];
         }
 
+        //  表示某人的评论列表
         $user_id=$this->request->request("user_id","");
         if($user_id){
             $where["user_id"]=["eq",$user_id];
-        }else {
-            $user_id=$my_id;
         }
         $parent_id=$this->request->request("parent_id","");
         if($parent_id){
