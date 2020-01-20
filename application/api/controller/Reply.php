@@ -51,7 +51,7 @@ class Reply extends Api
         }
 
 
-        if(!$article_id&&!$parent_id){
+        if(!$article_id&&!$parent_id&&!$user_id){
             $this->error("参数错误","");
         }
         $query=new Query();
