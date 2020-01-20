@@ -42,7 +42,7 @@ class Articletype extends Model
     
     public function getShowPageList()
     {
-        return ['全部页面' => __('全部页面'), '文章页面' => __('文章页面'), '快讯页面' => __('快讯页面'), '其他页面' => __('其他页面')];
+        return ['首页页面' => __('首页页面'), '文章页面' => __('文章页面'), '快讯页面' => __('快讯页面'), '其他页面' => __('其他页面')];
     }
 
     public function getStatusList()
