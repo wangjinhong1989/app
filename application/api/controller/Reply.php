@@ -17,7 +17,7 @@ class Reply extends Api
     protected $noNeedRight = ['*'];
 
     /**
-     * 热搜
+     *
      *
      */
     public function Lists()
@@ -84,8 +84,6 @@ class Reply extends Api
         $this->success("成功",$data);
     }
 
-
-
     // 文章评论接口， 显示标题和数字
     public  function group_by_article(){
 
@@ -126,7 +124,7 @@ class Reply extends Api
 
 
     /*
-    *添加收藏
+    *添加评论
     * **/
     public function add()
     {
@@ -137,6 +135,7 @@ class Reply extends Api
             $user = $this->auth->getUser();
             $user_id = $user->id;
             $parent_id=$this->request->request('parent_id',0);
+            $parent_id=0;
             $article_id=$this->request->request('article_id',0);
             $content=$this->request->request('content',"");
 
@@ -194,6 +193,32 @@ class Reply extends Api
                 return  $this->error("文章不存在");
             }
             $reply->status=$status;
+            $reply->save();
+            return $this->success();
+        }catch (Exception $e){
+            return  $this->error($e->getMessage());
+        }
+
+    }
+
+    /*
+    *回复评论
+    * **/
+    public function reply_content()
+    {
+
+        try{
+            $model=new \app\admin\model\Reply();
+            $user = $this->auth->getUser();
+            $user_id=$user->id;
+            $id=$this->request->request('id',0);
+            $reply_content=$this->request->request('reply_content',"");
+
+            $reply=$model->where(["id"=>$id])->find();
+            if(!$reply){
+                return  $this->error("评论不存在");
+            }
+            $reply->reply_content=$reply_content;
             $reply->save();
             return $this->success();
         }catch (Exception $e){
