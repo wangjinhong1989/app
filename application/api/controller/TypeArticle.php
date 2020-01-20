@@ -20,7 +20,13 @@ class TypeArticle extends Api
      */
     public function Lists()
     {
-        $lists=( new Articletype())->where(['status'=>"显示"])->order("weigh","desc")->select();
+        $show_page=$this->request->request("show_page","");
+
+        $where=['status'=>"显示"];
+        if(!empty($show_page)){
+          $where["show_page"]=["in",$show_page];
+        }
+        $lists=( new Articletype())->where($where)->order("weigh","desc")->select();
         $this->success("",$lists);
     }
 
