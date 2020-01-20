@@ -310,7 +310,12 @@
             u: [],
             ul: ['style', 'class', 'id'],
             svg: ['style', 'class', 'id', 'width', 'height', 'xmlns', 'fill', 'viewBox'],
-            video: ['autoplay', 'controls', 'loop', 'preload', 'src', 'height', 'width', 'style', 'class', 'id']
+            video: ['autoplay', 'controls', 'loop', 'preload', 'src', 'height', 'width', 'style', 'class', 'id'],
+            source: ['src', 'type'],
+            embed: ['type', 'class', 'pluginspage', 'src', 'width', 'height', 'align', 'style', 'wmode', 'play',
+                +  'autoplay','loop', 'menu', 'allowscriptaccess', 'allowfullscreen', 'controls', 'preload'],
+            iframe: ['src', 'class', 'height', 'width', 'max-width', 'max-height', 'align', 'frameborder', 'allowfullscreen']
+
         }
     };
 })();

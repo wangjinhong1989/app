@@ -40,7 +40,7 @@ class Guanzhu extends Api
             ->where(['guanzhu.user_id'=> $user_id])
             ->limit($offset,$page_size)
             ->select();
-        dd($query->getLastSql());
+        //dd($query->getLastSql());
         $count = $query->table("fa_guanzhu")->alias("guanzhu")
             ->field("guanzhu.*,user.nickname,user.avatar")
             ->join("fa_user user","user.id=guanzhu.follow_id","left")
