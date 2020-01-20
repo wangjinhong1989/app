@@ -223,6 +223,7 @@ class Reply extends Api
             }
             $reply->reply_content=$reply_content;
             $reply->parent_id=$parent_id;
+            $reply->reply_time=time();
             $reply->save();
             return $this->success();
         }catch (Exception $e){
