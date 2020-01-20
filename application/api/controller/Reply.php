@@ -38,6 +38,8 @@ class Reply extends Api
         $user_id=$this->request->request("user_id","");
         if($user_id){
             $where["user_id"]=["eq",$user_id];
+        }else {
+            $user_id=$my_id;
         }
         $parent_id=$this->request->request("parent_id","");
         if($parent_id){
