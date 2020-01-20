@@ -225,7 +225,7 @@ class Ajax extends Api
             $attachment->save();
             \think\Hook::listen("upload_after", $attachment);
             $this->success(__('Upload successful'), [
-                'url' => $uploadDir . $splInfo->getSaveName()
+                'url' => Config::get('api_url').$uploadDir . $splInfo->getSaveName()
             ] );
         } else {
             // 上传失败获取错误信息
