@@ -140,10 +140,10 @@ class ArticleManager extends Api
             ->join("fa_user user","user.id=article.user_id","left")
             ->count();
 
-        // 跳转到关注列表中.
-//        if($my_follow&&$data["count"]==0){
-//            UserManager::re();die;
-//        }
+
+        foreach ($data["rows"] as &$value){
+            $value["create_time"]=date("Y-m-d H:i:s",$value["create_time"]);
+        }
 
 
         // 是否需要返回广告.
