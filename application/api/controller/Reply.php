@@ -50,6 +50,11 @@ class Reply extends Api
             $where["article_id"]=["eq",$article_id];
         }
 
+        $author_id=$this->request->request("author_id",0);
+        if($author_id){
+            $where["author_id"]=["eq",$this->auth->id];
+        }
+
 
         if(!$article_id&&!$parent_id&&!$user_id){
             $this->error("参数错误","");

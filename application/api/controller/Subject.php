@@ -12,7 +12,7 @@ use think\view\driver\Think;
  */
 class Subject extends Api
 {
-    protected $noNeedLogin = [];
+    protected $noNeedLogin = ['*'];
     protected $noNeedRight = ['*'];
 
     /**

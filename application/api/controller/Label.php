@@ -10,7 +10,7 @@ use app\common\controller\Api;
  */
 class Label extends Api
 {
-    protected $noNeedLogin = [];
+    protected $noNeedLogin = ['*'];
     protected $noNeedRight = ['*'];
 
     /**

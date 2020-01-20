@@ -12,7 +12,7 @@ use think\db\Query;
  */
 class Mylabel extends Api
 {
-    protected $noNeedLogin = [];
+    protected $noNeedLogin = ['*'];
     protected $noNeedRight = ['*'];
 
     /**

@@ -10,7 +10,7 @@ use app\common\controller\Api;
  */
 class Discover extends Api
 {
-    protected $noNeedLogin = [];
+    protected $noNeedLogin = ['*'];
     protected $noNeedRight = ['*'];
     protected $model = null;
 

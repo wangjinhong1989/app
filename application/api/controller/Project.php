@@ -11,7 +11,7 @@ use app\common\controller\Api;
  */
 class Project extends Api
 {
-    protected $noNeedLogin = [];
+    protected $noNeedLogin = ['*'];
     protected $noNeedRight = ['*'];
 
     /**

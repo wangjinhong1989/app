@@ -12,7 +12,7 @@ use think\Request;
  */
 class ProblemPlatform extends Api
 {
-    protected $noNeedLogin = [];
+    protected $noNeedLogin = ['*'];
     protected $noNeedRight = ['*'];
 
     /**
