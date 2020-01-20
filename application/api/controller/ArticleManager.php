@@ -17,7 +17,7 @@ use think\view\driver\Think;
  */
 class ArticleManager extends Api
 {
-    protected $noNeedLogin = [];
+    protected $noNeedLogin = ["lists","recommendation","Lists1","detail"];
     protected $noNeedRight = ['*'];
 
     /**
@@ -49,9 +49,12 @@ class ArticleManager extends Api
         $keyword=$this->request->request("keyword","");
         if($keyword){
             $where["article.title|article.description|article.content"]=["like","%".$keyword."%"];
-            //  写入关键字检索.
-            $history=["user_id"=>$this->auth->id, "word"=>$keyword, "type"=>"标题,描述,内容"];
-            $search->save_data($history);
+
+            if(!empty($this->auth)){
+                //  写入关键字检索.
+                $history=["user_id"=>$this->auth->id, "word"=>$keyword, "type"=>"标题,描述,内容"];
+                $search->save_data($history);
+            }
         }
 
 
@@ -59,20 +62,26 @@ class ArticleManager extends Api
         $title=$this->request->request("title","");
         if($title){
             $where["article.title"]=["like","%".$title."%"];
-            $history=["user_id"=>$this->auth->id, "word"=>$title, "type"=>"标题"];
-            $search->save_data($history);
+            if(!empty($this->auth)){
+                $history=["user_id"=>$this->auth->id, "word"=>$title, "type"=>"标题"];
+                $search->save_data($history);
+            }
         }
         $description=$this->request->request("description","");
         if($description){
             $where["article.description"]=["like","%".$description."%"];
-            $history=["user_id"=>$this->auth->id, "word"=>$description, "type"=>"描述"];
-            $search->save_data($history);
+            if(!empty($this->auth)) {
+                $history = ["user_id" => $this->auth->id, "word" => $description, "type" => "描述"];
+                $search->save_data($history);
+            }
         }
         $content=$this->request->request("content","");
         if($content){
             $where["article.content"]=["like","%".$content."%"];
+            if(!empty($this->auth)){
             $history=["user_id"=>$this->auth->id, "word"=>$content, "type"=>"内容"];
             $search->save_data($history);
+            }
         }
         // 查询某个人的文章。
         $user_id=$this->request->request("user_id","");
@@ -105,8 +114,10 @@ class ArticleManager extends Api
         $whereExp="";
         $label_ids=$this->request->request("label_ids",'');
         if($label_ids){
-            $history=["user_id"=>$this->auth->id, "word"=>$label_ids, "type"=>"标签"];
-            $search->save_data($history);
+            if(!empty($this->auth)) {
+                $history = ["user_id" => $this->auth->id, "word" => $label_ids, "type" => "标签"];
+                $search->save_data($history);
+            }
             $label_ids=explode(",",$label_ids);
             foreach ($label_ids as $k=>$v){
 
