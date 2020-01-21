@@ -65,22 +65,31 @@ class Dianzan extends Api
      */
     public function at_me_lists()
     {
-        $user = $this->auth->getUser();
-        $user_id = $user->id;
 
-        $model = (new \app\admin\model\Dianzan());
-        $lists = $model
-            ->with(['user','article'])
-            ->field("dianzan.*,user.username,user.avatar,article.title,article.url")
-            ->where(['dianzan.at_id' => $user_id])
-            ->where('user.id=dianzan.user_id')
-            ->where('article.id=dianzan.article_id')
-            ->select();
-        foreach($lists as  $k=>$value){
-            unset($lists[$k]['user']);
-            unset($lists[$k]['article']);
+        $page=$this->request->request("page",1);
+        $page_size=$this->request->request("page_size",5);
+        $offset=($page-1)*$page_size;
+        $data=[];
+
+        $my_id=$this->auth->id;
+        $where=[];
+        $status=$this->request->request("status","");
+        if($status){
+            $where["status"]=["eq",$status];
         }
-        $this->success("成功", $lists);
+
+        $query=new Query();
+        $lists=$query->table("fa_dianzan")->alias("reply")->field("*")
+            ->where($where)
+            ->limit($offset,$page_size)->order("reply.id desc")->select();
+
+
+        $data["page"]=$page;
+        $data["rows"]=$lists;
+        $data["count"]=$count;
+
+        $data["total_page"]=ceil($data["count"]/$page_size);
+        $this->success("成功",$data);
     }
 
     /**

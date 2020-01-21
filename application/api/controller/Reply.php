@@ -92,6 +92,62 @@ class Reply extends Api
         $this->success("成功",$data);
     }
 
+
+    /**
+     *获取回复我的评论
+     *
+     */
+    public function get_my_reply()
+    {
+
+        $page=$this->request->request("page",1);
+        $page_size=$this->request->request("page_size",5);
+        $offset=($page-1)*$page_size;
+        $data=[];
+
+        $my_id=$this->auth->id;
+        $where=[];
+
+            $where["status"]=["eq","显示"];
+            $where["user_id"]=["eq",$my_id];
+
+            $where["parent_id"]=["gt",0];
+
+
+        $query=new Query();
+        $lists=$query->table("fa_reply_list")->alias("reply")->field("*")
+            ->where($where)
+            ->limit($offset,$page_size)->order("reply.id desc")->select();
+
+        $count=$query->table("fa_reply_list")->alias("reply")->field("*")
+            ->where($where)
+            ->count();
+
+        //  是我的文章，就标识 is_mine
+        foreach ($lists as &$l){
+            if($l["author_id"]==$my_id){
+                $l["is_my_article"]="是";
+            }else {
+                $l["is_my_article"]="否";
+            }
+
+            $l["createtime"]=date("Y-m-d H:i:s",$l["createtime"]);
+            $l["reply_time"]=date("Y-m-d H:i:s",$l["reply_time"]);
+            foreach ($l as $key=>$value){
+                if(is_null($value)){
+                    $l[$key]="";
+                }
+            }
+        }
+        $data["page"]=$page;
+        $data["rows"]=$lists;
+        $data["count"]=$count;
+
+        $data["total_page"]=ceil($data["count"]/$page_size);
+        $this->success("成功",$data);
+    }
+
+
     // 文章评论接口， 显示标题和数字
     public  function group_by_article(){
 
