@@ -3,6 +3,7 @@
 namespace app\api\controller;
 use app\admin\model\Article;
 use app\common\controller\Api;
+use think\db\Query;
 
 /**
  * 首页接口
@@ -91,16 +92,19 @@ class Dianzan extends Api
         $user = $this->auth->getUser();
         $user_id = $user->id;
 
-        $model = (new \app\admin\model\Dianzan());
-        $lists = $model
-            ->with(['user','article'])
-            ->field("dianzan.*,user.username,user.avatar,article.title,article.url")
-            ->where(['dianzan.at_id' => $user_id])
-            ->where('user.id=dianzan.user_id')
-            ->where('article.id=dianzan.article_id')
-            ->count();
+//        $model = (new \app\admin\model\Dianzan());
+//        $lists = $model
+//            ->with(['user','article'])
+//            ->field("dianzan.*,user.username,user.avatar,article.title,article.url")
+//            ->where(['dianzan.at_id' => $user_id])
+//            ->where('user.id=dianzan.user_id')
+//            ->where('article.id=dianzan.article_id')
+//            ->count();
 
-        $this->success("成功", $lists);
+        $query= new Query();
+        $count=$query->table("fa_dianzan")->alias("dianzan")
+            ->join("fa_reply reply","reply.id=dianzan.at_id")->where(["reply.user_id"=>$this->auth->id])->count();
+        $this->success("成功", $count);
     }
 
     /*
