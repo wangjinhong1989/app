@@ -75,7 +75,7 @@ class Dianzan extends Api
         $where=[];
 
 
-        $where["reply_list.user_id"]=(["reply.user_id"=>$this->auth->id]);
+        $where["reply_list.user_id"]=["eq",$this->auth->id]);
 
 
         $query=new Query();
