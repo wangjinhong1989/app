@@ -78,23 +78,39 @@ class PushConfig extends Api
             if($param=="is_accept_notify"){
                 if($info->is_accept_notify=="是"){
                     $info->is_accept_notify="否";
+                }else {
+                    $info->is_accept_notify="是";
                 }
             }
             if($param=="is_article_notify"){
                 if($info->is_article_notify=="是"){
                     $info->is_article_notify="否";
+                }else {
+                    $info->is_article_notify="是";
                 }
             }
 
             if($param=="is_kuaixun_notify"){
                 if($info->is_kuaixun_notify=="是"){
                     $info->is_kuaixun_notify="否";
+                }else {
+                    $info->is_kuaixun_notify="是";
                 }
             }
 
             if($param=="is_follow_notify"){
                 if($info->is_follow_notify=="是"){
                     $info->is_follow_notify="否";
+                else {
+                        $info->is_follow_notify="是";
+                    }
+            }
+
+            if($param=="need_voice"){
+                if($info->need_voice=="是"){
+                    $info->need_voice="否";
+                }else {
+                    $info->need_voice="是";
                 }
             }
 
