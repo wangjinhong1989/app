@@ -108,7 +108,7 @@ class Reply extends Api
         $my_id=$this->auth->id;
         $where=[];
 
-            $where["status"]=["eq","显示"];
+
             $where["user_id"]=["eq",$my_id];
 
             $where["parent_id"]=["gt",0];
