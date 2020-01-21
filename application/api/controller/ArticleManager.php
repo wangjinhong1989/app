@@ -160,8 +160,10 @@ class ArticleManager extends Api
         // 是否需要返回广告.
         $need_ad=$this->request->request("need_ad",1);
         if($need_ad){
-            $guanggao=new Guanggao();
-            $ad=Db::table($guanggao->getTable())->where([])->limit(1)->select();
+            $model=    new Query();
+            //默认返回一条数据
+            $ad_size=$this->request->request("ad_size",1);
+            $ad=$lists=$model->table("fa_myad")->where(['status'=>'显示'])->limit(0,$ad_size)->select();
             foreach ($data["rows"] as $key=>$value){
                 $data["rows"][$key]["is_ad"]=false;
             }
