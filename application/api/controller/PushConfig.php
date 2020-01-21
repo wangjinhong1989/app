@@ -99,8 +99,9 @@ class PushConfig extends Api
             }
 
             if($param=="is_follow_notify"){
-                if($info->is_follow_notify=="是"){
-                    $info->is_follow_notify="否";
+                if($info->is_follow_notify=="是") {
+                    $info->is_follow_notify = "否";
+                }
                 else {
                         $info->is_follow_notify="是";
                     }
@@ -123,4 +124,23 @@ class PushConfig extends Api
     }
 
 
+    public function follow_config(){
+
+        $model=new \app\admin\model\Guanzhu();
+
+        $id=$this->request->request("id",0);
+        $info=$model->where(["id"=>$id])->find();
+        if(empty($info)){
+            return $this->error("参数错误");
+        }
+
+        if($info->is_push=="是")
+        $info->is_push="否";
+        else{
+            $info->is_push=="是";
+        }
+
+        $info->save();
+        return $this->success();
+    }
 }
