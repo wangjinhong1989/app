@@ -21,6 +21,10 @@ class Ad extends Api
      */
     public function Lists()
     {
+        $model=     new Guanggao();
+
+        $lists=$model->where(['status'=>'显示'])->order("RAND()")->select();
+        dd($model->getLastSql());
         //phpinfo();
         Cache::store('redis')->clear();
         $lists=Cache::store('redis')->get('ad_list');
