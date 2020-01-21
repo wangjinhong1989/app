@@ -154,6 +154,19 @@ class Reply extends Api
                 'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>"审核"
             ]);
 
+            // 查找作者。
+            $article=(new Article())->where(["id"=>$article_id])->find();
+            if(empty($article)){
+                return $this->success();
+            }
+            // 为作者添加评论
+            $flag=(new \app\admin\model\FlagMessage())->where(["user_id"=>$article->user_id])->find();
+            if(empty($flag)){
+                return $this->success();
+            }
+
+            $flag->comment_flag=1;
+            $flag->save();
             return $this->success();
         }catch (Exception $e){
             return  $this->error($e->getMessage());
@@ -195,7 +208,7 @@ class Reply extends Api
             $id=$this->request->request('id',0);
             $status=$this->request->request('status',"有效");
 
-            $reply=$model->where(["id"=>$id,"user_id"=>$user_id])->find();
+            $reply=$model->where(["id"=>$id])->find();
             if(!$reply){
                 return  $this->error("文章不存在");
             }
@@ -241,6 +254,16 @@ class Reply extends Api
             $reply->parent_id=$parent_id;
             $reply->reply_time=time();
             $reply->save();
+
+            // 为作者添加评论
+            $flag=(new \app\admin\model\FlagMessage())->where(["user_id"=>$reply->user_id])->find();
+            if(empty($flag)){
+                return $this->success();
+            }
+
+            $flag->reply_flag=1;
+            $flag->save();
+
             return $this->success();
         }catch (Exception $e){
             return  $this->error($e->getMessage());

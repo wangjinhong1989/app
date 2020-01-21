@@ -163,6 +163,15 @@ class Guanzhu extends Api
                 'user_id' => $user_id, 'follow_id' => $follow_id, 'time' => time()
             ]);
 
+            // 为作者添加评论
+            $flag=(new \app\admin\model\FlagMessage())->where(["user_id"=>$follow_id])->find();
+            if(empty($flag)){
+                return $this->success();
+            }
+
+            $flag->follow_flag=1;
+            $flag->save();
+
             return $this->success();
         } catch (Exception $e) {
             return $this->error($e->getMessage());
