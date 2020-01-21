@@ -23,7 +23,7 @@ class Ad extends Api
     {
         $model=     new Guanggao();
 
-        $lists=$model->where(['status'=>'显示'])->order("RAND()")->select();
+        $lists=$model->where(['status'=>'显示'])->orderRaw("RAND()")->select();
         dd($model->getLastSql());
         //phpinfo();
         Cache::store('redis')->clear();
