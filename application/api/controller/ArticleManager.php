@@ -161,7 +161,7 @@ class ArticleManager extends Api
         $need_ad=$this->request->request("need_ad",1);
         if($need_ad){
             $model=    new Query();
-            //默认返回一条数据
+            // more
             $ad_size=$this->request->request("ad_size",1);
             $ad=$lists=$model->table("fa_myad")->where(['status'=>'显示'])->limit(0,$ad_size)->select();
             foreach ($data["rows"] as $key=>$value){
