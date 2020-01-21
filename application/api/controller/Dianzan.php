@@ -114,23 +114,23 @@ class Dianzan extends Api
             $model = new \app\admin\model\Dianzan();
             $user = $this->auth->getUser();
             $user_id = $user->id;
-            $article_id = $this->request->request('article_id');
+            $reply_id= $this->request->request('reply_id');
 
 
-            if (!$article_id) {
+            if (!$reply_id) {
                 return $this->error(__('参数存在空'));
                 die;
             }
-            $article=Article::getById($article_id);
-            if (!$article) {
-                return $this->error(__('文章不存在'));
+            $reply=\app\admin\model\Reply::getById($reply_id);
+            if (!$reply) {
+                return $this->error(__('评论不存在'));
             }
 
-            $info=(new \app\admin\model\Dianzan())->where(['article_id'=>$article_id,'user_id'=>$user_id])->select();
+            $info=(new \app\admin\model\Dianzan())->where(['at_id'=>$reply_id,'user_id'=>$user_id])->select();
             if($info)
-                return $this->error(__('已经关注，不需要关注了'));
+                return $this->error(__('已经点赞了'));
             $model->create([
-                'user_id' => $user_id, 'article_id' => $article_id,'at_id'=>$article->user_id, 'time' => time()
+                'user_id' => $user_id, 'at_id' => $reply_id, 'time' => time()
             ]);
 
             return $this->success();
@@ -141,7 +141,7 @@ class Dianzan extends Api
     }
 
     /*
-*删除收藏
+*删除点赞
 * **/
     public function delete()
     {
@@ -150,17 +150,14 @@ class Dianzan extends Api
             $model = new \app\admin\model\Dianzan();
             $user = $this->auth->getUser();
             $user_id = $user->id;
-            $article_id = $this->request->request('article_id');
+            $id = $this->request->request('id');
 
 
-            if (!$article_id) {
+            if (!$id) {
                 return $this->error(__('参数存在空'));
             }
-            if (!Article::getById($article_id)) {
-                return $this->error(__('文章不存在'));
-            }
 
-            $model->where(['user_id' => $user_id, 'article_id' => $article_id])->delete();
+            $model->where(['id' => $id])->delete();
 
             return $this->success();
         } catch (Exception $e) {
