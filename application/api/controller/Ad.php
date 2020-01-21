@@ -6,6 +6,7 @@ use app\common\controller\Api;
 use app\admin\model\Guanggao;
 use think\Cache;
 use think\Config;
+use think\db\Query;
 
 /**
  * 首页接口
@@ -21,9 +22,9 @@ class Ad extends Api
      */
     public function Lists()
     {
-        $model=     new Guanggao();
+        $model=    new Query();
 
-        $lists=$model->where(['status'=>'显示'])->orderRaw("rand()")->select();
+        $lists=$model->from("fa_guanggao")->where(['status'=>'显示'])->orderRaw("rand()")->select();
         dd($model->getLastSql());
         //phpinfo();
         Cache::store('redis')->clear();
