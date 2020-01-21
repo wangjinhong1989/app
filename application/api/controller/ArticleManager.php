@@ -163,7 +163,7 @@ class ArticleManager extends Api
             $model=    new Query();
             // more
             $ad_size=$this->request->request("ad_size",1);
-            $ad=$lists=$model->table("fa_myad")->where(['status'=>'显示'])->limit(0,$ad_size)->select();
+            $ad=$lists=$model->table("fa_guanggao")->where(['status'=>'显示'])->orderRaw("rand()")->limit(0,$ad_size)->select();
             foreach ($data["rows"] as $key=>$value){
                 $data["rows"][$key]["is_ad"]=false;
             }
