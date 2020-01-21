@@ -24,7 +24,7 @@ class Ad extends Api
     {
         $model=    new Query();
 
-        $lists=$model->table("fa_guanggao")->where(['status'=>'显示'])->orderRaw("id",["rand()"])->select();
+        $lists=$model->table("fa_guanggao")->where(['status'=>'显示'])->order("id rand()","desc")->select();
         dd($model->getLastSql());
         //phpinfo();
         Cache::store('redis')->clear();
