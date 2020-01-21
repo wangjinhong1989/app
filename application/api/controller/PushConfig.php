@@ -129,7 +129,7 @@ class PushConfig extends Api
         $model=new \app\admin\model\Guanzhu();
 
         $id=$this->request->request("id",0);
-        $info=$model->where(["id"=>$id])->find();
+        $info=$model->where(["id"=>$id,"user_id"=>$this->auth->id])->find();
         if(empty($info)){
             return $this->error("参数错误");
         }
