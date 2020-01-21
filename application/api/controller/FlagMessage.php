@@ -33,7 +33,15 @@ class FlagMessage extends Api
        }else if($param=="reply_flag"){
            $flag->comment_flag=0;
        }
+       else if($param=="system_flag"){
+           $flag->system_flag=0;
+       }
 
-       $flag->save()
+       else if($param=="follow_flag"){
+           $flag->follow_flag=0;
+       }
+
+       $flag->save();
+       return $this->success();
    }
 }
