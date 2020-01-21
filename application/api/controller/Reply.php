@@ -118,7 +118,7 @@ class Reply extends Api
         $lists=$query->table("fa_reply_list")->alias("reply")->field("*")
             ->where($where)
             ->limit($offset,$page_size)->order("reply.id desc")->select();
-
+dd($query->getLastSql());
         $count=$query->table("fa_reply_list")->alias("reply")->field("*")
             ->where($where)
             ->count();
