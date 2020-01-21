@@ -85,7 +85,7 @@ class Dianzan extends Api
 
         $count=$query->table("fa_dianzan")->alias("dianzan")->join("fa_reply_list reply_list","reply_list.id=dianzan.at_id ")->field("reply_list.*,dianzan.at_id")
             ->where($where)
-            ->order("reply.id desc")->count();
+            ->count();
 
 
         $data["page"]=$page;
