@@ -25,14 +25,14 @@ class Ad extends Api
         $model=    new Query();
 
         $lists=$model->table("fa_myad")->where(['status'=>'显示'])->select();
-        dd($model->getLastSql());
-        //phpinfo();
-        Cache::store('redis')->clear();
-        $lists=Cache::store('redis')->get('ad_list');
-        if(!$lists){
-            $lists=(new Guanggao())->where(['status'=>'显示'])->order("RAND()")->select();
-            Cache::store('redis')->set('ad_list',$lists,60);
-        }
+//        dd($model->getLastSql());
+//        //phpinfo();
+//        Cache::store('redis')->clear();
+//        $lists=Cache::store('redis')->get('ad_list');
+//        if(!$lists){
+//            $lists=(new Guanggao())->where(['status'=>'显示'])->order("RAND()")->select();
+//            Cache::store('redis')->set('ad_list',$lists,60);
+//        }
 
         $this->success("成功",$lists);
     }
