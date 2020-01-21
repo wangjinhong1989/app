@@ -6,3 +6,4 @@ Send POST https://api.jpush.cn/v3/push, body:{"platform":"all","audience":"all",
 Send POST https://api.jpush.cn/v3/push, body:{"platform":"all","audience":"all","notification":{"alert":"Hello, JPush"},"options":{"sendno":1140528959,"apns_production":false}}, times:1
 Send POST https://api.jpush.cn/v3/push, body:{"platform":"all","audience":"all","notification":{"alert":"Hello, JPush"},"options":{"sendno":465444101,"apns_production":false}}, times:1
 Send POST https://api.jpush.cn/v3/push, body:{"platform":"all","audience":"all","notification":{"alert":"Hello, JPush"},"options":{"sendno":467046907,"apns_production":false}}, times:1
+Send POST https://api.jpush.cn/v3/push, body:{"platform":"all","audience":"all","notification":{"alert":"Hello, JPush"},"options":{"sendno":333701064,"apns_production":false}}, times:1
