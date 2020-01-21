@@ -1,0 +1,5 @@
+2020-01-21 11:15:42 : SELECT * FROM `fa_guanggao` WHERE  `status` = '显示' ORDER BY RAND()
+2020-01-21 11:17:43 : SELECT * FROM `fa_guanggao` WHERE  `status` = '显示' ORDER BY rand()
+2020-01-21 11:20:59 : SELECT * FROM `fa_guanggao` WHERE  `status` = '显示' ORDER BY rand()
+2020-01-21 11:22:45 : 'rand()'ELECT * FROM `fa_guanggao` WHERE  `status` = '显示' ORDER BY id
+2020-01-21 11:38:30 : SELECT * FROM `fa_myad` WHERE  `status` = '显示'
