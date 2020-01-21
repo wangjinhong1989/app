@@ -108,4 +108,19 @@ class MyCollect extends Api
 
     }
 
+
+    // 是否为我的收藏
+    public function  is_my_collect(){
+        $model = new Shoucang();
+        $user = $this->auth->getUser();
+        $user_id = $user->id;
+        $article_id = $this->request->request('article_id');
+        $info=$model->where(['user_id' => $user_id, 'article_id' => $article_id])->find();
+
+        if(!empty($info)){
+            return $this->success("","是");
+        }else
+            return $this->success("","否");
+
+    }
 }
