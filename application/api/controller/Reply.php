@@ -75,6 +75,9 @@ class Reply extends Api
             }else {
                 $l["is_my_article"]="否";
             }
+
+            $l["create_time"]=date("Y-m-d H:i:s",$l["create_time"]);
+            $l["reply_time"]=date("Y-m-d H:i:s",$l["reply_time"]);
             foreach ($l as $key=>$value){
                 if(is_null($value)){
                     $l[$key]="";
