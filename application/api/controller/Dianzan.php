@@ -73,15 +73,19 @@ class Dianzan extends Api
 
         $my_id=$this->auth->id;
         $where=[];
-        $status=$this->request->request("status","");
-        if($status){
-            $where["status"]=["eq",$status];
-        }
+
+
+        $where["reply_list.user_id"]=(["reply.user_id"=>$this->auth->id]);
+
 
         $query=new Query();
-        $lists=$query->table("fa_dianzan")->alias("reply")->field("*")
+        $lists=$query->table("fa_dianzan")->alias("dianzan")->join("fa_reply_list reply_list","reply_list.id=dianzan.at_id ")->field("reply_list.*,dianzan.at_id")
             ->where($where)
             ->limit($offset,$page_size)->order("reply.id desc")->select();
+
+        $count=$query->table("fa_dianzan")->alias("dianzan")->join("fa_reply_list reply_list","reply_list.id=dianzan.at_id ")->field("reply_list.*,dianzan.at_id")
+            ->where($where)
+            ->order("reply.id desc")->count();
 
 
         $data["page"]=$page;
