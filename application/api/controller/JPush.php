@@ -32,11 +32,13 @@ class JPush extends Api
 
 
 
-        $article= (new Article())->where(["id"=>["gt",0]])->find();
+        $type=$this->request->request("type",0);
+        $article= (new Article())->where(["id"=>["gt",0],"articletype_id"=>$type])->find();
         $data=[
-            "type"=>"文章",
+            "type"=>$type,
             "data"=>$article
         ];
+
         try {
             $client->push()
                 ->setPlatform('all')
