@@ -29,13 +29,17 @@ class JPush extends Api
         $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
 
 
+        $data=[
+            "type"=>"2",
+            "data"=>["title"=>"测试","description"=>"这是描述","type"=>"快讯","id"=>672]
+        ];
 
         try {
             $client->push()
                 ->setPlatform('all')
                 ->addAllAudience()
-                ->setMessage("这是标题","标题","1",["672"])
-//                ->setNotificationAlert('Hello, JPush')
+//                ->setMessage("这是标题","标题","快讯",["672"])
+                ->setNotificationAlert(\GuzzleHttp\json_encode($data))
                 ->send();
         } catch (\JPush\Exceptions\JPushException $e) {
             // try something else here
