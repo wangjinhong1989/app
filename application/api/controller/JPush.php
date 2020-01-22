@@ -34,7 +34,8 @@ class JPush extends Api
             $client->push()
                 ->setPlatform('all')
                 ->addAllAudience()
-                ->setNotificationAlert('Hello, JPush')
+                ->setMessage("这是标题","标题","1","672")
+//                ->setNotificationAlert('Hello, JPush')
                 ->send();
         } catch (\JPush\Exceptions\JPushException $e) {
             // try something else here
