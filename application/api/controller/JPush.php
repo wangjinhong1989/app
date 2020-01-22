@@ -40,12 +40,14 @@ class JPush extends Api
         ];
 
         try {
-            $client->push()
+            $back=$client->push()
                 ->setPlatform('all')
                 ->addAllAudience()
 //                ->setMessage("这是标题","标题","快讯",["672"])
                 ->setNotificationAlert(\GuzzleHttp\json_encode($data))
                 ->send();
+
+            return  $this->success("",$back);
         } catch (\JPush\Exceptions\JPushException $e) {
             // try something else here
             print $e;
