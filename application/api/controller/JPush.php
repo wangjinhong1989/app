@@ -2,6 +2,7 @@
 
 namespace app\api\controller;
 
+use app\admin\model\Article;
 use app\common\controller\Api;
 use app\common\library\Sms as Smslib;
 use app\common\model\User;
@@ -29,11 +30,13 @@ class JPush extends Api
         $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
 
 
-        $data=[
-            "type"=>"2",
-            "data"=>["title"=>"测试","description"=>"这是描述","type"=>"快讯","id"=>672]
-        ];
 
+
+        $article= (new Article())->where(["id"=>["gt",0]])->find();
+        $data=[
+            "type"=>"文章",
+            "data"=>$article
+        ];
         try {
             $client->push()
                 ->setPlatform('all')
