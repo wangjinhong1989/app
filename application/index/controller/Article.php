@@ -16,7 +16,7 @@ use think\Validate;
 class Article extends Frontend
 {
     protected $layout = 'default';
-    protected $noNeedLogin = [];
+    protected $noNeedLogin = ["share"];
     protected $noNeedRight = ['*'];
 
 
@@ -109,6 +109,18 @@ class Article extends Frontend
             $model->save(['status'=>1],['id'=>$id]);
 
             $this->redirect('/index/article');
+
+    }
+
+    // 分享到的详情页面。
+    public function  share(){
+
+
+            $model=new \app\admin\model\Article();
+            $res=$model->where(['id'=>$this->request->param('id')])->find();
+            //$res['articletype_ids']=explode(',',$res['articletype_ids']);
+            $this->view->assign('res',$res);
+            return $this->view->fetch();
 
     }
 
