@@ -67,7 +67,7 @@ class JPush extends Api
         $type_data=$typeModel->where(["type"=>$type])->find();
         $article= (new Article())->where(["id"=>["gt",0]])->find();
         $data=[
-            "type"=>$type_data->getAttr("id"),
+            "type"=>$type_data["id"],
             "data"=>$article
         ];
 
@@ -77,7 +77,7 @@ class JPush extends Api
                 ->setPlatform('all')
                 ->addAllAudience()
                 ->setMessage(\GuzzleHttp\json_encode($data))
-                ->setNotificationAlert("您有个新".$type_data->getAttr("name"))
+                ->setNotificationAlert("您有个新".$type_data["name"])
                 ->send();
             return  $this->success("",$back);
         } catch (\JPush\Exceptions\JPushException $e) {
