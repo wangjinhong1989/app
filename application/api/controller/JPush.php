@@ -59,39 +59,45 @@ class JPush extends Api
     // 发送推送消息
     public function send_push(){
 
-        $typeModel=new PushType();
 
-        $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
-
-        $type=$this->request->request("type",0);
-
-        $type_data=$typeModel->where(["id"=>$type])->find();
-        $article= (new Article())->where(["id"=>["gt",0]])->find();
-        $data=[
-            "type"=>$type_data["id"],
-            "data"=>$article
-        ];
 
 
         $query= new Query();
 
         $query->table("fa_user")->chunk(100,function ($user){
 
+            foreach ($user as $u){
+
+                $typeModel=new PushType();
+
+                $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
+
+                $type=$this->request->request("type",0);
+
+                $type_data=$typeModel->where(["id"=>$type])->find();
+                $article= (new Article())->where(["id"=>["gt",0]])->find();
+                $data=[
+                    "type"=>$type_data["id"],
+                    "data"=>$article
+                ];
+                try {
+                    $back=$client->push()
+                        ->setPlatform('all')
+                        ->addAlias()
+                        ->addAllAudience()
+                        ->setMessage(\GuzzleHttp\json_encode($data))
+                        ->setNotificationAlert("您有个新".$type_data["type"])
+                        ->send();
+                    return  $this->success("",$back);
+                } catch (\JPush\Exceptions\JPushException $e) {
+                    print $e;
+                }
+
+            }
 
         });
 
-        try {
-            $back=$client->push()
-                ->setPlatform('all')
-                ->addAlias()
-                ->addAllAudience()
-                ->setMessage(\GuzzleHttp\json_encode($data))
-                ->setNotificationAlert("您有个新".$type_data["type"])
-                ->send();
-            return  $this->success("",$back);
-        } catch (\JPush\Exceptions\JPushException $e) {
-            print $e;
-        }
+
 
     }
 
