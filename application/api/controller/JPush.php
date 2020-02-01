@@ -71,7 +71,7 @@ class JPush extends Api
             "data"=>$article
         ];
 
-
+        dd($type_data);
         try {
             $back=$client->push()
                 ->setPlatform('all')
