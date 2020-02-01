@@ -5,6 +5,7 @@ namespace app\api\controller;
 use app\admin\model\Article;
 use app\admin\model\Guanggao;
 use app\admin\model\HotSearch;
+use app\admin\model\PushList;
 use app\admin\model\ReadHistory;
 use app\admin\model\SearchHistory;
 use app\common\controller\Api;
@@ -581,7 +582,11 @@ class ArticleManager extends Api
 
             // 保存到推送列表中.
 
-            dd($test);
+            //dd($test);
+
+            $pushModel=new PushList();
+
+            $pushModel->create($test);
 
             return $this->success();
         }catch (Exception $e){
