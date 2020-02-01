@@ -84,7 +84,6 @@ class JPush extends Api
                     $back=$client->push()
                         ->setPlatform('all')
                         ->addAlias($u["id"].$u["username"])
-                        ->addAllAudience()
                         ->setMessage(\GuzzleHttp\json_encode($data))
                         ->setNotificationAlert("您有个新".$type_data["type"])
                         ->send();
