@@ -2,6 +2,7 @@
 
 namespace app\api\controller;
 use app\admin\model\Article;
+use app\admin\model\PushList;
 use app\common\controller\Api;
 use think\db\Query;
 
@@ -148,9 +149,20 @@ class Dianzan extends Api
             $info=(new \app\admin\model\Dianzan())->where(['at_id'=>$reply_id,'user_id'=>$user_id])->select();
             if($info)
                 return $this->error(__('已经点赞了'));
-            $model->create([
+            $test=$model->create([
                 'user_id' => $user_id, 'at_id' => $reply_id, 'time' => time()
             ]);
+
+
+            $pushModel=new PushList();
+
+            $temp=[
+                "user_id"=>0,
+                "push_type_id"=>7,
+                "content"=>\GuzzleHttp\json_encode($test),
+                "create_time"=>time()
+            ];
+            $pushModel->create($temp);
 
             return $this->success();
         } catch (Exception $e) {
