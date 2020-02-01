@@ -44,7 +44,8 @@ class JPush extends Api
                 ->setPlatform('all')
                 ->addAllAudience()
 //                ->setMessage("这是标题","标题","快讯",["672"])
-                ->setNotificationAlert(\GuzzleHttp\json_encode($data))
+                    ->setMessage(\GuzzleHttp\json_encode($data))
+                ->setNotificationAlert("您有个新回复")
                 ->send();
 
             return  $this->success("",$back);
