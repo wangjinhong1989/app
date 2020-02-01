@@ -3,6 +3,7 @@
 namespace app\api\controller;
 
 use app\admin\model\Article;
+use app\admin\model\PushType;
 use app\common\controller\Api;
 use app\common\library\Sms as Smslib;
 use app\common\model\User;
@@ -29,9 +30,6 @@ class JPush extends Api
 
         $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
 
-
-
-
         $type=$this->request->request("type",0);
         $article= (new Article())->where(["id"=>["gt",0],"articletype_id"=>$type])->find();
         $data=[
@@ -51,6 +49,38 @@ class JPush extends Api
             return  $this->success("",$back);
         } catch (\JPush\Exceptions\JPushException $e) {
             // try something else here
+            print $e;
+        }
+
+    }
+
+
+    // 发送推送消息
+    public function send_push(){
+
+        $typeModel=new PushType();
+
+        $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
+
+        $type=$this->request->request("type",0);
+
+        $type_data=$typeModel->where(["type"=>$type])->find();
+        $article= (new Article())->where(["id"=>["gt",0]])->find();
+        $data=[
+            "type"=>$type_data->id,
+            "data"=>$article
+        ];
+
+
+        try {
+            $back=$client->push()
+                ->setPlatform('all')
+                ->addAllAudience()
+                ->setMessage(\GuzzleHttp\json_encode($data))
+                ->setNotificationAlert("您有个新".$type_data->name)
+                ->send();
+            return  $this->success("",$back);
+        } catch (\JPush\Exceptions\JPushException $e) {
             print $e;
         }
 
