@@ -7,6 +7,7 @@ use app\admin\model\PushType;
 use app\common\controller\Api;
 use app\common\library\Sms as Smslib;
 use app\common\model\User;
+use think\db\Query;
 use think\Hook;
 use think\Config;
 
@@ -71,10 +72,18 @@ class JPush extends Api
             "data"=>$article
         ];
 
-        dd($type_data);
+
+        $query= new Query();
+
+        $query->table("fa_user")->chunk(100,function ($user){
+
+
+        });
+
         try {
             $back=$client->push()
                 ->setPlatform('all')
+                ->addAlias()
                 ->addAllAudience()
                 ->setMessage(\GuzzleHttp\json_encode($data))
                 ->setNotificationAlert("您有个新".$type_data["type"])
