@@ -577,7 +577,11 @@ class ArticleManager extends Api
                 }
             }
 
-            $model->create($data);
+            $test=$model->create($data);
+
+            // 保存到推送列表中.
+
+            dd($test);
 
             return $this->success();
         }catch (Exception $e){
