@@ -3,6 +3,7 @@
 namespace app\api\controller;
 
 use app\admin\model\Article;
+use app\admin\model\PushList;
 use app\admin\model\PushType;
 use app\common\controller\Api;
 use app\common\library\Sms as Smslib;
@@ -60,8 +61,6 @@ class JPush extends Api
     public function send_push(){
 
 
-
-
         $query= new Query();
 
         $query->table("fa_user")->chunk(100,function ($user){
@@ -98,8 +97,70 @@ class JPush extends Api
 
 
 
+
+
     }
 
+
+    public function push_list()
+    {
+
+        $query = new Query();
+
+        $query->table("fa_push_list")->chunk(100, function ($list) {
+
+            // 需要推送的列表.
+            foreach ($list as  $l){
+                $this->push_data($l);
+
+                //$model= new PushList();
+                //$model->where(["id"=>$l["id"]])->delete();
+            }
+        });
+    }
+
+
+    public function push_data($value){
+
+        $typeModel=new PushType();
+        $type_data=$typeModel->where(["id"=>$value["push_type_id"]])->find();
+        $data=[
+            "type"=>$value["push_type_id"],
+            "data"=>$value["content"]
+        ];
+
+        if($data["type"]===7){
+            // 解析需要获取到的user.
+
+            // 获取的文章。
+            $article=\GuzzleHttp\json_decode($value["content"]);
+
+            $userList=(new Query())->table("fa_guanzhu")->alias("guanzhu")->where(["follow_id"=>$article["user_id"]])->select();
+            foreach ($userList as  $user){
+                $this->push_method($data,$type_data,$user["id"]);
+            }
+
+        }
+
+
+    }
+
+    public function push_method($data,$type_data,$user_id){
+        $user=(new User())->where(["id"=>$user_id])->find();
+        $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
+        // 解析需要推送的数据.
+        try {
+            $back=$client->push()
+                ->setPlatform('all')
+                ->addAlias($user["id".$user["username"]])
+                ->setMessage(\GuzzleHttp\json_encode($data))
+                ->setNotificationAlert("您有个新".$type_data["type"])
+                ->send();
+            return  $this->success("",$back);
+        } catch (\JPush\Exceptions\JPushException $e) {
+            print $e;
+        }
+    }
     /**
      * 检测验证码
      *
