@@ -77,7 +77,7 @@ class JPush extends Api
                 ->setPlatform('all')
                 ->addAllAudience()
                 ->setMessage(\GuzzleHttp\json_encode($data))
-                ->setNotificationAlert("您有个新".$type_data["name"])
+                ->setNotificationAlert("您有个新".$type_data["type"])
                 ->send();
             return  $this->success("",$back);
         } catch (\JPush\Exceptions\JPushException $e) {
