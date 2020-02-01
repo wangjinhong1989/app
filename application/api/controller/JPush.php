@@ -64,7 +64,7 @@ class JPush extends Api
 
         $type=$this->request->request("type",0);
 
-        $type_data=$typeModel->where(["type"=>$type])->find();
+        $type_data=$typeModel->where(["id"=>$type])->find();
         $article= (new Article())->where(["id"=>["gt",0]])->find();
         $data=[
             "type"=>$type_data["id"],
