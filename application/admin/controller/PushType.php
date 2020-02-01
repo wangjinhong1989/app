@@ -5,23 +5,23 @@ namespace app\admin\controller;
 use app\common\controller\Backend;
 
 /**
- * 
+ * 推送通知类型
  *
  * @icon fa fa-circle-o
  */
-class Dianzan extends Backend
+class PushType extends Backend
 {
     
     /**
-     * Dianzan模型对象
-     * @var \app\admin\model\Dianzan
+     * PushType模型对象
+     * @var \app\admin\model\PushType
      */
     protected $model = null;
 
     public function _initialize()
     {
         parent::_initialize();
-        $this->model = new \app\admin\model\Dianzan;
+        $this->model = new \app\admin\model\PushType;
 
     }
     
