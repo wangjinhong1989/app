@@ -132,7 +132,7 @@ class JPush extends Api
 
         // 关注我的，通知我有更新
         if($data["type"]===7){
-            $article=\GuzzleHttp\json_decode($value["content"]);
+            $article=\GuzzleHttp\json_decode($value["content"],true);
             $userList=(new Query())->table("fa_guanzhu")->alias("guanzhu")->where(["follow_id"=>$article["user_id"]])->select();
             foreach ($userList as  $user){
                 $this->push_method($data,$type_data,$user["id"]);
