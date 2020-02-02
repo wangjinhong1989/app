@@ -26,7 +26,7 @@ class Push extends Command
     {
         $site = Config::get('site');
         $this
-            ->setName('api')
+            ->setName('push')
             ->addOption('push', 'p', Option::VALUE_OPTIONAL, 'default push url', '')
             ->setDescription('J Push');
     }
