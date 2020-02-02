@@ -202,7 +202,7 @@ class ArticleManager extends Api
 
     public function test(){
         $query=new Query();
-        $rows=$query->table("fa_article")->alias("article")->field("article.*")->limit(0,19)->select();
+        $rows=$query->table("fa_article")->alias("article")->field("article.*")->limit(0,19)->order("id","desc")->select();
 
             $data=\GuzzleHttp\json_encode($rows);
 
