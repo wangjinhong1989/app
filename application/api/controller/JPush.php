@@ -135,7 +135,7 @@ class JPush extends Api
             $article=\GuzzleHttp\json_decode($value["content"],true);
             $userList=(new Query())->table("fa_guanzhu")->alias("guanzhu")->where(["follow_id"=>$article["user_id"]])->select();
             foreach ($userList as  $user){
-                $this->push_method($data,$type_data,$user["id"]);
+                $this->push_method($data,$type_data,$user["user_id"]);
             }
 
         }
