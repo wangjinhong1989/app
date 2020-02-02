@@ -437,6 +437,6 @@ if (!function_exists('dd')) {
         if(is_array($content)){
             $content=json_encode($content);
         }
-        file_put_contents(date("Y-m-d") .$file,date("Y-m-d H:i:s")." : ".$content."\r\n",FILE_APPEND);
+        file_put_contents($file,date("Y-m-d H:i:s")." : ".$content."\r\n",FILE_APPEND);
     }
 }
