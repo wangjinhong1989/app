@@ -149,6 +149,40 @@ class JPush extends Api
         $push_config=new \app\admin\model\PushConfig();
         $config=$push_config->where(["user_id"=>$user_id])->find();
 
+        $temp=\GuzzleHttp\json_decode($data["content"]);
+
+        if(!empty($config)){
+
+            if($config["is_accept_notify"]=="否"){
+                return "";
+            }
+
+            if($config["is_article_notify"]=="否"){
+                if(!empty($temp["articletype_id"])&&$temp["articletype_id"]>0&&$temp["articletype_id"]!=2){
+                    return "";
+                }
+            }
+
+            if($config["is_kuaixun_notify"]=="否"){
+                if(!empty($temp["articletype_id"])&&$temp["articletype_id"]>0&&$temp["articletype_id"]==2){
+                    return "";
+                }
+            }
+
+            if($config["is_follow_notify"]=="否"){
+                return "";
+            }else{
+                // 查询是否关注了.
+                // 并且消息是文章.
+                if(!empty($temp["articletype_id"])){
+                    $guanzhu=(new \app\admin\model\Guanzhu())->where(["user_id"=>$user_id,"follow_id"=>$temp["user_id"]])->find();
+                    if(!$guanzhu){
+                        return "";
+                    }
+                }
+            }
+        }
+
 
         $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
         // 解析需要推送的数据.
@@ -164,49 +198,5 @@ class JPush extends Api
             print $e;
         }
     }
-    /**
-     * 检测验证码
-     *
-     * @param string $mobile 手机号
-     * @param string $event 事件名称
-     * @param string $captcha 验证码
-     */
-    public function check()
-    {
 
-        $mobile = $this->request->request("mobile");
-        $event = $this->request->request("event");
-        $event = $event ? $event : 'register';
-
-        if (!$mobile || !\think\Validate::regex($mobile, "^1\d{10}$")) {
-            $this->error(__('手机号不正确'));
-        }
-        if ($event) {
-            $userinfo = User::getByMobile($mobile);
-            if ($event == 'register' && $userinfo) {
-                //已被注册
-                $this->error(__('已被注册'));
-            } elseif (in_array($event, ['changemobile']) && $userinfo) {
-                //被占用
-                $this->error(__('已被占用'));
-            } elseif (in_array($event, ['changepwd', 'resetpwd']) && !$userinfo) {
-                //未注册
-                $this->error(__('未注册'));
-            }
-        }
-
-
-        $code = $this->request->request("code");
-        $msg_id = $this->request->request("msg_id");
-
-        $client =  new \JiGuang\JSMS(config("jiguang_app_key"), config("jiguang_master_secret"), [ 'disable_ssl' => true ]);
-
-        $res=$this->success("",$client->checkCode($msg_id, $code));
-        if($res["http_code"]==200){
-            $this->success();
-        }else{
-            $this->error("认证失败",$res,1001);
-        }
-
-    }
 }
