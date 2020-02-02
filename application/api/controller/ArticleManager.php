@@ -200,6 +200,15 @@ class ArticleManager extends Api
     }
 
 
+    public function test(){
+        $query=new Query();
+        $rows=$query->table("fa_article")->alias("article")->field("article.*")->limit(0,19)->select();
+
+            $data=\GuzzleHttp\json_encode($rows);
+
+        var_dump(\GuzzleHttp\json_decode($data,true));
+
+    }
 
     /**
      * 首页
