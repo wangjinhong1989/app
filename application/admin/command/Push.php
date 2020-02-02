@@ -129,8 +129,8 @@ class Push extends Command
     public function push_method($data,$type_data,$user_id){
         $user=(new User())->where(["id"=>$user_id])->find();
 
-        dd($user_id);
-        dd($user);
+//        dd($user_id);
+//        dd($user);
         $push_config=new \app\admin\model\PushConfig();
         $config=$push_config->where(["user_id"=>$user_id])->find();
 
