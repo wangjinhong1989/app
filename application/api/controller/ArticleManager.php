@@ -195,7 +195,7 @@ class ArticleManager extends Api
             'data' => $data,
         ];
 
-        echo \GuzzleHttp\json_encode($result,JSON_UNESCAPED_SLASHES);
+        return  \GuzzleHttp\json_encode($result,JSON_UNESCAPED_SLASHES);
 
     }
 
