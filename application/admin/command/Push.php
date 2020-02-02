@@ -34,7 +34,7 @@ class Push extends Command
     protected function execute(Input $input, Output $output)
     {
 
-        $this->send_push();
+        $this->push_list();
     }
 
 
