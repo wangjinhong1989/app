@@ -154,6 +154,7 @@ class ArticleManager extends Api
 
 
         foreach ($data["rows"] as &$value){
+            $value["content"]=htmlentities($value["content"]);
             $value["create_time"]=date("Y-m-d H:i:s",$value["create_time"]);
         }
 
@@ -186,7 +187,7 @@ class ArticleManager extends Api
         $data["page"]=$page;
 
         $data["total_page"]=ceil($data["count"]/$page_size);
-        $this->success("成功",$data,1,"jsonp");
+        $this->success("成功",$data);
 
 //        $result = [
 //            'code' => 1,
