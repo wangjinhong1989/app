@@ -1,6 +1,15 @@
 <?php
 
-namespace app\api\controller;
+namespace app\admin\command;
+
+use app\admin\command\Api\library\Builder;
+use think\Config;
+use think\console\Command;
+use think\console\Input;
+use think\console\input\Option;
+use think\console\Output;
+use think\Exception;
+
 
 use app\admin\model\Article;
 use app\admin\model\PushList;
@@ -10,49 +19,20 @@ use app\common\library\Sms as Smslib;
 use app\common\model\User;
 use think\db\Query;
 use think\Hook;
-use think\Config;
 
-/**
- * 手机短信接口
- */
-class JPush extends Api
+class Push extends Command
 {
-    protected $noNeedLogin = '*';
-    protected $noNeedRight = '*';
-
-    /**
-     * 发送验证码
-     *
-     * @param string $mobile 手机号
-     * @param string $event 事件名称
-     */
-    public function send()
+    protected function configure()
     {
+        $site = Config::get('site');
+        $this
+            ->setName('api')
+            ->addOption('push', 'p', Option::VALUE_OPTIONAL, 'default push url', '')
+            ->setDescription('J Push');
+    }
 
-
-        $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
-
-        $type=$this->request->request("type",0);
-        $article= (new Article())->where(["id"=>["gt",0],"articletype_id"=>$type])->find();
-        $data=[
-            "type"=>$type,
-            "data"=>$article
-        ];
-
-        try {
-            $back=$client->push()
-                ->setPlatform('all')
-                ->addAllAudience()
-//                ->setMessage("这是标题","标题","快讯",["672"])
-                    ->setMessage(\GuzzleHttp\json_encode($data))
-                ->setNotificationAlert("您有个新回复")
-                ->send();
-
-            return  $this->success("",$back);
-        } catch (\JPush\Exceptions\JPushException $e) {
-            // try something else here
-            print $e;
-        }
+    protected function execute(Input $input, Output $output)
+    {
 
     }
 
