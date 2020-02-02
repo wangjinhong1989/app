@@ -149,7 +149,7 @@ class JPush extends Api
         $push_config=new \app\admin\model\PushConfig();
         $config=$push_config->where(["user_id"=>$user_id])->find();
 
-        $temp=\GuzzleHttp\json_decode($data["content"]);
+        $temp=\GuzzleHttp\json_decode($data["data"]);
 
         if(!empty($config)){
 
