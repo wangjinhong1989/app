@@ -86,7 +86,6 @@ class JPush extends Api
                         ->setMessage(\GuzzleHttp\json_encode($data))
                         ->setNotificationAlert("您有个新".$type_data["type"])
                         ->send();
-                    var_dump($u);
 
                     return  $this->success("",$back);
                 } catch (\JPush\Exceptions\JPushException $e) {
@@ -131,12 +130,9 @@ class JPush extends Api
             "data"=>$value["content"]
         ];
 
+        // 关注我的，通知我有更新
         if($data["type"]===7){
-            // 解析需要获取到的user.
-
-            // 获取的文章。
             $article=\GuzzleHttp\json_decode($value["content"]);
-
             $userList=(new Query())->table("fa_guanzhu")->alias("guanzhu")->where(["follow_id"=>$article["user_id"]])->select();
             foreach ($userList as  $user){
                 $this->push_method($data,$type_data,$user["id"]);
@@ -149,6 +145,11 @@ class JPush extends Api
 
     public function push_method($data,$type_data,$user_id){
         $user=(new User())->where(["id"=>$user_id])->find();
+
+        $push_config=new \app\admin\model\PushConfig();
+        $config=$push_config->where(["user_id"=>$user_id])->find();
+
+
         $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
         // 解析需要推送的数据.
         try {
