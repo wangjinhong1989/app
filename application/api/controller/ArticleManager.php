@@ -186,16 +186,16 @@ class ArticleManager extends Api
         $data["page"]=$page;
 
         $data["total_page"]=ceil($data["count"]/$page_size);
-        //$this->success("成功",$data);
+        $this->success("成功",$data,1,"jsonp");
 
-        $result = [
-            'code' => 1,
-            'msg'  => "成功",
-            'time' => time(),
-            'data' => $data,
-        ];
+//        $result = [
+//            'code' => 1,
+//            'msg'  => "成功",
+//            'time' => time(),
+//            'data' => $data,
+//        ];
 
-        return  \GuzzleHttp\json_encode($result,JSON_UNESCAPED_SLASHES);
+        //return  \GuzzleHttp\json_encode($result,JSON_UNESCAPED_SLASHES);
 
     }
 
