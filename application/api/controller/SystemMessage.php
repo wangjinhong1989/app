@@ -25,7 +25,7 @@ class SystemMessage extends Api
             $offset=0;
         }
         $data=[];
-        $where=[];
+        $where=["user_id"=>$this->auth->id];
 
         $query=new Query();
         $data["rows"]=$query->table("fa_system_message")->alias("message")->field("*")
