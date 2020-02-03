@@ -121,6 +121,10 @@ class Push extends Command
                 $this->push_method($data,$type_data,$user["user_id"]);
             }
 
+        }else if($data["type"]===3){
+            $content=\GuzzleHttp\json_decode($value["content"],true);
+            $article=(new Query())->table("fa_article")->where(["id"=>$content["article_id"]])->find();
+                $this->push_method($data,$type_data,$article["user_id"]);
         }
 
 
