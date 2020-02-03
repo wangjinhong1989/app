@@ -178,7 +178,6 @@ class Push extends Command
                 ->setMessage(\GuzzleHttp\json_encode($data))
                 ->setNotificationAlert("您有个新".$type_data["type"])
                 ->send();
-            //print $back;
         } catch (\JPush\Exceptions\JPushException $e) {
             print $e;
         }
