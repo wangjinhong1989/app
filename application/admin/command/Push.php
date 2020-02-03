@@ -143,6 +143,10 @@ class Push extends Command
             $reply= (new Query())->table("fa_reply")->where(["id"=>$content["at_id"]])->find();
             $this->push_method($data,$type_data,$reply["user_id"]);
         }
+        else if($data["type"]===5){
+            // 系统推送消息
+            $this->push_method($data,$type_data,$value["user_id"]);
+        }
 
 
     }
