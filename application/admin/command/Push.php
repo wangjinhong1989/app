@@ -97,8 +97,8 @@ class Push extends Command
             foreach ($list as  $l){
                 $this->push_data($l);
 
-                //$model= new PushList();
-                //$model->where(["id"=>$l["id"]])->delete();
+                $model= new PushList();
+                $model->where(["id"=>$l["id"]])->delete();
             }
         });
     }
