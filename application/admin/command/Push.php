@@ -3,6 +3,7 @@
 namespace app\admin\command;
 
 use app\admin\command\Api\library\Builder;
+use app\admin\model\SystemMessage;
 use think\Config;
 use think\console\Command;
 use think\console\Input;
@@ -223,6 +224,14 @@ class Push extends Command
                 ->setMessage(\GuzzleHttp\json_encode($data))
                 ->setNotificationAlert($msg)
                 ->send();
+
+            $model=new SystemMessage();
+            $model->create([
+                "user_id"=>$user["id"],
+                "status"=>"未读",
+                "time"=>time(),
+                "content"=>$msg
+            ]);
         } catch (\JPush\Exceptions\JPushException $e) {
             print $e;
         }
