@@ -137,6 +137,12 @@ class Push extends Command
             $content=\GuzzleHttp\json_decode($value["content"],true);
             $this->push_method($data,$type_data,$content["follow_id"]);
         }
+        else if($data["type"]===4){
+            // 回复
+            $content=\GuzzleHttp\json_decode($value["content"],true);
+            $reply= (new Query())->table("fa_reply")->where(["id"=>$content["at_id"]])->find();
+            $this->push_method($data,$type_data,$reply["user_id"]);
+        }
 
 
     }
