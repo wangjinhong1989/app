@@ -4,6 +4,7 @@ namespace app\api\controller;
 
 
 use app\admin\model\Articletype;
+use app\admin\model\PushList;
 use app\admin\model\Shoucang;
 use app\admin\model\Article;
 use app\admin\model\User;
@@ -159,9 +160,21 @@ class Guanzhu extends Api
                 return $this->error(__('已经关注了'));
             }
 
-            $model->create([
+            $test= $model->create([
                 'user_id' => $user_id, 'follow_id' => $follow_id, 'time' => time()
             ]);
+
+            //  添加关注
+            $pushModel=new PushList();
+
+            $temp=[
+                "user_id"=>0,
+                "push_type_id"=>2,
+                "content"=>\GuzzleHttp\json_encode($test),
+                "create_time"=>time()
+            ];
+            $pushModel->create($temp);
+
 
             // 为作者添加评论
             $flag=(new \app\admin\model\FlagMessage())->where(["user_id"=>$follow_id])->find();

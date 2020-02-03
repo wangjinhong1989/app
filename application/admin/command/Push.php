@@ -132,6 +132,11 @@ class Push extends Command
             $content=\GuzzleHttp\json_decode($value["content"],true);
             $this->push_method($data,$type_data,$content["user_id"]);
         }
+        else if($data["type"]===2){
+            // 回复
+            $content=\GuzzleHttp\json_decode($value["content"],true);
+            $this->push_method($data,$type_data,$content["follow_id"]);
+        }
 
 
     }
