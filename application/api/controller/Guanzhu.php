@@ -48,6 +48,18 @@ class Guanzhu extends Api
             ->where(['guanzhu.user_id' => $user_id])
             ->count();
 
+
+        foreach ($lists as &$l){
+                // 查找follow_id 是否关注了它。
+            $l["follow_id_at_user_id"]=false;
+
+            $model= new \app\admin\model\Guanzhu();
+            $temp=$model->where(["user_id"=>$l["follow_id"],"follow_id"=>$l["user_id"]])->find();
+            if(!empty($temp)){
+                $l["follow_id_at_user_id"]=true;
+            }
+
+        }
         $data["page"]=$page;
         $data["rows"]=$lists;
         $data["count"]=$count;
