@@ -173,18 +173,19 @@ class Push extends Command
 
         $msg="您有新通知";
 
-        if($type_data["type"]==7){
+
+        if($type_data["id"]==7){
             $msg="您关注的人发布新文章了";
-        }else if($type_data["type"]==1){
+        }else if($type_data["id"]==1){
             $msg="您的文章有新评论了";
         }
-        else if($type_data["type"]==2){
+        else if($type_data["id"]==2){
             $msg="有好友关注了您";
-        }else if($type_data["type"]==3){
+        }else if($type_data["id"]==3){
             $msg="您有新回复";
-        }else if($type_data["type"]==4){
+        }else if($type_data["id"]==4){
             $msg="您有新点赞";
-        }else if($type_data["type"]==5){
+        }else if($type_data["id"]==5){
             $msg="系统公告请查看";
         }
 
