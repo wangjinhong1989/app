@@ -336,6 +336,17 @@ class Reply extends Api
 
             $flag->reply_flag=1;
             $flag->save();
+            $reply=$model->where(["id"=>$id])->find();
+            $pushModel=new PushList();
+
+            $temp=[
+                "user_id"=>0,
+                "push_type_id"=>3,
+                "content"=>\GuzzleHttp\json_encode($reply),
+                "create_time"=>time()
+            ];
+            $pushModel->create($temp);
+
 
             return $this->success();
         }catch (Exception $e){
