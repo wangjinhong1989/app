@@ -119,8 +119,10 @@ class Article extends Frontend
             $model=new \app\admin\model\Article();
             $res=$model->where(['id'=>$this->request->param('id')])->find();
             //$res['articletype_ids']=explode(',',$res['articletype_ids']);
-            $this->view->assign('res',$res);
-            return $this->view->fetch();
+            //$this->view->assign('res',$res);
+            //return $this->view->fetch();
+
+        var_dump($res);
 
     }
 
