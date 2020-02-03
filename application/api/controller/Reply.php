@@ -220,7 +220,7 @@ class Reply extends Api
 
             $temp=[
                 "user_id"=>0,
-                "push_type_id"=>3,
+                "push_type_id"=>1,
                 "content"=>\GuzzleHttp\json_encode($test),
                 "create_time"=>time()
             ];
