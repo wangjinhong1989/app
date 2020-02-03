@@ -73,6 +73,7 @@ class Reply extends Api
         foreach ($lists as &$l){
             if($l["author_id"]==$my_id){
                 $l["is_my_article"]="是";
+
             }else {
                 $l["is_my_article"]="否";
             }
@@ -84,6 +85,16 @@ class Reply extends Api
                     $l[$key]="";
                 }
             }
+
+
+
+            $l["dianzan_count"]=(new Query())->table("fa_dianzan")->where(["at_id"=>$l["id"]])->count();
+            $temp=(new Query())->table("fa_dianzan")->where(["at_id"=>$l["id"],"user_id"=>$my_id])->count();
+            if($temp){
+                $l["flag_dianzhan"]=true;
+            }else
+                $l["flag_dianzhan"]=false;
+
         }
         $data["page"]=$page;
         $data["rows"]=$lists;
