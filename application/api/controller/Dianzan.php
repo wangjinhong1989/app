@@ -181,14 +181,14 @@ class Dianzan extends Api
             $model = new \app\admin\model\Dianzan();
             $user = $this->auth->getUser();
             $user_id = $user->id;
-            $id = $this->request->request('id');
+            $reply_id = $this->request->request('reply_id');
 
 
-            if (!$id) {
+            if (!$reply_id) {
                 return $this->error(__('参数存在空'));
             }
 
-            $model->where(['id' => $id])->delete();
+            $model->where(['at_id' => $reply_id,"user_id"=>$user_id])->delete();
 
             return $this->success();
         } catch (Exception $e) {
