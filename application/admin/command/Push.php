@@ -90,15 +90,16 @@ class Push extends Command
 
         $query = new Query();
 
-        $query->table("fa_push_list")->chunk(100, function ($list) {
+        $query->table("fa_push_list")->where(["status"=>0])->chunk(100, function ($list) {
 
             // 需要推送的列表.
             foreach ($list as  $l){
                 $this->push_data($l);
 
                 $model= new PushList();
-                dd($l["id"]);
-                $model->where(["id"=>$l["id"]])->delete();
+                $push=$model->where(["id"=>$l["id"]])->find();
+                $push->status=1;
+                $push->save();
             }
         });
     }
