@@ -36,6 +36,7 @@ class Push extends Command
     {
 
         $this->push_list();
+        dd("test");
     }
 
 
