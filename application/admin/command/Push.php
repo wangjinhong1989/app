@@ -221,7 +221,7 @@ class Push extends Command
             $back=$client->push()
                 ->setPlatform('all')
                 ->addAlias($user["id"].$user["username"])
-                ->setMessage(\GuzzleHttp\json_encode($data))
+                ->setMessage("",$msg,$type_data["id"],$data)
                 ->setNotificationAlert($msg)
                 ->send();
 
