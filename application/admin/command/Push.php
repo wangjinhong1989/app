@@ -35,7 +35,6 @@ class Push extends Command
     {
 
         $this->push_list();
-        dd("yes");
     }
 
 
@@ -98,6 +97,7 @@ class Push extends Command
                 $this->push_data($l);
 
                 $model= new PushList();
+                dd($l["id"]);
                 $model->where(["id"=>$l["id"]])->delete();
             }
         });
