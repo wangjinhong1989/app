@@ -4,6 +4,7 @@ namespace app\api\controller;
 
 
 use app\admin\model\Article;
+use app\admin\model\PushList;
 use app\admin\model\SearchHistory;
 use app\common\controller\Api;
 use think\db\Query;
@@ -209,10 +210,22 @@ class Reply extends Api
                 return $this->error(__('参数存在空'));
             }
 
-            $model->create([
+            $test=$model->create([
                 //'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>"审核"
                 'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>"有效"
             ]);
+
+
+            $pushModel=new PushList();
+
+            $temp=[
+                "user_id"=>0,
+                "push_type_id"=>7,
+                "content"=>\GuzzleHttp\json_encode($test),
+                "create_time"=>time()
+            ];
+            $pushModel->create($temp);
+
 
             // 查找作者。
             $article=(new Article())->where(["id"=>$article_id])->find();
