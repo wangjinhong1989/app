@@ -87,7 +87,7 @@ class Wechat
                         "lang"         => 'zh_CN'
                     ];
                     $ret = Http::post(self::GET_USERINFO_URL, $queryarr);
-                    dd("返回用户的信息");
+                    dd("info");
                     dd($ret);
 
                     $userinfo = json_decode($ret, true);
@@ -96,7 +96,7 @@ class Wechat
                     }
 
                     $userinfo = $userinfo ? $userinfo : [];
-                    //dd($userinfo);
+                    dd($userinfo);
                     $userinfo['avatar'] = isset($userinfo['headimgurl']) ? $userinfo['headimgurl'] : '';
                 } else {
                     $userinfo = [];
