@@ -109,11 +109,12 @@ class Qq
         $params = $params ? $params : $_GET;
         if (isset($params['access_token'])) {
             //获取access_token
-
+            dd($params);
             $access_token = isset($params['access_token']) ? $params['access_token'] : '';
             $refresh_token = isset($params['refresh_token']) ? $params['refresh_token'] : '';
             $expires_in = isset($params['expires_in']) ? $params['expires_in'] : 0;
             if ($access_token) {
+                dd("qq in");
                 $openid = $this->getOpenId($access_token);
                 //获取用户信息
                 $queryarr = [
