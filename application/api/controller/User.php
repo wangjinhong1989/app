@@ -322,8 +322,6 @@ class User extends Api
         $app = new \addons\third\library\Application($config);
         //通过code换access_token和绑定会员
         $result = $app->$platform->getUserInfo(['code' => $code]);
-        dd($result);
-        dd($code);
         if ($result) {
             $loginret = \addons\third\library\Service::connect($platform, $result);
 
@@ -332,7 +330,7 @@ class User extends Api
                     'userinfo'  => $this->auth->getUserinfo(),
                     'thirdinfo' => $result
                 ];
-                dd($data);
+//                dd($data);
 //
 //                $nickname=$this->request->request("nickname","");
 //                $avatar=$this->request->request("avatar","");
