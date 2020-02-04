@@ -88,8 +88,10 @@ class Wechat
                     if (!$userinfo || isset($userinfo['errcode'])) {
                         return [];
                     }
+                    dd("返回用户的信息");
+                    dd($ret);
                     $userinfo = $userinfo ? $userinfo : [];
-                    dd($userinfo);
+                    //dd($userinfo);
                     $userinfo['avatar'] = isset($userinfo['headimgurl']) ? $userinfo['headimgurl'] : '';
                 } else {
                     $userinfo = [];
