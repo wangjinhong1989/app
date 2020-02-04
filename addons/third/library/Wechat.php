@@ -87,17 +87,15 @@ class Wechat
                         "lang"         => 'zh_CN'
                     ];
                     $ret = Http::post(self::GET_USERINFO_URL, $queryarr);
-                    dd("info");
-                    dd($ret);
-
                     $userinfo = json_decode($ret, true);
                     if (!$userinfo || isset($userinfo['errcode'])) {
                         return [];
                     }
 
                     $userinfo = $userinfo ? $userinfo : [];
-                    dd($userinfo);
                     $userinfo['avatar'] = isset($userinfo['headimgurl']) ? $userinfo['headimgurl'] : '';
+                    $userinfo['gender'] = isset($userinfo['sex']) ? $userinfo['sex'] : 0;
+                    $userinfo['nickname'] = isset($userinfo['nickname']) ? $userinfo['nickname'] : 0;
                 } else {
                     $userinfo = [];
                 }

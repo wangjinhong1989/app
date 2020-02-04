@@ -70,6 +70,9 @@ class Service
                     $fields['avatar'] = htmlspecialchars(strip_tags($params['userinfo']['avatar']));
                 }
 
+                if (isset($params['userinfo']['gender'])) {
+                    $fields['gender'] =  $params['userinfo']['gender'];
+                }
                 // 更新会员资料
                 $user = User::get($user->id);
                 $user->save($fields);
