@@ -321,7 +321,18 @@ class User extends Api
         }
         $app = new \addons\third\library\Application($config);
         //通过code换access_token和绑定会员
+        if($platform=="wechat")
         $result = $app->$platform->getUserInfo(['code' => $code]);
+        else if($platform=="qq"){
+            $temp=[];
+            $temp["access_token"] = $this->request->request("access_token");
+            $temp["openid"] = $this->request->request("openid");
+            $temp["refresh_token"] = $this->request->request("refresh_token");
+            $temp["expires_in"] = $this->request->request("expires_in");
+            dd("qq");
+            dd($temp);
+            $result = $app->$platform->getUserInfo1($temp);
+        }
         if ($result) {
             $loginret = \addons\third\library\Service::connect($platform, $result);
 

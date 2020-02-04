@@ -100,6 +100,49 @@ class Qq
     }
 
     /**
+     * 获取用户信息
+     * @param array $params
+     * @return array
+     */
+    public function getUserInfo1($params = [])
+    {
+        $params = $params ? $params : $_GET;
+        if (isset($params['access_token'])) {
+            //获取access_token
+
+            $access_token = isset($params['access_token']) ? $params['access_token'] : '';
+            $refresh_token = isset($params['refresh_token']) ? $params['refresh_token'] : '';
+            $expires_in = isset($params['expires_in']) ? $params['expires_in'] : 0;
+            if ($access_token) {
+                $openid = $this->getOpenId($access_token);
+                //获取用户信息
+                $queryarr = [
+                    "access_token"       => $access_token,
+                    "oauth_consumer_key" => $this->config['app_id'],
+                    "openid"             => $openid,
+                ];
+                $ret = Http::get(self::GET_USERINFO_URL, $queryarr);
+                $userinfo = json_decode($ret, true);
+                if (!$userinfo || !isset($userinfo['ret']) || $userinfo['ret'] !== 0) {
+                    return [];
+                }
+                $userinfo = $userinfo ? $userinfo : [];
+                $userinfo['avatar'] = isset($userinfo['figureurl_qq_2']) ? $userinfo['figureurl_qq_2'] : '';
+                dd($userinfo);
+                $data = [
+                    'access_token'  => $access_token,
+                    'refresh_token' => $refresh_token,
+                    'expires_in'    => $expires_in,
+                    'openid'        => $openid,
+                    'userinfo'      => $userinfo
+                ];
+                return $data;
+            }
+        }
+        return [];
+    }
+
+    /**
      * 获取access_token
      * @param string $code
      * @return array
