@@ -333,31 +333,31 @@ class User extends Api
                     'thirdinfo' => $result
                 ];
                 dd($data);
-
-                $nickname=$this->request->request("nickname","");
-                $avatar=$this->request->request("avatar","");
-                $gender=$this->request->request("gender","");
-
-                $model= new \app\admin\model\User();
-                $user=$model->where(["id"=>$this->auth->id])->find();
-                if($nickname){
-                    $user->nickname=$nickname;
-                }
-                if($avatar){
-                    $user->avatar=$avatar;
-                }
-                $gender=intval($gender);
-                if($gender===0||$gender===1){
-                    $user->avatar=$gender;
-                }
-                $user->save();
-
-                $this->auth->direct($user->id);
-                $data = [
-                    'userinfo'  => $this->auth->getUserinfo(),
-                    'thirdinfo' => $result
-                ];
-                dd($data);
+//
+//                $nickname=$this->request->request("nickname","");
+//                $avatar=$this->request->request("avatar","");
+//                $gender=$this->request->request("gender","");
+//
+//                $model= new \app\admin\model\User();
+//                $user=$model->where(["id"=>$this->auth->id])->find();
+//                if($nickname){
+//                    $user->nickname=$nickname;
+//                }
+//                if($avatar){
+//                    $user->avatar=$avatar;
+//                }
+//                $gender=intval($gender);
+//                if($gender===0||$gender===1){
+//                    $user->avatar=$gender;
+//                }
+//                $user->save();
+//
+//                $this->auth->direct($user->id);
+//                $data = [
+//                    'userinfo'  => $this->auth->getUserinfo(),
+//                    'thirdinfo' => $result
+//                ];
+//                dd($data);
                 $this->success(__('Logged in successful'), $data);
             }
         }

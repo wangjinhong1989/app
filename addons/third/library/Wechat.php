@@ -89,6 +89,7 @@ class Wechat
                         return [];
                     }
                     $userinfo = $userinfo ? $userinfo : [];
+                    dd($userinfo);
                     $userinfo['avatar'] = isset($userinfo['headimgurl']) ? $userinfo['headimgurl'] : '';
                 } else {
                     $userinfo = [];
