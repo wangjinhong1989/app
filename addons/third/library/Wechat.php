@@ -70,7 +70,8 @@ class Wechat
             $data = isset($params['code']) ? $this->getAccessToken($params['code']) : $params;
 
 //            dd($data);
-            dd("测试");
+            dd("test");
+            dd($params);
             $access_token = isset($data['access_token']) ? $data['access_token'] : '';
             $refresh_token = isset($data['refresh_token']) ? $data['refresh_token'] : '';
             $expires_in = isset($data['expires_in']) ? $data['expires_in'] : 0;
