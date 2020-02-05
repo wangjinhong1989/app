@@ -286,10 +286,14 @@ class User extends Api
         if (!$mobile || !$captcha) {
             $this->error(__('Invalid parameters'));
         }
+        dd("2");
         if (!Validate::regex($mobile, "^1\d{10}$")) {
             $this->error(__('Mobile is incorrect'));
         }
+        dd("1");
         if (\app\common\model\User::where('mobile', $mobile)->where('id', '<>', $user->id)->find()) {
+
+            dd("mobile exists");
             $this->error(__('Mobile already exists'));
         }
         // 123456 取消验证码
@@ -306,6 +310,7 @@ class User extends Api
         $user->save();
 
         Sms::flush($mobile, 'changemobile');
+        dd("3");
         $this->success();
     }
 
