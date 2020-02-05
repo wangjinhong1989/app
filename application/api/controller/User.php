@@ -225,18 +225,29 @@ class User extends Api
      * 获取用户详细信息.
      **/
     public function detail(){
-        $data = ['userinfo' => $this->auth->getUserinfo()];
+
+        $user_id=$this->request->request("user_id",0);
+        if(!$user_id){
+            $user_id=$this->auth->id;
+            $data = ['userinfo' => $this->auth->getUserinfo()];
+        }else{
+
+            $user= User::get($user_id);
+            $data=["userinfo"=>$user];
+        }
+
 
         //  获取我的粉丝数.
-        $data["my_follow"]=(new \app\admin\model\Guanzhu())->where(["user_id"=>$this->auth->id])->count();
-        $data["follow_me"]=(new \app\admin\model\Guanzhu())->where(["follow_id"=>$this->auth->id])->count();
-        $data["my_article"]=(new \app\admin\model\Article())->where(["user_id"=>$this->auth->id])->count();
-        $data["my_read"]=(new \app\admin\model\ReadHistory())->where(["user_id"=>$this->auth->id])->count();
-        $data["auth_enterprise"]=(new \app\admin\model\AuthenticationEnterprise())->where(["user_id"=>$this->auth->id])->find();
-        $data["auth_media"]=(new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$this->auth->id])->find();
-        $data["auth_personal"]=(new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$this->auth->id])->find();
+        $data["my_follow"]=(new \app\admin\model\Guanzhu())->where(["user_id"=>$user_id])->count();
+        $data["follow_me"]=(new \app\admin\model\Guanzhu())->where(["follow_id"=>$user_id])->count();
+        $data["my_article"]=(new \app\admin\model\Article())->where(["user_id"=>$user_id])->count();
+        $data["my_read"]=(new \app\admin\model\ReadHistory())->where(["user_id"=>$user_id])->count();
+        $data["auth_enterprise"]=(new \app\admin\model\AuthenticationEnterprise())->where(["user_id"=>$user_id])->find();
+        $data["auth_media"]=(new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$user_id])->find();
+        $data["auth_personal"]=(new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$user_id])->find();
         $this->success(__('成功'), $data);
     }
+
 
     /**
      * 修改邮箱
