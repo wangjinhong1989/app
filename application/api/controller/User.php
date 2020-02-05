@@ -350,7 +350,7 @@ class User extends Api
             if ($loginret) {
                 $data = [
                     'userinfo'  => $this->auth->getUserinfo(),
-                    'thirdinfo' => $result
+//                    'thirdinfo' => $result
                 ];
 
                 $this->success(__('Logged in successful'), $data);
