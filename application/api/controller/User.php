@@ -232,7 +232,7 @@ class User extends Api
             $data = ['userinfo' => $this->auth->getUserinfo()];
         }else{
 
-            $user= User::get($user_id);
+            $user= (new User())->where(["id"=>$user_id])->find();
             $data=["userinfo"=>$user];
         }
 
