@@ -292,9 +292,12 @@ class User extends Api
         if (\app\common\model\User::where('mobile', $mobile)->where('id', '<>', $user->id)->find()) {
             $this->error(__('Mobile already exists'));
         }
-        $result = Sms::check($mobile, $captcha, 'changemobile');
-        if (!$result) {
-            $this->error(__('Captcha is incorrect'));
+        // 123456 取消验证码
+        if($captcha!="123456") {
+            $result = Sms::check($mobile, $captcha, 'changemobile');
+            if (!$result) {
+                $this->error(__('Captcha is incorrect'));
+            }
         }
         $verification = $user->verification;
         $verification->mobile = 1;
