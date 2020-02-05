@@ -70,7 +70,7 @@ class Wechat
             $data = isset($params['code']) ? $this->getAccessToken($params['code']) : $params;
 
 
-            dd("test");
+            dd("params");
             dd($params);
             dd($data);
             $access_token = isset($data['access_token']) ? $data['access_token'] : '';
@@ -107,6 +107,8 @@ class Wechat
                     'unionid'       => $unionid,
                     'userinfo'      => $userinfo
                 ];
+                dd("user info");
+                dd($data);
                 return $data;
             }
         }
