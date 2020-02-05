@@ -353,6 +353,7 @@ class User extends Api
 //                    'thirdinfo' => $result
                 ];
 
+                dd($data);
                 $this->success(__('Logged in successful'), $data);
             }
         }
