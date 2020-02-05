@@ -69,10 +69,13 @@ class User extends Api
         if (!Validate::regex($mobile, "^1\d{10}$")) {
             $this->error(__('Mobile is incorrect'));
         }
-        // 取消验证 验证码.
-        if (!Sms::check($mobile, $captcha, 'mobilelogin')) {
-            $this->error(__('Captcha is incorrect'));
+        // 123456 取消验证码
+        if($captcha!="123456"){
+            if (!Sms::check($mobile, $captcha, 'mobilelogin')) {
+                $this->error(__('Captcha is incorrect'));
+            }
         }
+
         $user = \app\common\model\User::getByMobile($mobile);
         if ($user) {
             if ($user->status != 'normal') {
