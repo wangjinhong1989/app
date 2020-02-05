@@ -67,7 +67,7 @@ class Service
                     $fields['nickname'] = $params['userinfo']['nickname'];
                 }
                 if (isset($params['userinfo']['avatar'])) {
-                    $fields['avatar'] = htmlspecialchars(strip_tags($params['userinfo']['avatar']));
+                    $fields['avatar'] = (($params['userinfo']['avatar']));
                 }
 
                 if (isset($params['userinfo']['gender'])) {
