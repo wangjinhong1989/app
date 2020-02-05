@@ -177,14 +177,14 @@ class Reply extends Api
 
         $query=new Query();
         $lists=$query->table("fa_article")->alias("article")->field("article.*,user.username,user.avatar,count(reply.id) as reply_count")
-            ->join("fa_reply reply","reply.article_id=article.id")
-            ->join("fa_user user","user.id=article.user_id")
+            ->join("fa_reply reply","reply.article_id=article.id","left")
+            ->join("fa_user user","user.id=article.user_id","left")
             ->where($where)
             ->limit($offset,$page_size)->order("article.id desc")->select();
 
         $count=$query->table("fa_article")->alias("article")->field("article.*,user.username,user.avatar,count(reply.id) as reply_count")
-            ->join("fa_reply reply","reply.article_id=article.id")
-            ->join("fa_user user","user.id=article.user_id")
+            ->join("fa_reply reply","reply.article_id=article.id","left")
+            ->join("fa_user user","user.id=article.user_id","left")
             ->where($where)
            ->count();
 
