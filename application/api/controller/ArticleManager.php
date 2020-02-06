@@ -512,27 +512,27 @@ class ArticleManager extends Api
                 $detail['label_ids']=null;
 
 
-            $detail["企业认证"]=( new \app\admin\model\AuthenticationEnterprise())->where(["user_id"=>$detail['user_id']])
+            $detail["auth_enterprise_temp"]=( new \app\admin\model\AuthenticationEnterprise())->where(["user_id"=>$detail['user_id']])
                 ->find();
 
-            $detail["媒体认证"]=( new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$detail['user_id']])
+            $detail["auth_media_temp"]=( new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$detail['user_id']])
                 ->find();
-            $detail["个人认证"]=( new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$detail['user_id']])
+            $detail["auth_personal_temp"]=( new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$detail['user_id']])
                 ->find();
 
             $detail["authentication_type"]="";
 
 
 
-            if($detail["个人认证"]){
+            if($detail["auth_personal_temp"]){
                 $detail["authentication_type"]="个人";
             }
 
-            if($detail["媒体认证"]){
+            if($detail["auth_media_temp"]){
                 $detail["authentication_type"]="媒体";
             }
 
-            if($detail["企业认证"]){
+            if($detail["auth_enterprise_temp"]){
                 $detail["authentication_type"]="企业";
             }
             // 是否关注了该用户.
@@ -585,7 +585,23 @@ class ArticleManager extends Api
                 return $this->error(__('标题或者内容为空'));
             }
 
-            //$data["content"]=($data["content"]);
+            $data["content"]=str_replace('<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-16">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title></title>
+<meta name="Generator" content="Cocoa HTML Writer">
+<style type="text/css">
+p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px \'.AppleSystemUIFont\'}
+span.s1 {font-family: \'.SFUI-Regular\'; font-weight: normal; font-style: normal; font-size: 16.00px}
+span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; font-size: 12.00px}
+</style>
+</head>
+<body>',"",$data["content"]);
+
+            $data["content"]=str_replace('</body>
+</html>',"",$data["content"]);
             // 这里要求传描述
             if($data["articletype_id"]==2){
                 if(!$data["description"]){
