@@ -267,7 +267,7 @@ class Push extends Command
         // 解析需要推送的数据.
         try {
             $back=$client->push()
-                ->setPlatform('ios', 'android')
+                ->setPlatform(['ios', 'android'])
                 ->addAlias($user["id"].$user["username"])
                 ->iosNotification($msg,['extras' => $data])
                 ->addAndroidNotification($msg,$msg,null,["extras"=>$data])
