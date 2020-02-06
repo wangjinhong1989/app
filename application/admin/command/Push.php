@@ -35,8 +35,17 @@ class Push extends Command
     protected function execute(Input $input, Output $output)
     {
 
-        $this->push_list();
-        dd("test");
+        $push=$input->getOption("push");
+        if($push){
+
+            $this->push_list();
+            dd("test");
+        }
+
+        $all=$input->getOption("all");
+        if($all){
+            $this->send_push();
+        }
     }
 
 
@@ -228,8 +237,8 @@ class Push extends Command
             $back=$client->push()
                 ->setPlatform('all')
                 ->addAlias($user["id"].$user["username"])
-                ->setMessage("",$msg,$type_data["id"]."",\GuzzleHttp\json_decode($data["data"],true))
-                ->setNotificationAlert($msg)
+                ->setMessage("",$msg."xxxx",$type_data["id"]."",\GuzzleHttp\json_decode($data["data"],true))
+//                ->setNotificationAlert($msg)
                 ->setOptions(null,86400 )
                 ->send();
             dd("88888");
