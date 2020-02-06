@@ -106,9 +106,13 @@ class Push extends Command
             $back=$client->push()
                 ->setPlatform('all')
                 ->addAlias("1011218380461887")
-                ->message("test",["title"=>"title","content_type"=>"2","extras"=>\GuzzleHttp\json_encode($data)])
-                ->setNotificationAlert("new test message")
-                ->send();
+//                ->message("test",["title"=>"title","content_type"=>"2","extras"=>\GuzzleHttp\json_encode($data)])
+                ->iosNotification("new test message",[
+                'sound' => 'sound', 'badge' => '+1',
+                'extras' => [
+                'key' => 'value'
+                ]
+                ])->send();
 
 
             dd($back);
