@@ -108,11 +108,12 @@ class Push extends Command
                 ->addAlias("1011218380461887")
 //                ->message("test",["title"=>"title","content_type"=>"2","extras"=>\GuzzleHttp\json_encode($data)])
                 ->iosNotification("new test message",[
-                'sound' => 'sound', 'badge' => '+1',
                 'extras' => [
-                'key' => 'value'
+                    $data
                 ]
-                ])->send();
+                ])->addAndroidNotification("new test message","title",null,["extras"=>$data])
+
+                ->send();
 
 
             dd($back);
