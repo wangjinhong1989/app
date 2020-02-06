@@ -118,6 +118,7 @@ class Push extends Command
             "data"=>$value["content"]
         ];
 
+        var_dump($value);
         // 关注我的，通知我有更新
         if($data["type"]===7){
             $article=\GuzzleHttp\json_decode($value["content"],true);
