@@ -267,11 +267,10 @@ class Push extends Command
         // 解析需要推送的数据.
         try {
             $back=$client->push()
-                ->setPlatform('all')
+                ->setPlatform('ios', 'android')
                 ->addAlias($user["id"].$user["username"])
-                ->setMessage($msg,$msg."xxxx",$type_data["id"]."",\GuzzleHttp\json_decode($data["data"],true))
-                ->setNotificationAlert($msg)
-                ->setOptions(null,86400 )
+                ->iosNotification($msg,['extras' => $data])
+                ->addAndroidNotification($msg,$msg,null,["extras"=>$data])
                 ->send();
             dd("88888");
             $model=new SystemMessage();
