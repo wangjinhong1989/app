@@ -263,14 +263,15 @@ class Push extends Command
         }else if($type_data["id"]==5){
             $msg="系统公告请查看";
         }
-
+        $data1=$data;
+        $data1["data"]=\GuzzleHttp\json_decode($data["data"]["content"],true);
         // 解析需要推送的数据.
         try {
             $back=$client->push()
                 ->setPlatform(['ios', 'android'])
                 ->addAlias($user["id"].$user["username"])
                 ->iosNotification($msg,['extras' => $data])
-                ->addAndroidNotification($msg,$msg,null,$data)
+                ->addAndroidNotification($msg,$msg,null,$data1)
                 ->send();
             dd("88888");
             $model=new SystemMessage();
