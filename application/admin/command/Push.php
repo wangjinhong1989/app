@@ -141,6 +141,7 @@ class Push extends Command
         else if($data["type"]===2){
             // 回复
             $content=\GuzzleHttp\json_decode($value["content"],true);
+            dd($type_data);
             $this->push_method($data,$type_data,$content["follow_id"]);
         }
         else if($data["type"]===4){
@@ -167,24 +168,25 @@ class Push extends Command
 
         $temp=\GuzzleHttp\json_decode($data["data"],true);
 
+        dd("1111");
         if(!empty($config)){
-
+            dd("3333");
             if($config["is_accept_notify"]=="否"){
                 return "";
             }
-
+            dd("444");
             if($config["is_article_notify"]=="否"){
                 if(!empty($temp["articletype_id"])&&$temp["articletype_id"]>0&&$temp["articletype_id"]!=2){
                     return "";
                 }
             }
-
+            dd("555");
             if($config["is_kuaixun_notify"]=="否"){
                 if(!empty($temp["articletype_id"])&&$temp["articletype_id"]>0&&$temp["articletype_id"]==2){
                     return "";
                 }
             }
-
+            dd("6666");
             if($config["is_follow_notify"]=="否"){
                 return "";
             }else{
@@ -197,8 +199,9 @@ class Push extends Command
                     }
                 }
             }
+            dd("2222");
         }
-
+        dd("777");
 
         $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
 
@@ -228,7 +231,7 @@ class Push extends Command
                 ->setMessage("",$msg,$type_data["id"]."",\GuzzleHttp\json_decode($data["data"],true))
                 ->setNotificationAlert($msg)
                 ->send();
-
+            dd("88888");
             $model=new SystemMessage();
             $model->create([
                 "user_id"=>$user["id"],
