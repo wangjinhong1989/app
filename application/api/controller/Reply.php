@@ -330,9 +330,9 @@ class Reply extends Api
             if(empty($article)){
                 return  $this->error("文章不存在");
             }
-            if($article->is_reply!="是"){
-                return  $this->error("不允许评论");
-            }
+//            if($article->is_reply!="是"){
+//                return  $this->error("不允许评论");
+//            }
 
             $reply->reply_content=$reply_content;
             $reply->parent_id=$parent_id;
