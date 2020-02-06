@@ -598,10 +598,10 @@ span.s1 {font-family: \'.SFUI-Regular\'; font-weight: normal; font-style: normal
 span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; font-size: 12.00px}
 </style>
 </head>
-<body>',"",$data["content"]);
+<body>',null,$data["content"]);
 
             $data["content"]=str_replace('</body>
-</html>',"",$data["content"]);
+</html>',null,$data["content"]);
             // 这里要求传描述
             if($data["articletype_id"]==2){
                 if(!$data["description"]){
