@@ -29,6 +29,7 @@ class Push extends Command
         $this
             ->setName('push')
             ->addOption('push', 'p', Option::VALUE_OPTIONAL, 'default push url', '')
+            ->addOption('all', 'a', Option::VALUE_OPTIONAL, 'default push url', '')
             ->setDescription('J Push');
     }
 
