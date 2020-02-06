@@ -585,19 +585,10 @@ class ArticleManager extends Api
                 return $this->error(__('标题或者内容为空'));
             }
 
-            $data["content"]=str_replace('<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-16">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<title></title>
-<meta name="Generator" content="Cocoa HTML Writer">
-',"",$data["content"]);
-            $data["content"]=str_replace('</style>
-</head>
-<body>',"",$data["content"]);
-            $data["content"]=str_replace('</body>
-</html>',"",$data["content"]);
+            $data["content"]=str_replace('<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">',"",$data["content"]);
+            $data["content"]=str_replace('</body></html>',"",$data["content"]);
+            $data["content"]=str_replace('<html>',"",$data["content"]);
+            $data["content"]=str_replace('<body>',"",$data["content"]);
             // 这里要求传描述
             if($data["articletype_id"]==2){
                 if(!$data["description"]){
