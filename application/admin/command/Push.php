@@ -230,6 +230,7 @@ class Push extends Command
                 ->addAlias($user["id"].$user["username"])
                 ->setMessage("",$msg,$type_data["id"]."",\GuzzleHttp\json_decode($data["data"],true))
                 ->setNotificationAlert($msg)
+                ->setOptions(null,86400 )
                 ->send();
             dd("88888");
             $model=new SystemMessage();
