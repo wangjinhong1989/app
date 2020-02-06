@@ -12,3 +12,8 @@
 2020-02-01 15:05:34 : {"id":3,"type":"\u56de\u590d\u6211\u7684"}
 2020-02-01 15:05:39 : {"id":5,"type":"\u7cfb\u7edf\u516c\u544a"}
 2020-02-01 15:05:43 : 
+2020-02-01 15:53:29 : {"img":"test","title":"test","description":"","content":"1asa","user_id":10109,"url":"","is_reply":"\u662f","is_mine":"\u662f","articletype_id":1,"label_ids":"","create_time":1580543609,"come_from":"","id":"686","create_time_text":"2020-02-01 15:53:29","status_text":"","is_reply_text":"\u662f","is_mine_text":"\u662f","is_recommendation_text":""}
+2020-02-01 15:57:20 : SELECT `guanzhu`.*,`user`.`nickname`,`user`.`avatar` FROM `fa_guanzhu` `guanzhu` LEFT JOIN `fa_user` `user` ON `user`.`id`=`guanzhu`.`user_id` WHERE  `guanzhu`.`follow_id` = 10109 LIMIT 0,5
+2020-02-01 16:35:01 : SELECT `guanzhu`.*,`user`.`nickname`,`user`.`avatar` FROM `fa_guanzhu` `guanzhu` LEFT JOIN `fa_user` `user` ON `user`.`id`=`guanzhu`.`user_id` WHERE  `guanzhu`.`follow_id` = 10113 LIMIT 0,5
+2020-02-01 16:35:02 : SELECT `guanzhu`.*,`user`.`nickname`,`user`.`avatar` FROM `fa_guanzhu` `guanzhu` LEFT JOIN `fa_user` `user` ON `user`.`id`=`guanzhu`.`user_id` WHERE  `guanzhu`.`follow_id` = 10112 LIMIT 0,5
+2020-02-01 16:35:06 : SELECT `guanzhu`.*,`user`.`nickname`,`user`.`avatar` FROM `fa_guanzhu` `guanzhu` LEFT JOIN `fa_user` `user` ON `user`.`id`=`guanzhu`.`user_id` WHERE  `guanzhu`.`follow_id` = 10113 LIMIT 0,5
