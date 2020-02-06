@@ -512,27 +512,27 @@ class ArticleManager extends Api
                 $detail['label_ids']=null;
 
 
-            $detail["企业认证"]=( new \app\admin\model\AuthenticationEnterprise())->where(["user_id"=>$detail['user_id']])
+            $detail["auth_enterprise_temp"]=( new \app\admin\model\AuthenticationEnterprise())->where(["user_id"=>$detail['user_id']])
                 ->find();
 
-            $detail["媒体认证"]=( new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$detail['user_id']])
+            $detail["auth_media_temp"]=( new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$detail['user_id']])
                 ->find();
-            $detail["个人认证"]=( new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$detail['user_id']])
+            $detail["auth_personal_temp"]=( new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$detail['user_id']])
                 ->find();
 
             $detail["authentication_type"]="";
 
 
 
-            if($detail["个人认证"]){
+            if($detail["auth_personal_temp"]){
                 $detail["authentication_type"]="个人";
             }
 
-            if($detail["媒体认证"]){
+            if($detail["auth_media_temp"]){
                 $detail["authentication_type"]="媒体";
             }
 
-            if($detail["企业认证"]){
+            if($detail["auth_enterprise_temp"]){
                 $detail["authentication_type"]="企业";
             }
             // 是否关注了该用户.
