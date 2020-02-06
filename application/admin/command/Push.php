@@ -270,7 +270,7 @@ class Push extends Command
                 ->setPlatform(['ios', 'android'])
                 ->addAlias($user["id"].$user["username"])
                 ->iosNotification($msg,['extras' => $data])
-                ->addAndroidNotification($msg,$msg,null,["extras"=>$data])
+                ->addAndroidNotification($msg,$msg,null,$data)
                 ->send();
             dd("88888");
             $model=new SystemMessage();
