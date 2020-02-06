@@ -230,10 +230,17 @@ class User extends Api
         if(!$user_id){
             $user_id=$this->auth->id;
             $data = ['userinfo' => $this->auth->getUserinfo()];
+
+            // 是自己某人关注
+            $data["is_guanzhu"]="";
         }else{
 
             $user= (new \app\admin\model\User())->where(["id"=>$user_id])->find();
             $data=["userinfo"=>$user];
+            // 是别人查看自己是否关注了。
+
+            $flag=(new \app\admin\model\Guanzhu())->where(["user_id"=>$this->auth->id,"follow_id"=>$user_id])->find();
+            $data["is_guanzhu"]=isset($flag)?true:false;
         }
 
 
