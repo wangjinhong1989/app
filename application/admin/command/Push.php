@@ -102,6 +102,8 @@ class Push extends Command
                 $push=$model->where(["id"=>$l["id"]])->find();
                 $push->status=1;
                 $push->save();
+
+                dd($l["id"]);
             }
         });
     }
