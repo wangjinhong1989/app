@@ -264,7 +264,7 @@ class Push extends Command
             $msg="系统公告请查看";
         }
         $data1=$data;
-        $data1["data"]=\GuzzleHttp\json_decode($data["data"]["content"],true);
+        $data1["data"]=\GuzzleHttp\json_decode($data["data"],true);
         // 解析需要推送的数据.
         try {
             $back=$client->push()
