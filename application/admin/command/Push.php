@@ -265,6 +265,11 @@ class Push extends Command
         }
         $data1=$data;
         $data1["data"]=\GuzzleHttp\json_decode($data["data"],true);
+        if($type_data["id"]==7){
+            $content=\GuzzleHttp\json_decode($data["data"],true);
+            $data1["data"]=$content["id"];
+        }else
+            $data1["data"]="";
         // 解析需要推送的数据.
         try {
             $back=$client->push()
