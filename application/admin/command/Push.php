@@ -45,7 +45,7 @@ class Push extends Command
 
         $all=$input->getOption("all");
         if($all){
-            $this->send_push();
+            $this->test();
         }
     }
 
@@ -94,6 +94,33 @@ class Push extends Command
 
 
     }
+    // 发送推送消息
+    public function test(){
+        $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
+
+        $data=[
+            "type"=>"2",
+            "data"=>"123"
+        ];
+        try {
+            $back=$client->push()
+                ->setPlatform('all')
+                ->addAlias("1011218380461887")
+                ->setMessage(\GuzzleHttp\json_encode($data))
+                ->setNotificationAlert("new test message")
+                ->send();
+
+            return  $this->success("",$back);
+        } catch (\JPush\Exceptions\JPushException $e) {
+            print $e;
+        }
+
+
+
+
+
+    }
+
 
 
     public function push_list()
@@ -239,7 +266,7 @@ class Push extends Command
                 ->setPlatform('all')
                 ->addAlias($user["id"].$user["username"])
                 ->setMessage($msg,$msg."xxxx",$type_data["id"]."",\GuzzleHttp\json_decode($data["data"],true))
-//                ->setNotificationAlert($msg)
+                ->setNotificationAlert($msg)
                 ->setOptions(null,86400 )
                 ->send();
             dd("88888");
