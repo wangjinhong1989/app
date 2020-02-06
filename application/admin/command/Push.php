@@ -110,7 +110,8 @@ class Push extends Command
                 ->setNotificationAlert("new test message")
                 ->send();
 
-            return  $this->success("",$back);
+
+            dd($back);
         } catch (\JPush\Exceptions\JPushException $e) {
             print $e;
         }
