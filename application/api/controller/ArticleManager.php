@@ -471,7 +471,11 @@ class ArticleManager extends Api
 
         $model=new ReadHistory();
 
-        $model->where(["id"=>$id])->delete();
+        if($id>0){
+            $model->where(["id"=>$id])->delete();
+        }else
+            $model->where(["user_id"=>$this->auth->id])->delete();
+
 
         $this->success("成功","");
     }
