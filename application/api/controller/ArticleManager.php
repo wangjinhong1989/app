@@ -155,6 +155,8 @@ class ArticleManager extends Api
 
         foreach ($data["rows"] as &$value){
             $value["create_time"]=date("Y-m-d H:i:s",$value["create_time"]);
+            $value["count_lihao"]=$value["count_lihao"]==null?0:$value["count_lihao"];
+            $value["count_likong"]=$value["kong_hao"]==null?0:$value["count_likong"];
         }
 
 
