@@ -66,7 +66,7 @@ class Likonglihao extends Api
 
         }else {
             $temp->count_lihao=(new Lihaokong())->where(["article_id"=>$article_id,"is_profit"=>"利好"])->count();
-            $temp->count_kong=(new Lihaokong())->where(["article_id"=>$article_id,"is_profit"=>"利空"])->count();
+            $temp->count_likong=(new Lihaokong())->where(["article_id"=>$article_id,"is_profit"=>"利空"])->count();
             $temp->save();
         }
         return $this->success();
