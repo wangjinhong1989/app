@@ -103,6 +103,7 @@
             //     ' height="' + 280  + '"' +
             //     ' wmode="transparent" play="true" loop="false" menu="false" allowscriptaccess="never" allowfullscreen="true" ></embed>';
 
+            console.log("test");
             $G("preview").innerHTML = '<video class="previewVideo" controls="controls" src="'+conUrl+'" style="width:420;height:280 "></video>'
 
         },
