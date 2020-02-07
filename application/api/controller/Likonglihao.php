@@ -5,6 +5,7 @@ namespace app\api\controller;
 use app\admin\model\Article;
 use app\admin\model\Guanggao;
 use app\admin\model\HotSearch;
+use app\admin\model\KongHao;
 use app\admin\model\Lihaokong;
 use app\admin\model\PushList;
 use app\admin\model\ReadHistory;
@@ -52,6 +53,22 @@ class Likonglihao extends Api
             ]);
         }
 
+        $temp= (new KongHao())->where(["article_id"=>$article_id])->find();
+        if(!$temp){
+            if($is_profit=="利好"){
+                (new KongHao())->create(
+                    ["article_id"=>$article_id,"count_likong"=>0,"count_lihao"=>1]
+                );
+            }else
+                (new KongHao())->create(
+                    ["article_id"=>$article_id,"count_likong"=>1,"count_lihao"=>0]
+                );
+
+        }else {
+            $temp->count_lihao=(new Lihaokong())->where(["article_id"=>$article_id,"is_profit"=>"利好"])->count();
+            $temp->count_kong=(new Lihaokong())->where(["article_id"=>$article_id,"is_profit"=>"利空"])->count();
+            $temp->save();
+        }
         return $this->success();
 
     }
