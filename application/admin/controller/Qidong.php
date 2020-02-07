@@ -22,7 +22,7 @@ class Qidong extends Backend
     {
         parent::_initialize();
         $this->model = new \app\admin\model\Qidong;
-
+        $this->view->assign("topList", $this->model->getTopList());
     }
     
     /**
