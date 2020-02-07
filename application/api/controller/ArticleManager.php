@@ -463,6 +463,19 @@ class ArticleManager extends Api
     }
 
 
+
+    public function delete_read_history()
+    {
+
+        $id=$this->request->request("id",0);
+
+        $model=new ReadHistory();
+
+        $model->where(["id"=>$id])->delete();
+
+        $this->success("成功","");
+    }
+
     /**
      * 详情页
      *
