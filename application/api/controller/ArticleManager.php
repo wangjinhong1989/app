@@ -440,7 +440,7 @@ class ArticleManager extends Api
         $data=[];
         $query=new Query();
         $lists= $query->table("fa_read_history")->alias("his")
-            ->field("article.*,user.username,user.avatar,articletype.name")
+            ->field("article.*,user.username,user.avatar,articletype.name,his.id as history_id")
             ->join("fa_article article","article.id=his.article_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
