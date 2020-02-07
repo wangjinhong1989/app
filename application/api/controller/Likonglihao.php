@@ -42,6 +42,10 @@ class Likonglihao extends Api
         $likong= $model->where(["user_id"=>$this->auth->id,"article_id"=>$article_id])->find();
 
         if($likong){
+
+            if($likong->is_profit==$is_profit){
+                return $this->error("您已经点击了");
+            }
             $likong->is_profit=$is_profit;
             $likong->save();
         }else {
