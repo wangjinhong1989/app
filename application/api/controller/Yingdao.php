@@ -21,7 +21,8 @@ class Yingdao extends Api
      */
     public function Lists()
     {
-            $lists=(new \app\admin\model\Yingdao())->where([])->select();
+        $time=time();
+        $lists=(new \app\admin\model\Yingdao())->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->select();
 
         $this->success("成功",$lists);
     }
