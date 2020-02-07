@@ -5,7 +5,7 @@ namespace app\admin\controller;
 use app\common\controller\Backend;
 
 /**
- * 
+ * 系统公告
  *
  * @icon fa fa-circle-o
  */
@@ -63,9 +63,8 @@ class SystemMessage extends Backend
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(['id','status','content','time']);
-                $row->visible(['user']);
-				$row->getRelation('user')->visible(['username']);
+                
+                $row->getRelation('user')->visible(['username']);
             }
             $list = collection($list)->toArray();
             $result = array("total" => $total, "rows" => $list);

@@ -25,12 +25,20 @@ class Banner extends Model
 
     // 追加属性
     protected $append = [
+        'top_text',
+        'begin_time_text',
+        'end_time_text',
         'url_type_text',
         'status_text'
     ];
     
 
     
+    public function getTopList()
+    {
+        return ['置顶' => __('置顶'), '取消置顶' => __('取消置顶')];
+    }
+
     public function getUrlTypeList()
     {
         return ['内链' => __('内链'), '外链' => __('外链')];
@@ -39,6 +47,28 @@ class Banner extends Model
     public function getStatusList()
     {
         return ['显示' => __('显示'), '隐藏' => __('隐藏')];
+    }
+
+
+    public function getTopTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['top']) ? $data['top'] : '');
+        $list = $this->getTopList();
+        return isset($list[$value]) ? $list[$value] : '';
+    }
+
+
+    public function getBeginTimeTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['begin_time']) ? $data['begin_time'] : '');
+        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
+    }
+
+
+    public function getEndTimeTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['end_time']) ? $data['end_time'] : '');
+        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
     }
 
 
@@ -57,12 +87,20 @@ class Banner extends Model
         return isset($list[$value]) ? $list[$value] : '';
     }
 
+    protected function setBeginTimeAttr($value)
+    {
+        return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
+    }
 
+    protected function setEndTimeAttr($value)
+    {
+        return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
+    }
 
 
     public function bannername()
     {
-        return $this->belongsTo('Bannername', 'bannername_id', 'id', [], 'LEFT')->setEagerlyType(0);
+        return $this->belongsTo('Bannername', 'id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 
 

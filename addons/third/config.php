@@ -14,8 +14,8 @@ return array (
     ),
     'value' => 
     array (
-      'app_id' => 'wxb034a15d8808823e',
-      'app_secret' => '266f2e0c4e026a054af2922eb6811dfc',
+      'app_id' => '101839406',
+      'app_secret' => '48cb771a2f39ccc5379b95dafd6cbfe8',
       'scope' => 'get_user_info',
     ),
     'rule' => 'required',
@@ -40,7 +40,7 @@ return array (
     array (
       'app_id' => 'wxb034a15d8808823e',
       'app_secret' => '0bb690b4d066c5aeadc689a576b0416e',
-      'scope' => 'snsapi_base',
+      'scope' => 'snsapi_userinfo',
     ),
     'rule' => 'required',
     'msg' => '',
