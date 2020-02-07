@@ -42,7 +42,11 @@ class Top extends Command
 
             // 需要推送的列表.
             foreach ($list as  $l){
-                
+
+                $model=(new Article())->where(["id"=>$l["id"]])->find();
+                $model->weigh=$l["id"];
+                $model->top="取消置顶";
+                $model->save();
             }
         });
     }
