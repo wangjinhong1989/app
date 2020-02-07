@@ -7307,9 +7307,11 @@ UM.plugins['video'] = function (){
                 ' src="' + me.options.UMEDITOR_HOME_URL+'themes/default/images/spacer.gif" style="background:url('+me.options.UMEDITOR_HOME_URL+'themes/default/images/videologo.gif) no-repeat center center; border:1px solid gray;'+(align ? 'float:' + align + ';': '')+'" />'
 
                 :
-                '<embed type="application/x-shockwave-flash" class="edui-faked-video" pluginspage="http://www.macromedia.com/go/getflashplayer"' +
-                ' src="' + url + '" width="' + width  + '" height="' + height  + '"'  + (align ? ' style="float:' + align + '"': '') +
-                ' wmode="transparent" play="true" loop="false" menu="false" allowscriptaccess="never" allowfullscreen="true" >';
+            "<p class=\"p1\">\n" +
+            "    <span class=\"s1\"><video src="+url+" height=\"90%\" controls=\"controls\">\n" +
+            "        your browser does not support the video tag\n" +
+            "    </video></span><span class=\"s2\"></span>\n" +
+            "</p>";
     }
 
     function switchImgAndEmbed(root,img2embed){
