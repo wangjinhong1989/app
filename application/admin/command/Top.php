@@ -66,8 +66,6 @@ class Top extends Command
                 $model->save();
             }
         });
-
-        //->whereOr(["weigh"=>["eq",0]]
     }
 
 

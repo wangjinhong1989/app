@@ -7336,7 +7336,7 @@ UM.plugins['video'] = function (){
             for(var i=0,vi,len = videoObjs.length;i<len;i++){
                  vi = videoObjs[i];
                  vi.url = utils.unhtml(vi.url, /[<">'](?:(amp|lt|quot|gt|#39|nbsp);)?/g);
-                html.push(creatInsertStr( vi.url, vi.width || 420,  vi.height || 280, id + i,vi.align,true));
+                html.push(creatInsertStr( vi.url, vi.width || 420,  vi.height || 280, id + i,vi.align,false));
             }
             me.execCommand("inserthtml",html.join(""),true);
 
