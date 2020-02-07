@@ -93,7 +93,7 @@
                 lang = me.lang,
                 conUrl = me.convert_url(url);
 
-            if(!me.endWith(conUrl,[".swf",".flv",".wmv"])){
+            if(!me.endWith(conUrl,[".swf",".flv",".wmv","mp4"])){
                 $("#eduiVideoPreview", me.$widget).html( lang.urlError );
                 return;
             }
