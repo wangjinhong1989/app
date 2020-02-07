@@ -103,7 +103,6 @@
                 '    </video></span><span class="s2"></span>\n' +
                 '</p>';
 
-            console.log("test");
             // $G("preview").innerHTML = '<video class="previewVideo" controls="controls" src="'+conUrl+'" style="width:420;height:280 "></video>'
 
         },

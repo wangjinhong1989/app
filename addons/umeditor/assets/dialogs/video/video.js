@@ -102,8 +102,14 @@
             //     ' width="' + 420  + '"' +
             //     ' height="' + 280  + '"' +
             //     ' wmode="transparent" play="true" loop="false" menu="false" allowscriptaccess="never" allowfullscreen="true" ></embed>';
+            //
+            $("#eduiVideoPreview", me.$widget)[0].innerHTML = "<p class=\"p1\">\n" +
+                "    <span class=\"s1\"><video src="+url+" height=\"90%\" controls=\"controls\">\n" +
+                "        your browser does not support the video tag\n" +
+                "    </video></span><span class=\"s2\"></span>\n" +
+                "</p>";
 
-            $G("preview").innerHTML = '<video class="previewVideo" controls="controls" src="'+conUrl+'" style="width:420;height:280 "></video>'
+            // $G("preview").innerHTML = '<video class="previewVideo" controls="controls" src="'+conUrl+'" style="width:420;height:280 "></video>'
 
         },
         /**
