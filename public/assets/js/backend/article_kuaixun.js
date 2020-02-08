@@ -62,7 +62,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
     function queryParams(pageReqeust) {
 
         console.log(pageReqeust);
-        pageReqeust.filter.articletype_id =2 ;  //
+        pageReqeust.filter["articletype_id"] =2 ;  //
         return pageReqeust;
     }
 
