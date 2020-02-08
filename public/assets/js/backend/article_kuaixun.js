@@ -21,7 +21,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 url: $.fn.bootstrapTable.defaults.extend.index_url,
                 pk: 'id',
                 sortName: 'id',
-                queryParams:queryParams,
                 columns: [
                     [
                         {checkbox: true},
@@ -58,13 +57,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             }
         }
     };
-
-    function queryParams(pageReqeust) {
-
-        console.log(pageReqeust);
-        pageReqeust.filter["articletype_id"] =2 ;  //
-        return pageReqeust;
-    }
 
     return Controller;
 });
