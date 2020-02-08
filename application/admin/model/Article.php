@@ -115,7 +115,14 @@ class Article extends Model
         return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
     }
 
-
+    protected function setBeginTimeAttr($value)
+    {
+        return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
+    }
+    protected function setEndTimeAttr($value)
+    {
+        return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
+    }
     public function articletype()
     {
         return $this->belongsTo('Articletype', 'articletype_id', 'id', [], 'LEFT')->setEagerlyType(0);
