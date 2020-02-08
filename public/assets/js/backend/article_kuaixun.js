@@ -63,6 +63,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
 
         console.log(pageReqeust);
         pageReqeust.filter='{"articletype.name":"快讯"}';
+        pageReqeust.op='{"articletype.name":"="}';
         return pageReqeust;
     }
 
