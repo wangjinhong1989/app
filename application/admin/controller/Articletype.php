@@ -74,13 +74,16 @@ class Articletype extends Backend
 
         $list = collection($list)->toArray();
 
+        $data=array();
         foreach ($list as $k=> &$l){
             if($l["id"]==2||$l["id"]==7||$l["id"]==5){
                 unset($list[$k]);
+            }else {
+                array_push($data,["id"=>$l["id"],"name"=>$l["name"],"pid"=>0]);
             }
-            $l["pid"]=0;
+
         }
-        $result = array("total" => $total-3, "list" => $list);
+        $result = array("total" => count($data), "list" => $data);
 
         return json($result);
     }
