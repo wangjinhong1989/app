@@ -15,7 +15,7 @@
 
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
-        <div class="col-xs-12 col-sm-2">
+        <div class="col-xs-12 col-sm-3">
             
             <div class="radio">
             {foreach name="statusList" item="vo"}
@@ -25,19 +25,19 @@
 
         </div>
           <label class="control-label col-xs-12 col-sm-2">{:__('User_id')}:</label>
-                <div class="col-xs-12 col-sm-4">
+                <div class="col-xs-12 col-sm-3">
                     <input id="c-user_id" data-rule="required" data-source="user/user/index" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="">
                 </div>
 
     </div>
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('Articletype_id')}:</label>
-        <div class="col-xs-12 col-sm-2">
+        <div class="col-xs-12 col-sm-3">
             <input id="c-articletype_id" data-rule="required" data-source="articletype/feikuaixun" data-field="name"  class="form-control selectpage" name="row[articletype_id]" type="text" value="">
         </div>
 
            <label class="control-label col-xs-12 col-sm-2">{:__('Come_from')}:</label>
-                <div class="col-xs-12 col-sm-4">
+                <div class="col-xs-12 col-sm-3">
                     <input id="c-come_from" class="form-control" name="row[come_from]" type="text">
                 </div>
 
