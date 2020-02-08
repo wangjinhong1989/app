@@ -26,10 +26,12 @@ class Article extends Model
     // 追加属性
     protected $append = [
         'create_time_text',
+        'begin_time_text',
+        'end_time_text',
         'status_text',
         'is_reply_text',
         'is_mine_text',
-        'is_recommendation_text'
+        'is_recommendation_text',
     ];
     
 
@@ -37,6 +39,11 @@ class Article extends Model
     public function getStatusList()
     {
         return ['显示' => __('显示'), '隐藏' => __('隐藏')];
+    }
+
+    public function getTopList()
+    {
+        return ['置顶' => __('置顶'), '取消置顶' => __('取消置顶')];
     }
 
     public function getIsReplyList()
