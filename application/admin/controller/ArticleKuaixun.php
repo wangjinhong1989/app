@@ -54,7 +54,6 @@ class ArticleKuaixun extends Backend
 
             dd($this->request->request("filter"));
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
-
             dd($where);
             //$where["articletype_id"]=2;
             $total = $this->model

@@ -5,7 +5,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             // 初始化表格参数配置
             Table.api.init({
                 extend: {
-                    index_url: 'article_kuaixun/index' + location.search,
+                    index_url: 'article_kuaixun/index' + location.search+"&articletype_id=2",
                     add_url: 'article_kuaixun/add',
                     edit_url: 'article_kuaixun/edit',
                     del_url: 'article_kuaixun/del',
@@ -21,6 +21,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 url: $.fn.bootstrapTable.defaults.extend.index_url,
                 pk: 'id',
                 sortName: 'id',
+                queryParams:queryParams,
                 columns: [
                     [
                         {checkbox: true},
@@ -57,6 +58,12 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             }
         }
     };
+
+    function queryParams(pageReqeust) {
+
+        console.log(pageReqeust);
+        return pageReqeust;
+    }
 
     return Controller;
 });
