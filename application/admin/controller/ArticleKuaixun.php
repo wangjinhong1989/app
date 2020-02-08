@@ -52,6 +52,8 @@ class ArticleKuaixun extends Backend
                 return $this->selectpage();
             }
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
+
+            $where["articletype_id"]=2;
             $total = $this->model
                     ->with(['articletype','label','user'])
                     ->where($where)
