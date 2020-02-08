@@ -56,6 +56,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
 
     function queryParams(pageReqeust) {
 
+
         pageReqeust.filter=JSON.parse( pageReqeust.filter );
         pageReqeust.op=JSON.parse( pageReqeust.op );
         pageReqeust.filter["articletype.name"]="快讯";
