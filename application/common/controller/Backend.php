@@ -260,7 +260,6 @@ class Backend extends Controller
         $offset = $this->request->get("offset", 0);
         $limit = $this->request->get("limit", 0);
         $filter = (array)json_decode($filter, true);
-
         $op = (array)json_decode($op, true);
         $filter = $filter ? $filter : [];
         $where = [];
