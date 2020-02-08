@@ -74,9 +74,9 @@ class Articletype extends Backend
 
         $list = collection($list)->toArray();
 
-        foreach ($list as &$l){
+        foreach ($list as $k=> &$l){
             if($l["id"]==2||$l["id"]==7||$l["id"]==5){
-                unset($l);
+                unset($list[$k]);
             }
         }
         $result = array("total" => $total-3, "rows" => $list);
