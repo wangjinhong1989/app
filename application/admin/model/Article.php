@@ -67,7 +67,17 @@ class Article extends Model
         $value = $value ? $value : (isset($data['create_time']) ? $data['create_time'] : '');
         return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
     }
+    public function getBeginTimeTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['begin_time']) ? $data['begin_time'] : '');
+        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
+    }
 
+    public function getEndTimeTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['end_time']) ? $data['end_time'] : '');
+        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
+    }
 
     public function getStatusTextAttr($value, $data)
     {
