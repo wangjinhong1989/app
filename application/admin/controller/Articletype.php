@@ -79,7 +79,7 @@ class Articletype extends Backend
                 unset($list[$k]);
             }
         }
-        $result = array("total" => $total-3, "lists" => $list);
+        $result = array("total" => $total-3, "list" => $list);
 
         return json($result);
     }
