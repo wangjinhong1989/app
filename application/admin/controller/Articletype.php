@@ -56,4 +56,33 @@ class Articletype extends Backend
             return json($result);
     }
 
+
+    /**
+     * 查看
+     */
+    public function feikuaixun()
+    {
+
+        $where=[];
+        $total = $this->model
+            ->where($where)
+            ->count();
+
+        $list = $this->model
+            ->where($where)
+            ->select();
+
+        $list = collection($list)->toArray();
+
+        foreach ($list as &$l){
+            if($l["id"]==2||$l["id"]==7||$l["id"]==5){
+                unset($l);
+            }
+        }
+        $result = array("total" => $total-3, "rows" => $list);
+
+        return json($result);
+    }
+
+
 }
