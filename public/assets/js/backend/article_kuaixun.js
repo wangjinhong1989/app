@@ -57,9 +57,12 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
     function queryParams(pageReqeust) {
 
         console.log(pageReqeust);
-        console.log(pageReqeust.filter);
-        pageReqeust.filter='{"articletype.name":"快讯"}';
-        pageReqeust.op='{"articletype.name":"="}';
+        pageReqeust.filter=JSON.parse( pageReqeust.filter );
+        pageReqeust.op=JSON.parse( pageReqeust.op );
+        pageReqeust.filter["articletype.name"]="快讯";
+        pageReqeust.op["articletype.name"]="=";
+        pageReqeust.op=JSON.stringify( pageReqeust.op );
+        pageReqeust.filter=JSON.stringify( pageReqeust.filter );
         return pageReqeust;
     }
 
