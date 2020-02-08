@@ -8,7 +8,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     index_url: 'articletype/index' + location.search,
                     add_url: 'articletype/add',
                     edit_url: 'articletype/edit',
-                    del_url: 'articletype/del',
                     multi_url: 'articletype/multi',
                     table: 'articletype',
                 }
