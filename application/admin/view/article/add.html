@@ -79,7 +79,7 @@
              <label class="control-label col-xs-12 col-sm-2">{:__('置顶')}:</label>
                     <div class="col-xs-12 col-sm-3">
 
-                        <select  id="c-is_reply" data-rule="required" class="form-control selectpicker" name="row[is_reply]">
+                        <select  id="c-top" data-rule="required" class="form-control selectpicker" name="row[top]">
                             {foreach name="isTopList" item="vo"}
                                 <option value="{$key}" {in name="key" value="取消置顶"}selected{/in}>{$vo}</option>
                             {/foreach}
