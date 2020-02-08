@@ -27,17 +27,12 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
                         {field: 'title', title: __('Title')},
-                        {field: 'description', title: __('Description'),operate:false},
                         {field: 'status', title: __('Status'), searchList: {"显示":__('显示'),"隐藏":__('隐藏')}, formatter: Table.api.formatter.status},
-                        {field: 'come_from', title: __('Come_from'),operate:false},
-                        {field: 'label_ids', title: __('Label_ids'),operate:false},
-                        {field: 'url', title: __('Url'), formatter: Table.api.formatter.url,operate:false},
-                        {field: 'img', title: __('Img'),operate:false},
-                        {field: 'read_count', title: __('Read_count'),operate:false},
-                        {field: 'show_count', title: __('Show_count'),operate:false},
-                        {field: 'articletype.name', title: __('Articletype.name'),operate:false},
-                        {field: 'label.name', title: __('Label.name'),operate:false},
-                        {field: 'user.username', title: __('User.username')},
+                        {field: 'url', title: __('链接'), formatter: Table.api.formatter.url,operate:false},
+                        {field: 'img', title: __('封面'),operate:false},
+                        {field: 'articletype.name', title: __('文章类型'),operate:false},
+                        {field: 'label.name', title: __('标签'),operate:false},
+                        {field: 'user.username', title: __('用户名')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
