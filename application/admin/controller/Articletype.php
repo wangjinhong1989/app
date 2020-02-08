@@ -78,6 +78,7 @@ class Articletype extends Backend
             if($l["id"]==2||$l["id"]==7||$l["id"]==5){
                 unset($list[$k]);
             }
+            $l["pid"]=0;
         }
         $result = array("total" => $total-3, "list" => $list);
 
