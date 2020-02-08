@@ -6,7 +6,7 @@
             <input id="c-title" data-rule="required" class="form-control" name="row[title]" type="text">
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" style="display: none">
         <label class="control-label col-xs-12 col-sm-2">{:__('Description')}:</label>
         <div class="col-xs-12 col-sm-8">
             <input id="c-description" class="form-control" name="row[description]" type="text">
@@ -48,25 +48,25 @@
             <input id="c-articletype_id" data-rule="required" data-source="articletype/kuaixun" class="form-control selectpage" name="row[articletype_id]" type="text" value="2">
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" style="display: none">
         <label class="control-label col-xs-12 col-sm-2">{:__('Come_from')}:</label>
         <div class="col-xs-12 col-sm-8">
             <input id="c-come_from" class="form-control" name="row[come_from]" type="text">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Label_ids')}:</label>
+        <label class="control-label col-xs-12 col-sm-2">{:__('标签')}:</label>
         <div class="col-xs-12 col-sm-8">
             <input id="c-label_ids" data-rule="required" data-source="label/index" data-multiple="true" class="form-control selectpage" name="row[label_ids]" type="text" value="">
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" style="display: none">
         <label class="control-label col-xs-12 col-sm-2">{:__('Url')}:</label>
         <div class="col-xs-12 col-sm-8">
             <input id="c-url" class="form-control" name="row[url]" type="text">
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" style="display: none">
         <label class="control-label col-xs-12 col-sm-2">{:__('Img')}:</label>
         <div class="col-xs-12 col-sm-8">
             <div class="input-group">
@@ -81,19 +81,19 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Read_count')}:</label>
+        <label class="control-label col-xs-12 col-sm-2">{:__('阅读次数')}:</label>
         <div class="col-xs-12 col-sm-8">
             <input id="c-read_count" data-rule="required" class="form-control" name="row[read_count]" type="number">
         </div>
     </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Show_count')}:</label>
+    <div class="form-group" >
+        <label class="control-label col-xs-12 col-sm-2">{:__('显示次数')}:</label>
         <div class="col-xs-12 col-sm-8">
             <input id="c-show_count" data-rule="required" class="form-control" name="row[show_count]" type="number">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Is_reply')}:</label>
+        <label class="control-label col-xs-12 col-sm-2">{:__('是否允许评论')}:</label>
         <div class="col-xs-12 col-sm-8">
                         
             <select  id="c-is_reply" data-rule="required" class="form-control selectpicker" name="row[is_reply]">
@@ -104,8 +104,8 @@
 
         </div>
     </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Is_mine')}:</label>
+    <div class="form-group" >
+        <label class="control-label col-xs-12 col-sm-2">{:__('是否原创')}:</label>
         <div class="col-xs-12 col-sm-8">
                         
             <select  id="c-is_mine" data-rule="required" class="form-control selectpicker" name="row[is_mine]">
@@ -116,8 +116,8 @@
 
         </div>
     </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Is_recommendation')}:</label>
+    <div class="form-group" >
+        <label class="control-label col-xs-12 col-sm-2">{:__('是否属于推荐')}:</label>
         <div class="col-xs-12 col-sm-8">
                         
             <select  id="c-is_recommendation" data-rule="required" class="form-control selectpicker" name="row[is_recommendation]">
