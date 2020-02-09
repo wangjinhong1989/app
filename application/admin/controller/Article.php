@@ -98,8 +98,8 @@ class Article extends Backend
                     if(empty($params["begin_time"])||empty($params["end_time"])){
                         $this->error("请填写置顶时间");
                     }
-                    if(strtotime($params["begin_time"])<strtotime($params["end_time"])){
-                        $this->error("置顶时间开始时间大于结束时间");
+                    if(strtotime($params["begin_time"])<=strtotime($params["end_time"])){
+                        $this->error("置顶时间开始时间大于等于结束时间");
                     }
                 }
 
@@ -178,7 +178,7 @@ class Article extends Backend
                         $this->error("请填写置顶时间");
                     }
                     if(strtotime($params["begin_time"])<strtotime($params["end_time"])){
-                        $this->error("置顶时间开始时间大于结束时间");
+                        $this->error("置顶时间开始时间大于等于结束时间");
                     }
                 }
 
