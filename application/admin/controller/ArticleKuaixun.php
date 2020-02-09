@@ -3,6 +3,7 @@
 namespace app\admin\controller;
 
 use app\common\controller\Backend;
+use think\Db;
 
 /**
  * 
@@ -185,6 +186,7 @@ class ArticleKuaixun extends Backend
 
                 $params = $this->preExcludeFields($params);
                 $result = false;
+
                 Db::startTrans();
                 try {
                     //是否采用模型验证
