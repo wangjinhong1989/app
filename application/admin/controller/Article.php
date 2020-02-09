@@ -165,10 +165,10 @@ class Article extends Backend
                 $params = $this->preExcludeFields($params);
                 dd($params["top"]);
                 if($params["top"]=="置顶"){
-                    dd(false);
+                    dd(1);
                     $params["weigh"]=time();
                 }else{
-                    dd(true);
+                    dd(2);
                     $params["weigh"]=$ids;
                 }
 
