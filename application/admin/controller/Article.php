@@ -111,15 +111,11 @@ class Article extends Backend
                         $validate = is_bool($this->modelValidate) ? ($this->modelSceneValidate ? $name . '.add' : $name) : $this->modelValidate;
                         $this->model->validateFailException(true)->validate($validate);
                     }
+
+                    dd($params);
                     $result = $this->model->allowField(true)->save($params);
 
-                    dd($result);
-
-                    if($params["top"]=="置顶"){
-                        $this->model->save(["weigh"=>time()],["id"=>$this->model->getLastInsID()]);
-                    }else {
-                        $this->model->save(["weigh"=>$this->model->getLastInsID()],["id"=>$this->model->getLastInsID()]);
-                    }
+                    dd($this->model->getLastInsID());
                     Db::commit();
                 } catch (ValidateException $e) {
                     Db::rollback();
