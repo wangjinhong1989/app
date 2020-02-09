@@ -14,7 +14,7 @@ use think\Validate;
  */
 class User extends Api
 {
-    protected $noNeedLogin = ['login', 'mobilelogin','mobile_register', 'register', 'resetpwd', 'changeemail', 'changemobile', 'third'];
+    protected $noNeedLogin = ['login',"register_user", 'mobilelogin','mobile_register', 'register', 'resetpwd', 'changeemail', 'changemobile', 'third'];
     protected $noNeedRight = '*';
 
     public function _initialize()
@@ -94,6 +94,32 @@ class User extends Api
             $this->error($this->auth->getError());
         }
     }
+
+
+    /**
+     * 手机验证码登录
+     *
+     * @param string $mobile  手机号
+     * @param string $captcha 验证码
+     */
+    public function register_user()
+    {
+        $username = $this->request->request('username');
+        $nickname = $this->request->request('nickname');
+        $password = $this->request->request('password');
+
+
+        $user = \app\common\model\User::getByUsername($username);
+        if ($user) {
+            $this->error("参数错误");
+        }
+        else{
+            $ret = $this->auth->register($username, $password, '', '', ["nickname"=>$nickname]);
+        }
+        $this->success("成功");
+    }
+
+
 
     /**
      * 手机验证码登录
