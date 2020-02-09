@@ -38,17 +38,17 @@ class Top extends Command
 
         $query = new Query();
 
-        $query->table("fa_article")->where(["begin_time"=>["lt",time()],"top"=>["eq","置顶"]])->whereOr(["end_time"=>["gt",time()],"top"=>["eq","置顶"]])->chunk(100, function ($list) {
-
-            // 需要推送的列表.
-            foreach ($list as  $l){
-
-                $model=(new Article())->where(["id"=>$l["id"]])->find();
-                $model->weigh=$l["id"];
-                $model->top="取消置顶";
-                $model->save();
-            }
-        });
+//        $query->table("fa_article")->where(["begin_time"=>["lt",time()],"top"=>["eq","置顶"]])->whereOr(["end_time"=>["gt",time()],"top"=>["eq","置顶"]])->chunk(100, function ($list) {
+//
+//            // 需要推送的列表.
+//            foreach ($list as  $l){
+//
+//                $model=(new Article())->where(["id"=>$l["id"]])->find();
+//                $model->weigh=$l["id"];
+//                $model->top="取消置顶";
+//                $model->save();
+//            }
+//        });
 
         $query->table("fa_article")->where(["weigh"=>["eq",0]])->chunk(100, function ($list) {
 
