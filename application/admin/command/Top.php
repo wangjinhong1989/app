@@ -50,22 +50,22 @@ class Top extends Command
 //            }
 //        });
 
-        $query->table("fa_article")->where(["weigh"=>["eq",0]])->chunk(100, function ($list) {
-
-            // 需要推送的列表.
-            foreach ($list as  $l){
-
-                $model=(new Article())->where(["id"=>$l["id"]])->find();
-
-                if($model->top=="置顶"){
-                    $model->weigh=time();
-                }else{
-                    $model->weigh=$l["id"];
-                }
-
-                $model->save();
-            }
-        });
+//        $query->table("fa_article")->where(["weigh"=>["eq",0]])->chunk(100, function ($list) {
+//
+//            // 需要推送的列表.
+//            foreach ($list as  $l){
+//
+//                $model=(new Article())->where(["id"=>$l["id"]])->find();
+//
+//                if($model->top=="置顶"){
+//                    $model->weigh=time();
+//                }else{
+//                    $model->weigh=$l["id"];
+//                }
+//
+//                $model->save();
+//            }
+//        });
     }
 
 
