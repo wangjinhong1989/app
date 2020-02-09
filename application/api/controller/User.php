@@ -111,7 +111,7 @@ class User extends Api
 
         $user = \app\common\model\User::getByUsername($username);
         if ($user) {
-            $this->error("参数错误");
+            $this->error("用户已经存在了");
         }
         else{
             $ret = $this->auth->register($username, $password, '', '', ["nickname"=>$nickname]);
