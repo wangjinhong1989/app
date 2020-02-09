@@ -96,6 +96,8 @@ class Article extends Backend
 
                 if($params["top"]=="置顶"){
                     $params["weigh"]=time();
+                }else {
+                    $params["weigh"]=0;
                 }
                 $params = $this->preExcludeFields($params);
 
@@ -159,16 +161,6 @@ class Article extends Backend
             if ($params) {
                 dd($params);
                 $params = $this->preExcludeFields($params);
-                dd($params["top"]);
-                if($params["top"]=="置顶"){
-                    dd(1);
-                    $params["weigh"]=time();
-                }else{
-                    dd(2);
-                    $params["weigh"]=$ids;
-                }
-
-
                 $result = false;
                 Db::startTrans();
                 try {
