@@ -95,10 +95,14 @@ class Article extends Backend
             if ($params) {
 
                 if($params["top"]=="置顶"){
-                    $params["weigh"]=time();
-                }else {
-                    $params["weigh"]=0;
+                    if(empty($params["begin_time"])||empty($params["end_time"])){
+                        $this->error("请填写置顶时间");
+                    }
+                    if(strtotime($params["begin_time"])<strtotime($params["end_time"])){
+                        $this->error("置顶时间开始时间大于结束时间");
+                    }
                 }
+
                 $params = $this->preExcludeFields($params);
 
                 if ($this->dataLimit && $this->dataLimitFieldAutoFill) {
@@ -114,10 +118,18 @@ class Article extends Backend
                         $this->model->validateFailException(true)->validate($validate);
                     }
 
-                    dd($params);
                     $result = $this->model->allowField(true)->save($params);
 
-                    dd($this->model->getLastInsID());
+                    if($params["top"]=="置顶"){
+                        if(strtotime($params["begin_time"])<=time()&&strtotime($params["end_time"])>=time())
+                            $params["weigh"]=time();
+                        else
+                            $params["weigh"]=$this->model->getLastInsID();
+                    }else {
+                        $params["weigh"]=$this->model->getLastInsID();
+                    }
+                    $params["id"]=$this->model->getLastInsID();
+                    $result = $this->model->allowField(true)->save($params);
                     Db::commit();
                 } catch (ValidateException $e) {
                     Db::rollback();
@@ -150,6 +162,7 @@ class Article extends Backend
             $this->error(__('No Results were found'));
         }
 
+
         $adminIds = $this->getDataLimitAdminIds();
         if (is_array($adminIds)) {
             if (!in_array($row[$this->dataLimitField], $adminIds)) {
@@ -159,7 +172,16 @@ class Article extends Backend
         if ($this->request->isPost()) {
             $params = $this->request->post("row/a");
             if ($params) {
-                dd($params);
+
+                if($params["top"]=="置顶"){
+                    if(empty($params["begin_time"])||empty($params["end_time"])){
+                        $this->error("请填写置顶时间");
+                    }
+                    if(strtotime($params["begin_time"])<strtotime($params["end_time"])){
+                        $this->error("置顶时间开始时间大于结束时间");
+                    }
+                }
+
                 $params = $this->preExcludeFields($params);
                 $result = false;
                 Db::startTrans();
@@ -171,8 +193,18 @@ class Article extends Backend
                         $row->validateFailException(true)->validate($validate);
                     }
 
+                    if($params["top"]=="置顶"){
+                        if(strtotime($params["begin_time"])<=time()&&strtotime($params["end_time"])>=time())
+                        $params["weigh"]=time();
+                        else
+                            $params["weigh"]=$ids;
+
+                    }else {
+                        $params["weigh"]=$ids;
+                    }
+
                     $result = $row->allowField(true)->save($params);
-                    dd($row->getLastSql());
+
                     Db::commit();
                     dd($result);
                 } catch (ValidateException $e) {
