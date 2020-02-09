@@ -186,6 +186,7 @@ class Article extends Backend
                     $result = $row->allowField(true)->save($params);
                     dd($row->getLastSql());
                     Db::commit();
+                    dd($result);
                 } catch (ValidateException $e) {
                     Db::rollback();
                     $this->error($e->getMessage());
