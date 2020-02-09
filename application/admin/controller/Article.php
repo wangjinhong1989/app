@@ -116,9 +116,9 @@ class Article extends Backend
                     dd($result);
 
                     if($params["top"]=="置顶"){
-                        $this->model->save(["weigh"=>time()],["id"=>$result]);
+                        $this->model->save(["weigh"=>time()],["id"=>$this->model->getLastInsID()]);
                     }else {
-                        $this->model->save(["weigh"=>$result],["id"=>$result]);
+                        $this->model->save(["weigh"=>$this->model->getLastInsID()],["id"=>$this->model->getLastInsID()]);
                     }
                     Db::commit();
                 } catch (ValidateException $e) {
