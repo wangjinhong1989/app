@@ -25,6 +25,7 @@ class ArticleKuaixun extends Backend
         $this->view->assign("statusList", $this->model->getStatusList());
         $this->view->assign("isReplyList", $this->model->getIsReplyList());
         $this->view->assign("isMineList", $this->model->getIsMineList());
+        $this->view->assign("isTopList", $this->model->getTopList());
         $this->view->assign("isRecommendationList", $this->model->getIsRecommendationList());
     }
     
