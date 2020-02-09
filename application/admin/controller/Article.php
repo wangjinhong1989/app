@@ -128,7 +128,7 @@ class Article extends Backend
                     $this->error($e->getMessage());
                 }
                 if ($result !== false) {
-                    $this->success();
+                    $this->error();
                 } else {
                     $this->error(__('No rows were inserted'));
                 }
