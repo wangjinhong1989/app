@@ -161,6 +161,7 @@ class Article extends Backend
         if ($this->request->isPost()) {
             $params = $this->request->post("row/a");
             if ($params) {
+                dd($params);
                 $params = $this->preExcludeFields($params);
                 if($params["top"]=="置顶"){
                     $params["weigh"]=time();
