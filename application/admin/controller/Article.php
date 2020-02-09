@@ -151,6 +151,7 @@ class Article extends Backend
         if (!$row) {
             $this->error(__('No Results were found'));
         }
+
         $adminIds = $this->getDataLimitAdminIds();
         if (is_array($adminIds)) {
             if (!in_array($row[$this->dataLimitField], $adminIds)) {
@@ -161,6 +162,11 @@ class Article extends Backend
             $params = $this->request->post("row/a");
             if ($params) {
                 $params = $this->preExcludeFields($params);
+                if($params["top"]=="置顶"){
+                    $params["weigh"]=time();
+                }else
+                    $params["weigh"]=$ids;
+
                 $result = false;
                 Db::startTrans();
                 try {
@@ -170,10 +176,7 @@ class Article extends Backend
                         $validate = is_bool($this->modelValidate) ? ($this->modelSceneValidate ? $name . '.edit' : $name) : $this->modelValidate;
                         $row->validateFailException(true)->validate($validate);
                     }
-                    if($params["top"]=="置顶"){
-                        $params["weigh"]=time();
-                    }else
-                        $params["weigh"]=$ids;
+
                     $result = $row->allowField(true)->save($params);
                     Db::commit();
                 } catch (ValidateException $e) {
