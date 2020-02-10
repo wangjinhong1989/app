@@ -181,7 +181,7 @@ class Reply extends Api
             ->where($where)
             ->limit($offset,$page_size)->order("id desc")->select();
 
-        $count=     $lists=$query->table("fa_my_reply_count")->alias("my_reply")->field("id")
+        $count=$query->table("fa_my_reply_count")->alias("my_reply")->field("id")
             ->where($where)
             ->count();
 
