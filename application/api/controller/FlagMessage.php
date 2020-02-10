@@ -40,7 +40,9 @@ class FlagMessage extends Api
        else if($param=="follow_flag"){
            $flag->follow_flag=0;
        }
-
+       else if($param=="dianzan_flag"){
+           $flag->dianzan_flag=0;
+       }
        $flag->save();
        return $this->success();
    }

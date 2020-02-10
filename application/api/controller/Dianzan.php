@@ -124,20 +124,20 @@ class Dianzan extends Api
     {
 
         try {
+
             $data = [];
             $model = new \app\admin\model\Dianzan();
             $user = $this->auth->getUser();
             $user_id = $user->id;
             $reply_id= $this->request->request('reply_id');
 
-            dd("XXX".$reply_id);
 
             if (!$reply_id) {
                 return $this->error(__('参数存在空'));
                 die;
             }
             $reply=\app\admin\model\Reply::getById($reply_id);
-            dd("BBB".$reply);
+
             if (!$reply) {
                 return $this->error(__('评论不存在'));
             }
