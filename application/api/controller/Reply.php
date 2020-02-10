@@ -180,7 +180,6 @@ class Reply extends Api
             ->join("fa_reply reply","reply.article_id=article.id","left")
             ->join("fa_user user","user.id=article.user_id","left")
             ->where($where)
-            ->whereRaw("reply_count>0")
             ->group("article.id")
             ->limit($offset,$page_size)->order("article.id desc")->select();
 
@@ -188,7 +187,6 @@ class Reply extends Api
             ->join("fa_reply reply","reply.article_id=article.id","left")
             ->join("fa_user user","user.id=article.user_id","left")
             ->where($where)
-            ->whereRaw("reply_count>0")
             ->group("article.id")
            ->count();
 
