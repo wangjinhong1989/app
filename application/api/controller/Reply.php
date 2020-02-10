@@ -180,12 +180,14 @@ class Reply extends Api
             ->join("fa_reply reply","reply.article_id=article.id","left")
             ->join("fa_user user","user.id=article.user_id","left")
             ->where($where)
+            ->group("article.id")
             ->limit($offset,$page_size)->order("article.id desc")->select();
 
         $count=$query->table("fa_article")->alias("article")->field("article.*,user.username,user.avatar,count(reply.id) as reply_count")
             ->join("fa_reply reply","reply.article_id=article.id","left")
             ->join("fa_user user","user.id=article.user_id","left")
             ->where($where)
+            ->group("article.id")
            ->count();
 
 
