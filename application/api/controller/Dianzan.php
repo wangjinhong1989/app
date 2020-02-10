@@ -50,11 +50,7 @@ class Dianzan extends Api
 
         $model = (new \app\admin\model\Dianzan());
         $lists = $model->alias('dianzan')
-            ->with(['user','article'])
-            ->field("dianzan.*,user.username,user.avatar,article.title,article.img")
             ->where(['dianzan.user_id' => $user_id])
-            ->where('user.id=dianzan.at_id')
-            ->where('article.id=dianzan.article_id')
             ->count();
 
         $this->success("成功", $lists);
