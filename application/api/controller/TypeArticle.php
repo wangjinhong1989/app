@@ -33,4 +33,20 @@ class TypeArticle extends Api
         $this->success("",$lists);
     }
 
+    /**
+     * 不等于类型为2快讯和7关注的
+     *
+     */
+    public function neq_2_7()
+    {
+        $where=['status'=>"显示"];
+        $lists=( new Articletype())->where($where)->order("weigh","desc")->select();
+        foreach ($lists as $key=>$list){
+            if($list["id"]==2||$list["id"]==7){
+                unset($lists[$key]);
+            }
+        }
+        $this->success("",$lists);
+    }
+
 }

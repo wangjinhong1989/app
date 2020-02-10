@@ -76,7 +76,7 @@ class Articletype extends Backend
 
         $data=array();
         foreach ($list as $k=> &$l){
-            if($l["id"]==2||$l["id"]==7||$l["id"]==5){
+            if($l["id"]==2||$l["id"]==7){
                 unset($list[$k]);
             }else {
                 array_push($data,["id"=>$l["id"],"name"=>$l["name"],"pid"=>0]);
