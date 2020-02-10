@@ -130,6 +130,7 @@ class Dianzan extends Api
             $user_id = $user->id;
             $reply_id= $this->request->request('reply_id');
 
+            dd($reply_id);
 
             if (!$reply_id) {
                 return $this->error(__('参数存在空'));
