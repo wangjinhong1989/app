@@ -40,11 +40,13 @@ class TypeArticle extends Api
     public function neq_kuaixun_guanzhu()
     {
         $where=['status'=>"显示"];
-        $lists=( new Articletype())->where($where)->order("weigh","desc")->select()->toArray();
+        $lists=( new Articletype())->where($where)->order("weigh","desc")->select();
+        $data=[];
         foreach ($lists as $key=>$list){
             if($list["id"]==2||$list["id"]==7){
                 unset($lists[$key]);
-            }
+            }else
+                array_push($data,$list);
         }
         $this->success("",$lists);
     }
