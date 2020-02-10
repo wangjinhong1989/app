@@ -137,6 +137,7 @@ class Dianzan extends Api
                 die;
             }
             $reply=\app\admin\model\Reply::getById($reply_id);
+            dd($reply);
             if (!$reply) {
                 return $this->error(__('评论不存在'));
             }
