@@ -53,4 +53,17 @@ class TypeArticle extends Api
         $this->success("",$data);
     }
 
+
+    /**
+     * 不等于类型为2快讯和7关注的
+     *
+     */
+    public function neq_kuaixun_guanzhu1()
+    {
+        $where=['status'=>"显示"];
+        $lists=( new Articletype())->where($where)->order("weigh","desc")->select();
+
+        $this->success("",$lists);
+    }
+
 }
