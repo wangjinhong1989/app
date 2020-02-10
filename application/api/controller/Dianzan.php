@@ -45,8 +45,7 @@ class Dianzan extends Api
      */
     public function count()
     {
-        $user = $this->auth->getUser();
-        $user_id = $user->id;
+        $user_id = $this->auth->id;
 
         $model = (new \app\admin\model\Dianzan());
         $lists = $model->alias('dianzan')
