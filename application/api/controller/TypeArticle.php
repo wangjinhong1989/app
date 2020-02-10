@@ -6,6 +6,8 @@ namespace app\api\controller;
 use app\admin\model\Shoucang;
 use app\admin\model\Articletype;
 use app\common\controller\Api;
+use think\db\Query;
+
 /**
  * 首页接口
  */
@@ -40,7 +42,7 @@ class TypeArticle extends Api
     public function neq_kuaixun_guanzhu()
     {
         $where=['status'=>"显示"];
-        $lists=( new Articletype())->where($where)->order("weigh","desc")->select();
+        $lists=( new Query())->table("articletype")->where($where)->order("weigh","desc")->select();
         $data=[];
         foreach ($lists as $key=>$list){
             if($list["id"]==2||$list["id"]==7){
@@ -48,7 +50,7 @@ class TypeArticle extends Api
             }else
                 array_push($data,$list);
         }
-        $this->success("",$lists);
+        $this->success("",$data);
     }
 
 }
