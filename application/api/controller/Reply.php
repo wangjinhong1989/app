@@ -172,23 +172,17 @@ class Reply extends Api
 
         $user_id=$this->auth->id;
         if($user_id){
-            $where["article.user_id"]=["eq",$user_id];
+            $where["user_id"]=["eq",$user_id];
         }
 
         $query=new Query();
-        $lists=$query->table("fa_article")->alias("article")->field("article.*,user.username,user.avatar,count(reply.id) as reply_count")
-            ->join("fa_reply reply","reply.article_id=article.id","left")
-            ->join("fa_user user","user.id=article.user_id","left")
+        $lists=$query->table("fa_my_reply_count")->alias("my_reply")->field("*")
             ->where($where)
-            ->group("article.id")
             ->limit($offset,$page_size)->order("article.id desc")->select();
 
-        $count=$query->table("fa_article")->alias("article")->field("article.*,user.username,user.avatar,count(reply.id) as reply_count")
-            ->join("fa_reply reply","reply.article_id=article.id","left")
-            ->join("fa_user user","user.id=article.user_id","left")
+        $count=     $lists=$query->table("fa_my_reply_count")->alias("my_reply")->field("id")
             ->where($where)
-            ->group("article.id")
-           ->count();
+            ->count();
 
 
         $data["page"]=$page;
