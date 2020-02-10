@@ -37,7 +37,7 @@ class TypeArticle extends Api
      * 不等于类型为2快讯和7关注的
      *
      */
-    public function neq_2_7()
+    public function neq_kuaixun_guanzhu()
     {
         $where=['status'=>"显示"];
         $lists=( new Articletype())->where($where)->order("weigh","desc")->select();
