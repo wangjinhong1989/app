@@ -169,10 +169,11 @@ class Reply extends Api
         $data=[];
 
         $where=[];
-
+        $where["reply_count"]=["gt",0];
         $user_id=$this->auth->id;
         if($user_id){
             $where["user_id"]=["eq",$user_id];
+
         }
 
         $query=new Query();
