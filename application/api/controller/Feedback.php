@@ -68,6 +68,15 @@ class Feedback extends Api
                 return $this->error(__('参数存在空'));
             }
 
+
+
+            $user=new \app\admin\model\User();
+
+            if(!$user->auth_status($this->auth->id)){
+                return $this->error("认证未通过");
+            }
+
+
             $model->create([
                 'user_id'=>$user_id,'feedback_type'=>$feedback_type,'files'=>$files,'content'=>$content,'time'=>time()
             ]);

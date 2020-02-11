@@ -106,4 +106,26 @@ class User extends Model
         return $this->belongsTo('UserGroup', 'group_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 
+    public function auth_status($user_id){
+        $ae=( new \app\admin\model\AuthenticationEnterprise())->where(["user_id"=>$user_id,"status"=>"审核通过"])
+            ->find();
+
+        if($ae){
+            return 1;
+        }
+        $am=( new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$this->auth->id])
+            ->find();
+
+        if($am){
+            return 2;
+        }
+        $ap=( new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$this->auth->id])
+            ->find();
+        if($ap){
+            return 3;
+        }
+
+        return 0;
+    }
+
 }
