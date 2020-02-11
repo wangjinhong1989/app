@@ -202,6 +202,7 @@ class Reply extends Api
     public function add()
     {
 
+
         try{
             $data=[];
             $model=new \app\admin\model\Reply();
@@ -214,10 +215,15 @@ class Reply extends Api
             $article_id=$this->request->request('article_id',0);
             $content=$this->request->request('content',"");
 
+
             if(!$article_id||!$content){
                 return $this->error(__('参数存在空'));
             }
 
+            $article=(new Article())->where(["id"=>$article_id])->find();
+            if($article->is_reply=="否"){
+                return $this->error(__('文章不允许评论'));
+            }
             $test=$model->create([
                 //'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>"审核"
                 'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>"有效"
