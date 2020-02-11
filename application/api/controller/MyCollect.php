@@ -76,6 +76,7 @@ class MyCollect extends Api
             dd(2);
             return $this->success();
         } catch (Exception $e) {
+            dd($e);
             return $this->error($e->getMessage());
         }
 
