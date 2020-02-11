@@ -35,10 +35,10 @@ class Label extends Api
         $lists=$query->table("fa_label")->alias("label")->where(["status"=>"显示"])->whereNotIn("id",function ($query){
             $query=new Query();
             return $query->table("fa_mylabel")->alias("mylabel")->where("user_id",$this->auth->id)->field("label_id")->select();
-        })->limit($offset,$page_size)->select()->toArray();
+        })->limit($offset,$page_size)->select();
         $count=$query->table("fa_label")->alias("label")->where(["status"=>"显示"])->whereNotIn("id",function ($query){
             $query=new Query();
-            return $query->table("fa_mylabel")->alias("mylabel")->where("user_id",$this->auth->id)->field("label_id")->select()->toArray();
+            return $query->table("fa_mylabel")->alias("mylabel")->where("user_id",$this->auth->id)->field("label_id")->select();
         })->count();
 
         $data["page"]=$page;
