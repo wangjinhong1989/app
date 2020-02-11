@@ -33,10 +33,10 @@ class Label extends Api
         //$count=( new \app\admin\model\Label())->where(['status'=>'显示'])->count();
 
         $query=new Db();
-        $lists=$query->table("fa_label")->alias("label")->where(["status"=>"显示"])->whereNotIn("id",function ($query){
+        $lists=$query::table("fa_label")->alias("label")->where(["status"=>"显示"])->whereNotIn("id",function ($query){
             $query->table("fa_mylabel")->alias("mylabel")->where("user_id",$this->auth->id)->field("label_id");
         })->limit($offset,$page_size)->select();
-        $count=$query->table("fa_label")->alias("label")->where(["status"=>"显示"])->whereNotIn("id",function ($query){
+        $count=$query::table("fa_label")->alias("label")->where(["status"=>"显示"])->whereNotIn("id",function ($query){
              $query->table("fa_mylabel")->alias("mylabel")->where("user_id",$this->auth->id)->field("label_id");
         })->count();
 
