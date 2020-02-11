@@ -606,6 +606,13 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
     public function add()
     {
 
+        $userModel=new \app\admin\model\User();
+
+        if(!$userModel->auth_status($this->auth->id)){
+            return $this->error("认证未通过");
+        }
+
+
         try{
             $model=new \app\admin\model\Article();
             $user = $this->auth->getUser();
