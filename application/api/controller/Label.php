@@ -5,6 +5,7 @@ namespace app\api\controller;
 
 use app\admin\model\SearchHistory;
 use app\common\controller\Api;
+use think\Db;
 use think\db\Query;
 
 /**
@@ -31,14 +32,12 @@ class Label extends Api
         //$lists=( new \app\admin\model\Label())->where(['status'=>'显示'])->limit($offset,$page_size)->select();
         //$count=( new \app\admin\model\Label())->where(['status'=>'显示'])->count();
 
-        $query=new Query();
+        $query=new Db();
         $lists=$query->table("fa_label")->alias("label")->where(["status"=>"显示"])->whereNotIn("id",function ($query){
-            $query=new Query();
-            return $query->table("fa_mylabel")->alias("mylabel")->where("user_id",$this->auth->id)->field("label_id")->select();
+            $query->table("fa_mylabel")->alias("mylabel")->where("user_id",$this->auth->id)->field("label_id");
         })->limit($offset,$page_size)->select();
         $count=$query->table("fa_label")->alias("label")->where(["status"=>"显示"])->whereNotIn("id",function ($query){
-            $query=new Query();
-            return $query->table("fa_mylabel")->alias("mylabel")->where("user_id",$this->auth->id)->field("label_id")->select();
+             $query->table("fa_mylabel")->alias("mylabel")->where("user_id",$this->auth->id)->field("label_id");
         })->count();
 
         $data["page"]=$page;
