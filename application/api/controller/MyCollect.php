@@ -49,6 +49,8 @@ class MyCollect extends Api
     {
 
         try {
+
+            dd(1);
             $data = [];
             $model = new Shoucang();
             $user = $this->auth->getUser();
@@ -71,7 +73,7 @@ class MyCollect extends Api
             $model->create([
                 'user_id' => $user_id, 'article_id' => $article_id, 'time' => time()
             ]);
-
+            dd(2);
             return $this->success();
         } catch (Exception $e) {
             return $this->error($e->getMessage());

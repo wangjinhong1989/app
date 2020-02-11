@@ -64,7 +64,7 @@ class Feedback extends Api
             $content=$this->request->request('content');
             $files=$this->request->request('files');
 
-            if(!$content||!$files||!$feedback_type){
+            if(!$content||!$feedback_type){
                 return $this->error(__('参数存在空'));
             }
 
