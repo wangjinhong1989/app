@@ -614,7 +614,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
         $userModel=new \app\admin\model\User();
 
         if(!$userModel->auth_status($this->auth->id)){
-            return $this->error("认证未通过");
+            return $this->error("认证后才能发布文章");
         }
 
 

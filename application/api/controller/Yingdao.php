@@ -25,5 +25,17 @@ class Yingdao extends Api
         $lists=(new \app\admin\model\Yingdao())->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->select();
 
         $this->success("成功",$lists);
+        $lists=collection($lists)->toArray();
+        foreach ($lists as $k=> $list){
+
+            $lists[$k]["files"]=explode(",",$list["files"]);
+            foreach ($lists[$k]["files"] as $k=>&$v){
+                $v="http://app.bixiaogui.com".$v;
+            }
+
+            $lists[$k]["files"]=implode(",",$lists[$k]["files"]);
+        }
+        $this->success("成功",$lists);
+
     }
 }
