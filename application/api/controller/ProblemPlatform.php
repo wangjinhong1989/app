@@ -31,9 +31,10 @@ class ProblemPlatform extends Api
         $data["count"]=(new Problem())->where(['status'=>'显示'])->count();
 
         $data["page"]=$page;
-
+        $data["rows"]=collection($data["rows"])->toArray();
 
         foreach ($data["rows"] as $k=>&$v){
+            debug();
             if(is_object($v)){
                 dd("object");
             }
