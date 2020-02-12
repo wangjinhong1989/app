@@ -546,8 +546,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
 
             //  增加阅读历史。
             $user_id=$this->auth->id;
-            $detail['user']=null;
-            if($user_id!=$article->user_id){
+
                 // 增加阅读历史记录.
                 $his=new ReadHistory();
 
@@ -558,7 +557,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
                     $find->save();
                 }else
                     $his->create(["user_id"=>$user_id,"article_id"=>$article->id,"time"=>time()]);
-            }
+
             $label=new \app\admin\model\Label();
 
 
