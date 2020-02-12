@@ -32,6 +32,9 @@ class ProblemPlatform extends Api
 
         $data["page"]=$page;
 
+        foreach ($data["rows"] as &$l){
+            $l["time"]=date("Y-m-d H:i:s",$l["time"]);
+        }
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);
     }
@@ -40,6 +43,7 @@ class ProblemPlatform extends Api
     {
         $id=$this->request->request("id",0);
         $lists=(new Problem())->where(['id'=>$id])->find();
+        $lists["time"]=date("Y-m-d H:i:s",$lists["time"]);
         $this->success("成功",$lists);
     }
 
