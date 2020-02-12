@@ -442,7 +442,7 @@ class ArticleManager extends Api
         $data=[];
         $query=new Query();
         $lists= $query->table("fa_read_history")->alias("his")
-            ->field("article.*,user.username,user.avatar,articletype.name")
+            ->field("article.*,user.username,user.avatar,articletype.name,his.time")
             ->join("fa_article article","article.id=his.article_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
@@ -454,6 +454,10 @@ class ArticleManager extends Api
             ->where(['his.user_id'=>$this->auth->getUser()->id])
             ->count();
 
+        foreach ($lists as &$l){
+
+            $l["create_time"]=date("Y-m-d H:i:s",$l["time"]);
+        }
 
 
         $data["page"]=$page;
