@@ -30,7 +30,9 @@ class Yingdao extends Api
             $data=array();
             foreach ($temp as &$v){
                 $v="http://app.bixiaogui.com".$v;
-                array_push($data,$v);
+                $t=[];
+                $t["files"]=$v;
+                array_push($data,$t);
             }
 
         $this->success("成功",$data);
