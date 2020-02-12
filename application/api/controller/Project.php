@@ -34,15 +34,10 @@ class Project extends Api
         }
         $data=[];
 
-        $data["rows"]=(new \app\admin\model\Project())->where($where)->limit($offset,$page_size)->select();
+        $data["rows"]=(new \app\admin\model\Project())->where($where)->limit($offset,$page_size)->order("id","desc")->select();
         $data["count"]=(new \app\admin\model\Project())->where($where)->count();
 
         $data["page"]=$page;
-
-
-        foreach ($data["rows"] as $k=>&$l){
-            $data["rows"][$k]["time"]=date("Y-m-d H:i:s",$l["time"]);
-        }
 
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);
@@ -70,7 +65,6 @@ class Project extends Api
             $info->rank=$info->rank+1;
 //            $model->save(['hot'=>$info->hot,'rank'=>$info->rank],['id'=>$id]);
             $info->save();
-            $info->time=date("Y-m-d H:i:s",$info->time);
             return $this->success("成功",$info);
         }catch (Exception $e){
             return  $this->error($e->getMessage());
