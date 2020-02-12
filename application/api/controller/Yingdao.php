@@ -24,7 +24,6 @@ class Yingdao extends Api
         $time=time();
         $lists=(new \app\admin\model\Yingdao())->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->select();
 
-        $this->success("成功",$lists);
         $lists=collection($lists)->toArray();
         foreach ($lists as $k=> $list){
 
