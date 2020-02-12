@@ -41,7 +41,7 @@ class Project extends Api
 
 
         foreach ($data["rows"] as $k=>&$l){
-            $data["rows"][$k]=date("Y-m-d H:i:s",$l["time"]);
+            $data["rows"][$k]["time"]=date("Y-m-d H:i:s",$l["time"]);
         }
 
         $data["total_page"]=ceil($data["count"]/$page_size);
