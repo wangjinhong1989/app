@@ -429,7 +429,7 @@ if (!function_exists('sendTemplateSMS')) {
 
 // 记录打印 .
 if (!function_exists('dd')) {
-    function dd($content="",$file='log.txt')
+    function dd($content="",$flag=FILE_APPEND)
     {
         if(is_object($content)){
             $content=json_encode($content);
@@ -437,6 +437,6 @@ if (!function_exists('dd')) {
         if(is_array($content)){
             $content=json_encode($content);
         }
-        file_put_contents($file,date("Y-m-d H:i:s")." : ".$content."\r\n",FILE_APPEND);
+        file_put_contents('log.txt',date("Y-m-d H:i:s")." : ".$content."\r\n",$flag);
     }
 }

@@ -33,7 +33,9 @@ class ProblemPlatform extends Api
         $data["page"]=$page;
 
         foreach ($data["rows"] as $k=>$l){
+
             $data["rows"][$k]["time"]=date("Y-m-d H:i:s",$l["time"]);
+            dd($data["rows"][$k]["time"],0);
         }
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);
