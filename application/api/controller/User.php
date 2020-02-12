@@ -278,6 +278,9 @@ class User extends Api
         $data["auth_enterprise"]=(new \app\admin\model\AuthenticationEnterprise())->where(["user_id"=>$user_id])->find();
         $data["auth_media"]=(new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$user_id])->find();
         $data["auth_personal"]=(new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$user_id])->find();
+
+        $data["auth_value"]=(new \app\admin\model\User())->auth_status($user_id);
+
         $this->success(__('成功'), $data);
     }
 
