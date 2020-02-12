@@ -546,6 +546,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
 
             //  增加阅读历史。
             $user_id=$this->auth->id;
+            $detail['user']=null;
 
                 // 增加阅读历史记录.
                 $his=new ReadHistory();
