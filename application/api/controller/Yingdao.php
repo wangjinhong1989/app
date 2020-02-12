@@ -24,10 +24,11 @@ class Yingdao extends Api
         $time=time();
         $lists=(new \app\admin\model\Yingdao())->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->select();
 
-        $lists=collection($lists)->toArray();
+        //$lists=collection($lists)->toArray();
         foreach ($lists as $k=> $list){
 
             $lists[$k]["files"]=explode(",",$list["files"]);
+
             foreach ($lists[$k]["files"] as &$v){
                 $v="http://app.bixiaogui.com".$v;
             }
