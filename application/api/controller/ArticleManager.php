@@ -141,7 +141,7 @@ class ArticleManager extends Api
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
             ->join("fa_kong_hao kong_hao","kong_hao.article_id=article.id","left")
-            ->limit($offset,$page_size)->order("article.id desc")->select();
+            ->limit($offset,$page_size)->order("article.weigh desc")->select();
 
 
 
@@ -677,6 +677,8 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
 
             $test=$model->create($data);
 
+            $test->weigh=$test->id;
+            $test->save();
             // 保存到推送列表中.
 
             //dd($test);
