@@ -27,7 +27,7 @@ class ProblemPlatform extends Api
 
         $data=[];
 
-        $data["rows"]=(new Problem())->where(['status'=>'显示'])->limit($offset,$page_size)->order("id","desc")->select();
+        $data["rows"]=(new Problem())->where(['status'=>'显示'])->limit($offset,$page_size)->order("id","desc")->select()->toArray();
         $data["count"]=(new Problem())->where(['status'=>'显示'])->count();
 
         $data["page"]=$page;
