@@ -447,6 +447,7 @@ class ArticleManager extends Api
             ->join("fa_user user","user.id=article.user_id","left")
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->where(['his.user_id'=>$this->auth->getUser()->id])
+            ->order("his.time","desc")
             ->limit($offset,$page_size)->select();
 
 
