@@ -84,6 +84,9 @@ class Dianzan extends Api
 
 
 
+        $flag=(new \app\admin\model\FlagMessage())->where(["user_id"=>$this->auth->id])->find();
+        $flag->dianzan=0;
+        $flag->save();
 
         $data["page"]=$page;
         $data["rows"]=$lists;

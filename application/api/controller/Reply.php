@@ -155,6 +155,10 @@ class Reply extends Api
         $data["rows"]=$lists;
         $data["count"]=$count;
 
+        $flag=(new \app\admin\model\FlagMessage())->where(["user_id"=>$this->auth->id])->find();
+        $flag->reply_flag=0;
+        $flag->save();
+
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);
     }
@@ -189,6 +193,10 @@ class Reply extends Api
         $data["page"]=$page;
         $data["rows"]=$lists;
         $data["count"]=$count;
+
+        $flag=(new \app\admin\model\FlagMessage())->where(["user_id"=>$this->auth->id])->find();
+        $flag->comment_flag=0;
+        $flag->save();
 
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);

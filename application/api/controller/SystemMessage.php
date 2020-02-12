@@ -36,6 +36,10 @@ class SystemMessage extends Api
             ->count();
         // 结束.
 
+        $flag=(new \app\admin\model\FlagMessage())->where(["user_id"=>$this->auth->id])->find();
+        $flag->system_flag=0;
+        $flag->save();
+
         $data["page"]=$page;
 
         $data["total_page"]=ceil($data["count"]/$page_size);
