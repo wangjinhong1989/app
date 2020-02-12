@@ -190,6 +190,9 @@ class Reply extends Api
             ->count();
 
 
+        foreach ($lists as &$l){
+            $l["create_time"]=date("Y-m-d H:i:s",$l["createtime"]);
+        }
         $data["page"]=$page;
         $data["rows"]=$lists;
         $data["count"]=$count;
