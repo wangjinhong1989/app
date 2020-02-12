@@ -27,11 +27,13 @@ class Yingdao extends Api
 
             $temp=explode(",",$lists["files"]);
 
+            $data=array();
             foreach ($temp as &$v){
                 $v="http://app.bixiaogui.com".$v;
+                array_push($data,$v);
             }
 
-        $this->success("成功",$temp);
+        $this->success("成功",$data);
 
     }
 }
