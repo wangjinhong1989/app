@@ -27,7 +27,7 @@ class Qidong extends Api
         $lists=collection($lists)->toArray();
         foreach ($lists as $k=> $list){
 
-            $list[$k]["files"]="http://app.biyouliao8.com".$list["files"];
+            $lists[$k]["files"]="http://app.biyouliao8.com".$list["files"];
         }
         $this->success("成功",$lists);
     }
