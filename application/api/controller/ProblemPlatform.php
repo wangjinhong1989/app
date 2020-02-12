@@ -34,7 +34,7 @@ class ProblemPlatform extends Api
         $data["rows"]=collection($data["rows"])->toArray();
 
         foreach ($data["rows"] as $k=>&$v){
-            debug();
+            //gidebug();
             if(is_object($v)){
                 dd("object");
             }
