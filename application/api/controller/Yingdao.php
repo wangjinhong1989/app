@@ -32,7 +32,7 @@ class Yingdao extends Api
                 $v="http://app.bixiaogui.com".$v;
             }
 
-            $lists[$k]["files"]=implode(",",$lists[$k]["files"]);
+            //$lists[$k]["files"]=implode(",",$lists[$k]["files"]);
         }
         $this->success("成功",$lists);
 
