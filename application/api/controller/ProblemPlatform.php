@@ -41,8 +41,9 @@ class ProblemPlatform extends Api
             if(is_array($v)){
                 dd("array");
             }
-            dd($v);
+            $v["time"]=date("Y-m-d H:i:s",$v["time"]);
         }
+
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);
     }
