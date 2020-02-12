@@ -32,11 +32,12 @@ class ProblemPlatform extends Api
 
         $data["page"]=$page;
 
-        foreach ($data["rows"] as $k=>$v){
-            $t=date("Y-m-d H:i:s",$v["time"]);
+        foreach ($data["rows"] as $k=>&$v){
+            $v["time"]= $t=date("Y-m-d H:i:s",$v["time"]);
             $data["rows"][$k]["time"]=$t;
             dd($k);
             dd($t);
+            dd($v);
             dd($data["rows"][$k]["time"]);
         }
         $data["total_page"]=ceil($data["count"]/$page_size);
