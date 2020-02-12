@@ -28,8 +28,8 @@ class ProblemPlatform extends Api
 
         $data=[];
 
-        $data["rows"]=(new Query())->table("fa_problem_platform")->where(['status'=>'显示'])->limit($offset,$page_size)->order("id","desc")->select();
-        $data["count"]=(new Query())->table("fa_problem_platform")->where(['status'=>'显示'])->count();
+        $data["rows"]=(new Query())->table("fa_problem")->where(['status'=>'显示'])->limit($offset,$page_size)->order("id","desc")->select();
+        $data["count"]=(new Query())->table("fa_problem")->where(['status'=>'显示'])->count();
 
         $data["page"]=$page;
 
