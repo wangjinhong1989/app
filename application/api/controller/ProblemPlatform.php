@@ -5,6 +5,7 @@ namespace app\api\controller;
 
 use app\common\controller\Api;
 use app\admin\model\Problem;
+use think\db\Query;
 use think\Request;
 
 /**
@@ -27,15 +28,15 @@ class ProblemPlatform extends Api
 
         $data=[];
 
-        $data["rows"]=(new Problem())->where(['status'=>'显示'])->limit($offset,$page_size)->select();
-        $data["count"]=(new Problem())->where(['status'=>'显示'])->count();
+        $data["rows"]=(new Query())->table("fa_problem_platform")->where(['status'=>'显示'])->limit($offset,$page_size)->order("id","desc")->select();
+        $data["count"]=(new Query())->table("fa_problem_platform")->where(['status'=>'显示'])->count();
 
         $data["page"]=$page;
 
         foreach ($data["rows"] as $k=>$l){
 
             $data["rows"][$k]["time"]=date("Y-m-d H:i:s",$l["time"]);
-            dd(date("Y-m-d H:i:s",$l["time"]),0);
+            dd(date("Y-m-d H:i:s",$l["time"]));
         }
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);
