@@ -27,18 +27,14 @@ class ProblemPlatform extends Api
 
         $data=[];
 
-        $data["rows"]=(new Problem())->where(['status'=>'显示'])->limit($offset,$page_size)->order("id","desc")->select()->toArray();
+        $data["rows"]=(new Problem())->where(['status'=>'显示'])->limit($offset,$page_size)->order("id","desc")->select();
         $data["count"]=(new Problem())->where(['status'=>'显示'])->count();
 
         $data["page"]=$page;
 
         foreach ($data["rows"] as $k=>&$v){
-            $v["time"]= $t=date("Y-m-d H:i:s",$v["time"]);
-            $data["rows"][$k]["time"]=$t;
-            dd($k);
-            dd($t);
-            dd($v);
-            dd($data["rows"][$k]["time"]);
+            $v->time=date("Y-m-d H:i:s",$v->time);
+
         }
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);
