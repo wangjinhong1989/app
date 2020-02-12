@@ -24,6 +24,11 @@ class Qidong extends Api
         $time=time();
         $lists=(new \app\admin\model\Qidong())->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->select();
 
+        $lists=collection($lists)->toArray();
+        foreach ($lists as $k=> $list){
+
+            $list[$k]["files"]="http://app.biyouliao8.com".$list["files"];
+        }
         $this->success("成功",$lists);
     }
 }
