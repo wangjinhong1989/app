@@ -29,7 +29,7 @@ class Yingdao extends Api
         foreach ($lists as $k=> $list){
 
             $lists[$k]["files"]=explode(",",$list["files"]);
-            foreach ($lists[$k]["files"] as $k=>&$v){
+            foreach ($lists[$k]["files"] as &$v){
                 $v="http://app.bixiaogui.com".$v;
             }
 
