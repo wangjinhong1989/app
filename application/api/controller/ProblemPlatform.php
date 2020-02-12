@@ -32,9 +32,15 @@ class ProblemPlatform extends Api
 
         $data["page"]=$page;
 
-        foreach ($data["rows"] as $k=>&$v){
-            $v->time=date("Y-m-d H:i:s",$v->time);
 
+        foreach ($data["rows"] as $k=>&$v){
+            if(is_object($v)){
+                dd("object");
+            }
+            if(is_array($v)){
+                dd("array");
+            }
+            dd($v);
         }
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);
