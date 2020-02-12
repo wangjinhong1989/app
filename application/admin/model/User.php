@@ -113,13 +113,13 @@ class User extends Model
         if($ae){
             return 1;
         }
-        $am=( new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$this->auth->id])
+        $am=( new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$user_id])
             ->find();
 
         if($am){
             return 2;
         }
-        $ap=( new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$this->auth->id])
+        $ap=( new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$user_id])
             ->find();
         if($ap){
             return 3;
@@ -136,13 +136,13 @@ class User extends Model
         if($ae){
             return "企业认证";
         }
-        $am=( new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$this->auth->id])
+        $am=( new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$user_id])
             ->find();
 
         if($am){
             return "媒体认证";
         }
-        $ap=( new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$this->auth->id])
+        $ap=( new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$user_id])
             ->find();
         if($ap){
             return "个人认证";
