@@ -25,8 +25,8 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'files', title: __('Files')},
-                        {field: 'url', title: __('Url'), formatter: Table.api.formatter.image},
+                        {field: 'files', title: __('Files'),formatter: Table.api.formatter.image},
+                        {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
                         {field: 'top', title: __('Top'), searchList: {"置顶":__('置顶'),"取消置顶":__('取消置顶')}, formatter: Table.api.formatter.normal},
                         {field: 'begin_time', title: __('Begin_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'end_time', title: __('End_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
