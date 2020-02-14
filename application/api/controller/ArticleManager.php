@@ -5,6 +5,7 @@ namespace app\api\controller;
 use app\admin\model\Article;
 use app\admin\model\Guanggao;
 use app\admin\model\HotSearch;
+use app\admin\model\Lihaokong;
 use app\admin\model\PushList;
 use app\admin\model\ReadHistory;
 use app\admin\model\SearchHistory;
@@ -700,5 +701,31 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
 
     }
 
+
+    public function detail_kuaixun()
+    {
+        $id=$this->request->request("id",0);
+        $model=new Article();
+
+        $where=[];
+        $where["article.id"]=$id;
+
+        $query=new Query();
+        $detail=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
+            ->where($where)
+            ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
+            ->join("fa_user user","user.id=article.user_id","left")
+            ->find();
+        if($detail){
+
+            // 利空利好统计.
+
+            $detail["likong_count"]=(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利空"])->count();
+            $detail["lihao_count"]=(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利好"])->count();
+        }
+
+
+        $this->success("成功",$detail);
+    }
 
 }
