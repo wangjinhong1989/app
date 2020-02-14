@@ -725,6 +725,7 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
 
             $detail["image"]="http://app.biyouliao.com/uploads/20191224/1c68375a95c34071687ca6a56f5f8933.png";
             //$detail["url"]="http://app.biyouliao.com/uploads/20191224/1c68375a95c34071687ca6a56f5f8933.png";
+            $detail["create_time"]=date("Y-m-d H:i:s",$detail["create_time"]);
         }
 
 
