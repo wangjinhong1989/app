@@ -75,6 +75,10 @@ class Banner extends Backend
 
             return json($result);
         }
+
+
+        $jsona=$this->model->getBannernameList();
+        $this->view->assign("bannerList",\GuzzleHttp\json_encode($jsona));
         return $this->view->fetch();
     }
 }
