@@ -64,7 +64,7 @@ class Banner extends Model
         foreach ($data as $d){
             array_push($temp,["".$d["name"]=>"".$d["name"]]);
         }
-        return ['显示' => __('显示'), '隐藏' => __('隐藏')];
+        return $temp;
     }
 
 
