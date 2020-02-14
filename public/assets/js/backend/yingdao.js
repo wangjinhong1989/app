@@ -25,7 +25,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'files', title: __('Files'),formatter: Table.api.formatter.image},
+                        {field: 'files', title: __('Files'),formatter:formart_img},
                         {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
                         {field: 'top', title: __('Top'), searchList: {"置顶":__('置顶'),"取消置顶":__('取消置顶')}, formatter: Table.api.formatter.normal},
                         {field: 'begin_time', title: __('Begin_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
@@ -50,5 +50,18 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             }
         }
     };
+
+    function formart_img(images) {
+    //<a href="javascript:"><img class="img-sm img-center" src="/uploads/20200212/e4b9b6a941e446074555d3b0eb5dad72.jpg,/uploads/20200212/e4b9b6a941e446074555d3b0eb5dad72.jpg,/uploads/20200212/e4b9b6a941e446074555d3b0eb5dad72.jpg,/uploads/20200212/e4b9b6a941e446074555d3b0eb5dad72.jpg"></a>
+
+        var imagesArr=images.split(",");
+        var str="";
+        for (i=0;i<imagesArr.length;i++){
+            str=str+'<a href="javascript:"><img class="img-sm img-center" src="'+imagesArr[i]+'"></a>';
+        }
+
+        return str;
+
+    }
     return Controller;
 });
