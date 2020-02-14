@@ -5,12 +5,12 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             // 初始化表格参数配置
             Table.api.init({
                 extend: {
-                    index_url: 'banner_index/index' + location.search,
-                    add_url: 'banner_index/add',
-                    edit_url: 'banner_index/edit',
-                    del_url: 'banner_index/del',
-                    multi_url: 'banner_index/multi',
-                    table: 'banner_index',
+                    index_url: 'banner_search/index' + location.search,
+                    add_url: 'banner_search/add',
+                    edit_url: 'banner_search/edit',
+                    del_url: 'banner_search/del',
+                    multi_url: 'banner_search/multi',
+                    table: 'banner_search',
                 }
             });
 
@@ -63,7 +63,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
 
         pageReqeust.filter=JSON.parse( pageReqeust.filter );
         pageReqeust.op=JSON.parse( pageReqeust.op );
-        pageReqeust.filter["bannername.name"]="首页";
+        pageReqeust.filter["bannername.name"]="搜索页";
         pageReqeust.op["bannername.name"]="=";
         pageReqeust.op=JSON.stringify( pageReqeust.op );
         pageReqeust.filter=JSON.stringify( pageReqeust.filter );
