@@ -29,7 +29,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'title', title: __('名称')},
                         {field: 'bannername.name', title: __('位置')},
                         {field: 'img', title: __('图片'),formatter:formart_img},
-                        {field: 'top', title: __('置顶'), searchList: {"置顶":__('置顶'),"取消置顶":__('取消置顶')}, formatter: Table.api.formatter.normal},
                         {field: 'begin_time', title: __('开始时间'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'end_time', title: __('结束时间'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'url', title: __('链接地址'), formatter: Table.api.formatter.url},

@@ -32,18 +32,7 @@
             </div>
         </div>
 
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('置顶')}:</label>
-        <div class="col-xs-12 col-sm-8">
-                        
-            <select  id="c-top" data-rule="required" class="form-control selectpicker" name="row[top]">
-                {foreach name="topList" item="vo"}
-                    <option value="{$key}" {in name="key" value="$row.top"}selected{/in}>{$vo}</option>
-                {/foreach}
-            </select>
 
-        </div>
-    </div>
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('开始时间')}:</label>
         <div class="col-xs-12 col-sm-8">
