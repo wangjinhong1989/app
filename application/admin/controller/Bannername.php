@@ -32,4 +32,12 @@ class Bannername extends Backend
      */
     
 
+    public function lists(){
+            $data=$this->model->where([])->select();
+            $temp=[];
+            foreach ($data as $d){
+                $temp[$d["name"]]=$d["name"];
+            }
+           $this->success("",$data);
+    }
 }
