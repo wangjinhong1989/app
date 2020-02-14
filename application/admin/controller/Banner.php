@@ -25,6 +25,7 @@ class Banner extends Backend
         $this->view->assign("topList", $this->model->getTopList());
         $this->view->assign("urlTypeList", $this->model->getUrlTypeList());
         $this->view->assign("bannernameList", $this->model->getBannernameList());
+        $this->view->assign("bannerList", \GuzzleHttp\json_encode($this->model->getBannernameList()));
         $this->view->assign("statusList", $this->model->getStatusList());
     }
     
