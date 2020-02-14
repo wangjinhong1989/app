@@ -64,6 +64,8 @@ class Banner extends Model
         foreach ($data as $d){
             array_push($temp,["".$d["name"]=>"".$d["name"]]);
         }
+
+        var_dump($temp);
         return $temp;
     }
 
