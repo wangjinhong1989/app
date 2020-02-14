@@ -196,7 +196,7 @@ class User extends Api
         $ret = $this->auth->register($username, $password, $email, $mobile, []);
         if ($ret) {
             $data = ['userinfo' => $this->auth->getUserinfo()];
-            $this->success(__('Sign up successful'), $data);
+            $this->success(__('注册成功'), $data);
         } else {
             $this->error($this->auth->getError());
         }

@@ -87,7 +87,7 @@ class Sms extends Api
             } elseif (in_array($event, ['changemobile']) && $userinfo) {
                 //被占用
                 $this->error(__('已被占用'));
-            } elseif (in_array($event, ['changepwd', 'resetpwd']) && !$userinfo) {
+            } elseif (in_array($event, ['changepwd', 'resetpwd','verify_changemobile']) && !$userinfo) {
                 //未注册
                 $this->error(__('未注册'));
             }

@@ -42,7 +42,7 @@ class JiGuang extends Api
             } elseif (in_array($event, ['changemobile']) && $userinfo) {
                 //被占用
                 $this->error(__('已被占用'));
-            } elseif (in_array($event, ['changepwd', 'resetpwd']) && !$userinfo) {
+            } elseif (in_array($event, ['changepwd', 'resetpwd',"verify_changemobile"]) && !$userinfo) {
                 //未注册
                 $this->error(__('未注册'));
             }
@@ -71,7 +71,7 @@ class JiGuang extends Api
     {
 
 
-        return $this->success();die;
+        //return $this->success();die;
 
         $mobile = $this->request->request("mobile");
         $event = $this->request->request("event");
@@ -88,7 +88,7 @@ class JiGuang extends Api
             } elseif (in_array($event, ['changemobile']) && $userinfo) {
                 //被占用
                 $this->error(__('已被占用'));
-            } elseif (in_array($event, ['changepwd', 'resetpwd']) && !$userinfo) {
+            } elseif (in_array($event, ['changepwd', 'resetpwd',"verify_changemobile"]) && !$userinfo) {
                 //未注册
                 $this->error(__('未注册'));
             }
