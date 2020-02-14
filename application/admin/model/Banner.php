@@ -62,7 +62,7 @@ class Banner extends Model
         $data=(new Bannername())->where([])->select();
         $temp=[];
         foreach ($data as $d){
-            $temp[$d["name"]=$d["name"];
+            $temp[$d["name"]]=$d["name"];
         }
 
         var_dump($temp);
