@@ -257,3 +257,18 @@ define(['fast', 'template', 'moment'], function (Fast, Template, Moment) {
     Backend.init();
     return Backend;
 });
+
+
+
+function formart_img(images) {
+    //<a href="javascript:"><img class="img-sm img-center" src="/uploads/20200212/e4b9b6a941e446074555d3b0eb5dad72.jpg,/uploads/20200212/e4b9b6a941e446074555d3b0eb5dad72.jpg,/uploads/20200212/e4b9b6a941e446074555d3b0eb5dad72.jpg,/uploads/20200212/e4b9b6a941e446074555d3b0eb5dad72.jpg"></a>
+
+    var imagesArr=images.split(",");
+    var str="";
+    for (i=0;i<imagesArr.length;i++){
+        str=str+'<a target="_blank" href="'+imagesArr[i]+'"><img class="img-sm img-center" src="'+imagesArr[i]+'"></a>';
+    }
+
+    return str;
+
+}
