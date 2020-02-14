@@ -722,6 +722,9 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
 
             $detail["likong_count"]=(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利空"])->count();
             $detail["lihao_count"]=(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利好"])->count();
+
+            $detail["img"]="http://app.biyouliao.com/uploads/20191224/1c68375a95c34071687ca6a56f5f8933.png";
+            //$detail["url"]="http://app.biyouliao.com/uploads/20191224/1c68375a95c34071687ca6a56f5f8933.png";
         }
 
 
