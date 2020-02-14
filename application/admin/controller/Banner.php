@@ -24,7 +24,7 @@ class Banner extends Backend
         $this->model = new \app\admin\model\Banner;
         $this->view->assign("topList", $this->model->getTopList());
         $this->view->assign("urlTypeList", $this->model->getUrlTypeList());
-        dd($this->model->getBannernameList());die;
+
         $this->view->assign("bannernameList", $this->model->getBannernameList());
         $this->view->assign("statusList", $this->model->getStatusList());
     }
