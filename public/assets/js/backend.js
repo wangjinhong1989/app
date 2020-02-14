@@ -266,7 +266,7 @@ function formart_img(images) {
     var imagesArr=images.split(",");
     var str="";
     for (i=0;i<imagesArr.length;i++){
-        str=str+'<a target="_blank" href="'+imagesArr[i]+'"><img class="img-sm img-center" src="'+imagesArr[i]+'"></a>';
+        str=str+'<a  style="margin-left: 5px;" target="_blank" href="'+imagesArr[i]+'"><img class="img-sm img-center" src="'+imagesArr[i]+'"></a>';
     }
 
     return str;
