@@ -38,6 +38,6 @@ class Bannername extends Backend
             foreach ($data as $d){
                 $temp[$d["name"]]=$d["name"];
             }
-           $this->success("",$data);
+        return json(($temp));
     }
 }
