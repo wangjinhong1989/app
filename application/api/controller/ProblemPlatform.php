@@ -27,8 +27,16 @@ class ProblemPlatform extends Api
 
         $data=[];
 
-        $data["rows"]=(new Problem())->where(['status'=>'显示'])->limit($offset,$page_size)->order("id","desc")->select();
-        $data["count"]=(new Problem())->where(['status'=>'显示'])->count();
+        $where=[];
+        $where["status"]=["eq","显示"];
+
+        $keyword=$this->request->request("keyword","");
+        if($keyword){
+            $where["reason"]=["like","%".$keyword."%"];
+        }
+
+        $data["rows"]=(new Problem())->where($where)->limit($offset,$page_size)->order("id","desc")->select();
+        $data["count"]=(new Problem())->where($where)->count();
 
         $data["page"]=$page;
         $data["rows"]=collection($data["rows"])->toArray();
