@@ -34,7 +34,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'start_time', title: __('Start_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'end_time', title: __('End_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'read_count', title: __('Read_count')},
-                        {field: 'show_count', title: __('Show_count')},
                         {field: 'is_reply', title: __('Is_reply'), searchList: {"是":__('是'),"否":__('否')}, formatter: Table.api.formatter.normal},
                         {field: 'is_mine', title: __('Is_mine'), searchList: {"是":__('是'),"否":__('否')}, formatter: Table.api.formatter.normal},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
