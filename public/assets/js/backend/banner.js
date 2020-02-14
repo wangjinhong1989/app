@@ -14,6 +14,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 }
             });
 
+            var bannerList="{$bannerList}";
             var table = $("#table");
 
             // 初始化表格
@@ -26,7 +27,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
                         {field: 'title', title: __('名称')},
-                        {field: 'bannername.name', title: __('Bannername.name'),searchList: JSON.parse("{$bannerList}")},
+                        {field: 'bannername.name', title: __('Bannername.name'),searchList: JSON.parse(bannerList)},
                         {field: 'img', title: __('Img'),formatter:formart_img},
                         {field: 'top', title: __('Top'), searchList: {"置顶":__('置顶'),"取消置顶":__('取消置顶')}, formatter: Table.api.formatter.normal},
                         {field: 'begin_time', title: __('Begin_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
