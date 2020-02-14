@@ -33,6 +33,14 @@ class Banner extends Model
     ];
     
 
+    protected static function init()
+    {
+        self::afterInsert(function ($row) {
+            $pk = $row->getPk();
+            $row->getQuery()->where($pk, $row[$pk])->update(['weigh' => $row[$pk]]);
+        });
+    }
+
     
     public function getTopList()
     {
@@ -100,7 +108,7 @@ class Banner extends Model
 
     public function bannername()
     {
-        return $this->belongsTo('Bannername', 'id', 'id', [], 'LEFT')->setEagerlyType(0);
+        return $this->belongsTo('Bannername', 'bannername_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 
 

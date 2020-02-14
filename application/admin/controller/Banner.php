@@ -66,8 +66,7 @@ class Banner extends Backend
 
             foreach ($list as $row) {
                 
-                $row->getRelation('bannername')->visible(['name']);
-				$row->getRelation('article')->visible(['title']);
+                
             }
             $list = collection($list)->toArray();
             $result = array("total" => $total, "rows" => $list);
