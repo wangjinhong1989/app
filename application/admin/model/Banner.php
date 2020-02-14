@@ -64,8 +64,6 @@ class Banner extends Model
         foreach ($data as $d){
             $temp[$d["name"]]=$d["name"];
         }
-
-        var_dump($temp);
         return $temp;
     }
 
