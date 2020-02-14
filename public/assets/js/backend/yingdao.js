@@ -57,7 +57,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         var imagesArr=images.split(",");
         var str="";
         for (i=0;i<imagesArr.length;i++){
-            str=str+'<a href="javascript:"><img class="img-sm img-center" src="'+imagesArr[i]+'"></a>';
+            str=str+'<a href="'+imagesArr[i]+'"><img class="img-sm img-center" src="'+imagesArr[i]+'"></a>';
         }
 
         return str;
