@@ -126,4 +126,19 @@ class Article extends Frontend
 
     }
 
+    // 分享到的详情页面。
+    public function  share_kuaixun(){
+
+
+        $model=new \app\admin\model\Article();
+        $res=$model->where(['id'=>$this->request->param('id')])->find();
+        //$res['articletype_ids']=explode(',',$res['articletype_ids']);
+        $this->view->assign('res',$res);
+        return $this->view->fetch();
+
+        //var_dump($res);
+
+    }
+
+
 }
