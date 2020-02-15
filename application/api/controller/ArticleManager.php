@@ -187,7 +187,7 @@ class ArticleManager extends Api
                 $ad[0]["username"]="";
                 $ad[0]["avatar"]="";
                 $ad[0]["is_ad"]=true;
-                $ad[0]["create_time"]=date("Y-m-d H:i:s",$ad[0]["create_time"]);
+            //    $ad[0]["create_time"]=date("Y-m-d H:i:s",$ad[0]["create_time"]);
 
                 if($ad[0]["create_time"]<time()-24*3600){
                     $ad[0]["create_time"]=date("Y-m-d",$ad[0]["create_time"]);
