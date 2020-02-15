@@ -599,7 +599,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
                 $detail["authentication_type"]="企业";
             }
             // 是否关注了该用户.
-
+            $detail["create_time"]=formart_time($detail["create_time"]);
             $guanzhu=(new \app\admin\model\Guanzhu())->where(["user_id"=>$user_id,"follow_id"=>$article->user_id])->find();
             if($guanzhu){
                 $detail["is_guanzhu"]="是";
@@ -730,7 +730,8 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
 
             $detail["image"]="http://app.biyouliao.com/uploads/20191224/1c68375a95c34071687ca6a56f5f8933.png";
             //$detail["url"]="http://app.biyouliao.com/uploads/20191224/1c68375a95c34071687ca6a56f5f8933.png";
-            $detail["create_time"]=date("Y-m-d H:i:s",$detail["create_time"]);
+            //$detail["create_time"]=date("Y-m-d H:i:s",$detail["create_time"]);
+            $detail["create_time"]=formart_time($detail["create_time"]);
         }
 
 
