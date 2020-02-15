@@ -37,12 +37,13 @@ class Project extends Api
         $data["rows"]=(new \app\admin\model\Project())->where($where)->limit($offset,$page_size)->order("hot","desc")->select();
         $data["count"]=(new \app\admin\model\Project())->where($where)->count();
 
-        foreach ($data["rows"] as $k=>&$v){
-            $v["rank"]=($data["count"]-(($page-1)*$page_size-1)-$k);
-        }
+
         $data["page"]=$page;
 
         $data["total_page"]=ceil($data["count"]/$page_size);
+        foreach ($data["rows"] as $k=>&$v){
+            $v["rank"]=($data["count"]-(($data["total_page"]-1)*$page_size-1)-$k);
+        }
         $this->success("成功",$data);
     }
 
