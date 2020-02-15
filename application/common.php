@@ -440,3 +440,24 @@ if (!function_exists('dd')) {
         file_put_contents('log.txt',date("Y-m-d H:i:s")." : ".$content."\r\n",$flag);
     }
 }
+
+// 记录打印 .
+if (!function_exists('formart_time')) {
+
+        function formart_time($time){
+
+        if(!is_numeric($time)){
+            return $time;
+        }
+        $temp=time()-$time;
+        if($temp>24*3600){
+            return date("Y-m-d",$time);
+        }else if($temp<=24*3600&&$temp>3600){
+            return ceil($temp/3600)."小时前";
+        }else if($temp<3600){
+            return ceil($temp/60)."分钟前";
+        }
+        return date("Y-m-d",$time);
+    }
+}
+

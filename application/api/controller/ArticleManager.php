@@ -155,7 +155,7 @@ class ArticleManager extends Api
 
 
         foreach ($data["rows"] as &$value){
-            $value["create_time"]=$this->formart_time($value["create_time"]);
+            $value["create_time"]=formart_time($value["create_time"]);
 
             $value["count_lihao"]=$value["count_lihao"]==null?0:$value["count_lihao"];
             $value["count_likong"]=$value["count_likong"]==null?0:$value["count_likong"];
@@ -181,7 +181,7 @@ class ArticleManager extends Api
                 $ad[0]["username"]="";
                 $ad[0]["avatar"]="";
                 $ad[0]["is_ad"]=true;
-                $ad[0]["create_time"]=$this->formart_time($ad[0]["create_time"]);
+                $ad[0]["create_time"]=formart_time($ad[0]["create_time"]);
                 array_push($data["rows"],$ad[0]);
             }
         }
@@ -203,21 +203,6 @@ class ArticleManager extends Api
 
     }
 
-    public function formart_time($time){
-
-        if(!is_numeric($time)){
-            return $time;
-        }
-        $temp=time()-$time;
-        if($temp>24*3600){
-            return date("Y-m-d",$time);
-        }else if($temp<=24*3600&&$temp>3600){
-            return ceil($temp/3600)."小时前";
-        }else if($temp<3600){
-            return ceil($temp/60)."分钟前";
-        }
-        return date("Y-m-d",$time);
-    }
 
     public function test(){
         $query=new Query();
@@ -344,6 +329,9 @@ class ArticleManager extends Api
             ->join("fa_user user","user.id=article.user_id","left")
             ->limit($offset,$page_size)->count();
 
+        foreach ($data["rows"] as $key=>$v){
+            $data["rows"][$key]["create_time"]=formart_time($data["rows"][$key]["create_time"]);
+        }
 
 
         // 是否需要返回广告.
@@ -434,6 +422,7 @@ class ArticleManager extends Api
 
         foreach ($data["rows"] as $key=>$value){
             $data["rows"][$key]["is_ad"]=false;
+            $data["rows"][$key]["create_time"]=formart_time($data["rows"][$key]["create_time"]);
         }
 
         if(!empty($ad)){
