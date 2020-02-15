@@ -38,7 +38,7 @@ class Project extends Api
         $data["count"]=(new \app\admin\model\Project())->where($where)->count();
 
         foreach ($data["rows"] as $k=>&$v){
-            $v["rank"]=($data["count"]-(($page-1)*$page_size-1));
+            $v["rank"]=($data["count"]-(($page-1)*$page_size-1)-$k);
         }
         $data["page"]=$page;
 
