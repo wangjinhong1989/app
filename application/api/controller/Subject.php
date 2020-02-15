@@ -79,8 +79,8 @@ class Subject extends Api
         $id=$this->request->request("id",0);
         $model=new \app\admin\model\Subject();
         $where=["status"=>"显示"];
-        $where["id"]=$id;
-        $detail=$model->where($where)->find();
+
+        $detail=$model->where($where)->limit(0,1)->find();
         if($detail) {
             $detail->read_count = $detail->read_count + 1;
             $detail->save();
