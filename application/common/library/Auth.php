@@ -161,6 +161,10 @@ class Auth
             'prevtime'  => $time,
             'status'    => 'normal'
         ]);
+
+        if($params["avatar"]==""){
+            $params["avatar"]="http://app.biyouliao8.com/g.jpg";
+        }
         $params['password'] = $this->getEncryptPassword($password, $params['salt']);
         $params = array_merge($params, $extend);
 
