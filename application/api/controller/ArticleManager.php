@@ -155,7 +155,14 @@ class ArticleManager extends Api
 
 
         foreach ($data["rows"] as &$value){
-            $value["create_time"]=date("Y-m-d H:i:s",$value["create_time"]);
+            if($value<time()-24*3600){
+                $value["create_time"]=date("Y-m-d",$value["create_time"]);
+            }else if($value["create_time"]+3600>time()){
+                $value["create_time"]=ceil($value["create_time"]/60);
+            }else{
+                $value["create_time"]=ceil((time()-$value["create_time"])/3600);
+            }
+
             $value["count_lihao"]=$value["count_lihao"]==null?0:$value["count_lihao"];
             $value["count_likong"]=$value["count_likong"]==null?0:$value["count_likong"];
         }
@@ -181,6 +188,15 @@ class ArticleManager extends Api
                 $ad[0]["avatar"]="";
                 $ad[0]["is_ad"]=true;
                 $ad[0]["create_time"]=date("Y-m-d H:i:s",$ad[0]["create_time"]);
+
+                if($ad[0]["create_time"]<time()-24*3600){
+                    $ad[0]["create_time"]=date("Y-m-d",$ad[0]["create_time"]);
+                }else if($ad[0]["create_time"]+3600>time()){
+                    $ad[0]["create_time"]=ceil($ad[0]["create_time"]/60)."分钟前";
+                }else{
+                    $ad[0]["create_time"]=ceil((time()-$ad[0]["create_time"]/3600))."小时前";
+                }
+
                 array_push($data["rows"],$ad[0]);
             }
         }
