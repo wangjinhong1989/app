@@ -78,8 +78,8 @@ class Reply extends Api
                 $l["is_my_article"]="否";
             }
 
-            $l["createtime"]=date("Y-m-d H:i:s",$l["createtime"]);
-            $l["reply_time"]=date("Y-m-d H:i:s",$l["reply_time"]);
+            $l["createtime"]=formart_time(($l["createtime"]));
+            $l["reply_time"]=formart_time($l["reply_time"]);
             foreach ($l as $key=>$value){
                 if(is_null($value)){
                     $l[$key]="";
@@ -143,8 +143,8 @@ class Reply extends Api
                 $l["is_my_article"]="否";
             }
 
-            $l["createtime"]=date("Y-m-d H:i:s",$l["createtime"]);
-            $l["reply_time"]=date("Y-m-d H:i:s",$l["reply_time"]);
+            $l["createtime"]=formart_time(($l["createtime"]));
+            $l["reply_time"]=formart_time($l["reply_time"]);
             foreach ($l as $key=>$value){
                 if(is_null($value)){
                     $l[$key]="";
