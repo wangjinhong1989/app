@@ -2,6 +2,7 @@
 
 return [
     'Id'         => 'ID',
+    'Weigh'      => '排序',
     'Files'      => '图片',
     'Url'        => '外链',
     'Top'        => '置顶',
