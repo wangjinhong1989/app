@@ -191,7 +191,9 @@ class Reply extends Api
 
 
         foreach ($lists as &$l){
-            $l["create_time"]=date("Y-m-d H:i:s",$l["createtime"]);
+            $l["create_time"]=formart_time($l["createtime"]);
+
+
         }
         $data["page"]=$page;
         $data["rows"]=$lists;
