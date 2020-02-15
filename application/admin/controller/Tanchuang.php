@@ -3,6 +3,7 @@
 namespace app\admin\controller;
 
 use app\common\controller\Backend;
+use think\Db;
 
 /**
  * 插播广告管理
