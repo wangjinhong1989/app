@@ -35,10 +35,10 @@ class Banner extends Model
 
     protected static function init()
     {
-        self::afterInsert(function ($row) {
-            $pk = $row->getPk();
-            $row->getQuery()->where($pk, $row[$pk])->update(['weigh' => $row[$pk]]);
-        });
+//        self::afterInsert(function ($row) {
+//            $pk = $row->getPk();
+//            $row->getQuery()->where($pk, $row[$pk])->update(['weigh' => $row[$pk]]);
+//        });
     }
 
     
