@@ -155,12 +155,13 @@ class ArticleManager extends Api
 
 
         foreach ($data["rows"] as &$value){
-            if($value<time()-24*3600){
-                $value["create_time"]=date("Y-m-d",$value["create_time"]);
+            if(($value>time()-24*3600)&&($value<time()+3600)){
+                $value["create_time"]=ceil((time()-$value["create_time"])/3600)."小时前";
             }else if($value["create_time"]+3600>time()){
                 $value["create_time"]=ceil((time()-$value["create_time"])/60)."分钟前";
-            }else{
-                $value["create_time"]=ceil((time()-$value["create_time"])/3600)."小时前";
+            }else {
+
+                $value["create_time"]=date("Y-m-d",$value["create_time"]);
             }
 
             $value["count_lihao"]=$value["count_lihao"]==null?0:$value["count_lihao"];
