@@ -82,7 +82,7 @@ class Tanchuang extends Api
 
         $data["total_page"]=ceil($data["count"]/$page_size);
 
-        $this->success("成功",$data);
+        $this->success("成功",$data1);
     }
 
 
