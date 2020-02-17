@@ -551,10 +551,11 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
             $article->read_count=$article->read_count+1;
             $article->show_count=$article->show_count+1;
             $article->save();
-
-            //  增加阅读历史。
-            $user_id=$this->auth->id;
             $detail['user']=null;
+            if(!empty($this->auth->id)){
+                //  增加阅读历史。
+                $user_id=$this->auth->id;
+                $detail['user']=null;
 
                 // 增加阅读历史记录.
                 $his=new ReadHistory();
@@ -566,6 +567,8 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
                     $find->save();
                 }else
                     $his->create(["user_id"=>$user_id,"article_id"=>$article->id,"time"=>time()]);
+            }
+
 
             $label=new \app\admin\model\Label();
 
@@ -601,11 +604,17 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
             }
             // 是否关注了该用户.
             $detail["create_time"]=formart_time($detail["create_time"]);
-            $guanzhu=(new \app\admin\model\Guanzhu())->where(["user_id"=>$user_id,"follow_id"=>$article->user_id])->find();
-            if($guanzhu){
-                $detail["is_guanzhu"]="是";
-            }else
+
+            if(!empty($this->auth->id)){
+                $guanzhu=(new \app\admin\model\Guanzhu())->where(["user_id"=>$user_id,"follow_id"=>$article->user_id])->find();
+                if($guanzhu){
+                    $detail["is_guanzhu"]="是";
+                }else
+                    $detail["is_guanzhu"]="否";
+            }else {
                 $detail["is_guanzhu"]="否";
+            }
+
         }
 
 
