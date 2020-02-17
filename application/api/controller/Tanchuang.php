@@ -27,8 +27,9 @@ class Tanchuang extends Api
         $where["begin_time"]=["egt",time()];
         $where["end_time"]=["elt",time()];
 
+        $model=(new \app\admin\model\Tanchuang());
         $lists=(new \app\admin\model\Tanchuang())->where($where)->find();
-
+        dd($model->getLastSql());
         $this->success("成功",$lists);
     }
 
