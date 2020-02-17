@@ -27,10 +27,10 @@ class Tanchuang extends Api
         $where["begin_time"]=["elt",time()];
         $where["end_time"]=["egt",time()];
 
-        $model=(new \app\admin\model\Tanchuang());
         $lists=(new \app\admin\model\Tanchuang())->where($where)->find();
         $lists=collection($lists)->toArray();
 
+        dd($lists);
         if($lists){
 
             $temp=explode(",",$lists["image"]);
