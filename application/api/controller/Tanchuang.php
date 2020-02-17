@@ -29,6 +29,7 @@ class Tanchuang extends Api
 
         $model=(new \app\admin\model\Tanchuang());
         $lists=(new \app\admin\model\Tanchuang())->where($where)->find();
+        $lists->image="http://app.biyouliao8.com".$lists->image;
         dd($model->getLastSql());
         $this->success("成功",$lists);
     }
