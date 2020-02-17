@@ -27,7 +27,9 @@ class Tanchuang extends Model
     protected $append = [
         'url_type_text',
         'status_text',
-        'create_time_text'
+        'create_time_text',
+        'begin_time_text',
+        'end_time_text',
     ];
     
 
@@ -70,6 +72,27 @@ class Tanchuang extends Model
         return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
     }
 
+    public function getBeginTimeTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['begin_time']) ? $data['begin_time'] : '');
+        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
+    }
+
+
+    public function getEndTimeTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['end_time']) ? $data['end_time'] : '');
+        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
+    }
+    protected function setBeginTimeAttr($value)
+    {
+        return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
+    }
+
+    protected function setEndTimeAttr($value)
+    {
+        return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
+    }
 
     public function article()
     {
