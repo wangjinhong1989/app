@@ -281,6 +281,17 @@ class User extends Api
 
         $data["auth_value"]=(new \app\admin\model\User())->auth_status1($user_id);
 
+        $query=new Query();
+        $count=$query->table("fa_article")->alias("article")->where(["user_id"=>$user_id])->count();
+
+        $data["my_article_count"]=$count;
+
+
+        $query=new Query();
+        $count=$query->table("fa_shoucang")->alias("fa_shoucang")->where(["user_id"=>$user_id])->count();
+
+        $data["my_collect_count"]=$count;
+
         $this->success(__('成功'), $data);
     }
 

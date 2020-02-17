@@ -204,17 +204,6 @@ class ArticleManager extends Api
     }
 
 
-    public function my_count()
-    {
-
-
-        $query=new Query();
-        $count=$query->table("fa_article")->alias("article")->where(["user_id"=>$this->auth->id])->count();
-
-        $this->success("",$count);
-
-    }
-
 
     public function test(){
         $query=new Query();
