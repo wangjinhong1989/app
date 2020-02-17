@@ -22,7 +22,7 @@ class Version extends Api
     public function Lists()
     {
         $model= new \app\admin\model\Version();
-        $lists=$model->where(["status"=>"显示"])->order("version_code","desc")->limit(0,1)->find();
+        $lists=$model->where(["status"=>"是"])->order("version_code","desc")->limit(0,1)->find();
         $this->success("成功",$lists);
     }
 }
