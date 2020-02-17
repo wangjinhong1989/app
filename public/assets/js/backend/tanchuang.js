@@ -29,6 +29,8 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'title', title: __('广告标题')},
                         {field: 'paixu', title: __('Paixu')},
                         {field: 'image', title: __('Image'), events: Table.api.events.image, formatter: Table.api.formatter.image},
+                        {field: 'begin_time', title: __('开始时间'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
+                        {field: 'end_time', title: __('结束时间'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'url_type', title: __('Url_type'), searchList: {"内链":__('内链'),"外链":__('外链')}, formatter: Table.api.formatter.normal},
                         {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
                         {field: 'status', title: __('Status'), searchList: {"显示":__('显示'),"隐藏":__('隐藏')}, formatter: Table.api.formatter.status},
