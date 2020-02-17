@@ -29,8 +29,13 @@ class Tanchuang extends Api
 
         $model=(new \app\admin\model\Tanchuang());
         $lists=(new \app\admin\model\Tanchuang())->where($where)->find();
-        $lists->image="http://app.biyouliao8.com".$lists->image;
-        dd($model->getLastSql());
+        $lists=collection($lists)->toArray();
+
+        $temp=explode(",",$lists["image"]);
+        foreach ($temp as &$t){
+            $t="http://app.biyouliao8.com".$t;
+        }
+        $lists["images"]=$temp;
         $this->success("成功",$lists);
     }
 
