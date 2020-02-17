@@ -24,8 +24,8 @@ class Tanchuang extends Api
     {
         $where=[];
         $where["status"]=["eq","显示"];
-        $where["begin_time"]=["egt",time()];
-        $where["end_time"]=["elt",time()];
+        $where["begin_time"]=["elt",time()];
+        $where["end_time"]=["egt",time()];
 
         $model=(new \app\admin\model\Tanchuang());
         $lists=(new \app\admin\model\Tanchuang())->where($where)->find();
