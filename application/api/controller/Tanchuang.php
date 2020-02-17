@@ -28,7 +28,6 @@ class Tanchuang extends Api
         $where["end_time"]=["egt",time()];
 
         $lists=(new \app\admin\model\Tanchuang())->where($where)->find();
-        $lists=collection($lists)->toArray();
 
         dd($lists);
         if($lists){
