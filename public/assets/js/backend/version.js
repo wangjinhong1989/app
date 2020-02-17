@@ -25,17 +25,16 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'oldversion', title: __('Oldversion')},
-                        {field: 'newversion', title: __('Newversion')},
+                        {field: 'version_code', title: __('Version_code')},
                         {field: 'packagesize', title: __('Packagesize')},
                         {field: 'content', title: __('Content')},
                         {field: 'downloadurl', title: __('Downloadurl'), formatter: Table.api.formatter.url},
                         {field: 'file', title: __('File')},
-                        {field: 'enforce', title: __('Enforce')},
+                        {field: 'enforce', title: __('Enforce'), searchList: {"是":__('是'),"否":__('否')}, formatter: Table.api.formatter.normal},
                         {field: 'createtime', title: __('Createtime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'updatetime', title: __('Updatetime'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'weigh', title: __('Weigh')},
-                        {field: 'status', title: __('Status'), formatter: Table.api.formatter.status},
+                        {field: 'status', title: __('Status'), searchList: {"是":__('是'),"否":__('否')}, formatter: Table.api.formatter.status},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]

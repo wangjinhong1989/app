@@ -25,7 +25,8 @@ class Version extends Model
 
     // 追加属性
     protected $append = [
-
+        'enforce_text',
+        'status_text'
     ];
     
 
@@ -38,9 +39,31 @@ class Version extends Model
     }
 
     
+    public function getEnforceList()
+    {
+        return ['是' => __('是'), '否' => __('否')];
+    }
+
+    public function getStatusList()
+    {
+        return ['是' => __('是'), '否' => __('否')];
+    }
 
 
+    public function getEnforceTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['enforce']) ? $data['enforce'] : '');
+        $list = $this->getEnforceList();
+        return isset($list[$value]) ? $list[$value] : '';
+    }
 
+
+    public function getStatusTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['status']) ? $data['status'] : '');
+        $list = $this->getStatusList();
+        return isset($list[$value]) ? $list[$value] : '';
+    }
 
 
 
