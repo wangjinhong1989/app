@@ -65,21 +65,24 @@ class Tanchuang extends Api
         $count=$model->where($where)->count();
 
 
+        $data1=[];
         foreach ($lists as &$l){
             $temp=explode(",",$l["image"]);
             foreach ($temp as &$t){
+
                 $t="http://app.biyouliao8.com".$t;
+                $l["image"]=$t;
+                array_push($data1,$l);
             }
-            $l["images"]=$temp;
 
         }
         $data["page"]=$page;
-        $data["rows"]=$lists;
+        $data["rows"]=$data1;
         $data["count"]=$count;
 
         $data["total_page"]=ceil($data["count"]/$page_size);
 
-        $this->success("成功",$lists);
+        $this->success("成功",$data);
     }
 
 
