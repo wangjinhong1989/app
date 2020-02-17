@@ -29,7 +29,11 @@ class Reply extends Api
         $offset=($page-1)*$page_size;
         $data=[];
 
-        $my_id=$this->auth->id;
+        if(empty($this->auth->id)){
+            $my_id=0;
+        }else
+            $my_id=$this->auth->id;
+
         $where=[];
         $status=$this->request->request("status","");
         if($status){
@@ -53,7 +57,7 @@ class Reply extends Api
 
         $author_id=$this->request->request("author_id",0);
         if($author_id){
-            $where["author_id"]=["eq",$this->auth->id];
+            $where["author_id"]=["eq",$my_id];
         }
 
 
@@ -89,7 +93,7 @@ class Reply extends Api
 
 
             $l["dianzan_count"]=(new Query())->table("fa_dianzan")->where(["at_id"=>$l["id"]])->count();
-            $temp=(new Query())->table("fa_dianzan")->where(["at_id"=>$l["id"],"user_id"=>$my_id])->count();
+            $temp=(new Query())->table("fa_dianzan")->where(["at_id"=>$l["id"],"user_id"=>$l["author_id"]])->count();
             if($temp){
                 $l["flag_dianzhan"]=true;
             }else
