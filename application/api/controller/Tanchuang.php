@@ -31,11 +31,14 @@ class Tanchuang extends Api
         $lists=(new \app\admin\model\Tanchuang())->where($where)->find();
         $lists=collection($lists)->toArray();
 
-        $temp=explode(",",$lists["image"]);
-        foreach ($temp as &$t){
-            $t="http://app.biyouliao8.com".$t;
+        if($lists){
+
+            $temp=explode(",",$lists["image"]);
+            foreach ($temp as &$t){
+                $t="http://app.biyouliao8.com".$t;
+            }
+            $lists["images"]=$temp;
         }
-        $lists["images"]=$temp;
         $this->success("成功",$lists);
     }
 
