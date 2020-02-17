@@ -21,10 +21,8 @@ class Version extends Api
      */
     public function Lists()
     {
-
-        $old_version=$this->request->param("oldversion","");
         $model= new \app\admin\model\Version();
-        $lists=$model->where(["oldversion"=>$old_version,"status"=>"normal"])->find();
+        $lists=$model->where(["status"=>"显示"])->order("version_code","desc")->limit(0,1)->find();
         $this->success("成功",$lists);
     }
 }
