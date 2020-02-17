@@ -57,6 +57,8 @@ class Tanchuang extends Api
             $where["url_type"]=["eq",$url_type];
         }
 
+        $where["begin_time"]=["elt",time()];
+        $where["end_time"]=["egt",time()];
 
         $model=(new \app\admin\model\Tanchuang());
         $lists=$model->where($where)->order("paixu","asc")->orderRaw("rand()")->limit($offset,$page_size)->select();
