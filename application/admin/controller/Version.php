@@ -22,7 +22,8 @@ class Version extends Backend
     {
         parent::_initialize();
         $this->model = new \app\admin\model\Version;
-
+        $this->view->assign("enforceList", $this->model->getEnforceList());
+        $this->view->assign("statusList", $this->model->getStatusList());
     }
     
     /**
