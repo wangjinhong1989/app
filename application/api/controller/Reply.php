@@ -14,7 +14,7 @@ use think\db\Query;
  */
 class Reply extends Api
 {
-    protected $noNeedLogin = [];
+    protected $noNeedLogin = ["lists"];
     protected $noNeedRight = ['*'];
 
     /**
