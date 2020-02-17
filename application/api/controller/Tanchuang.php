@@ -27,7 +27,7 @@ class Tanchuang extends Api
         $where["begin_time"]=["egt",time()];
         $where["end_time"]=["elt",time()];
 
-        $lists=(new \app\admin\model\Tanchuang())->where($where)->order("weigh","asc")->find();
+        $lists=(new \app\admin\model\Tanchuang())->where($where)->find();
 
         $this->success("成功",$lists);
     }
