@@ -94,15 +94,11 @@ class MyCollect extends Api
             $user_id = $user->id;
             $article_id = $this->request->request('article_id');
 
-
-            if (!$article_id) {
-                return $this->error(__('参数存在空'));
-            }
-            if (!Article::getById($article_id)) {
-                return $this->error(__('文章不存在'));
-            }
-
+            $article_id=intval($article_id);
+            if($article_id>0)
             $model->where(['user_id' => $user_id, 'article_id' => $article_id])->delete();
+            else
+                $model->where(['user_id' => $user_id])->delete();
 
             return $this->success();
         } catch (Exception $e) {
