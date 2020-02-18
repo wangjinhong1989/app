@@ -38,6 +38,16 @@ class MyCollect extends Api
 
         $data["page"]=$page;
 
+        foreach ($data["rows"] as $k=>&$v){
+
+            $user=(new \app\admin\model\User())->where(["id"=>$v["article"]["user_id"]])->find();
+            $v["article"]["author_name"]="";
+            $v["article"]["author_avatar"]="";
+            if($user){
+                $v["article"]["author_name"]=$user->username;
+                $v["article"]["author_avatar"]=$user->avatar;
+            }
+        }
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功", $data);
     }
