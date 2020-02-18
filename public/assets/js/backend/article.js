@@ -45,7 +45,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 ]
             });
 
-            table.on(".table .table-striped .table-bordered .table-hover .table-nowrap",function () {
+            table.on("post-body.bs.table",function () {
                 $(".btn-editone").data("area",["900px","95%"]);
             });
 
