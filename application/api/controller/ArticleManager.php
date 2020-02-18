@@ -567,6 +567,8 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
                     $find->save();
                 }else
                     $his->create(["user_id"=>$user_id,"article_id"=>$article->id,"time"=>time()]);
+            }else{
+                dd("未登路");
             }
 
 
