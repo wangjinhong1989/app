@@ -45,6 +45,10 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 ]
             });
 
+            table.on("post-body .bs .table",function () {
+                $(".btn-editone").data("area",["900px","95%"]);
+            });
+
             // 为表格绑定事件
             Table.api.bindevent(table);
         },
