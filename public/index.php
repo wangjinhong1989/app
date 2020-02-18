@@ -1,5 +1,9 @@
 <?php
 
+
+header('Access-Control-Allow-Origin: *'); //星号表示允许所有来源跨域请求，生产环境建议配置成你的来源站点的域名
+header("Access-Control-Allow-Headers: token,hehe,dada,此处增加你的自定义请求头,Origin, X-Requested-With, Content-Type, Accept");
+header('Access-Control-Allow-Methods: POST,GET,OPTIONS');
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------
