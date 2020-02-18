@@ -555,7 +555,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
 
             dd($this->auth->id);
 
-            if(!empty($this->auth->id)){
+            if(!isset($this->auth->id)){
                 //  增加阅读历史。
                 $user_id=$this->auth->id;
                 $detail['user']=null;
@@ -571,7 +571,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
                 }else
                     $his->create(["user_id"=>$user_id,"article_id"=>$article->id,"time"=>time()]);
             }else{
-                dd("未登路");
+                dd("not login");
             }
 
 
