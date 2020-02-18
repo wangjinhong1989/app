@@ -77,6 +77,7 @@ class Service
     public static function unzip($name)
     {
         $file = RUNTIME_PATH . 'addons' . DS . $name . '.zip';
+        dd($file);
         $dir = ADDON_PATH . $name . DS;
         if (class_exists('ZipArchive')) {
             $zip = new ZipArchive;
