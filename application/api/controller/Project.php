@@ -42,7 +42,7 @@ class Project extends Api
 
         $data["total_page"]=ceil($data["count"]/$page_size);
         foreach ($data["rows"] as $k=>&$v){
-            $v["rank"]=(($page-1)*$page_size)+$k;
+            $v["rank"]=(($page-1)*$page_size)+$k+1;
         }
         $this->success("成功",$data);
     }
