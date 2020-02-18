@@ -552,6 +552,9 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
             $article->show_count=$article->show_count+1;
             $article->save();
             $detail['user']=null;
+
+            dd($this->auth->id);
+
             if(!empty($this->auth->id)){
                 //  增加阅读历史。
                 $user_id=$this->auth->id;
