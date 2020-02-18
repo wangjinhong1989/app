@@ -14,6 +14,8 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 }
             });
 
+            $(".btn-add").data("area",["900px","95%"]);
+            $(".btn-edit").data("area",["900px","95%"]);
             var table = $("#table");
 
             // 初始化表格

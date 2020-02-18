@@ -15,7 +15,8 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             });
 
             var table = $("#table");
-
+            $(".btn-add").data("area",["900px","95%"]);
+            $(".btn-edit").data("area",["900px","95%"]);
             // 初始化表格
             table.bootstrapTable({
                 url: $.fn.bootstrapTable.defaults.extend.index_url,
