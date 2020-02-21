@@ -532,21 +532,21 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
             $detail["content"]=str_replace('</body></html>',"",$detail["content"]);
 
 
-            $detail["content"]="<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">
-<html>
-<head>
-<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-16\">
-<meta http-equiv=\"Content-Style-Type\" content=\"text/css\">
-<title></title>
-<meta name=\"Generator\" content=\"Cocoa HTML Writer\">
-<style type=\"text/css\">
-p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px '.AppleSystemUIFont'}
-span.s1 {font-family: '.SFUI-Regular'; font-weight: normal; font-style: normal; font-size: 16.00px}
-span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font-size: 12.00px}
-</style>
-</head>
-<body>".$detail["content"]."</body>
-</html>";
+//            $detail["content"]="<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">
+//<html>
+//<head>
+//<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-16\">
+//<meta http-equiv=\"Content-Style-Type\" content=\"text/css\">
+//<title></title>
+//<meta name=\"Generator\" content=\"Cocoa HTML Writer\">
+//<style type=\"text/css\">
+//p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px '.AppleSystemUIFont'}
+//span.s1 {font-family: '.SFUI-Regular'; font-weight: normal; font-style: normal; font-size: 16.00px}
+//span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font-size: 12.00px}
+//</style>
+//</head>
+//<body>".$detail["content"]."</body>
+//</html>";
             $detail["content"]=str_replace('height=\"310\" width=\"500\"',"height=\"310px\" width=\"100%\"",$detail["content"]);
             $article=$model->where(["id"=>$id])->find();
             $article->read_count=$article->read_count+1;
