@@ -551,6 +551,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
             $detail["content"]=str_replace('width=\"500\"',"style='width:100%;height:100%;'",$detail["content"]);
             $detail["content"]=str_replace('width="510"',"style='width:100%;height:100%;'",$detail["content"]);
             $detail["content"]=str_replace('width="100%"',"style='width:100%;height:100%;'",$detail["content"]);
+            $detail["content"]=str_replace('height="100%"',"",$detail["content"]);
             $article=$model->where(["id"=>$id])->find();
             $article->read_count=$article->read_count+1;
             $article->show_count=$article->show_count+1;
