@@ -30,7 +30,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'status', title: __('Status'), searchList: {"审核中":__('审核中'),"审核通过":__('审核通过'),"审核不通过":__('审核不通过')}, formatter: Table.api.formatter.status},
                         {field: 'name', title: __('Name')},
                         {field: 'certificates_number', title: __('Certificates_number')},
-                        {field: 'files', title: __('Files')},
+                        {field: 'files', title: __('Files'),formatter:formart_img},
                         {field: 'note', title: __('Note')},
                         {field: 'time', title: __('Time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'user.username', title: __('User.username')},
