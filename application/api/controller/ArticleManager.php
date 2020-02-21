@@ -547,7 +547,8 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
 //</head>
 //<body>".$detail["content"]."</body>
 //</html>";
-            $detail["content"]=str_replace('height="310" width="500"',"style='width:100%;height:auto;'",$detail["content"]);
+            $detail["content"]=str_replace('height="310"',"",$detail["content"]);
+            $detail["content"]=str_replace('width="500"',"style='width:100%;height:auto;'",$detail["content"]);
             $article=$model->where(["id"=>$id])->find();
             $article->read_count=$article->read_count+1;
             $article->show_count=$article->show_count+1;
