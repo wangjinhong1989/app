@@ -4,10 +4,6 @@ return array (
   'autoload' => false,
   'hooks' => 
   array (
-    'config_init' => 
-    array (
-      0 => 'nkeditor',
-    ),
     'sms_send' => 
     array (
       0 => 'smsbao',
