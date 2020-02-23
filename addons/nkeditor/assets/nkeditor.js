@@ -8022,9 +8022,9 @@ KindEditor.plugin('media', function (K) {
                             }
                             if (!match) {
 
-                                console.log(youkuMatch)
-                                console.log(qqMatch)
-                                console.log(qqMatch2)
+                                console.log(youkuMatch,"111")
+                                console.log(qqMatch,"222")
+                                console.log(qqMatch2,"xxx")
 
                                  if (youkuMatch && youkuMatch[1].length) {
                                     var html='<iframe frameborder="0" height="498" width="510" src="//player.youku.com/embed/'+ youkuMatch[1]+'" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
