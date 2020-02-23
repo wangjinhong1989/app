@@ -7991,6 +7991,7 @@ KindEditor.plugin('media', function (K) {
                             var url = K.trim(urlBox.val()),
                                 width = widthBox.val(),
                                 height = heightBox.val();
+                            // 就这个位置哈, 使用通用代码。
                             var match = url.match(/^<iframe\s(.*?)src=('|")(.*?)('|")/);
                             if (!match) {
                                 if (url == 'http://' || K.invalidUrl(url)) {
@@ -7999,6 +8000,16 @@ KindEditor.plugin('media', function (K) {
                                     return;
                                 }
                             }
+
+                            //  这个位置哟.
+
+                            var youkuRegExp = /\/\/v\.youku\.com\/v_show\/id_(\w+)=*\.html/;
+                            var youkuMatch = url.match(youkuRegExp);
+                            var qqRegExp = /\/\/v\.qq\.com.*?vid=(.+)/;
+                            var qqMatch = url.match(qqRegExp);
+                            var qqRegExp2 = /\/\/v\.qq\.com\/x?\/?(page|cover).*?\/([^\/]+)\.html\??.*/;
+                            var qqMatch2 = url.match(qqRegExp2);
+
                             if (!/^\d*$/.test(width)) {
                                 K.options.errorMsgHandler(self.lang('invalidWidth'), "error");
                                 widthBox[0].focus();
@@ -8018,7 +8029,16 @@ KindEditor.plugin('media', function (K) {
                                     autostart: autostartBox[0].checked ? 'true' : 'false',
                                     loop: 'true'
                                 });
-                            } else {
+                            }
+                            else if (youkuMatch && youkuMatch[1].length) {
+                                var html='<iframe frameborder="0" height="498" width="510" src="//player.youku.com/embed/'+ youkuMatch[1]+'" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+                            }
+                            else if ((qqMatch && qqMatch[1].length) || (qqMatch2 && qqMatch2[2].length)) {
+                                var vid = ((qqMatch && qqMatch[1].length) ? qqMatch[1] : qqMatch2[2]);
+
+                                var html='<iframe frameborder="0" height="310" width="510" src="http://v.qq.com/iframe/player.html?vid='+ vid+'&amp;auto=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+                            }
+                            else {
                                 var html = '<iframe src="' + match[3] + '" frameborder="0" style="width:' + width + 'px;height:' + height + 'px;"></iframe>';
                             }
                             self.insertHtml(html).hideDialog().focus();
