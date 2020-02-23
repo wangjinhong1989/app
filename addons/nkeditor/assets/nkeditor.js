@@ -8020,6 +8020,9 @@ KindEditor.plugin('media', function (K) {
                                 heightBox[0].focus();
                                 return;
                             }
+                            console.log(youkuMatch,"111")
+                            console.log(qqMatch,"222")
+                            console.log(qqMatch2,"xxx")
                             if (!match) {
 
                                 console.log(youkuMatch,"111")
