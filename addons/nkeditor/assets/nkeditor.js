@@ -8022,13 +8022,17 @@ KindEditor.plugin('media', function (K) {
                             }
                             if (!match) {
 
+                                console.log(youkuMatch)
+                                console.log(qqMatch)
+                                console.log(qqMatch2)
+
                                  if (youkuMatch && youkuMatch[1].length) {
                                     var html='<iframe frameborder="0" height="498" width="510" src="//player.youku.com/embed/'+ youkuMatch[1]+'" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
                                 }
                                 else if ((qqMatch && qqMatch[1].length) || (qqMatch2 && qqMatch2[2].length)) {
                                     var vid = ((qqMatch && qqMatch[1].length) ? qqMatch[1] : qqMatch2[2]);
 
-                                    var html='<iframe frameborder="0" height="310" width="510" src="http://v.qq.com/iframe/player.html?vid='+ vid+'&amp;auto=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+                                    var html='<iframe frameborder="0" height="310" width="510" src="https://v.qq.com/iframe/player.html?vid='+ vid+'&amp;auto=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
                                 }else{
                                      var html = K.mediaImg(self.themesPath + 'common/blank.gif', {
                                          src: url,
