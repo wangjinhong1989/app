@@ -7955,7 +7955,7 @@ KindEditor.plugin('media', function (K) {
                 '<span class="ke-button-common ke-button-outer">',
                 '<input type="button" class="ke-button-common ke-button" name="viewServer" value="' + lang.viewServer + '" />',
                 '</span>',
-                '<div style="margin-top:5px;color:#aaa;">支持优酷、爱奇艺、腾讯视频等视频网站【<span style="color:green">通用代码</span>】',
+                '<div style="margin-top:5px;color:#aaa;">支持优酷、爱奇艺、腾讯视频等视频网站【<span style="color:green">通用代BBB</span>】',
                 '</div>',
                 '</div>',
                 '</div>',
