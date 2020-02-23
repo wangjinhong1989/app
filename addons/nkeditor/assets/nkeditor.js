@@ -7993,8 +7993,13 @@ KindEditor.plugin('media', function (K) {
                                 height = heightBox.val();
                             // 就这个位置哈, 使用通用代码。
                             var match = url.match(/^<iframe\s(.*?)src=('|")(.*?)('|")/);
+
+                            console.log(match,"aaaa")
+
                             if (!match) {
+                                console.log(match,"bbb")
                                 if (url == 'http://' || K.invalidUrl(url)) {
+                                    console.log(match,"ccc")
                                     K.options.errorMsgHandler(self.lang('invalidUrl'), "error");
                                     urlBox[0].focus();
                                     return;
