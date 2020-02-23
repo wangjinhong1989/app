@@ -8021,22 +8021,25 @@ KindEditor.plugin('media', function (K) {
                                 return;
                             }
                             if (!match) {
-                                var html = K.mediaImg(self.themesPath + 'common/blank.gif', {
-                                    src: url,
-                                    type: K.mediaType(url),
-                                    width: width,
-                                    height: height,
-                                    autostart: autostartBox[0].checked ? 'true' : 'false',
-                                    loop: 'true'
-                                });
-                            }
-                            else if (youkuMatch && youkuMatch[1].length) {
-                                var html='<iframe frameborder="0" height="498" width="510" src="//player.youku.com/embed/'+ youkuMatch[1]+'" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
-                            }
-                            else if ((qqMatch && qqMatch[1].length) || (qqMatch2 && qqMatch2[2].length)) {
-                                var vid = ((qqMatch && qqMatch[1].length) ? qqMatch[1] : qqMatch2[2]);
 
-                                var html='<iframe frameborder="0" height="310" width="510" src="http://v.qq.com/iframe/player.html?vid='+ vid+'&amp;auto=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+                                 if (youkuMatch && youkuMatch[1].length) {
+                                    var html='<iframe frameborder="0" height="498" width="510" src="//player.youku.com/embed/'+ youkuMatch[1]+'" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+                                }
+                                else if ((qqMatch && qqMatch[1].length) || (qqMatch2 && qqMatch2[2].length)) {
+                                    var vid = ((qqMatch && qqMatch[1].length) ? qqMatch[1] : qqMatch2[2]);
+
+                                    var html='<iframe frameborder="0" height="310" width="510" src="http://v.qq.com/iframe/player.html?vid='+ vid+'&amp;auto=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+                                }else{
+                                     var html = K.mediaImg(self.themesPath + 'common/blank.gif', {
+                                         src: url,
+                                         type: K.mediaType(url),
+                                         width: width,
+                                         height: height,
+                                         autostart: autostartBox[0].checked ? 'true' : 'false',
+                                         loop: 'true'
+                                     });
+                                 }
+
                             }
                             else {
                                 var html = '<iframe src="' + match[3] + '" frameborder="0" style="width:' + width + 'px;height:' + height + 'px;"></iframe>';
