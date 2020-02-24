@@ -24,7 +24,7 @@ class Version extends Api
         $model= new \app\admin\model\Version();
         $lists=$model->where(["status"=>"是"])->order("version_code","desc")->limit(0,1)->find();
 
-        $lists->file="http://app.biyouliao8.com".$lists->file;
+        $lists->file=$lists->file;
         $this->success("成功",$lists);
     }
 }

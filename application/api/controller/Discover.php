@@ -38,7 +38,7 @@ class Discover extends Api
         $count=( new \app\admin\model\Discover())->where(['status'=>"显示"])->count();
 
         foreach ($lists as &$l){
-            $l["image"]="http://app.biyouliao8.com".$l["image"];
+            $l["image"]=$l["image"];
         }
 
         $data["page"]=$page;

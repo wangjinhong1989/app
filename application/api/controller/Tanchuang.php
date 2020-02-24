@@ -33,7 +33,7 @@ class Tanchuang extends Api
 
             $temp=explode(",",$lists["image"]);
             foreach ($temp as &$t){
-                $t="http://app.biyouliao8.com".$t;
+                $t=Config::get('api_url').$t;
             }
             $lists["images"]=$temp;
         }
@@ -69,8 +69,6 @@ class Tanchuang extends Api
         foreach ($lists as &$l){
             $temp=explode(",",$l["image"]);
             foreach ($temp as &$t){
-
-                $t="http://app.biyouliao8.com".$t;
                 $l["image"]=$t;
                 array_push($data1,$l);
             }

@@ -163,7 +163,7 @@ class Auth
         ]);
 
         if($params["avatar"]==""){
-            $params["avatar"]="http://app.biyouliao8.com/g.jpg";
+            $params["avatar"]=Config::get('api_url')."/g.jpg";
         }
         $params['password'] = $this->getEncryptPassword($password, $params['salt']);
         $params = array_merge($params, $extend);

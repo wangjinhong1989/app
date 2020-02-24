@@ -123,7 +123,7 @@ class Ajax extends Api
             $attachment->save();
             \think\Hook::listen("upload_after", $attachment);
             $this->success(__('Upload successful'), null, [
-                'url' => $uploadDir . $splInfo->getSaveName(),
+                'url' => Config::get('api_url').$uploadDir . $splInfo->getSaveName(),
                 'base_url' =>Config::get('api_url')
             ]);
         } else {

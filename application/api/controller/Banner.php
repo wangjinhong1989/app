@@ -40,7 +40,7 @@ class Banner extends Api
 
 
         foreach ($lists as &$l){
-            $l["img"]="http://app.biyouliao8.com".$l["img"];
+            $l["img"]=$l["img"];
         }
         $data["page"]=$page;
         $data["rows"]=$lists;
