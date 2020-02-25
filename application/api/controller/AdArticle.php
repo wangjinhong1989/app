@@ -24,8 +24,9 @@ class AdArticle extends Api
     {
         $model=    new Query();
 
+        $limit=$this->request->request("limit",1);
         $time=time();
-        $lists=$model->table("fa_ad_article")->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->orderRaw("rand()")->limit(0,1)->select();
+        $lists=$model->table("fa_ad_article")->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->orderRaw("rand()")->limit(0,$limit)->select();
 
         $temp=array();
         foreach ($lists as $k=>&$list){
