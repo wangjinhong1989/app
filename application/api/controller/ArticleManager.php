@@ -177,7 +177,7 @@ class ArticleManager extends Api
                 $lists[0]["username"]="";
                 $lists[0]["avatar"]="";
                 $lists[0]["is_ad"]=true;
-                $lists[0]["create_time"]=formart_time($lists[0]["create_time"]);
+                $lists[0]["create_time"]=formart_time($lists[0]["begin_time"]);
                 array_push($data["rows"],$lists[0]);
             }
         }
