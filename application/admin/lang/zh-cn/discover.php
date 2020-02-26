@@ -1,13 +1,14 @@
 <?php
 
 return [
-    'Title'       => '标题',
-    'Description' => '描述',
-    'Weigh'       => '权重',
-    'Status'      => '有效无效',
-    'Url'         => '原文链接',
-    'Image'       => '封面',
-    'Read_count'  => '阅读次数',
-    'Show_count'  => '展示次数',
-    'Content'     => '内容'
+    'Id'            => '编号',
+    'Title'         => '标题',
+    'Paixu'         => '排序',
+    'Image'         => '图片',
+    'Url_type'      => '链接类型',
+    'Url'           => '链接',
+    'Article_id'    => '文章',
+    'Begin_time'    => '开始时间',
+    'End_time'      => '结束时间',
+    'Article.title' => '标题'
 ];
