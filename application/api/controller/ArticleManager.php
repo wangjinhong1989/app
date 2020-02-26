@@ -163,28 +163,32 @@ class ArticleManager extends Api
         }
 
         if($data["rows"]){
-            $need_banner=$this->request->request("need_banner",0);
 
-            if($need_banner){
+            if($page==1){
+                $need_banner=$this->request->request("need_banner",0);
 
-                $model=    new Query();
-                $time=time();
+                if($need_banner){
 
-                $lists=$model->table("fa_ad_article")->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->orderRaw("rand()")->limit(0,1)->select();
-                if(!empty($lists)){
-                    $lists[0]["label_ids"]="";
-                    $lists[0]["user_id"]="";
-                    $lists[0]["articletype_id"]="";
-                    $lists[0]["come_from"]="";
-                    $lists[0]["articletype_name"]="";
-                    $lists[0]["username"]="";
-                    $lists[0]["avatar"]="";
-                    $lists[0]["is_ad"]=true;
-                    $lists[0]["img"]=$lists[0]["images"];
-                    $lists[0]["create_time"]=formart_time($lists[0]["begin_time"]);
-                    array_push($data["rows"],$lists[0]);
+                    $model=    new Query();
+                    $time=time();
+
+                    $lists=$model->table("fa_ad_article")->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->orderRaw("rand()")->limit(0,1)->select();
+                    if(!empty($lists)){
+                        $lists[0]["label_ids"]="";
+                        $lists[0]["user_id"]="";
+                        $lists[0]["articletype_id"]="";
+                        $lists[0]["come_from"]="";
+                        $lists[0]["articletype_name"]="";
+                        $lists[0]["username"]="";
+                        $lists[0]["avatar"]="";
+                        $lists[0]["is_ad"]=true;
+                        $lists[0]["img"]=$lists[0]["images"];
+                        $lists[0]["create_time"]=formart_time($lists[0]["begin_time"]);
+                        array_push($data["rows"],$lists[0]);
+                    }
                 }
             }
+
 
 
 
