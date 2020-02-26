@@ -161,6 +161,28 @@ class ArticleManager extends Api
             $value["count_likong"]=$value["count_likong"]==null?0:$value["count_likong"];
         }
 
+        $need_banner=$this->request->request("need_banner",0);
+
+        if($need_banner){
+
+            $model=    new Query();
+            $time=time();
+            $lists=$model->table("fa_ad_article")->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->orderRaw("rand()")->limit(0,1)->select();
+            if($lists){
+                $lists[0]["label_ids"]="";
+                $lists[0]["user_id"]="";
+                $lists[0]["articletype_id"]="";
+                $lists[0]["come_from"]="";
+                $lists[0]["articletype_name"]="";
+                $lists[0]["username"]="";
+                $lists[0]["avatar"]="";
+                $lists[0]["is_ad"]=true;
+                $lists[0]["create_time"]=formart_time($lists[0]["create_time"]);
+                array_push($data["rows"],$lists[0]);
+            }
+        }
+
+
 
         // 是否需要返回广告.
         $need_ad=$this->request->request("need_ad",1);
