@@ -13,12 +13,7 @@
         </div>
     </div>
 
-        <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('用户')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-user_id" data-rule="required" data-source="user/user/index" data-live-search="true" data-live-search="true" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="">
-        </div>
-    </div>
+
     <div class="form-group"  style="display: none"  >
         <label class="control-label col-xs-12 col-sm-2">{:__('Articletype_id')}:</label>
         <div class="col-xs-12 col-sm-3">
@@ -26,13 +21,6 @@
         </div>
     </div>
 
-<div class="form-group"   >
-  <label class="control-label col-xs-12 col-sm-2">{:__('标签')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-label_ids" data-rule="required" data-source="label/index" data-multiple="true" class="form-control selectpage" name="row[label_ids]" type="text" value="">
-        </div>
-
-</div>
 
      <div class="form-group">
             <label class="control-label col-xs-12 col-sm-2">{:__('Content')}:</label>
@@ -55,77 +43,6 @@
 
                 </div>
 
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('阅读次数')}:</label>
-        <div class="col-xs-12 col-sm-3">
-            <input id="c-read_count" data-rule="required" class="form-control" name="row[read_count]" type="number" value="{:rand(100,999)}">
-        </div>
-
-        <label class="control-label col-xs-12 col-sm-2">{:__('显示次数')}:</label>
-        <div class="col-xs-12 col-sm-3">
-            <input id="c-show_count" data-rule="required" class="form-control" name="row[show_count]" type="number" value="{:rand(100,999)}">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('是否允许评论')}:</label>
-        <div class="col-xs-12 col-sm-3">
-                        
-            <select  id="c-is_reply" data-rule="required" class="form-control selectpicker" name="row[is_reply]">
-                {foreach name="isReplyList" item="vo"}
-                    <option value="{$key}" {in name="key" value="是"}selected{/in}>{$vo}</option>
-                {/foreach}
-            </select>
-
-        </div>
-
-        <label class="control-label col-xs-12 col-sm-2">{:__('是否原创')}:</label>
-        <div class="col-xs-12 col-sm-3">
-                        
-            <select  id="c-is_mine" data-rule="required" class="form-control selectpicker" name="row[is_mine]">
-                {foreach name="isMineList" item="vo"}
-                    <option value="{$key}" {in name="key" value="是"}selected{/in}>{$vo}</option>
-                {/foreach}
-            </select>
-
-        </div>
-    </div>
-    <div class="form-group" >
-        <label class="control-label col-xs-12 col-sm-2">{:__('是否属于推荐')}:</label>
-        <div class="col-xs-12 col-sm-3">
-                        
-            <select  id="c-is_recommendation" data-rule="required" class="form-control selectpicker" name="row[is_recommendation]">
-                {foreach name="isRecommendationList" item="vo"}
-                    <option value="{$key}" {in name="key" value="是"}selected{/in}>{$vo}</option>
-                {/foreach}
-            </select>
-
-        </div>
-
-          <label class="control-label col-xs-12 col-sm-2">{:__('置顶')}:</label>
-                            <div class="col-xs-12 col-sm-3">
-
-                                <select  id="c-top" data-rule="required" class="form-control selectpicker" name="row[top]">
-                                    {foreach name="isTopList" item="vo"}
-                                        <option value="{$key}" {in name="key" value="取消置顶"}selected{/in}>{$vo}</option>
-                                    {/foreach}
-                                </select>
-
-                            </div>
-
-    </div>
-
-
-
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('置顶开始时间')}:</label>
-        <div class="col-xs-12 col-sm-3">
-            <input id="c-begin_time" data-rule="" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[begin_time]" type="text" >
-        </div>
-            <label class="control-label col-xs-12 col-sm-2">{:__('置顶结束时间')}:</label>
-                <div class="col-xs-12 col-sm-3">
-                    <input id="c-end_time" data-rule="" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[end_time]" type="text" >
-                </div>
-    </div>
 
 
         <div class="form-group">
