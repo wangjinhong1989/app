@@ -118,14 +118,84 @@ class Tanchuang extends Api
             $time=intval($time);
             if($time+60<time()){
 
+                $page=$this->request->request("page",1);
+                $page_size=$this->request->request("page_size",5);
+                $offset=($page-1)*$page_size;
+                $where=$data=[];
+                $where["status"]=["eq","显示"];
+                $url_type=$this->request->request("url_type","");
+                if($url_type){
+                    $where["url_type"]=["eq",$url_type];
+                }
+
+                $where["begin_time"]=["elt",time()];
+                $where["end_time"]=["egt",time()];
+
+                $model=(new \app\admin\model\Tanchuang());
+                $lists=$model->where($where)->order("paixu","asc")->orderRaw("rand()")->limit($offset,$page_size)->select();
+                $count=$model->where($where)->count();
+
+
+                $data1=[];
+                foreach ($lists as &$l){
+                    $temp=explode(",",$l["image"]);
+                    foreach ($temp as &$t){
+                        $l["image"]=$t;
+                        array_push($data1,$l);
+                    }
+
+                }
+                $data["page"]=$page;
+                $data["rows"]=$data1;
+                $data["count"]=$count;
+
+                $data["total_page"]=ceil($data["count"]/$page_size);
+
+
+
                 Session::set("tanchuang".$this->auth->id,time());
-                $this->temp();
+
+                $this->success("成功",$data1);
+
             }else{
                 return $this->success("成功",[]);
             }
 
         }
-        $this->temp();
+        $page=$this->request->request("page",1);
+        $page_size=$this->request->request("page_size",5);
+        $offset=($page-1)*$page_size;
+        $where=$data=[];
+        $where["status"]=["eq","显示"];
+        $url_type=$this->request->request("url_type","");
+        if($url_type){
+            $where["url_type"]=["eq",$url_type];
+        }
+
+        $where["begin_time"]=["elt",time()];
+        $where["end_time"]=["egt",time()];
+
+        $model=(new \app\admin\model\Tanchuang());
+        $lists=$model->where($where)->order("paixu","asc")->orderRaw("rand()")->limit($offset,$page_size)->select();
+        $count=$model->where($where)->count();
+
+
+        $data1=[];
+        foreach ($lists as &$l){
+            $temp=explode(",",$l["image"]);
+            foreach ($temp as &$t){
+                $l["image"]=$t;
+                array_push($data1,$l);
+            }
+
+        }
+        $data["page"]=$page;
+        $data["rows"]=$data1;
+        $data["count"]=$count;
+
+        $data["total_page"]=ceil($data["count"]/$page_size);
+
+        $this->success("成功",$data1);
     }
 
 
