@@ -23,7 +23,7 @@ class Tanchuang extends Api
      */
     public function get_one()
     {
-        if(!isset($this->auth->id)){
+        if($this->auth->id){
             $time=Session::get("tanchuang".$this->auth->id);
             $time=intval($time);
             if($time+24*3600<time()){
