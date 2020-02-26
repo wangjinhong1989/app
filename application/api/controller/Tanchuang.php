@@ -113,8 +113,8 @@ class Tanchuang extends Api
     public function Lists()
     {
 
-        dd("auth_id".$this->auth->id);
-        if($this->auth->id){
+
+        if(!empty($this->auth->id)){
             $time=Session::get("tanchuang".$this->auth->id);
             $time=intval($time);
             if($time+60<time()){
@@ -162,6 +162,8 @@ class Tanchuang extends Api
                 return $this->success("成功",[]);
             }
 
+        }else {
+            dd($this->auth);
         }
         $page=$this->request->request("page",1);
         $page_size=$this->request->request("page_size",5);
