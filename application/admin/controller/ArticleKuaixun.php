@@ -121,15 +121,6 @@ class ArticleKuaixun extends Backend
                     }
 
                     $result = $this->model->allowField(true)->save($params);
-
-                    if($params["top"]=="置顶"){
-                        if(strtotime($params["begin_time"])<=time()&&strtotime($params["end_time"])>=time())
-                            $params["weigh"]=time();
-                        else
-                            $params["weigh"]=$this->model->getLastInsID();
-                    }else {
-                        $params["weigh"]=$this->model->getLastInsID();
-                    }
                     $params["id"]=$this->model->getLastInsID();
                     $result = $this->model->allowField(true)->save($params);
                     Db::commit();
@@ -175,15 +166,6 @@ class ArticleKuaixun extends Backend
             $params = $this->request->post("row/a");
             if ($params) {
 
-                if($params["top"]=="置顶"){
-                    if(empty($params["begin_time"])||empty($params["end_time"])){
-                        $this->error("请填写置顶时间");
-                    }
-                    if(strtotime($params["begin_time"])>=strtotime($params["end_time"])){
-                        $this->error("置顶时间开始时间大于等于结束时间");
-                    }
-                }
-
                 $params = $this->preExcludeFields($params);
                 $result = false;
 
@@ -195,18 +177,8 @@ class ArticleKuaixun extends Backend
                         $validate = is_bool($this->modelValidate) ? ($this->modelSceneValidate ? $name . '.edit' : $name) : $this->modelValidate;
                         $row->validateFailException(true)->validate($validate);
                     }
-
-                    if($params["top"]=="置顶"){
-                        if(strtotime($params["begin_time"])<=time()&&strtotime($params["end_time"])>=time())
-                            $params["weigh"]=time();
-                        else
-                            $params["weigh"]=$ids;
-
-                    }else {
-                        $params["weigh"]=$ids;
-                    }
-
-                    $result = $row->allowField(true)->save($params);
+                   $params["weigh"]=$ids;
+                   $result = $row->allowField(true)->save($params);
 
                     Db::commit();
                     dd($result);
