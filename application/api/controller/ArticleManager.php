@@ -159,6 +159,7 @@ class ArticleManager extends Api
 
             $value["count_lihao"]=$value["count_lihao"]==null?0:$value["count_lihao"];
             $value["count_likong"]=$value["count_likong"]==null?0:$value["count_likong"];
+            $value["is_ad"]=false;
         }
 
         if($data["rows"]){
@@ -170,7 +171,7 @@ class ArticleManager extends Api
                 $time=time();
 
                 $lists=$model->table("fa_ad_article")->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->orderRaw("rand()")->limit(0,1)->select();
-                if($lists){
+                if(!empty($lists)){
                     $lists[0]["label_ids"]="";
                     $lists[0]["user_id"]="";
                     $lists[0]["articletype_id"]="";
@@ -194,9 +195,6 @@ class ArticleManager extends Api
                 // more
                 $ad_size=$this->request->request("ad_size",1);
                 $ad=$lists=$model->table("fa_guanggao")->where(['status'=>'显示'])->orderRaw("rand()")->limit(0,$ad_size)->select();
-                foreach ($data["rows"] as $key=>$value){
-                    $data["rows"][$key]["is_ad"]=false;
-                }
                 if(!empty($ad)){
                     $ad[0]["label_ids"]="";
                     $ad[0]["user_id"]="";
