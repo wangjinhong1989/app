@@ -168,6 +168,7 @@ class ArticleManager extends Api
 
                 $model=    new Query();
                 $time=time();
+
                 $lists=$model->table("fa_ad_article")->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->orderRaw("rand()")->limit(0,1)->select();
                 if($lists){
                     $lists[0]["label_ids"]="";
