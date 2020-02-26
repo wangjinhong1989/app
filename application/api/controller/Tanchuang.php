@@ -23,10 +23,13 @@ class Tanchuang extends Api
      */
     public function get_one()
     {
+        dd("test");
         dd($this->auth->id);
+
         if(!empty($this->auth->id)){
             $time=Session::get("tanchuang".$this->auth->id);
             $time=intval($time);
+            dd(date("Y-m-d H:i:s",time()));
             if($time+24*3600<time()){
                 $where=[];
                 $where["status"]=["eq","显示"];
