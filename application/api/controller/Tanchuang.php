@@ -48,7 +48,7 @@ class Tanchuang extends Api
                     }
                     $lists["images"]=$temp;
                 }
-                Session::push("tanchuang".$this->auth->id,time());
+                Session::set("tanchuang".$this->auth->id,time());
                 return $this->success("成功",$lists);
             }else{
                 return $this->success("成功",[]);
