@@ -69,12 +69,8 @@ class Tanchuang extends Api
     }
 
 
-    /**
-     * 首页
-     *
-     */
-    public function Lists()
-    {
+
+    public function temp(){
         $page=$this->request->request("page",1);
         $page_size=$this->request->request("page_size",5);
         $offset=($page-1)*$page_size;
@@ -109,6 +105,28 @@ class Tanchuang extends Api
         $data["total_page"]=ceil($data["count"]/$page_size);
 
         $this->success("成功",$data1);
+    }
+    /**
+     * 首页
+     *
+     */
+    public function Lists()
+    {
+
+        if($this->auth->id){
+            $time=Session::get("tanchuang".$this->auth->id);
+            $time=intval($time);
+            if($time+60<time()){
+                $this->temp();
+                Session::set("tanchuang".$this->auth->id,time());
+
+            }else{
+                $this->temp();
+                return $this->success("成功",[]);
+            }
+
+        }
+        $this->temp();
     }
 
 
