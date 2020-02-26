@@ -26,7 +26,7 @@ class Tanchuang extends Api
         dd("test");
         dd($this->auth->id);
 
-        if(!isset($this->auth->id)){
+        if(!$this->auth->id){
             $time=Session::get("tanchuang".$this->auth->id);
             $time=intval($time);
             dd(date("Y-m-d H:i:s",time()));
