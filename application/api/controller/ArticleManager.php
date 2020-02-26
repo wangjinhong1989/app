@@ -794,7 +794,9 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
 
         $model=new Article();
 
+        dd($this->auth->id);
         $id=$this->request->request("id",0);
+        // $model->where(["id"=>$id,"user_id"=>$this->auth->id])->delete();
         $model->where(["id"=>$id])->delete();
         $this->success();
     }
