@@ -29,7 +29,7 @@ class ArticleManager extends Api
     public function Lists()
     {
         $page=$this->request->request("page",1);
-        $page_size=$this->request->request("page_size",5);
+        $page_size=5;//$this->request->request("page_size",5);
         $offset=($page-1)*$page_size;
 
         if($offset<0){
@@ -782,6 +782,12 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
 
 
         $this->success("成功",$detail);
+    }
+
+
+    // 删除。
+    public function del(){
+
     }
 
 }
