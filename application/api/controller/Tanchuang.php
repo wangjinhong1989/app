@@ -117,11 +117,10 @@ class Tanchuang extends Api
             $time=Session::get("tanchuang".$this->auth->id);
             $time=intval($time);
             if($time+60<time()){
-                $this->temp();
-                Session::set("tanchuang".$this->auth->id,time());
 
-            }else{
+                Session::set("tanchuang".$this->auth->id,time());
                 $this->temp();
+            }else{
                 return $this->success("成功",[]);
             }
 
