@@ -26,11 +26,12 @@ class Tanchuang extends Api
         dd("test");
         dd($this->auth->id);
         $time=Session::get("tanchuang".$this->auth->id);
-        dd($time);
-        if(!$this->auth->id){
+        dd("a");
+        if($this->auth->id){
             $time=Session::get("tanchuang".$this->auth->id);
             $time=intval($time);
-            dd(date("Y-m-d H:i:s",time()));
+            dd("b");
+            dd($time);
             if($time+24*3600<time()){
                 $where=[];
                 $where["status"]=["eq","显示"];
