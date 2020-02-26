@@ -355,6 +355,8 @@ class ArticleManager extends Api
 
         foreach ($data["rows"] as $key=>$v){
             $data["rows"][$key]["create_time"]=formart_time($data["rows"][$key]["create_time"]);
+            $data["rows"][$key]["count_lihao"]=$data["rows"][$key]["count_lihao"]+$data["rows"][$key]["lh_count"];
+            $data["rows"][$key]["count_likong"]=$data["rows"][$key]["count_likong"]+$data["rows"][$key]["lk_count"];
         }
 
 
