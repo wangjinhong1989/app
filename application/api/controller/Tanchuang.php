@@ -6,6 +6,7 @@ use app\common\controller\Api;
 use app\admin\model\Guanggao;
 use think\Cache;
 use think\Config;
+use think\Session;
 
 /**
  * 首页接口
@@ -22,6 +23,33 @@ class Tanchuang extends Api
      */
     public function get_one()
     {
+        if(!empty($this->auth->id)){
+            $time=Session::get("tanchuang".$this->auth->id);
+            $time=intval($time);
+            if($time+24*3600>time()){
+                $where=[];
+                $where["status"]=["eq","显示"];
+                $where["begin_time"]=["elt",time()];
+                $where["end_time"]=["egt",time()];
+
+                $lists=(new \app\admin\model\Tanchuang())->where($where)->find();
+
+                if($lists){
+
+                    $temp=explode(",",$lists["image"]);
+                    foreach ($temp as &$t){
+                        $t=Config::get('api_url').$t;
+                    }
+                    $lists["images"]=$temp;
+                }
+                Session::push("tanchuang".$this->auth->id,time());
+                $this->success("成功",$lists);
+            }else{
+                $this->success("成功",[]);
+            }
+
+        }
+
         $where=[];
         $where["status"]=["eq","显示"];
         $where["begin_time"]=["elt",time()];
