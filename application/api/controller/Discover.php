@@ -29,17 +29,15 @@ class Discover extends Api
 
         $page=$this->request->request("page",1);
         $page_size=$this->request->request("page_size",5);
-        $order=$this->request->request("order","weigh");
+        $order=$this->request->request("order","paixu");
         $sort=$this->request->request("sort","asc");
         $offset=($page-1)*$page_size;
 
+        $time=time();
         $data=[];
-        $lists=( new \app\admin\model\Discover())->where(['status'=>"显示"])->limit($offset,$page_size)->order($order,$sort)->select();
-        $count=( new \app\admin\model\Discover())->where(['status'=>"显示"])->count();
+        $lists=( new \app\admin\model\Discover())->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->limit($offset,$page_size)->order($order,$sort)->select();
+        $count=( new \app\admin\model\Discover())->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->count();
 
-        foreach ($lists as &$l){
-            $l["image"]=$l["image"];
-        }
 
         $data["page"]=$page;
         $data["rows"]=$lists;
