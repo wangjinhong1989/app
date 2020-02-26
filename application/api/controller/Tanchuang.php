@@ -26,7 +26,7 @@ class Tanchuang extends Api
         if(!empty($this->auth->id)){
             $time=Session::get("tanchuang".$this->auth->id);
             $time=intval($time);
-            if($time+24*3600>time()){
+            if($time+24*3600<time()){
                 $where=[];
                 $where["status"]=["eq","显示"];
                 $where["begin_time"]=["elt",time()];
