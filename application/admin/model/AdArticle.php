@@ -25,6 +25,7 @@ class AdArticle extends Model
 
     // 追加属性
     protected $append = [
+        'status_text',
         'url_type_text',
         'begin_time_text',
         'end_time_text'
@@ -32,9 +33,22 @@ class AdArticle extends Model
     
 
     
+    public function getStatusList()
+    {
+        return ['显示' => __('显示'), '隐藏' => __('隐藏')];
+    }
+
     public function getUrlTypeList()
     {
         return ['外链' => __('外链'), '内链' => __('内链')];
+    }
+
+
+    public function getStatusTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['status']) ? $data['status'] : '');
+        $list = $this->getStatusList();
+        return isset($list[$value]) ? $list[$value] : '';
     }
 
 

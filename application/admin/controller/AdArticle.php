@@ -22,6 +22,7 @@ class AdArticle extends Backend
     {
         parent::_initialize();
         $this->model = new \app\admin\model\AdArticle;
+        $this->view->assign("statusList", $this->model->getStatusList());
         $this->view->assign("urlTypeList", $this->model->getUrlTypeList());
     }
     
@@ -63,7 +64,7 @@ class AdArticle extends Backend
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(['id','title','paixu','images','url_type','url','begin_time','end_time']);
+                $row->visible(['id','title']);
                 $row->visible(['article']);
 				$row->getRelation('article')->visible(['title']);
             }
