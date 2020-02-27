@@ -1,1647 +1,391 @@
-2020-02-12 11:03:51 : 2019-12-01 15:51:48
-2020-02-12 11:08:09 : 2019-12-01 15:51:48
-2020-02-12 11:12:56 : 0
-2020-02-12 11:12:56 : 1575186708
-2020-02-12 11:12:58 : 0
-2020-02-12 11:12:58 : 1575186708
-2020-02-12 11:14:08 : 0
-2020-02-12 11:14:08 : 2019-12-01 15:51:48
-2020-02-12 11:14:08 : 1575186708
-2020-02-12 11:15:48 : 0
-2020-02-12 11:15:48 : 2019-12-01 15:51:48
-2020-02-12 11:15:48 : {"id":1,"platform":"BTC","url":"https:\/\/www.showdoc.cc\/page\/edit\/588944924367976\/3471028683474866","reason":"\u6bd4\u7279\u5e01","status":"\u663e\u793a","time":1575186708,"status_text":"\u663e\u793a","time_text":"2019-12-01 15:51:48"}
-2020-02-12 11:15:48 : 1575186708
-2020-02-12 11:22:45 : object
-2020-02-12 11:22:45 : {"id":1,"platform":"BTC","url":"https:\/\/www.showdoc.cc\/page\/edit\/588944924367976\/3471028683474866","reason":"\u6bd4\u7279\u5e01","status":"\u663e\u793a","time":1575186708,"status_text":"\u663e\u793a","time_text":"2019-12-01 15:51:48"}
-2020-02-12 11:27:21 : array
-2020-02-12 11:27:21 : {"id":1,"platform":"BTC","url":"https:\/\/www.showdoc.cc\/page\/edit\/588944924367976\/3471028683474866","reason":"\u6bd4\u7279\u5e01","status":"\u663e\u793a","time":1575186708,"status_text":"\u663e\u793a","time_text":"2019-12-01 15:51:48"}
-2020-02-12 11:29:36 : array
-2020-02-12 13:45:13 : 2
-2020-02-12 13:45:13 : 1
-2020-02-12 13:45:13 : 3
-2020-02-12 13:45:30 : 2
-2020-02-12 13:45:30 : 1
-2020-02-12 13:45:30 : 3
-2020-02-12 14:37:36 : addons\third\library\Wechat
-2020-02-12 14:37:36 : respnse
-2020-02-12 14:37:36 : {"access_token":"30_P1Md2IIULjkQLxu1JnFMFmqDagc0foiYmjYIbeNes2a6akaTaMS2EQyKhivUQaVpRS8gA7I63Ws298JQSlonUgk2-dN4n-lW82ODHNBQzTc","expires_in":7200,"refresh_token":"30_3EB76f9edZfdIwuZ7tx4Mxy2taT4yj_yxkhLGgDD5h9Bc_4qAoVl4rkoi79U35weBTVU_ohNMGLhfzgwhXc-oaCNOWchtx2KTQVliNdD_cs","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-12 14:37:36 : params
-2020-02-12 14:37:36 : {"code":"021UXuSF0nNMef2FzfVF0cBpSF0UXuS4"}
-2020-02-12 14:37:36 : {"access_token":"30_P1Md2IIULjkQLxu1JnFMFmqDagc0foiYmjYIbeNes2a6akaTaMS2EQyKhivUQaVpRS8gA7I63Ws298JQSlonUgk2-dN4n-lW82ODHNBQzTc","expires_in":7200,"refresh_token":"30_3EB76f9edZfdIwuZ7tx4Mxy2taT4yj_yxkhLGgDD5h9Bc_4qAoVl4rkoi79U35weBTVU_ohNMGLhfzgwhXc-oaCNOWchtx2KTQVliNdD_cs","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-12 14:37:36 : user info
-2020-02-12 14:37:36 : {"access_token":"30_P1Md2IIULjkQLxu1JnFMFmqDagc0foiYmjYIbeNes2a6akaTaMS2EQyKhivUQaVpRS8gA7I63Ws298JQSlonUgk2-dN4n-lW82ODHNBQzTc","refresh_token":"30_3EB76f9edZfdIwuZ7tx4Mxy2taT4yj_yxkhLGgDD5h9Bc_4qAoVl4rkoi79U35weBTVU_ohNMGLhfzgwhXc-oaCNOWchtx2KTQVliNdD_cs","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-12 14:37:36 : login data
-2020-02-12 14:37:36 : {"userinfo":{"id":10129,"username":"u10129","nickname":"\u6881","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"22582062-f62b-4439-884b-1e77a7bc5101","user_id":10129,"createtime":1581489456,"expiretime":0,"expires_in":31536000}}
-2020-02-13 10:29:44 : addons\third\library\Wechat
-2020-02-13 10:29:44 : respnse
-2020-02-13 10:29:44 : {"access_token":"30_HVRmOlPqhJ4_XbHd2Ft21txj6vsvwPxqQsll3lufUkF587AZvFDJeK8RaxyS0zRxN52NXmp9X2YfEvl1Bbim-WgjoRJ1WJWphsDmj6O7hOY","expires_in":7200,"refresh_token":"30_RYuibnf4f-ND_Q9MUb0gYtb2zH1pbtEccubOqV5RRMdop2mGL1Y2ul05R3HONfOS3U9XW1Fpg2ujg32paD9Jo2z7FpyAxnwC_arbWfAyqHY","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-13 10:29:44 : params
-2020-02-13 10:29:44 : {"code":"011dgXcX1MxYCX0AAifX1WWfdX1dgXcu"}
-2020-02-13 10:29:44 : {"access_token":"30_HVRmOlPqhJ4_XbHd2Ft21txj6vsvwPxqQsll3lufUkF587AZvFDJeK8RaxyS0zRxN52NXmp9X2YfEvl1Bbim-WgjoRJ1WJWphsDmj6O7hOY","expires_in":7200,"refresh_token":"30_RYuibnf4f-ND_Q9MUb0gYtb2zH1pbtEccubOqV5RRMdop2mGL1Y2ul05R3HONfOS3U9XW1Fpg2ujg32paD9Jo2z7FpyAxnwC_arbWfAyqHY","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-13 10:29:44 : user info
-2020-02-13 10:29:44 : {"access_token":"30_HVRmOlPqhJ4_XbHd2Ft21txj6vsvwPxqQsll3lufUkF587AZvFDJeK8RaxyS0zRxN52NXmp9X2YfEvl1Bbim-WgjoRJ1WJWphsDmj6O7hOY","refresh_token":"30_RYuibnf4f-ND_Q9MUb0gYtb2zH1pbtEccubOqV5RRMdop2mGL1Y2ul05R3HONfOS3U9XW1Fpg2ujg32paD9Jo2z7FpyAxnwC_arbWfAyqHY","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-13 10:29:44 : login data
-2020-02-13 10:29:44 : {"userinfo":{"id":10129,"username":"u10129","nickname":"\u6881","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"a7566e72-82ec-4e1c-986d-8f89896edf99","user_id":10129,"createtime":1581560984,"expiretime":0,"expires_in":31536000}}
-2020-02-13 12:28:55 : 1
-2020-02-13 12:28:55 : 2
-2020-02-13 12:37:35 : addons\third\library\Wechat
-2020-02-13 12:37:36 : respnse
-2020-02-13 12:37:36 : {"access_token":"30_TrjdBujOUTEva7uk8XRxMK_WgS9VRQCRJPPOKlfg_YXkJPwFW0vF7H3COyxSKmMPMrWCxWagmJWJts25V_C-Qu8F0EePSSK1YcX8is-VZpc","expires_in":7200,"refresh_token":"30_CXiv3-YLFDHXtZ-PJaj6i__aYYBqlqyo1CowMF5Z0TP3Gpv548EKnqjwhBYTUiVxKyseIRRRmPhfQLKOqAR14pJn2xcEXhRadX8HuxfnutU","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-13 12:37:36 : params
-2020-02-13 12:37:36 : {"code":"021LUJe10CnBeK1QKYc10VARe10LUJe5"}
-2020-02-13 12:37:36 : {"access_token":"30_TrjdBujOUTEva7uk8XRxMK_WgS9VRQCRJPPOKlfg_YXkJPwFW0vF7H3COyxSKmMPMrWCxWagmJWJts25V_C-Qu8F0EePSSK1YcX8is-VZpc","expires_in":7200,"refresh_token":"30_CXiv3-YLFDHXtZ-PJaj6i__aYYBqlqyo1CowMF5Z0TP3Gpv548EKnqjwhBYTUiVxKyseIRRRmPhfQLKOqAR14pJn2xcEXhRadX8HuxfnutU","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-13 12:37:36 : user info
-2020-02-13 12:37:36 : {"access_token":"30_TrjdBujOUTEva7uk8XRxMK_WgS9VRQCRJPPOKlfg_YXkJPwFW0vF7H3COyxSKmMPMrWCxWagmJWJts25V_C-Qu8F0EePSSK1YcX8is-VZpc","refresh_token":"30_CXiv3-YLFDHXtZ-PJaj6i__aYYBqlqyo1CowMF5Z0TP3Gpv548EKnqjwhBYTUiVxKyseIRRRmPhfQLKOqAR14pJn2xcEXhRadX8HuxfnutU","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-13 12:37:36 : login data
-2020-02-13 12:37:36 : {"userinfo":{"id":10129,"username":"u10129","nickname":"\u6881","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"18e3c201-f0e0-4431-8b45-ece325fd5a38","user_id":10129,"createtime":1581568656,"expiretime":0,"expires_in":31536000}}
-2020-02-13 14:43:52 : 1
-2020-02-13 14:43:52 : 2
-2020-02-14 11:13:47 : 1
-2020-02-14 11:13:47 : 2
-2020-02-14 11:23:39 : 2
-2020-02-14 11:23:39 : 1
-2020-02-14 11:23:39 : 3
-2020-02-14 15:21:18 : [{"\u9996\u9875":"\u9996\u9875"},{"\u641c\u7d22\u9875":"\u641c\u7d22\u9875"},{"\u8be6\u60c5\u9875":"\u8be6\u60c5\u9875"}]
-2020-02-14 15:28:53 : [{"\u9996\u9875":"\u9996\u9875"},{"\u641c\u7d22\u9875":"\u641c\u7d22\u9875"},{"\u8be6\u60c5\u9875":"\u8be6\u60c5\u9875"}]
-2020-02-15 15:24:46 : qq
-2020-02-15 15:24:46 : {"access_token":"BBBC3C835A4794ED02AC151B835B18C2","openid":"6DCFD6C19EA37E09CA143C5D7C2E2732","refresh_token":null,"expires_in":null}
-2020-02-15 15:24:46 : addons\third\library\Qq
-2020-02-15 15:24:46 : {"access_token":"BBBC3C835A4794ED02AC151B835B18C2","openid":"6DCFD6C19EA37E09CA143C5D7C2E2732","refresh_token":null,"expires_in":null}
-2020-02-15 15:24:46 : qq in
-2020-02-15 15:24:46 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u5c0f\u4f19\u5b50","gender":"\u7537","gender_type":2,"province":"","city":"","year":"0","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=40","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100","figureurl_type":"0","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100"}
-2020-02-15 15:24:46 : login data
-2020-02-15 15:24:46 : {"userinfo":{"id":10140,"username":"u10140","nickname":"\u5c0f\u4f19\u5b50","email":"u10140@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100","level":1,"gender":0,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"5f9d2d5f-10b6-4270-9351-a197dc872778","user_id":10140,"createtime":1581751486,"expiretime":0,"expires_in":31536000}}
-2020-02-15 15:25:11 : 2
-2020-02-15 15:25:11 : 1
-2020-02-15 15:25:11 : mobile exists
-2020-02-15 16:33:37 : qq
-2020-02-15 16:33:37 : {"access_token":"868873AEFAE109EDFFBA900BB6C88080","openid":"1A9DA334F3C7C8AFBB14A8A2BC8F56A9","refresh_token":null,"expires_in":null}
-2020-02-15 16:33:37 : addons\third\library\Qq
-2020-02-15 16:33:37 : {"access_token":"868873AEFAE109EDFFBA900BB6C88080","openid":"1A9DA334F3C7C8AFBB14A8A2BC8F56A9","refresh_token":null,"expires_in":null}
-2020-02-15 16:33:37 : qq in
-2020-02-15 16:33:37 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u7eb5\u6a2a\u5929\u4e0b","gender":"\u7537","gender_type":2,"province":"","city":"","year":"0","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/1A9DA334F3C7C8AFBB14A8A2BC8F56A9\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/1A9DA334F3C7C8AFBB14A8A2BC8F56A9\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/1A9DA334F3C7C8AFBB14A8A2BC8F56A9\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=75vZibAiajQkdpLK6fEnxIdA&s=40","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=75vZibAiajQkdpLK6fEnxIdA&s=100","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=75vZibAiajQkdpLK6fEnxIdA&s=100","figureurl_type":"0","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=75vZibAiajQkdpLK6fEnxIdA&s=100"}
-2020-02-15 16:33:37 : login data
-2020-02-15 16:33:37 : {"userinfo":{"id":10141,"username":"u10141","nickname":"\u7eb5\u6a2a\u5929\u4e0b","email":"u10141@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=75vZibAiajQkdpLK6fEnxIdA&s=100","level":1,"gender":0,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"1b9547f6-658a-45b8-8dd8-1bc0d637de96","user_id":10141,"createtime":1581755617,"expiretime":0,"expires_in":31536000}}
-2020-02-15 18:53:15 : qq
-2020-02-15 18:53:15 : {"access_token":"BBBC3C835A4794ED02AC151B835B18C2","openid":"6DCFD6C19EA37E09CA143C5D7C2E2732","refresh_token":null,"expires_in":null}
-2020-02-15 18:53:15 : addons\third\library\Qq
-2020-02-15 18:53:15 : {"access_token":"BBBC3C835A4794ED02AC151B835B18C2","openid":"6DCFD6C19EA37E09CA143C5D7C2E2732","refresh_token":null,"expires_in":null}
-2020-02-15 18:53:15 : qq in
-2020-02-15 18:53:15 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u5c0f\u4f19\u5b50","gender":"\u7537","gender_type":2,"province":"","city":"","year":"0","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=40","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100","figureurl_type":"0","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100"}
-2020-02-15 18:53:15 : login data
-2020-02-15 18:53:15 : {"userinfo":{"id":10140,"username":"\u4f60\u597d","nickname":"\u4f60\u597d","email":"u10140@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&amp;amp;k=9oyCbkW3iaQNq2rCQKzcVYA&amp;amp;s=100","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"4aa968a5-8774-46e7-813a-1cebb0a408bc","user_id":10140,"createtime":1581763995,"expiretime":0,"expires_in":31536000}}
-2020-02-15 18:53:56 : qq
-2020-02-15 18:53:56 : {"access_token":"BBBC3C835A4794ED02AC151B835B18C2","openid":"6DCFD6C19EA37E09CA143C5D7C2E2732","refresh_token":null,"expires_in":null}
-2020-02-15 18:53:56 : addons\third\library\Qq
-2020-02-15 18:53:56 : {"access_token":"BBBC3C835A4794ED02AC151B835B18C2","openid":"6DCFD6C19EA37E09CA143C5D7C2E2732","refresh_token":null,"expires_in":null}
-2020-02-15 18:53:56 : qq in
-2020-02-15 18:53:56 : qq
-2020-02-15 18:53:56 : {"access_token":"BBBC3C835A4794ED02AC151B835B18C2","openid":"6DCFD6C19EA37E09CA143C5D7C2E2732","refresh_token":null,"expires_in":null}
-2020-02-15 18:53:56 : addons\third\library\Qq
-2020-02-15 18:53:56 : {"access_token":"BBBC3C835A4794ED02AC151B835B18C2","openid":"6DCFD6C19EA37E09CA143C5D7C2E2732","refresh_token":null,"expires_in":null}
-2020-02-15 18:53:56 : qq in
-2020-02-15 18:53:56 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u5c0f\u4f19\u5b50","gender":"\u7537","gender_type":2,"province":"","city":"","year":"0","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=40","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100","figureurl_type":"0","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100"}
-2020-02-15 18:53:56 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u5c0f\u4f19\u5b50","gender":"\u7537","gender_type":2,"province":"","city":"","year":"0","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=40","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100","figureurl_type":"0","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100"}
-2020-02-15 18:53:56 : login data
-2020-02-15 18:53:56 : {"userinfo":{"id":10140,"username":"\u4f60\u597d","nickname":"\u4f60\u597d","email":"u10140@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&amp;amp;k=9oyCbkW3iaQNq2rCQKzcVYA&amp;amp;s=100","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"ff3a7482-5870-45e5-9693-28503439bc74","user_id":10140,"createtime":1581764036,"expiretime":0,"expires_in":31536000}}
-2020-02-15 18:53:56 : login data
-2020-02-15 18:53:56 : {"userinfo":{"id":10140,"username":"\u4f60\u597d","nickname":"\u4f60\u597d","email":"u10140@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&amp;amp;k=9oyCbkW3iaQNq2rCQKzcVYA&amp;amp;s=100","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"cc48cf7e-b4ba-4511-ae57-0af61c82fede","user_id":10140,"createtime":1581764036,"expiretime":0,"expires_in":31536000}}
-2020-02-15 18:54:21 : 2
-2020-02-15 18:54:21 : 1
-2020-02-15 18:54:21 : 3
-2020-02-16 18:59:44 : addons\third\library\Wechat
-2020-02-16 18:59:44 : respnse
-2020-02-16 18:59:44 : {"access_token":"30_NrEsoGlLDKXfTRys-FhUU-tEtptQUGriiEoWPwNqIDE8n0plHdwT5TzV14HAJ6baB9vn4E3iGaN67h9_IsqjB_IWs8AsDHLdtruSr8AhyRQ","expires_in":7200,"refresh_token":"30_wm2Ji9KN30zAqWvjegukE2iwLBDPZ3EZMYQbQLnUFB9q_sBkDvFtdE63gORLhmfqClgJvmzFoJFfQCH3JkQlz_FpMcCT6mwK1MRa9xVVwVk","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-16 18:59:44 : params
-2020-02-16 18:59:44 : {"code":"081Zbh8f0BLNmw1Srp8f0ONg8f0Zbh8m"}
-2020-02-16 18:59:44 : {"access_token":"30_NrEsoGlLDKXfTRys-FhUU-tEtptQUGriiEoWPwNqIDE8n0plHdwT5TzV14HAJ6baB9vn4E3iGaN67h9_IsqjB_IWs8AsDHLdtruSr8AhyRQ","expires_in":7200,"refresh_token":"30_wm2Ji9KN30zAqWvjegukE2iwLBDPZ3EZMYQbQLnUFB9q_sBkDvFtdE63gORLhmfqClgJvmzFoJFfQCH3JkQlz_FpMcCT6mwK1MRa9xVVwVk","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-16 18:59:44 : user info
-2020-02-16 18:59:44 : {"access_token":"30_NrEsoGlLDKXfTRys-FhUU-tEtptQUGriiEoWPwNqIDE8n0plHdwT5TzV14HAJ6baB9vn4E3iGaN67h9_IsqjB_IWs8AsDHLdtruSr8AhyRQ","refresh_token":"30_wm2Ji9KN30zAqWvjegukE2iwLBDPZ3EZMYQbQLnUFB9q_sBkDvFtdE63gORLhmfqClgJvmzFoJFfQCH3JkQlz_FpMcCT6mwK1MRa9xVVwVk","expires_in":7200,"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","userinfo":{"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","nickname":"\u7fa1\u6155","sex":0,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","privilege":[],"unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","gender":0}}
-2020-02-16 18:59:44 : login data
-2020-02-16 18:59:44 : {"userinfo":{"id":10142,"username":"u10142","nickname":"\u7fa1\u6155","email":"u10142@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","level":1,"gender":0,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"eec4bcfb-1d59-4016-863a-fab28401a16f","user_id":10142,"createtime":1581850784,"expiretime":0,"expires_in":31536000}}
-2020-02-16 19:00:15 : 2
-2020-02-16 19:00:15 : 1
-2020-02-16 19:00:15 : 3
-2020-02-17 01:10:15 : addons\third\library\Wechat
-2020-02-17 01:10:15 : respnse
-2020-02-17 01:10:15 : {"access_token":"30_2z_Gx_Yt0nhZlNIt0o5cnB8h9JJT2r_xUMYPtfZs2vDzdFJRRsM5L719SBi0pbuLPkYf0t9O3QQkCDzK1eVTYKuTWpDHFdSnqhaA7rf3QQI","expires_in":7200,"refresh_token":"30__s0P4Oyr1XUSpImVOlFNGodkMfvGadvQqAn7-aOzYdroexGscDIh1WDRmMVF_IVRES5XGxIOOGagpsxAowUcEd9mLe892HkThlMLQNozYdk","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-17 01:10:15 : params
-2020-02-17 01:10:15 : {"code":"0a19TOi41JqFJP1Kn0k41f8Li419TOiJ"}
-2020-02-17 01:10:15 : {"access_token":"30_2z_Gx_Yt0nhZlNIt0o5cnB8h9JJT2r_xUMYPtfZs2vDzdFJRRsM5L719SBi0pbuLPkYf0t9O3QQkCDzK1eVTYKuTWpDHFdSnqhaA7rf3QQI","expires_in":7200,"refresh_token":"30__s0P4Oyr1XUSpImVOlFNGodkMfvGadvQqAn7-aOzYdroexGscDIh1WDRmMVF_IVRES5XGxIOOGagpsxAowUcEd9mLe892HkThlMLQNozYdk","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-17 01:10:15 : user info
-2020-02-17 01:10:15 : {"access_token":"30_2z_Gx_Yt0nhZlNIt0o5cnB8h9JJT2r_xUMYPtfZs2vDzdFJRRsM5L719SBi0pbuLPkYf0t9O3QQkCDzK1eVTYKuTWpDHFdSnqhaA7rf3QQI","refresh_token":"30__s0P4Oyr1XUSpImVOlFNGodkMfvGadvQqAn7-aOzYdroexGscDIh1WDRmMVF_IVRES5XGxIOOGagpsxAowUcEd9mLe892HkThlMLQNozYdk","expires_in":7200,"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","userinfo":{"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","nickname":"\u7fa1\u6155","sex":0,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","privilege":[],"unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","gender":0}}
-2020-02-17 01:10:15 : login data
-2020-02-17 01:10:15 : {"userinfo":{"id":10142,"username":"\u7eb5\u6a2a\u5929\u4e0b","nickname":"\u7eb5\u6a2a\u5929\u4e0b","email":"u10142@app.biyouliao8.com","mobile":"15756425203","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"2b246388-d37c-41dc-833a-4e8d2ed4f31c","user_id":10142,"createtime":1581873015,"expiretime":0,"expires_in":31536000}}
-2020-02-17 10:13:19 : SELECT * FROM `fa_tanchuang` WHERE  `status` = '显示'  AND `begin_time` >= 1581905599  AND `end_time` <= 1581905599 LIMIT 1
-2020-02-17 10:26:53 : SELECT * FROM `fa_tanchuang` WHERE  `status` = '显示'  AND `begin_time` >= 1581906413  AND `end_time` <= 1581906413 LIMIT 1
-2020-02-17 10:32:21 : SELECT * FROM `fa_tanchuang` WHERE  `status` = '显示'  AND `begin_time` <= 1581906741  AND `end_time` >= 1581906741 LIMIT 1
-2020-02-17 10:34:01 : SELECT * FROM `fa_tanchuang` WHERE  `status` = '显示'  AND `begin_time` <= 1581906841  AND `end_time` >= 1581906841 LIMIT 1
-2020-02-17 11:02:10 : {"\u0000*\u0000name":"tanchuang","\u0000*\u0000autoWriteTimestamp":false,"\u0000*\u0000createTime":false,"\u0000*\u0000updateTime":false,"\u0000*\u0000deleteTime":false,"\u0000*\u0000append":["url_type_text","status_text","create_time_text","begin_time_text","end_time_text"],"\u0000*\u0000connection":[],"\u0000*\u0000parent":null,"\u0000*\u0000query":null,"\u0000*\u0000table":null,"\u0000*\u0000class":"app\\admin\\model\\Tanchuang","\u0000*\u0000error":null,"\u0000*\u0000validate":null,"\u0000*\u0000pk":null,"\u0000*\u0000field":[],"\u0000*\u0000except":[],"\u0000*\u0000disuse":[],"\u0000*\u0000readonly":[],"\u0000*\u0000visible":[],"\u0000*\u0000hidden":[],"\u0000*\u0000data":{"id":2,"title":"4","paixu":2,"image":"\/uploads\/20200215\/dc02db0e062386b064defc566e5b3576.jpg","url_type":"\u5185\u94fe","article_id":830,"url":"","status":"\u663e\u793a","create_time":1581763983,"begin_time":1581907380,"end_time":1582339382},"\u0000*\u0000origin":{"id":2,"title":"4","paixu":2,"image":"\/uploads\/20200215\/dc02db0e062386b064defc566e5b3576.jpg","url_type":"\u5185\u94fe","article_id":830,"url":"","status":"\u663e\u793a","create_time":1581763983,"begin_time":1581907380,"end_time":1582339382},"\u0000*\u0000relation":[],"\u0000*\u0000auto":[],"\u0000*\u0000insert":[],"\u0000*\u0000update":[],"\u0000*\u0000dateFormat":false,"\u0000*\u0000type":[],"\u0000*\u0000isUpdate":true,"\u0000*\u0000replace":false,"\u0000*\u0000force":false,"\u0000*\u0000updateWhere":{"status":["eq","\u663e\u793a"],"begin_time":["elt",1581908530],"end_time":["egt",1581908530]},"\u0000*\u0000failException":false,"\u0000*\u0000useGlobalScope":true,"\u0000*\u0000batchValidate":false,"\u0000*\u0000resultSetType":"array","\u0000*\u0000relationWrite":null}
-2020-02-17 11:03:07 : {"id":2,"title":"4","paixu":2,"image":"\/uploads\/20200215\/dc02db0e062386b064defc566e5b3576.jpg","url_type":"\u5185\u94fe","article_id":830,"url":"","status":"\u663e\u793a","create_time":1581763983,"begin_time":1581907380,"end_time":1582339382,"url_type_text":"\u5185\u94fe","status_text":"\u663e\u793a","create_time_text":"2020-02-15 18:53:03","begin_time_text":"2020-02-17 10:43:00","end_time_text":"2020-02-22 10:43:02"}
-2020-02-17 11:05:16 : {"id":2,"title":"4","paixu":2,"image":"\/uploads\/20200215\/dc02db0e062386b064defc566e5b3576.jpg,\/uploads\/20200217\/e4b9b6a941e446074555d3b0eb5dad72.jpg,\/uploads\/20200217\/087ef4cc8fb0c3c8bae3c13b4c6d0a8e.jpg,\/uploads\/20200215\/ed8c07c41602235d8012face6e4ad410.png","url_type":"\u5185\u94fe","article_id":830,"url":"","status":"\u663e\u793a","create_time":1581763983,"begin_time":1581907380,"end_time":1582339382,"url_type_text":"\u5185\u94fe","status_text":"\u663e\u793a","create_time_text":"2020-02-15 18:53:03","begin_time_text":"2020-02-17 10:43:00","end_time_text":"2020-02-22 10:43:02"}
-2020-02-17 11:20:00 : addons\third\library\Wechat
-2020-02-17 11:20:01 : respnse
-2020-02-17 11:20:01 : {"access_token":"30_uq9_cGAdUfQMcENyFJ7SwaQUCumsXr-74r0Se_uDiWGQC0V63xQx3fGoUn0tm3iwgJibCWAkeiJkZ0zWwOpWFEPqqw80jssHjf0s4C8GBjM","expires_in":7200,"refresh_token":"30_Em7WpHrVZNWV6y_TzDVkgxWNqX4sCk2KxGLsQD7QFKfOy4c2LWAOg9ehdOtHYdeTOSbMAbP4j0aozUwM_U0B_XP9aGPnrerWKucOvIStygI","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 11:20:01 : params
-2020-02-17 11:20:01 : {"code":"021dt8pp1zgQdl0GQLmp18OUop1dt8pi"}
-2020-02-17 11:20:01 : {"access_token":"30_uq9_cGAdUfQMcENyFJ7SwaQUCumsXr-74r0Se_uDiWGQC0V63xQx3fGoUn0tm3iwgJibCWAkeiJkZ0zWwOpWFEPqqw80jssHjf0s4C8GBjM","expires_in":7200,"refresh_token":"30_Em7WpHrVZNWV6y_TzDVkgxWNqX4sCk2KxGLsQD7QFKfOy4c2LWAOg9ehdOtHYdeTOSbMAbP4j0aozUwM_U0B_XP9aGPnrerWKucOvIStygI","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 11:20:01 : user info
-2020-02-17 11:20:01 : {"access_token":"30_uq9_cGAdUfQMcENyFJ7SwaQUCumsXr-74r0Se_uDiWGQC0V63xQx3fGoUn0tm3iwgJibCWAkeiJkZ0zWwOpWFEPqqw80jssHjf0s4C8GBjM","refresh_token":"30_Em7WpHrVZNWV6y_TzDVkgxWNqX4sCk2KxGLsQD7QFKfOy4c2LWAOg9ehdOtHYdeTOSbMAbP4j0aozUwM_U0B_XP9aGPnrerWKucOvIStygI","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-17 11:20:01 : login data
-2020-02-17 11:20:01 : {"userinfo":{"id":10129,"username":"u10129","nickname":"\u6881","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"bbd0ca0a-65f3-4d93-954f-fc00aa832517","user_id":10129,"createtime":1581909601,"expiretime":0,"expires_in":31536000}}
-2020-02-17 15:09:20 : addons\third\library\Wechat
-2020-02-17 15:09:20 : respnse
-2020-02-17 15:09:20 : {"access_token":"30_mxTupeVSHQDsSM_jta8GpGbka4DBCffG6_l4BLkC4S-To23lnkOGJuua_bVsLTQeqY-qtTqhjOCNI7QpcPpbH2uK5VJ3kZyyyHuxrPeGHhM","expires_in":7200,"refresh_token":"30_8Sx2T625iKce1xgV_W-QiMdZajTZ3XpeT0fdfEMfixCpdgnhV6wOrcqXDpiwWIiy9A3v3XpIhWZ5xljJwWRsJaVhEtkdDYu8yyJKrVbj9eU","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 15:09:20 : params
-2020-02-17 15:09:20 : {"code":"01122hFc0auJZy169jFc0ZQ2Fc022hFG"}
-2020-02-17 15:09:20 : {"access_token":"30_mxTupeVSHQDsSM_jta8GpGbka4DBCffG6_l4BLkC4S-To23lnkOGJuua_bVsLTQeqY-qtTqhjOCNI7QpcPpbH2uK5VJ3kZyyyHuxrPeGHhM","expires_in":7200,"refresh_token":"30_8Sx2T625iKce1xgV_W-QiMdZajTZ3XpeT0fdfEMfixCpdgnhV6wOrcqXDpiwWIiy9A3v3XpIhWZ5xljJwWRsJaVhEtkdDYu8yyJKrVbj9eU","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 15:09:20 : user info
-2020-02-17 15:09:20 : {"access_token":"30_mxTupeVSHQDsSM_jta8GpGbka4DBCffG6_l4BLkC4S-To23lnkOGJuua_bVsLTQeqY-qtTqhjOCNI7QpcPpbH2uK5VJ3kZyyyHuxrPeGHhM","refresh_token":"30_8Sx2T625iKce1xgV_W-QiMdZajTZ3XpeT0fdfEMfixCpdgnhV6wOrcqXDpiwWIiy9A3v3XpIhWZ5xljJwWRsJaVhEtkdDYu8yyJKrVbj9eU","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-17 15:09:20 : login data
-2020-02-17 15:09:20 : {"userinfo":{"id":10129,"username":"u10129","nickname":"\u6881","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"a1d71c1e-31e8-4048-a582-03b62dfa0d7d","user_id":10129,"createtime":1581923360,"expiretime":0,"expires_in":31536000}}
-2020-02-17 15:25:50 : addons\third\library\Wechat
-2020-02-17 15:25:50 : respnse
-2020-02-17 15:25:50 : {"access_token":"30_jup6_vXrK4dcee0i2Qcn8L5xMGmXfKlL8gESUdV3BII2wWA5VRBvJobRUWaP0fR7jafj6IjiDMGrP09PWKgdQMuMYlHujWtMbyMllVR_E3s","expires_in":7200,"refresh_token":"30_EMSP4csJ2HlWCC-m7z9JCE4yJogd1WDouzDvbYN4jJWhUQNzNpozyAqppkT39mkUFgB0vEJOzyJnSPUSE7hA3dY1oa4HLwQFYSslQQNqB4A","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-17 15:25:50 : params
-2020-02-17 15:25:50 : {"code":"061xbZCz11Mwid0pQBCz16zXCz1xbZCq"}
-2020-02-17 15:25:50 : {"access_token":"30_jup6_vXrK4dcee0i2Qcn8L5xMGmXfKlL8gESUdV3BII2wWA5VRBvJobRUWaP0fR7jafj6IjiDMGrP09PWKgdQMuMYlHujWtMbyMllVR_E3s","expires_in":7200,"refresh_token":"30_EMSP4csJ2HlWCC-m7z9JCE4yJogd1WDouzDvbYN4jJWhUQNzNpozyAqppkT39mkUFgB0vEJOzyJnSPUSE7hA3dY1oa4HLwQFYSslQQNqB4A","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-17 15:25:51 : user info
-2020-02-17 15:25:51 : {"access_token":"30_jup6_vXrK4dcee0i2Qcn8L5xMGmXfKlL8gESUdV3BII2wWA5VRBvJobRUWaP0fR7jafj6IjiDMGrP09PWKgdQMuMYlHujWtMbyMllVR_E3s","refresh_token":"30_EMSP4csJ2HlWCC-m7z9JCE4yJogd1WDouzDvbYN4jJWhUQNzNpozyAqppkT39mkUFgB0vEJOzyJnSPUSE7hA3dY1oa4HLwQFYSslQQNqB4A","expires_in":7200,"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","userinfo":{"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","nickname":"\u7fa1\u6155","sex":0,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","privilege":[],"unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","gender":0}}
-2020-02-17 15:25:51 : login data
-2020-02-17 15:25:51 : {"userinfo":{"id":10142,"username":"\u7eb5\u6a2a\u5929\u4e0b","nickname":"\u7eb5\u6a2a\u5929\u4e0b","email":"u10142@app.biyouliao8.com","mobile":"15756425203","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"43b99cb1-c313-4842-bd56-c97546444df8","user_id":10142,"createtime":1581924351,"expiretime":0,"expires_in":31536000}}
-2020-02-17 15:48:43 : addons\third\library\Wechat
-2020-02-17 15:48:44 : respnse
-2020-02-17 15:48:44 : {"access_token":"30_bZ_Dj83HUXZ7Vt3uWiPh7fH6h3U14zW7LpLeJPhm1eVcBiEYvEsHwyo-cTHMjFeNYBGmkd213UL8Mv3EqhOxymnmy6Ipn7Mt-U3kMjVEkeo","expires_in":7200,"refresh_token":"30_eGaNdnBM7Sa1U7LazPob5XvuVQ0GLXMRHAEXF5ln1vl3y5-Tnm_83_Lkp1wIfQANm1CxZ2uSZt8tYE9BZHjhR3xn7hgbx4AZ68u9mYTnWx8","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 15:48:44 : params
-2020-02-17 15:48:44 : {"code":"001BOfr32YfaLQ0flXo32IK8r32BOfr8"}
-2020-02-17 15:48:44 : {"access_token":"30_bZ_Dj83HUXZ7Vt3uWiPh7fH6h3U14zW7LpLeJPhm1eVcBiEYvEsHwyo-cTHMjFeNYBGmkd213UL8Mv3EqhOxymnmy6Ipn7Mt-U3kMjVEkeo","expires_in":7200,"refresh_token":"30_eGaNdnBM7Sa1U7LazPob5XvuVQ0GLXMRHAEXF5ln1vl3y5-Tnm_83_Lkp1wIfQANm1CxZ2uSZt8tYE9BZHjhR3xn7hgbx4AZ68u9mYTnWx8","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 15:48:44 : user info
-2020-02-17 15:48:44 : {"access_token":"30_bZ_Dj83HUXZ7Vt3uWiPh7fH6h3U14zW7LpLeJPhm1eVcBiEYvEsHwyo-cTHMjFeNYBGmkd213UL8Mv3EqhOxymnmy6Ipn7Mt-U3kMjVEkeo","refresh_token":"30_eGaNdnBM7Sa1U7LazPob5XvuVQ0GLXMRHAEXF5ln1vl3y5-Tnm_83_Lkp1wIfQANm1CxZ2uSZt8tYE9BZHjhR3xn7hgbx4AZ68u9mYTnWx8","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-17 15:48:44 : login data
-2020-02-17 15:48:44 : {"userinfo":{"id":10129,"username":"u10129","nickname":"\u6881","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"20eff107-68e0-46c8-9238-e7ab108ac84c","user_id":10129,"createtime":1581925724,"expiretime":0,"expires_in":31536000}}
-2020-02-17 15:52:17 : qq
-2020-02-17 15:52:17 : {"access_token":"BBBC3C835A4794ED02AC151B835B18C2","openid":"6DCFD6C19EA37E09CA143C5D7C2E2732","refresh_token":null,"expires_in":null}
-2020-02-17 15:52:17 : addons\third\library\Qq
-2020-02-17 15:52:17 : {"access_token":"BBBC3C835A4794ED02AC151B835B18C2","openid":"6DCFD6C19EA37E09CA143C5D7C2E2732","refresh_token":null,"expires_in":null}
-2020-02-17 15:52:17 : qq in
-2020-02-17 15:52:17 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u5c0f\u4f19\u5b50","gender":"\u7537","gender_type":2,"province":"","city":"","year":"0","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=40","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100","figureurl_type":"0","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100"}
-2020-02-17 15:52:17 : login data
-2020-02-17 15:52:17 : {"userinfo":{"id":10140,"username":"\u4f60\u597d\uff0c","nickname":"\u4f60\u597d\uff0c","email":"u10140@app.biyouliao8.com","mobile":"15281076728","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&amp;amp;amp;amp;k=9oyCbkW3iaQNq2rCQKzcVYA&amp;amp;amp;amp;s=100","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"2838cf13-d663-4058-8d26-21452917f9f7","user_id":10140,"createtime":1581925937,"expiretime":0,"expires_in":31536000}}
-2020-02-17 16:23:11 : addons\third\library\Wechat
-2020-02-17 16:23:11 : respnse
-2020-02-17 16:23:11 : {"access_token":"30_gw1jWo4BF2QEvP7Ri9CmZVxmpL3amqLcHSv0PoMwS7dDz-xNClgHYgbopMyNOfsf4pSadFPW2e37Y71vMu6iLjEZXSEJchG5exGgyUE40v0","expires_in":7200,"refresh_token":"30_uF3DxgecjYQI67QhLorw1NAWXulW1ZwcMGEVGh87-wLCkXLoUipdDgUXqIF9I_rkSBuez36Ev_UHErq7E7Nx1gqgBM0_o7FyUvBkej0LzoI","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 16:23:11 : params
-2020-02-17 16:23:11 : {"code":"071Tn70Q0IZua72c3a0Q0Hz50Q0Tn70K"}
-2020-02-17 16:23:11 : {"access_token":"30_gw1jWo4BF2QEvP7Ri9CmZVxmpL3amqLcHSv0PoMwS7dDz-xNClgHYgbopMyNOfsf4pSadFPW2e37Y71vMu6iLjEZXSEJchG5exGgyUE40v0","expires_in":7200,"refresh_token":"30_uF3DxgecjYQI67QhLorw1NAWXulW1ZwcMGEVGh87-wLCkXLoUipdDgUXqIF9I_rkSBuez36Ev_UHErq7E7Nx1gqgBM0_o7FyUvBkej0LzoI","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 16:23:11 : user info
-2020-02-17 16:23:11 : {"access_token":"30_gw1jWo4BF2QEvP7Ri9CmZVxmpL3amqLcHSv0PoMwS7dDz-xNClgHYgbopMyNOfsf4pSadFPW2e37Y71vMu6iLjEZXSEJchG5exGgyUE40v0","refresh_token":"30_uF3DxgecjYQI67QhLorw1NAWXulW1ZwcMGEVGh87-wLCkXLoUipdDgUXqIF9I_rkSBuez36Ev_UHErq7E7Nx1gqgBM0_o7FyUvBkej0LzoI","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-17 16:23:11 : login data
-2020-02-17 16:23:11 : {"userinfo":{"id":10129,"username":"u10129","nickname":"\u6881","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"15afea3a-9f98-437b-8e42-a01363435fe6","user_id":10129,"createtime":1581927791,"expiretime":0,"expires_in":31536000}}
-2020-02-17 16:25:14 : addons\third\library\Wechat
-2020-02-17 16:25:14 : respnse
-2020-02-17 16:25:14 : {"access_token":"30_Mou9wSZXwrETf-zhepIDfcafAnNDPG95wvLo7zG8bK-RX1CM8VolIMtohOojUtmPpOaemv8XrQ-wk9B0iVBer33L9PMXExW-PbsgK0eAqQU","expires_in":7200,"refresh_token":"30_zHmCEOv0pPwK5hOu9c9kp6VPzC5X3sBnMeuGChSQpYezHIi_bhFvt_OMVUIZE5NYKJt0fgp47RvTt-tt-hLJ0ybp773fNiBwYQR_vT7rx0k","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 16:25:14 : params
-2020-02-17 16:25:14 : {"code":"011TRTpu0hD6Mf1Lqmpu0PdXpu0TRTpA"}
-2020-02-17 16:25:14 : {"access_token":"30_Mou9wSZXwrETf-zhepIDfcafAnNDPG95wvLo7zG8bK-RX1CM8VolIMtohOojUtmPpOaemv8XrQ-wk9B0iVBer33L9PMXExW-PbsgK0eAqQU","expires_in":7200,"refresh_token":"30_zHmCEOv0pPwK5hOu9c9kp6VPzC5X3sBnMeuGChSQpYezHIi_bhFvt_OMVUIZE5NYKJt0fgp47RvTt-tt-hLJ0ybp773fNiBwYQR_vT7rx0k","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 16:25:14 : user info
-2020-02-17 16:25:14 : {"access_token":"30_Mou9wSZXwrETf-zhepIDfcafAnNDPG95wvLo7zG8bK-RX1CM8VolIMtohOojUtmPpOaemv8XrQ-wk9B0iVBer33L9PMXExW-PbsgK0eAqQU","refresh_token":"30_zHmCEOv0pPwK5hOu9c9kp6VPzC5X3sBnMeuGChSQpYezHIi_bhFvt_OMVUIZE5NYKJt0fgp47RvTt-tt-hLJ0ybp773fNiBwYQR_vT7rx0k","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-17 16:25:14 : login data
-2020-02-17 16:25:14 : {"userinfo":{"id":10129,"username":"u10129","nickname":"\u6881","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"ffbd9b60-648a-4fc2-b456-130799617a22","user_id":10129,"createtime":1581927914,"expiretime":0,"expires_in":31536000}}
-2020-02-17 16:25:38 : addons\third\library\Wechat
-2020-02-17 16:25:39 : respnse
-2020-02-17 16:25:39 : {"access_token":"30_8PZSxr6MjOAFEGz2snSaukhPrwyhiq2Ds3Kp4_FevLhWbK5B3oIelsAy7Qh_4_Oz5WUYv-SP1XovmlVJZIWBfdy92HvST2YNFvRoXjUGpkk","expires_in":7200,"refresh_token":"30_Em7WpHrVZNWV6y_TzDVkgySUVQMWtxxQyLEgQQezqgrSt-OB0NhtzMhaj8VW5XoBRazgjpRsWD_9SPY7ajK8ySCkEMpp7LK7lsbGWql5iII","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 16:25:39 : params
-2020-02-17 16:25:39 : {"code":"061Sf7BR0k5vR42Io6DR0vI4BR0Sf7BA"}
-2020-02-17 16:25:39 : {"access_token":"30_8PZSxr6MjOAFEGz2snSaukhPrwyhiq2Ds3Kp4_FevLhWbK5B3oIelsAy7Qh_4_Oz5WUYv-SP1XovmlVJZIWBfdy92HvST2YNFvRoXjUGpkk","expires_in":7200,"refresh_token":"30_Em7WpHrVZNWV6y_TzDVkgySUVQMWtxxQyLEgQQezqgrSt-OB0NhtzMhaj8VW5XoBRazgjpRsWD_9SPY7ajK8ySCkEMpp7LK7lsbGWql5iII","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 16:25:39 : user info
-2020-02-17 16:25:39 : {"access_token":"30_8PZSxr6MjOAFEGz2snSaukhPrwyhiq2Ds3Kp4_FevLhWbK5B3oIelsAy7Qh_4_Oz5WUYv-SP1XovmlVJZIWBfdy92HvST2YNFvRoXjUGpkk","refresh_token":"30_Em7WpHrVZNWV6y_TzDVkgySUVQMWtxxQyLEgQQezqgrSt-OB0NhtzMhaj8VW5XoBRazgjpRsWD_9SPY7ajK8ySCkEMpp7LK7lsbGWql5iII","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-17 16:25:39 : login data
-2020-02-17 16:25:39 : {"userinfo":{"id":10129,"username":"u10129","nickname":"\u6881","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"75001f3d-1878-44d8-a29d-cff7f7870510","user_id":10129,"createtime":1581927939,"expiretime":0,"expires_in":31536000}}
-2020-02-17 17:16:27 : addons\third\library\Wechat
-2020-02-17 17:16:27 : respnse
-2020-02-17 17:16:27 : {"access_token":"30_9NJGIN-6o1DXLxn9GBLjmTPplSmJ44HGv90FJjxBGQrO1sqK0S-Emck6c0pmqzyGCx7kECv8A6ZqWNVmcwiJQsmH7cjaJOf9LtWhZRB02bk","expires_in":7200,"refresh_token":"30_uPmQSM0zV6g-ZAj8Je8nzpb5zxCgcCTsnVXIMoDHpg1h0yMPYszN_CIXOSJpiQf7_TIe84WF-MmSuU0xjW9p6qG8LlHv36pgK9wsnnRsC3c","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-17 17:16:27 : params
-2020-02-17 17:16:27 : {"code":"081FMouJ07UFna2EPOxJ0G8muJ0FMoui"}
-2020-02-17 17:16:27 : {"access_token":"30_9NJGIN-6o1DXLxn9GBLjmTPplSmJ44HGv90FJjxBGQrO1sqK0S-Emck6c0pmqzyGCx7kECv8A6ZqWNVmcwiJQsmH7cjaJOf9LtWhZRB02bk","expires_in":7200,"refresh_token":"30_uPmQSM0zV6g-ZAj8Je8nzpb5zxCgcCTsnVXIMoDHpg1h0yMPYszN_CIXOSJpiQf7_TIe84WF-MmSuU0xjW9p6qG8LlHv36pgK9wsnnRsC3c","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-17 17:16:27 : user info
-2020-02-17 17:16:27 : {"access_token":"30_9NJGIN-6o1DXLxn9GBLjmTPplSmJ44HGv90FJjxBGQrO1sqK0S-Emck6c0pmqzyGCx7kECv8A6ZqWNVmcwiJQsmH7cjaJOf9LtWhZRB02bk","refresh_token":"30_uPmQSM0zV6g-ZAj8Je8nzpb5zxCgcCTsnVXIMoDHpg1h0yMPYszN_CIXOSJpiQf7_TIe84WF-MmSuU0xjW9p6qG8LlHv36pgK9wsnnRsC3c","expires_in":7200,"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","userinfo":{"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","nickname":"\u7fa1\u6155","sex":0,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","privilege":[],"unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","gender":0}}
-2020-02-17 17:16:27 : login data
-2020-02-17 17:16:27 : {"userinfo":{"id":10142,"username":"\u7eb5\u6a2a\u5929\u4e0b","nickname":"\u7eb5\u6a2a\u5929\u4e0b","email":"u10142@app.biyouliao8.com","mobile":"15756425203","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"1477a9ee-78dd-435b-85c8-4e151651c9a3","user_id":10142,"createtime":1581930987,"expiretime":0,"expires_in":31536000}}
-2020-02-17 17:27:32 : addons\third\library\Wechat
-2020-02-17 17:27:32 : respnse
-2020-02-17 17:27:32 : {"access_token":"30_dG1DwZPCmyZaX9ZvjmTaJAsMJHuDTYaVfuMM-DcRnLXXjhew5btSgTOod2Q7uZUNJTbt-t8MzwbFcAyXIDcg7we-iYnAtH3SSft5e1Aahsw","expires_in":7200,"refresh_token":"30_67E5tEXzJqeRUi1FXbo5WYvJnO2N8Y4vRjpU8E1ziOXoiKrP6hNJziTEkLMyh5Iqo6eW-gh9p3JgWYCJYrLJGKQHxMDl2vdJ3aCgnR6qQqw","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-17 17:27:32 : params
-2020-02-17 17:27:32 : {"code":"021swSiW1WPbi11FT3iW1I2TiW1swSiF"}
-2020-02-17 17:27:32 : {"access_token":"30_dG1DwZPCmyZaX9ZvjmTaJAsMJHuDTYaVfuMM-DcRnLXXjhew5btSgTOod2Q7uZUNJTbt-t8MzwbFcAyXIDcg7we-iYnAtH3SSft5e1Aahsw","expires_in":7200,"refresh_token":"30_67E5tEXzJqeRUi1FXbo5WYvJnO2N8Y4vRjpU8E1ziOXoiKrP6hNJziTEkLMyh5Iqo6eW-gh9p3JgWYCJYrLJGKQHxMDl2vdJ3aCgnR6qQqw","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-17 17:27:32 : user info
-2020-02-17 17:27:32 : {"access_token":"30_dG1DwZPCmyZaX9ZvjmTaJAsMJHuDTYaVfuMM-DcRnLXXjhew5btSgTOod2Q7uZUNJTbt-t8MzwbFcAyXIDcg7we-iYnAtH3SSft5e1Aahsw","refresh_token":"30_67E5tEXzJqeRUi1FXbo5WYvJnO2N8Y4vRjpU8E1ziOXoiKrP6hNJziTEkLMyh5Iqo6eW-gh9p3JgWYCJYrLJGKQHxMDl2vdJ3aCgnR6qQqw","expires_in":7200,"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","userinfo":{"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","nickname":"\u7fa1\u6155","sex":0,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","privilege":[],"unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","gender":0}}
-2020-02-17 17:27:32 : login data
-2020-02-17 17:27:32 : {"userinfo":{"id":10142,"username":"\u4f60\u597d\u4f60\u597d\u4f60","nickname":"\u4f60\u597d\u4f60\u597d\u4f60","email":"u10142@app.biyouliao8.com","mobile":"15756425203","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","level":1,"gender":1,"birthday":"2006-02-17","bio":"\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d","score":0,"status":"normal","is_kuaixun":"\u5426","token":"46a55a7e-4e4f-4b25-a2cf-fe824ee25871","user_id":10142,"createtime":1581931652,"expiretime":0,"expires_in":31536000}}
-2020-02-17 17:31:00 : addons\third\library\Wechat
-2020-02-17 17:31:00 : respnse
-2020-02-17 17:31:00 : {"access_token":"30_-0HqNBIdFKeaZmuw_j7dDta2o2ktF2cs2Nw27LoGhVhqQMa_RuEqV1HzZI1kaKS8qXS5-V6XGaewkv8Lq2s5d-Uh-c-5FbavANBLfw2ut6k","expires_in":7200,"refresh_token":"30_ZT6Xfh4M-GxDXlaT66Vl5frI4donXjgUz4w0MECoRHWj2NQqyUfPEmB3uGYjwCIcanRhAYndWGQ3y2WKKcZbXc6nsEw8CS6cnfgELqL-PNs","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 17:31:00 : params
-2020-02-17 17:31:00 : {"code":"0a1OOUYT0x01322T0WVT05t5ZT0OOUY2"}
-2020-02-17 17:31:00 : {"access_token":"30_-0HqNBIdFKeaZmuw_j7dDta2o2ktF2cs2Nw27LoGhVhqQMa_RuEqV1HzZI1kaKS8qXS5-V6XGaewkv8Lq2s5d-Uh-c-5FbavANBLfw2ut6k","expires_in":7200,"refresh_token":"30_ZT6Xfh4M-GxDXlaT66Vl5frI4donXjgUz4w0MECoRHWj2NQqyUfPEmB3uGYjwCIcanRhAYndWGQ3y2WKKcZbXc6nsEw8CS6cnfgELqL-PNs","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 17:31:00 : user info
-2020-02-17 17:31:00 : {"access_token":"30_-0HqNBIdFKeaZmuw_j7dDta2o2ktF2cs2Nw27LoGhVhqQMa_RuEqV1HzZI1kaKS8qXS5-V6XGaewkv8Lq2s5d-Uh-c-5FbavANBLfw2ut6k","refresh_token":"30_ZT6Xfh4M-GxDXlaT66Vl5frI4donXjgUz4w0MECoRHWj2NQqyUfPEmB3uGYjwCIcanRhAYndWGQ3y2WKKcZbXc6nsEw8CS6cnfgELqL-PNs","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-17 17:31:00 : login data
-2020-02-17 17:31:00 : {"userinfo":{"id":10129,"username":"u10129","nickname":"\u6881","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"fc513e08-4500-4af3-856c-1bc65c7a50ca","user_id":10129,"createtime":1581931860,"expiretime":0,"expires_in":31536000}}
-2020-02-17 17:38:08 : addons\third\library\Wechat
-2020-02-17 17:38:08 : respnse
-2020-02-17 17:38:08 : {"access_token":"30_L3Oed0PEokMTwAcn4Yn9HyFdZ2nz0-LrBHJ5mwbjzc-L0dlnDUsSYUkvX-aJG6Cc6tZySZZ28Fd9yixfMNiv5BnBZOLPk8ZK3GJmzTUhCEo","expires_in":7200,"refresh_token":"30_1k-RaCkewjxdSRezk76Rxp86Z8-jClreWCwqRVgHieV22Hy92Z1FD5YfQiRDTlnbDJq16tf8dMg3ef589xySuk3GTiyzY-TUPAHdrKN3RC4","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-17 17:38:08 : params
-2020-02-17 17:38:08 : {"code":"081w51r30cBWVH1QbJq30G1ar30w51r1"}
-2020-02-17 17:38:08 : {"access_token":"30_L3Oed0PEokMTwAcn4Yn9HyFdZ2nz0-LrBHJ5mwbjzc-L0dlnDUsSYUkvX-aJG6Cc6tZySZZ28Fd9yixfMNiv5BnBZOLPk8ZK3GJmzTUhCEo","expires_in":7200,"refresh_token":"30_1k-RaCkewjxdSRezk76Rxp86Z8-jClreWCwqRVgHieV22Hy92Z1FD5YfQiRDTlnbDJq16tf8dMg3ef589xySuk3GTiyzY-TUPAHdrKN3RC4","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-17 17:38:08 : user info
-2020-02-17 17:38:08 : {"access_token":"30_L3Oed0PEokMTwAcn4Yn9HyFdZ2nz0-LrBHJ5mwbjzc-L0dlnDUsSYUkvX-aJG6Cc6tZySZZ28Fd9yixfMNiv5BnBZOLPk8ZK3GJmzTUhCEo","refresh_token":"30_1k-RaCkewjxdSRezk76Rxp86Z8-jClreWCwqRVgHieV22Hy92Z1FD5YfQiRDTlnbDJq16tf8dMg3ef589xySuk3GTiyzY-TUPAHdrKN3RC4","expires_in":7200,"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","userinfo":{"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","nickname":"\u7fa1\u6155","sex":0,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","privilege":[],"unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","gender":0}}
-2020-02-17 17:38:08 : login data
-2020-02-17 17:38:08 : {"userinfo":{"id":10142,"username":"\u4f60\u597d\u4f60\u597d\u4f60","nickname":"\u4f60\u597d\u4f60\u597d\u4f60","email":"u10142@app.biyouliao8.com","mobile":"15756425203","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","level":1,"gender":1,"birthday":"2006-02-17","bio":"\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d","score":0,"status":"normal","is_kuaixun":"\u5426","token":"909b881a-a7a7-4b2d-95cf-f5db5d9d3622","user_id":10142,"createtime":1581932288,"expiretime":0,"expires_in":31536000}}
-2020-02-17 18:03:09 : addons\third\library\Wechat
-2020-02-17 18:03:10 : respnse
-2020-02-17 18:03:10 : {"access_token":"30_uOLhugPrW7OFsM9TWJQ2jSAqBSuUnUX0oo_Dz_DCi5No7rK9fno7eDxvREeCGPRS9XrvFriPyCjN6j-uT3a9rhh47aEXF87YlGUzYu6V23I","expires_in":7200,"refresh_token":"30_NKCifJKIjX5CChEgQq2QZrgPeC2QM51gMwGTcKkc4GQ8cDEvbWieoH2DwsDuEQSbcmBw_1sHYj7PKTXrhWdEtsNpsKWWFuFKoAqErhCsUVw","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 18:03:10 : params
-2020-02-17 18:03:10 : {"code":"061yUTHi1Bv5Os0DZ8Ki1w32Ii1yUTHe"}
-2020-02-17 18:03:10 : {"access_token":"30_uOLhugPrW7OFsM9TWJQ2jSAqBSuUnUX0oo_Dz_DCi5No7rK9fno7eDxvREeCGPRS9XrvFriPyCjN6j-uT3a9rhh47aEXF87YlGUzYu6V23I","expires_in":7200,"refresh_token":"30_NKCifJKIjX5CChEgQq2QZrgPeC2QM51gMwGTcKkc4GQ8cDEvbWieoH2DwsDuEQSbcmBw_1sHYj7PKTXrhWdEtsNpsKWWFuFKoAqErhCsUVw","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-17 18:03:10 : user info
-2020-02-17 18:03:10 : {"access_token":"30_uOLhugPrW7OFsM9TWJQ2jSAqBSuUnUX0oo_Dz_DCi5No7rK9fno7eDxvREeCGPRS9XrvFriPyCjN6j-uT3a9rhh47aEXF87YlGUzYu6V23I","refresh_token":"30_NKCifJKIjX5CChEgQq2QZrgPeC2QM51gMwGTcKkc4GQ8cDEvbWieoH2DwsDuEQSbcmBw_1sHYj7PKTXrhWdEtsNpsKWWFuFKoAqErhCsUVw","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-17 18:03:10 : login data
-2020-02-17 18:03:10 : {"userinfo":{"id":10129,"username":"u10129","nickname":"\u6881","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"985d179b-32fc-4aa7-846d-27f0eddf200c","user_id":10129,"createtime":1581933790,"expiretime":0,"expires_in":31536000}}
-2020-02-17 19:25:23 : 1
-2020-02-17 19:25:23 : 2
-2020-02-18 14:12:28 : addons\third\library\Wechat
-2020-02-18 14:12:28 : respnse
-2020-02-18 14:12:28 : {"access_token":"30_v3mzvkt4NI0VEskoEhy3rS9iWSCjNvi5kpfRGPGCv6C9Lm2BJor6Jygy8EuIftA9mdS7T3YG09m7pxf2YHYFItNOh31o43VfqkENpLun0CY","expires_in":7200,"refresh_token":"30_mTVZXygdxl8Q_aP78R4FuN-2dvdHFltUICBuJfC6KDvrdhDdx3mn6soUG18vp4YBlGR70uXL5r3RHHSMYQ5sMw5dFy612NT-hipz7vIN0HI","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-18 14:12:28 : params
-2020-02-18 14:12:28 : {"code":"001xEFEO0Zmao62G0OEO0OvJEO0xEFES"}
-2020-02-18 14:12:28 : {"access_token":"30_v3mzvkt4NI0VEskoEhy3rS9iWSCjNvi5kpfRGPGCv6C9Lm2BJor6Jygy8EuIftA9mdS7T3YG09m7pxf2YHYFItNOh31o43VfqkENpLun0CY","expires_in":7200,"refresh_token":"30_mTVZXygdxl8Q_aP78R4FuN-2dvdHFltUICBuJfC6KDvrdhDdx3mn6soUG18vp4YBlGR70uXL5r3RHHSMYQ5sMw5dFy612NT-hipz7vIN0HI","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-18 14:12:28 : user info
-2020-02-18 14:12:28 : {"access_token":"30_v3mzvkt4NI0VEskoEhy3rS9iWSCjNvi5kpfRGPGCv6C9Lm2BJor6Jygy8EuIftA9mdS7T3YG09m7pxf2YHYFItNOh31o43VfqkENpLun0CY","refresh_token":"30_mTVZXygdxl8Q_aP78R4FuN-2dvdHFltUICBuJfC6KDvrdhDdx3mn6soUG18vp4YBlGR70uXL5r3RHHSMYQ5sMw5dFy612NT-hipz7vIN0HI","expires_in":7200,"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","userinfo":{"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","nickname":"\u7fa1\u6155","sex":0,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","privilege":[],"unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","gender":0}}
-2020-02-18 14:12:28 : login data
-2020-02-18 14:12:28 : {"userinfo":{"id":10142,"username":"\u4f60\u597d\u4f60\u597d\u4f60","nickname":"\u4f60\u597d\u4f60\u597d\u4f60","email":"u10142@app.biyouliao8.com","mobile":"15756425203","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","level":1,"gender":1,"birthday":"2006-02-17","bio":"\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d","score":0,"status":"normal","is_kuaixun":"\u5426","token":"dcdc7a40-9767-4ca2-9c69-cdcead14047e","user_id":10142,"createtime":1582006348,"expiretime":0,"expires_in":31536000}}
-2020-02-18 14:12:33 : addons\third\library\Wechat
-2020-02-18 14:12:34 : respnse
-2020-02-18 14:12:34 : {"access_token":"30_tEr_a-JNH849ANeZTk_nGSdN7DTnpK7VJvjS0lLRH-7rlfNrlNL1RJMU82s78sB8CsSodiazLnzNV8i7_-RZu5Eglr-stZkpDk0mfZCrU5w","expires_in":7200,"refresh_token":"30_wm2Ji9KN30zAqWvjegukE-BVG5ntUTDQw5zGoxA6JnCqbZzkB1vfLAtzX-ENXYzO-ishZDJHi1y4gYJoNtJmEqm0HlklVcrT7K9OBZHqr9I","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-18 14:12:34 : params
-2020-02-18 14:12:34 : {"code":"071QiBqF0x8vLe2KDJoF0S7vqF0QiBqC"}
-2020-02-18 14:12:34 : {"access_token":"30_tEr_a-JNH849ANeZTk_nGSdN7DTnpK7VJvjS0lLRH-7rlfNrlNL1RJMU82s78sB8CsSodiazLnzNV8i7_-RZu5Eglr-stZkpDk0mfZCrU5w","expires_in":7200,"refresh_token":"30_wm2Ji9KN30zAqWvjegukE-BVG5ntUTDQw5zGoxA6JnCqbZzkB1vfLAtzX-ENXYzO-ishZDJHi1y4gYJoNtJmEqm0HlklVcrT7K9OBZHqr9I","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-18 14:12:34 : user info
-2020-02-18 14:12:34 : {"access_token":"30_tEr_a-JNH849ANeZTk_nGSdN7DTnpK7VJvjS0lLRH-7rlfNrlNL1RJMU82s78sB8CsSodiazLnzNV8i7_-RZu5Eglr-stZkpDk0mfZCrU5w","refresh_token":"30_wm2Ji9KN30zAqWvjegukE-BVG5ntUTDQw5zGoxA6JnCqbZzkB1vfLAtzX-ENXYzO-ishZDJHi1y4gYJoNtJmEqm0HlklVcrT7K9OBZHqr9I","expires_in":7200,"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","userinfo":{"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","nickname":"\u7fa1\u6155","sex":0,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","privilege":[],"unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","gender":0}}
-2020-02-18 14:12:34 : login data
-2020-02-18 14:12:34 : {"userinfo":{"id":10142,"username":"\u4f60\u597d\u4f60\u597d\u4f60","nickname":"\u4f60\u597d\u4f60\u597d\u4f60","email":"u10142@app.biyouliao8.com","mobile":"15756425203","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","level":1,"gender":1,"birthday":"2006-02-17","bio":"\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d","score":0,"status":"normal","is_kuaixun":"\u5426","token":"a75886d4-5983-47de-9afb-40dd68f17bdd","user_id":10142,"createtime":1582006354,"expiretime":0,"expires_in":31536000}}
-2020-02-18 14:13:59 : qq
-2020-02-18 14:13:59 : {"access_token":"BBBC3C835A4794ED02AC151B835B18C2","openid":"6DCFD6C19EA37E09CA143C5D7C2E2732","refresh_token":null,"expires_in":null}
-2020-02-18 14:13:59 : addons\third\library\Qq
-2020-02-18 14:13:59 : {"access_token":"BBBC3C835A4794ED02AC151B835B18C2","openid":"6DCFD6C19EA37E09CA143C5D7C2E2732","refresh_token":null,"expires_in":null}
-2020-02-18 14:13:59 : qq in
-2020-02-18 14:14:00 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u5c0f\u4f19\u5b50","gender":"\u7537","gender_type":2,"province":"","city":"","year":"0","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=40","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100","figureurl_type":"0","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100"}
-2020-02-18 14:14:00 : login data
-2020-02-18 14:14:00 : {"userinfo":{"id":10140,"username":"\u4f60\u597d\uff0c","nickname":"\u4f60\u597d\uff0c","email":"u10140@app.biyouliao8.com","mobile":"15281076728","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&amp;amp;amp;amp;k=9oyCbkW3iaQNq2rCQKzcVYA&amp;amp;amp;amp;s=100","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"ac2b51e1-cfe8-4023-b537-855e9e8bf274","user_id":10140,"createtime":1582006440,"expiretime":0,"expires_in":31536000}}
-2020-02-18 14:14:30 : 1
-2020-02-18 14:14:30 : 2
-2020-02-18 14:19:05 : addons\third\library\Wechat
-2020-02-18 14:19:05 : respnse
-2020-02-18 14:19:05 : {"access_token":"30_1NuItqLDqFvrHzu1vUXWpx98rxpXOroQCdnLDG07tmK-ec-M2QQHG5bJ05tRb-zwVzIqFpT7C2ZLm-lDmW3SGHQ4NfM_6CREauw6znqQ744","expires_in":7200,"refresh_token":"30_1mnKAzBMJqYpjR5UkL-beZ78IEOXVpD1P7H1uSeg3CDKAErrq9FYA_DXLbGVgLM6ED4zVzplxykjahx9eGwKZVAfcBcd4cg0G8Xw_HEIAtw","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-18 14:19:05 : params
-2020-02-18 14:19:05 : {"code":"06184OB706H41D1R8wE70M0IB7084OBm"}
-2020-02-18 14:19:05 : {"access_token":"30_1NuItqLDqFvrHzu1vUXWpx98rxpXOroQCdnLDG07tmK-ec-M2QQHG5bJ05tRb-zwVzIqFpT7C2ZLm-lDmW3SGHQ4NfM_6CREauw6znqQ744","expires_in":7200,"refresh_token":"30_1mnKAzBMJqYpjR5UkL-beZ78IEOXVpD1P7H1uSeg3CDKAErrq9FYA_DXLbGVgLM6ED4zVzplxykjahx9eGwKZVAfcBcd4cg0G8Xw_HEIAtw","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-18 14:19:05 : user info
-2020-02-18 14:19:05 : {"access_token":"30_1NuItqLDqFvrHzu1vUXWpx98rxpXOroQCdnLDG07tmK-ec-M2QQHG5bJ05tRb-zwVzIqFpT7C2ZLm-lDmW3SGHQ4NfM_6CREauw6znqQ744","refresh_token":"30_1mnKAzBMJqYpjR5UkL-beZ78IEOXVpD1P7H1uSeg3CDKAErrq9FYA_DXLbGVgLM6ED4zVzplxykjahx9eGwKZVAfcBcd4cg0G8Xw_HEIAtw","expires_in":7200,"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","userinfo":{"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","nickname":"\u7fa1\u6155","sex":0,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","privilege":[],"unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","gender":0}}
-2020-02-18 14:19:05 : login data
-2020-02-18 14:19:05 : {"userinfo":{"id":10142,"username":"\u4f60\u597d\u4f60\u597d\u4f60","nickname":"\u4f60\u597d\u4f60\u597d\u4f60","email":"u10142@app.biyouliao8.com","mobile":"15756425203","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","level":1,"gender":1,"birthday":"2006-02-17","bio":"\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d","score":0,"status":"normal","is_kuaixun":"\u5426","token":"b6f6cc1a-755f-4cab-a497-55dd9fa0bac5","user_id":10142,"createtime":1582006745,"expiretime":0,"expires_in":31536000}}
-2020-02-18 14:30:47 : 1
-2020-02-18 14:30:47 : 2
-2020-02-18 14:30:56 : 1
-2020-02-18 14:30:56 : 2
-2020-02-18 14:36:12 : 1
-2020-02-18 14:36:12 : 2
-2020-02-18 15:20:16 : 1
-2020-02-18 15:20:16 : 2
-2020-02-18 15:20:21 : 1
-2020-02-18 15:20:21 : 2
-2020-02-18 15:26:24 : 1
-2020-02-18 15:26:24 : 2
-2020-02-18 15:26:34 : 1
-2020-02-18 15:26:34 : 2
-2020-02-18 15:41:50 : 未登路
-2020-02-18 15:45:02 : 10129
-2020-02-18 15:45:02 : 未登路
-2020-02-18 15:45:05 : 10129
-2020-02-18 15:45:05 : 未登路
-2020-02-18 15:48:51 : 10129
-2020-02-18 15:49:00 : 10129
-2020-02-18 15:50:50 : 
-2020-02-18 15:53:41 : 
-2020-02-18 15:53:41 : not login
-2020-02-18 16:06:41 : 
-2020-02-18 16:06:41 : not login
-2020-02-18 16:06:47 : 
-2020-02-18 16:06:47 : not login
-2020-02-18 16:07:31 : 
-2020-02-18 16:07:31 : not login
-2020-02-18 16:07:43 : 
-2020-02-18 16:07:43 : not login
-2020-02-18 16:11:22 : 
-2020-02-18 16:11:22 : not login
-2020-02-18 16:16:26 : 
-2020-02-18 16:16:26 : not login
-2020-02-18 16:19:05 : 
-2020-02-18 16:19:05 : not login
-2020-02-18 16:24:14 : 
-2020-02-18 16:24:14 : not login
-2020-02-18 16:24:16 : 
-2020-02-18 16:24:16 : not login
-2020-02-18 16:27:48 : 
-2020-02-18 16:27:48 : not login
-2020-02-18 16:27:57 : 
-2020-02-18 16:27:57 : not login
-2020-02-18 16:29:49 : 10129
-2020-02-18 16:29:51 : 1
-2020-02-18 16:29:51 : 2
-2020-02-18 16:29:55 : 10129
-2020-02-18 16:29:57 : 1
-2020-02-18 16:29:57 : 2
-2020-02-18 16:30:38 : 
-2020-02-18 16:30:38 : not login
-2020-02-18 16:37:38 : 
-2020-02-18 16:37:38 : not login
-2020-02-18 16:38:51 : 
-2020-02-18 16:38:51 : not login
-2020-02-18 16:41:13 : 
-2020-02-18 16:41:13 : not login
-2020-02-18 16:41:50 : 
-2020-02-18 16:41:50 : not login
-2020-02-18 16:45:55 : 
-2020-02-18 16:45:55 : not login
-2020-02-18 16:57:07 : 
-2020-02-18 16:57:07 : not login
-2020-02-18 17:01:15 : 
-2020-02-18 17:01:15 : not login
-2020-02-18 17:05:32 : 
-2020-02-18 17:05:32 : not login
-2020-02-18 17:07:49 : 
-2020-02-18 17:07:49 : not login
-2020-02-18 17:14:50 : 
-2020-02-18 17:14:50 : not login
-2020-02-18 17:21:18 : 
-2020-02-18 17:21:18 : not login
-2020-02-18 17:34:59 : 
-2020-02-18 17:34:59 : not login
-2020-02-18 17:37:36 : 
-2020-02-18 17:37:36 : not login
-2020-02-18 17:48:43 : 
-2020-02-18 17:48:43 : not login
-2020-02-18 17:52:07 : 
-2020-02-18 17:52:07 : not login
-2020-02-18 17:55:19 : 
-2020-02-18 17:55:19 : not login
-2020-02-18 17:55:21 : 
-2020-02-18 17:55:21 : not login
-2020-02-18 17:59:18 : 
-2020-02-18 17:59:18 : not login
-2020-02-18 18:04:04 : 
-2020-02-18 18:04:04 : not login
-2020-02-18 18:24:15 : 
-2020-02-18 18:24:15 : not login
-2020-02-18 18:26:04 : 10142
-2020-02-18 18:26:30 : 1
-2020-02-18 18:26:30 : 2
-2020-02-18 18:26:43 : 10142
-2020-02-18 18:26:52 : 10142
-2020-02-18 18:26:58 : 1
-2020-02-18 18:26:58 : 2
-2020-02-18 18:29:27 : 10142
-2020-02-18 18:30:03 : 10142
-2020-02-18 18:30:19 : 10142
-2020-02-18 18:34:58 : 10142
-2020-02-18 18:36:50 : 10142
-2020-02-18 18:39:05 : 10142
-2020-02-18 18:41:05 : 10142
-2020-02-18 18:41:10 : 10142
-2020-02-18 18:41:21 : 10142
-2020-02-18 18:42:05 : 10142
-2020-02-18 19:53:18 : /www/wwwroot/app/runtime/addons/recommend.zip
-2020-02-18 20:02:05 : /www/wwwroot/app/runtime/addons/nkeditor.zip
-2020-02-18 20:05:11 : /www/wwwroot/app/runtime/addons/5e4bd2f79518b.zip
-2020-02-18 20:06:26 : 1
-2020-02-18 20:07:36 : 0
-2020-02-18 21:06:24 : 10142
-2020-02-18 21:08:43 : 10142
-2020-02-18 21:10:32 : 10142
-2020-02-18 21:17:50 : 10129
-2020-02-18 22:27:07 : 
-2020-02-18 22:27:07 : not login
-2020-02-18 22:27:58 : 10142
-2020-02-18 22:29:24 : 10142
-2020-02-19 01:41:31 : 10142
-2020-02-19 01:42:04 : 10142
-2020-02-19 01:42:32 : 10142
-2020-02-19 01:42:40 : 10142
-2020-02-19 10:36:15 : 10129
-2020-02-19 10:55:13 : 10142
-2020-02-19 10:55:32 : 10129
-2020-02-19 11:17:50 : 10142
-2020-02-19 11:17:55 : 10142
-2020-02-19 12:44:53 : 10142
-2020-02-19 13:18:32 : 10129
-2020-02-19 13:19:43 : 10129
-2020-02-19 13:30:36 : 10129
-2020-02-19 13:34:55 : 10129
-2020-02-19 13:44:32 : 10129
-2020-02-19 14:16:00 : 10129
-2020-02-19 14:21:06 : 10129
-2020-02-19 14:26:35 : 10129
-2020-02-19 14:34:58 : 10129
-2020-02-19 14:43:55 : 10129
-2020-02-19 14:44:18 : qq
-2020-02-19 14:44:18 : {"access_token":"C57E70D01EC715F0F9F7ED267E9737BF","openid":"300120E900DFE4C638C57091882B236F","refresh_token":null,"expires_in":null}
-2020-02-19 14:44:18 : addons\third\library\Qq
-2020-02-19 14:44:18 : {"access_token":"C57E70D01EC715F0F9F7ED267E9737BF","openid":"300120E900DFE4C638C57091882B236F","refresh_token":null,"expires_in":null}
-2020-02-19 14:44:18 : qq in
-2020-02-19 14:44:19 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u4e96\u67d2","gender":"\u7537","gender_type":1,"province":"","city":"","year":"1999","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/300120E900DFE4C638C57091882B236F\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/300120E900DFE4C638C57091882B236F\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/300120E900DFE4C638C57091882B236F\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=UaD4xR0JTKVzL0Q4vJCePw&s=40&t=1557217510","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=UaD4xR0JTKVzL0Q4vJCePw&s=100&t=1557217510","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=UaD4xR0JTKVzL0Q4vJCePw&s=640&t=1557217510","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=UaD4xR0JTKVzL0Q4vJCePw&s=100&t=1557217510"}
-2020-02-19 14:44:19 : login data
-2020-02-19 14:44:19 : {"userinfo":{"id":10143,"username":"u10143","nickname":"\u4e96\u67d2","email":"u10143@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=UaD4xR0JTKVzL0Q4vJCePw&s=100&t=1557217510","level":1,"gender":0,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"268748ef-53d3-4f71-9eb0-7e47f3435755","user_id":10143,"createtime":1582094659,"expiretime":0,"expires_in":31536000}}
-2020-02-19 14:51:09 : qq
-2020-02-19 14:51:09 : {"access_token":"C57E70D01EC715F0F9F7ED267E9737BF","openid":"300120E900DFE4C638C57091882B236F","refresh_token":null,"expires_in":null}
-2020-02-19 14:51:09 : addons\third\library\Qq
-2020-02-19 14:51:09 : {"access_token":"C57E70D01EC715F0F9F7ED267E9737BF","openid":"300120E900DFE4C638C57091882B236F","refresh_token":null,"expires_in":null}
-2020-02-19 14:51:09 : qq in
-2020-02-19 14:51:09 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u4e96\u67d2","gender":"\u7537","gender_type":1,"province":"","city":"","year":"1999","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/300120E900DFE4C638C57091882B236F\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/300120E900DFE4C638C57091882B236F\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/300120E900DFE4C638C57091882B236F\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=UaD4xR0JTKVzL0Q4vJCePw&s=40&t=1557217510","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=UaD4xR0JTKVzL0Q4vJCePw&s=100&t=1557217510","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=UaD4xR0JTKVzL0Q4vJCePw&s=640&t=1557217510","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=UaD4xR0JTKVzL0Q4vJCePw&s=100&t=1557217510"}
-2020-02-19 14:51:09 : login data
-2020-02-19 14:51:09 : {"userinfo":{"id":10143,"username":"u10143","nickname":"\u4e96\u67d2","email":"u10143@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=UaD4xR0JTKVzL0Q4vJCePw&s=100&t=1557217510","level":1,"gender":0,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"2675b737-b435-4bd1-bd97-ac2f806b7a50","user_id":10143,"createtime":1582095069,"expiretime":0,"expires_in":31536000}}
-2020-02-19 14:51:17 : 2
-2020-02-19 14:51:17 : 1
-2020-02-19 14:51:17 : 3
-2020-02-19 14:58:31 : 10142
-2020-02-19 14:59:38 : 10142
-2020-02-19 14:59:51 : 10142
-2020-02-19 14:59:55 : 10142
-2020-02-19 15:00:07 : 10142
-2020-02-19 15:00:14 : 10142
-2020-02-19 15:00:25 : 10142
-2020-02-19 15:00:47 : 10142
-2020-02-19 15:01:08 : 10142
-2020-02-19 15:08:37 : 10142
-2020-02-19 15:08:42 : 10142
-2020-02-19 15:08:46 : 10142
-2020-02-19 15:09:01 : 10142
-2020-02-19 15:21:27 : 10143
-2020-02-19 15:22:17 : 10143
-2020-02-19 15:28:11 : 10143
-2020-02-19 15:29:38 : 10143
-2020-02-19 15:42:37 : 10129
-2020-02-19 15:42:53 : 10142
-2020-02-19 15:42:59 : 10129
-2020-02-19 15:43:17 : 10129
-2020-02-19 15:47:39 : 10142
-2020-02-19 15:47:41 : 10129
-2020-02-19 15:47:54 : 10142
-2020-02-19 15:48:37 : 10142
-2020-02-19 15:48:44 : 10142
-2020-02-19 15:51:32 : 10142
-2020-02-19 15:52:20 : 10142
-2020-02-19 15:53:59 : 10142
-2020-02-19 15:54:13 : 10142
-2020-02-19 15:59:24 : 
-2020-02-19 15:59:24 : not login
-2020-02-19 16:00:39 : 
-2020-02-19 16:00:39 : not login
-2020-02-19 16:01:29 : 10143
-2020-02-19 16:01:51 : 10143
-2020-02-19 16:02:02 : 10142
-2020-02-19 16:02:17 : 10134
-2020-02-19 16:03:14 : 
-2020-02-19 16:03:14 : not login
-2020-02-19 16:03:15 : 10134
-2020-02-19 16:03:24 : 10134
-2020-02-19 16:04:50 : 10134
-2020-02-19 16:04:52 : 1
-2020-02-19 16:04:52 : 2
-2020-02-19 16:05:05 : 10134
-2020-02-19 16:05:21 : 10134
-2020-02-19 16:05:32 : 10134
-2020-02-19 16:05:37 : 10134
-2020-02-19 16:05:55 : 10134
-2020-02-19 16:06:02 : 1
-2020-02-19 16:06:02 : 2
-2020-02-19 16:07:45 : 
-2020-02-19 16:07:45 : not login
-2020-02-19 16:08:51 : 
-2020-02-19 16:08:51 : not login
-2020-02-19 16:08:57 : 
-2020-02-19 16:08:57 : not login
-2020-02-19 16:09:40 : 10134
-2020-02-19 16:09:54 : 10142
-2020-02-19 16:11:05 : 
-2020-02-19 16:11:05 : not login
-2020-02-19 16:12:28 : 10142
-2020-02-19 16:13:54 : 
-2020-02-19 16:13:54 : not login
-2020-02-19 16:14:47 : 10134
-2020-02-19 16:19:06 : 10142
-2020-02-19 16:20:50 : 1
-2020-02-19 16:20:59 : 10142
-2020-02-19 16:22:46 : 1
-2020-02-19 16:23:05 : 10142
-2020-02-19 16:27:21 : 10129
-2020-02-19 16:27:41 : 10129
-2020-02-19 16:31:02 : 10129
-2020-02-19 16:31:44 : 10129
-2020-02-19 16:37:36 : 10134
-2020-02-19 16:38:16 : 10132
-2020-02-19 16:38:51 : 10132
-2020-02-19 17:13:41 : 10142
-2020-02-19 17:14:05 : 10142
-2020-02-19 17:16:14 : 10142
-2020-02-19 17:19:56 : 1
-2020-02-19 17:20:13 : 10142
-2020-02-19 17:21:17 : 1
-2020-02-19 17:21:21 : 10142
-2020-02-19 17:23:16 : 1
-2020-02-19 17:23:23 : 10142
-2020-02-19 17:25:46 : 1
-2020-02-19 17:25:53 : 10142
-2020-02-19 17:26:51 : 1
-2020-02-19 17:26:54 : 10142
-2020-02-19 17:27:40 : 1
-2020-02-19 17:27:43 : 10142
-2020-02-19 17:28:56 : 
-2020-02-19 17:28:56 : not login
-2020-02-19 17:29:09 : 1
-2020-02-19 17:29:15 : 10142
-2020-02-19 17:30:01 : 
-2020-02-19 17:30:01 : not login
-2020-02-19 17:30:16 : 1
-2020-02-19 17:30:26 : 10142
-2020-02-19 17:31:11 : 1
-2020-02-19 17:31:19 : 10142
-2020-02-19 17:31:54 : 1
-2020-02-19 17:32:17 : 1
-2020-02-19 17:32:28 : 
-2020-02-19 17:32:28 : not login
-2020-02-19 17:32:36 : 1
-2020-02-19 17:32:54 : 1
-2020-02-19 17:33:04 : 
-2020-02-19 17:33:04 : not login
-2020-02-19 17:33:08 : 10142
-2020-02-19 17:34:40 : 1
-2020-02-19 17:34:54 : 10142
-2020-02-19 17:39:23 : addons\third\library\Wechat
-2020-02-19 17:39:23 : respnse
-2020-02-19 17:39:23 : {"access_token":"30_l2xQGPfEgFgJ__VH5P5zRs2KBBFREkvbmsdI6c0pxDCQWhu_SAsY43fKwHV4K8MBD8C_23uII9ejKuEWwE6DZrIujoAdSZOkvF9N7bxl2fY","expires_in":7200,"refresh_token":"30_ZuT-L8ratFqeaOqN3vXxAaG-lk8QUKliKbP7PMIhk7h4lSx3P2PF5-k5maEenkcHVueBAsnBMfW_M0UV8FjiBvU-13nikbB4Du694cXudZc","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-19 17:39:23 : params
-2020-02-19 17:39:23 : {"code":"081ES3MD0xzqei2xR1OD0Oh7MD0ES3MP"}
-2020-02-19 17:39:23 : {"access_token":"30_l2xQGPfEgFgJ__VH5P5zRs2KBBFREkvbmsdI6c0pxDCQWhu_SAsY43fKwHV4K8MBD8C_23uII9ejKuEWwE6DZrIujoAdSZOkvF9N7bxl2fY","expires_in":7200,"refresh_token":"30_ZuT-L8ratFqeaOqN3vXxAaG-lk8QUKliKbP7PMIhk7h4lSx3P2PF5-k5maEenkcHVueBAsnBMfW_M0UV8FjiBvU-13nikbB4Du694cXudZc","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-19 17:39:24 : user info
-2020-02-19 17:39:24 : {"access_token":"30_l2xQGPfEgFgJ__VH5P5zRs2KBBFREkvbmsdI6c0pxDCQWhu_SAsY43fKwHV4K8MBD8C_23uII9ejKuEWwE6DZrIujoAdSZOkvF9N7bxl2fY","refresh_token":"30_ZuT-L8ratFqeaOqN3vXxAaG-lk8QUKliKbP7PMIhk7h4lSx3P2PF5-k5maEenkcHVueBAsnBMfW_M0UV8FjiBvU-13nikbB4Du694cXudZc","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-19 17:39:24 : login data
-2020-02-19 17:39:24 : {"userinfo":{"id":10129,"username":"u10129","nickname":"\u6881","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"161ee86c-f806-420a-b479-95de9cb43d77","user_id":10129,"createtime":1582105164,"expiretime":0,"expires_in":31536000}}
-2020-02-19 17:39:54 : 10129
-2020-02-19 17:42:41 : 10129
-2020-02-19 17:43:59 : 10129
-2020-02-19 17:45:21 : 10129
-2020-02-19 17:48:07 : 10142
-2020-02-19 17:48:50 : 10129
-2020-02-19 17:51:01 : 10129
-2020-02-19 17:52:21 : 10129
-2020-02-19 17:53:58 : 10129
-2020-02-19 17:56:58 : 10129
-2020-02-19 17:57:16 : 10129
-2020-02-19 17:57:23 : 10129
-2020-02-19 17:58:27 : 10129
-2020-02-19 18:00:03 : 10129
-2020-02-19 18:00:10 : 10129
-2020-02-19 18:01:15 : 1
-2020-02-19 18:01:20 : 10129
-2020-02-19 18:02:34 : 1
-2020-02-19 18:02:48 : 10129
-2020-02-19 18:03:19 : 10129
-2020-02-19 18:03:24 : 1
-2020-02-19 18:03:36 : 10129
-2020-02-19 18:04:09 : 1
-2020-02-19 18:04:12 : 10129
-2020-02-19 18:04:18 : 10129
-2020-02-19 18:05:41 : 1
-2020-02-19 18:05:58 : 10129
-2020-02-19 18:06:19 : 1
-2020-02-19 18:07:25 : 1
-2020-02-19 18:07:46 : 10129
-2020-02-19 18:08:51 : 1
-2020-02-19 18:12:26 : 10129
-2020-02-19 18:12:50 : 10142
-2020-02-19 18:13:13 : 10142
-2020-02-19 18:13:38 : 10142
-2020-02-19 18:13:43 : 10142
-2020-02-19 18:13:46 : 10129
-2020-02-19 18:14:15 : 10142
-2020-02-19 18:25:43 : addons\third\library\Wechat
-2020-02-19 18:25:44 : respnse
-2020-02-19 18:25:44 : {"access_token":"30_S6GNXTjDYXKRdyg2Vb5bkmpe99EKfx_PNnWGVDQNI0LHBrQ3FIdcTRjXHaBI_q3vAiPOnYPiBbNcZS_NfgxUeEBfIVjbH-b3mz3WJ5_qXGk","expires_in":7200,"refresh_token":"30_oeEusZrE4qelrOP4zvLiTSF__QA_SB0ITen2cG7y2OA6Q_PIu7PxeIHwdQWu_p3oTDzEWBC2EMQIZiH2HEuOKjpZhrWEVHrKuU-_WPteStk","openid":"o9cm6wNTheo_bHixACCOWh2Ka5_U","scope":"snsapi_userinfo","unionid":"ofaBI6DTwZexNVFYGlKTUtAvFMBc"}
-2020-02-19 18:25:44 : params
-2020-02-19 18:25:44 : {"code":"081Z5qRM0ans992MRhTM0xaKRM0Z5qRx"}
-2020-02-19 18:25:44 : {"access_token":"30_S6GNXTjDYXKRdyg2Vb5bkmpe99EKfx_PNnWGVDQNI0LHBrQ3FIdcTRjXHaBI_q3vAiPOnYPiBbNcZS_NfgxUeEBfIVjbH-b3mz3WJ5_qXGk","expires_in":7200,"refresh_token":"30_oeEusZrE4qelrOP4zvLiTSF__QA_SB0ITen2cG7y2OA6Q_PIu7PxeIHwdQWu_p3oTDzEWBC2EMQIZiH2HEuOKjpZhrWEVHrKuU-_WPteStk","openid":"o9cm6wNTheo_bHixACCOWh2Ka5_U","scope":"snsapi_userinfo","unionid":"ofaBI6DTwZexNVFYGlKTUtAvFMBc"}
-2020-02-19 18:25:44 : user info
-2020-02-19 18:25:44 : {"access_token":"30_S6GNXTjDYXKRdyg2Vb5bkmpe99EKfx_PNnWGVDQNI0LHBrQ3FIdcTRjXHaBI_q3vAiPOnYPiBbNcZS_NfgxUeEBfIVjbH-b3mz3WJ5_qXGk","refresh_token":"30_oeEusZrE4qelrOP4zvLiTSF__QA_SB0ITen2cG7y2OA6Q_PIu7PxeIHwdQWu_p3oTDzEWBC2EMQIZiH2HEuOKjpZhrWEVHrKuU-_WPteStk","expires_in":7200,"openid":"o9cm6wNTheo_bHixACCOWh2Ka5_U","unionid":"ofaBI6DTwZexNVFYGlKTUtAvFMBc","userinfo":{"openid":"o9cm6wNTheo_bHixACCOWh2Ka5_U","nickname":"\u738b\u91d1\u5b8f","sex":1,"language":"zh_CN","city":"","province":"\u5e03\u5170\u5361\u6e2f","country":"\u963f\u6839\u5ef7","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/DYAIOgq83epvXkmKQ8Nl0PhBI8QgsoKPo7cznPbG3mEEumwyGHHI8y0jX2Wwmz2HKjj7FysGs4zQ4K8Ena7jQQ\/132","privilege":[],"unionid":"ofaBI6DTwZexNVFYGlKTUtAvFMBc","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/DYAIOgq83epvXkmKQ8Nl0PhBI8QgsoKPo7cznPbG3mEEumwyGHHI8y0jX2Wwmz2HKjj7FysGs4zQ4K8Ena7jQQ\/132","gender":1}}
-2020-02-19 18:25:44 : login data
-2020-02-19 18:25:44 : {"userinfo":{"id":10122,"username":"6666","nickname":"6666","email":"u10122@app.biyouliao8.com","mobile":"18215504200","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/DYAIOgq83epvXkmKQ8Nl0PhBI8QgsoKPo7cznPbG3mEEumwyGHHI8y0jX2Wwmz2HKjj7FysGs4zQ4K8Ena7jQQ\/132","level":1,"gender":1,"birthday":"2020-02-12","bio":"77777","score":0,"status":"normal","is_kuaixun":"\u5426","token":"8cd54514-d3e3-41e8-9984-9f77c947e869","user_id":10122,"createtime":1582107944,"expiretime":0,"expires_in":31536000}}
-2020-02-19 18:28:27 : 1
-2020-02-19 18:35:16 : 1
-2020-02-19 18:55:11 : 10142
-2020-02-19 18:55:22 : 10142
-2020-02-19 18:55:38 : 10142
-2020-02-19 18:55:56 : 10142
-2020-02-19 18:56:27 : 1
-2020-02-19 18:56:38 : 10142
-2020-02-19 18:56:57 : 10142
-2020-02-19 18:57:12 : 10142
-2020-02-19 18:58:09 : 10142
-2020-02-19 18:59:11 : 10142
-2020-02-19 18:59:21 : 10142
-2020-02-19 18:59:35 : 10142
-2020-02-19 19:08:56 : 10142
-2020-02-19 19:09:23 : 1
-2020-02-19 19:09:23 : 2
-2020-02-19 19:09:58 : 10142
-2020-02-19 19:10:05 : 10142
-2020-02-19 19:10:10 : 10142
-2020-02-19 19:10:14 : 10142
-2020-02-19 19:10:17 : 10142
-2020-02-19 19:10:22 : 10142
-2020-02-19 19:10:34 : 10142
-2020-02-19 19:10:39 : 10142
-2020-02-19 19:10:46 : 10142
-2020-02-19 19:27:25 : 10142
-2020-02-19 19:44:30 : 10142
-2020-02-19 19:44:33 : 10142
-2020-02-19 19:52:23 : /www/wwwroot/app/runtime/addons/markdown.zip
-2020-02-19 20:06:21 : /www/wwwroot/app/runtime/addons/5e4d24bd8ba4b.zip
-2020-02-19 20:09:05 : 10142
-2020-02-19 20:09:18 : 10142
-2020-02-19 20:09:24 : 10142
-2020-02-19 20:09:34 : 10142
-2020-02-19 20:10:30 : 10142
-2020-02-19 20:12:16 : 1
-2020-02-19 20:13:07 : 10142
-2020-02-19 20:13:16 : 1
-2020-02-19 20:15:00 : 10142
-2020-02-19 20:16:32 : 10142
-2020-02-19 20:17:30 : 10142
-2020-02-19 20:17:42 : 10142
-2020-02-19 20:18:48 : 10142
-2020-02-19 21:44:25 : 10129
-2020-02-20 02:03:25 : 
-2020-02-20 02:03:25 : not login
-2020-02-20 04:12:12 : 10142
-2020-02-20 04:12:16 : 1
-2020-02-20 04:12:16 : 2
-2020-02-20 04:12:21 : 10142
-2020-02-20 04:12:51 : 10142
-2020-02-20 04:13:42 : 10142
-2020-02-20 04:14:20 : 10142
-2020-02-20 04:14:36 : 10142
-2020-02-20 04:14:42 : 10142
-2020-02-20 04:14:47 : 10142
-2020-02-20 04:14:53 : 10142
-2020-02-20 04:14:59 : 10142
-2020-02-20 04:15:04 : 10142
-2020-02-20 04:15:12 : 10142
-2020-02-20 04:15:34 : 10142
-2020-02-20 04:15:39 : 10142
-2020-02-20 11:53:16 : 10142
-2020-02-20 11:54:54 : 10142
-2020-02-20 12:27:30 : 10129
-2020-02-20 12:35:50 : 10129
-2020-02-20 12:42:48 : 
-2020-02-20 12:42:48 : not login
-2020-02-20 12:42:49 : 
-2020-02-20 12:42:49 : not login
-2020-02-20 12:46:58 : addons\third\library\Wechat
-2020-02-20 12:46:58 : respnse
-2020-02-20 12:46:58 : {"access_token":"30_BA0Ykg-OrZKe1k6aQDMRJJ1nOWJpkbsL3iGkmXB75GXEdwJqpj56Tc3el3pzurh6nwYfdMNMgAzMGHl8s9d8LFBnYJEZgzunOzv4WEm8ioU","expires_in":7200,"refresh_token":"30_h8FOWfQLwfJ6Ch4kc0qbaTLk-SJdgqzRGDp6rRUZWMMiWRPYquLQnfN_bZbF_X7GnuP-GUxSeC5-00pDekn-a40JrYwiG5Es-akzSRUMU8g","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-20 12:46:58 : params
-2020-02-20 12:46:58 : {"code":"0710lLa92xRfQM0eNU792zWGa920lLad"}
-2020-02-20 12:46:58 : {"access_token":"30_BA0Ykg-OrZKe1k6aQDMRJJ1nOWJpkbsL3iGkmXB75GXEdwJqpj56Tc3el3pzurh6nwYfdMNMgAzMGHl8s9d8LFBnYJEZgzunOzv4WEm8ioU","expires_in":7200,"refresh_token":"30_h8FOWfQLwfJ6Ch4kc0qbaTLk-SJdgqzRGDp6rRUZWMMiWRPYquLQnfN_bZbF_X7GnuP-GUxSeC5-00pDekn-a40JrYwiG5Es-akzSRUMU8g","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-20 12:46:58 : user info
-2020-02-20 12:46:58 : {"access_token":"30_BA0Ykg-OrZKe1k6aQDMRJJ1nOWJpkbsL3iGkmXB75GXEdwJqpj56Tc3el3pzurh6nwYfdMNMgAzMGHl8s9d8LFBnYJEZgzunOzv4WEm8ioU","refresh_token":"30_h8FOWfQLwfJ6Ch4kc0qbaTLk-SJdgqzRGDp6rRUZWMMiWRPYquLQnfN_bZbF_X7GnuP-GUxSeC5-00pDekn-a40JrYwiG5Es-akzSRUMU8g","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-20 12:46:58 : login data
-2020-02-20 12:46:58 : {"userinfo":{"id":10129,"username":"u10129","nickname":"\u6881","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"1f9c9bd7-b3d8-428f-9a62-cd6e5b5872af","user_id":10129,"createtime":1582174018,"expiretime":0,"expires_in":31536000}}
-2020-02-20 12:48:16 : 10129
-2020-02-20 12:48:26 : 10129
-2020-02-20 13:38:29 : 10129
-2020-02-20 14:03:02 : 10142
-2020-02-20 14:03:18 : 10129
-2020-02-20 14:04:06 : 10129
-2020-02-20 14:12:42 : 10129
-2020-02-20 14:18:40 : 
-2020-02-20 14:18:40 : not login
-2020-02-20 14:18:59 : 10112
-2020-02-20 14:20:34 : 10129
-2020-02-20 14:22:52 : 10134
-2020-02-20 14:22:56 : 10112
-2020-02-20 14:23:19 : 10112
-2020-02-20 14:23:30 : 10112
-2020-02-20 14:23:38 : 10129
-2020-02-20 14:23:57 : 10134
-2020-02-20 14:25:21 : 10134
-2020-02-20 14:31:52 : 10129
-2020-02-20 14:32:02 : 10129
-2020-02-20 14:33:10 : 10129
-2020-02-20 14:55:26 : 
-2020-02-20 14:55:26 : not login
-2020-02-20 16:00:48 : addons\third\library\Wechat
-2020-02-20 16:00:48 : respnse
-2020-02-20 16:00:48 : {"access_token":"30_NnddvXRk-S2BRnJiGcSGv7aaijADPoOppPtr6xNiJLkR9jjzf9yV4aqOodW7KjlSpDUWLrHPq9NNiESnLpVgnD9542-YkJTQGcpZx-rwCwI","expires_in":7200,"refresh_token":"30_l2xQGPfEgFgJ__VH5P5zRh_7yzs1BoO9ILst0S8WEt3Dp2pyE_ABg3ARmdgOpKQefsGtwG39vyboBAwXaDVrl9bW8wq5oKGF46QLnNQ4TX0","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-20 16:00:48 : params
-2020-02-20 16:00:48 : {"code":"061AED0M1O1ka911E90M1bxv0M1AED0w"}
-2020-02-20 16:00:48 : {"access_token":"30_NnddvXRk-S2BRnJiGcSGv7aaijADPoOppPtr6xNiJLkR9jjzf9yV4aqOodW7KjlSpDUWLrHPq9NNiESnLpVgnD9542-YkJTQGcpZx-rwCwI","expires_in":7200,"refresh_token":"30_l2xQGPfEgFgJ__VH5P5zRh_7yzs1BoO9ILst0S8WEt3Dp2pyE_ABg3ARmdgOpKQefsGtwG39vyboBAwXaDVrl9bW8wq5oKGF46QLnNQ4TX0","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-20 16:00:48 : user info
-2020-02-20 16:00:48 : {"access_token":"30_NnddvXRk-S2BRnJiGcSGv7aaijADPoOppPtr6xNiJLkR9jjzf9yV4aqOodW7KjlSpDUWLrHPq9NNiESnLpVgnD9542-YkJTQGcpZx-rwCwI","refresh_token":"30_l2xQGPfEgFgJ__VH5P5zRh_7yzs1BoO9ILst0S8WEt3Dp2pyE_ABg3ARmdgOpKQefsGtwG39vyboBAwXaDVrl9bW8wq5oKGF46QLnNQ4TX0","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-20 16:00:48 : login data
-2020-02-20 16:00:48 : {"userinfo":{"id":10129,"username":"u10129","nickname":"\u6881","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"fdb5ed76-251e-40d8-9a22-f80577974924","user_id":10129,"createtime":1582185648,"expiretime":0,"expires_in":31536000}}
-2020-02-20 16:08:30 : 10129
-2020-02-20 16:08:42 : 10129
-2020-02-20 16:42:33 : 10129
-2020-02-20 16:51:18 : 10129
-2020-02-20 16:52:13 : 10129
-2020-02-20 16:53:17 : 10129
-2020-02-20 16:57:05 : 10129
-2020-02-20 16:57:12 : 10129
-2020-02-20 17:05:43 : 10142
-2020-02-20 17:06:18 : 10142
-2020-02-20 17:06:29 : 10142
-2020-02-20 17:07:04 : 10142
-2020-02-20 17:07:20 : 10142
-2020-02-20 17:07:28 : 10142
-2020-02-20 17:10:01 : 10134
-2020-02-20 17:11:54 : 10142
-2020-02-20 22:53:53 : 
-2020-02-20 22:53:53 : not login
-2020-02-20 22:54:24 : 10142
-2020-02-20 22:55:10 : 10142
-2020-02-20 22:55:44 : 10142
-2020-02-20 22:55:50 : 10142
-2020-02-20 22:57:09 : 10142
-2020-02-20 23:01:12 : 10142
-2020-02-21 02:03:06 : 
-2020-02-21 02:03:06 : not login
-2020-02-21 11:16:04 : 10142
-2020-02-21 11:17:08 : 10142
-2020-02-21 11:17:45 : 10142
-2020-02-21 11:23:03 : 10142
-2020-02-21 11:23:18 : 10142
-2020-02-21 11:27:14 : 10142
-2020-02-21 12:17:43 : 10142
-2020-02-21 12:19:38 : 10142
-2020-02-21 12:19:58 : 10142
-2020-02-21 12:21:44 : 10109
-2020-02-21 12:22:15 : 10109
-2020-02-21 12:23:06 : 10142
-2020-02-21 12:24:00 : 10109
-2020-02-21 12:27:31 : 10109
-2020-02-21 12:41:22 : 10142
-2020-02-21 12:44:35 : 1
-2020-02-21 12:46:34 : 10142
-2020-02-21 12:46:36 : 1
-2020-02-21 12:50:07 : 10142
-2020-02-21 12:50:41 : 10142
-2020-02-21 12:50:47 : 10142
-2020-02-21 13:27:01 : 10129
-2020-02-21 13:38:12 : 10129
-2020-02-21 13:38:30 : 10129
-2020-02-21 13:38:58 : 10129
-2020-02-21 13:42:10 : 10129
-2020-02-21 13:51:00 : 10129
-2020-02-21 13:51:26 : 10112
-2020-02-21 13:54:01 : 10129
-2020-02-21 13:54:36 : 10112
-2020-02-21 13:56:04 : 10109
-2020-02-21 13:56:58 : 10112
-2020-02-21 13:57:40 : 10109
-2020-02-21 13:57:45 : 10129
-2020-02-21 13:58:43 : 10129
-2020-02-21 13:59:05 : 10109
-2020-02-21 13:59:55 : 10112
-2020-02-21 14:00:23 : 10112
-2020-02-21 14:00:32 : 10109
-2020-02-21 14:00:34 : 10112
-2020-02-21 14:00:48 : 10112
-2020-02-21 14:02:17 : 10142
-2020-02-21 14:02:22 : 10109
-2020-02-21 14:03:01 : 10129
-2020-02-21 14:03:09 : 10129
-2020-02-21 14:03:17 : 10112
-2020-02-21 14:04:49 : 10142
-2020-02-21 14:04:49 : 10112
-2020-02-21 14:04:55 : 10142
-2020-02-21 14:05:38 : 10142
-2020-02-21 14:07:01 : 10109
-2020-02-21 14:07:42 : 10142
-2020-02-21 14:09:59 : 10129
-2020-02-21 14:17:06 : 10129
-2020-02-21 14:18:16 : 10142
-2020-02-21 14:18:49 : 10142
-2020-02-21 14:18:55 : 10142
-2020-02-21 14:21:26 : 10129
-2020-02-21 14:21:37 : 10129
-2020-02-21 14:21:44 : 10129
-2020-02-21 14:28:29 : 10129
-2020-02-21 14:37:22 : 10129
-2020-02-21 14:37:55 : 10109
-2020-02-21 14:38:45 : 10129
-2020-02-21 14:44:31 : 10129
-2020-02-21 14:46:38 : 10129
-2020-02-21 14:51:24 : 10129
-2020-02-21 14:57:24 : 10129
-2020-02-21 15:03:05 : 10129
-2020-02-21 15:06:44 : 10129
-2020-02-21 15:18:17 : 10129
-2020-02-21 15:18:53 : 10129
-2020-02-21 15:20:47 : 10142
-2020-02-21 15:21:27 : 10142
-2020-02-21 15:23:41 : 10142
-2020-02-21 15:24:42 : 10129
-2020-02-21 15:25:36 : 10142
-2020-02-21 15:25:45 : 10142
-2020-02-21 15:26:17 : 10142
-2020-02-21 15:26:31 : 10142
-2020-02-21 15:33:18 : 10142
-2020-02-21 15:42:12 : 10129
-2020-02-21 15:43:07 : 10142
-2020-02-21 15:43:30 : 10142
-2020-02-21 15:45:08 : 10142
-2020-02-21 15:45:32 : 10129
-2020-02-21 15:47:11 : 10129
-2020-02-21 16:11:00 : 
-2020-02-21 16:11:00 : not login
-2020-02-21 16:11:14 : addons\third\library\Wechat
-2020-02-21 16:11:15 : respnse
-2020-02-21 16:11:15 : {"access_token":"30_O1rsqrEK6CMHVL0nIcSmKviCJG8sGzY5Zjt5TpO1xvlZUvS8mZGDmEPxBUeDCNg3VGjWVvzZt0Eu5SMzxhYzgnq6GzTujUcCcO5uvlvel4U","expires_in":7200,"refresh_token":"30_LvUg61mbp75b7Ev2KoXOOB6F9kHZ8IH268uQagBzFwwbiCoBMfua-Elp_WscW9Ae1S3pULjxcKrE0lEm6vn1p_RUT_PEosvyGecWbxb46IM","openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","scope":"snsapi_userinfo","unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs"}
-2020-02-21 16:11:15 : params
-2020-02-21 16:11:15 : {"code":"081ykIiJ1ECPU00A0llJ1KIGiJ1ykIid"}
-2020-02-21 16:11:15 : {"access_token":"30_O1rsqrEK6CMHVL0nIcSmKviCJG8sGzY5Zjt5TpO1xvlZUvS8mZGDmEPxBUeDCNg3VGjWVvzZt0Eu5SMzxhYzgnq6GzTujUcCcO5uvlvel4U","expires_in":7200,"refresh_token":"30_LvUg61mbp75b7Ev2KoXOOB6F9kHZ8IH268uQagBzFwwbiCoBMfua-Elp_WscW9Ae1S3pULjxcKrE0lEm6vn1p_RUT_PEosvyGecWbxb46IM","openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","scope":"snsapi_userinfo","unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs"}
-2020-02-21 16:11:15 : user info
-2020-02-21 16:11:15 : {"access_token":"30_O1rsqrEK6CMHVL0nIcSmKviCJG8sGzY5Zjt5TpO1xvlZUvS8mZGDmEPxBUeDCNg3VGjWVvzZt0Eu5SMzxhYzgnq6GzTujUcCcO5uvlvel4U","refresh_token":"30_LvUg61mbp75b7Ev2KoXOOB6F9kHZ8IH268uQagBzFwwbiCoBMfua-Elp_WscW9Ae1S3pULjxcKrE0lEm6vn1p_RUT_PEosvyGecWbxb46IM","expires_in":7200,"openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs","userinfo":{"openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","nickname":"AA\u52c7\u5f80\u76f4\u524d","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLoawcZNjbEncDblZTqMjiaFLSNZnJiahRxsEufcTBjbt6BfT5Qyv509LxMmSY9x88WnEwGS6MaH2bA\/132","privilege":[],"unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLoawcZNjbEncDblZTqMjiaFLSNZnJiahRxsEufcTBjbt6BfT5Qyv509LxMmSY9x88WnEwGS6MaH2bA\/132","gender":1}}
-2020-02-21 16:11:15 : login data
-2020-02-21 16:11:15 : {"userinfo":{"id":10144,"username":"u10144","nickname":"AA\u52c7\u5f80\u76f4\u524d","email":"u10144@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLoawcZNjbEncDblZTqMjiaFLSNZnJiahRxsEufcTBjbt6BfT5Qyv509LxMmSY9x88WnEwGS6MaH2bA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"55953e4d-395e-4548-9508-0b2abeedb3a0","user_id":10144,"createtime":1582272675,"expiretime":0,"expires_in":31536000}}
-2020-02-21 16:11:25 : 10144
-2020-02-21 16:12:42 : 
-2020-02-21 16:12:42 : not login
-2020-02-21 16:12:45 : 10144
-2020-02-21 16:12:51 : 10144
-2020-02-21 16:15:50 : 10142
-2020-02-21 16:16:04 : 10142
-2020-02-21 16:17:46 : 10142
-2020-02-21 16:41:07 : 
-2020-02-21 16:41:07 : not login
-2020-02-21 16:41:40 : 
-2020-02-21 16:41:40 : not login
-2020-02-21 16:41:44 : 
-2020-02-21 16:41:44 : not login
-2020-02-21 16:43:10 : 10129
-2020-02-21 16:43:33 : 10129
-2020-02-21 16:44:19 : 
-2020-02-21 16:44:19 : not login
-2020-02-21 16:44:35 : 
-2020-02-21 16:44:35 : not login
-2020-02-21 16:44:38 : 
-2020-02-21 16:44:38 : not login
-2020-02-21 16:44:46 : 
-2020-02-21 16:44:46 : not login
-2020-02-21 16:44:59 : 
-2020-02-21 16:44:59 : not login
-2020-02-21 16:45:28 : 
-2020-02-21 16:45:28 : not login
-2020-02-21 16:45:40 : 
-2020-02-21 16:45:40 : not login
-2020-02-21 16:45:43 : 
-2020-02-21 16:45:43 : not login
-2020-02-21 16:49:20 : 
-2020-02-21 16:49:20 : not login
-2020-02-21 16:53:44 : 10142
-2020-02-21 16:54:17 : 10142
-2020-02-21 16:54:26 : 10142
-2020-02-21 16:54:53 : 1
-2020-02-21 16:54:53 : 2
-2020-02-21 16:56:10 : 10142
-2020-02-21 16:57:30 : 10142
-2020-02-21 16:57:45 : 10142
-2020-02-21 16:59:33 : 10109
-2020-02-21 17:00:04 : 1
-2020-02-21 17:00:18 : 10109
-2020-02-21 17:00:20 : 10109
-2020-02-21 17:00:30 : 10109
-2020-02-21 17:01:08 : 1
-2020-02-21 17:01:23 : 10109
-2020-02-21 17:02:31 : 10109
-2020-02-21 17:02:34 : 10109
-2020-02-21 17:03:48 : 10112
-2020-02-21 17:03:54 : 10109
-2020-02-21 17:05:04 : 
-2020-02-21 17:05:04 : not login
-2020-02-21 17:05:53 : 10129
-2020-02-21 17:07:21 : 10129
-2020-02-21 17:08:26 : 10144
-2020-02-21 17:09:32 : 10144
-2020-02-21 17:10:22 : 10144
-2020-02-21 17:10:58 : 10144
-2020-02-21 17:12:28 : 10144
-2020-02-21 17:12:45 : 10144
-2020-02-21 17:13:19 : 10129
-2020-02-21 17:15:46 : 
-2020-02-21 17:15:46 : not login
-2020-02-21 17:15:58 : 
-2020-02-21 17:15:58 : not login
-2020-02-21 17:16:28 : 
-2020-02-21 17:16:28 : not login
-2020-02-21 17:16:39 : 
-2020-02-21 17:16:39 : not login
-2020-02-21 17:16:54 : 10129
-2020-02-21 17:19:49 : 10144
-2020-02-21 17:23:49 : 10145
-2020-02-21 17:24:50 : 10144
-2020-02-21 17:25:13 : 10144
-2020-02-21 17:25:44 : 1
-2020-02-21 17:26:08 : 1
-2020-02-21 17:26:18 : 1
-2020-02-21 17:26:24 : 10145
-2020-02-21 17:26:59 : 0
-2020-02-21 17:27:05 : 10145
-2020-02-21 17:28:14 : 1
-2020-02-21 17:28:16 : 10145
-2020-02-21 17:29:09 : 1
-2020-02-21 17:29:13 : 10145
-2020-02-21 17:31:30 : 1
-2020-02-21 17:31:38 : 10145
-2020-02-21 17:34:33 : 10129
-2020-02-21 17:35:18 : 1
-2020-02-21 17:35:28 : 10145
-2020-02-21 17:35:52 : 1
-2020-02-21 17:36:08 : 10145
-2020-02-21 17:36:22 : 1
-2020-02-21 17:36:37 : 0
-2020-02-21 17:37:07 : 10129
-2020-02-21 17:37:11 : 10129
-2020-02-21 17:37:26 : 0
-2020-02-21 17:37:44 : 10129
-2020-02-21 17:37:45 : 1
-2020-02-21 17:37:55 : 10145
-2020-02-21 17:39:07 : 1
-2020-02-21 17:39:14 : 10145
-2020-02-21 17:41:14 : 10129
-2020-02-21 17:42:08 : 1
-2020-02-21 17:42:11 : 10145
-2020-02-21 17:45:45 : 1
-2020-02-21 17:45:47 : 10145
-2020-02-21 17:46:14 : 10144
-2020-02-21 17:46:18 : 1
-2020-02-21 17:46:22 : 10145
-2020-02-21 17:47:01 : 1
-2020-02-21 17:47:06 : 10145
-2020-02-21 17:52:08 : 1
-2020-02-21 17:52:25 : 10145
-2020-02-21 17:56:33 : 1
-2020-02-21 17:56:37 : 10145
-2020-02-21 17:57:25 : 10145
-2020-02-21 17:57:28 : 10145
-2020-02-21 17:58:24 : 1
-2020-02-21 17:58:26 : 10145
-2020-02-21 17:59:57 : 1
-2020-02-21 18:00:05 : 10145
-2020-02-21 18:01:21 : 1
-2020-02-21 18:01:23 : 10145
-2020-02-21 18:02:02 : 1
-2020-02-21 18:02:27 : 1
-2020-02-21 18:02:32 : 10145
-2020-02-21 18:08:27 : 1
-2020-02-21 18:08:30 : 10145
-2020-02-21 18:09:39 : 1
-2020-02-21 18:09:43 : 10145
-2020-02-21 18:10:19 : 1
-2020-02-21 18:10:20 : 10145
-2020-02-21 18:10:42 : 1
-2020-02-21 18:11:02 : 10129
-2020-02-21 18:13:05 : 1
-2020-02-21 18:13:10 : 10145
-2020-02-21 18:13:32 : 1
-2020-02-21 18:13:35 : 10145
-2020-02-21 18:14:49 : 1
-2020-02-21 18:14:52 : 10145
-2020-02-21 18:15:35 : 10144
-2020-02-21 18:15:59 : 1
-2020-02-21 18:15:59 : 2
-2020-02-21 18:18:52 : 1
-2020-02-21 18:18:56 : 10145
-2020-02-21 18:19:44 : 1
-2020-02-21 18:19:46 : 10145
-2020-02-21 18:21:45 : 10144
-2020-02-21 18:22:05 : 10144
-2020-02-21 18:22:12 : 10144
-2020-02-21 18:22:17 : 10144
-2020-02-21 18:22:22 : 10144
-2020-02-21 18:22:34 : 10144
-2020-02-21 18:23:54 : 1
-2020-02-21 18:23:57 : 10145
-2020-02-21 18:24:23 : 1
-2020-02-21 18:24:26 : 10145
-2020-02-21 18:24:34 : 10144
-2020-02-21 18:24:47 : addons\third\library\Wechat
-2020-02-21 18:24:47 : respnse
-2020-02-21 18:24:47 : {"access_token":"30_0r12qD3SjaO-1uvqfY1_1Fmbmb-Nyuc5RZ5fDzMDiXsFqqbqXoNVWFCZeNYERh8bSyJ3XZpnBbfT0r_935cH-YJoIWfIMXhooJr6aPGEyUY","expires_in":7200,"refresh_token":"30_0acBPxIBDdItfMKIbiEHWRTwcAAoy41L3a6ALHL6pmvpDm3rtZ8N4WSQGRolPfQIVcEnzNa45ZLGLT6aZLHU04TwADC2knBfVSUJQNxpf0g","openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","scope":"snsapi_userinfo","unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs"}
-2020-02-21 18:24:47 : params
-2020-02-21 18:24:47 : {"code":"001dMdNZ0KgOeU1Z8hNZ0UcdNZ0dMdNs"}
-2020-02-21 18:24:47 : {"access_token":"30_0r12qD3SjaO-1uvqfY1_1Fmbmb-Nyuc5RZ5fDzMDiXsFqqbqXoNVWFCZeNYERh8bSyJ3XZpnBbfT0r_935cH-YJoIWfIMXhooJr6aPGEyUY","expires_in":7200,"refresh_token":"30_0acBPxIBDdItfMKIbiEHWRTwcAAoy41L3a6ALHL6pmvpDm3rtZ8N4WSQGRolPfQIVcEnzNa45ZLGLT6aZLHU04TwADC2knBfVSUJQNxpf0g","openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","scope":"snsapi_userinfo","unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs"}
-2020-02-21 18:24:47 : user info
-2020-02-21 18:24:47 : {"access_token":"30_0r12qD3SjaO-1uvqfY1_1Fmbmb-Nyuc5RZ5fDzMDiXsFqqbqXoNVWFCZeNYERh8bSyJ3XZpnBbfT0r_935cH-YJoIWfIMXhooJr6aPGEyUY","refresh_token":"30_0acBPxIBDdItfMKIbiEHWRTwcAAoy41L3a6ALHL6pmvpDm3rtZ8N4WSQGRolPfQIVcEnzNa45ZLGLT6aZLHU04TwADC2knBfVSUJQNxpf0g","expires_in":7200,"openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs","userinfo":{"openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","nickname":"AA\u52c7\u5f80\u76f4\u524d","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLoawcZNjbEncDblZTqMjiaFLSNZnJiahRxsEufcTBjbt6BfT5Qyv509LxMmSY9x88WnEwGS6MaH2bA\/132","privilege":[],"unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLoawcZNjbEncDblZTqMjiaFLSNZnJiahRxsEufcTBjbt6BfT5Qyv509LxMmSY9x88WnEwGS6MaH2bA\/132","gender":1}}
-2020-02-21 18:24:47 : login data
-2020-02-21 18:24:47 : {"userinfo":{"id":10144,"username":"6","nickname":"6","email":"u10144@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLoawcZNjbEncDblZTqMjiaFLSNZnJiahRxsEufcTBjbt6BfT5Qyv509LxMmSY9x88WnEwGS6MaH2bA\/132","level":1,"gender":1,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"6c845488-9f66-4d1d-bde0-52a9506e5e69","user_id":10144,"createtime":1582280687,"expiretime":0,"expires_in":31536000}}
-2020-02-21 18:24:56 : qq
-2020-02-21 18:24:56 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-21 18:24:56 : addons\third\library\Qq
-2020-02-21 18:24:56 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-21 18:24:56 : qq in
-2020-02-21 18:24:57 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u7a7a\u767d","gender":"\u7537","gender_type":1,"province":"","city":"","year":"1900","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=40&t=1556568001","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=640&t=1556568001","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001"}
-2020-02-21 18:24:57 : login data
-2020-02-21 18:24:57 : {"userinfo":{"id":10146,"username":"u10146","nickname":"\u7a7a\u767d","email":"u10146@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","level":1,"gender":0,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"cc7eb3e1-7b29-448d-ada2-c4acf25928eb","user_id":10146,"createtime":1582280697,"expiretime":0,"expires_in":31536000}}
-2020-02-21 18:25:00 : 1
-2020-02-21 18:25:03 : 10145
-2020-02-21 18:25:24 : 1
-2020-02-21 18:25:27 : 10145
-2020-02-21 18:26:04 : 1
-2020-02-21 18:26:07 : 10145
-2020-02-21 18:26:13 : 10140
-2020-02-21 18:26:15 : 1
-2020-02-21 18:26:15 : 2
-2020-02-21 18:26:17 : 10140
-2020-02-21 18:26:20 : 10140
-2020-02-21 18:26:30 : 1
-2020-02-21 18:26:33 : 10145
-2020-02-21 18:27:29 : 1
-2020-02-21 18:27:32 : 10145
-2020-02-21 18:28:42 : 1
-2020-02-21 18:28:47 : 10145
-2020-02-21 18:29:02 : 1
-2020-02-21 18:29:04 : 10145
-2020-02-21 18:29:47 : 1
-2020-02-21 18:29:49 : 10145
-2020-02-21 18:30:11 : 1
-2020-02-21 18:30:13 : 10145
-2020-02-21 18:31:13 : 1
-2020-02-21 18:31:15 : 10145
-2020-02-21 18:31:39 : 1
-2020-02-21 18:31:42 : 10145
-2020-02-21 18:32:00 : 1
-2020-02-21 18:32:02 : 10145
-2020-02-21 18:32:05 : 10145
-2020-02-21 18:32:28 : 1
-2020-02-21 18:32:30 : 10145
-2020-02-21 18:32:51 : 1
-2020-02-21 18:32:56 : 10145
-2020-02-21 18:33:21 : 1
-2020-02-21 18:33:23 : 10145
-2020-02-21 18:33:41 : 1
-2020-02-21 18:33:44 : 10145
-2020-02-21 18:34:03 : 1
-2020-02-21 18:34:05 : 10145
-2020-02-21 18:34:23 : 1
-2020-02-21 18:34:25 : 10145
-2020-02-21 18:35:16 : 1
-2020-02-21 18:35:19 : 10145
-2020-02-21 18:35:44 : 1
-2020-02-21 18:35:47 : 10145
-2020-02-21 18:36:50 : 1
-2020-02-21 18:36:52 : 10145
-2020-02-21 18:39:36 : 1
-2020-02-21 18:39:39 : 10145
-2020-02-21 18:40:15 : 1
-2020-02-21 18:40:17 : 10145
-2020-02-21 18:40:28 : 1
-2020-02-21 18:40:31 : 10145
-2020-02-21 18:40:45 : 1
-2020-02-21 18:40:48 : 10145
-2020-02-21 18:41:00 : 1
-2020-02-21 18:41:04 : 10145
-2020-02-21 18:41:18 : 0
-2020-02-21 18:41:21 : 10145
-2020-02-21 18:48:00 : 1
-2020-02-21 18:48:03 : 10145
-2020-02-21 18:48:50 : 1
-2020-02-21 18:48:53 : 10145
-2020-02-21 18:49:10 : 1
-2020-02-21 18:49:13 : 10145
-2020-02-21 18:49:48 : 1
-2020-02-21 18:49:50 : 10145
-2020-02-21 18:50:20 : 1
-2020-02-21 18:50:21 : 1
-2020-02-21 18:50:21 : 2
-2020-02-21 18:50:23 : 10145
-2020-02-21 18:52:02 : 1
-2020-02-21 18:52:04 : 10145
-2020-02-21 19:17:57 : 10140
-2020-02-21 19:36:42 : 10140
-2020-02-21 19:37:39 : 10140
-2020-02-21 19:45:24 : 1
-2020-02-21 19:46:53 : 1
-2020-02-21 21:02:37 : 10140
-2020-02-21 21:19:13 : 10140
-2020-02-21 21:19:25 : 10140
-2020-02-21 21:19:32 : 10140
-2020-02-21 21:20:37 : 10140
-2020-02-21 21:21:01 : 10140
-2020-02-21 21:21:09 : 10140
-2020-02-21 21:21:26 : 10140
-2020-02-21 21:22:09 : 10140
-2020-02-22 11:43:14 : 10140
-2020-02-22 11:43:26 : 10140
-2020-02-22 11:56:19 : 
-2020-02-22 11:56:19 : not login
-2020-02-22 11:56:37 : qq
-2020-02-22 11:56:37 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-22 11:56:37 : addons\third\library\Qq
-2020-02-22 11:56:37 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-22 11:56:37 : qq in
-2020-02-22 11:56:37 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u7a7a\u767d","gender":"\u7537","gender_type":1,"province":"","city":"","year":"1900","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=40&t=1556568001","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=640&t=1556568001","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001"}
-2020-02-22 11:56:37 : login data
-2020-02-22 11:56:37 : {"userinfo":{"id":10146,"username":"u10146","nickname":"\u7a7a\u767d","email":"u10146@app.biyouliao8.com","mobile":"15281055555","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"d5df1e82-475d-4f4a-afc3-6db1e6733af3","user_id":10146,"createtime":1582343797,"expiretime":0,"expires_in":31536000}}
-2020-02-22 11:57:29 : 10146
-2020-02-22 16:18:15 : 10146
-2020-02-22 16:20:04 : 10146
-2020-02-22 16:20:28 : 1
-2020-02-22 16:22:46 : 10146
-2020-02-22 16:23:20 : 10146
-2020-02-22 19:44:11 : 10146
-2020-02-22 19:44:23 : 10146
-2020-02-22 19:44:37 : 10146
-2020-02-22 19:46:29 : 10146
-2020-02-22 19:46:32 : 10146
-2020-02-23 00:31:03 : 10146
-2020-02-23 11:37:52 : 10146
-2020-02-23 13:55:17 : 10142
-2020-02-23 17:01:36 : 10146
-2020-02-23 21:00:56 : 1
-2020-02-23 21:02:07 : 1
-2020-02-23 21:03:26 : 1
-2020-02-23 21:04:11 : 0
-2020-02-23 21:08:26 : 1
-2020-02-23 23:22:33 : 10146
-2020-02-23 23:23:28 : 1
-2020-02-23 23:23:40 : 10146
-2020-02-23 23:25:44 : 1
-2020-02-23 23:25:59 : 10146
-2020-02-23 23:29:05 : 10146
-2020-02-23 23:29:52 : 1
-2020-02-23 23:30:03 : 10146
-2020-02-23 23:30:14 : 10146
-2020-02-23 23:31:10 : 10146
-2020-02-23 23:31:40 : 10146
-2020-02-23 23:32:32 : 10146
-2020-02-24 00:12:03 : 10146
-2020-02-24 03:18:49 : 10146
-2020-02-24 03:19:17 : 10142
-2020-02-24 03:20:38 : 10146
-2020-02-24 09:33:53 : 1
-2020-02-24 09:41:44 : 1
-2020-02-24 09:53:45 : 1
-2020-02-24 11:25:49 : 10146
-2020-02-24 11:25:59 : 10146
-2020-02-24 11:49:54 : 10146
-2020-02-24 11:50:03 : 10146
-2020-02-24 11:50:55 : 10146
-2020-02-24 11:51:02 : 1
-2020-02-24 11:51:02 : 2
-2020-02-24 11:51:09 : 10146
-2020-02-24 11:51:12 : 1
-2020-02-24 11:51:12 : 2
-2020-02-24 11:55:50 : 10146
-2020-02-24 14:27:31 : 10146
-2020-02-24 14:33:03 : 1
-2020-02-24 14:33:09 : 10146
-2020-02-24 14:34:54 : 1
-2020-02-24 14:35:00 : 10146
-2020-02-24 14:35:49 : 1
-2020-02-24 14:35:53 : 10146
-2020-02-24 14:35:59 : 10146
-2020-02-24 14:36:33 : 1
-2020-02-24 14:36:39 : 10146
-2020-02-24 14:37:17 : 1
-2020-02-24 14:37:22 : 10146
-2020-02-24 14:37:31 : 10146
-2020-02-24 14:38:40 : 1
-2020-02-24 14:38:47 : 10146
-2020-02-24 14:41:44 : 1
-2020-02-24 14:41:49 : 10146
-2020-02-24 14:42:28 : 1
-2020-02-24 14:42:34 : 10146
-2020-02-24 14:42:48 : 10146
-2020-02-24 14:43:05 : 1
-2020-02-24 14:43:12 : 10146
-2020-02-24 14:43:42 : 1
-2020-02-24 14:43:47 : 10146
-2020-02-24 14:44:43 : 1
-2020-02-24 14:44:49 : 10146
-2020-02-24 14:49:03 : 10146
-2020-02-24 15:00:53 : /www/wwwroot/app/runtime/addons/markdown.zip
-2020-02-24 15:26:12 : addons\third\library\Wechat
-2020-02-24 15:26:12 : respnse
-2020-02-24 15:26:12 : {"access_token":"30_uQciOy7pZuZRHJfaRz1QM5FPpARg8DhS_UYcASbJrQLMnkWCJEsh9BQ8qfz99Xl-nsgHaTAptpcQH-pLV0lRzK2nQ2GhlFlJsQdX2GtUEYc","expires_in":7200,"refresh_token":"30_LIu_w0zLW3SzqNHoHi6v2J101sGXbzbqwyRbFD_Q7n3IPmqSJhNusca9jQXpbO_2rXhq6stProqpzgkGmuPXoEA7FLojtsMGzA0G4PVbqDw","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-24 15:26:12 : params
-2020-02-24 15:26:12 : {"code":"011Tuxd80IyRxD1D2Ab806Gtd80TuxdY"}
-2020-02-24 15:26:12 : {"access_token":"30_uQciOy7pZuZRHJfaRz1QM5FPpARg8DhS_UYcASbJrQLMnkWCJEsh9BQ8qfz99Xl-nsgHaTAptpcQH-pLV0lRzK2nQ2GhlFlJsQdX2GtUEYc","expires_in":7200,"refresh_token":"30_LIu_w0zLW3SzqNHoHi6v2J101sGXbzbqwyRbFD_Q7n3IPmqSJhNusca9jQXpbO_2rXhq6stProqpzgkGmuPXoEA7FLojtsMGzA0G4PVbqDw","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-24 15:26:12 : user info
-2020-02-24 15:26:12 : {"access_token":"30_uQciOy7pZuZRHJfaRz1QM5FPpARg8DhS_UYcASbJrQLMnkWCJEsh9BQ8qfz99Xl-nsgHaTAptpcQH-pLV0lRzK2nQ2GhlFlJsQdX2GtUEYc","refresh_token":"30_LIu_w0zLW3SzqNHoHi6v2J101sGXbzbqwyRbFD_Q7n3IPmqSJhNusca9jQXpbO_2rXhq6stProqpzgkGmuPXoEA7FLojtsMGzA0G4PVbqDw","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-24 15:26:12 : login data
-2020-02-24 15:26:12 : {"userinfo":{"id":10129,"username":"u10129","nickname":"\u6881","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"ebc4ac50-058a-4add-baf2-9acaddf24704","user_id":10129,"createtime":1582529172,"expiretime":0,"expires_in":31536000}}
-2020-02-24 15:55:50 : 10129
-2020-02-24 16:00:59 : 10129
-2020-02-24 16:01:24 : 10129
-2020-02-24 16:07:52 : 10129
-2020-02-24 16:11:07 : 10129
-2020-02-24 16:24:07 : 10146
-2020-02-24 16:31:29 : 10146
-2020-02-24 16:35:14 : 
-2020-02-24 16:35:14 : not login
-2020-02-24 16:40:54 : 10146
-2020-02-24 16:44:54 : 10146
-2020-02-24 16:45:01 : 10146
-2020-02-24 16:46:27 : addons\third\library\Wechat
-2020-02-24 16:46:27 : respnse
-2020-02-24 16:46:27 : {"access_token":"30_bZ_Dj83HUXZ7Vt3uWiPh7ZT0i6baJJLkP2q6upfzzuyBS20FwDpw0eeOz2-sd9dWrLbDCnS7FclLj6sSz9RCYodL1GqnmnxaCbzV8oYk1BM","expires_in":7200,"refresh_token":"30_8PZSxr6MjOAFEGz2snSauoQCrb5t1hpAFX507AtVuhkYto3XhRYJ_dnFGwO9TtzaOWFfjl1UZmkI1fs6RcWZnKmaIH-7j_knrAJfwqBHK_E","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-24 16:46:27 : params
-2020-02-24 16:46:27 : {"code":"001Dehwk1SXD6q0d9Kwk1tEUvk1DehwE"}
-2020-02-24 16:46:27 : {"access_token":"30_bZ_Dj83HUXZ7Vt3uWiPh7ZT0i6baJJLkP2q6upfzzuyBS20FwDpw0eeOz2-sd9dWrLbDCnS7FclLj6sSz9RCYodL1GqnmnxaCbzV8oYk1BM","expires_in":7200,"refresh_token":"30_8PZSxr6MjOAFEGz2snSauoQCrb5t1hpAFX507AtVuhkYto3XhRYJ_dnFGwO9TtzaOWFfjl1UZmkI1fs6RcWZnKmaIH-7j_knrAJfwqBHK_E","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-24 16:46:27 : user info
-2020-02-24 16:46:27 : {"access_token":"30_bZ_Dj83HUXZ7Vt3uWiPh7ZT0i6baJJLkP2q6upfzzuyBS20FwDpw0eeOz2-sd9dWrLbDCnS7FclLj6sSz9RCYodL1GqnmnxaCbzV8oYk1BM","refresh_token":"30_8PZSxr6MjOAFEGz2snSauoQCrb5t1hpAFX507AtVuhkYto3XhRYJ_dnFGwO9TtzaOWFfjl1UZmkI1fs6RcWZnKmaIH-7j_knrAJfwqBHK_E","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-24 16:46:27 : login data
-2020-02-24 16:46:27 : {"userinfo":{"id":10129,"username":"u10129","nickname":"u10129","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/app.biyouliao8.com\/uploads\/20200224\/25eae64059d1abba3d87014e252903f9.jpg","level":1,"gender":1,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"09441a47-39f0-44c5-aa4f-7d127e3f0a7e","user_id":10129,"createtime":1582533987,"expiretime":0,"expires_in":31536000}}
-2020-02-24 16:48:30 : addons\third\library\Wechat
-2020-02-24 16:48:30 : respnse
-2020-02-24 16:48:30 : {"access_token":"30_fmjtbZkCuLmuNvkNsoDKwN9kMFCRnlsYLC3LX1cDguwxLZ3Yz80ub9HEFwH9IWLYQpwMn3D1kzGDzXeeIfzpMMTerH88SKbVzZlMKrrYAs0","expires_in":7200,"refresh_token":"30_A3FvrCHZ5yJorSdUW72SbTW-ASQrC46oOLTxuJeiPSsSGVKZlcnU-xhRqoxds0To0ir6F9AzV6xavFiAs6DUa7mnYdP28RR1UiqJiKuC7v8","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-24 16:48:30 : params
-2020-02-24 16:48:30 : {"code":"011HkZtb2imryK0YTWvb2I9Ktb2HkZtP"}
-2020-02-24 16:48:30 : {"access_token":"30_fmjtbZkCuLmuNvkNsoDKwN9kMFCRnlsYLC3LX1cDguwxLZ3Yz80ub9HEFwH9IWLYQpwMn3D1kzGDzXeeIfzpMMTerH88SKbVzZlMKrrYAs0","expires_in":7200,"refresh_token":"30_A3FvrCHZ5yJorSdUW72SbTW-ASQrC46oOLTxuJeiPSsSGVKZlcnU-xhRqoxds0To0ir6F9AzV6xavFiAs6DUa7mnYdP28RR1UiqJiKuC7v8","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-24 16:48:30 : user info
-2020-02-24 16:48:30 : {"access_token":"30_fmjtbZkCuLmuNvkNsoDKwN9kMFCRnlsYLC3LX1cDguwxLZ3Yz80ub9HEFwH9IWLYQpwMn3D1kzGDzXeeIfzpMMTerH88SKbVzZlMKrrYAs0","refresh_token":"30_A3FvrCHZ5yJorSdUW72SbTW-ASQrC46oOLTxuJeiPSsSGVKZlcnU-xhRqoxds0To0ir6F9AzV6xavFiAs6DUa7mnYdP28RR1UiqJiKuC7v8","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-24 16:48:30 : login data
-2020-02-24 16:48:30 : {"userinfo":{"id":10129,"username":"u10129","nickname":"u10129","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/app.biyouliao8.com\/uploads\/20200224\/25eae64059d1abba3d87014e252903f9.jpg","level":1,"gender":1,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"4d5d1d69-0f62-4913-a933-b4d7ed3628d2","user_id":10129,"createtime":1582534110,"expiretime":0,"expires_in":31536000}}
-2020-02-24 16:49:09 : 10129
-2020-02-24 16:58:14 : 10129
-2020-02-24 17:01:30 : 10129
-2020-02-24 17:01:34 : 10142
-2020-02-24 17:01:46 : 10142
-2020-02-24 17:04:35 : addons\third\library\Wechat
-2020-02-24 17:04:35 : respnse
-2020-02-24 17:04:35 : {"access_token":"30_DBjEesT3-nUDcuQHj-TGBEDk8ZXaUXqEmYT_XVlvx9ht4WmiWUtNXomdr_R82WSiSfv3nab3BafxfHG0rc_998UAapLmmvvvLYVEdNnV2w0","expires_in":7200,"refresh_token":"30__17gOu1nAYkgJwNbfBOAZDHkMCCzUyxTwVfce9Wucm_oL9XDOA8WkX1ZGaWtcDeJXA8oOqSBgYZD_Hf8O5C0TifyTVViguWsmCJ9iy0TxXc","openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","scope":"snsapi_userinfo","unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs"}
-2020-02-24 17:04:35 : params
-2020-02-24 17:04:35 : {"code":"001JKIz21M3YqS1gzwx21Thwz21JKIz2"}
-2020-02-24 17:04:35 : {"access_token":"30_DBjEesT3-nUDcuQHj-TGBEDk8ZXaUXqEmYT_XVlvx9ht4WmiWUtNXomdr_R82WSiSfv3nab3BafxfHG0rc_998UAapLmmvvvLYVEdNnV2w0","expires_in":7200,"refresh_token":"30__17gOu1nAYkgJwNbfBOAZDHkMCCzUyxTwVfce9Wucm_oL9XDOA8WkX1ZGaWtcDeJXA8oOqSBgYZD_Hf8O5C0TifyTVViguWsmCJ9iy0TxXc","openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","scope":"snsapi_userinfo","unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs"}
-2020-02-24 17:04:36 : user info
-2020-02-24 17:04:36 : {"access_token":"30_DBjEesT3-nUDcuQHj-TGBEDk8ZXaUXqEmYT_XVlvx9ht4WmiWUtNXomdr_R82WSiSfv3nab3BafxfHG0rc_998UAapLmmvvvLYVEdNnV2w0","refresh_token":"30__17gOu1nAYkgJwNbfBOAZDHkMCCzUyxTwVfce9Wucm_oL9XDOA8WkX1ZGaWtcDeJXA8oOqSBgYZD_Hf8O5C0TifyTVViguWsmCJ9iy0TxXc","expires_in":7200,"openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs","userinfo":{"openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","nickname":"AA\u52c7\u5f80\u76f4\u524d","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLoawcZNjbEncDblZTqMjiaFLSNZnJiahRxsEufcTBjbt6BfT5Qyv509LxMmSY9x88WnEwGS6MaH2bA\/132","privilege":[],"unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLoawcZNjbEncDblZTqMjiaFLSNZnJiahRxsEufcTBjbt6BfT5Qyv509LxMmSY9x88WnEwGS6MaH2bA\/132","gender":1}}
-2020-02-24 17:04:36 : login data
-2020-02-24 17:04:36 : {"userinfo":{"id":10144,"username":"6","nickname":"6","email":"u10144@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLoawcZNjbEncDblZTqMjiaFLSNZnJiahRxsEufcTBjbt6BfT5Qyv509LxMmSY9x88WnEwGS6MaH2bA\/132","level":1,"gender":1,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"97169414-e1e1-497b-9dde-796079aa4ba5","user_id":10144,"createtime":1582535076,"expiretime":0,"expires_in":31536000}}
-2020-02-24 17:04:44 : qq
-2020-02-24 17:04:44 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-24 17:04:44 : addons\third\library\Qq
-2020-02-24 17:04:44 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-24 17:04:44 : qq in
-2020-02-24 17:04:44 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u7a7a\u767d","gender":"\u7537","gender_type":1,"province":"","city":"","year":"1900","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=40&t=1556568001","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=640&t=1556568001","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001"}
-2020-02-24 17:04:44 : login data
-2020-02-24 17:04:44 : {"userinfo":{"id":10146,"username":"u10146","nickname":"\u7a7a\u767d","email":"u10146@app.biyouliao8.com","mobile":"15281055555","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"ee6bd93f-8ea5-46ec-96f9-5452e4aa0d9a","user_id":10146,"createtime":1582535084,"expiretime":0,"expires_in":31536000}}
-2020-02-24 17:25:04 : 10140
-2020-02-24 17:25:13 : 10140
-2020-02-24 17:25:18 : 10140
-2020-02-24 17:25:23 : 10140
-2020-02-24 17:25:44 : 1
-2020-02-24 17:25:44 : 2
-2020-02-24 17:48:59 : qq
-2020-02-24 17:48:59 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-24 17:48:59 : addons\third\library\Qq
-2020-02-24 17:48:59 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-24 17:48:59 : qq in
-2020-02-24 17:48:59 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u7a7a\u767d","gender":"\u7537","gender_type":1,"province":"","city":"","year":"1900","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=40&t=1556568001","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=640&t=1556568001","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001"}
-2020-02-24 17:48:59 : login data
-2020-02-24 17:48:59 : {"userinfo":{"id":10146,"username":"u10146","nickname":"\u7a7a\u767d","email":"u10146@app.biyouliao8.com","mobile":"15281055555","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"ca8890b9-3f57-42d0-bac1-52e3fba66215","user_id":10146,"createtime":1582537739,"expiretime":0,"expires_in":31536000}}
-2020-02-24 18:13:55 : 10129
-2020-02-24 18:14:02 : 
-2020-02-24 18:14:02 : not login
-2020-02-24 19:28:30 : 10140
-2020-02-24 19:31:08 : 10142
-2020-02-24 19:31:50 : 10140
-2020-02-24 19:32:04 : 10140
-2020-02-24 19:32:16 : 10140
-2020-02-24 20:07:05 : 10140
-2020-02-24 20:07:20 : 10140
-2020-02-24 21:14:01 : 10140
-2020-02-24 22:13:01 : 10140
-2020-02-24 22:13:12 : 10140
-2020-02-24 22:13:23 : 1
-2020-02-24 22:13:23 : 2
-2020-02-24 22:24:24 : 
-2020-02-24 22:24:24 : not login
-2020-02-24 22:24:34 : 
-2020-02-24 22:24:34 : not login
-2020-02-24 22:25:37 : 
-2020-02-24 22:25:37 : not login
-2020-02-24 22:28:55 : 
-2020-02-24 22:28:55 : not login
-2020-02-24 22:31:15 : 10140
-2020-02-24 22:31:43 : 
-2020-02-24 22:31:43 : not login
-2020-02-24 22:31:58 : qq
-2020-02-24 22:31:58 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-24 22:31:58 : addons\third\library\Qq
-2020-02-24 22:31:58 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-24 22:31:58 : qq in
-2020-02-24 22:31:59 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u7a7a\u767d","gender":"\u7537","gender_type":1,"province":"","city":"","year":"1900","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=40&t=1556568001","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=640&t=1556568001","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001"}
-2020-02-24 22:31:59 : login data
-2020-02-24 22:31:59 : {"userinfo":{"id":10146,"username":"u10146","nickname":"\u7a7a\u767d","email":"u10146@app.biyouliao8.com","mobile":"15281055555","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"b8b654ca-dddd-4225-b70d-c64c4e6a7020","user_id":10146,"createtime":1582554719,"expiretime":0,"expires_in":31536000}}
-2020-02-24 23:58:09 : 
-2020-02-24 23:58:09 : not login
-2020-02-25 10:07:24 : 10146
-2020-02-25 10:07:49 : 1
-2020-02-25 10:07:49 : 2
-2020-02-25 10:08:42 : 10146
-2020-02-25 10:10:15 : 
-2020-02-25 10:10:15 : not login
-2020-02-25 10:10:42 : 
-2020-02-25 10:10:42 : not login
-2020-02-25 10:10:46 : 
-2020-02-25 10:10:46 : not login
-2020-02-25 10:10:52 : 
-2020-02-25 10:10:52 : not login
-2020-02-25 10:11:11 : addons\third\library\Wechat
-2020-02-25 10:11:12 : respnse
-2020-02-25 10:11:12 : {"access_token":"30_fNLipSAjZPV3xpa_16Nx7XvOtXXAEC637gSTEzYd1WMMuVm2UNzAqy7ztgbaqBYStoqKQJT9A35NJp8OXisptkq7ffU8GASR4KuwrsRHuf0","expires_in":7200,"refresh_token":"30_hxuKWT6NYzJs1GkjRzygBvtka8X1QbDx8SeMN8It29wHVgn3ObbdRpwoQF_ryWqYerZM5Uh6rYvN4nN2-ICEbVP68s9ozAsdEkwVBykFQro","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-25 10:11:12 : params
-2020-02-25 10:11:12 : {"code":"071uVHB705NzWC1NBZD70zTLB70uVHBz"}
-2020-02-25 10:11:12 : {"access_token":"30_fNLipSAjZPV3xpa_16Nx7XvOtXXAEC637gSTEzYd1WMMuVm2UNzAqy7ztgbaqBYStoqKQJT9A35NJp8OXisptkq7ffU8GASR4KuwrsRHuf0","expires_in":7200,"refresh_token":"30_hxuKWT6NYzJs1GkjRzygBvtka8X1QbDx8SeMN8It29wHVgn3ObbdRpwoQF_ryWqYerZM5Uh6rYvN4nN2-ICEbVP68s9ozAsdEkwVBykFQro","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-25 10:11:12 : user info
-2020-02-25 10:11:12 : {"access_token":"30_fNLipSAjZPV3xpa_16Nx7XvOtXXAEC637gSTEzYd1WMMuVm2UNzAqy7ztgbaqBYStoqKQJT9A35NJp8OXisptkq7ffU8GASR4KuwrsRHuf0","refresh_token":"30_hxuKWT6NYzJs1GkjRzygBvtka8X1QbDx8SeMN8It29wHVgn3ObbdRpwoQF_ryWqYerZM5Uh6rYvN4nN2-ICEbVP68s9ozAsdEkwVBykFQro","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-25 10:11:12 : login data
-2020-02-25 10:11:12 : {"userinfo":{"id":10129,"username":"u10129","nickname":"u10129","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/app.biyouliao8.com\/uploads\/20200224\/25eae64059d1abba3d87014e252903f9.jpg","level":1,"gender":1,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"f949ba93-42b8-45da-82fb-87942ca78e3d","user_id":10129,"createtime":1582596672,"expiretime":0,"expires_in":31536000}}
-2020-02-25 10:16:25 : 10142
-2020-02-25 10:16:37 : 1
-2020-02-25 10:16:37 : 2
-2020-02-25 10:19:24 : 10129
-2020-02-25 10:20:12 : 
-2020-02-25 10:20:12 : not login
-2020-02-25 10:23:51 : 
-2020-02-25 10:23:51 : not login
-2020-02-25 10:24:10 : 
-2020-02-25 10:24:10 : not login
-2020-02-25 10:30:11 : 10146
-2020-02-25 10:30:27 : 
-2020-02-25 10:30:27 : not login
-2020-02-25 10:30:36 : 10146
-2020-02-25 10:31:51 : 
-2020-02-25 10:31:51 : not login
-2020-02-25 10:33:17 : 
-2020-02-25 10:33:17 : not login
-2020-02-25 10:36:17 : 
-2020-02-25 10:36:17 : not login
-2020-02-25 10:39:34 : addons\third\library\Wechat
-2020-02-25 10:39:34 : respnse
-2020-02-25 10:39:34 : {"access_token":"30_zCrDESzs0EwY-xc0FUuOB-PRnEHWgjHgsQFA4tq19VTCJadzLFvGoP-_PZPbcD7TUpkfBpAFxuMAmNYyCA88aIdlfIQG4RZquy4gfKJywcU","expires_in":7200,"refresh_token":"30_l_EwxRL8o8CDKzGOfPSQJvoVx6h9kquYlyuec0YSQ-A1Ci9PoZZNOq9u7TRUVrgoDJDkubzuwMBe4Dphf714KMzOzrUBioVBPKMRautkzQ0","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-25 10:39:34 : params
-2020-02-25 10:39:34 : {"code":"071WKX982lNxUL0OTva82PQ9a82WKX9H"}
-2020-02-25 10:39:34 : {"access_token":"30_zCrDESzs0EwY-xc0FUuOB-PRnEHWgjHgsQFA4tq19VTCJadzLFvGoP-_PZPbcD7TUpkfBpAFxuMAmNYyCA88aIdlfIQG4RZquy4gfKJywcU","expires_in":7200,"refresh_token":"30_l_EwxRL8o8CDKzGOfPSQJvoVx6h9kquYlyuec0YSQ-A1Ci9PoZZNOq9u7TRUVrgoDJDkubzuwMBe4Dphf714KMzOzrUBioVBPKMRautkzQ0","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-25 10:39:34 : user info
-2020-02-25 10:39:34 : {"access_token":"30_zCrDESzs0EwY-xc0FUuOB-PRnEHWgjHgsQFA4tq19VTCJadzLFvGoP-_PZPbcD7TUpkfBpAFxuMAmNYyCA88aIdlfIQG4RZquy4gfKJywcU","refresh_token":"30_l_EwxRL8o8CDKzGOfPSQJvoVx6h9kquYlyuec0YSQ-A1Ci9PoZZNOq9u7TRUVrgoDJDkubzuwMBe4Dphf714KMzOzrUBioVBPKMRautkzQ0","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-25 10:39:34 : login data
-2020-02-25 10:39:34 : {"userinfo":{"id":10129,"username":"u10129","nickname":"u10129","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/app.biyouliao8.com\/uploads\/20200224\/25eae64059d1abba3d87014e252903f9.jpg","level":1,"gender":1,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"4e1da18d-e839-4ecc-af88-f1e81f42f113","user_id":10129,"createtime":1582598374,"expiretime":0,"expires_in":31536000}}
-2020-02-25 10:41:16 : 
-2020-02-25 10:41:16 : not login
-2020-02-25 10:45:10 : addons\third\library\Wechat
-2020-02-25 10:45:11 : respnse
-2020-02-25 10:45:11 : {"access_token":"30_Sy19Y6cmshBNpHbC5g1hqt25ZjpNYUcfp-u_Y_rO-egH3II6IpyyXdRe1xx5e7jrW0sQ0oWgTqGQ96gen7PD4ndhk2H61hfTUR1EffL5Hh4","expires_in":7200,"refresh_token":"30_YjtCCr2iNZFG-ffoWYQAtb65AC09tEm6-3yIa6mvG-RsaA19ZWYGQQ0Vsd1or0jPPsJuC_Wuhk_ln0U1y7WwW5A7uUWg6wgdn3Az6xWN_4o","openid":"o9cm6wEmiXEZ21ryRlJTrS2VQvxM","scope":"snsapi_userinfo","unionid":"ofaBI6Jbq9xo-uay4CbnwAiu6EEA"}
-2020-02-25 10:45:11 : params
-2020-02-25 10:45:11 : {"code":"021YzcA61uTMuN1PD0C61Q39A61YzcAW"}
-2020-02-25 10:45:11 : {"access_token":"30_Sy19Y6cmshBNpHbC5g1hqt25ZjpNYUcfp-u_Y_rO-egH3II6IpyyXdRe1xx5e7jrW0sQ0oWgTqGQ96gen7PD4ndhk2H61hfTUR1EffL5Hh4","expires_in":7200,"refresh_token":"30_YjtCCr2iNZFG-ffoWYQAtb65AC09tEm6-3yIa6mvG-RsaA19ZWYGQQ0Vsd1or0jPPsJuC_Wuhk_ln0U1y7WwW5A7uUWg6wgdn3Az6xWN_4o","openid":"o9cm6wEmiXEZ21ryRlJTrS2VQvxM","scope":"snsapi_userinfo","unionid":"ofaBI6Jbq9xo-uay4CbnwAiu6EEA"}
-2020-02-25 10:45:11 : user info
-2020-02-25 10:45:11 : {"access_token":"30_Sy19Y6cmshBNpHbC5g1hqt25ZjpNYUcfp-u_Y_rO-egH3II6IpyyXdRe1xx5e7jrW0sQ0oWgTqGQ96gen7PD4ndhk2H61hfTUR1EffL5Hh4","refresh_token":"30_YjtCCr2iNZFG-ffoWYQAtb65AC09tEm6-3yIa6mvG-RsaA19ZWYGQQ0Vsd1or0jPPsJuC_Wuhk_ln0U1y7WwW5A7uUWg6wgdn3Az6xWN_4o","expires_in":7200,"openid":"o9cm6wEmiXEZ21ryRlJTrS2VQvxM","unionid":"ofaBI6Jbq9xo-uay4CbnwAiu6EEA","userinfo":{"openid":"o9cm6wEmiXEZ21ryRlJTrS2VQvxM","nickname":"\u51c9\u8584","sex":2,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/8R3rKudsCiciaecdzByO52q0Bs7WmDRxHAdcaNIQeUnlcxWvuv7tTpBG0TVTnI4UWCqyfjAWicPNjUyTjaLaMQJHg\/132","privilege":[],"unionid":"ofaBI6Jbq9xo-uay4CbnwAiu6EEA","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/8R3rKudsCiciaecdzByO52q0Bs7WmDRxHAdcaNIQeUnlcxWvuv7tTpBG0TVTnI4UWCqyfjAWicPNjUyTjaLaMQJHg\/132","gender":2}}
-2020-02-25 10:45:11 : login data
-2020-02-25 10:45:11 : {"userinfo":{"id":10147,"username":"u10147","nickname":"\u51c9\u8584","email":"u10147@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/8R3rKudsCiciaecdzByO52q0Bs7WmDRxHAdcaNIQeUnlcxWvuv7tTpBG0TVTnI4UWCqyfjAWicPNjUyTjaLaMQJHg\/132","level":1,"gender":2,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"90337a39-3817-411d-adff-3b58eb552616","user_id":10147,"createtime":1582598711,"expiretime":0,"expires_in":31536000}}
-2020-02-25 10:45:23 : 2
-2020-02-25 10:45:23 : 1
-2020-02-25 10:45:23 : 3
-2020-02-25 10:45:26 : 10147
-2020-02-25 10:45:42 : 10147
-2020-02-25 10:49:28 : 
-2020-02-25 10:49:28 : not login
-2020-02-25 10:51:25 : 
-2020-02-25 10:51:25 : not login
-2020-02-25 10:52:28 : 
-2020-02-25 10:52:28 : not login
-2020-02-25 11:12:11 : 10146
-2020-02-25 11:12:19 : 10146
-2020-02-25 11:12:42 : 
-2020-02-25 11:12:42 : not login
-2020-02-25 11:48:22 : 10134
-2020-02-25 11:49:15 : 
-2020-02-25 11:49:15 : not login
-2020-02-25 11:49:21 : 
-2020-02-25 11:49:21 : not login
-2020-02-25 11:49:31 : qq
-2020-02-25 11:49:31 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-25 11:49:31 : addons\third\library\Qq
-2020-02-25 11:49:31 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-25 11:49:31 : qq in
-2020-02-25 11:49:31 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u7a7a\u767d","gender":"\u7537","gender_type":1,"province":"","city":"","year":"1900","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=40&t=1556568001","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=640&t=1556568001","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001"}
-2020-02-25 11:49:31 : login data
-2020-02-25 11:49:31 : {"userinfo":{"id":10146,"username":"u10146","nickname":"\u7a7a\u767d","email":"u10146@app.biyouliao8.com","mobile":"15281055555","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"da2f6ccc-b3d8-4631-ace1-2ef7d06f751d","user_id":10146,"createtime":1582602571,"expiretime":0,"expires_in":31536000}}
-2020-02-25 11:50:35 : qq
-2020-02-25 11:50:35 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-25 11:50:35 : addons\third\library\Qq
-2020-02-25 11:50:35 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-25 11:50:35 : qq in
-2020-02-25 11:50:35 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u7a7a\u767d","gender":"\u7537","gender_type":1,"province":"","city":"","year":"1900","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=40&t=1556568001","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=640&t=1556568001","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001"}
-2020-02-25 11:50:35 : login data
-2020-02-25 11:50:35 : {"userinfo":{"id":10146,"username":"u10146","nickname":"\u7a7a\u767d","email":"u10146@app.biyouliao8.com","mobile":"15281055555","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"b8c6fa15-e306-40f7-a004-3314b15536ea","user_id":10146,"createtime":1582602635,"expiretime":0,"expires_in":31536000}}
-2020-02-25 11:50:55 : qq
-2020-02-25 11:50:55 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-25 11:50:55 : addons\third\library\Qq
-2020-02-25 11:50:55 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-25 11:50:55 : qq in
-2020-02-25 11:50:55 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u7a7a\u767d","gender":"\u7537","gender_type":1,"province":"","city":"","year":"1900","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=40&t=1556568001","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=640&t=1556568001","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001"}
-2020-02-25 11:50:55 : login data
-2020-02-25 11:50:55 : {"userinfo":{"id":10146,"username":"u10146","nickname":"\u7a7a\u767d","email":"u10146@app.biyouliao8.com","mobile":"15281055555","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"b4e87062-f979-4bf3-ac2b-e5fd928ebcda","user_id":10146,"createtime":1582602655,"expiretime":0,"expires_in":31536000}}
-2020-02-25 11:50:57 : 10134
-2020-02-25 11:51:00 : 10146
-2020-02-25 11:51:22 : qq
-2020-02-25 11:51:22 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-25 11:51:22 : addons\third\library\Qq
-2020-02-25 11:51:22 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-25 11:51:22 : qq in
-2020-02-25 11:51:23 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u7a7a\u767d","gender":"\u7537","gender_type":1,"province":"","city":"","year":"1900","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=40&t=1556568001","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=640&t=1556568001","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001"}
-2020-02-25 11:51:23 : login data
-2020-02-25 11:51:23 : {"userinfo":{"id":10146,"username":"u10146","nickname":"\u7a7a\u767d","email":"u10146@app.biyouliao8.com","mobile":"15281055555","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"f6ac6ea1-ad4c-43a1-905c-e08c84e515ac","user_id":10146,"createtime":1582602683,"expiretime":0,"expires_in":31536000}}
-2020-02-25 11:55:01 : 10142
-2020-02-25 11:55:20 : 
-2020-02-25 11:55:20 : not login
-2020-02-25 11:55:36 : addons\third\library\Wechat
-2020-02-25 11:55:36 : respnse
-2020-02-25 11:55:36 : {"access_token":"30_EK2d4BuJqaqgvFy1pd6xRa95YlxfFm29sux4dU632cMRtS9NEvFw3rdGwFJS_HmsxMiojTR4lsqgEBKIlRnxO3ZiPeogR1BTrwnsw9sKk2s","expires_in":7200,"refresh_token":"30_jpE4951Bh5I97P5kj8hLdWzQlixMf39R0FbAdetCGha6Jrae-yhrgcPDzoqWP-rZP_1fP0_sT2CL176715hrErmaSCBjAL9d39sZ4yNYEzg","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-25 11:55:36 : params
-2020-02-25 11:55:36 : {"code":"001ziM8T1TEyh31Bx89T1ZwL8T1ziM8P"}
-2020-02-25 11:55:36 : {"access_token":"30_EK2d4BuJqaqgvFy1pd6xRa95YlxfFm29sux4dU632cMRtS9NEvFw3rdGwFJS_HmsxMiojTR4lsqgEBKIlRnxO3ZiPeogR1BTrwnsw9sKk2s","expires_in":7200,"refresh_token":"30_jpE4951Bh5I97P5kj8hLdWzQlixMf39R0FbAdetCGha6Jrae-yhrgcPDzoqWP-rZP_1fP0_sT2CL176715hrErmaSCBjAL9d39sZ4yNYEzg","openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","scope":"snsapi_userinfo","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU"}
-2020-02-25 11:55:37 : user info
-2020-02-25 11:55:37 : {"access_token":"30_EK2d4BuJqaqgvFy1pd6xRa95YlxfFm29sux4dU632cMRtS9NEvFw3rdGwFJS_HmsxMiojTR4lsqgEBKIlRnxO3ZiPeogR1BTrwnsw9sKk2s","refresh_token":"30_jpE4951Bh5I97P5kj8hLdWzQlixMf39R0FbAdetCGha6Jrae-yhrgcPDzoqWP-rZP_1fP0_sT2CL176715hrErmaSCBjAL9d39sZ4yNYEzg","expires_in":7200,"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","userinfo":{"openid":"o9cm6wKzxVLsOqc9bpAkdJwsGVz4","nickname":"\u7fa1\u6155","sex":0,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","privilege":[],"unionid":"ofaBI6InO9CEILEBWSnDA7sieqFU","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","gender":0}}
-2020-02-25 11:55:37 : login data
-2020-02-25 11:55:37 : {"userinfo":{"id":10142,"username":"\u4f60\u597d\u4f60\u597d\u4f60","nickname":"\u4f60\u597d\u4f60\u597d\u4f60","email":"u10142@app.biyouliao8.com","mobile":"15756425203","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLjCPTVvCVuyIy34uyRoYNulzmx5wocKuJlRRUPgA4a8fuibXKL1p045zMG6PjMJzZFIse2qhm0gVg\/132","level":1,"gender":1,"birthday":"2006-02-17","bio":"\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d\u4f60\u597d","score":0,"status":"normal","is_kuaixun":"\u5426","token":"eb1a5873-9339-4784-ac10-e1a4b9ba6f08","user_id":10142,"createtime":1582602937,"expiretime":0,"expires_in":31536000}}
-2020-02-25 11:55:41 : 10142
-2020-02-25 11:56:11 : 10142
-2020-02-25 11:57:23 : 
-2020-02-25 11:57:23 : not login
-2020-02-25 12:00:00 : 10146
-2020-02-25 12:00:03 : 10146
-2020-02-25 12:00:15 : 10146
-2020-02-25 12:00:24 : qq
-2020-02-25 12:00:24 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-25 12:00:24 : addons\third\library\Qq
-2020-02-25 12:00:24 : {"access_token":"DFE1FA66A48349C08E0BD259381D8556","openid":"4348ED7E99891018BC9D576E0FBCC74B","refresh_token":null,"expires_in":null}
-2020-02-25 12:00:24 : qq in
-2020-02-25 12:00:25 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u7a7a\u767d","gender":"\u7537","gender_type":1,"province":"","city":"","year":"1900","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/4348ED7E99891018BC9D576E0FBCC74B\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=40&t=1556568001","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=640&t=1556568001","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001"}
-2020-02-25 12:00:25 : login data
-2020-02-25 12:00:25 : {"userinfo":{"id":10146,"username":"u10146","nickname":"\u7a7a\u767d","email":"u10146@app.biyouliao8.com","mobile":"15281055555","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=5dtCKba4iafuA2BffrlmEQQ&s=100&t=1556568001","level":1,"gender":0,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"b2bf009d-3aec-46f2-b5e5-e40fd702868c","user_id":10146,"createtime":1582603225,"expiretime":0,"expires_in":31536000}}
-2020-02-25 12:00:29 : 10146
-2020-02-25 12:01:13 : 
-2020-02-25 12:01:13 : not login
-2020-02-25 12:01:25 : qq
-2020-02-25 12:01:25 : {"access_token":"441166ED461D7FBCA6EBCBBA76922020","openid":"298DDBC9D05DCC8AD5AF4DAE2FEFFCC6","refresh_token":null,"expires_in":null}
-2020-02-25 12:01:25 : addons\third\library\Qq
-2020-02-25 12:01:25 : {"access_token":"441166ED461D7FBCA6EBCBBA76922020","openid":"298DDBC9D05DCC8AD5AF4DAE2FEFFCC6","refresh_token":null,"expires_in":null}
-2020-02-25 12:01:25 : qq in
-2020-02-25 12:01:25 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u6d6a\u5b50\u5fc3\u58f0","gender":"\u7537","gender_type":2,"province":"","city":"\u6069\u574e\u666e","year":"1900","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/298DDBC9D05DCC8AD5AF4DAE2FEFFCC6\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/298DDBC9D05DCC8AD5AF4DAE2FEFFCC6\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/298DDBC9D05DCC8AD5AF4DAE2FEFFCC6\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=ib5UO0GQrj880x7ZmXaAtwQ&s=40&t=1557265373","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=ib5UO0GQrj880x7ZmXaAtwQ&s=100&t=1557265373","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=ib5UO0GQrj880x7ZmXaAtwQ&s=640&t=1557265373","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=ib5UO0GQrj880x7ZmXaAtwQ&s=100&t=1557265373"}
-2020-02-25 12:01:25 : login data
-2020-02-25 12:01:25 : {"userinfo":{"id":10148,"username":"u10148","nickname":"\u6d6a\u5b50\u5fc3\u58f0","email":"u10148@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=ib5UO0GQrj880x7ZmXaAtwQ&s=100&t=1557265373","level":1,"gender":0,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"bcc08df9-8f55-4c7d-81b2-f5355984cb0f","user_id":10148,"createtime":1582603285,"expiretime":0,"expires_in":31536000}}
-2020-02-25 12:01:33 : 10148
-2020-02-25 12:02:56 : 10142
-2020-02-25 12:03:44 : qq
-2020-02-25 12:03:44 : {"access_token":"23649F19BAA05D4548C414A785138974","openid":"00E3E4BE475C8A8EDBC78DDE3248060C","refresh_token":null,"expires_in":null}
-2020-02-25 12:03:44 : addons\third\library\Qq
-2020-02-25 12:03:44 : {"access_token":"23649F19BAA05D4548C414A785138974","openid":"00E3E4BE475C8A8EDBC78DDE3248060C","refresh_token":null,"expires_in":null}
-2020-02-25 12:03:44 : qq in
-2020-02-25 12:03:45 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u4e0d\u5fd8\u521d\u5fc3","gender":"\u7537","gender_type":1,"province":"\u56db\u5ddd","city":"\u6210\u90fd","year":"1989","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/00E3E4BE475C8A8EDBC78DDE3248060C\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/00E3E4BE475C8A8EDBC78DDE3248060C\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/00E3E4BE475C8A8EDBC78DDE3248060C\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=A0Pvb7ETKAWEUPr0KaiaWGQ&s=40&t=1555302424","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=A0Pvb7ETKAWEUPr0KaiaWGQ&s=100&t=1555302424","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=A0Pvb7ETKAWEUPr0KaiaWGQ&s=640&t=1555302424","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=A0Pvb7ETKAWEUPr0KaiaWGQ&s=100&t=1555302424"}
-2020-02-25 12:03:45 : login data
-2020-02-25 12:03:45 : {"userinfo":{"id":10149,"username":"u10149","nickname":"\u4e0d\u5fd8\u521d\u5fc3","email":"u10149@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=A0Pvb7ETKAWEUPr0KaiaWGQ&s=100&t=1555302424","level":1,"gender":0,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"c93f345a-1434-44c7-a2e3-e090d7260a4b","user_id":10149,"createtime":1582603425,"expiretime":0,"expires_in":31536000}}
-2020-02-25 12:12:00 : 10146
-2020-02-25 12:12:04 : 10146
-2020-02-25 12:14:14 : qq
-2020-02-25 12:14:14 : {"access_token":"45B8F388CC1928228FC31E947224E883","openid":"1B88F3995CE48605DB1DA29803C9F429","refresh_token":null,"expires_in":null}
-2020-02-25 12:14:14 : addons\third\library\Qq
-2020-02-25 12:14:14 : {"access_token":"45B8F388CC1928228FC31E947224E883","openid":"1B88F3995CE48605DB1DA29803C9F429","refresh_token":null,"expires_in":null}
-2020-02-25 12:14:14 : qq in
-2020-02-25 12:14:14 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u738b\u603b","gender":"\u7537","gender_type":2,"province":"\u7518\u8083","city":"","year":"0","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/1B88F3995CE48605DB1DA29803C9F429\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/1B88F3995CE48605DB1DA29803C9F429\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/1B88F3995CE48605DB1DA29803C9F429\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=XicBMJibYOyMqfYiaLqcdrvRA&s=40&t=1552971816","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=XicBMJibYOyMqfYiaLqcdrvRA&s=100&t=1552971816","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=XicBMJibYOyMqfYiaLqcdrvRA&s=100&t=1552971816","figureurl_type":"0","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=XicBMJibYOyMqfYiaLqcdrvRA&s=100&t=1552971816"}
-2020-02-25 12:14:14 : login data
-2020-02-25 12:14:14 : {"userinfo":{"id":10150,"username":"u10150","nickname":"\u738b\u603b","email":"u10150@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=XicBMJibYOyMqfYiaLqcdrvRA&s=100&t=1552971816","level":1,"gender":0,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"59102ee2-e10b-4f4f-a2c7-08bf5f700622","user_id":10150,"createtime":1582604054,"expiretime":0,"expires_in":31536000}}
-2020-02-25 12:15:19 : 10146
-2020-02-25 12:15:22 : 10146
-2020-02-25 12:17:01 : 10150
-2020-02-25 12:20:26 : 10142
-2020-02-25 12:22:34 : 10146
-2020-02-25 12:30:01 : 10146
-2020-02-25 12:31:02 : 10146
-2020-02-25 12:31:08 : 10129
-2020-02-25 12:31:11 : 10129
-2020-02-25 12:31:21 : 10146
-2020-02-25 12:31:25 : 10146
-2020-02-25 12:31:57 : 10129
-2020-02-25 12:32:06 : 10146
-2020-02-25 12:32:23 : 10129
-2020-02-25 12:33:54 : 10146
-2020-02-25 12:39:33 : 10146
-2020-02-25 12:42:04 : 10146
-2020-02-25 12:42:19 : 10146
-2020-02-25 12:42:29 : 10146
-2020-02-25 12:42:47 : 10146
-2020-02-25 12:44:11 : 10148
-2020-02-25 12:50:22 : 10146
-2020-02-25 12:52:29 : addons\third\library\Wechat
-2020-02-25 12:52:29 : respnse
-2020-02-25 12:52:29 : {"access_token":"30_DHOa1N2s1pRLoEP3Hx47dxy13ZeEFIc0WMfYyq8xqNT1kQWbIiEhQH-Bt304S3iR6TbMQD4IG1mClSkTistd4FlhxRm23DCa41OVWQnNcDo","expires_in":7200,"refresh_token":"30_uq9_cGAdUfQMcENyFJ7Swc_xthHLTWUIkym4CZuEYG8Fko_x6nOZWg-3YJlZIElDCH_WqheSJihEoSs7edjDOpxsXap0pXlR9_EoePSgAq4","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-25 12:52:29 : params
-2020-02-25 12:52:29 : {"code":"061TSfUn19P6Yo0j8DVn10HRTn1TSfUL"}
-2020-02-25 12:52:29 : {"access_token":"30_DHOa1N2s1pRLoEP3Hx47dxy13ZeEFIc0WMfYyq8xqNT1kQWbIiEhQH-Bt304S3iR6TbMQD4IG1mClSkTistd4FlhxRm23DCa41OVWQnNcDo","expires_in":7200,"refresh_token":"30_uq9_cGAdUfQMcENyFJ7Swc_xthHLTWUIkym4CZuEYG8Fko_x6nOZWg-3YJlZIElDCH_WqheSJihEoSs7edjDOpxsXap0pXlR9_EoePSgAq4","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-25 12:52:29 : user info
-2020-02-25 12:52:29 : {"access_token":"30_DHOa1N2s1pRLoEP3Hx47dxy13ZeEFIc0WMfYyq8xqNT1kQWbIiEhQH-Bt304S3iR6TbMQD4IG1mClSkTistd4FlhxRm23DCa41OVWQnNcDo","refresh_token":"30_uq9_cGAdUfQMcENyFJ7Swc_xthHLTWUIkym4CZuEYG8Fko_x6nOZWg-3YJlZIElDCH_WqheSJihEoSs7edjDOpxsXap0pXlR9_EoePSgAq4","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-25 12:52:29 : login data
-2020-02-25 12:52:29 : {"userinfo":{"id":10129,"username":"u10129","nickname":"u10129","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/app.biyouliao8.com\/uploads\/20200224\/25eae64059d1abba3d87014e252903f9.jpg","level":1,"gender":1,"birthday":"0000-00-00","bio":"1234567667","score":0,"status":"normal","is_kuaixun":"\u5426","token":"a215c6ad-ca7c-4e2a-b8a2-af5c0a17ea98","user_id":10129,"createtime":1582606349,"expiretime":0,"expires_in":31536000}}
-2020-02-25 12:52:51 : 10122
-2020-02-25 12:52:59 : 10122
-2020-02-25 12:53:23 : 10122
-2020-02-25 12:53:39 : 10122
-2020-02-25 12:53:50 : 10122
-2020-02-25 12:54:55 : 10150
-2020-02-25 13:02:00 : addons\third\library\Wechat
-2020-02-25 13:02:00 : respnse
-2020-02-25 13:02:00 : {"access_token":"30_Emv-dPMzR66QeO-2vMnnoIAvox8nzPHcvLFEb0go78xaUxSHoiJTC7lDbqmdyG-LP6tuEL_dMMIazxMTHUPZDkFb4Qejvbi4XD9xMcKLeZU","expires_in":7200,"refresh_token":"30_W6JZqb9nJ-x2pCIm27xyFj2dDjh8xv8qCpTJZ8Ym07stmD3y459BFa_jmeEs5tUSK5wUBanQMsqRL9FNeOAuW04Y4n2oMfslbn_kBR6C_2Y","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-25 13:02:00 : params
-2020-02-25 13:02:00 : {"code":"061cWL9P0p9tY625dH9P09aN9P0cWL9y"}
-2020-02-25 13:02:00 : {"access_token":"30_Emv-dPMzR66QeO-2vMnnoIAvox8nzPHcvLFEb0go78xaUxSHoiJTC7lDbqmdyG-LP6tuEL_dMMIazxMTHUPZDkFb4Qejvbi4XD9xMcKLeZU","expires_in":7200,"refresh_token":"30_W6JZqb9nJ-x2pCIm27xyFj2dDjh8xv8qCpTJZ8Ym07stmD3y459BFa_jmeEs5tUSK5wUBanQMsqRL9FNeOAuW04Y4n2oMfslbn_kBR6C_2Y","openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","scope":"snsapi_userinfo","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54"}
-2020-02-25 13:02:01 : user info
-2020-02-25 13:02:01 : {"access_token":"30_Emv-dPMzR66QeO-2vMnnoIAvox8nzPHcvLFEb0go78xaUxSHoiJTC7lDbqmdyG-LP6tuEL_dMMIazxMTHUPZDkFb4Qejvbi4XD9xMcKLeZU","refresh_token":"30_W6JZqb9nJ-x2pCIm27xyFj2dDjh8xv8qCpTJZ8Ym07stmD3y459BFa_jmeEs5tUSK5wUBanQMsqRL9FNeOAuW04Y4n2oMfslbn_kBR6C_2Y","expires_in":7200,"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","userinfo":{"openid":"o9cm6wNYMPqPJkJezBAczd2D5Nuw","nickname":"\u6881","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","privilege":[],"unionid":"ofaBI6Em_oXY4CmhqeCBTbSoNk54","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/jOIST8hiacMT13BBibiaDYXiaMoS2LNrUVWSaVbFzsGk7lde7VafHE3I2LNkJpicng7GdUq29O62J2zEGvScY54aUCA\/132","gender":1}}
-2020-02-25 13:02:01 : login data
-2020-02-25 13:02:01 : {"userinfo":{"id":10129,"username":"u10129","nickname":"u10129","email":"u10129@app.biyouliao8.com","mobile":"18508100602","avatar":"http:\/\/app.biyouliao8.com\/uploads\/20200224\/25eae64059d1abba3d87014e252903f9.jpg","level":1,"gender":1,"birthday":"0000-00-00","bio":"1234567667","score":0,"status":"normal","is_kuaixun":"\u5426","token":"c34ac804-520d-44d1-8a1c-b7327c70b456","user_id":10129,"createtime":1582606921,"expiretime":0,"expires_in":31536000}}
-2020-02-25 13:44:40 : 10146
-2020-02-25 13:44:41 : 1
-2020-02-25 13:44:41 : 2
-2020-02-25 13:47:34 : 10146
-2020-02-25 13:47:45 : 10146
-2020-02-25 13:47:51 : 10146
-2020-02-25 18:11:23 : 10146
-2020-02-25 18:12:29 : 10146
-2020-02-25 18:13:00 : 10146
-2020-02-25 18:14:41 : 10146
-2020-02-25 18:14:46 : 1
-2020-02-25 18:14:46 : 2
-2020-02-26 09:45:33 : 1
-2020-02-26 09:48:37 : 1
-2020-02-26 11:33:28 : 10146
-2020-02-26 11:55:08 : 10146
-2020-02-26 12:07:34 : addons\third\library\Wechat
-2020-02-26 12:07:35 : respnse
-2020-02-26 12:07:35 : {"access_token":"30_a5Zpu8EvEDLPRSJdajjSPDo3JmkWDbySXw1BafjPm76EAp371UHf78lZejsNJ9NlAF6Vt2ZX3qSd_kZiVNy0jpTWiNpe5WBQir4IbfPEjS8","expires_in":7200,"refresh_token":"30_NTwCKIVSbA12I4JiDLGsuNoKgd5HXTZUOegGtkR9rSqTGg_zcoSsoPb2DMUr1G8PXSI1pqcFwv0cfuo9NMPl_sFHXIP24pHAHAODwbBkwLQ","openid":"o9cm6wIWKkXiFkJIlc5q5x7y2R4Y","scope":"snsapi_userinfo","unionid":"ofaBI6E-OC-n15vArGBRTzGSUFm8"}
-2020-02-26 12:07:35 : params
-2020-02-26 12:07:35 : {"code":"0217IPEV0J67kZ16rMCV01QaFV07IPEQ"}
-2020-02-26 12:07:35 : {"access_token":"30_a5Zpu8EvEDLPRSJdajjSPDo3JmkWDbySXw1BafjPm76EAp371UHf78lZejsNJ9NlAF6Vt2ZX3qSd_kZiVNy0jpTWiNpe5WBQir4IbfPEjS8","expires_in":7200,"refresh_token":"30_NTwCKIVSbA12I4JiDLGsuNoKgd5HXTZUOegGtkR9rSqTGg_zcoSsoPb2DMUr1G8PXSI1pqcFwv0cfuo9NMPl_sFHXIP24pHAHAODwbBkwLQ","openid":"o9cm6wIWKkXiFkJIlc5q5x7y2R4Y","scope":"snsapi_userinfo","unionid":"ofaBI6E-OC-n15vArGBRTzGSUFm8"}
-2020-02-26 12:07:35 : user info
-2020-02-26 12:07:35 : {"access_token":"30_a5Zpu8EvEDLPRSJdajjSPDo3JmkWDbySXw1BafjPm76EAp371UHf78lZejsNJ9NlAF6Vt2ZX3qSd_kZiVNy0jpTWiNpe5WBQir4IbfPEjS8","refresh_token":"30_NTwCKIVSbA12I4JiDLGsuNoKgd5HXTZUOegGtkR9rSqTGg_zcoSsoPb2DMUr1G8PXSI1pqcFwv0cfuo9NMPl_sFHXIP24pHAHAODwbBkwLQ","expires_in":7200,"openid":"o9cm6wIWKkXiFkJIlc5q5x7y2R4Y","unionid":"ofaBI6E-OC-n15vArGBRTzGSUFm8","userinfo":{"openid":"o9cm6wIWKkXiFkJIlc5q5x7y2R4Y","nickname":"A\u4e13\u4e1a\u63a8\u5e7f1\u53f7","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/pnrj1uqNRpcvz08VI9HzmKFdxAovjKib0LJGEBnmTzWbqZ7n39kic0CSVAV9Gy9lw0GIcM80hjB01GWpxYsEdibFg\/132","privilege":[],"unionid":"ofaBI6E-OC-n15vArGBRTzGSUFm8","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/pnrj1uqNRpcvz08VI9HzmKFdxAovjKib0LJGEBnmTzWbqZ7n39kic0CSVAV9Gy9lw0GIcM80hjB01GWpxYsEdibFg\/132","gender":1}}
-2020-02-26 12:07:35 : login data
-2020-02-26 12:07:35 : {"userinfo":{"id":10130,"username":"u10130","nickname":"A\u4e13\u4e1a\u63a8\u5e7f1\u53f7","email":"u10130@app.biyouliao8.com","mobile":"15928926054","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/pnrj1uqNRpcvz08VI9HzmKFdxAovjKib0LJGEBnmTzWbqZ7n39kic0CSVAV9Gy9lw0GIcM80hjB01GWpxYsEdibFg\/132","level":1,"gender":1,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"384a34fb-a354-4ad8-a85f-e0b47de9541b","user_id":10130,"createtime":1582690055,"expiretime":0,"expires_in":31536000}}
-2020-02-26 12:08:02 : addons\third\library\Wechat
-2020-02-26 12:08:03 : respnse
-2020-02-26 12:08:03 : {"access_token":"30_xmVL9gj49RBsb4jnwUNWzubqkOYDkVd1HuxnAMfdlel4GYlHFSVT8_3FThgg58DEit7R1jqTJDFTucnv23QoMjdQaa5aYxDkYhVSLlp4Fzs","expires_in":7200,"refresh_token":"30_s6xqJLl2Ns-nUEeQqS5gioHIEwOTjk3QkQKTo-LAjWhWesRE238uYg73Frcy-1QRQadLxQw1zBiWlVwfMHmcBb6tiQBKoGEN--mWe7payEE","openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","scope":"snsapi_userinfo","unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs"}
-2020-02-26 12:08:03 : params
-2020-02-26 12:08:03 : {"code":"061k6uR50G29SF1Im7P50QkqR50k6uRG"}
-2020-02-26 12:08:03 : {"access_token":"30_xmVL9gj49RBsb4jnwUNWzubqkOYDkVd1HuxnAMfdlel4GYlHFSVT8_3FThgg58DEit7R1jqTJDFTucnv23QoMjdQaa5aYxDkYhVSLlp4Fzs","expires_in":7200,"refresh_token":"30_s6xqJLl2Ns-nUEeQqS5gioHIEwOTjk3QkQKTo-LAjWhWesRE238uYg73Frcy-1QRQadLxQw1zBiWlVwfMHmcBb6tiQBKoGEN--mWe7payEE","openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","scope":"snsapi_userinfo","unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs"}
-2020-02-26 12:08:03 : user info
-2020-02-26 12:08:03 : {"access_token":"30_xmVL9gj49RBsb4jnwUNWzubqkOYDkVd1HuxnAMfdlel4GYlHFSVT8_3FThgg58DEit7R1jqTJDFTucnv23QoMjdQaa5aYxDkYhVSLlp4Fzs","refresh_token":"30_s6xqJLl2Ns-nUEeQqS5gioHIEwOTjk3QkQKTo-LAjWhWesRE238uYg73Frcy-1QRQadLxQw1zBiWlVwfMHmcBb6tiQBKoGEN--mWe7payEE","expires_in":7200,"openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs","userinfo":{"openid":"o9cm6wKMgwtg4W83yS-FLBSqtA-0","nickname":"AA\u52c7\u5f80\u76f4\u524d","sex":1,"language":"zh_CN","city":"\u6210\u90fd","province":"\u56db\u5ddd","country":"\u4e2d\u56fd","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLoawcZNjbEncDblZTqMjiaFLSNZnJiahRxsEufcTBjbt6BfT5Qyv509LxMmSY9x88WnEwGS6MaH2bA\/132","privilege":[],"unionid":"ofaBI6BB6ZDFb5tzgt9uei3FjxPs","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLoawcZNjbEncDblZTqMjiaFLSNZnJiahRxsEufcTBjbt6BfT5Qyv509LxMmSY9x88WnEwGS6MaH2bA\/132","gender":1}}
-2020-02-26 12:08:03 : login data
-2020-02-26 12:08:03 : {"userinfo":{"id":10144,"username":"6","nickname":"6","email":"u10144@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/Q0j4TwGTfTLoawcZNjbEncDblZTqMjiaFLSNZnJiahRxsEufcTBjbt6BfT5Qyv509LxMmSY9x88WnEwGS6MaH2bA\/132","level":1,"gender":1,"birthday":"0000-00-00","bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"d2e8e099-01a8-4502-940e-d52c9993736a","user_id":10144,"createtime":1582690083,"expiretime":0,"expires_in":31536000}}
-2020-02-26 12:08:09 : qq
-2020-02-26 12:08:09 : {"access_token":"D300230DE393F62E281616502E6F98DB","openid":"AB128E3342A67F73087F727ACA2395F3","refresh_token":null,"expires_in":null}
-2020-02-26 12:08:09 : addons\third\library\Qq
-2020-02-26 12:08:09 : {"access_token":"D300230DE393F62E281616502E6F98DB","openid":"AB128E3342A67F73087F727ACA2395F3","refresh_token":null,"expires_in":null}
-2020-02-26 12:08:09 : qq in
-2020-02-26 12:08:10 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u8bda\u4fe1\u8d62\u5929\u4e0b","gender":"\u7537","gender_type":1,"province":"\u5317\u4eac","city":"","year":"0","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/AB128E3342A67F73087F727ACA2395F3\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/AB128E3342A67F73087F727ACA2395F3\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/AB128E3342A67F73087F727ACA2395F3\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=MPPp4gUdIaGAtx5ey7sSiag&s=40&t=1555908533","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=MPPp4gUdIaGAtx5ey7sSiag&s=100&t=1555908533","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=MPPp4gUdIaGAtx5ey7sSiag&s=640&t=1555908533","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=MPPp4gUdIaGAtx5ey7sSiag&s=100&t=1555908533"}
-2020-02-26 12:08:10 : login data
-2020-02-26 12:08:10 : {"userinfo":{"id":10151,"username":"u10151","nickname":"\u8bda\u4fe1\u8d62\u5929\u4e0b","email":"u10151@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=MPPp4gUdIaGAtx5ey7sSiag&s=100&t=1555908533","level":1,"gender":0,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"189d1847-7b81-486a-b275-1fc5841885ba","user_id":10151,"createtime":1582690090,"expiretime":0,"expires_in":31536000}}
-2020-02-26 12:58:36 : 10151
-2020-02-26 13:02:47 : 10151
-2020-02-26 13:03:28 : 10151
-2020-02-26 13:03:46 : 10151
-2020-02-26 13:14:34 : 10151
-2020-02-26 13:44:56 : 10129
-2020-02-26 13:51:12 : 10129
-2020-02-26 13:51:54 : 10129
-2020-02-26 13:52:20 : 10129
-2020-02-26 13:52:54 : 10129
-2020-02-26 13:53:49 : 10129
-2020-02-26 13:54:12 : 10129
-2020-02-26 13:55:15 : 10129
-2020-02-26 13:55:29 : 10129
-2020-02-26 14:06:00 : 10129
-2020-02-26 14:46:26 : 10129
-2020-02-26 14:49:44 : 10151
-2020-02-26 14:52:16 : 10129
-2020-02-26 14:54:07 : 10129
-2020-02-26 15:04:09 : 10129
-2020-02-26 15:06:16 : 10129
+2020-02-27 16:19:44 : auth_id10109
+2020-02-27 16:19:44 : login:10109
+2020-02-27 16:19:44 : time:1582791443
+2020-02-27 16:19:44 : time:1582791443
+2020-02-27 16:19:44 :  login 2
+2020-02-27 16:21:26 : auth_id10129
+2020-02-27 16:21:26 : login:10129
+2020-02-27 16:21:26 : time:1582791567
+2020-02-27 16:21:26 : time:1582791567
+2020-02-27 16:21:26 :  login 2
+2020-02-27 16:22:53 : auth_id10129
+2020-02-27 16:22:53 : login:10129
+2020-02-27 16:22:53 : time:1582791567
+2020-02-27 16:22:53 : time:1582791567
+2020-02-27 16:22:53 :  login 2
+2020-02-27 16:22:54 : auth_id10129
+2020-02-27 16:22:54 : login:10129
+2020-02-27 16:22:54 : time:1582791567
+2020-02-27 16:22:54 : time:1582791567
+2020-02-27 16:22:54 :  login 2
+2020-02-27 16:23:23 : auth_id10140
+2020-02-27 16:23:23 : login:10140
+2020-02-27 16:23:23 : time:
+2020-02-27 16:23:23 : time:0
+2020-02-27 16:23:23 :  login 1
+2020-02-27 16:23:53 : auth_id10129
+2020-02-27 16:23:53 : login:10129
+2020-02-27 16:23:53 : time:1582791567
+2020-02-27 16:23:53 : time:1582791567
+2020-02-27 16:23:53 :  login 2
+2020-02-27 16:24:29 : auth_id10109
+2020-02-27 16:24:29 : login:10109
+2020-02-27 16:24:29 : time:1582791443
+2020-02-27 16:24:29 : time:1582791443
+2020-02-27 16:24:29 :  login 2
+2020-02-27 16:24:59 : auth_id10140
+2020-02-27 16:24:59 : login:10140
+2020-02-27 16:24:59 : time:1582791803
+2020-02-27 16:24:59 : time:1582791803
+2020-02-27 16:24:59 :  login 2
+2020-02-27 16:25:32 : auth_id10109
+2020-02-27 16:25:32 : login:10109
+2020-02-27 16:25:32 : time:1582791443
+2020-02-27 16:25:32 : time:1582791443
+2020-02-27 16:25:32 :  login 2
+2020-02-27 16:25:33 : auth_id10140
+2020-02-27 16:25:33 : login:10140
+2020-02-27 16:25:33 : time:1582791803
+2020-02-27 16:25:33 : time:1582791803
+2020-02-27 16:25:33 :  login 2
+2020-02-27 16:25:36 : auth_id10140
+2020-02-27 16:25:36 : login:10140
+2020-02-27 16:25:36 : time:1582791803
+2020-02-27 16:25:36 : time:1582791803
+2020-02-27 16:25:36 :  login 2
+2020-02-27 16:26:25 : auth_id10140
+2020-02-27 16:26:25 : login:10140
+2020-02-27 16:26:25 : time:1582791803
+2020-02-27 16:26:25 : time:1582791803
+2020-02-27 16:26:25 :  login 2
+2020-02-27 16:29:19 : auth_id10129
+2020-02-27 16:29:19 : login:10129
+2020-02-27 16:29:19 : time:1582791567
+2020-02-27 16:29:19 : time:1582791567
+2020-02-27 16:29:19 :  login 2
+2020-02-27 16:29:24 : auth_id
+2020-02-27 16:29:24 : not login
+2020-02-27 16:29:54 : auth_id10129
+2020-02-27 16:29:54 : login:10129
+2020-02-27 16:29:54 : time:1582791567
+2020-02-27 16:29:54 : time:1582791567
+2020-02-27 16:29:54 :  login 2
+2020-02-27 16:32:18 : auth_id10140
+2020-02-27 16:32:18 : login:10140
+2020-02-27 16:32:18 : time:1582791803
+2020-02-27 16:32:18 : time:1582791803
+2020-02-27 16:32:18 :  login 2
+2020-02-27 16:32:18 : auth_id10140
+2020-02-27 16:32:18 : login:10140
+2020-02-27 16:32:18 : time:1582791803
+2020-02-27 16:32:18 : time:1582791803
+2020-02-27 16:32:18 :  login 2
+2020-02-27 16:33:20 : auth_id
+2020-02-27 16:33:20 : not login
+2020-02-27 16:36:00 : auth_id10140
+2020-02-27 16:36:00 : login:10140
+2020-02-27 16:36:00 : time:1582791803
+2020-02-27 16:36:00 : time:1582791803
+2020-02-27 16:36:00 :  login 2
+2020-02-27 16:37:33 : auth_id10109
+2020-02-27 16:37:33 : login:10109
+2020-02-27 16:37:33 : time:1582791443
+2020-02-27 16:37:33 : time:1582791443
+2020-02-27 16:37:33 :  login 2
+2020-02-27 16:37:40 : 10109
+2020-02-27 16:38:04 : auth_id10146
+2020-02-27 16:38:04 : login:10146
+2020-02-27 16:38:04 : time:1582791484
+2020-02-27 16:38:04 : time:1582791484
+2020-02-27 16:38:04 :  login 2
+2020-02-27 16:38:10 : auth_id10109
+2020-02-27 16:38:10 : login:10109
+2020-02-27 16:38:10 : time:1582791443
+2020-02-27 16:38:10 : time:1582791443
+2020-02-27 16:38:10 :  login 2
+2020-02-27 16:38:10 : auth_id10109
+2020-02-27 16:38:10 : login:10109
+2020-02-27 16:38:10 : time:1582791443
+2020-02-27 16:38:10 : time:1582791443
+2020-02-27 16:38:10 :  login 2
+2020-02-27 16:39:25 : auth_id10140
+2020-02-27 16:39:25 : login:10140
+2020-02-27 16:39:25 : time:1582791803
+2020-02-27 16:39:25 : time:1582791803
+2020-02-27 16:39:25 :  login 2
+2020-02-27 16:40:46 : auth_id10146
+2020-02-27 16:40:46 : login:10146
+2020-02-27 16:40:46 : time:1582791484
+2020-02-27 16:40:46 : time:1582791484
+2020-02-27 16:40:46 :  login 2
+2020-02-27 16:41:34 : auth_id10142
+2020-02-27 16:41:34 : login:10142
+2020-02-27 16:41:34 : time:
+2020-02-27 16:41:34 : time:0
+2020-02-27 16:41:34 :  login 1
+2020-02-27 16:42:31 : 10142
+2020-02-27 16:44:56 : auth_id10129
+2020-02-27 16:44:56 : login:10129
+2020-02-27 16:44:56 : time:1582791567
+2020-02-27 16:44:56 : time:1582791567
+2020-02-27 16:44:56 :  login 2
+2020-02-27 16:45:58 : auth_id10148
+2020-02-27 16:45:58 : login:10148
+2020-02-27 16:45:58 : time:
+2020-02-27 16:45:58 : time:0
+2020-02-27 16:45:58 :  login 1
+2020-02-27 16:48:44 : auth_id10148
+2020-02-27 16:48:44 : login:10148
+2020-02-27 16:48:44 : time:1582793158
+2020-02-27 16:48:44 : time:1582793158
+2020-02-27 16:48:44 :  login 2
+2020-02-27 16:51:35 : auth_id10109
+2020-02-27 16:51:35 : login:10109
+2020-02-27 16:51:35 : time:1582791443
+2020-02-27 16:51:35 : time:1582791443
+2020-02-27 16:51:35 :  login 2
+2020-02-27 16:51:35 : auth_id10109
+2020-02-27 16:51:35 : login:10109
+2020-02-27 16:51:35 : time:1582791443
+2020-02-27 16:51:35 : time:1582791443
+2020-02-27 16:51:35 :  login 2
+2020-02-27 16:51:35 : auth_id10109
+2020-02-27 16:51:35 : login:10109
+2020-02-27 16:51:35 : time:1582791443
+2020-02-27 16:51:35 : time:1582791443
+2020-02-27 16:51:35 :  login 2
+2020-02-27 16:54:19 : auth_id10148
+2020-02-27 16:54:19 : login:10148
+2020-02-27 16:54:19 : time:1582793158
+2020-02-27 16:54:19 : time:1582793158
+2020-02-27 16:54:19 :  login 2
+2020-02-27 16:55:03 : auth_id10150
+2020-02-27 16:55:03 : login:10150
+2020-02-27 16:55:03 : time:
+2020-02-27 16:55:03 : time:0
+2020-02-27 16:55:03 :  login 1
+2020-02-27 16:55:11 : auth_id10150
+2020-02-27 16:55:11 : login:10150
+2020-02-27 16:55:11 : time:1582793703
+2020-02-27 16:55:11 : time:1582793703
+2020-02-27 16:55:11 :  login 2
+2020-02-27 16:56:24 : auth_id10129
+2020-02-27 16:56:24 : login:10129
+2020-02-27 16:56:24 : time:1582791567
+2020-02-27 16:56:24 : time:1582791567
+2020-02-27 16:56:24 :  login 2
+2020-02-27 16:56:28 : auth_id10146
+2020-02-27 16:56:28 : login:10146
+2020-02-27 16:56:28 : time:1582791484
+2020-02-27 16:56:28 : time:1582791484
+2020-02-27 16:56:28 :  login 2
+2020-02-27 16:57:20 : auth_id10148
+2020-02-27 16:57:20 : login:10148
+2020-02-27 16:57:20 : time:1582793158
+2020-02-27 16:57:20 : time:1582793158
+2020-02-27 16:57:20 :  login 2
+2020-02-27 16:58:57 : auth_id10150
+2020-02-27 16:58:57 : login:10150
+2020-02-27 16:58:57 : time:1582793703
+2020-02-27 16:58:57 : time:1582793703
+2020-02-27 16:58:57 :  login 2
+2020-02-27 16:59:09 : auth_id10150
+2020-02-27 16:59:09 : login:10150
+2020-02-27 16:59:09 : time:1582793703
+2020-02-27 16:59:09 : time:1582793703
+2020-02-27 16:59:09 :  login 2
+2020-02-27 17:00:19 : auth_id
+2020-02-27 17:00:19 : not login
+2020-02-27 17:00:43 : qq
+2020-02-27 17:00:43 : {"access_token":"BBBC3C835A4794ED02AC151B835B18C2","openid":"6DCFD6C19EA37E09CA143C5D7C2E2732","refresh_token":null,"expires_in":null}
+2020-02-27 17:00:43 : addons\third\library\Qq
+2020-02-27 17:00:43 : {"access_token":"BBBC3C835A4794ED02AC151B835B18C2","openid":"6DCFD6C19EA37E09CA143C5D7C2E2732","refresh_token":null,"expires_in":null}
+2020-02-27 17:00:43 : qq in
+2020-02-27 17:00:43 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u5c0f\u4f19\u5b50","gender":"\u7537","gender_type":2,"province":"","city":"","year":"0","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/6DCFD6C19EA37E09CA143C5D7C2E2732\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=40","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100","figureurl_type":"0","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=9oyCbkW3iaQNq2rCQKzcVYA&s=100"}
+2020-02-27 17:00:43 : login data
+2020-02-27 17:00:43 : {"userinfo":{"id":10140,"username":"\u76d8\u754c","nickname":"\u76d8\u754c","email":"u10140@app.biyouliao8.com","mobile":"15281076728","avatar":"http:\/\/app.biyouliao8.com\/uploads\/20200218\/6f1ce3fbf8973fd274c13c374fb75337.jpg","level":1,"gender":0,"birthday":"0000-00-00","bio":"\u3002","score":0,"status":"normal","is_kuaixun":"\u5426","token":"99a75723-cba2-46a2-a5ba-d75f8224b51c","user_id":10140,"createtime":1582794043,"expiretime":0,"expires_in":31536000}}
+2020-02-27 17:02:36 : auth_id10148
+2020-02-27 17:02:36 : login:10148
+2020-02-27 17:02:36 : time:1582793158
+2020-02-27 17:02:36 : time:1582793158
+2020-02-27 17:02:36 :  login 2
+2020-02-27 17:08:18 : auth_id10146
+2020-02-27 17:08:18 : login:10146
+2020-02-27 17:08:18 : time:1582791484
+2020-02-27 17:08:18 : time:1582791484
+2020-02-27 17:08:18 :  login 2
+2020-02-27 17:09:12 : auth_id10146
+2020-02-27 17:09:12 : login:10146
+2020-02-27 17:09:12 : time:1582791484
+2020-02-27 17:09:12 : time:1582791484
+2020-02-27 17:09:12 :  login 2
+2020-02-27 17:10:32 : auth_id10140
+2020-02-27 17:10:32 : login:10140
+2020-02-27 17:10:32 : time:1582791803
+2020-02-27 17:10:32 : time:1582791803
+2020-02-27 17:10:32 :  login 2
+2020-02-27 17:11:07 : auth_id10140
+2020-02-27 17:11:07 : login:10140
+2020-02-27 17:11:07 : time:1582791803
+2020-02-27 17:11:07 : time:1582791803
+2020-02-27 17:11:07 :  login 2
+2020-02-27 17:13:04 : 10140
+2020-02-27 17:14:05 : auth_id
+2020-02-27 17:14:05 : not login
+2020-02-27 17:14:13 : qq
+2020-02-27 17:14:13 : {"access_token":"37C77A05F5E356C1FDF66F83725B5C50","openid":"42500C560BD5C34637DA3D6015112A66","refresh_token":null,"expires_in":null}
+2020-02-27 17:14:13 : addons\third\library\Qq
+2020-02-27 17:14:13 : {"access_token":"37C77A05F5E356C1FDF66F83725B5C50","openid":"42500C560BD5C34637DA3D6015112A66","refresh_token":null,"expires_in":null}
+2020-02-27 17:14:13 : qq in
+2020-02-27 17:14:13 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u5929\u4e0b","gender":"\u7537","gender_type":1,"province":"\u9ed1\u9f99\u6c5f","city":"","year":"1985","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/42500C560BD5C34637DA3D6015112A66\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/42500C560BD5C34637DA3D6015112A66\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/42500C560BD5C34637DA3D6015112A66\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=JAfT8b5Q1ZicpNb1QYqXxoQ&s=40&t=1555125122","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=JAfT8b5Q1ZicpNb1QYqXxoQ&s=100&t=1555125122","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=JAfT8b5Q1ZicpNb1QYqXxoQ&s=640&t=1555125122","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=JAfT8b5Q1ZicpNb1QYqXxoQ&s=100&t=1555125122"}
+2020-02-27 17:14:13 : login data
+2020-02-27 17:14:13 : {"userinfo":{"id":10152,"username":"u10152","nickname":"\u5929\u4e0b","email":"u10152@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=JAfT8b5Q1ZicpNb1QYqXxoQ&s=100&t=1555125122","level":1,"gender":0,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"acae75d0-1110-4b1d-ae65-cbde34606666","user_id":10152,"createtime":1582794853,"expiretime":0,"expires_in":31536000}}
+2020-02-27 17:15:15 : auth_id10152
+2020-02-27 17:15:15 : login:10152
+2020-02-27 17:15:15 : time:
+2020-02-27 17:15:15 : time:0
+2020-02-27 17:15:15 :  login 1
+2020-02-27 17:17:25 : auth_id10152
+2020-02-27 17:17:25 : login:10152
+2020-02-27 17:17:25 : time:1582794915
+2020-02-27 17:17:25 : time:1582794915
+2020-02-27 17:17:25 :  login 2
+2020-02-27 17:17:47 : auth_id10152
+2020-02-27 17:17:47 : login:10152
+2020-02-27 17:17:47 : time:1582794915
+2020-02-27 17:17:47 : time:1582794915
+2020-02-27 17:17:47 :  login 2
+2020-02-27 17:20:18 : auth_id10148
+2020-02-27 17:20:18 : login:10148
+2020-02-27 17:20:18 : time:1582793158
+2020-02-27 17:20:18 : time:1582793158
+2020-02-27 17:20:18 :  login 2
+2020-02-27 17:20:45 : auth_id10129
+2020-02-27 17:20:45 : login:10129
+2020-02-27 17:20:45 : time:1582791567
+2020-02-27 17:20:45 : time:1582791567
+2020-02-27 17:20:45 :  login 2
+2020-02-27 17:23:58 : auth_id10148
+2020-02-27 17:23:58 : login:10148
+2020-02-27 17:23:58 : time:1582793158
+2020-02-27 17:23:58 : time:1582793158
+2020-02-27 17:23:58 :  login 2
+2020-02-27 17:26:25 : auth_id10148
+2020-02-27 17:26:25 : login:10148
+2020-02-27 17:26:25 : time:1582793158
+2020-02-27 17:26:25 : time:1582793158
+2020-02-27 17:26:25 :  login 2
+2020-02-27 17:31:00 : auth_id10148
+2020-02-27 17:31:00 : login:10148
+2020-02-27 17:31:00 : time:1582793158
+2020-02-27 17:31:00 : time:1582793158
+2020-02-27 17:31:00 :  login 2
+2020-02-27 17:31:37 : auth_id10148
+2020-02-27 17:31:37 : login:10148
+2020-02-27 17:31:37 : time:1582793158
+2020-02-27 17:31:37 : time:1582793158
+2020-02-27 17:31:37 :  login 2
+2020-02-27 17:36:20 : auth_id10129
+2020-02-27 17:36:20 : login:10129
+2020-02-27 17:36:20 : time:1582791567
+2020-02-27 17:36:20 : time:1582791567
+2020-02-27 17:36:20 :  login 2
+2020-02-27 17:38:07 : auth_id10129
+2020-02-27 17:38:07 : login:10129
+2020-02-27 17:38:07 : time:1582791567
+2020-02-27 17:38:07 : time:1582791567
+2020-02-27 17:38:07 :  login 2
+2020-02-27 17:38:41 : auth_id10129
+2020-02-27 17:38:41 : login:10129
+2020-02-27 17:38:41 : time:1582791567
+2020-02-27 17:38:41 : time:1582791567
+2020-02-27 17:38:41 :  login 2
+2020-02-27 17:39:11 : auth_id10129
+2020-02-27 17:39:11 : login:10129
+2020-02-27 17:39:11 : time:1582791567
+2020-02-27 17:39:11 : time:1582791567
+2020-02-27 17:39:11 :  login 2
+2020-02-27 17:41:27 : auth_id
+2020-02-27 17:41:27 : not login
+2020-02-27 17:41:37 : qq
+2020-02-27 17:41:37 : {"access_token":"441166ED461D7FBCA6EBCBBA76922020","openid":"298DDBC9D05DCC8AD5AF4DAE2FEFFCC6","refresh_token":null,"expires_in":null}
+2020-02-27 17:41:37 : addons\third\library\Qq
+2020-02-27 17:41:37 : {"access_token":"441166ED461D7FBCA6EBCBBA76922020","openid":"298DDBC9D05DCC8AD5AF4DAE2FEFFCC6","refresh_token":null,"expires_in":null}
+2020-02-27 17:41:37 : qq in
+2020-02-27 17:41:37 : {"ret":0,"msg":"","is_lost":0,"nickname":"\u6d6a\u5b50\u5fc3\u58f0","gender":"\u7537","gender_type":2,"province":"","city":"\u6069\u574e\u666e","year":"1900","constellation":"","figureurl":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/298DDBC9D05DCC8AD5AF4DAE2FEFFCC6\/30","figureurl_1":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/298DDBC9D05DCC8AD5AF4DAE2FEFFCC6\/50","figureurl_2":"http:\/\/qzapp.qlogo.cn\/qzapp\/101839406\/298DDBC9D05DCC8AD5AF4DAE2FEFFCC6\/100","figureurl_qq_1":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=ib5UO0GQrj880x7ZmXaAtwQ&s=40&t=1557265373","figureurl_qq_2":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=ib5UO0GQrj880x7ZmXaAtwQ&s=100&t=1557265373","figureurl_qq":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=ib5UO0GQrj880x7ZmXaAtwQ&s=640&t=1557265373","figureurl_type":"1","is_yellow_vip":"0","vip":"0","yellow_vip_level":"0","level":"0","is_yellow_year_vip":"0","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=ib5UO0GQrj880x7ZmXaAtwQ&s=100&t=1557265373"}
+2020-02-27 17:41:37 : login data
+2020-02-27 17:41:37 : {"userinfo":{"id":10148,"username":"u10148","nickname":"\u6d6a\u5b50\u5fc3\u58f0","email":"u10148@app.biyouliao8.com","mobile":"","avatar":"http:\/\/thirdqq.qlogo.cn\/g?b=oidb&k=ib5UO0GQrj880x7ZmXaAtwQ&s=100&t=1557265373","level":1,"gender":0,"birthday":null,"bio":"","score":0,"status":"normal","is_kuaixun":"\u5426","token":"2488f9a2-c6ff-48c3-b270-a1ffec619ed4","user_id":10148,"createtime":1582796497,"expiretime":0,"expires_in":31536000}}
+2020-02-27 17:48:03 : auth_id10129
+2020-02-27 17:48:03 : login:10129
+2020-02-27 17:48:03 : time:1582791567
+2020-02-27 17:48:03 : time:1582791567
+2020-02-27 17:48:03 :  login 2
+2020-02-27 17:49:00 : auth_id10148
+2020-02-27 17:49:00 : login:10148
+2020-02-27 17:49:00 : time:1582793158
+2020-02-27 17:49:00 : time:1582793158
+2020-02-27 17:49:00 :  login 2
+2020-02-27 17:59:10 : auth_id10129
+2020-02-27 17:59:10 : login:10129
+2020-02-27 17:59:10 : time:1582791567
+2020-02-27 17:59:10 : time:1582791567
+2020-02-27 17:59:10 :  login 2
+2020-02-27 18:40:08 : auth_id10148
+2020-02-27 18:40:08 : login:10148
+2020-02-27 18:40:08 : time:1582793158
+2020-02-27 18:40:08 : time:1582793158
+2020-02-27 18:40:08 :  login 2
+2020-02-27 18:57:16 : auth_id10146
+2020-02-27 18:57:16 : login:10146
+2020-02-27 18:57:16 : time:1582791484
+2020-02-27 18:57:16 : time:1582791484
+2020-02-27 18:57:16 :  login 2
+2020-02-27 18:57:16 : auth_id10146
+2020-02-27 18:57:16 : login:10146
+2020-02-27 18:57:16 : time:1582791484
+2020-02-27 18:57:16 : time:1582791484
+2020-02-27 18:57:16 :  login 2
+2020-02-27 18:57:18 : auth_id10146
+2020-02-27 18:57:18 : login:10146
+2020-02-27 18:57:18 : time:1582791484
+2020-02-27 18:57:18 : time:1582791484
+2020-02-27 18:57:18 :  login 2
+2020-02-27 18:57:18 : auth_id10146
+2020-02-27 18:57:18 : login:10146
+2020-02-27 18:57:18 : time:1582791484
+2020-02-27 18:57:18 : time:1582791484
+2020-02-27 18:57:18 :  login 2
+2020-02-27 18:57:18 : auth_id10146
+2020-02-27 18:57:18 : login:10146
+2020-02-27 18:57:18 : time:1582791484
+2020-02-27 18:57:18 : time:1582791484
+2020-02-27 18:57:18 :  login 2
+2020-02-27 18:57:29 : auth_id10146
+2020-02-27 18:57:29 : login:10146
+2020-02-27 18:57:29 : time:1582791484
+2020-02-27 18:57:29 : time:1582791484
+2020-02-27 18:57:29 :  login 2
+2020-02-27 18:58:38 : 10146
+2020-02-27 18:58:55 : 10146
+2020-02-27 18:59:17 : 10146
+2020-02-27 19:16:24 : auth_id10146
+2020-02-27 19:16:24 : login:10146
+2020-02-27 19:16:24 : time:
+2020-02-27 19:16:24 : time:0
+2020-02-27 19:16:24 :  login 1
+2020-02-27 19:16:27 : 10146
+2020-02-27 19:16:54 : auth_id10109
+2020-02-27 19:16:54 : login:10109
+2020-02-27 19:16:54 : time:
+2020-02-27 19:16:54 : time:0
+2020-02-27 19:16:54 :  login 1
+2020-02-27 19:17:00 : auth_id10109
+2020-02-27 19:17:00 : login:10109
+2020-02-27 19:17:00 : time:1582802214
+2020-02-27 19:17:00 : time:1582802214
+2020-02-27 19:17:00 :  login 2
+2020-02-27 20:01:43 : auth_id10146
+2020-02-27 20:01:43 : login:10146
+2020-02-27 20:01:43 : time:1582802184
+2020-02-27 20:01:43 : time:1582802184
+2020-02-27 20:01:43 :  login 2
