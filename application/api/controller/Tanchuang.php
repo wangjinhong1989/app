@@ -162,8 +162,6 @@ class Tanchuang extends Api
                 return $this->success("成功",[]);
             }
 
-        }else {
-            dd($this->auth);
         }
         $page=$this->request->request("page",1);
         $page_size=$this->request->request("page_size",5);
