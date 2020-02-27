@@ -43,7 +43,7 @@ class Article extends Model
 
     public function getTopList()
     {
-        return ['置顶' => __('置顶'), '取消置顶' => __('取消置顶'),"广告"=>"广告","推广"];
+        return ['取消置顶' => __('无'),'置顶' => __('置顶'),"广告"=>"广告","推广"];
     }
 
     public function getIsReplyList()
