@@ -115,6 +115,7 @@ class Tanchuang extends Api
 
 
         if(!empty($this->auth->id)){
+            dd("login:".$this->auth->id);
             $time=Session::get("tanchuang".$this->auth->id);
             $time=intval($time);
             if($time+60<time()){
@@ -156,13 +157,16 @@ class Tanchuang extends Api
 
                 Session::set("tanchuang".$this->auth->id,time());
 
-                return $this->success("成功",$data1);
+                return $this->success("登录后请求数据",$data1);
 
             }else{
-                return $this->success("成功",[]);
+                return $this->success("登录后请求数据",[]);
             }
 
         }
+
+        dd("login out:");
+
         $page=$this->request->request("page",1);
         $page_size=$this->request->request("page_size",5);
         $offset=($page-1)*$page_size;
@@ -196,7 +200,7 @@ class Tanchuang extends Api
 
         $data["total_page"]=ceil($data["count"]/$page_size);
 
-        return $this->success("成功",$data1);
+        return $this->success("没有登录请求",$data1);
     }
 
 
