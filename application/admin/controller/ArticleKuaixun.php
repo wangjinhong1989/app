@@ -121,8 +121,8 @@ class ArticleKuaixun extends Backend
                     }
 
                     $result = $this->model->allowField(true)->save($params);
-                    $params["id"]=$this->model->getLastInsID();
-                    $result = $this->model->allowField(true)->save($params);
+
+                    Db::execute("update fa_article set weigh=id where articletype_id=2 and weigh=0");
                     Db::commit();
                 } catch (ValidateException $e) {
                     Db::rollback();
