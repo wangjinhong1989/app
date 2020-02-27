@@ -264,7 +264,7 @@ function formart_img(images) {
     //<a href="javascript:"><img class="img-sm img-center" src="/uploads/20200212/e4b9b6a941e446074555d3b0eb5dad72.jpg,/uploads/20200212/e4b9b6a941e446074555d3b0eb5dad72.jpg,/uploads/20200212/e4b9b6a941e446074555d3b0eb5dad72.jpg,/uploads/20200212/e4b9b6a941e446074555d3b0eb5dad72.jpg"></a>
 
     console.log(images,"aaa");
-    if(images==undefined)
+    if(images==undefined||images=="")
         return "-";
     var imagesArr=images.split(",");
     var str="";
