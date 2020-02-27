@@ -30,7 +30,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'id', title: __('Id')},
                         {field: 'title', title: __('Title')},
                         {field: 'status', title: __('Status'), searchList: {"显示":__('显示'),"隐藏":__('隐藏')}, formatter: Table.api.formatter.status},
-                        {field: 'top', title: __('置顶')},
                         // {field: 'come_from', title: __('Come_from')},
                         // {field: 'label_ids', title: __('Label_ids')},
                         // {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
