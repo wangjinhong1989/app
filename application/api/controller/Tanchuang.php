@@ -118,7 +118,7 @@ class Tanchuang extends Api
         dd("auth_id".$temp);
         if($temp){
             dd("login:".$this->auth->id);
-            $time=Session::get("tanchuang".$this->auth->id);
+            $time=session("tanchuang".$this->auth->id);
             dd("time:".$time);
             $time=intval($time);
             dd("time:".$time);
@@ -159,7 +159,7 @@ class Tanchuang extends Api
 
 
 
-                Session::set("tanchuang".$this->auth->id,time());
+                session::set("tanchuang".$this->auth->id,"".time());
                 dd(" login 1");
                 return $this->success("登录后请求数据",$data1);
 
