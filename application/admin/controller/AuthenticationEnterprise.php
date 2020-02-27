@@ -78,9 +78,9 @@ class AuthenticationEnterprise extends Backend
                 $personalInfo= $personal->where(["type"=>"企业认证","user_id"=>$row["user"]["id"]])->select();
 
                 if(!empty($personalInfo)){
-                    $list[$key]["peronal_info"]=$personalInfo[0];
+                    $list[$key]["personal_info"]=$personalInfo[0];
                 }else {
-                    $list[$key]["peronal_info"]=[];
+                    $list[$key]["personal_info"]=[];
                 }
 
             }

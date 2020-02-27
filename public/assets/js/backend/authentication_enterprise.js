@@ -28,7 +28,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'user.username', title: __('User.username')},
                         {field: 'certificates_type', title: __('Certificates_type')},
                         {field: 'status', title: __('Status'), searchList: {"审核中":__('审核中'),"审核通过":__('审核通过'),"审核不通过":__('审核不通过')}, formatter: Table.api.formatter.status},
-                        {field: 'peronal_info.status', title: __('运营者审核状态'),formatter:fmt},
+                        {field: 'personal_info.status', title: __('运营者审核状态'),formatter:fmt},
                         {field: 'name', title: __('Name')},
                         {field: 'certificates_number', title: __('Certificates_number')},
                         {field: 'files', title: __('Files'),formatter:formart_img},
@@ -56,12 +56,11 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         }
     };
 
-    function fmt(value){
+    function fmt(value,row){
 
         var str="";
-        console.log(value);
-        if(value["peronal_info"].length()>0)
-        return str="<a href='/admin/authentication_enterprise/edit?"+value["peronal_info"]["id"]+"'></a>"
+        if(row["personal_info"].length()>0)
+        return str="<a href='/admin/authentication_enterprise/edit?"+row["personal_info"]["id"]+"'>"+row["personal_info"]["status"]+"</a>"
         else
             return "-";
     }
