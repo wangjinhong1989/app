@@ -161,11 +161,11 @@ class Tanchuang extends Api
 
                 Cache::set("tanchuang".$this->auth->id,time(),24*3600);
                 dd(" login 1");
-                return $this->success("登录后请求数据",$data1);
+                return $this->success("登录后请求到的数据",$data1);
 
             }else{
                 dd(" login 2");
-                return $this->success("登录后请求数据",[]);
+                return $this->success("登录后请求到的数据",[]);
             }
 
         }
@@ -205,7 +205,7 @@ class Tanchuang extends Api
         $data["total_page"]=ceil($data["count"]/$page_size);
 
         dd("not login");
-        return $this->success("没有登录请求",$data1);
+        return $this->success("没有登录请求，请求的数据",$data1);
     }
 
 
