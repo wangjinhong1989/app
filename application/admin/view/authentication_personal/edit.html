@@ -4,7 +4,7 @@
         <label class="control-label col-xs-12 col-sm-2">{:__('Type')}:</label>
         <div class="col-xs-12 col-sm-8">
 
-            <select  id="c-type" data-rule="required" readonly="readonly" class="form-control selectpicker" name="row[type]">
+            <select  id="c-type" data-rule="required" disabled class="form-control selectpicker" name="row[type]">
                 {foreach name="typeList" item="vo"}
                     <option value="{$key}" {in name="key" value="$row.type"}selected{/in}>{$vo}</option>
                 {/foreach}
