@@ -31,7 +31,7 @@ class Label extends Api
 
         $query=new Db();
 
-        $temp="";
+        $temp="0";
         if(!empty($this->auth->id)){
             $temp=$this->auth->id;
         }
