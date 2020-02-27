@@ -31,15 +31,13 @@ class Label extends Api
 
         $query=new Db();
 
+        $temp="";
         if(!empty($this->auth->id)){
-            $lists=$query::table("fa_label")->alias("label")->join("fa_mylabel mylabel","mylabel.label_id=label.id","left")->where(["label.status"=>"显示","mylabel.user_id"=>["eq",$this->auth->id]])->select("label.*,mylabel.user_id");
-            $count=$query::table("fa_label")->alias("label")->where(["label.status"=>"显示","mylabel.user_id"=>["eq",$this->auth->id]])->count();
-
-        }else {
-            $lists=$query::table("fa_label")->alias("label")->join("fa_mylabel mylabel","mylabel.label_id=label.id","left")->where(["label.status"=>"显示"])->select("label.*");
-            $count=$query::table("fa_label")->alias("label")->where(["label.status"=>"显示"])->count();
-
+            $temp=$this->auth->id;
         }
+        $lists=$query::table("fa_label")->alias("label")->join("fa_mylabel mylabel","mylabel.label_id=label.id and mylabel.user_id=".$temp,"left")->where(["label.status"=>"显示"])->select("label.*,mylabel.user_id");
+        $count=$query::table("fa_label")->alias("label")->where(["label.status"=>"显示"])->count();
+
 
         foreach ($lists as &$list){
 
