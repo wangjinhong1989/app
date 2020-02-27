@@ -29,17 +29,24 @@ class Label extends Api
         $data=[];
 
 
-        //$lists=( new \app\admin\model\Label())->where(['status'=>'显示'])->limit($offset,$page_size)->select();
-        //$count=( new \app\admin\model\Label())->where(['status'=>'显示'])->count();
-
         $query=new Db();
-        $lists=$query::table("fa_label")->alias("label")->where(["status"=>"显示"])->whereNotIn("id",function ($query){
-            $query->table("fa_mylabel")->alias("mylabel")->where("user_id",$this->auth->id)->field("label_id");
-        })->limit($offset,$page_size)->select();
-        $count=$query::table("fa_label")->alias("label")->where(["status"=>"显示"])->whereNotIn("id",function ($query){
-             $query->table("fa_mylabel")->alias("mylabel")->where("user_id",$this->auth->id)->field("label_id");
-        })->count();
 
+        if(!empty($this->auth->id)){
+            $lists=$query::table("fa_label")->alias("label")->join("fa_mylabel mylabel","mylabel.label_id=label.id","left")->where(["label.status"=>"显示","mylabel.user_id"=>["eq",$this->auth->id]])->select("label.*,mylabel.user_id");
+            $count=$query::table("fa_label")->alias("label")->where(["label.status"=>"显示","mylabel.user_id"=>["eq",$this->auth->id]])->count();
+
+        }else {
+            $lists=$query::table("fa_label")->alias("label")->join("fa_mylabel mylabel","mylabel.label_id=label.id","left")->where(["label.status"=>"显示"])->select("label.*");
+            $count=$query::table("fa_label")->alias("label")->where(["label.status"=>"显示"])->count();
+
+        }
+
+        foreach ($lists as &$list){
+
+            if(empty($list["user_id"])){
+                $lists["user_id"]=0;
+            }
+        }
         $data["page"]=$page;
         $data["rows"]=$lists;
         $data["count"]=$count;
