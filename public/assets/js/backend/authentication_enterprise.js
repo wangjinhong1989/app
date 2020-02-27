@@ -36,7 +36,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
 
 
                         {field: 'personal_info.status', title: __('运营者审核状态'),formatter:fmt},
-                        {field: 'personal_info.files', title: __('运营者上传文件'), events: Table.api.events.image, formatter: Table.api.formatter.images},
+                        {field: 'personal_info.files', title: __('运营者上传文件'),  formatter: formart_img},
 
 
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
