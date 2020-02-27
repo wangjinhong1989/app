@@ -36,7 +36,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         // {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
                         // {field: 'img', title: __('Img'),},
                         {field: 'read_count', title: __('Read_count'),operate:false},
-                        {field: 'show_count', title: __('Show_count'),operate:false},
+
                         {field: 'articletype.name', title: __('Articletype.name'),operate:false},
                         {field: 'label.name', title: __('Label.name'),operate:false},
                         {field: 'user.username', title: __('User.username')},
