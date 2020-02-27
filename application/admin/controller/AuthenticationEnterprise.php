@@ -63,7 +63,7 @@ class AuthenticationEnterprise extends Backend
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(['certificates_type','status','name','certificates_number','files','note','time']);
+                $row->visible(["id",'certificates_type','status','name','certificates_number','files','note','time']);
                 $row->visible(['user']);
 				$row->getRelation('user')->visible(['username']);
             }
