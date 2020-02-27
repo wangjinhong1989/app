@@ -25,15 +25,16 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'user_id', title: __('User_id')},
-                        {field: 'status', title: __('Status'), searchList: {"审核中":__('审核中'),"通过":__('通过'),"不通过":__('不通过')}, formatter: Table.api.formatter.status},
+                        {field: 'user.username', title: __('User.username')},
+
                         {field: 'certificates_type', title: __('Certificates_type'), searchList: {"身份证":__('身份证')}, formatter: Table.api.formatter.normal},
                         {field: 'name', title: __('Name')},
                         {field: 'number', title: __('Number')},
                         {field: 'images', title: __('Images'), events: Table.api.events.image, formatter: Table.api.formatter.images},
+                        {field: 'status', title: __('Status'), searchList: {"审核中":__('审核中'),"通过":__('通过'),"不通过":__('不通过')}, formatter: Table.api.formatter.status},
                         {field: 'create_time', title: __('Create_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'user.username', title: __('User.username')},
-                        {field: 'user.nickname', title: __('User.nickname')},
+
+
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
