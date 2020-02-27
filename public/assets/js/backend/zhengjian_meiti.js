@@ -29,7 +29,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'certificates_type', title: __('Certificates_type'), searchList: {"企业营业执照":__('企业营业执照'),"企业组织机构代码":__('企业组织机构代码'),"三证合一":__('三证合一')}, formatter: Table.api.formatter.normal},
                         {field: 'name', title: __('Name')},
                         {field: 'number', title: __('Number')},
-                        {field: 'image', title: __('Image'), events: Table.api.events.image, formatter: Table.api.formatter.image},
+
                         {field: 'faren_name', title: __('Faren_name')},
                         {field: 'faren_number', title: __('Faren_number')},
                         {field: 'images', title: __('证件照片'), formatter:formart_img},
