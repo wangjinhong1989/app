@@ -39,12 +39,7 @@ class Label extends Api
         $count=$query::table("fa_label")->alias("label")->where(["label.status"=>"显示"])->count();
 
 
-        foreach ($lists as &$list){
 
-            if(empty($list["user_id"])){
-                $lists["user_id"]=0;
-            }
-        }
         $data["page"]=$page;
         $data["rows"]=$lists;
         $data["count"]=$count;
