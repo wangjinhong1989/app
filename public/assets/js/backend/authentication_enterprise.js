@@ -61,7 +61,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         var str="";
         if(row["personal_info"]["status"]!=undefined)
 
-         return   $str="<a href=\"javascript:;\" class=\"btn btn-success btn-edit btn-disabled disabled {:$auth->check('authentication_personal/edit?id="+row["personal_info"]["id"]+"')?'':'hide'}\" title=\"{:__('Edit')}\" ><i class=\"fa fa-pencil\"></i> "+row["personal_info"]["status"]+"</a>"
+         return   $str="<a href=\"javascript:;\" class=\"btn btn-success btn-edit {:$auth->check('authentication_personal/edit?id="+row["personal_info"]["id"]+"')?'':'hide'}\" title=\"{:__('Edit')}\" ><i class=\"fa fa-pencil\"></i> "+row["personal_info"]["status"]+"</a>"
 
         else
             return "-";
