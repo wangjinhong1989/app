@@ -74,7 +74,7 @@ class AuthenticationEnterprise extends Backend
             foreach ($list as $key=>$row){
                 // 查看运营者审核状态。
 
-                $personal=new AuthenticationPersonal();
+                $personal=new \app\admin\model\Authentication();
                 $personalInfo= $personal->where(["type"=>"企业认证","user_id"=>$row["user"]["id"]])->select();
 
                 if(!empty($personalInfo)){
