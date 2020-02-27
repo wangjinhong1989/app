@@ -11,6 +11,6 @@ return [
     'Faren_number'      => '法人代表身份证号',
     'Images'            => '身份证照片',
     'Status'            => '审核状态',
-    'Create_time'       => '审核状态',
+    'Create_time'       => '创建时间',
     'User.username'     => '用户名'
 ];
