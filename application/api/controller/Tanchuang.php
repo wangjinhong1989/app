@@ -114,7 +114,8 @@ class Tanchuang extends Api
     {
 
 
-        if(!empty($this->auth->id)){
+        $temp=$this->auth->id;
+        if($temp){
             dd("login:".$this->auth->id);
             $time=Session::get("tanchuang".$this->auth->id);
             $time=intval($time);
@@ -165,7 +166,6 @@ class Tanchuang extends Api
 
         }
 
-        dd("login out:");
 
         $page=$this->request->request("page",1);
         $page_size=$this->request->request("page_size",5);

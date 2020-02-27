@@ -38,7 +38,6 @@ class Label extends Api
         }
         $lists=$query->table("fa_label")->alias("label")->join("fa_mylabel mylabel","mylabel.label_id=label.id and mylabel.user_id=".$temp,"left")->where(["label.status"=>"显示"])->field("label.*,mylabel.user_id")->select();
 
-        dd($query->getLastSql());
 
         $count=$query->table("fa_label")->alias("label")->where(["label.status"=>"显示"])->count();
 
