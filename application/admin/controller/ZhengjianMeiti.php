@@ -68,6 +68,14 @@ class ZhengjianMeiti extends Backend
                 $row->getRelation('user')->visible(['username']);
             }
             $list = collection($list)->toArray();
+            foreach ($list as $key=>$row) {
+
+
+                $temp1=explode(",",$list[$key]["images"]);
+                $temp2=explode(",",$list[$key]["image"]);
+                $list[$key]["images"]=implode(",",array_filter(array_merge($temp2,$temp1)));
+
+            }
             $result = array("total" => $total, "rows" => $list);
 
             return json($result);
