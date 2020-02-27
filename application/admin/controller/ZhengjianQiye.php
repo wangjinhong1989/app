@@ -68,6 +68,14 @@ class ZhengjianQiye extends Backend
                 $row->getRelation('user')->visible(['username']);
             }
             $list = collection($list)->toArray();
+
+            foreach ($list as $key=>$row) {
+
+                $list[$key]["images"]=implode(",",$list[$key]["images"]);
+                $list[$key]["images"]=implode(",",array_push($list[$key]["images"],$list[$key]["image"]));
+
+            }
+
             $result = array("total" => $total, "rows" => $list);
 
             return json($result);
