@@ -115,6 +115,7 @@ class Tanchuang extends Api
 
 
         $temp=$this->auth->id;
+        dd("auth_id".$temp);
         if($temp){
             dd("login:".$this->auth->id);
             $time=Session::get("tanchuang".$this->auth->id);
@@ -157,10 +158,11 @@ class Tanchuang extends Api
 
 
                 Session::set("tanchuang".$this->auth->id,time());
-
+                dd(" login 1");
                 return $this->success("登录后请求数据",$data1);
 
             }else{
+                dd(" login 2");
                 return $this->success("登录后请求数据",[]);
             }
 
@@ -200,6 +202,7 @@ class Tanchuang extends Api
 
         $data["total_page"]=ceil($data["count"]/$page_size);
 
+        dd("not login");
         return $this->success("没有登录请求",$data1);
     }
 
