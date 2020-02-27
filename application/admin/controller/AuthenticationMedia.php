@@ -63,11 +63,24 @@ class AuthenticationMedia extends Backend
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(["id",'certificates_type','status','name','certificates_number','files','note','time']);
-                $row->visible(['user']);
-				$row->getRelation('user')->visible(['username']);
+
             }
             $list = collection($list)->toArray();
+
+            foreach ($list as $key=>$row){
+                // 查看运营者审核状态。
+
+                $personal=new \app\admin\model\AuthenticationPersonal();
+                $personalInfo= $personal->where(["type"=>"媒体认证","user_id"=>$row["user"]["id"]])->select();
+
+                if(!empty($personalInfo)){
+                    $list[$key]["personal_info"]=$personalInfo[0];
+                }else {
+                    $list[$key]["personal_info"]=[];
+                }
+
+            }
+
             $result = array("total" => $total, "rows" => $list);
 
             return json($result);

@@ -29,6 +29,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'type', title: __('Type'), searchList: {"个人认证":__('个人认证'),"企业认证":__('企业认证'),"媒体认证":__('媒体认证')}, formatter: Table.api.formatter.normal},
                         {field: 'certificates_type', title: __('Certificates_type')},
                         {field: 'status', title: __('Status'), searchList: {"审核中":__('审核中'),"审核通过":__('审核通过'),"审核不通过":__('审核不通过')}, formatter: Table.api.formatter.status},
+
                         {field: 'name', title: __('Name')},
                         {field: 'certificates_number', title: __('Certificates_number')},
                         {field: 'files', title: __('Files'),formatter:formart_img},
