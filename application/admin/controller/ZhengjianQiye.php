@@ -71,7 +71,7 @@ class ZhengjianQiye extends Backend
 
             foreach ($list as $key=>$row) {
 
-                $list[$key]["images"]=implode(",",$list[$key]["images"]);
+                $list[$key]["images"]=explode(",",$list[$key]["images"]);
                 $list[$key]["images"]=implode(",",array_push($list[$key]["images"],$list[$key]["image"]));
 
             }
