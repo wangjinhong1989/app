@@ -59,7 +59,8 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
     function fmt(value){
 
         var str="";
-        if(count(value.peronal_info)>0)
+        console.log(value);
+        if(value.peronal_info.length()>0)
         return str="<a href='/admin/authentication_enterprise/edit?"+value.peronal_info.id+"'></a>"
         else
             return "-";
