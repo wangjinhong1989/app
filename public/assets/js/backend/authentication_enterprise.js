@@ -61,7 +61,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         var str="";
         if(row["personal_info"]["status"]!=undefined)
 
-         return   $str="<a href='javascript:;' class='btn btn-xs btn-primary btn-dialog' data-url='authentication_personal/edit?id="+row["personal_info"]["id"]+"'>"+row["personal_info"]["status"]+"</a>";
+         return   $str="<a href='authentication_personal/edit?id="+row["personal_info"]["id"]+"' class='btn btn-xs btn-primary btn-dialog' data-url='authentication_personal/edit?id="+row["personal_info"]["id"]+"'>"+row["personal_info"]["status"]+"</a>";
 
         else
             return "-";
