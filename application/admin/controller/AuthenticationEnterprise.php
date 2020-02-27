@@ -71,11 +71,13 @@ class AuthenticationEnterprise extends Backend
             }
             $list = collection($list)->toArray();
 
-            foreach ($list as $row){
+            foreach ($list as $key=>$row){
                 // 查看运营者审核状态。
 
                 $personal=new AuthenticationPersonal();
-                //$personalInfo= $personal->where(["type"=>"企业认证","user_id"=>$row["user_id"]])
+                $personalInfo= $personal->where(["type"=>"企业认证","user_id"=>$row["user"]["id"]])->select();
+
+                $list[$key]["peronal_info"]=$personalInfo[0];
             }
             $result = array("total" => $total, "rows" => $list);
 
