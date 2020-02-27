@@ -60,7 +60,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
 
         var str="";
         if(row["personal_info"]["status"]!=undefined)
-        return str="<a href='/admin/authentication_enterprise/edit?"+row["personal_info"]["id"]+"'>"+row["personal_info"]["status"]+"</a>"
+        return str="<a target='_blank' href='/admin/authentication_personal/edit?id="+row["personal_info"]["id"]+"'>"+row["personal_info"]["status"]+"</a>"
         else
             return "-";
     }
