@@ -63,11 +63,20 @@ class AuthenticationEnterprise extends Backend
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(["id",'certificates_type','status','name','certificates_number','files','note','time']);
-                $row->visible(['user']);
-				$row->getRelation('user')->visible(['username']);
+//                $row->visible(["id",'certificates_type','status','name','certificates_number','files','note','time']);
+//                $row->visible(['user']);
+//				$row->getRelation('user')->visible(['username']);
+
+
             }
             $list = collection($list)->toArray();
+
+            foreach ($list as $row){
+                // 查看运营者审核状态。
+
+                $personal=new AuthenticationPersonal();
+                //$personalInfo= $personal->where(["type"=>"企业认证","user_id"=>$row["user_id"]])
+            }
             $result = array("total" => $total, "rows" => $list);
 
             return json($result);
