@@ -154,11 +154,13 @@ class ArticleManager extends Api
             ->count();
 
 
-        foreach ($data["rows"] as &$value){
+        foreach ($data["rows"] as $key=>&$value){
             $value["create_time"]=formart_time($value["create_time"]);
 
             $value["count_lihao"]=$value["count_lihao"]==null?0:$value["count_lihao"];
             $value["count_likong"]=$value["count_likong"]==null?0:$value["count_likong"];
+            $data["rows"][$key]["count_lihao"]=$data["rows"][$key]["count_lihao"]+$data["rows"][$key]["lh_count"];
+            $data["rows"][$key]["count_likong"]=$data["rows"][$key]["count_likong"]+$data["rows"][$key]["lk_count"];
             $value["is_ad"]=false;
         }
 
