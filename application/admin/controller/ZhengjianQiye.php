@@ -74,7 +74,7 @@ class ZhengjianQiye extends Backend
 
                 $temp1=explode(",",$list[$key]["images"]);
                 $temp2=explode(",",$list[$key]["image"]);
-                $list[$key]["images"]=implode(",",array_merge($temp1,$temp2));
+                $list[$key]["images"]=implode(",",array_merge($temp2,$temp1));
 
             }
 
