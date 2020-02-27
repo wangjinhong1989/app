@@ -40,7 +40,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'articletype.name', title: __('Articletype.name'),operate:false},
                         {field: 'label.name', title: __('Label.name'),operate:false},
                         {field: 'user.username', title: __('User.username')},
-                        {field: 'create_time', title: __('发布时间'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
+                        {field: 'create_time_text', title: __('发布时间')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]

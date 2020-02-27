@@ -32,7 +32,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         // {field: 'url', title: __('链接'), formatter: Table.api.formatter.url,operate:false},
                         // {field: 'img', title: __('封面'),operate:false},
                         {field: 'articletype.name', title: __('文章类型'),operate:false},
-                        {field: 'create_time', title: __('发布时间'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
+                        {field: 'create_time_text', title: __('发布时间')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
