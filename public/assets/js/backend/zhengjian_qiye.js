@@ -25,7 +25,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'user_id', title: __('User_id')},
+                        {field: 'user.username', title: __('User.username')},
                         {field: 'certificates_type', title: __('Certificates_type'), searchList: {"企业营业执照":__('企业营业执照'),"企业组织机构代码":__('企业组织机构代码'),"三证合一":__('三证合一')}, formatter: Table.api.formatter.normal},
                         {field: 'name', title: __('Name')},
                         {field: 'number', title: __('Number')},
@@ -34,7 +34,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'images', title: __('证件照片'), formatter:formart_img},
                         {field: 'status', title: __('Status'), searchList: {"审核中":__('审核中'),"通过":__('通过'),"不通过":__('不通过')}, formatter: Table.api.formatter.status},
                         {field: 'create_time', title: __('Create_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
-                        {field: 'user.username', title: __('User.username')},
+
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
