@@ -59,7 +59,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
     function fmt(value,row){
 
         var str="";
-        if(row["personal_info"].length>0)
+        if(row["personal_info"]["status"]!=undefined)
         return str="<a href='/admin/authentication_enterprise/edit?"+row["personal_info"]["id"]+"'>"+row["personal_info"]["status"]+"</a>"
         else
             return "-";
