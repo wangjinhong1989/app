@@ -61,7 +61,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         var str="";
         if(row["personal_info"]["status"]!=undefined)
 
-         return   $str="<a target='_blank' href=\"{:$auth->check('authentication_personal/edit?id="+row["personal_info"]["id"]+"')\" title=\"{:__('Edit')}\" ><i class=\"fa fa-pencil\"></i> "+row["personal_info"]["status"]+"</a>"
+         return   $str="<a target='_blank' href=\"/admin.php/authentication_personal/edit?id="+row["personal_info"]["id"]+"'\" title=\"{:__('Edit')}\" ><i class=\"fa fa-pencil\"></i> "+row["personal_info"]["status"]+"</a>"
 
         else
             return "-";
