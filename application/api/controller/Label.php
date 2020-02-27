@@ -31,10 +31,8 @@ class Label extends Api
 
         $query=new Query();
 
-        $temp="0";
-        if(!empty($this->auth->id)){
-            $temp=$this->auth->id;
-        }
+        $temp=$this->auth->id;
+       
         $lists=$query->table("fa_label")->alias("label")->join("fa_mylabel mylabel","mylabel.label_id=label.id and mylabel.user_id=".$temp,"left")->where(["label.status"=>"显示"])->field("label.*,mylabel.user_id")->select();
 
         dd($query->getLastSql());
