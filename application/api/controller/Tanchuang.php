@@ -119,7 +119,7 @@ class Tanchuang extends Api
             dd("login:".$this->auth->id);
             $time=Session::get("tanchuang".$this->auth->id);
             $time=intval($time);
-            if($time+60<time()){
+            if($time+24*3600<time()){
 
                 $page=$this->request->request("page",1);
                 $page_size=$this->request->request("page_size",5);
