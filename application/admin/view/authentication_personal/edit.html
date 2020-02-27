@@ -5,9 +5,7 @@
         <div class="col-xs-12 col-sm-8">
                         
             <select  id="c-type" data-rule="required" class="form-control selectpicker" name="row[type]">
-                {foreach name="typeList" item="vo"}
-                    <option value="{$key}" {in name="key" value="$row.type"}selected{/in}>{$vo}</option>
-                {/foreach}
+                 <option value="个人认证" selected>个人认证</option>
             </select>
 
         </div>
