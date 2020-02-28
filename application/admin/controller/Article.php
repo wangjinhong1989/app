@@ -94,7 +94,7 @@ class Article extends Backend
             $params = $this->request->post("row/a");
             if ($params) {
 
-                if($params["top"]=="置顶"||$params["top"]=="推广"||$params["广告"]){
+                if($params["top"]=="置顶"||$params["top"]=="推广"||$params["top"]=="广告"){
                     if(empty($params["begin_time"])||empty($params["end_time"])){
                         $this->error("请填写置顶时间");
                     }
@@ -120,7 +120,7 @@ class Article extends Backend
 
                     $result = $this->model->allowField(true)->save($params);
 
-                    if($params["top"]=="置顶"||$params["top"]=="推广"||$params["广告"]){
+                    if($params["top"]=="置顶"||$params["top"]=="推广"||$params["top"]=="广告"){
                         if(strtotime($params["begin_time"])<=time()&&strtotime($params["end_time"])>=time())
                             $params["weigh"]=time();
                         else
@@ -173,7 +173,7 @@ class Article extends Backend
             $params = $this->request->post("row/a");
             if ($params) {
 
-                if($params["top"]=="置顶"||$params["top"]=="推广"||$params["广告"]){
+                if($params["top"]=="置顶"||$params["top"]=="推广"||$params["top"]=="广告"){
                     if(empty($params["begin_time"])||empty($params["end_time"])){
                         $this->error("请填写置顶时间");
                     }
@@ -193,7 +193,7 @@ class Article extends Backend
                         $row->validateFailException(true)->validate($validate);
                     }
 
-                    if($params["top"]=="置顶"||$params["top"]=="推广"||$params["广告"]){
+                    if($params["top"]=="置顶"||$params["top"]=="推广"||$params["top"]=="广告"){
                         if(strtotime($params["begin_time"])<=time()&&strtotime($params["end_time"])>=time())
                         $params["weigh"]=time();
                         else
