@@ -70,13 +70,7 @@ class ArticleKuaixun extends Backend
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(['id','title','description','status','come_from','label_ids','url','img','read_count','show_count']);
-                $row->visible(['articletype']);
-				$row->getRelation('articletype')->visible(['name']);
-				$row->visible(['label']);
-				$row->getRelation('label')->visible(['name']);
-				$row->visible(['user']);
-				$row->getRelation('user')->visible(['username']);
+
             }
             $list = collection($list)->toArray();
             $result = array("total" => $total, "rows" => $list);
