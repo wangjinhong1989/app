@@ -3,7 +3,7 @@
   <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('广告标题')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-title" data-rule="required" class="form-control" name="row[title]" type="text">
+            <input id="c-title" data-rule="required" class="form-control" name="row[title]" type="text" value="{$row.title|htmlentities}">
         </div>
     </div>
 
