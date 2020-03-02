@@ -25,6 +25,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
+                        {field: 'title', title: __('广告名称')},
                         {field: 'weigh', title: __('Weigh')},
                         {field: 'files', title: __('Files'),formatter:formart_img},
                         {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
