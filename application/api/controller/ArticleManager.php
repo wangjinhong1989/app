@@ -29,7 +29,7 @@ class ArticleManager extends Api
     public function Lists()
     {
         $page=$this->request->request("page",1);
-        $page_size=5;//$this->request->request("page_size",5);
+        $this->request->request("page_size",5);
         $offset=($page-1)*$page_size;
 
         if($offset<0){
@@ -196,24 +196,24 @@ class ArticleManager extends Api
 
             // 是否需要返回广告.
             $need_ad=$this->request->request("need_ad",1);
-            if($need_ad){
-                $model=    new Query();
-                // more
-                $ad_size=$this->request->request("ad_size",1);
-                $ad=$lists=$model->table("fa_guanggao")->where(['status'=>'显示'])->orderRaw("rand()")->limit(0,$ad_size)->select();
-                if(!empty($ad)){
-                    $ad[0]["label_ids"]="";
-                    $ad[0]["user_id"]="";
-                    $ad[0]["articletype_id"]="";
-                    $ad[0]["come_from"]="";
-                    $ad[0]["articletype_name"]="";
-                    $ad[0]["username"]="";
-                    $ad[0]["avatar"]="";
-                    $ad[0]["is_ad"]=true;
-                    $ad[0]["create_time"]=formart_time($ad[0]["create_time"]);
-                    array_push($data["rows"],$ad[0]);
-                }
-            }
+//            if($need_ad){
+//                $model=    new Query();
+//                // more
+//                $ad_size=$this->request->request("ad_size",1);
+//                $ad=$lists=$model->table("fa_guanggao")->where(['status'=>'显示'])->orderRaw("rand()")->limit(0,$ad_size)->select();
+//                if(!empty($ad)){
+//                    $ad[0]["label_ids"]="";
+//                    $ad[0]["user_id"]="";
+//                    $ad[0]["articletype_id"]="";
+//                    $ad[0]["come_from"]="";
+//                    $ad[0]["articletype_name"]="";
+//                    $ad[0]["username"]="";
+//                    $ad[0]["avatar"]="";
+//                    $ad[0]["is_ad"]=true;
+//                    $ad[0]["create_time"]=formart_time($ad[0]["create_time"]);
+//                    array_push($data["rows"],$ad[0]);
+//                }
+//            }
         }
 
         // 结束.
