@@ -692,7 +692,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
                 if($configUser->gerencishu==0){
                     return $this->error("【个人认证】的不允许发文,今日发文条数".$my_number);
                 }else if($configUser->gerencishu<=$my_number){
-                    return $this->error("【个人认证】您已经发文已经达到".$my_number."条，不允许发文");
+                    return $this->error("【个人认证】您已经发文已经达到".$configUser->gerencishu."条，不允许发文");
                 }
                 $this->fawen($my_number);
             }
@@ -701,16 +701,16 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
                 if($configUser->qiyecishu==0){
                     return $this->error("【企业认证】的不允许发文,今日发文条数".$my_number);
                 }else if($configUser->qiyecishu<=$my_number){
-                    return $this->error("【企业认证】您已经发文已经达到".$my_number."条，不允许发文");
+                    return $this->error("【企业认证】您已经发文已经达到".$configUser->qiyecishu."条，不允许发文");
                 }
                 $this->fawen($my_number);
             }
 
             if($auth_status==2){
                 if($configUser->meiticishu==0){
-                    return $this->error("【企业认证】的不允许发文,今日发文条数".$my_number);
+                    return $this->error("【媒体认证】的不允许发文,今日发文条数".$my_number);
                 }else if($configUser->meiticishu<=$my_number){
-                    return $this->error("【企业认证】您已经发文已经达到".$my_number."条，不允许发文");
+                    return $this->error("【媒体认证】您已经发文已经达到".$configUser->meiticishu."条，不允许发文");
                 }
                 $this->fawen($my_number);
             }
