@@ -107,19 +107,19 @@ class User extends Model
     }
 
     public function auth_status($user_id){
-        $ae=( new \app\admin\model\AuthenticationEnterprise())->where(["user_id"=>$user_id,"status"=>"审核通过"])
+        $ae=( new \app\admin\model\ZhengjianQiye())->where(["user_id"=>$user_id,"status"=>"通过"])
             ->find();
 
         if($ae){
             return 1;
         }
-        $am=( new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$user_id])
+        $am=( new \app\admin\model\ZhengjianMeiti())->where(["user_id"=>$user_id,"status"=>"通过"])
             ->find();
 
         if($am){
             return 2;
         }
-        $ap=( new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$user_id])
+        $ap=( new \app\admin\model\ZhengjianGeren())->where(["user_id"=>$user_id,"status"=>"通过"])
             ->find();
         if($ap){
             return 3;
@@ -130,19 +130,19 @@ class User extends Model
 
 
     public function auth_status1($user_id){
-        $ae=( new \app\admin\model\AuthenticationEnterprise())->where(["user_id"=>$user_id,"status"=>"审核通过"])
+        $ae=( new \app\admin\model\ZhengjianQiye())->where(["user_id"=>$user_id,"status"=>"通过"])
             ->find();
 
         if($ae){
             return "企业认证";
         }
-        $am=( new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$user_id])
+        $am=( new \app\admin\model\ZhengjianMeiti())->where(["user_id"=>$user_id,"status"=>"通过"])
             ->find();
 
         if($am){
             return "媒体认证";
         }
-        $ap=( new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$user_id])
+        $ap=( new \app\admin\model\ZhengjianGeren())->where(["user_id"=>$user_id,"status"=>"通过"])
             ->find();
         if($ap){
             return "个人认证";

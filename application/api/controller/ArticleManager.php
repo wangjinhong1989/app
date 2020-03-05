@@ -3,6 +3,7 @@
 namespace app\api\controller;
 
 use app\admin\model\Article;
+use app\admin\model\ConfigUser;
 use app\admin\model\Guanggao;
 use app\admin\model\HotSearch;
 use app\admin\model\Lihaokong;
@@ -223,14 +224,6 @@ class ArticleManager extends Api
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);
 
-        $result = [
-            'code' => 1,
-            'msg'  => "成功",
-            'time' => time(),
-            'data' => $data,
-        ];
-
-        return  \GuzzleHttp\json_encode($result,JSON_UNESCAPED_SLASHES);
 
     }
 
@@ -591,7 +584,6 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
             $article->save();
             $detail['user']=null;
 
-            dd($this->auth->id);
             if($this->auth->id){
                 //  增加阅读历史。
                 $user_id=$this->auth->id;
@@ -607,10 +599,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
                     $find->save();
                 }else
                     $his->create(["user_id"=>$user_id,"article_id"=>$article->id,"time"=>time()]);
-            }else{
-                dd("not login");
             }
-
 
             $label=new \app\admin\model\Label();
 
@@ -621,12 +610,12 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
                 $detail['label_ids']=null;
 
 
-            $detail["auth_enterprise_temp"]=( new \app\admin\model\AuthenticationEnterprise())->where(["user_id"=>$detail['user_id']])
+            $detail["auth_enterprise_temp"]=( new \app\admin\model\ZhengjianQiye())->where(["user_id"=>$detail['user_id'],"status"=>"通过"])
                 ->find();
 
-            $detail["auth_media_temp"]=( new \app\admin\model\AuthenticationMedia())->where(["user_id"=>$detail['user_id']])
+            $detail["auth_media_temp"]=( new \app\admin\model\ZhengjianMeiti())->where(["user_id"=>$detail['user_id'],"status"=>"通过"])
                 ->find();
-            $detail["auth_personal_temp"]=( new \app\admin\model\AuthenticationPersonal())->where(["user_id"=>$detail['user_id']])
+            $detail["auth_personal_temp"]=( new \app\admin\model\ZhengjianGeren())->where(["user_id"=>$detail['user_id'],"status"=>"通过"])
                 ->find();
 
             $detail["authentication_type"]="";
@@ -671,11 +660,67 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
 
         $userModel=new \app\admin\model\User();
 
-        if(!$userModel->auth_status($this->auth->id)){
-            return $this->error("认证后才能发布文章");
+        $configUser=(new ConfigUser())->where([])->find();
+
+        if(empty($configUser)){
+            return $this->error("系统未配置发文配置信息");
+        }
+        $date=date("Ymd",time());
+        $my_number=Cache::get("add_article_number".$this->auth->id.$date);
+
+        if(empty($my_number)) $my_number=0;
+        else $my_number=intval($my_number);
+
+        $auth_status=$userModel->auth_status($this->auth->id);
+
+        if($configUser->kaiguan=="关闭"){
+            //  不需要处理数量
+            $this->fawen($my_number);
+        }else{
+
+            if($auth_status==0){
+                if($configUser->geren==0){
+                    return $this->error("未认证的不允许发文");
+                }else if($configUser->geren<=$my_number){
+                    return $this->error("您未认证的，发文已经达到".$my_number."条，不允许发文");
+                }
+                $this->fawen($my_number);
+            }
+
+            if($auth_status==3){
+                if($configUser->gerencishu==0){
+                    return $this->error("【个人认证】的不允许发文");
+                }else if($configUser->gerencishu<=$my_number){
+                    return $this->error("【个人认证】您已经发文已经达到".$my_number."条，不允许发文");
+                }
+                $this->fawen($my_number);
+            }
+
+            if($auth_status==1){
+                if($configUser->qiyecishu==0){
+                    return $this->error("企业认证的不允许发文");
+                }else if($configUser->gerencishu<=$my_number){
+                    return $this->error("【企业认证】您已经发文已经达到".$my_number."条，不允许发文");
+                }
+                $this->fawen($my_number);
+            }
+
+            if($auth_status==2){
+                if($configUser->qiyecishu==0){
+                    return $this->error("企业认证的不允许发文");
+                }else if($configUser->gerencishu<=$my_number){
+                    return $this->error("【企业认证】您已经发文已经达到".$my_number."条，不允许发文");
+                }
+                $this->fawen($my_number);
+            }
         }
 
 
+
+
+    }
+
+    protected function fawen($my_number){
         try{
             $model=new \app\admin\model\Article();
             $user = $this->auth->getUser();
@@ -751,13 +796,13 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
             ];
             $pushModel->create($temp);
 
+            Cache::set("add_article_number".$this->auth->id.date("Ymd",time()),$my_number++);
+
             return $this->success();
         }catch (Exception $e){
             return  $this->error($e->getMessage());
         }
-
     }
-
 
     public function detail_kuaixun()
     {
