@@ -11,6 +11,7 @@ use app\admin\model\PushList;
 use app\admin\model\ReadHistory;
 use app\admin\model\SearchHistory;
 use app\common\controller\Api;
+use think\Cache;
 use think\Db;
 use think\db\Query;
 use think\view\driver\Think;
