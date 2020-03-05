@@ -3,6 +3,7 @@
 namespace app\api\controller;
 
 use addons\third\library\Wechat;
+use app\admin\model\ConfigUser;
 use app\common\controller\Api;
 use app\common\library\Ems;
 use app\common\library\Sms;
