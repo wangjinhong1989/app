@@ -36,7 +36,7 @@ class Guanzhu extends Api
 
         $query=new Query();
         $lists = $query->table("fa_guanzhu")->alias("guanzhu")
-            ->field("guanzhu.*,user.nickname,user.avatar")
+            ->field("guanzhu.*,user.nickname,user.avatar,user.bio")
             ->join("fa_user user","user.id=guanzhu.follow_id","left")
             ->where(['guanzhu.user_id'=> $user_id])
             ->limit($offset,$page_size)
@@ -108,7 +108,7 @@ class Guanzhu extends Api
 
         $query=new Query();
         $lists = $query->table("fa_guanzhu")->alias("guanzhu")
-            ->field("guanzhu.*,user.nickname,user.avatar")
+            ->field("guanzhu.*,user.nickname,user.avatar,user.bio")
             ->join("fa_user user","user.id=guanzhu.user_id","left")
             ->where(['guanzhu.follow_id'=> $user_id])
             ->limit($offset,$page_size)
