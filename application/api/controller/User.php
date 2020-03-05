@@ -232,9 +232,30 @@ class User extends Api
         if ($username) {
             $exists = \app\common\model\User::where('username', $username)->where('id', '<>', $this->auth->id)->find();
             if ($exists) {
-                $this->error(__('Username already exists'));
+                $this->error(__('用户名已经存在'));
             }
-            $user->username = $username;
+
+            if($user->username!=$username){
+                $my_number=Cache::get("add_article_number".$this->auth->id.date("Y",time()));
+                if(empty($my_number)) $my_number=0;
+                else $my_number=intval($my_number);
+
+                $configUser=(new ConfigUser())->where([])->find();
+
+                if(empty($configUser)){
+                    return $this->error("系统未配置发文配置信息");
+                }
+
+                if($my_number<=$configUser->modify_username){
+                    $user->username = $username;
+                    $my_number=$my_number+1;
+                    Cache::set("add_article_number".$this->auth->id.date("Y",time()),$my_number,365*24*3600);
+                }else {
+                    $this->error(__('用户名一年修改'.$configUser->modify_username.'次，您已经修改过了。'));
+                }
+
+            }
+
         }
         $user->nickname = $nickname;
         $user->bio = $bio;
@@ -246,6 +267,33 @@ class User extends Api
         $this->success(__('修改成功'), $data);
 
     }
+
+
+    /**
+     * 修改会员个人信息
+     *
+     * @param string $avatar   头像地址
+     * @param string $username 用户名
+     * @param string $nickname 昵称
+     * @param string $bio      个人简介
+     */
+    public function updateUsername()
+    {
+        $user = $this->auth->getUser();
+        $username = $this->request->request('username');
+        if ($username) {
+            $exists = \app\common\model\User::where('username', $username)->where('id', '<>', $this->auth->id)->find();
+            if ($exists) {
+                $this->error(__('Username already exists'));
+            }
+            $user->username = $username;
+        }
+        $user->save();
+        $data = ['userinfo' => $this->auth->getUserinfo()];
+        $this->success(__('修改成功'), $data);
+
+    }
+
 
     /*
      *
