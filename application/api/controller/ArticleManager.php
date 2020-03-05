@@ -681,7 +681,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
 
             if($auth_status==0){
                 if($configUser->geren==0){
-                    return $this->error("未认证的不允许发文");
+                    return $this->error("未认证的不允许发文,今日发文条数".$my_number);
                 }else if($configUser->geren<=$my_number){
                     return $this->error("您未认证的，发文已经达到".$my_number."条，不允许发文");
                 }
@@ -690,7 +690,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
 
             if($auth_status==3){
                 if($configUser->gerencishu==0){
-                    return $this->error("【个人认证】的不允许发文");
+                    return $this->error("【个人认证】的不允许发文,今日发文条数".$my_number);
                 }else if($configUser->gerencishu<=$my_number){
                     return $this->error("【个人认证】您已经发文已经达到".$my_number."条，不允许发文");
                 }
@@ -699,17 +699,17 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
 
             if($auth_status==1){
                 if($configUser->qiyecishu==0){
-                    return $this->error("企业认证的不允许发文");
-                }else if($configUser->gerencishu<=$my_number){
+                    return $this->error("【企业认证】的不允许发文,今日发文条数".$my_number);
+                }else if($configUser->qiyecishu<=$my_number){
                     return $this->error("【企业认证】您已经发文已经达到".$my_number."条，不允许发文");
                 }
                 $this->fawen($my_number);
             }
 
             if($auth_status==2){
-                if($configUser->qiyecishu==0){
-                    return $this->error("企业认证的不允许发文");
-                }else if($configUser->gerencishu<=$my_number){
+                if($configUser->meiticishu==0){
+                    return $this->error("【企业认证】的不允许发文,今日发文条数".$my_number);
+                }else if($configUser->meiticishu<=$my_number){
                     return $this->error("【企业认证】您已经发文已经达到".$my_number."条，不允许发文");
                 }
                 $this->fawen($my_number);
