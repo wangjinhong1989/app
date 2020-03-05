@@ -77,7 +77,7 @@ class ZhengjianMeiti extends Api
     {
 
         try{
-            $model=new \app\admin\model\ZhengjianQiye();
+            $model=new \app\admin\model\ZhengjianMeiti();
             $user = $this->auth->getUser();
             $user_id = $user->id;
 
