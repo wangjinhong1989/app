@@ -1,0 +1,58 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Modify_username')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-modify_username" data-rule="required" class="form-control" name="row[modify_username]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Kaiguan')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-kaiguan" data-rule="required" class="form-control selectpicker" name="row[kaiguan]">
+                {foreach name="kaiguanList" item="vo"}
+                    <option value="{$key}" {in name="key" value="关闭"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Geren')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-geren" data-rule="required" class="form-control" name="row[geren]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Gerencishu')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-gerencishu" data-rule="required" class="form-control" name="row[gerencishu]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Qiyecishu')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-qiyecishu" data-rule="required" class="form-control" name="row[qiyecishu]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Meiticishu')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-meiticishu" data-rule="required" class="form-control" name="row[meiticishu]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Create_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-create_time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[create_time]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
