@@ -796,7 +796,7 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
             ];
             $pushModel->create($temp);
 
-            Cache::set("add_article_number".$this->auth->id.date("Ymd",time()),$my_number++);
+            Cache::set("add_article_number".$this->auth->id.date("Ymd",time()),$my_number++,60);
 
             return $this->success();
         }catch (Exception $e){
