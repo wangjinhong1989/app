@@ -7,6 +7,7 @@ use app\common\controller\Api;
 use app\common\library\Ems;
 use app\common\library\Sms;
 use fast\Random;
+use think\Cache;
 use think\db\Query;
 use think\Validate;
 
