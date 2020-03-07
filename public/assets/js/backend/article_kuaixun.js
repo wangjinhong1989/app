@@ -31,7 +31,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'status', title: __('Status'), searchList: {"显示":__('显示'),"隐藏":__('隐藏')}, formatter: Table.api.formatter.status},
                         // {field: 'url', title: __('链接'), formatter: Table.api.formatter.url,operate:false},
                         // {field: 'img', title: __('封面'),operate:false},
-                        {field: 'articletype.name', title: __('文章类型'),operate:false},
                         {field: 'create_time_text', title: __('发布时间')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
@@ -58,13 +57,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
 
     function queryParams(pageReqeust) {
 
-
-        pageReqeust.filter=JSON.parse( pageReqeust.filter );
-        pageReqeust.op=JSON.parse( pageReqeust.op );
-        pageReqeust.filter["articletype.name"]="快讯";
-        pageReqeust.op["articletype.name"]="=";
-        pageReqeust.op=JSON.stringify( pageReqeust.op );
-        pageReqeust.filter=JSON.stringify( pageReqeust.filter );
         return pageReqeust;
     }
 
