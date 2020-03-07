@@ -57,13 +57,13 @@ class ArticleKuaixun extends Backend
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
             //$where["articletype_id"]=2;
             $total = $this->model
-                    ->with(['articletype','label','user'])
+                    ->with(['label','user'])
                     ->where($where)
                     ->order($sort, $order)
                     ->count();
 
             $list = $this->model
-                    ->with(['articletype','label','user'])
+                    ->with(['label','user'])
                     ->where($where)
                     ->order($sort, $order)
                     ->limit($offset, $limit)
