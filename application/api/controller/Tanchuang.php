@@ -220,7 +220,7 @@ class Tanchuang extends Api
             $where["create_time"]=["elt",time()-24*3600];
             $exp=array_column((new TanchuangBack())->where($where)->field("tanchuan_id")->select(),"tanchuan_id");
 
-            if(!empty($exp))
+            if(empty($exp))
                 $exp=[0];
             $data=$model->getOne($exp);
 
