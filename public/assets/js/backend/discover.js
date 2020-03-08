@@ -29,8 +29,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'paixu', title: __('Paixu')},
                         {field: 'image', title: __('Image'), events: Table.api.events.image, formatter: Table.api.formatter.image},
 
-                        {field: 'status', title: __('状态')},
-
+                        {field: 'status', title: __('Status'), searchList: {"显示":__('显示'),"隐藏":__('隐藏')}, formatter: Table.api.formatter.status},
 
                         {field: 'url_type', title: __('Url_type'), searchList: {"外链":__('外链'),"内链":__('内链')}, formatter: Table.api.formatter.normal},
                         {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},

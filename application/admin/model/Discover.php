@@ -27,7 +27,8 @@ class Discover extends Model
     protected $append = [
         'url_type_text',
         'begin_time_text',
-        'end_time_text'
+        'end_time_text',
+        'status_text',
     ];
     
 
@@ -36,8 +37,16 @@ class Discover extends Model
     {
         return ['外链' => __('外链'), '内链' => __('内链')];
     }
-
-
+    public function getStatusList()
+    {
+        return ['显示' => __('显示'), '隐藏' => __('隐藏')];
+    }
+    public function getStatusTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['status']) ? $data['status'] : '');
+        $list = $this->getStatusList();
+        return isset($list[$value]) ? $list[$value] : '';
+    }
     public function getUrlTypeTextAttr($value, $data)
     {
         $value = $value ? $value : (isset($data['url_type']) ? $data['url_type'] : '');
