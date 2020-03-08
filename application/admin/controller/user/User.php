@@ -2,7 +2,13 @@
 
 namespace app\admin\controller\user;
 
+use app\admin\model\Article;
+use app\admin\model\Dianzan;
+use app\admin\model\Guanzhu;
+use app\admin\model\Jubao;
+use app\admin\model\Reply;
 use app\common\controller\Backend;
+use think\Db;
 
 /**
  * 会员管理
@@ -72,6 +78,48 @@ class User extends Backend
         return parent::edit($ids);
     }
 
+
+    /**
+     * 删除
+     */
+    public function del($ids = "")
+    {
+        if ($ids) {
+            $pk = $this->model->getPk();
+            $adminIds = $this->getDataLimitAdminIds();
+            if (is_array($adminIds)) {
+                $this->model->where($this->dataLimitField, 'in', $adminIds);
+            }
+            $list = $this->model->where($pk, 'in', $ids)->select();
+
+            $count = 0;
+            Db::startTrans();
+            try {
+                foreach ($list as $k => $v) {
+                    $count += $v->delete();
+
+                    (new Article())->where(["user_id"=>$v->id])->delete();
+                    (new Guanzhu())->where(["user_id"=>$v->id])->delete();
+                    (new Reply())->where(["follow_id"=>$v->id])->delete();
+                    (new Dianzan())->where(["user_id"=>$v->id])->delete();
+                    (new Jubao())->where(["user_id"=>$v->id])->delete();
+                }
+                Db::commit();
+            } catch (PDOException $e) {
+                Db::rollback();
+                $this->error($e->getMessage());
+            } catch (Exception $e) {
+                Db::rollback();
+                $this->error($e->getMessage());
+            }
+            if ($count) {
+                $this->success();
+            } else {
+                $this->error(__('No rows were deleted'));
+            }
+        }
+        $this->error(__('Parameter %s can not be empty', 'ids'));
+    }
 
 
 
