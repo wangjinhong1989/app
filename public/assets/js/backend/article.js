@@ -28,7 +28,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     [
                         {checkbox: true},
                         {field: 'id', title: __('Id')},
-                        {field: 'title', title: __('Title')},
+                        {field: 'title', title: __('Title'),operate:'LIKE'},
                         {field: 'status', title: __('Status'), searchList: {"显示":__('显示'),"隐藏":__('隐藏')}, formatter: Table.api.formatter.status},
                         {field: 'top', title: __('置顶')},
                         // {field: 'come_from', title: __('Come_from')},

@@ -22,7 +22,7 @@ class Article extends Model
     protected $createTime = false;
     protected $updateTime = false;
     protected $deleteTime = false;
-    protected $searchFields = "id,title,user.username";
+    protected $searchFields = "title";
     // 追加属性
     protected $append = [
         'create_time_text',
