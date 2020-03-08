@@ -70,6 +70,7 @@ class Service
                     $fields['nickname'] = $params['userinfo']['nickname'];
                     if (User::getByUsername($fields['nickname'])) {
                         $fields['username']=$fields['nickname'].rand(1000,9999);
+                        $fields['nickname']=$fields['username'];
                     }else
                         $fields['username']=$fields['nickname'];
 
