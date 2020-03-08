@@ -262,5 +262,7 @@ class Tanchuang extends Api
         $data["count"]=1;
 
         $data["total_page"]=1;
+
+        return $data;
     }
 }
