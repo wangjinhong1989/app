@@ -126,11 +126,11 @@ class Jubao extends Backend
 
                     $result = $row->allowField(true)->save($params);
 
+
+                    Db::commit();
                     if($params["status"]=="有效"){
                         (new \app\admin\model\Article())->where(["id"=>$params["article_id"]])->delete();
                     }
-                    Db::commit();
-                    dd($result);
                 } catch (ValidateException $e) {
                     Db::rollback();
                     $this->error($e->getMessage());
