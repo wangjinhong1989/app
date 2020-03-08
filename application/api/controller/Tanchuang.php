@@ -257,12 +257,6 @@ class Tanchuang extends Api
 
         }
 
-        $data["page"]=1;
-        $data["rows"]=$data1;
-        $data["count"]=1;
-
-        $data["total_page"]=1;
-
-        return $data;
+        return $data1;
     }
 }
