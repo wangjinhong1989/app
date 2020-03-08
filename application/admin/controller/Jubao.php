@@ -72,13 +72,13 @@ class Jubao extends Backend
                 $temp=(new User())->where(["id"=>$row["user_id"]])->field("username")->select();
 
                 if(!empty($temp)){
-                    $list[$key]["username"]=$temp["username"];
+                    $list[$key]["username"]=$temp[0]["username"];
                 }
 
                 $temp=(new User())->where(["id"=>$row["article"]["user_id"]])->field("username")->select();
 
                 if(!empty($temp)){
-                    $list[$key]["auth_username"]=$temp["username"];
+                    $list[$key]["auth_username"]=$temp[0]["username"];
                 }
             }
 
