@@ -226,7 +226,7 @@ class User extends Api
     {
         $user = $this->auth->getUser();
         $username = $this->request->request('username');
-        $nickname = $this->request->request('nickname');
+        //$nickname = $this->request->request('nickname');
         $bio = $this->request->request('bio');
         $gender = $this->request->request('gender',0);
         $birthday = $this->request->request('birthday');
@@ -259,7 +259,7 @@ class User extends Api
             }
 
         }
-        $user->nickname = $nickname;
+        //$user->nickname = $nickname;
         $user->bio = $bio;
         $user->avatar = $avatar;
         $user->gender = $gender;
