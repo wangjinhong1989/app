@@ -27,7 +27,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'id', title: __('Id')},
                         {field: 'title', title: __('Title')},
                         {field: 'weigh', title: __('Weigh')},
-                        {field: 'files', title: __('Files')},
+                        {field: 'files', title: __('Files'),formatter:formart_img},
                         {field: 'url_type', title: __('Url_type'), searchList: {"内链":__('内链'),"外链":__('外链')}, formatter: Table.api.formatter.normal},
                         {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
                         {field: 'top', title: __('Top'), searchList: {"置顶":__('置顶'),"取消置顶":__('取消置顶')}, formatter: Table.api.formatter.normal},
