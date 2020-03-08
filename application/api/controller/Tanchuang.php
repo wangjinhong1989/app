@@ -217,15 +217,13 @@ class Tanchuang extends Api
         if($temp){
             $where=[];
             $where["user_id"]=$temp;
-            $where["create_time"]=["elt",time()-24*3600];
+            $where["create_time"]=["egt",time()-24*3600];
             $exp=array_column((new TanchuangBack())->where($where)->field("tanchuan_id")->select(),"tanchuan_id");
 
-            var_dump($exp);
             if(empty($exp))
                 $exp=[0];
             $data=$model->getOne($exp);
 
-            var_dump($data);
 
             if(!empty($data)){
                 $m= new TanchuangBack();
