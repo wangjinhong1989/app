@@ -191,11 +191,9 @@ class ArticleManager extends Api
                         $dataTemp=[];
                         //
                         foreach ($data["rows"] as $key=>$row){
-
+                            array_push($dataTemp,$row);
                             if($key==4){
                                 array_push($dataTemp,$lists[0]);
-                            }else {
-                                array_push($dataTemp,$row);
                             }
 
                         }
