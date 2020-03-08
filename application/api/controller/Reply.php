@@ -29,7 +29,7 @@ class Reply extends Api
         $offset=($page-1)*$page_size;
         $data=[];
 
-        if(empty($this->auth->id)){
+        if(!$this->auth->id){
             $my_id=0;
         }else
             $my_id=$this->auth->id;
