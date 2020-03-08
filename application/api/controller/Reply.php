@@ -93,7 +93,8 @@ class Reply extends Api
 
 
             $l["dianzan_count"]=(new Query())->table("fa_dianzan")->where(["at_id"=>$l["id"]])->count();
-            $temp=(new Query())->table("fa_dianzan")->where(["at_id"=>$l["id"],"user_id"=>$l["author_id"]])->count();
+
+            $temp=(new Query())->table("fa_dianzan")->where(["at_id"=>$l["id"],"user_id"=>$my_id])->count();
             if($temp){
                 $l["flag_dianzhan"]=true;
             }else
