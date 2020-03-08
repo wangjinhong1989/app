@@ -44,4 +44,17 @@ class Mianze extends Api
     }
 
 
+
+    /**
+     * 首页
+     *
+     */
+    public function kuaixun()
+    {
+
+        $model= new Query();
+        $lists= $model->table("fa_mianze3")->where([])->select();
+        return $this->success("成功",$lists);
+    }
+
 }
