@@ -40,7 +40,7 @@ class ArticleManager extends Api
         $data=[];
         $where=[];
         $where["article.status"]=["eq","显示"];
-        $where["articletype.status"]=["eq","显示"];
+//        $where["articletype.status"]=["eq","显示"];
         $search=new SearchHistory();
         // 需要查找的类型. 可以设置多个.
         $articletype_id=$this->request->request("articletype_id","");
