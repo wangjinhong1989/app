@@ -54,6 +54,9 @@ class Service
             $password = Random::alnum(6);
             $domain = request()->host();
 
+
+            // 检测用户名或邮箱、手机号是否存在
+
             Db::startTrans();
             try {
                 // 默认注册一个会员
@@ -65,6 +68,11 @@ class Service
                 $fields = ['username' => 'u' . $user->id, 'email' => 'u' . $user->id . '@' . $domain];
                 if (isset($params['userinfo']['nickname'])) {
                     $fields['nickname'] = $params['userinfo']['nickname'];
+                    if (User::getByUsername($fields['nickname'])) {
+                        $fields['username']=$fields['nickname'].rand(1000,9999);
+                    }else
+                        $fields['username']=$fields['nickname'];
+
                 }
                 if (isset($params['userinfo']['avatar'])) {
                     $fields['avatar'] = (($params['userinfo']['avatar']));
