@@ -64,9 +64,9 @@ class Jubao extends Backend
                     ->select();
 
             foreach ($list as $row) {
-
+                $row->visible(['id','type','status','content']);
                 $row->visible(['article']);
-				$row->getRelation('article')->visible(['title']);
+				$row->getRelation('article')->visible(['title',"user_id"]);
             }
             $list = collection($list)->toArray();
             $result = array("total" => $total, "rows" => $list);
