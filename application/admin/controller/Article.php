@@ -53,7 +53,7 @@ class Article extends Backend
             {
                 return $this->selectpage();
             }
-            list($where, $sort, $order, $offset, $limit) = $this->buildparams();
+            list($where, $sort, $order, $offset, $limit) = $this->buildparams("title,user.username,id");
             $total = $this->model
                     ->with(['articletype','label','user'])
                     ->where($where)
