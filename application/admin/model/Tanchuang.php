@@ -120,12 +120,11 @@ class Tanchuang extends Model
         $where["tanchuang.end_time"]=["egt",time()];
         $query= Db::table("fa_tanchuang");
 
-        $lists=$query->where($where)->where("tanchuang.id","not in",function ($user_id){
-            $query=new Query();
+        $lists=$query->where($where)->where("tanchuang.id","not in",function ($query,$user_id){
             $exp=[];
             $exp["user_id"]=$user_id;
             $exp["create_time"]=["elt",time()-24*3600];
-            return $query->table("fa_tanchuang_back")->where($exp)->field("tanchuan_id as id")->select();
+             $query->table("fa_tanchuang_back")->where($exp)->field("tanchuan_id as id")->select();
         });
 
         return $lists;
