@@ -220,6 +220,7 @@ class Tanchuang extends Api
             $where["create_time"]=["elt",time()-24*3600];
             $exp=array_column((new TanchuangBack())->where($where)->field("tanchuan_id")->select(),"tanchuan_id");
 
+            var_dump($exp);
             if(empty($exp))
                 $exp=[0];
             $data=$model->getOne($exp);
@@ -238,11 +239,11 @@ class Tanchuang extends Api
                 }
 
             }
-            return $this->success($this->fmt($data));
+            return $this->success("",$this->fmt($data));
         }else {
             // 未登路.
             $data=$model->getOne();
-            return $this->success($this->fmt($data));
+            return $this->success("",$this->fmt($data));
         }
 
     }
@@ -257,6 +258,7 @@ class Tanchuang extends Api
             }
 
         }
+
         $data["page"]=1;
         $data["rows"]=$data1;
         $data["count"]=1;
