@@ -224,9 +224,18 @@ class Tanchuang extends Api
                 $exp=[0];
             $data=$model->getOne($exp);
 
-            var_dump($data);
+            if(!empty($data)){
+                $m= new TanchuangBack();
 
-            return $this->success($data);
+                $find= $m->where(["user_id"=>$temp,"tanchuan_id"=>$data[0]->id])->find();
+                if($find){
+                    $find->create_time=time();
+                }else{
+                    $m->create(["tanchuan_id"=>$data[0]->id,"user_id"=>$temp,"create_time"=>time()]);
+                }
+
+            }
+            return $this->success($this->fmt($data));
         }else {
             // 未登路.
             $data=$model->getOne();
