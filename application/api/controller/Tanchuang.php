@@ -215,9 +215,12 @@ class Tanchuang extends Api
         $model= new \app\admin\model\Tanchuang();
         $temp=$this->auth->id;
         if($temp){
-            $exp=array_column((new TanchuangBack())->where(["user_id"=>$temp])->field("tanchuan_id")->select(),"tanchuan_id");
+            $where=[];
+            $where["user_id"]=$temp;
+            $where["create_time"]=["elt",time()-24*3600];
+            $exp=array_column((new TanchuangBack())->where($where)->field("tanchuan_id")->select(),"tanchuan_id");
 
-            $data=$model->getOne();
+            $data=$model->getOne($exp);
 
             var_dump($data);
         }else {

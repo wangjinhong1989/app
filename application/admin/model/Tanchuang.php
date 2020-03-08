@@ -101,13 +101,18 @@ class Tanchuang extends Model
         return $this->belongsTo('Article', 'article_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 
-    public function getOne(){
+    public function getOne($notIn){
 
         $where=$data=[];
         $where["status"]=["eq","显示"];
         $where["begin_time"]=["elt",time()];
         $where["end_time"]=["egt",time()];
-        $lists=self::where($where)->order("paixu","asc")->orderRaw("rand()")->limit(1,1)->select();
+        if(!empty($notIn)){
+            $lists=self::where($where)->order("paixu","asc")->orderRaw("rand()")->whereNotIn("id",$notIn)->limit(1,1)->select();
+        }else {
+            $lists=self::where($where)->order("paixu","asc")->orderRaw("rand()")->limit(1,1)->select();
+        }
+
         return $lists;
 
     }
