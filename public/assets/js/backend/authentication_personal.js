@@ -25,7 +25,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 columns: [
                     [
                         {checkbox: true},
-                        {field: 'id', title: __('Id')},
+                        {field: 'id', title: __('ID')},
                         {field: 'user.username', title: __('User.username')},
                         {field: 'type', title: __('Type'), searchList: {"个人认证":__('个人认证'),"企业认证":__('企业认证'),"媒体认证":__('媒体认证')}, formatter: Table.api.formatter.normal},
                         {field: 'certificates_type', title: __('Certificates_type')},
