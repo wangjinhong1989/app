@@ -25,7 +25,9 @@ class Qidong extends Model
 
     // 追加属性
     protected $append = [
+        'url_type_text',
         'top_text',
+        'status_text',
         'begin_time_text',
         'end_time_text'
     ];
@@ -40,9 +42,27 @@ class Qidong extends Model
     }
 
     
+    public function getUrlTypeList()
+    {
+        return ['内链' => __('内链'), '外链' => __('外链')];
+    }
+
     public function getTopList()
     {
         return ['置顶' => __('置顶'), '取消置顶' => __('取消置顶')];
+    }
+
+    public function getStatusList()
+    {
+        return ['显示' => __('显示'), '隐藏' => __('隐藏')];
+    }
+
+
+    public function getUrlTypeTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['url_type']) ? $data['url_type'] : '');
+        $list = $this->getUrlTypeList();
+        return isset($list[$value]) ? $list[$value] : '';
     }
 
 
@@ -50,6 +70,14 @@ class Qidong extends Model
     {
         $value = $value ? $value : (isset($data['top']) ? $data['top'] : '');
         $list = $this->getTopList();
+        return isset($list[$value]) ? $list[$value] : '';
+    }
+
+
+    public function getStatusTextAttr($value, $data)
+    {
+        $value = $value ? $value : (isset($data['status']) ? $data['status'] : '');
+        $list = $this->getStatusList();
         return isset($list[$value]) ? $list[$value] : '';
     }
 
@@ -78,4 +106,8 @@ class Qidong extends Model
     }
 
 
+    public function article()
+    {
+        return $this->belongsTo('Article', 'article_id', 'id', [], 'LEFT')->setEagerlyType(0);
+    }
 }

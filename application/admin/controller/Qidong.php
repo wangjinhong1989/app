@@ -22,7 +22,9 @@ class Qidong extends Backend
     {
         parent::_initialize();
         $this->model = new \app\admin\model\Qidong;
+        $this->view->assign("urlTypeList", $this->model->getUrlTypeList());
         $this->view->assign("topList", $this->model->getTopList());
+        $this->view->assign("statusList", $this->model->getStatusList());
     }
     
     /**
@@ -32,4 +34,46 @@ class Qidong extends Backend
      */
     
 
+    /**
+     * 查看
+     */
+    public function index()
+    {
+        //当前是否为关联查询
+        $this->relationSearch = true;
+        //设置过滤方法
+        $this->request->filter(['strip_tags', 'trim']);
+        if ($this->request->isAjax())
+        {
+            //如果发送的来源是Selectpage，则转发到Selectpage
+            if ($this->request->request('keyField'))
+            {
+                return $this->selectpage();
+            }
+            list($where, $sort, $order, $offset, $limit) = $this->buildparams();
+            $total = $this->model
+                    ->with(['article'])
+                    ->where($where)
+                    ->order($sort, $order)
+                    ->count();
+
+            $list = $this->model
+                    ->with(['article'])
+                    ->where($where)
+                    ->order($sort, $order)
+                    ->limit($offset, $limit)
+                    ->select();
+
+            foreach ($list as $row) {
+                $row->visible(['id','title','weigh','files','url_type','url','top','status','begin_time','end_time']);
+                $row->visible(['article']);
+				$row->getRelation('article')->visible(['title']);
+            }
+            $list = collection($list)->toArray();
+            $result = array("total" => $total, "rows" => $list);
+
+            return json($result);
+        }
+        return $this->view->fetch();
+    }
 }
