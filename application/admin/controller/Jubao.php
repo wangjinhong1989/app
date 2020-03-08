@@ -128,10 +128,16 @@ class Jubao extends Backend
                     $result = $row->allowField(true)->save($params);
 
 
-                    Db::commit();
+
                     if($params["status"]=="有效"){
                         (new \app\admin\model\Article())->where(["id"=>$params["article_id"]])->delete();
                     }
+
+                    if($params["status"]=="有效"||$params["status"]=="无效"){
+                        (new \app\admin\model\Jubao())->where(["id"=>$params["id"]])->delete();
+                    }
+
+                    Db::commit();
                 } catch (ValidateException $e) {
                     Db::rollback();
                     $this->error($e->getMessage());
