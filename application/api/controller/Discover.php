@@ -43,6 +43,9 @@ class Discover extends Api
         $data["rows"]=$lists;
         $data["count"]=$count;
 
+        foreach ($data["rows"] as $key=>$value){
+            $data["rows"][$key]["title"]="";
+        }
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);
 
