@@ -15,6 +15,9 @@ class User extends Model
     // 定义时间戳字段名
     protected $createTime = 'createtime';
     protected $updateTime = 'updatetime';
+
+    protected $searchFields = "username,mobile";
+
     // 追加属性
     protected $append = [
         'prevtime_text',
