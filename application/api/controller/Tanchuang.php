@@ -111,7 +111,7 @@ class Tanchuang extends Api
      * 首页
      *
      */
-    public function Lists()
+    public function Lists1()
     {
 
 
@@ -210,7 +210,7 @@ class Tanchuang extends Api
     }
 
 
-    public function list_db(){
+    public function lists(){
 
         $model= new \app\admin\model\Tanchuang();
         $temp=$this->auth->id;
