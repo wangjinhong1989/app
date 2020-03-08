@@ -155,6 +155,7 @@ class Jubao extends Backend
 
         $article= (new \app\admin\model\Article())->where(["id"=>$row["article_id"]])->field("content")->find();
 
+        var_dump($article);
         $row["article_content"]=!empty($article)?$article[0]["content"]:"";
         $this->view->assign("row", $row);
         return $this->view->fetch();
