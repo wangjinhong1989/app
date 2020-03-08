@@ -75,9 +75,14 @@ class Article extends Backend
 				$row->getRelation('label')->visible(['name']);
 				$row->visible(['user']);
 				$row->getRelation('user')->visible(['username']);
+
+				if($row->top=="取消置顶"){
+                    $row->top="无";
+                }
             }
             $list = collection($list)->toArray();
             $result = array("total" => $total, "rows" => $list);
+
 
             return json($result);
         }
