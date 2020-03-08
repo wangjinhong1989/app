@@ -243,7 +243,7 @@ class Reply extends Api
             }
             $test=$model->create([
                 //'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>"审核"
-                'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>"有效"
+                'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>"审核"
             ]);
 
 
