@@ -15,7 +15,7 @@ return [
     'Male'           => '男',
     'FeMale'         => '女',
     'Birthday'       => '生日',
-    'Bio'            => '格言',
+    'Bio'            => '签名',
     'Score'          => '积分',
     'Successions'    => '连续登录天数',
     'Maxsuccessions' => '最大连续登录天数',
