@@ -7,7 +7,7 @@ return [
     'Files'         => '图片',
     'Url_type'      => '内链外链',
     'Url'           => '外链',
-    'Article_id'    => '文章',
+    'Article_id'    => '文章标题',
     'Top'           => '置顶',
     'Status'        => '状态',
     'Begin_time'    => '开始时间',
