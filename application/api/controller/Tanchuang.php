@@ -224,6 +224,7 @@ class Tanchuang extends Api
                 $exp=[0];
             $data=$model->getOne($exp);
 
+            var_dump($data);
             if(!empty($data)){
                 $m= new TanchuangBack();
 
