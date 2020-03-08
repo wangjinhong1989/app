@@ -153,7 +153,7 @@ class Jubao extends Backend
 
         // 文章信息.
 
-        $article= (new \app\admin\model\Article())->where(["id"=>$row["article_id"]])->field("content")->find();
+        $article= (new \app\admin\model\Article())->where(["id"=>$row["article_id"]])->field("content")->select();
 
         var_dump($article);
         $row["article_content"]=!empty($article)?$article[0]["content"]:"";
