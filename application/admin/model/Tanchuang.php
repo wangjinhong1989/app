@@ -2,6 +2,8 @@
 
 namespace app\admin\model;
 
+use think\Db;
+use think\db\Query;
 use think\Model;
 
 
@@ -98,4 +100,36 @@ class Tanchuang extends Model
     {
         return $this->belongsTo('Article', 'article_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
+
+    public function getOne(){
+
+        $where=$data=[];
+        $where["status"]=["eq","显示"];
+        $where["begin_time"]=["elt",time()];
+        $where["end_time"]=["egt",time()];
+        $lists=self::where($where)->order("paixu","asc")->orderRaw("rand()")->limit(1,1)->select();
+        return $lists;
+
+    }
+
+    public function getNoShow($user_id){
+
+        $where=$data=[];
+        $where["tanchuang.status"]=["eq","显示"];
+        $where["tanchuang.begin_time"]=["elt",time()];
+        $where["tanchuang.end_time"]=["egt",time()];
+        $query= Db::table("fa_tanchuang");
+
+        $lists=$query->where($where)->where("tanchuang.id","not in",function ($user_id){
+            $query=new Query();
+            $exp=[];
+            $exp["user_id"]=$user_id;
+            $exp["create_time"]=["elt",time()-24*3600];
+            return $query->table("fa_tanchuang_back")->where($exp)->field("tanchuan_id as id")->select();
+        });
+
+        return $lists;
+
+    }
+
 }

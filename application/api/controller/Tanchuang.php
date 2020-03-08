@@ -161,11 +161,11 @@ class Tanchuang extends Api
 
                 Cache::set("tanchuang".$this->auth->id,time(),24*3600);
                 dd(" login 1");
-                return $this->success("登录后请求到的数据",$data1);
+                return $this->success("登录后请求到的数据,新的",$data1);
 
             }else{
                 dd(" login 2");
-                return $this->success("登录后请求到的数据",[]);
+                return $this->success("登录后请求到的数据，旧的",[]);
             }
 
         }
@@ -209,5 +209,35 @@ class Tanchuang extends Api
     }
 
 
+    public function list_db(){
 
+        $model= new \app\admin\model\Tanchuang();
+        $temp=$this->auth->id;
+        if($temp){
+
+            var_dump($model->getNoShow($temp));
+        }else {
+            // 未登路.
+            $data=$model->getOne();
+            return $this->success($this->fmt($data));
+        }
+
+    }
+
+    public function fmt($lists){
+                $data1=[];
+        foreach ($lists as &$l){
+            $temp=explode(",",$l["image"]);
+            foreach ($temp as &$t){
+                $l["image"]=$t;
+                array_push($data1,$l);
+            }
+
+        }
+        $data["page"]=1;
+        $data["rows"]=$data1;
+        $data["count"]=1;
+
+        $data["total_page"]=1;
+    }
 }
