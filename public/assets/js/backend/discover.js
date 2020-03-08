@@ -24,7 +24,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 columns: [
                     [
                         {checkbox: true},
-                        {field: 'id', title: "Id"},
+                        {field: 'id', title: "ID"},
                         {field: 'title', title: __('广告名称')},
                         {field: 'paixu', title: __('Paixu')},
                         {field: 'image', title: __('Image'), events: Table.api.events.image, formatter: Table.api.formatter.image},
