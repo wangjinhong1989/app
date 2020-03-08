@@ -2,6 +2,7 @@
 
 namespace app\api\controller;
 
+use app\admin\model\TanchuangBack;
 use app\common\controller\Api;
 use app\admin\model\Guanggao;
 use think\Cache;
@@ -214,10 +215,8 @@ class Tanchuang extends Api
         $model= new \app\admin\model\Tanchuang();
         $temp=$this->auth->id;
         if($temp){
-
-            $data=$model->getNoShow($temp);
-            $data->toCollection();
-            var_dump($data);
+            $exp=array_column((new TanchuangBack())->where(["user_id"=>$temp])->field("tanchuan_id")->select());
+            var_dump($exp);
         }else {
             // 未登路.
             $data=$model->getOne();
