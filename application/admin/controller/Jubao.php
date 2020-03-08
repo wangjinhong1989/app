@@ -134,7 +134,7 @@ class Jubao extends Backend
                     }
 
                     if($params["status"]=="有效"||$params["status"]=="无效"){
-                        (new \app\admin\model\Jubao())->where(["id"=>$params["id"]])->delete();
+                        (new \app\admin\model\Jubao())->where(["id"=>$ids])->delete();
                     }
 
                     Db::commit();
