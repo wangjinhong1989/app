@@ -7,6 +7,7 @@ use app\admin\model\Dianzan;
 use app\admin\model\Guanzhu;
 use app\admin\model\Jubao;
 use app\admin\model\Reply;
+use app\admin\model\Third;
 use app\common\controller\Backend;
 use think\Db;
 
@@ -99,6 +100,7 @@ class User extends Backend
                     $count += $v->delete();
 
                     (new Article())->where(["user_id"=>$v->id])->delete();
+                    (new Third())->where(["user_id"=>$v->id])->delete();
                     (new Guanzhu())->where(["user_id"=>$v->id])->delete();
                     (new Guanzhu())->where(["follow_id"=>$v->id])->delete();
                     (new Reply())->where(["user_id"=>$v->id])->delete();
