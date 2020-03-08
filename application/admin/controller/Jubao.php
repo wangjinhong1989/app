@@ -2,6 +2,7 @@
 
 namespace app\admin\controller;
 
+use app\admin\model\User;
 use app\common\controller\Backend;
 
 /**
@@ -65,6 +66,22 @@ class Jubao extends Backend
 
 
             $list = collection($list)->toArray();
+
+            foreach ($list as $key=>$row) {
+
+                $temp=(new User())->where(["id"=>$row["user_id"]])->field("username")->select();
+
+                if(!empty($temp)){
+                    $list[$key]["username"]=$temp["username"];
+                }
+
+                $temp=(new User())->where(["id"=>$row["article"]["user_id"]])->field("username")->select();
+
+                if(!empty($temp)){
+                    $list[$key]["auth_username"]=$temp["username"];
+                }
+            }
+
             $result = array("total" => $total, "rows" => $list);
 
             return json($result);
