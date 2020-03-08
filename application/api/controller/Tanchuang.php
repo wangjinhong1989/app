@@ -216,7 +216,10 @@ class Tanchuang extends Api
         $temp=$this->auth->id;
         if($temp){
             $exp=array_column((new TanchuangBack())->where(["user_id"=>$temp])->field("tanchuan_id")->select(),"tanchuan_id");
-            var_dump($exp);
+
+            $data=$model->getOne();
+
+            var_dump($data);
         }else {
             // 未登路.
             $data=$model->getOne();
