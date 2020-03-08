@@ -66,14 +66,14 @@ class Service
                 }
                 $user = $auth->getUser();
                 $fields = ['username' => 'u' . $user->id, 'email' => 'u' . $user->id . '@' . $domain];
-//                if (isset($params['userinfo']['nickname'])) {
-//                    $fields['nickname'] = $params['userinfo']['nickname'];
-//                    if (User::getByUsername($fields['nickname'])) {
-//                        $fields['username']=$fields['nickname'].rand(1000,9999);
-//                    }else
-//                        $fields['username']=$fields['nickname'];
-//
-//                }
+                if (isset($params['userinfo']['nickname'])) {
+                    $fields['nickname'] = $params['userinfo']['nickname'];
+                    if (User::getByUsername($fields['nickname'])) {
+                        $fields['username']=$fields['nickname'].rand(1000,9999);
+                    }else
+                        $fields['username']=$fields['nickname'];
+
+                }
                 if (isset($params['userinfo']['avatar'])) {
                     $fields['avatar'] = (($params['userinfo']['avatar']));
                 }
