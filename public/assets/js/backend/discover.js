@@ -24,10 +24,14 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 columns: [
                     [
                         {checkbox: true},
-                        {field: 'id', title: __('Id')},
-                        {field: 'title', title: __('广告标题')},
+                        {field: 'id', title: "Id"},
+                        {field: 'title', title: __('广告名称')},
                         {field: 'paixu', title: __('Paixu')},
                         {field: 'image', title: __('Image'), events: Table.api.events.image, formatter: Table.api.formatter.image},
+
+                        {field: 'status', title: __('状态')},
+
+
                         {field: 'url_type', title: __('Url_type'), searchList: {"外链":__('外链'),"内链":__('内链')}, formatter: Table.api.formatter.normal},
                         {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
                         {field: 'begin_time', title: __('Begin_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},

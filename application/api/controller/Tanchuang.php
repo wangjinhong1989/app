@@ -225,6 +225,8 @@ class Tanchuang extends Api
             $data=$model->getOne($exp);
 
             var_dump($data);
+
+            return $this->success($data);
         }else {
             // 未登路.
             $data=$model->getOne();
