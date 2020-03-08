@@ -450,13 +450,8 @@ class User extends Api
             $temp["openid"] = $this->request->request("openid");
             $temp["refresh_token"] = $this->request->request("refresh_token");
             $temp["expires_in"] = $this->request->request("expires_in");
-            dd("qq");
-            dd($temp);
             $result = $app->$platform->getUserInfo1($temp);
         }
-
-        dd("返回");
-        dd($result);
         if ($result) {
             $loginret = \addons\third\library\Service::connect($platform, $result);
 
@@ -465,9 +460,6 @@ class User extends Api
                     'userinfo'  => $this->auth->getUserinfo(),
 //                    'thirdinfo' => $result
                 ];
-
-                dd("login data");
-                dd($data);
                 $this->success(__('Logged in successful'), $data);
             }
         }

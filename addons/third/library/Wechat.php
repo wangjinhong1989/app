@@ -69,10 +69,6 @@ class Wechat
             //获取access_token
             $data = isset($params['code']) ? $this->getAccessToken($params['code']) : $params;
 
-
-            dd("params");
-            dd($params);
-            dd($data);
             $access_token = isset($data['access_token']) ? $data['access_token'] : '';
             $refresh_token = isset($data['refresh_token']) ? $data['refresh_token'] : '';
             $expires_in = isset($data['expires_in']) ? $data['expires_in'] : 0;
@@ -107,8 +103,6 @@ class Wechat
                     'unionid'       => $unionid,
                     'userinfo'      => $userinfo
                 ];
-                dd("user info");
-                dd($data);
                 return $data;
             }
         }
