@@ -66,7 +66,7 @@ class Jubao extends Backend
             foreach ($list as $row) {
                 $row->visible(['id','type','status','content']);
                 $row->visible(['article']);
-				$row->getRelation('article')->visible(['title',"user_id"]);
+				$row->getRelation('article')->visible(['title',"user_id","user.username"]);
             }
             $list = collection($list)->toArray();
             $result = array("total" => $total, "rows" => $list);
