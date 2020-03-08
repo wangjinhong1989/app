@@ -108,11 +108,11 @@ class Tanchuang extends Model
         $where["begin_time"]=["elt",time()];
         $where["end_time"]=["egt",time()];
         if(!empty($notIn)){
-            $lists=self::where($where)->order("paixu","asc")->orderRaw("rand()")->whereNotIn("id",$notIn)->limit(1,1)->select();
+            $lists=self::where($where)->order("paixu","asc")->orderRaw("rand()")->whereNotIn("id",$notIn)->limit(0,1)->select();
 
             echo self::getLastSql();
         }else {
-            $lists=self::where($where)->order("paixu","asc")->orderRaw("rand()")->limit(1,1)->select();
+            $lists=self::where($where)->order("paixu","asc")->orderRaw("rand()")->limit(0,1)->select();
         }
 
         return $lists;
