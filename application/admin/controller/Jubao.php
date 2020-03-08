@@ -4,6 +4,7 @@ namespace app\admin\controller;
 
 use app\admin\model\User;
 use app\common\controller\Backend;
+use think\Db;
 
 /**
  * 
