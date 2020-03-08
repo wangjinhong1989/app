@@ -215,7 +215,9 @@ class Tanchuang extends Api
         $temp=$this->auth->id;
         if($temp){
 
-            var_dump($model->getNoShow($temp));
+            $data=$model->getNoShow($temp);
+            $data->toCollection();
+            var_dump($data);
         }else {
             // 未登路.
             $data=$model->getOne();
