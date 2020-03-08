@@ -23,7 +23,7 @@ class Lianxi extends Api
     public function Lists()
     {
         $model=    new Query();
-        $lists=$model->table("fa_lianxi")->where(["status"=>"显示"])->order("paixu","asc")->select();
+        $lists=$model->table("fa_lianxi")->where([])->order("paixu","asc")->select();
         $this->success("成功",$lists);
     }
 }
