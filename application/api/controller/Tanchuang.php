@@ -225,12 +225,14 @@ class Tanchuang extends Api
             $data=$model->getOne($exp);
 
             var_dump($data);
+
             if(!empty($data)){
                 $m= new TanchuangBack();
 
                 $find= $m->where(["user_id"=>$temp,"tanchuan_id"=>$data[0]->id])->find();
                 if($find){
                     $find->create_time=time();
+                    $find->save();
                 }else{
                     $m->create(["tanchuan_id"=>$data[0]->id,"user_id"=>$temp,"create_time"=>time()]);
                 }
