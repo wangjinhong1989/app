@@ -2058,3 +2058,40 @@
 2020-03-08 12:30:25 : time:1583577672
 2020-03-08 12:30:25 : time:1583577672
 2020-03-08 12:30:25 :  login 2
+2020-03-08 12:41:30 : auth_id
+2020-03-08 12:41:30 : not login
+2020-03-08 12:41:50 : addons\third\library\Wechat
+2020-03-08 12:41:51 : respnse
+2020-03-08 12:41:51 : {"access_token":"31_n1If5bSy0X6xzAukzkCDXmjFXJrsKN-PWhm_ZAul5GIwB-URTp3-25jliFvHdI4fQwEI6aNUdZQQf5mVIilSj_b0HvuK2g5QcY7yfF2IvUM","expires_in":7200,"refresh_token":"31_DXgxL8R7UFth8TR-XlcyPcvzUxOv_gzy4nyk1in5TZwI9RubHUEoGhtMivDfl-9rqUd6T_RkjiGae1O8mUELXJ2MyfhtA3zz6apibxLyLX0","openid":"o9cm6wNTheo_bHixACCOWh2Ka5_U","scope":"snsapi_userinfo","unionid":"ofaBI6DTwZexNVFYGlKTUtAvFMBc"}
+2020-03-08 12:41:51 : params
+2020-03-08 12:41:51 : {"code":"021Mhqbc2k2edL07uLec26wobc2Mhqbn"}
+2020-03-08 12:41:51 : {"access_token":"31_n1If5bSy0X6xzAukzkCDXmjFXJrsKN-PWhm_ZAul5GIwB-URTp3-25jliFvHdI4fQwEI6aNUdZQQf5mVIilSj_b0HvuK2g5QcY7yfF2IvUM","expires_in":7200,"refresh_token":"31_DXgxL8R7UFth8TR-XlcyPcvzUxOv_gzy4nyk1in5TZwI9RubHUEoGhtMivDfl-9rqUd6T_RkjiGae1O8mUELXJ2MyfhtA3zz6apibxLyLX0","openid":"o9cm6wNTheo_bHixACCOWh2Ka5_U","scope":"snsapi_userinfo","unionid":"ofaBI6DTwZexNVFYGlKTUtAvFMBc"}
+2020-03-08 12:41:51 : user info
+2020-03-08 12:41:51 : {"access_token":"31_n1If5bSy0X6xzAukzkCDXmjFXJrsKN-PWhm_ZAul5GIwB-URTp3-25jliFvHdI4fQwEI6aNUdZQQf5mVIilSj_b0HvuK2g5QcY7yfF2IvUM","refresh_token":"31_DXgxL8R7UFth8TR-XlcyPcvzUxOv_gzy4nyk1in5TZwI9RubHUEoGhtMivDfl-9rqUd6T_RkjiGae1O8mUELXJ2MyfhtA3zz6apibxLyLX0","expires_in":7200,"openid":"o9cm6wNTheo_bHixACCOWh2Ka5_U","unionid":"ofaBI6DTwZexNVFYGlKTUtAvFMBc","userinfo":{"openid":"o9cm6wNTheo_bHixACCOWh2Ka5_U","nickname":"\u738b\u91d1\u5b8f","sex":1,"language":"zh_CN","city":"","province":"\u5e03\u5170\u5361\u6e2f","country":"\u963f\u6839\u5ef7","headimgurl":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/DYAIOgq83epvXkmKQ8Nl0PhBI8QgsoKPo7cznPbG3mEEumwyGHHI8y0jX2Wwmz2HKjj7FysGs4zQ4K8Ena7jQQ\/132","privilege":[],"unionid":"ofaBI6DTwZexNVFYGlKTUtAvFMBc","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/DYAIOgq83epvXkmKQ8Nl0PhBI8QgsoKPo7cznPbG3mEEumwyGHHI8y0jX2Wwmz2HKjj7FysGs4zQ4K8Ena7jQQ\/132","gender":1}}
+2020-03-08 12:41:51 : login data
+2020-03-08 12:41:51 : {"userinfo":{"id":10122,"username":"6666","nickname":"6666","email":"u10122@app.biyouliao8.com","mobile":"18215504200","avatar":"http:\/\/thirdwx.qlogo.cn\/mmopen\/vi_32\/DYAIOgq83epvXkmKQ8Nl0PhBI8QgsoKPo7cznPbG3mEEumwyGHHI8y0jX2Wwmz2HKjj7FysGs4zQ4K8Ena7jQQ\/132","level":1,"gender":1,"birthday":"2020-02-12","bio":"77777","score":0,"status":"normal","is_kuaixun":"\u5426","token":"e487180f-9e17-4052-85ba-c6b12fd571e5","user_id":10122,"createtime":1583642511,"expiretime":0,"expires_in":31536000}}
+2020-03-08 12:52:56 : auth_id10146
+2020-03-08 12:52:56 : login:10146
+2020-03-08 12:52:56 : time:1583577672
+2020-03-08 12:52:56 : time:1583577672
+2020-03-08 12:52:56 :  login 2
+2020-03-08 13:09:50 : auth_id10109
+2020-03-08 13:09:50 : login:10109
+2020-03-08 13:09:50 : time:1583571598
+2020-03-08 13:09:50 : time:1583571598
+2020-03-08 13:09:50 :  login 2
+2020-03-08 13:13:07 : auth_id10122
+2020-03-08 13:13:07 : login:10122
+2020-03-08 13:13:07 : time:
+2020-03-08 13:13:07 : time:0
+2020-03-08 13:13:07 :  login 1
+2020-03-08 13:20:49 : auth_id10146
+2020-03-08 13:20:49 : login:10146
+2020-03-08 13:20:49 : time:1583577672
+2020-03-08 13:20:49 : time:1583577672
+2020-03-08 13:20:49 :  login 2
+2020-03-08 13:23:10 : auth_id10146
+2020-03-08 13:23:10 : login:10146
+2020-03-08 13:23:10 : time:1583577672
+2020-03-08 13:23:10 : time:1583577672
+2020-03-08 13:23:10 :  login 2
