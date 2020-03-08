@@ -251,6 +251,7 @@ class User extends Api
                 if($my_number<=$configUser->modify_username){
                     $user->username = $username;
                     $my_number=$my_number+1;
+                    $user->nickname = $username;
                     Cache::set("add_article_number".$this->auth->id.date("Y",time()),$my_number,365*24*3600);
                 }else {
                     $this->error(__('用户名一年修改'.$configUser->modify_username.'次，您已经修改过了。'));
@@ -259,7 +260,7 @@ class User extends Api
             }
 
         }
-        //$user->nickname = $nickname;
+
         $user->bio = $bio;
         $user->avatar = $avatar;
         $user->gender = $gender;
@@ -395,14 +396,11 @@ class User extends Api
         if (!$mobile || !$captcha) {
             $this->error(__('Invalid parameters'));
         }
-        dd("2");
         if (!Validate::regex($mobile, "^1\d{10}$")) {
             $this->error(__('Mobile is incorrect'));
         }
-        dd("1");
         if (\app\common\model\User::where('mobile', $mobile)->where('id', '<>', $user->id)->find()) {
 
-            dd("mobile exists");
             $this->error(__('Mobile already exists'));
         }
         // 123456 取消验证码
@@ -419,7 +417,6 @@ class User extends Api
         $user->save();
 
         Sms::flush($mobile, 'changemobile');
-        dd("3");
         $this->success();
     }
 
