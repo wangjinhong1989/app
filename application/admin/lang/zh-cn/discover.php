@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'Id'            => '编号',
+    'Id'            => 'Id',
     'Title'         => '标题',
     'Paixu'         => '排序',
     'Image'         => '图片',
