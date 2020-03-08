@@ -26,7 +26,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 columns: [
                     [
                         {checkbox: true},
-                        {field: 'id', title: __('Id')},
+                        {field: 'id', title: __('ID')},
                         {field: 'title', title: __('广告名称')},
                         {field: 'weigh', title: __('排序')},
                         {field: 'img', title: __('图片'),formatter:formart_img},

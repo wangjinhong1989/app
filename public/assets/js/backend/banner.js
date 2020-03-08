@@ -35,8 +35,8 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 columns: [
                     [
                         {checkbox: true},
-                        {field: 'id', title: __('Id')},
-                        {field: 'title', title: __('名称')},
+                        {field: 'id', title: __('ID')},
+                        {field: 'title', title: __('广告名称')},
                         {field: 'bannername.name', title: __('Bannername.name'),searchList: bannerList},
                         {field: 'img', title: __('Img'),formatter:formart_img},
                         {field: 'top', title: __('Top'), searchList: {"置顶":__('置顶'),"取消置顶":__('取消置顶')}, formatter: Table.api.formatter.normal},
