@@ -30,7 +30,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'article.title', title: __('Article.title')},
                         {field: 'article.status', title: __('Article.status'), formatter: Table.api.formatter.status},
                         {field: 'article.articletype_id', title: __('Article.articletype_id')},
-                        {field: 'article.img', title: __('Article.img')},
+                        {field: 'article.img', title: __('Article.img'),formatter:formart_img},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
