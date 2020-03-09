@@ -37,6 +37,7 @@ class SubjectNew extends Api
 
         $query=new Query();
         $data["rows"]=$query->table("fa_subject_new")->alias("subject")->where($where)
+            ->field("article.*")
             ->join("fa_article article","article.id=subject.article_id","left")
             ->order($sort ,$order) ->limit($offset,$page_size)->select();
 
