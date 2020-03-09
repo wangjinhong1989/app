@@ -23,7 +23,7 @@ class Daodu extends Api
     public function Lists()
     {
         $model=    new Query();
-        $lists=$model->table("fa_guanggao")->where(['status'=>'显示'])->orderRaw("rand()")->limit(0,1)->select();
+        $lists=$model->table("fa_daodu")->where(['status'=>'显示'])->orderRaw("rand()")->limit(0,1)->select();
         $this->success("成功",$lists);
     }
 }
