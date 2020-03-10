@@ -191,6 +191,10 @@ class Guanzhu extends Api
                 return $this->error(__('已经关注了'));
             }
 
+            if($model->where(['user_id'=>$user_id])->count()>200){
+                return $this->error(__('关注数已经达到200'));
+            }
+
             $test= $model->create([
                 'user_id' => $user_id, 'follow_id' => $follow_id, 'time' => time()
             ]);
