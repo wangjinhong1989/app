@@ -39,7 +39,7 @@ class GuanggaoArticle extends Api
         $data["rows"]=$query->table("fa_guanggao_article")->alias("subject")->where($where)
             ->field("article.*,user.username,user.avatar")
             ->join("fa_article article","article.id=subject.article_id","left")
-            ->join("fa_user user","user.id=subject.user_id","left")
+            ->join("fa_user user","user.id=article.user_id","left")
             ->order($sort ,$order) ->limit($offset,$page_size)->select();
 
 
