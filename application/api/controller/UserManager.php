@@ -85,7 +85,7 @@ class UserManager extends Api
         $data["rows"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id ")
             ->where($where)
             ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
-            ->limit($offset,$page_size)->order("info.id asc")->group("info.id")->select();
+            ->limit($offset,$page_size)->order(" rand()")->group("info.id")->select();
 
         $data["count"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id")
             ->where($where)
