@@ -2,6 +2,9 @@
 
 namespace app\common\library;
 
+use app\admin\model\GuangfangUser;
+use app\admin\model\Guanggao;
+use app\api\controller\Guanzhu;
 use app\common\model\User;
 use app\common\model\UserRule;
 use fast\Random;
@@ -179,6 +182,20 @@ class Auth
             $this->_token = Random::uuid();
             Token::set($this->_token, $user->id, $this->keeptime);
 
+            // 添加关注.
+
+            $guanfang=GuangfangUser::get();
+            foreach ($guanfang as $value){
+                $user_ids=explode(",",$value->user_ids);
+                foreach($user_ids as $v){
+                    (new \app\admin\model\Guanzhu())->create([
+                        "user_id"=>$user->id,
+                        "follow_id"=>$v,
+                        "create_time"=>time()
+                    ]);
+                }
+
+            }
             //注册成功的事件
             Hook::listen("user_register_successed", $this->_user, $data);
             Db::commit();
