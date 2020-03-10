@@ -100,4 +100,59 @@ class Service
             return $auth->direct($user->id);
         }
     }
+
+    public static function bind($platform, $params = [], $extend = [], $keeptime = 0,$user_id)
+    {
+        $time = time();
+        $values = [
+            'platform'      => $platform,
+            'openid'        => $params['openid'],
+            'openname'      => isset($params['userinfo']['nickname']) ? $params['userinfo']['nickname'] : '',
+            'access_token'  => $params['access_token'],
+            'refresh_token' => $params['refresh_token'],
+            'expires_in'    => $params['expires_in'],
+            'logintime'     => $time,
+            'expiretime'    => $time + $params['expires_in'],
+        ];
+        $auth = \app\common\library\Auth::instance();
+
+        $auth->keeptime($keeptime);
+
+            Db::startTrans();
+            try {
+
+                $values['user_id'] = $user_id;
+                Third::create($values);
+                Db::commit();
+            } catch (PDOException $e) {
+                Db::rollback();
+                $auth->logout();
+                return false;
+            }
+
+            // 写入登录Cookies和Token
+            return $auth->direct($user_id);
+
+    }
+
+    public static function unbind($user_id)
+    {
+        $auth = \app\common\library\Auth::instance();
+        Db::startTrans();
+        try {
+
+            (new \app\admin\model\Third())->where(["user_id"=>$user_id])->delete();
+            Db::commit();
+        } catch (PDOException $e) {
+            Db::rollback();
+            $auth->logout();
+            return false;
+        }
+
+        // 写入登录Cookies和Token
+        return $auth->direct($user_id);
+
+    }
+
+
 }

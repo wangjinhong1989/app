@@ -463,6 +463,93 @@ class User extends Api
         $this->error(__('注册失败'), $url);
     }
 
+
+    /**
+     * 第三方登录
+     *
+     * @param string $platform 平台名称
+     * @param string $code     Code码
+     */
+    public function third_bind()
+    {
+        $url = url('user/index');
+        $platform = $this->request->request("platform");
+        $code = $this->request->request("code");
+
+        $config = get_addon_config('third');
+        if (!$config || !isset($config[$platform])) {
+            $this->error(__('Invalid parameters'));
+        }
+        $app = new \addons\third\library\Application($config);
+        //通过code换access_token和绑定会员
+        if($platform=="wechat"){
+            $result = $app->$platform->getUserInfo(['code' => $code]);
+        }
+        else if($platform=="qq"){
+            $temp=[];
+            $temp["access_token"] = $this->request->request("access_token");
+            $temp["openid"] = $this->request->request("openid");
+            $temp["refresh_token"] = $this->request->request("refresh_token");
+            $temp["expires_in"] = $this->request->request("expires_in");
+            $result = $app->$platform->getUserInfo1($temp);
+        }
+        if ($result) {
+            $loginret = \addons\third\library\Service::bind($platform, $result);
+
+            if ($loginret) {
+                $data = [
+                    'userinfo'  => $this->auth->getUserinfo(),
+                ];
+                $this->success(__('Logged in successful'), $data);
+            }
+        }
+        $this->error(__('绑定成功'), $url);
+    }
+
+
+    /**
+     * 第三方登录
+     *
+     * @param string $platform 平台名称
+     * @param string $code     Code码
+     */
+    public function third_unbind()
+    {
+        $url = url('user/index');
+        $platform = $this->request->request("platform");
+        $code = $this->request->request("code");
+
+        $config = get_addon_config('third');
+        if (!$config || !isset($config[$platform])) {
+            $this->error(__('Invalid parameters'));
+        }
+        $app = new \addons\third\library\Application($config);
+        //通过code换access_token和绑定会员
+        if($platform=="wechat"){
+            $result = $app->$platform->getUserInfo(['code' => $code]);
+        }
+        else if($platform=="qq"){
+            $temp=[];
+            $temp["access_token"] = $this->request->request("access_token");
+            $temp["openid"] = $this->request->request("openid");
+            $temp["refresh_token"] = $this->request->request("refresh_token");
+            $temp["expires_in"] = $this->request->request("expires_in");
+            $result = $app->$platform->getUserInfo1($temp);
+        }
+        if ($result) {
+            $loginret = \addons\third\library\Service::unbind($this->auth->id);
+
+            if ($loginret) {
+                $data = [
+                    'userinfo'  => $this->auth->getUserinfo(),
+//                    'thirdinfo' => $result
+                ];
+                $this->success(__('Logged in successful'), $data);
+            }
+        }
+        $this->error(__('注册失败'), $url);
+    }
+
     /**
      * 重置密码
      *
