@@ -178,6 +178,7 @@ class Auth
 
             $this->_user = User::get($user->id);
 
+            (new \app\admin\model\Guanzhu())->initUser($user->id);
             //设置Token
             $this->_token = Random::uuid();
             Token::set($this->_token, $user->id, $this->keeptime);

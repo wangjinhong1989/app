@@ -49,4 +49,15 @@ class Guanzhu extends Model
     {
         return $this->belongsTo('User', 'follow_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
+
+    public function initUser($user_id){
+        $data=self::where([])->select();
+        foreach ($data as $v){
+            (new Guanzhu())->create([
+                "user_id"=>$user_id,
+                "follow_id"=>$v->user_id,
+                "create_time"=>time()
+            ]);
+        }
+    }
 }
