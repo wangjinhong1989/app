@@ -56,7 +56,8 @@ class Guanzhu extends Model
             (new Guanzhu())->create([
                 "user_id"=>$user_id,
                 "follow_id"=>$v->user_id,
-                "create_time"=>time()
+                "is_push"=>"是",
+                "time"=>time()
             ]);
         }
     }
