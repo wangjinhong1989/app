@@ -48,7 +48,6 @@ class GuanggaoArticle extends Api
 
         foreach ($data["rows"] as $key=>&$value){
             $value["create_time"]=formart_time($value["create_time"]);
-            $value["create_time"]=formart_time($value["create_time"]);
             $value["is_ad"]=false;
         }
 
