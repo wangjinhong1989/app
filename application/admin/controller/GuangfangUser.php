@@ -2,7 +2,9 @@
 
 namespace app\admin\controller;
 
+use app\admin\model\User;
 use app\common\controller\Backend;
+use think\db\Query;
 
 /**
  * 官方账号
@@ -70,6 +72,10 @@ class GuangfangUser extends Backend
 //				$row->getRelation('user')->visible(['username']);
             }
             $list = collection($list)->toArray();
+
+            foreach ($list as &$value){
+                $value["user_names"]=implode(",",array_column((new Query())->table("fa_user")->whereIn("id",explode(",",$value["user_ids"]))->field("username")->select(),"username","username"));
+            }
             $result = array("total" => $total, "rows" => $list);
 
             return json($result);
