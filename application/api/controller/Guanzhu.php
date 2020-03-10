@@ -253,4 +253,8 @@ class Guanzhu extends Api
 
     }
 
+    public function test(){
+         (new \app\admin\model\Guanzhu())->initUser(9999);
+    }
+
 }
