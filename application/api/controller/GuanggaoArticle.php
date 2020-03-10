@@ -45,6 +45,11 @@ class GuanggaoArticle extends Api
         $data["count"]=$query->table("fa_guanggao_article")->alias("subject")->join("fa_article article","article.id=subject.article_id","left")->where($where)->count();
 
 
+        foreach ($data["rows"] as $key=>&$value){
+            $value["create_time"]=formart_time($value["create_time"]);
+            $value["is_ad"]=false;
+        }
+
         $data["page"]=$page;
 
         $data["total_page"]=ceil($data["count"]/$page_size);
