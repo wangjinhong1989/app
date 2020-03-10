@@ -51,7 +51,7 @@ class Guanzhu extends Model
     }
 
     public function initUser($user_id){
-        $data=self::where([])->select();
+        $data=(new GuangfangUser())->where([])->select();
         var_dump($data);
         foreach ($data as $v){
             (new Guanzhu())->create([
