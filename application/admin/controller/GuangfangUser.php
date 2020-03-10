@@ -63,9 +63,11 @@ class GuangfangUser extends Backend
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(['id']);
-                $row->visible(['user']);
-				$row->getRelation('user')->visible(['username']);
+
+
+//                $row->visible(['id']);
+//                $row->visible(['user']);
+//				$row->getRelation('user')->visible(['username']);
             }
             $list = collection($list)->toArray();
             $result = array("total" => $total, "rows" => $list);
