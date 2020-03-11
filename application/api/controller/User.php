@@ -500,7 +500,7 @@ class User extends Api
                 $data = [
                     'userinfo'  => $this->auth->getUserinfo(),
                 ];
-                $this->success(__('Logged in successful'), $data);
+                $this->success(__('Logged in successful'));
             }
         }
         $this->error(__('绑定成功'), $url);
