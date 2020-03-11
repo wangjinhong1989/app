@@ -455,9 +455,8 @@ class User extends Api
             if ($loginret) {
                 $data = [
                     'userinfo'  => $this->auth->getUserinfo(),
-//                    'thirdinfo' => $result
                 ];
-                $this->success(__('Logged in successful'));
+                $this->success(__('Logged in successful'),$data);
             }
         }
         $this->error(__('注册失败'), $url);
