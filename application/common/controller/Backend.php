@@ -475,7 +475,7 @@ class Backend extends Controller
         }
         $list = [];
         $total = $this->model->where($where)->count();
-        echo $this->model->getLastSql();
+       // echo $this->model->getLastSql();
         if ($total > 0) {
             if (is_array($adminIds)) {
                 $this->model->where($this->dataLimitField, 'in', $adminIds);
