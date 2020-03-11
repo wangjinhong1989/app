@@ -48,6 +48,7 @@ class ArticleManager extends Api
             $where["article.articletype_id"]=["in",explode(",",$articletype_id)];
         }
 
+        $where["article.articletype_id"]=["neq",2];
         // keyword 检索. 关键字检索.
 
         $keyword=$this->request->request("keyword","");
@@ -215,6 +216,201 @@ class ArticleManager extends Api
 
 
     }
+
+
+    /**
+     * 首页
+     *
+     */
+    public function Lists_kuaixun()
+    {
+        $page=$this->request->request("page",1);
+        $page_size=$this->request->request("page_size",10);
+        $offset=($page-1)*$page_size;
+
+        if($offset<0){
+            $offset=0;
+        }
+        $data=[];
+        $where=[];
+        $where["article.status"]=["eq","显示"];
+//        $where["articletype.status"]=["eq","显示"];
+        $search=new SearchHistory();
+        // 需要查找的类型. 可以设置多个.
+        $articletype_id=$this->request->request("articletype_id","");
+        if($articletype_id){
+
+        }
+
+        $where["article.articletype_id"]=["eq",2];
+        // keyword 检索. 关键字检索.
+
+        $keyword=$this->request->request("keyword","");
+        if($keyword){
+            $where["article.title|article.description|article.content"]=["like","%".$keyword."%"];
+
+            if(!empty($this->auth)){
+                //  写入关键字检索.
+                $history=["user_id"=>$this->auth->id, "word"=>$keyword, "type"=>"标题,描述,内容"];
+                $search->save_data($history);
+            }
+        }
+
+
+        // 单独查询.
+        $title=$this->request->request("title","");
+        if($title){
+            $where["article.title"]=["like","%".$title."%"];
+            if(!empty($this->auth)){
+                $history=["user_id"=>$this->auth->id, "word"=>$title, "type"=>"标题"];
+                $search->save_data($history);
+            }
+        }
+        $description=$this->request->request("description","");
+        if($description){
+            $where["article.description"]=["like","%".$description."%"];
+            if(!empty($this->auth)) {
+                $history = ["user_id" => $this->auth->id, "word" => $description, "type" => "描述"];
+                $search->save_data($history);
+            }
+        }
+        $content=$this->request->request("content","");
+        if($content){
+            $where["article.content"]=["like","%".$content."%"];
+            if(!empty($this->auth)){
+                $history=["user_id"=>$this->auth->id, "word"=>$content, "type"=>"内容"];
+                $search->save_data($history);
+            }
+        }
+        // 查询某个人的文章。
+        $user_id=$this->request->request("user_id","");
+        if($user_id){
+            $where["article.user_id"]=["eq",$user_id];
+        }
+
+        // 查询某个人的文章。
+        $username=$this->request->request("username","");
+        if($username){
+            $where["user.username"]=["like","%".$username."%"];
+        }
+
+        // 查询我关注的人的文章列表.
+        $my_follow=$this->request->request("my_follow",'');
+        if($my_follow){
+            $my_follow=(new \app\admin\model\Guanzhu())->field("follow_id")->where(["user_id"=>$this->auth->id])->select();
+            $temp=array();
+            foreach ($my_follow as $value){
+                $temp[]=$value['follow_id'];
+            }
+            if(empty($temp)){
+                $temp=[0];
+            }
+
+            $where["article.user_id"]=["in",$temp];
+
+        }
+
+        $whereExp="";
+        $label_ids=$this->request->request("label_ids",'');
+        if($label_ids){
+            if(!empty($this->auth)) {
+                $history = ["user_id" => $this->auth->id, "word" => $label_ids, "type" => "标签"];
+                $search->save_data($history);
+            }
+            $label_ids=explode(",",$label_ids);
+            foreach ($label_ids as $k=>$v){
+
+                if($k!=count($label_ids)-1){
+                    $whereExp=$whereExp.'find_in_set('.$v.',article.label_ids) or ';
+                }else {
+                    $whereExp=$whereExp.'find_in_set('.$v.',article.label_ids)';
+                }
+            }
+
+        }else
+            $whereExp=" 1 ";
+
+        // 请求的标签.
+
+        $query=new Query();
+        $data["rows"]=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.count_lihao,kong_hao.count_likong")
+            ->where($where)
+            ->whereExp('',$whereExp)
+            ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
+            ->join("fa_user user","user.id=article.user_id","left")
+            ->join("fa_kong_hao kong_hao","kong_hao.article_id=article.id","left")
+            ->limit($offset,$page_size)->order("article.weigh desc")->select();
+
+
+
+        $data["count"]=$query->table("fa_article")->alias("article")
+            ->where($where)
+            ->whereExp('',$whereExp)
+            ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
+            ->join("fa_user user","user.id=article.user_id","left")
+            ->count();
+
+
+        foreach ($data["rows"] as $key=>&$value){
+            $value["create_time"]=formart_time($value["create_time"]);
+
+            $value["count_lihao"]=$value["count_lihao"]==null?0:$value["count_lihao"];
+            $value["count_likong"]=$value["count_likong"]==null?0:$value["count_likong"];
+            $data["rows"][$key]["count_lihao"]=$data["rows"][$key]["count_lihao"]+$data["rows"][$key]["lh_count"];
+            $data["rows"][$key]["count_likong"]=$data["rows"][$key]["count_likong"]+$data["rows"][$key]["lk_count"];
+            $value["is_ad"]=false;
+        }
+
+
+        if($data["rows"]){
+            if($page==1){
+                $need_banner=$this->request->request("need_banner",0);
+                if($need_banner){
+
+                    $model=    new Query();
+                    $time=time();
+
+                    $lists=$model->table("fa_ad_article")->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->orderRaw("rand()")->limit(0,1)->select();
+                    // 只在头条哪儿展示5个广告.
+                    if(!empty($lists)&&$articletype_id==1){
+                        $lists[0]["label_ids"]="";
+                        $lists[0]["user_id"]="";
+                        $lists[0]["articletype_id"]="";
+                        $lists[0]["come_from"]="";
+                        $lists[0]["articletype_name"]="";
+                        $lists[0]["username"]="";
+                        $lists[0]["avatar"]="";
+                        $lists[0]["is_ad"]=true;
+                        $lists[0]["img"]=$lists[0]["images"];
+                        $lists[0]["create_time"]=formart_time($lists[0]["begin_time"]);
+                        $dataTemp=[];
+                        //
+                        foreach ($data["rows"] as $key=>$row){
+                            array_push($dataTemp,$row);
+                            if($key==4){
+                                array_push($dataTemp,$lists[0]);
+                            }
+
+                        }
+
+                        $data["rows"]=$dataTemp;
+                    }
+
+
+                }
+            }
+        }
+
+        // 结束.
+
+        $data["page"]=$page;
+
+        $data["total_page"]=ceil($data["count"]/$page_size);
+        $this->success("成功",$data);
+
+
+    }
+
 
 
 
