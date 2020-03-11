@@ -36,7 +36,7 @@ class SubjectNew extends Api
 
 
         $query=new Query();
-        $data["rows"]=$query->table("fa_guanggao_article")->alias("subject")->where($where)
+        $data["rows"]=$query->table("fa_subject_new")->alias("subject")->where($where)
             ->field("article.*,user.username,user.avatar")
             ->join("fa_article article","article.id=subject.article_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
