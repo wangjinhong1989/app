@@ -924,6 +924,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
             $data["is_reply"]=$this->request->request('is_reply','是');
             // 是否原创
             $data["is_mine"]=$this->request->request('is_mine','是');
+            $data["is_recommendation"]=$this->request->request('is_recommendation','否');
             // 默认文章类型.  资讯
             $data["articletype_id"]=intval($this->request->request('articletype_id','1'));
             // 标签ID .

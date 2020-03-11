@@ -230,7 +230,7 @@ class User extends Api
         $bio = $this->request->request('bio');
         $gender = $this->request->request('gender',0);
         $birthday = $this->request->request('birthday');
-        $avatar = $this->request->request('avatar', '', 'trim,strip_tags,htmlspecialchars');
+        $avatar = $this->request->request('avatar', '');
         if ($username) {
             $exists = \app\common\model\User::where('username', $username)->where('id', '<>', $this->auth->id)->find();
             if ($exists) {
@@ -261,9 +261,12 @@ class User extends Api
 
         }
 
+        if(!$bio)
         $user->bio = $bio;
+        if(!$avatar)
         $user->avatar = $avatar;
         $user->gender = $gender;
+        if(!$birthday)
         $user->birthday = $birthday;
         $user->save();
         $data = ['userinfo' => $this->auth->getUserinfo()];
