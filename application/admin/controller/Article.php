@@ -64,6 +64,7 @@ class Article extends Backend
                     ->order($sort, $order)
                     ->count();
 
+                echo $this->model->getLastSql();
                 $list = $this->model
                     ->with(['articletype','label','user'])
                     ->where($where)
