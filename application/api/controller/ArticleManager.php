@@ -444,11 +444,8 @@ class ArticleManager extends Api
         $where["article.status"]=["eq","显示"];
         $where["articletype.status"]=["eq","显示"];
 
-        // 需要查找的类型. 可以设置多个.
-        $articletype_id=$this->request->request("articletype_id","");
-        if($articletype_id){
-            $where["article.articletype_id"]=["in",explode(",",$articletype_id)];
-        }
+
+        $where["article.articletype_id"]=["neq",2];
 
         // keyword 检索. 关键字检索.
 
