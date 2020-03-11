@@ -55,8 +55,8 @@ class Article extends Backend
             }
             list($where, $sort, $order, $offset, $limit) = $this->buildparams("title,user.username,id");
 
-
-            if($this->request->get("n_kuaixun")){
+            $temp=$this->request->request("n_kuaixun");
+            if($temp){
                 $total = $this->model
                     ->with(['articletype','label','user'])
                     ->where($where)
