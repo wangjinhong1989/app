@@ -823,8 +823,8 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
             // 是否关注了该用户.
             $detail["create_time"]=formart_time($detail["create_time"]);
 
-            if(!empty($this->auth->id)){
-                $guanzhu=(new \app\admin\model\Guanzhu())->where(["user_id"=>$user_id,"follow_id"=>$article->user_id])->find();
+            if($this->auth->id){
+                $guanzhu=(new \app\admin\model\Guanzhu())->where(["user_id"=>$this->auth->id,"follow_id"=>$article->user_id])->find();
                 if($guanzhu){
                     $detail["is_guanzhu"]="是";
                 }else
