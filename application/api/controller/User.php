@@ -457,7 +457,7 @@ class User extends Api
                     'userinfo'  => $this->auth->getUserinfo(),
 //                    'thirdinfo' => $result
                 ];
-                $this->success(__('Logged in successful'), $data);
+                $this->success(__('Logged in successful'));
             }
         }
         $this->error(__('注册失败'), $url);
