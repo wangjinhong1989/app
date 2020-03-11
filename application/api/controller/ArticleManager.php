@@ -478,7 +478,7 @@ class ArticleManager extends Api
         }
 
         // 查询某个人的文章。
-        $is_recommendation=$this->request->request("is_recommendation","");
+        $is_recommendation="是";
         if($is_recommendation){
             $where["article.is_recommendation"]=["eq",$is_recommendation];
         }
