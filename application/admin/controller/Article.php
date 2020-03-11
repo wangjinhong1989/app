@@ -54,39 +54,18 @@ class Article extends Backend
                 return $this->selectpage();
             }
             list($where, $sort, $order, $offset, $limit) = $this->buildparams("title,user.username,id");
-
-            $temp=$this->request->request("n_kuaixun");
-            if($temp){
-                $total = $this->model
-                    ->with(['articletype','label','user'])
-                    ->where($where)
-                    ->whereNotIn("articletype_id",[2])
-                    ->order($sort, $order)
-                    ->count();
-
-                echo $this->model->getLastSql();
-                $list = $this->model
-                    ->with(['articletype','label','user'])
-                    ->where($where)
-                    ->whereNotIn("articletype_id",[2])
-                    ->order($sort, $order)
-                    ->limit($offset, $limit)
-                    ->select();
-            }else {
-                $total = $this->model
+            $total = $this->model
                     ->with(['articletype','label','user'])
                     ->where($where)
                     ->order($sort, $order)
                     ->count();
 
-                $list = $this->model
+            $list = $this->model
                     ->with(['articletype','label','user'])
                     ->where($where)
                     ->order($sort, $order)
                     ->limit($offset, $limit)
                     ->select();
-            }
-
 
             foreach ($list as $row) {
                 $row->visible(['id','title','description','status','come_from',"top",'label_ids','url','img','read_count','show_count']);
