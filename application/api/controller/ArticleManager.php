@@ -46,6 +46,8 @@ class ArticleManager extends Api
         $articletype_id=$this->request->request("articletype_id","");
         if($articletype_id){
             $where["article.articletype_id"]=[["in",explode(",",$articletype_id)],["neq",2]];
+        }else {
+            $where["article.articletype_id"]=[["neq",2]];
         }
 
         // keyword 检索. 关键字检索.
