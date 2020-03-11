@@ -38,7 +38,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         },
         add: function () {
                 $("#c-article_id").data("params", function (obj) {
-                    return {filter: {"articletype.name":"快讯,关注"},op: {"articletype.name":"NOT IN"}};
+                    return {custom: {articletype_id: ["NOT IN",2]}} //{filter: {"articletype.name":"快讯,关注"},op: {"articletype.name":"NOT IN"}};
                 });
                 Controller.api.bindevent();
 
