@@ -37,7 +37,11 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             Table.api.bindevent(table);
         },
         add: function () {
-            Controller.api.bindevent();
+                $("#c-article_id").data("params", function (obj) {
+                    return {filter: {"articletype.name":"快讯,关注"},op: {"articletype.name":"NOT IN"}};
+                });
+                Controller.api.bindevent();
+
         },
         edit: function () {
             Controller.api.bindevent();
@@ -48,5 +52,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             }
         }
     };
+
+
     return Controller;
 });
