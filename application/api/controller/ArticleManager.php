@@ -147,6 +147,7 @@ class ArticleManager extends Api
             ->limit($offset,$page_size)->order("article.weigh desc")->select();
 
 
+        dd($query->getLastSql());
 
         $data["count"]=$query->table("fa_article")->alias("article")
             ->where($where)
