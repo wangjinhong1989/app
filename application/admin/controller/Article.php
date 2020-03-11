@@ -60,14 +60,14 @@ class Article extends Backend
                 $total = $this->model
                     ->with(['articletype','label','user'])
                     ->where($where)
-                    ->where(["article.articletype_id"=>["neq",2]])
+                    ->whereNotIn("articletype_id",[2])
                     ->order($sort, $order)
                     ->count();
 
                 $list = $this->model
                     ->with(['articletype','label','user'])
                     ->where($where)
-                    ->where(["article.articletype_id"=>["neq",2]])
+                    ->whereNotIn("articletype_id",[2])
                     ->order($sort, $order)
                     ->limit($offset, $limit)
                     ->select();
