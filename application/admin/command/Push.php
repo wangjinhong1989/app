@@ -150,7 +150,19 @@ class Push extends Command
     public function push_data_new($value){
 
         switch ($value["push_type_id"]){
+            case 1:
+                $this->push_method_new($value);
+                break;
             case 2:
+                $this->push_method_new($value);
+                break;
+            case 3:
+                $this->push_method_new($value);
+                break;
+            case 4:
+                $this->push_method_new($value);
+                break;
+            case 5:
                 $this->push_method_new($value);
                 break;
         }
