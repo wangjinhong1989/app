@@ -133,23 +133,52 @@ class Push extends Command
 
         $query = new Query();
 
-        $query->table("fa_push_list")->where(["status"=>0])->chunk(100, function ($list) {
+        $query->table("fa_push_list")->where(["status"=>"未推送"])->chunk(100, function ($list) {
 
             // 需要推送的列表.
             foreach ($list as  $l){
-                $this->push_data($l);
-
+                $this->push_data_new($l);
                 $model= new PushList();
                 $push=$model->where(["id"=>$l["id"]])->find();
-                $push->status=1;
+                $push->status="已推送";
                 $push->save();
 
-                dd($l["id"]);
             }
         });
     }
 
+    public function push_data_new($value){
 
+        switch ($value["push_type_id"]){
+            case 2:
+                $this->push_method_new($value);
+                break;
+        }
+
+    }
+
+    public function push_method_new($value,$user_id){
+        $user=(new User())->where(["id"=>$user_id])->find();
+        $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
+
+        try {
+            $back=$client->push()
+                ->setPlatform(['ios', 'android'])
+                ->addAlias($user["id"].$user["username"])
+                ->iosNotification($value["content"],['extras' => $value])
+                ->addAndroidNotification($value["content"],$value["content"],null,$value)
+                ->send();
+            $model=new SystemMessage();
+            $model->create([
+                "user_id"=>$user["id"],
+                "status"=>"未读",
+                "time"=>time(),
+                "content"=>$value["content"]
+            ]);
+        } catch (\JPush\Exceptions\JPushException $e) {
+            print $e;
+        }
+    }
     public function push_data($value){
 
         $typeModel=new PushType();
