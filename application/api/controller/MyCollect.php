@@ -7,7 +7,6 @@ use app\admin\model\Articletype;
 use app\admin\model\Shoucang;
 use app\admin\model\Article;
 use app\common\controller\Api;
-use think\db\Query;
 
 /**
  * 首页接口
@@ -32,10 +31,10 @@ class MyCollect extends Api
 
         $data=[];
 
-        $model = (new Query());
-        $data["rows"] = $model->table("fa_shoucang")->alias('shoucang')->field("article.*")->join("fa_article article","article.id=shoucang.article_id")->limit($offset,$page_size)->where(['shoucang.user_id' => $user_id])->where('article.id=shoucang.article_id')->select();
+        $model = (new Shoucang());
+        $data["rows"] = $model->alias('shoucang')->with(['article'])->limit($offset,$page_size)->where(['shoucang.user_id' => $user_id])->where('article.id=shoucang.article_id')->select();
 
-        $data["count"] = $model->table("fa_shoucang")->alias('shoucang')->field("article.*")->join("fa_article article","article.id=shoucang.article_id")->where(['shoucang.user_id' => $user_id])->where('article.id=shoucang.article_id')->count();
+        $data["count"] = $model->alias('shoucang')->with(['article'])->where(['shoucang.user_id' => $user_id])->where('article.id=shoucang.article_id')->count();
 
         $data["page"]=$page;
 
@@ -47,14 +46,8 @@ class MyCollect extends Api
             if($user){
                 $v["article"]["author_name"]=$user->username;
                 $v["article"]["author_avatar"]=$user->avatar;
-                $v["article"]["create_time"]=formart_time($v["article"]["create_time"]);
-                dd("aaa");
-                dd($v["article"]["create_time"]);
-                dd(formart_time($v["article"]["create_time"]));
-
+                $v["article"]["create_time"]=formart_time($v["article"]->create_time);
             }
-
-
         }
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功", $data);
