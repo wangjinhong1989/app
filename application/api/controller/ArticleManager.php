@@ -974,9 +974,11 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
             $pushModel=new PushList();
 
             $temp=[
-                "user_id"=>0,
+                "user_id"=>$this->auth->id,
                 "push_type_id"=>7,
-                "content"=>\GuzzleHttp\json_encode($test),
+                "user_ids"=>"all",// 给所有人发。
+                "content"=>$this->auth->username."刚刚发布了文章，".$data["title"],
+                "param_json"=>json_encode(["article_id"=>$test->id]),
                 "create_time"=>time()
             ];
             $pushModel->create($temp);
