@@ -151,19 +151,19 @@ class Push extends Command
 
         switch ($value["push_type_id"]){
             case 1:
-                $this->push_method_new($value);
+                $this->push_method_new($value,$value["user_ids"]);
                 break;
             case 2:
-                $this->push_method_new($value);
+                $this->push_method_new($value,$value["user_ids"]);
                 break;
             case 3:
-                $this->push_method_new($value);
+                $this->push_method_new($value,$value["user_ids"]);
                 break;
             case 4:
-                $this->push_method_new($value);
+                $this->push_method_new($value,$value["user_ids"]);
                 break;
             case 5:
-                $this->push_method_new($value);
+                $this->push_method_new($value,$value["user_ids"]);
                 break;
         }
 
