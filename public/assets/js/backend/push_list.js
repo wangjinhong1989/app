@@ -27,9 +27,10 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'id', title: __('Id')},
                         {field: 'user_id', title: __('User_id')},
                         {field: 'push_type_id', title: __('Push_type_id')},
-                        {field: 'create_time', title: __('Create_time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
+                        {field: 'content', title: __('Content')},
+                        {field: 'create_time', title: __('Create_time'), operate:'RANGE', addclass:'datetimerange'},
+                        {field: 'status', title: __('Status'), searchList: {"未推送":__('未推送'),"已推送":__('已推送')}, formatter: Table.api.formatter.status},
                         {field: 'user.username', title: __('User.username')},
-                        {field: 'pushtype.type', title: __('Pushtype.type')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
