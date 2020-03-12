@@ -978,8 +978,7 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
                 "push_type_id"=>7,
                 "user_ids"=>"all",// 给所有人发。
                 "content"=>$this->auth->username."刚刚发布了文章，".$data["title"],
-                "param_json"=>json_encode(["article_id"=>$test->id]),
-                "create_time"=>time()
+                "param_json"=>json_encode(["article_id"=>$test->id])
             ];
             $pushModel->create($temp);
 
