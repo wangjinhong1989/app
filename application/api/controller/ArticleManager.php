@@ -674,7 +674,7 @@ class ArticleManager extends Api
 
         foreach ($lists as &$l){
 
-            $l["create_time"]=date("Y-m-d H:i:s",$l["time"]);
+            $l["create_time"]=formart_time($l["time"]);
         }
 
 
