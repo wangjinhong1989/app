@@ -47,6 +47,10 @@ class MyCollect extends Api
                 $v["article"]["author_name"]=$user->username;
                 $v["article"]["author_avatar"]=$user->avatar;
                 $v["article"]["create_time"]=formart_time($v["article"]["create_time"]);
+                dd("aaa");
+                dd($v["article"]["create_time"]);
+                dd(formart_time($v["article"]["create_time"]));
+
             }
 
 
