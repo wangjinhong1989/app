@@ -43,6 +43,7 @@ class MyCollect extends Api
             $user=(new \app\admin\model\User())->where(["id"=>$v["article"]["user_id"]])->find();
             $v["article"]["author_name"]="";
             $v["article"]["author_avatar"]="";
+            $v["article"]["create_time"]=formart_time($v["article"]->create_time);
             if($user){
                 $v["article"]["author_name"]=$user->username;
                 $v["article"]["author_avatar"]=$user->avatar;
