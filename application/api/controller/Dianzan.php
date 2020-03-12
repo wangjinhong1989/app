@@ -152,14 +152,15 @@ class Dianzan extends Api
                 'user_id' => $user_id, 'at_id' => $reply_id, 'time' => time()
             ]);
 
-
+            // 点赞的信息列表。
             $pushModel=new PushList();
 
             $temp=[
-                "user_id"=>0,
+                "user_id"=>$this->auth->id,
                 "push_type_id"=>4,
-                "content"=>\GuzzleHttp\json_encode($test),
-                "create_time"=>time()
+                "user_ids"=>$reply->user_id,// 给所有人发。
+                "content"=>$this->auth->username."给您点赞了",
+                "param_json"=>json_encode($reply)
             ];
             $pushModel->create($temp);
 

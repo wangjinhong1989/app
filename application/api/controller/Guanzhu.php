@@ -199,14 +199,15 @@ class Guanzhu extends Api
                 'user_id' => $user_id, 'follow_id' => $follow_id, 'time' => time()
             ]);
 
-            //  添加关注
+            // 点赞的信息列表。
             $pushModel=new PushList();
 
             $temp=[
-                "user_id"=>0,
+                "user_id"=>$this->auth->id,
                 "push_type_id"=>2,
-                "content"=>\GuzzleHttp\json_encode($test),
-                "create_time"=>time()
+                "user_ids"=>$follow_id,// 给所有人发。
+                "content"=>$this->auth->username."关注了您",
+                "param_json"=>json_encode(["user_id"=>$user_id])
             ];
             $pushModel->create($temp);
 

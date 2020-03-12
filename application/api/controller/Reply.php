@@ -250,15 +250,18 @@ class Reply extends Api
             ]);
 
 
+            // 点赞的信息列表。
             $pushModel=new PushList();
 
             $temp=[
-                "user_id"=>0,
+                "user_id"=>$this->auth->id,
                 "push_type_id"=>1,
-                "content"=>\GuzzleHttp\json_encode($test),
-                "create_time"=>time()
+                "user_ids"=>$article->user_id,//
+                "content"=>$this->auth->username."评论了您的文章",
+                "param_json"=>json_encode($test)
             ];
             $pushModel->create($temp);
+
 
 
             // 查找作者。
@@ -371,15 +374,20 @@ class Reply extends Api
             $flag->reply_flag=1;
             $flag->save();
             $reply=$model->where(["id"=>$id])->find();
+
+            // 点赞的信息列表。
             $pushModel=new PushList();
 
             $temp=[
-                "user_id"=>0,
-                "push_type_id"=>3,
-                "content"=>\GuzzleHttp\json_encode($reply),
-                "create_time"=>time()
+                "user_id"=>$this->auth->id,
+                "push_type_id"=>1,
+                "user_ids"=>$reply->user_id,//
+                "content"=>$this->auth->username."回复了您",
+                "param_json"=>json_encode($reply)
             ];
             $pushModel->create($temp);
+
+
 
 
             return $this->success();
