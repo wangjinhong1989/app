@@ -46,7 +46,6 @@ class MyCollect extends Api
             if($user){
                 $v["article"]["author_name"]=$user->username;
                 $v["article"]["author_avatar"]=$user->avatar;
-                $v["article"]["create_time"]=formart_time($v["article"]->create_time);
             }
         }
         $data["total_page"]=ceil($data["count"]/$page_size);
