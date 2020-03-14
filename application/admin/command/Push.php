@@ -148,7 +148,41 @@ class Push extends Command
     }
 
     public function push_data_new($value){
+        $query = new Query();
 
+        // 推送给所有人
+        if($value["user_ids"]=="all"){
+
+            $query->table("fa_user")->where(["status"=>"normal"])->chunk(100, function ($list,$value) {
+                // 需要推送的列表.
+                $temp=[];
+                foreach ($list as  $l){
+                    $temp[]="user".$l["id"];
+                }
+                if(!empty($temp))
+                $this->push_method_new($value,$temp);
+            });
+
+        }else if($value["user_ids"]=="0"&&$value["push_type_id"]==7){
+
+            $query->table("fa_guanzhu")->where(["follow_id"=>$value["user_id"]])->chunk(100, function ($list,$value) {
+                // 需要推送的列表.
+                $temp=[];
+                foreach ($list as  $l){
+                    $temp[]="user".$l["id"];
+                }
+                if(!empty($temp))
+                    $this->push_method_new($value,$temp);
+            });
+        }else {
+            $this->push_method_new($value,"user".$value["user_ids"]);
+        }
+
+
+
+    }
+
+    protected function SwitchMethod($value){
         switch ($value["push_type_id"]){
             case 1:
                 $this->push_method_new($value,$value["user_ids"]);
@@ -165,11 +199,45 @@ class Push extends Command
             case 5:
                 $this->push_method_new($value,$value["user_ids"]);
                 break;
+            case 5:
+                $this->push_method_new($value,$value["user_ids"]);
+                break;
         }
-
     }
 
-    public function push_method_new($value,$user_id){
+    public function push_method_new($value,$alias){
+
+        $data=[
+            "type"=>$value["push_type_id"],
+            "data"=>$value["param_json"]
+        ];
+
+        $user=(new User())->where(["id"=>$user_id])->find();
+        $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
+
+        try {
+
+            $back=$client->push()
+                    ->setPlatform(['ios', 'android'])
+                    ->addAlias($alias)
+                    ->iosNotification($value["content"],['extras' => $data])
+                    ->addAndroidNotification($value["content"],$value["content"],null,$data)
+                    ->send();
+            $model=new SystemMessage();
+            $model->create([
+                "user_id"=>$user["id"],
+                "status"=>"未读",
+                "time"=>time(),
+                "content"=>$value["content"]
+            ]);
+
+        } catch (\JPush\Exceptions\JPushException $e) {
+            print $e;
+        }
+    }
+
+
+    public function push_all($value,$user_id){
 
         $data=[
             "type"=>$value["push_type_id"],
@@ -182,7 +250,7 @@ class Push extends Command
         try {
             $back=$client->push()
                 ->setPlatform(['ios', 'android'])
-                ->addAlias($user["id"].$user["username"])
+                ->addAlias("user".$user["id"])
                 ->iosNotification($value["content"],['extras' => $data])
                 ->addAndroidNotification($value["content"],$value["content"],null,$data)
                 ->send();
@@ -197,6 +265,7 @@ class Push extends Command
             print $e;
         }
     }
+
     public function push_data($value){
 
         $typeModel=new PushType();
