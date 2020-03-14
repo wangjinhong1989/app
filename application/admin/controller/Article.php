@@ -139,7 +139,7 @@ class Article extends Backend
 
                     //dd($test);
 
-                    $pushModel=new PushList();
+                    $pushModel=new \app\admin\model\PushList();
 
                     $user=User::get($params["user_id"]);
                     $temp=[
