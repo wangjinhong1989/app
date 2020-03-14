@@ -37,7 +37,7 @@ class SystemMessage extends Api
         // 结束.
 
         foreach ($data["rows"] as &$value){
-            $value["create_time"]=formart_time($value["create_time"]);
+            $value["time"]=formart_time($value["create_time"]);
         }
 
         $flag=(new \app\admin\model\FlagMessage())->where(["user_id"=>$this->auth->id])->find();
