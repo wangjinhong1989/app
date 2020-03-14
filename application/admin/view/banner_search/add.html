@@ -44,6 +44,18 @@
             <input id="c-end_time" data-rule="required" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[end_time]" type="text" value="{:date('Y-m-d H:i:s')}">
         </div>
     </div>
+        <div class="form-group">
+            <label class="control-label col-xs-12 col-sm-2">{:__('链接类型')}:</label>
+            <div class="col-xs-12 col-sm-8">
+
+                <select  id="c-url_type" data-rule="required" class="form-control selectpicker" name="row[url_type]">
+                    {foreach name="urlTypeList" item="vo"}
+                        <option value="{$key}" {in name="key" value="外链"}selected{/in}>{$vo}</option>
+                    {/foreach}
+                </select>
+
+            </div>
+        </div>
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('链接地址')}:</label>
         <div class="col-xs-12 col-sm-8">
@@ -56,18 +68,7 @@
             <input id="c-article_id" data-source="article/index" data-field="title" class="form-control selectpage" name="row[article_id]" type="text" value="">
         </div>
     </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('链接类型')}:</label>
-        <div class="col-xs-12 col-sm-8">
-                        
-            <select  id="c-url_type" data-rule="required" class="form-control selectpicker" name="row[url_type]">
-                {foreach name="urlTypeList" item="vo"}
-                    <option value="{$key}" {in name="key" value="外链"}selected{/in}>{$vo}</option>
-                {/foreach}
-            </select>
 
-        </div>
-    </div>
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('状态')}:</label>
         <div class="col-xs-12 col-sm-8">
