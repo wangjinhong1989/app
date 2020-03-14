@@ -232,8 +232,14 @@ class User extends Api
         $birthday = $this->request->request('birthday');
         $avatar = $this->request->request('avatar', '');
 
-        if(empty($avatar)||empty($bio)||empty($birthday)){
-            $this->error(__('参数为空存在空'));
+        if(empty($avatar)){
+            $this->error(__('参数为空存在空 头像未传'));
+        }
+        if(empty($bio)){
+            $this->error(__('参数为空存在空 签名未传'));
+        }
+        if(empty($birthday)){
+            $this->error(__('参数为空存在空 生日为空'));
         }
         if ($username) {
             $exists = \app\common\model\User::where('username', $username)->where('id', '<>', $this->auth->id)->find();
