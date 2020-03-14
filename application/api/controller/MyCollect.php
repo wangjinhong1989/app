@@ -71,8 +71,15 @@ class MyCollect extends Api
                 return $this->error(__('参数存在空'));
                 die;
             }
-            if (!Article::getById($article_id)) {
+
+            $article=Article::getById($article_id);
+            if (!$article) {
                 return $this->error(__('文章不存在'));
+            }
+
+
+            if($article->user_id==$this->auth->id){
+                return $this->error(__('不能收藏自己的文章'));
             }
 
             if ($model->where(["user_id"=>["=",$user_id],"article_id"=>["=",$article_id]])->find()) {
