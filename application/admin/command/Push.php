@@ -212,7 +212,6 @@ class Push extends Command
             "data"=>$value["param_json"]
         ];
 
-        $user=(new User())->where(["id"=>$user_id])->find();
         $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
 
         try {
@@ -223,13 +222,27 @@ class Push extends Command
                     ->iosNotification($value["content"],['extras' => $data])
                     ->addAndroidNotification($value["content"],$value["content"],null,$data)
                     ->send();
-            $model=new SystemMessage();
-            $model->create([
-                "user_id"=>$user["id"],
-                "status"=>"未读",
-                "time"=>time(),
-                "content"=>$value["content"]
-            ]);
+
+            if(is_array($alias)){
+                foreach ($alias as $v){
+                    $model=new SystemMessage();
+                    $model->create([
+                        "user_id"=>str_replace("user","",$v),
+                        "status"=>"未读",
+                        "time"=>time(),
+                        "content"=>$value["content"]
+                    ]);
+                }
+            }else {
+                $model=new SystemMessage();
+                $model->create([
+                    "user_id"=>str_replace("user","",$alias),
+                    "status"=>"未读",
+                    "time"=>time(),
+                    "content"=>$value["content"]
+                ]);
+            }
+
 
         } catch (\JPush\Exceptions\JPushException $e) {
             print $e;
