@@ -153,7 +153,7 @@ class Push extends Command
         // 推送给所有人
         if($value["user_ids"]=="all"){
 
-            $query->table("fa_user")->where(["status"=>"normal"])->chunk(100, function ($list,$value) {
+            $query->table("fa_user")->where(["status"=>"normal"])->chunk(100, function ($list) use($value) {
                 // 需要推送的列表.
                 $temp=[];
                 foreach ($list as  $l){
@@ -165,7 +165,7 @@ class Push extends Command
 
         }else if($value["user_ids"]=="0"&&$value["push_type_id"]==7){
 
-            $query->table("fa_guanzhu")->where(["follow_id"=>$value["user_id"]])->chunk(100, function ($list,$value) {
+            $query->table("fa_guanzhu")->where(["follow_id"=>$value["user_id"]])->chunk(100, function ($list) use($value){
                 // 需要推送的列表.
                 $temp=[];
                 foreach ($list as  $l){
