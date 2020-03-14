@@ -15,7 +15,7 @@ use think\view\driver\Think;
  */
 class UserManager extends Api
 {
-    protected $noNeedLogin = [];
+    protected $noNeedLogin = ["*"];
     protected $noNeedRight = ['*'];
 
     /**
