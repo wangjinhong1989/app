@@ -34,7 +34,12 @@ class UserManager extends Api
         $data=[];
         $where=[];
         // 不是自己.
-        $where["info.id"]=['<>',$this->auth->id];
+
+        $my_id=0;
+        if($this->auth->id){
+            $my_id=$this->auth->id;
+        }
+        $where["info.id"]=['<>',$my_id];
         $username=$this->request->request("username","");
         if($username){
             $where["info.username"]=['like',"%".$username."%"];
@@ -53,13 +58,13 @@ class UserManager extends Api
             $data["rows"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id ")
                 ->where($where)
                 ->whereNull("guanzhu.follow_id")
-                ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
+                ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
                 ->limit($offset,$page_size)->order("info.id desc")->group("info.id")->select();
 
             $data["count"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id")
                 ->where($where)
                 ->whereNull("guanzhu.follow_id")
-                ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
+                ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
                 ->group("info.id")->count();
             foreach ($data["rows"] as $k=>&$value){
 
@@ -84,12 +89,12 @@ class UserManager extends Api
         $query=new Query();
         $data["rows"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id ")
             ->where($where)
-            ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
+            ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
             ->limit($offset,$page_size)->order("info.id desc")->group("info.id")->select();
 
         $data["count"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id")
             ->where($where)
-            ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$this->auth->id." and guanzhu.follow_id=info.id" ,"left")
+            ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
             ->group("info.id")->count();
         foreach ($data["rows"] as $k=>&$value){
 
