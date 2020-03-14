@@ -2,6 +2,7 @@
 
 namespace app\admin\controller;
 
+use app\admin\model\User;
 use app\common\controller\Backend;
 use think\Db;
 
@@ -135,6 +136,21 @@ class Article extends Backend
                     }
                     $params["id"]=$this->model->getLastInsID();
                     $result = $this->model->allowField(true)->save($params);
+
+                    //dd($test);
+
+                    $pushModel=new PushList();
+
+                    $user=User::get($params["user_id"]);
+                    $temp=[
+                        "user_id"=>$params["user_id"],
+                        "push_type_id"=>7,
+                        "user_ids"=>"0",// 给关注我的人，发所有信息。
+                        "content"=>$user->username."刚刚发布了文章，".$params["title"],
+                        "param_json"=>json_encode(["article_id"=>$params["id"]])
+                    ];
+                    $pushModel->create($temp);
+
                     Db::commit();
                 } catch (ValidateException $e) {
                     Db::rollback();
