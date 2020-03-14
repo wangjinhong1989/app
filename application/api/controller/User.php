@@ -249,7 +249,7 @@ class User extends Api
 
             if($user->username!=$username){
                 $my_number=Cache::get("add_article_number".$this->auth->id.date("Y",time()));
-                if(empty($my_number)) $my_number=0;
+                if(empty($my_number)) $my_number=1;
                 else $my_number=intval($my_number);
 
                 $configUser=(new ConfigUser())->where([])->find();
