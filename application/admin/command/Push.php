@@ -170,6 +170,12 @@ class Push extends Command
     }
 
     public function push_method_new($value,$user_id){
+
+        $data=[
+            "type"=>$value["push_type_id"],
+            "data"=>$value["param_json"]
+        ];
+
         $user=(new User())->where(["id"=>$user_id])->find();
         $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
 
@@ -177,8 +183,8 @@ class Push extends Command
             $back=$client->push()
                 ->setPlatform(['ios', 'android'])
                 ->addAlias($user["id"].$user["username"])
-                ->iosNotification($value["content"],['extras' => $value])
-                ->addAndroidNotification($value["content"],$value["content"],null,$value)
+                ->iosNotification($value["content"],['extras' => $data])
+                ->addAndroidNotification($value["content"],$value["content"],null,$data)
                 ->send();
             $model=new SystemMessage();
             $model->create([
