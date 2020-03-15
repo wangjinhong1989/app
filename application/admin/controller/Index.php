@@ -5,6 +5,7 @@ namespace app\admin\controller;
 use app\admin\model\AdminLog;
 use app\common\controller\Backend;
 use think\Config;
+use think\db\Query;
 use think\Hook;
 use think\Validate;
 
@@ -49,6 +50,23 @@ class Index extends Backend
         $this->view->assign('fixedmenu', $fixedmenu);
         $this->view->assign('referermenu', $referermenu);
         $this->view->assign('title', __('Home'));
+
+
+        //总用户数
+        $user_total= (new Query())->table("fa_user")->where([])->count();
+
+        $article_total= (new Query())->table("fa_article")->where([])->count();
+
+
+        $time=date("Y-m-d 00:00:00",time());
+        $start_time=strtotime($time);
+        $end_time=strtotime($time)+24*3600;
+
+        $article_total_today= (new Query())->table("fa_article")->whereBetween("createtime","$start_time and $end_time ")->count();
+
+
+        $user_total_today= (new Query())->table("fa_user")->whereBetween("create_time","$start_time and $end_time ")->count();
+
         return $this->view->fetch();
     }
 
