@@ -62,10 +62,10 @@ class Index extends Backend
         $start_time=strtotime($time);
         $end_time=strtotime($time)+24*3600;
 
-        $article_total_today= (new Query())->table("fa_article")->whereBetween("createtime","$start_time and $end_time ")->count();
+        $article_total_today= (new Query())->table("fa_article")->whereBetween("createtime",[["gt",$start_time ],["lt",$end_time ]])->count();
 
 
-        $user_total_today= (new Query())->table("fa_user")->whereBetween("create_time","$start_time and $end_time ")->count();
+        $user_total_today= (new Query())->table("fa_user")->whereBetween("create_time",[["gt",$start_time ],["lt",$end_time ]])->count();
 
         return $this->view->fetch();
     }
