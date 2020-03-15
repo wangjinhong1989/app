@@ -77,10 +77,16 @@ class Dashboard extends Backend
 
         $user_total_today= (new Query())->table("fa_user")->where($where1)->count();
 
+        $user_login_total_today= (new Query())->table("fa_user")->where(["logintime"=>[
+            ["gt",$start_time],
+            ["lt",$end_time]
+        ]])->count();
+
         $this->view->assign('user_total', $user_total);
         $this->view->assign('user_total_today', $user_total_today);
         $this->view->assign('article_total', $article_total);
         $this->view->assign('article_total_today', $article_total_today);
+        $this->view->assign('user_login_total_today', $user_login_total_today);
 
         return $this->view->fetch();
     }
