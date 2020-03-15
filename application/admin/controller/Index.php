@@ -52,37 +52,6 @@ class Index extends Backend
         $this->view->assign('title', __('Home'));
 
 
-        //总用户数
-        $user_total= (new Query())->table("fa_user")->where([])->count();
-
-        $article_total= (new Query())->table("fa_article")->where([])->count();
-
-
-        $time=date("Y-m-d 00:00:00",time());
-        $start_time=strtotime($time);
-        $end_time=strtotime($time)+24*3600;
-
-        $where=[];
-        $where["create_time"]=[
-            ["gt",$start_time],
-            ["lt",$end_time]
-        ];
-        $where1=[];
-        $where1["createtime"]=[
-            ["gt",$start_time],
-            ["lt",$end_time]
-        ];
-        $article_total_today= (new Query())->table("fa_article")->where($where)->count();
-
-
-        $user_total_today= (new Query())->table("fa_user")->where($where1)->count();
-
-        var_dump($user_total);
-        $this->view->assign('user_total', $user_total);
-        $this->view->assign('user_total_today', $user_total_today);
-        $this->view->assign('article_total', $article_total);
-        $this->view->assign('article_total_today', $article_total_today);
-
         return $this->view->fetch();
     }
 
