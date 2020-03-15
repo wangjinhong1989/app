@@ -99,6 +99,18 @@ class ZhengjianGeren extends Backend
                         $this->model->validateFailException(true)->validate($validate);
                     }
                     $result = $this->model->allowField(true)->save($params);
+
+                    if($params["status"]=="通过"||$params["status"]=="不通过"){
+                        $modelMessage=new \app\admin\model\SystemMessage();
+                        $modelMessage->create([
+                            "user_id"=>$params["user_id"],
+                            "status"=>"未读",
+                            "time"=>time(),
+                            "content"=>"个人认证".$params["status"]
+                        ]);
+                    }
+
+
                     Db::commit();
                 } catch (ValidateException $e) {
                     Db::rollback();
@@ -150,6 +162,17 @@ class ZhengjianGeren extends Backend
                         $row->validateFailException(true)->validate($validate);
                     }
                     $result = $row->allowField(true)->save($params);
+
+                    if($params["status"]=="通过"||$params["status"]=="不通过"){
+                        $modelMessage=new \app\admin\model\SystemMessage();
+                        $modelMessage->create([
+                            "user_id"=>$params["user_id"],
+                            "status"=>"未读",
+                            "time"=>time(),
+                            "content"=>"个人认证".$params["status"]
+                        ]);
+                    }
+
                     Db::commit();
                 } catch (ValidateException $e) {
                     Db::rollback();
