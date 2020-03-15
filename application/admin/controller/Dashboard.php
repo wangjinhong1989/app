@@ -82,11 +82,22 @@ class Dashboard extends Backend
             ["lt",$end_time]
         ]])->count();
 
+        $jubao_total_today= (new Query())->table("fa_jubao")->where(["time"=>[
+            ["gt",$start_time],
+            ["lt",$end_time]
+        ]])->count();
+
+        $jubao_total= (new Query())->table("fa_jubao")->where(["time"=>[
+            ["gt",$start_time],
+            ["lt",$end_time]
+        ]])->count();
         $this->view->assign('user_total', $user_total);
         $this->view->assign('user_total_today', $user_total_today);
         $this->view->assign('article_total', $article_total);
         $this->view->assign('article_total_today', $article_total_today);
         $this->view->assign('user_login_total_today', $user_login_total_today);
+        $this->view->assign('jubao_total_today', $jubao_total_today);
+        $this->view->assign('jubao_total', $jubao_total);
 
         return $this->view->fetch();
     }
