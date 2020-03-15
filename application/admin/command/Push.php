@@ -3,6 +3,7 @@
 namespace app\admin\command;
 
 use app\admin\command\Api\library\Builder;
+use app\admin\model\FlagMessage;
 use app\admin\model\SystemMessage;
 use think\Config;
 use think\console\Command;
@@ -232,6 +233,7 @@ class Push extends Command
                         "time"=>time(),
                         "content"=>$value["content"]
                     ]);
+                    FlagMessage::update(str_replace("user","",$v),$value["push_type_id"],1);
                 }
             }else {
                 $model=new SystemMessage();
@@ -241,6 +243,8 @@ class Push extends Command
                     "time"=>time(),
                     "content"=>$value["content"]
                 ]);
+
+                FlagMessage::update(str_replace("user","",$alias),$value["push_type_id"],1);
             }
 
 
