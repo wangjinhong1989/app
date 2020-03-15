@@ -77,6 +77,7 @@ class Index extends Backend
 
         $user_total_today= (new Query())->table("fa_user")->where($where1)->count();
 
+        var_dump($user_total);
         $this->view->assign('user_total', $user_total);
         $this->view->assign('user_total_today', $user_total_today);
         $this->view->assign('article_total', $article_total);
