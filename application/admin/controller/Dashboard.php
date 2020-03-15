@@ -77,7 +77,7 @@ class Dashboard extends Backend
 
         $user_total_today= (new Query())->table("fa_user")->where($where1)->count();
 
-        $user_login_total_today= (new Query())->table("fa_user")->where(["logintime"=>[
+        $user_login_total_today= (new Query())->table("fa_user")->where(["updatetime"=>[
             ["gt",$start_time],
             ["lt",$end_time]
         ]])->count();
