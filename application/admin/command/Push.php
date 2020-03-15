@@ -233,7 +233,7 @@ class Push extends Command
                         "time"=>time(),
                         "content"=>$value["content"]
                     ]);
-                    FlagMessage::update(str_replace("user","",$v),$value["push_type_id"],1);
+                    FlagMessage::updateFlag(str_replace("user","",$v),$value["push_type_id"],1);
                 }
             }else {
                 $model=new SystemMessage();
@@ -244,7 +244,7 @@ class Push extends Command
                     "content"=>$value["content"]
                 ]);
 
-                FlagMessage::update(str_replace("user","",$alias),$value["push_type_id"],1);
+                FlagMessage::updateFlag(str_replace("user","",$alias),$value["push_type_id"],1);
             }
 
 

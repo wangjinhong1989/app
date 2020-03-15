@@ -43,7 +43,7 @@ class FlagMessage extends Model
     }
 
 
-    public static function update($user_id,$type,$flag=1){
+    public static function updateFlag($user_id,$type,$flag=1){
         $info=self::get(["user_id"=>$user_id]);
         if($info){
             switch ($type){
