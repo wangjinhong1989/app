@@ -115,8 +115,9 @@ class ArticleKuaixun extends Backend
                     }
 
                     $result = $this->model->allowField(true)->save($params);
-
+                    $id=$this->model->getLastInsID();
                     Db::execute("update fa_article set weigh=id where articletype_id=2 and weigh=0");
+
 
                     $pushModel=new \app\admin\model\PushList();
 
@@ -125,7 +126,7 @@ class ArticleKuaixun extends Backend
                         "push_type_id"=>6,
                         "user_ids"=>"all",// 给关注我的人，发所有信息。
                         "content"=>"新快讯-".$params["title"],
-                        "param_json"=>json_encode(["article_id"=>$this->model->getLastInsID()])
+                        "param_json"=>json_encode(["article_id"=>$id])
                     ];
                     $pushModel->create($temp);
 
