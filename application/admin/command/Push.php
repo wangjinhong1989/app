@@ -219,6 +219,8 @@ class Push extends Command
 
             if($data["type"]==6||$data["type"]==7){
                 $params=\GuzzleHttp\json_decode($value["param_json"],true);
+                if($params["des"]==""){$params["des"]="通知";
+                }
                 $back=$client->push()
                     ->setPlatform(['ios', 'android'])
                     ->addAlias($alias)

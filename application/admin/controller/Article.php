@@ -142,6 +142,7 @@ class Article extends Backend
                     $pushModel=new \app\admin\model\PushList();
 
                     $id=(new \app\admin\model\Article())->max("id");
+
                     $temp=[
                         "user_id"=>$params["user_id"],
                         "push_type_id"=>7,
