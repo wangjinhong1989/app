@@ -217,12 +217,24 @@ class Push extends Command
 
         try {
 
-            $back=$client->push()
+            if($data["type"]==6||$data["type"]==7){
+                $params=\GuzzleHttp\json_decode($value["param_json"],true);
+                $back=$client->push()
+                    ->setPlatform(['ios', 'android'])
+                    ->addAlias($alias)
+                    ->iosNotification([$value["content"],$params["desc"]],['extras' => $data])
+                    ->addAndroidNotification($value["content"],$params["desc"],null,$data)
+                    ->send();
+            }else {
+                $back=$client->push()
                     ->setPlatform(['ios', 'android'])
                     ->addAlias($alias)
                     ->iosNotification($value["content"],['extras' => $data])
                     ->addAndroidNotification($value["content"],"",null,$data)
                     ->send();
+
+            }
+
 
             if(is_array($alias)){
                 foreach ($alias as $v){
