@@ -125,7 +125,7 @@ class ArticleKuaixun extends Backend
                         "user_id"=>0,
                         "push_type_id"=>6,
                         "user_ids"=>"all",// 给关注我的人，发所有信息。
-                        "content"=>"新快讯-".$params["title"],
+                        "content"=>"".$params["title"],
                         "param_json"=>json_encode(["article_id"=>$id])
                     ];
                     $pushModel->create($temp);

@@ -146,7 +146,7 @@ class Article extends Backend
                         "user_id"=>$params["user_id"],
                         "push_type_id"=>7,
                         "user_ids"=>"all",// 给关注我的人，发所有信息。
-                        "content"=>$user->username."刚刚发布了文章，".$params["title"],
+                        "content"=>$params["title"],
                         "param_json"=>json_encode(["article_id"=>$params["id"]])
                     ];
                     $pushModel->create($temp);

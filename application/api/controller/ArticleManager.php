@@ -977,7 +977,7 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
                 "user_id"=>$this->auth->id,
                 "push_type_id"=>7,
                 "user_ids"=>"0",// 给关注我的人，发所有信息。
-                "content"=>$this->auth->username."刚刚发布了文章，".$data["title"],
+                "content"=>$data["title"],
                 "param_json"=>json_encode(["article_id"=>$test->id])
             ];
             $pushModel->create($temp);
