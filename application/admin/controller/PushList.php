@@ -22,7 +22,7 @@ class PushList extends Backend
     {
         parent::_initialize();
         $this->model = new \app\admin\model\PushList;
-
+        $this->view->assign("statusList", $this->model->getStatusList());
     }
     
     /**
@@ -50,22 +50,22 @@ class PushList extends Backend
             }
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
             $total = $this->model
-                    ->with(['user','pushtype'])
+                    ->with(['user'])
                     ->where($where)
                     ->order($sort, $order)
                     ->count();
 
             $list = $this->model
-                    ->with(['user','pushtype'])
+                    ->with(['user'])
                     ->where($where)
                     ->order($sort, $order)
                     ->limit($offset, $limit)
                     ->select();
 
             foreach ($list as $row) {
-                
-                $row->getRelation('user')->visible(['username']);
-				$row->getRelation('pushtype')->visible(['type']);
+                $row->visible(['id','user_id','push_type_id','content','create_time','status']);
+                $row->visible(['user']);
+				$row->getRelation('user')->visible(['username']);
             }
             $list = collection($list)->toArray();
             $result = array("total" => $total, "rows" => $list);
