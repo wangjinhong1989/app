@@ -125,16 +125,16 @@ class Article extends Backend
                     }
 
                     $result = $this->model->allowField(true)->save($params);
-
+                    $params["id"]=$this->model->getLastInsID();
                     if($params["top"]=="置顶"||$params["top"]=="推广"||$params["top"]=="广告"){
                         if(strtotime($params["begin_time"])<=time()&&strtotime($params["end_time"])>=time())
                             $params["weigh"]=time();
                         else
-                            $params["weigh"]=$this->model->getLastInsID();
+                            $params["weigh"]=$params["id"];
                     }else {
-                        $params["weigh"]=$this->model->getLastInsID();
+                        $params["weigh"]=$params["id"];
                     }
-                    $params["id"]=$this->model->getLastInsID();
+
                     $result = $this->model->allowField(true)->save($params);
 
                     //dd($test);
