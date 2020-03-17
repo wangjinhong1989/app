@@ -222,9 +222,9 @@ class Push extends Command
                 $back=$client->push()
                     ->setPlatform(['ios', 'android'])
                     ->addAlias($alias)
-                    ->iosNotification([$params["des"],$value["content"]],['extras' => $data])
+                    ->iosNotification([$params["des"],$value["content"]],['extras' => $data,"large_icon"=>$params["image"]])
                   //  ->addAndroidNotification($params["des"],$value["content"],null,$data)
-                    ->androidNotification($params["des"],["title"=>$value["content"],"style"=>3,"large_icon"=>$params["image"],"big_pic_path"=>$params["image"],"extras"=>$data])
+                    ->androidNotification($params["des"],["title"=>$value["content"],"style"=>3,"large_icon"=>$params["image"],"extras"=>$data])
                     ->send();
             }else {
                 $back=$client->push()
