@@ -116,7 +116,7 @@ class Article extends Backend
                 }
                 $result = false;
                 Db::startTrans();
-                try {
+            //    try {
                     //是否采用模型验证
                     if ($this->modelValidate) {
                         $name = str_replace("\\model\\", "\\validate\\", get_class($this->model));
@@ -153,7 +153,7 @@ class Article extends Backend
                     $pushModel->create($temp);
 
                     Db::commit();
-                } catch (ValidateException $e) {
+            /*    } catch (ValidateException $e) {
                     Db::rollback();
                     $this->error($e->getMessage());
                 } catch (PDOException $e) {
@@ -163,6 +163,7 @@ class Article extends Backend
                     Db::rollback();
                     $this->error($e->getMessage());
                 }
+            */
                 if ($result !== false) {
                     $this->success();
                 } else {
