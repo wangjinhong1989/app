@@ -221,7 +221,7 @@ class Push extends Command
                     ->setPlatform(['ios', 'android'])
                     ->addAlias($alias)
                     ->iosNotification($value["content"],['extras' => $data])
-                    ->addAndroidNotification($value["content"],$value["content"],null,$data)
+                    ->addAndroidNotification("",$value["content"],null,$data)
                     ->send();
 
             if(is_array($alias)){
