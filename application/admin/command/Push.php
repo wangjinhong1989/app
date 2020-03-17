@@ -170,7 +170,7 @@ class Push extends Command
                 // 需要推送的列表.
                 $temp=[];
                 foreach ($list as  $l){
-                    $temp[]="user".$l["id"];
+                    $temp[]="user".$l["user_id"];
                 }
                 if(!empty($temp))
                     $this->push_method_new($value,$temp);

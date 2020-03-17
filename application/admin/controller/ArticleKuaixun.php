@@ -115,8 +115,21 @@ class ArticleKuaixun extends Backend
                     }
 
                     $result = $this->model->allowField(true)->save($params);
-
+                    $id=$this->model->getLastInsID();
                     Db::execute("update fa_article set weigh=id where articletype_id=2 and weigh=0");
+
+
+                    $pushModel=new \app\admin\model\PushList();
+
+                    $temp=[
+                        "user_id"=>0,
+                        "push_type_id"=>6,
+                        "user_ids"=>"all",// 给关注我的人，发所有信息。
+                        "content"=>"新快讯-".$params["title"],
+                        "param_json"=>json_encode(["article_id"=>$id])
+                    ];
+                    $pushModel->create($temp);
+
                     Db::commit();
                 } catch (ValidateException $e) {
                     Db::rollback();
@@ -196,6 +209,45 @@ class ArticleKuaixun extends Backend
         }
         $this->view->assign("row", $row);
         return $this->view->fetch();
+    }
+
+
+    /**
+     * 删除
+     */
+    public function del($ids = "")
+    {
+        if ($ids) {
+            $pk = $this->model->getPk();
+            $adminIds = $this->getDataLimitAdminIds();
+            if (is_array($adminIds)) {
+                $this->model->where($this->dataLimitField, 'in', $adminIds);
+            }
+            $list = $this->model->where($pk, 'in', $ids)->select();
+
+            $count = 0;
+            Db::startTrans();
+            try {
+                foreach ($list as $k => $v) {
+                    $count += $v->delete();
+                    (new \app\admin\model\Reply())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\Shoucang())->where(["article_id"=>$v->id])->delete();
+                }
+                Db::commit();
+            } catch (PDOException $e) {
+                Db::rollback();
+                $this->error($e->getMessage());
+            } catch (Exception $e) {
+                Db::rollback();
+                $this->error($e->getMessage());
+            }
+            if ($count) {
+                $this->success();
+            } else {
+                $this->error(__('No rows were deleted'));
+            }
+        }
+        $this->error(__('Parameter %s can not be empty', 'ids'));
     }
 
 
