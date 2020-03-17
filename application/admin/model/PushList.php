@@ -25,34 +25,29 @@ class PushList extends Model
 
     // 追加属性
     protected $append = [
-        'create_time_text'
+        'status_text'
     ];
     
 
     
-
-
-
-    public function getCreateTimeTextAttr($value, $data)
+    public function getStatusList()
     {
-        $value = $value ? $value : (isset($data['create_time']) ? $data['create_time'] : '');
-        return is_numeric($value) ? date("Y-m-d H:i:s", $value) : $value;
+        return ['未推送' => __('未推送'), '已推送' => __('已推送')];
     }
 
-    protected function setCreateTimeAttr($value)
+
+    public function getStatusTextAttr($value, $data)
     {
-        return $value === '' ? null : ($value && !is_numeric($value) ? strtotime($value) : $value);
+        $value = $value ? $value : (isset($data['status']) ? $data['status'] : '');
+        $list = $this->getStatusList();
+        return isset($list[$value]) ? $list[$value] : '';
     }
+
+
 
 
     public function user()
     {
         return $this->belongsTo('User', 'user_id', 'id', [], 'LEFT')->setEagerlyType(0);
-    }
-
-
-    public function pushtype()
-    {
-        return $this->belongsTo('PushType', 'push_type_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 }

@@ -39,6 +39,6 @@ class GuangfangUser extends Model
 
     public function user()
     {
-        return $this->belongsTo('User', 'user_ids', 'id', [], 'LEFT')->setEagerlyType(0);
+        return $this->belongsTo('User', 'user_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 }
