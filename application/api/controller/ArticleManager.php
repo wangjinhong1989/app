@@ -978,7 +978,7 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
                 "push_type_id"=>7,
                 "user_ids"=>"0",// 给关注我的人，发所有信息。
                 "content"=>$data["title"],
-                "param_json"=>json_encode(["article_id"=>$test->id])
+                "param_json"=>json_encode(["article_id"=>$test->id,"image"=>$data["img"],"des"=>substr($data["description"],0,50)])
             ];
             $pushModel->create($temp);
 
