@@ -4,6 +4,7 @@ namespace app\api\controller;
 
 use addons\third\library\Wechat;
 use app\admin\model\ConfigUser;
+use app\admin\model\Third;
 use app\common\controller\Api;
 use app\common\library\Ems;
 use app\common\library\Sms;
@@ -526,37 +527,8 @@ class User extends Api
     {
         $url = url('user/index');
         $platform = $this->request->request("platform");
-        $code = $this->request->request("code");
-
-        $config = get_addon_config('third');
-        if (!$config || !isset($config[$platform])) {
-            $this->error(__('Invalid parameters'));
-        }
-        $app = new \addons\third\library\Application($config);
-        //通过code换access_token和绑定会员
-        if($platform=="wechat"){
-            $result = $app->$platform->getUserInfo(['code' => $code]);
-        }
-        else if($platform=="qq"){
-            $temp=[];
-            $temp["access_token"] = $this->request->request("access_token");
-            $temp["openid"] = $this->request->request("openid");
-            $temp["refresh_token"] = $this->request->request("refresh_token");
-            $temp["expires_in"] = $this->request->request("expires_in");
-            $result = $app->$platform->getUserInfo1($temp);
-        }
-        if ($result) {
-            $loginret = \addons\third\library\Service::unbind($this->auth->id);
-
-            if ($loginret) {
-                $data = [
-                    'userinfo'  => $this->auth->getUserinfo(),
-//                    'thirdinfo' => $result
-                ];
-                $this->success(__('Logged in successful'), $data);
-            }
-        }
-        $this->error(__('注册失败'), $url);
+        (new Third())->where(["platform"=>$platform,"user_id"=>$this->auth->id])->delete();
+        $this->success("解绑");
     }
 
     /**

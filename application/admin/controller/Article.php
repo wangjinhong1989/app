@@ -141,13 +141,13 @@ class Article extends Backend
 
                     $pushModel=new \app\admin\model\PushList();
 
-                    $user=User::get($params["user_id"]);
+                    $id=(new \app\admin\model\Article())->max("id");
                     $temp=[
                         "user_id"=>$params["user_id"],
                         "push_type_id"=>7,
                         "user_ids"=>"all",// 给关注我的人，发所有信息。
                         "content"=>$params["title"],
-                        "param_json"=>json_encode(["article_id"=>$params["id"],"image"=>"http://app.biyouliao8.com/logo.png","des"=>substr($params["description"],0,50)])
+                        "param_json"=>json_encode(["article_id"=>$id,"image"=>"http://app.biyouliao8.com/logo.png","des"=>substr($params["description"],0,50)])
                     ];
                     $pushModel->create($temp);
 
