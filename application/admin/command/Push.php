@@ -226,7 +226,7 @@ class Push extends Command
 
                     $image=(new Article())->where(["id"=>$params["article_id"]])->find();
                     if($image){
-                        $params["image"]="http://app.biyouliao8.com/thumb/".str_replace("http://app.biyouliao8.com/",$image->img);
+                        $params["image"]=$this->thumb_image(str_replace("http://app.biyouliao8.com","",$image->img));
                     }
                 }
                 $back=$client->push()
@@ -277,6 +277,12 @@ class Push extends Command
     }
 
 
+    /*
+     * 生成缩略图
+     * **/
+    public function thumb_image($file){
+
+    }
     public function push_all($value,$user_id){
 
         $data=[
