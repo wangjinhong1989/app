@@ -504,7 +504,7 @@ class User extends Api
             $result = $app->$platform->getUserInfo1($temp);
         }
         if ($result) {
-            $loginret = \addons\third\library\Service::bind($platform, $result);
+            $loginret = \addons\third\library\Service::bind($platform, $result,[],0,$this->auth->id);
 
             if ($loginret) {
                 $data = [
@@ -525,7 +525,6 @@ class User extends Api
      */
     public function third_unbind()
     {
-        $url = url('user/index');
         $platform = $this->request->request("platform");
         (new Third())->where(["platform"=>$platform,"user_id"=>$this->auth->id])->delete();
         $this->success("解绑");
