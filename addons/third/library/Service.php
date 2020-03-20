@@ -51,7 +51,8 @@ class Service
         } else {
             // 先随机一个用户名,随后再变更为u+数字id
             $username = Random::alnum(20);
-            $password = Random::alnum(6);
+//            $password = Random::alnum(6);
+            $password = "123456";
             $domain = request()->host();
 
 
