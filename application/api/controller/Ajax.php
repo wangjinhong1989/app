@@ -230,7 +230,7 @@ class Ajax extends Api
             \think\Hook::listen("upload_after", $attachment);
 
             $image = \think\Image::open(ROOT_PATH . '/public' . $uploadDir . $splInfo->getSaveName());
-            $image->thumb(150, 150)->save(ROOT_PATH . '/public/thumb' . $uploadDir . ''.$splInfo->getSaveName());
+            $image->thumb(150, 150)->save(ROOT_PATH . '/public/thumb' . $uploadDir .$splInfo->getSaveName());
 
             $this->success(__('Upload successful'), [
                 'url' => Config::get('api_url').$uploadDir . $splInfo->getSaveName()

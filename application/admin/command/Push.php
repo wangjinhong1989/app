@@ -221,6 +221,14 @@ class Push extends Command
                 $params=\GuzzleHttp\json_decode($value["param_json"],true);
                 if($params["des"]==""){$params["des"]="通知";
                 }
+
+                if($data["type"]==7){
+
+                    $image=(new Article())->where(["id"=>$params["article_id"]])->find();
+                    if($image){
+                        $params["image"]="http://app.biyouliao8.com/thumb/".str_replace("http://app.biyouliao8.com/",$image->img);
+                    }
+                }
                 $back=$client->push()
                     ->setPlatform(['ios', 'android'])
                     ->addAlias($alias)
