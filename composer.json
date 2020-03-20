@@ -26,7 +26,8 @@
         "overtrue/pinyin": "~3.0",
         "phpoffice/phpspreadsheet": "^1.2",
         "jiguang/jsms": "~1.0",
-        "jpush/jpush": "*"
+        "jpush/jpush": "*",
+        "topthink/think-image": "^1.0"
     },
     "config": {
         "preferred-install": "dist"
