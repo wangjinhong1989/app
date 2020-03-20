@@ -134,8 +134,11 @@ class Ajax extends Backend
             $attachment->save();
             \think\Hook::listen("upload_after", $attachment);
             $image = \think\Image::open(ROOT_PATH . '/public' . $uploadDir . $splInfo->getSaveName());
-            $image->thumb(150, 150)->save(ROOT_PATH . '/public' . $uploadDir ."".$splInfo->getSaveName()."thumb");
-
+            $thumb_path=ROOT_PATH . '/public/thumb' . $uploadDir ."";
+            if (!is_dir($thumb_path)){
+                mkdir($thumb_path, 0777, true);
+            }
+            $image->thumb(150, 150)->save(ROOT_PATH . '/public/thumb' . $uploadDir ."".$splInfo->getSaveName());
             $this->success(__('Upload successful'), null, [
                 'url' =>Config::get('api_url'). $uploadDir . $splInfo->getSaveName()
             ]);
