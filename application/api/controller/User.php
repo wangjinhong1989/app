@@ -531,6 +531,19 @@ class User extends Api
     }
 
     /**
+     * 查看是否绑定
+     *
+     * @param string $platform 平台名称
+     * @param string $code     Code码
+     */
+    public function third_detail()
+    {
+        $platform = $this->request->request("platform");
+        $data=(new Third())->where(["platform"=>$platform,"user_id"=>$this->auth->id])->find();
+        $this->success($data);
+    }
+
+    /**
      * 重置密码
      *
      * @param string $mobile      手机号
