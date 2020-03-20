@@ -278,7 +278,7 @@ class Push extends Command
 
     public function thumb_image($file){
         $thumb_path=ROOT_PATH . '/public/thumb' . $file ."";
-        if (!file_exists($thumb_path)){
+        if (file_exists($thumb_path)){
             return "http://app.biyouliao8.com/thumb/".$file;
         }else {
             return "http://app.biyouliao8.com/logo.png";
