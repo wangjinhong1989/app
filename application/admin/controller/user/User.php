@@ -4,6 +4,7 @@ namespace app\admin\controller\user;
 
 use app\admin\model\Article;
 use app\admin\model\Dianzan;
+use app\admin\model\GuangfangUser;
 use app\admin\model\Guanzhu;
 use app\admin\model\Jubao;
 use app\admin\model\Reply;
@@ -158,6 +159,7 @@ class User extends Backend
                     (new Reply())->where(["user_id"=>$v->id])->delete();
                     (new Dianzan())->where(["user_id"=>$v->id])->delete();
                     (new Jubao())->where(["user_id"=>$v->id])->delete();
+                    (new GuangfangUser())->where(["user_id"=>$v->id])->delete();
                 }
                 Db::commit();
             } catch (PDOException $e) {
