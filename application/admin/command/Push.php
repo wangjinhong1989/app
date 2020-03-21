@@ -4,6 +4,8 @@ namespace app\admin\command;
 
 use app\admin\command\Api\library\Builder;
 use app\admin\model\FlagMessage;
+use app\admin\model\Guanzhu;
+use app\admin\model\PushConfig;
 use app\admin\model\SystemMessage;
 use think\Config;
 use think\console\Command;
@@ -158,7 +160,9 @@ class Push extends Command
                 // 需要推送的列表.
                 $temp=[];
                 foreach ($list as  $l){
-                    $temp[]="user".$l["id"];
+                    $back=$this->checkUser($l["user_id"],$value["push_type_id"],$value["user_id"]);
+                    if($back!=""&&!empty($back))
+                        $temp[]=$back;
                 }
                 if(!empty($temp))
                 $this->push_method_new($value,$temp);
@@ -170,19 +174,64 @@ class Push extends Command
                 // 需要推送的列表.
                 $temp=[];
                 foreach ($list as  $l){
-                    $temp[]="user".$l["user_id"];
+                    $back=$this->checkUser($l["user_id"],$value["push_type_id"],$value["user_id"]);
+                    if($back!=""&&!empty($back))
+                    $temp[]=$back;
                 }
                 if(!empty($temp))
                     $this->push_method_new($value,$temp);
             });
         }else {
-            $this->push_method_new($value,"user".$value["user_ids"]);
+            $back=$this->checkUser($value["user_ids"],$value["push_type_id"],$value["user_id"]);
+            if($back!=""&&!empty($back))
+            $this->push_method_new($value,$back);
         }
 
 
 
     }
 
+    /*
+     * 检查user用户的推送权限
+     * **/
+    protected function checkUser($user_id,$type_id,$follow=0){
+
+
+        $user=(new PushConfig())->where(["user_id"=>$user_id])->find();
+        if(!$user){
+            return "";
+        }
+
+        // 不接受通知。直接返回
+        if($user->is_accept_notify=="否"){
+            return "";
+        }
+
+        //发文直接返回.
+        if($user->is_article_notify=="否"&&$type_id==7){
+            return "";
+        }
+        //快讯直接返回
+        if($user->is_kuaixun_notify=="否"&&$type_id==6){
+            return "";
+        }
+
+        // 不接受关注作者发文。
+        if($user->is_follow_notify=="否"&&$type_id==7){
+            return "";
+        }
+
+        // 检查是否有关注权限。
+        if($user->is_follow_notify=="是"&&$type_id==7){
+
+            $pushInfo=(new Guanzhu())->where(["user_id"=>$user_id,"follow_id"=>$follow,"is_push"=>"是"])->find();
+            if(!$pushInfo)
+            return "";
+        }
+
+        return "user".$user_id;
+
+    }
     protected function SwitchMethod($value){
         switch ($value["push_type_id"]){
             case 1:
@@ -208,6 +257,10 @@ class Push extends Command
 
     public function push_method_new($value,$alias){
 
+        // 空数据不发送.
+        if($alias==""||(is_array($alias)&&empty($alias))){
+            return "";
+        }
         $data=[
             "type"=>$value["push_type_id"],
             "data"=>$value["param_json"]
