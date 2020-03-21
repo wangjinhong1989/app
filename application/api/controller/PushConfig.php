@@ -137,7 +137,7 @@ class PushConfig extends Api
         if($info->is_push=="是")
         $info->is_push="否";
         else{
-            $info->is_push=="是";
+            $info->is_push="是";
         }
 
         $info->save();
