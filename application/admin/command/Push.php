@@ -160,7 +160,7 @@ class Push extends Command
                 // 需要推送的列表.
                 $temp=[];
                 foreach ($list as  $l){
-                    $back=$this->checkUser($l["user_id"],$value["push_type_id"],$value["user_id"]);
+                    $back=$this->checkUser($l["id"],$value["push_type_id"],$value["user_id"]);
                     if($back!=""&&!empty($back))
                         $temp[]=$back;
                 }
@@ -174,7 +174,7 @@ class Push extends Command
                 // 需要推送的列表.
                 $temp=[];
                 foreach ($list as  $l){
-                    $back=$this->checkUser($l["user_id"],$value["push_type_id"],$value["user_id"]);
+                    $back=$this->checkUser($l["id"],$value["push_type_id"],$value["user_id"]);
                     if($back!=""&&!empty($back))
                     $temp[]=$back;
                 }
