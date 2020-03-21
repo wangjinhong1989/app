@@ -41,6 +41,9 @@ class ProblemPlatform extends Api
         $data["page"]=$page;
         $data["rows"]=collection($data["rows"])->toArray();
 
+        foreach ($data["rows"] as $key=>&$row){
+            $row["time"]=formart_time($row["time"]);
+        }
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);
     }
