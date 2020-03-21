@@ -551,7 +551,7 @@ class User extends Api
             $data1["wechat"]="是";
         }else
             $data1["wechat"]="否";
-        $this->success($data);
+        $this->success($data1);
     }
 
     /**
