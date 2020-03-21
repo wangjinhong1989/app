@@ -538,8 +538,8 @@ class User extends Api
      */
     public function third_detail()
     {
-        $platform = $this->request->request("platform");
-        $data=(new Third())->where(["platform"=>$platform,"user_id"=>$this->auth->id])->find();
+//        $platform = $this->request->request("platform");
+        $data=(new Third())->where(["platform"=>$platform,"user_id"=>$this->auth->id])->select();
         $this->success($data);
     }
 
