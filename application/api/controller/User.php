@@ -539,7 +539,18 @@ class User extends Api
     public function third_detail()
     {
 //        $platform = $this->request->request("platform");
-        $data=(new Third())->where(["user_id"=>$this->auth->id])->select();
+        $data1=[];
+
+        $data=(new Third())->where(["platform"=>"qq","user_id"=>$this->auth->id])->field("platform")->select();
+        if($data){
+            $data1["qq"]="是";
+        }else
+            $data1["qq"]="否";
+        $data=(new Third())->where(["platform"=>"wechat","user_id"=>$this->auth->id])->field("platform")->select();
+        if($data){
+            $data1["wechat"]="是";
+        }else
+            $data1["wechat"]="否";
         $this->success($data);
     }
 
