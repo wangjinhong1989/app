@@ -15,7 +15,7 @@
                         <label class="control-label col-xs-12 col-sm-2">{:__('Articletype_ids')}:</label>
                         <div class="col-xs-12 col-sm-8">
                             {foreach name="TypeList" item="vo"}
-                            <input type="checkbox" value="{$vo.id}" data-rule="required"  name="row[articletype_ids][]"/>{$vo.name}
+                            <input type="checkbox" value="{$vo.id}" data-rule="required"  name="row[articletype_ids]"/>{$vo.name}
                             {/foreach}
 <!--                            <select data-rule="required" class="selectpicker form-control" multiple="multiple"  name="row[articletype_ids]">-->
 <!--                                {foreach name="TypeList" item="vo"}-->
