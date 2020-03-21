@@ -141,6 +141,6 @@ class PushConfig extends Api
         }
 
         $info->save();
-        return $this->success();
+        return $this->success($info);
     }
 }
