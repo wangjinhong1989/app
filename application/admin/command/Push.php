@@ -199,7 +199,7 @@ class Push extends Command
 
         $user=(new PushConfig())->where(["user_id"=>$user_id])->find();
         if(!$user){
-            return "";
+            return "user".$user_id;
         }
 
         // 不接受通知。直接返回
