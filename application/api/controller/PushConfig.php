@@ -128,6 +128,7 @@ class PushConfig extends Api
 
         $model=new \app\admin\model\Guanzhu();
 
+        $time1=microtime(true);
         $id=$this->request->request("id",0);
         $info=$model->where(["id"=>$id,"user_id"=>$this->auth->id])->find();
         if(empty($info)){
@@ -141,6 +142,7 @@ class PushConfig extends Api
         }
 
         $info->save();
-        return $this->success($info);
+        $time2=microtime(true);
+        return $this->success([$time2,$time1,$time2-$time1]);
     }
 }
