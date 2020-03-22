@@ -986,7 +986,7 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
             $my_number=$my_number+1;
             Cache::set("add_article_number".$this->auth->id.date("Ymd",time()),$my_number,660);
 
-            return \GuzzleHttp\json_decode([
+            return \GuzzleHttp\json_encode([
                "msg"=>"",
                "data"=>null,
                 "code"=>1,
