@@ -145,6 +145,7 @@ class Service
             Db::startTrans();
             try {
                 $fields = [];
+                dd(122);
                 if (isset($params['userinfo']['nickname'])) {
                     $fields['nickname'] = $params['userinfo']['nickname'];
                     if (User::getByUsername($fields['nickname'])) {
@@ -154,18 +155,20 @@ class Service
                         $fields['username']=$fields['nickname'];
 
                 }
+                dd(323);
                 if (isset($params['userinfo']['avatar'])) {
                     $fields['avatar'] = (($params['userinfo']['avatar']));
                 }
-
+                dd(232);
                 if (isset($params['userinfo']['gender'])) {
                     $fields['gender'] =  $params['userinfo']['gender'];
                 }
-
+                dd(56);
 
                 // 保存第三方信息
                 $values['user_id'] = 0;
                 $values["user_json"]=\GuzzleHttp\json_encode($fields);
+                dd(2212);
                 Third::create($values);
                 $id=(new Third())->getLastInsID();
                 dd($id);
