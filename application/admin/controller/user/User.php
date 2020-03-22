@@ -11,6 +11,7 @@ use app\admin\model\Reply;
 use app\admin\model\Third;
 use app\common\controller\Backend;
 use think\Db;
+use app\common\library\Auth;
 
 /**
  * 会员管理
@@ -104,9 +105,13 @@ class User extends Backend
                         $validate = is_bool($this->modelValidate) ? ($this->modelSceneValidate ? $name . '.add' : $name) : $this->modelValidate;
                         $this->model->validateFailException(true)->validate($validate);
                     }
-                    $result = $this->model->allowField(true)->save($params);
 
-                    (new \app\admin\model\Guanzhu())->initUser($this->model->getLastInsID());
+                    $auth=new Auth();
+                    $auth->register($params["username"],"123456","","",[]);
+                    $user=$auth->getUser();
+                    $auth->logout();
+
+                    (new \app\admin\model\Guanzhu())->initUser($user->id);
 
                     Db::commit();
                 } catch (ValidateException $e) {
