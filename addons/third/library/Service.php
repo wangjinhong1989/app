@@ -175,12 +175,13 @@ class Service
 
                 // 保存第三方信息
                 $values['user_id'] = 0;
-                $values["user_json"]=\GuzzleHttp\json_decode($fields);
+                $values["user_json"]=\GuzzleHttp\json_encode($fields);
                 Third::create($values);
                 Db::commit();
 
 
                 $id=(new Third())->getLastInsID();
+                dd($id);
                 return $id;
             } catch (PDOException $e) {
                 Db::rollback();
