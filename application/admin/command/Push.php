@@ -153,6 +153,12 @@ class Push extends Command
     public function push_data_new($value){
         $query = new Query();
 
+        //
+        if($value["push_type_id"]==6){
+
+
+            return "";
+        }
         // 推送给所有人
         if($value["user_ids"]=="all"){
 
@@ -323,6 +329,32 @@ class Push extends Command
                 FlagMessage::updateFlag(str_replace("user","",$alias),$value["push_type_id"],1);
             }
 
+
+        } catch (\JPush\Exceptions\JPushException $e) {
+            print $e;
+        }
+    }
+
+    public function push_kuaixun($value){
+
+        $data=[
+            "type"=>$value["push_type_id"],
+            "data"=>$value["param_json"]
+        ];
+
+        $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
+
+        try {
+            $params=\GuzzleHttp\json_decode($value["param_json"],true);
+            if($params["des"]==""){$params["des"]="通知";
+            }
+            $back=$client->push()
+                ->addAllAudience()
+                ->setPlatform(['ios', 'android'])
+                ->iosNotification([$params["des"],$value["content"]],['extras' => $data])
+                //  ->addAndroidNotification($params["des"],$value["content"],null,$data)
+                ->androidNotification($params["des"],["title"=>$value["content"],"style"=>3,"large_icon"=>$params["image"],"extras"=>$data])
+                ->send();
 
         } catch (\JPush\Exceptions\JPushException $e) {
             print $e;
