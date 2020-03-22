@@ -184,6 +184,7 @@ class Service
                 dd($id);
                 return $id;
             } catch (PDOException $e) {
+                dd($e);
                 Db::rollback();
                 $auth->logout();
                 return false;
