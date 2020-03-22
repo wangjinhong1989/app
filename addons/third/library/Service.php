@@ -175,13 +175,13 @@ class Service
                 }else
                 Third::create($values);
                 dd(3231);
-                $id=(new Third())->getLastInsID();
-                dd($id);
+
                 Db::commit();
 
+                $id=(new Third())->getLastInsID();
+                dd($id);
 
-
-                return 1212;
+                return $id;
             } catch (Exception $e) {
                 dd($e);
                 Db::rollback();
