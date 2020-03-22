@@ -477,7 +477,7 @@ class User extends Api
         $user_json=\GuzzleHttp\json_decode($user_info["user_info"],true);
 
 
-        $ret = $this->auth->register($user_json["username"], $user_json["password"], '', $mobile, [
+        $ret = $this->auth->register($user_json["username"], "123456", '', $mobile, [
             "avatar"=>$user_json["avatar"],
             "gender"=>$user_json["gender"],
             "nickname"=>$user_json["nickname"],
