@@ -134,6 +134,7 @@ class Service
                 return false;
             }
             $third->save($values);
+            dd("registered");
             return "registered";
         } else {
             // 先随机一个用户名,随后再变更为u+数字id
@@ -142,7 +143,7 @@ class Service
             $password = "123456";
             $domain = request()->host();
 
-
+            dd("registered1");
             // 检测用户名或邮箱、手机号是否存在
 
             Db::startTrans();
