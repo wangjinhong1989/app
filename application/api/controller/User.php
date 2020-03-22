@@ -474,7 +474,7 @@ class User extends Api
 
         //  找到后。
 
-        $user_json=\GuzzleHttp\json_decode($user_info["user_json"],true);
+        $user_json=\GuzzleHttp\json_decode($user_info["user_info"],true);
 
 
         $ret = $this->auth->register($user_json["username"], $user_json["password"], '', $mobile, [
