@@ -463,6 +463,8 @@ class User extends Api
             $temp["expires_in"] = $this->request->request("expires_in");
             $result = $app->$platform->getUserInfo1($temp);
         }
+
+        dd($result);
         if ($result) {
             $loginret = \addons\third\library\Service::connect($platform, $result);
 
