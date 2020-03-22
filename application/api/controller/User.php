@@ -428,7 +428,10 @@ class User extends Api
         $user->save();
 
         Sms::flush($mobile, 'changemobile');
-        $this->success();
+        $data = [
+            'userinfo'  => $this->auth->getUserinfo(),
+        ];
+        $this->success("手机绑定成功",$data);
     }
 
     /**
