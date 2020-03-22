@@ -988,7 +988,7 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
 
             echo \GuzzleHttp\json_encode([
                "msg"=>"",
-               "data"=>null,
+               "data"=>"",
                 "code"=>1,
                 "time"=>time(),
                 "url"=> "http://app.biyouliao8.com//index/article/index",
