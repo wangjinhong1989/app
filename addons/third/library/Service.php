@@ -166,7 +166,7 @@ class Service
                 dd(56);
 
                 // 保存第三方信息
-                $values['user_id'] = 1;
+                $values['user_id'] = 0;
                 $values["user_info"]=json_encode($fields);
                 dd($fields);
                 dd($values);
