@@ -21,7 +21,7 @@ use think\view\driver\Think;
  */
 class ArticleManager extends Api
 {
-    protected $noNeedLogin = ["lists","recommendation","Lists1","detail"];
+    protected $noNeedLogin = ["lists","recommendation","Lists1","detail","Lists_kuaixun"];
     protected $noNeedRight = ['*'];
 
     /**
