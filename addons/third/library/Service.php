@@ -178,8 +178,11 @@ class Service
 
                 Db::commit();
 
-                $id=(new Third())->getLastInsID();
-                dd($id);
+                if($third){
+                    return $third->id;
+                }else
+                    return (new Third())->getLastInsID();
+
 
                 return $id;
             } catch (Exception $e) {
