@@ -464,7 +464,7 @@ class User extends Api
             $result = $app->$platform->getUserInfo1($temp);
         }
 
-        dd($result);
+
         if ($result) {
             $loginret = \addons\third\library\Service::connect($platform, $result);
 

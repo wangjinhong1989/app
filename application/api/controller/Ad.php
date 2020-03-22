@@ -26,7 +26,7 @@ class Ad extends Api
 
         $time=time();
         $lists=$model->table("fa_guanggao")->where(['status'=>'显示',"end_time"=>["egt",$time],"start_time"=>["elt",$time]])->orderRaw("rand()")->limit(0,1)->select();
-        dd($model->getLastSql());
+        //dd($model->getLastSql());
 //        //phpinfo();
 //        Cache::store('redis')->clear();
 //        $lists=Cache::store('redis')->get('ad_list');
