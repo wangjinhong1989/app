@@ -109,7 +109,7 @@ class User extends Api
     public function register_user()
     {
         $username = $this->request->request('username');
-        $nickname = $this->request->request('nickname');
+        $nickname = $username;
         $password = $this->request->request('password');
 
 
