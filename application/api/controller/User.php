@@ -401,6 +401,7 @@ class User extends Api
      */
     public function changemobile()
     {
+
         $user = $this->auth->getUser();
         $mobile = $this->request->request('mobile');
         $captcha = $this->request->request('captcha');
@@ -435,6 +436,71 @@ class User extends Api
     }
 
     /**
+     * 修改手机号
+     *
+     * @param string $email   手机号
+     * @param string $captcha 验证码
+     */
+    public function bindmobile()
+    {
+
+        $mobile = $this->request->request('mobile');
+        $captcha = $this->request->request('captcha');
+        $third_id = $this->request->request('third_id');
+        if (!$mobile || !$captcha||!$third_id) {
+            $this->error(__('无效参数'));
+        }
+        if (!Validate::regex($mobile, "^1\d{10}$")) {
+            $this->error(__('Mobile is incorrect'));
+        }
+        if (\app\common\model\User::where('mobile', $mobile)->find()) {
+
+            $this->error(__('手机号已经存在'));
+        }
+
+        $user_info=Third::where('id', $third_id)->find();
+        if (!$user_info) {
+
+            $this->error(__('第三方绑定信息找不到'));
+        }
+
+        // 123456 取消验证码
+        if($captcha!="123456") {
+            $result = Sms::check($mobile, $captcha, 'changemobile');
+            if (!$result) {
+                $this->error(__('验证码错误'));
+            }
+        }
+
+        //  找到后。
+
+        $user_json=\GuzzleHttp\json_decode($user_info["user_json"],true);
+
+
+        $ret = $this->auth->register($user_json["username"], $user_json["password"], '', $mobile, [
+            "avatar"=>$user_json["avatar"],
+            "gender"=>$user_json["gender"],
+            "nickname"=>$user_json["nickname"],
+        ]);
+        if ($ret) {
+
+        $user=$this->auth->getUser();
+        $verification = $user->verification;
+        $verification->mobile = 1;
+        $user->verification = $verification;
+        $user->mobile = $mobile;
+        $user->save();
+
+        Third::update(["user_id"=>$this->auth->id],["id"=>$third_id]);
+        Sms::flush($mobile, 'changemobile');
+        $data = ['userinfo' => $this->auth->getUserinfo()];
+        $this->success(__('注册成功'), $data);
+        }else
+            $this->error("注册失败");
+    }
+
+
+    /**
      * 第三方登录
      *
      * @param string $platform 平台名称
@@ -466,13 +532,21 @@ class User extends Api
 
 
         if ($result) {
-            $loginret = \addons\third\library\Service::connect($platform, $result);
+            $loginret = \addons\third\library\Service::connect_no_register($platform, $result);
 
-            if ($loginret) {
+            if ($loginret=="registered") {
                 $data = [
                     'userinfo'  => $this->auth->getUserinfo(),
+                    'third_id'  => 0,
                 ];
                 $this->success(__('登录成功'),$data);
+            }
+            if ($loginret>0) {
+                $data = [
+                    'userinfo'  => null,
+                    'third_id'  => $loginret,
+                ];
+                $this->success(__('去绑定手机号'),$data);
             }
         }
         $this->error(__('注册失败'), $url);
