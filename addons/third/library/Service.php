@@ -168,8 +168,10 @@ class Service
                 // 保存第三方信息
                 $values['user_id'] = 0;
                 $values["user_json"]=\GuzzleHttp\json_encode($fields);
+                dd($fields);
                 dd(2212);
                 Third::create($values);
+                dd(3231);
                 $id=(new Third())->getLastInsID();
                 dd($id);
                 Db::commit();
