@@ -156,7 +156,7 @@ class Push extends Command
         //
         if($value["push_type_id"]==6){
 
-
+            $this->push_kuaixun($value);
             return "";
         }
         // 推送给所有人
