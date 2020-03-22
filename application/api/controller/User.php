@@ -539,6 +539,7 @@ class User extends Api
                     'userinfo'  => $this->auth->getUserinfo(),
                     'third_id'  => 0,
                 ];
+                dd($data);
                 $this->success(__('登录成功'),$data);
             }
             if ($loginret>0) {
@@ -546,6 +547,7 @@ class User extends Api
                     'userinfo'  => null,
                     'third_id'  => $loginret,
                 ];
+                dd($data);
                 $this->success(__('去绑定手机号'),$data);
             }
         }
