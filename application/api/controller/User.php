@@ -546,14 +546,14 @@ class User extends Api
 
         $data=(new Third())->where(["platform"=>"qq","user_id"=>$this->auth->id])->field("platform")->select();
         if($data){
-            $data1["qq"]="是";
+            $data1["qq"]=$data;
         }else
-            $data1["qq"]="否";
+            $data1["qq"]=$data;
         $data=(new Third())->where(["platform"=>"wechat","user_id"=>$this->auth->id])->field("platform")->select();
         if($data){
-            $data1["wechat"]="是";
+            $data1["wechat"]=$data;
         }else
-            $data1["wechat"]="否";
+            $data1["wechat"]=$data;
         $this->success($data1);
     }
 
