@@ -989,8 +989,10 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
             $fa=$this->request->request("webpage","");
             if(!$fa)
             return $this->success();
-            else
-                return   Jump::success("保存成功","/index/article/index");
+            else{
+                return   Jump::success1("保存成功","/index/article/index");
+            }
+
         }catch (Exception $e){
             return  $this->error($e->getMessage());
         }

@@ -64,6 +64,36 @@ trait Jump
         throw new HttpResponseException($response);
     }
 
+    public static  function success1($msg = '', $url = null, $data = '', $wait = 3, array $header = [])
+    {
+        if (is_null($url) && !is_null(Request::instance()->server('HTTP_REFERER'))) {
+            $url = Request::instance()->server('HTTP_REFERER');
+        } elseif ('' !== $url && !strpos($url, '://') && 0 !== strpos($url, '/')) {
+            $url = Url::build($url);
+        }
+
+        $type = $this->getResponseType();
+        $result = [
+            'code' => 1,
+            'msg'  => $msg,
+            'data' => $data,
+            'url'  => $url,
+            'wait' => $wait,
+        ];
+
+        if ('html' == strtolower($type)) {
+            $template = Config::get('template');
+            $view = Config::get('view_replace_str');
+
+            $result = ViewTemplate::instance($template, $view)
+                ->fetch(Config::get('dispatch_success_tmpl'), $result);
+        }
+
+        $response = Response::create($result, $type)->header($header);
+
+        throw new HttpResponseException($response);
+    }
+
     /**
      * 操作错误跳转的快捷方法
      * @access protected
