@@ -171,14 +171,14 @@ class Service
                 dd($fields);
                 dd($values);
                 Third::create($values);
-                dd(3231);
-                $id=(new Third())->getLastInsID();
-                dd($id);
+//                dd(3231);
+//                $id=(new Third())->getLastInsID();
+//                dd($id);
                 Db::commit();
 
 
 
-                return $id;
+                return 1212;
             } catch (Exception $e) {
                 dd($e);
                 Db::rollback();
