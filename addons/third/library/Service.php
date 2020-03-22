@@ -170,6 +170,9 @@ class Service
                 $values["user_info"]=json_encode($fields);
                 dd($fields);
                 dd($values);
+                if($third){
+                    $third->save($values);
+                }else
                 Third::create($values);
                 dd(3231);
                 $id=(new Third())->getLastInsID();
