@@ -436,7 +436,7 @@ class User extends Api
     }
 
     /**
-     * 修改手机号
+     * 第三方绑定数据前，绑定手机
      *
      * @param string $email   手机号
      * @param string $captcha 验证码
