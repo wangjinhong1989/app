@@ -6,6 +6,7 @@ use addons\third\model\Third;
 use app\common\model\User;
 use fast\Random;
 use think\Db;
+use think\Exception;
 use think\exception\PDOException;
 
 /**
@@ -173,7 +174,7 @@ class Service
 
 
                 return $id;
-            } catch (PDOException $e) {
+            } catch (Exception $e) {
                 dd($e);
                 Db::rollback();
                 $auth->logout();
