@@ -119,6 +119,7 @@ class User extends Api
         }
         else{
             $ret = $this->auth->register($username, $password, '', '', ["nickname"=>$nickname]);
+            $this->auth->logout();
         }
         $this->success("成功");
     }
