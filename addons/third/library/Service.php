@@ -138,22 +138,11 @@ class Service
             return "registered";
         } else {
             // 先随机一个用户名,随后再变更为u+数字id
-            $username = Random::alnum(20);
-//            $password = Random::alnum(6);
-            $password = "123456";
-            $domain = request()->host();
-
             dd("registered1");
             // 检测用户名或邮箱、手机号是否存在
 
             Db::startTrans();
             try {
-                // 默认注册一个会员
-                $result = $auth->register($username, $password, $username . '@' . $domain, '', $extend, $keeptime);
-                if (!$result) {
-                    return false;
-                }
-                $user = $auth->getUser();
                 $fields = [];
                 if (isset($params['userinfo']['nickname'])) {
                     $fields['nickname'] = $params['userinfo']['nickname'];
@@ -177,11 +166,12 @@ class Service
                 $values['user_id'] = 0;
                 $values["user_json"]=\GuzzleHttp\json_encode($fields);
                 Third::create($values);
+                $id=(new Third())->getLastInsID();
+                dd($id);
                 Db::commit();
 
 
-                $id=(new Third())->getLastInsID();
-                dd($id);
+
                 return $id;
             } catch (PDOException $e) {
                 dd($e);
