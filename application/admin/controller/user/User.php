@@ -100,11 +100,11 @@ class User extends Backend
                 Db::startTrans();
                 try {
                     //是否采用模型验证
-                    if ($this->modelValidate) {
-                        $name = str_replace("\\model\\", "\\validate\\", get_class($this->model));
-                        $validate = is_bool($this->modelValidate) ? ($this->modelSceneValidate ? $name . '.add' : $name) : $this->modelValidate;
-                        $this->model->validateFailException(true)->validate($validate);
-                    }
+//                    if ($this->modelValidate) {
+//                        $name = str_replace("\\model\\", "\\validate\\", get_class($this->model));
+//                        $validate = is_bool($this->modelValidate) ? ($this->modelSceneValidate ? $name . '.add' : $name) : $this->modelValidate;
+//                        $this->model->validateFailException(true)->validate($validate);
+//                    }
 
                     $auth=new Auth();
                     $auth->register($params["username"],"123456","","",[]);
