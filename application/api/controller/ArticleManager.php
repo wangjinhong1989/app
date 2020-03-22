@@ -15,6 +15,7 @@ use think\Cache;
 use think\Db;
 use think\db\Query;
 use think\view\driver\Think;
+use traits\controller\Jump;
 
 /**
  * 首页接口
@@ -985,7 +986,11 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
             $my_number=$my_number+1;
             Cache::set("add_article_number".$this->auth->id.date("Ymd",time()),$my_number,660);
 
+            $fa=$this->request->request("webpage","");
+            if(!$fa)
             return $this->success();
+            else
+                return   Jump::success("保存成功","/index/article/index");
         }catch (Exception $e){
             return  $this->error($e->getMessage());
         }

@@ -37,8 +37,8 @@ class Article extends Frontend
             $model=new \app\admin\model\Article();
             $offset=$this->request->get('offset',1);
             $limit=$this->request->get('limit',10);
-            $lists=$model->alias('article')->with(['articletype','user'])->where(['article.user_id'=>$this->auth->getUser()->id,'article.status'=>'0'])->limit($offset,$limit)->order('id desc')->select();
-            $total=$model->alias('article')->with(['articletype','user'])->where(['article.user_id'=>$this->auth->getUser()->id,'article.status'=>'0'])->count();
+            $lists=$model->alias('article')->with(['articletype','user'])->where(['article.user_id'=>$this->auth->getUser()->id,'article.status'=>'显示'])->limit($offset,$limit)->order('id desc')->select();
+            $total=$model->alias('article')->with(['articletype','user'])->where(['article.user_id'=>$this->auth->getUser()->id,'article.status'=>'显示'])->count();
 //            $lists = collection($lists)->toArray();
             return json(['total'=>$total,'rows'=>$lists,$model->getLastSql()]);
         }else{
