@@ -991,7 +991,7 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
                "data"=>null,
                 "code"=>1,
                 "time"=>time(),
-                "url"=> "/index/article/index",
+                "url"=> "http://app.biyouliao8.com//index/article/index",
                 "wait"=> 3
             ]);
             //return $this->success();
