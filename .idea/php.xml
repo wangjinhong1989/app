@@ -33,6 +33,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
       <path value="$PROJECT_DIR$/vendor/jpush/jpush" />
       <path value="$PROJECT_DIR$/vendor/jiguang/jsms" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-image" />
     </include_path>
   </component>
 </project>

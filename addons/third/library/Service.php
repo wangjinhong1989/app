@@ -135,7 +135,9 @@ class Service
                 return false;
             }
             $third->save($values);
-            dd("registered");
+
+            $auth->direct($user->id);
+
             return "registered";
         } else {
             // 先随机一个用户名,随后再变更为u+数字id
