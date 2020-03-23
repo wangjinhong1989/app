@@ -64,7 +64,6 @@ trait Jump
         throw new HttpResponseException($response);
     }
 
-
     /**
      * 操作错误跳转的快捷方法
      * @access protected
