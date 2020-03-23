@@ -628,14 +628,14 @@ class User extends Api
         if($data){
 
             var_dump($data);
-            $data1["qq"]=$data["openname"];
+//            $data1["qq"]=$data["openname"];
         }else {
             $data1["qq"]="是";
         }
         $data=(new Query())->table("fa_third")->where(["platform"=>"wechat","user_id"=>$user->id])->field("platform")->find();
         if($data){
-
-            $data1["wechat"]=$data["openname"];
+            var_dump($data);
+//            $data1["wechat"]=$data["openname"];
         }else{
             $data1["wechat"]="是";
         }
