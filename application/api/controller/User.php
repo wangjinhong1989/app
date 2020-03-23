@@ -627,14 +627,15 @@ class User extends Api
         $data=(new Query())->table("fa_third")->where(["platform"=>"qq","user_id"=>$user->id])->field("platform")->find();
         if($data){
 
-            $data1["qq"]=$data->openname;
+            var_dump($data);
+            $data1["qq"]=$data["openname"];
         }else {
             $data1["qq"]="是";
         }
         $data=(new Query())->table("fa_third")->where(["platform"=>"wechat","user_id"=>$user->id])->field("platform")->find();
         if($data){
 
-            $data1["wechat"]=$data->openname;
+            $data1["wechat"]=$data["openname"];
         }else{
             $data1["wechat"]="是";
         }
