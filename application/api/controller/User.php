@@ -623,14 +623,15 @@ class User extends Api
 //        $platform = $this->request->request("platform");
         $data1=[];
 
-        $data=(new Third())->where(["platform"=>"qq","user_id"=>$this->auth->id])->field("platform")->select();
+        $user = $this->auth->getUser();
+        $data=(new Third())->where(["platform"=>"qq","user_id"=>$user->id])->field("platform")->select();
         if($data){
 
             $data1["qq"]=$data->openname;
         }else {
             $data1["qq"]="是";
         }
-        $data=(new Third())->where(["platform"=>"wechat","user_id"=>$this->auth->id])->field("platform")->select();
+        $data=(new Third())->where(["platform"=>"wechat","user_id"=>$user->id])->field("platform")->select();
         if($data){
 
             $data1["wechat"]=$data->openname;
