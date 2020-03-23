@@ -639,7 +639,7 @@ class User extends Api
             $data1["wechat"]="是";
         }
 
-        $this->success($data1);
+        $this->success("",$data1);
     }
 
     /**
