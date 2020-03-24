@@ -445,6 +445,7 @@ class User extends Api
     public function bindmobile()
     {
 
+        dd("参数");
         dd($this->request->request());
         $mobile = $this->request->request('mobile');
         $captcha = $this->request->request('captcha');
@@ -460,20 +461,26 @@ class User extends Api
             $this->error(__('手机号已经存在'));
         }
 
+        dd("1");
+
         $user_info=Third::where('id', $third_id)->find();
         if (!$user_info) {
 
             $this->error(__('第三方绑定信息找不到'));
         }
 
+        dd("1");
+
         // 123456 取消验证码
         if($captcha!="123456") {
             $result = Sms::check($mobile, $captcha, 'changemobile');
             if (!$result) {
+                dd("3");
                 $this->error(__('验证码错误'));
             }
         }
 
+        dd("4");
         //  找到后。
 
         $user_json=\GuzzleHttp\json_decode($user_info["user_info"],true);
@@ -496,9 +503,13 @@ class User extends Api
         Third::update(["user_id"=>$this->auth->id],["id"=>$third_id]);
         Sms::flush($mobile, 'changemobile');
         $data = ['userinfo' => $this->auth->getUserinfo()];
+            dd("5");
         $this->success(__('注册成功'), $data);
-        }else
+        }else{
+            dd(6);
             $this->error("注册失败");
+        }
+
     }
 
 
