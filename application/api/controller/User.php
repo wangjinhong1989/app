@@ -445,6 +445,7 @@ class User extends Api
     public function bindmobile()
     {
 
+        dd($this->request->request());
         $mobile = $this->request->request('mobile');
         $captcha = $this->request->request('captcha');
         $third_id = $this->request->request('third_id');
