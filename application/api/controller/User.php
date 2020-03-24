@@ -592,10 +592,10 @@ class User extends Api
                 $data = [
                     'userinfo'  => $this->auth->getUserinfo(),
                 ];
-                $this->success(__('登录成功'));
+                $this->success(__('绑定成功'),$data);
             }
         }
-        $this->error(__('绑定成功'), $url);
+        $this->error(__('绑定失败'), $url);
     }
 
 
