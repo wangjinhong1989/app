@@ -245,6 +245,14 @@ class ArticleManager extends Api
 
         }
 
+
+        // 查询某个人的文章。
+        $is_recommendation=$this->request->request("is_recommendation","");
+        if($is_recommendation){
+            $where["article.is_recommendation"]=["eq",$is_recommendation];
+        }
+
+
         $where["article.articletype_id"]=["eq",2];
         // keyword 检索. 关键字检索.
 
