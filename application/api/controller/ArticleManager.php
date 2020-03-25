@@ -64,6 +64,11 @@ class ArticleManager extends Api
             }
         }
 
+        // 查询某个人的文章。
+        $is_recommendation=$this->request->request("is_recommendation","");
+        if($is_recommendation){
+            $where["article.is_recommendation"]=["eq",$is_recommendation];
+        }
 
         // 单独查询.
         $title=$this->request->request("title","");
@@ -246,11 +251,6 @@ class ArticleManager extends Api
         }
 
 
-        // 查询某个人的文章。
-        $is_recommendation=$this->request->request("is_recommendation","");
-        if($is_recommendation){
-            $where["article.is_recommendation"]=["eq",$is_recommendation];
-        }
 
 
         $where["article.articletype_id"]=["eq",2];
