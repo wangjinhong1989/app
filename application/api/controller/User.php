@@ -641,14 +641,14 @@ class User extends Api
 
             $data1["qq"]=$data["openname"];
         }else {
-            $data1["qq"]="是";
+            $data1["qq"]="未绑定";
         }
         $data=(new Query())->table("fa_third")->where(["platform"=>"wechat","user_id"=>$user->id])->field("platform,openname")->find();
         if($data){
 
             $data1["wechat"]=$data["openname"];
         }else{
-            $data1["wechat"]="是";
+            $data1["wechat"]="未绑定";
         }
 
         $this->success("",$data1);
