@@ -217,14 +217,16 @@ class Service
                 $values['user_id'] = $user_id;
                 Third::create($values);
                 Db::commit();
+                return true;
             } catch (PDOException $e) {
                 Db::rollback();
                 $auth->logout();
                 return false;
             }
 
+            return false;
             // 写入登录Cookies和Token
-            return $auth->direct($user_id);
+            //return $auth->direct($user_id);
 
     }
 
