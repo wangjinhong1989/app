@@ -243,9 +243,10 @@ class Service
                 dd("++++");
                 dd($values);
                 dd("+++++");
-                \app\admin\model\Third::create($values);
+                $back=\app\admin\model\Third::create($values);
                 Db::commit();
                 dd("+++++1111");
+                dd($back);
                 return true;
             } catch (PDOException $e) {
                 dd("------");
