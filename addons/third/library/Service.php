@@ -202,20 +202,13 @@ class Service
         $auth->keeptime($keeptime);
         dd("third");
         dd($third);
-        Db::startTrans();
-        try {
-            if ($third) {
+
+        if ($third) {
                 $values['user_id'] = $user_id;
                 $third->save($values);
-                Db::commit();
                 return true;
-            }
-
-
-        } catch (PDOException $e) {
-            Db::rollback();
-            return false;
         }
+
 
         dd("third2");
 
