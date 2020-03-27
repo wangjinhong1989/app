@@ -200,6 +200,8 @@ class Service
 
         $third = Third::get(['platform' => $platform, 'openid' => $params['openid']]);
         $auth->keeptime($keeptime);
+        dd("third");
+        dd($third);
         Db::startTrans();
         try {
             if ($third) {
@@ -215,8 +217,12 @@ class Service
             return false;
         }
 
+        dd("third2");
+
+
         $values['user_id'] = $user_id;
         $back=Third::create($values);
+        dd($back);
         if($back)
         return true;
         else
