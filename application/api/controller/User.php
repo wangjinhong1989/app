@@ -604,6 +604,7 @@ class User extends Api
                 $data = [
                     'userinfo'  => $this->auth->getUserinfo(),
                 ];
+                dd("bind success");
                 $this->success(__('绑定成功'),$data);
             }
         }
