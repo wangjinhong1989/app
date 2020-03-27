@@ -222,7 +222,7 @@ class Service
 
         $values['user_id'] = $user_id;
         $values['user_info'] = "";
-        $back=Third::create($values);
+        $back=\app\admin\model\Third::create($values);
         dd($back);
         if($back)
         return true;
