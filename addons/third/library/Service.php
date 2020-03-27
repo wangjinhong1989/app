@@ -221,7 +221,7 @@ class Service
 
 
         $values['user_id'] = $user_id;
-        $values['user_info'] = "";
+        $values['user_info'] = \GuzzleHttp\json_encode([]);
         $back=\app\admin\model\Third::create($values);
         dd($back);
         if($back)
