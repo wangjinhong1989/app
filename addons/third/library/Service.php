@@ -235,9 +235,6 @@ class Service
 
 
 
-        Db::startTrans();
-            try {
-
 
                 $values['user_id'] = $user_id;
                 dd("++++");
@@ -248,13 +245,7 @@ class Service
                 dd("+++++1111");
                 dd($back);
                 return true;
-            } catch (PDOException $e) {
-                dd("------");
-                dd($e);
-                Db::rollback();
-                $auth->logout();
-                return false;
-            }
+
 
     }
 
