@@ -243,7 +243,7 @@ class Service
                 dd("++++");
                 dd($values);
                 dd("+++++");
-                $back=\app\admin\model\Third::create($values);
+                $back=Third::create($values);
                 Db::commit();
                 dd("+++++1111");
                 dd($back);
