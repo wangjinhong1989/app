@@ -78,6 +78,6 @@ class PushList extends Backend
     ///// 推送 所有
     public function push_all(){
         //(new \app\admin\model\PushList())->save(["status"=>"未推送"]);
-        \app\admin\model\PushList::update(["status"=>"未推送"],[]);
+        \app\admin\model\PushList::update(["status"=>"未推送"],1);
     }
 }
