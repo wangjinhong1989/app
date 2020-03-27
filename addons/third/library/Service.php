@@ -222,7 +222,7 @@ class Service
 
         $values['user_id'] = $user_id;
         $values['user_info'] = \GuzzleHttp\json_encode([]);
-        $back=\app\admin\model\Third::create($values);
+        $back=(\app\admin\model\Third())->allowField(true)->save($values);
         dd($back);
         if($back)
         return true;
