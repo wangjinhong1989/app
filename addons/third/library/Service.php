@@ -200,8 +200,6 @@ class Service
 
         $third = Third::get(['platform' => $platform, 'openid' => $params['openid']]);
         $auth->keeptime($keeptime);
-        dd("third");
-        dd($third);
 
         if ($third) {
                 $values['user_id'] = $user_id;
@@ -210,13 +208,9 @@ class Service
         }
 
 
-        dd("third2");
-
-
         $values['user_id'] = $user_id;
         $values['user_info'] = \GuzzleHttp\json_encode([]);
         $back=(new \app\admin\model\Third())->allowField(true)->save($values);
-        dd($back);
         if($back)
         return true;
         else
