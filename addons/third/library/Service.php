@@ -240,10 +240,15 @@ class Service
 
 
                 $values['user_id'] = $user_id;
+                dd("++++");
+                dd($values);
+                dd("+++++");
                 Third::create($values);
                 Db::commit();
                 return true;
             } catch (PDOException $e) {
+                dd("------");
+                dd($e);
                 Db::rollback();
                 $auth->logout();
                 return false;
