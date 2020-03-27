@@ -211,7 +211,8 @@ class Service
 
         $third = Third::get(['platform' => $platform, 'openid' => $params['openid']]);
         $auth->keeptime($keeptime);
-
+        dd("data");
+        dd($values);
         Db::startTrans();
         try {
 
