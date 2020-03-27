@@ -74,4 +74,9 @@ class PushList extends Backend
         }
         return $this->view->fetch();
     }
+
+    ///// 推送 所有
+    public function push_all(){
+        $this->model->saveAll(["status"=>"未推送"]);
+    }
 }
