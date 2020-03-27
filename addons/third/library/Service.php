@@ -235,7 +235,6 @@ class Service
             Db::commit();
         } catch (PDOException $e) {
             Db::rollback();
-            $auth->logout();
             return false;
         }
 
