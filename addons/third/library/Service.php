@@ -209,10 +209,31 @@ class Service
         ];
         $auth = \app\common\library\Auth::instance();
 
+        $third = Third::get(['platform' => $platform, 'openid' => $params['openid']]);
         $auth->keeptime($keeptime);
 
-            Db::startTrans();
+        Db::startTrans();
+        try {
+
+            if ($third) {
+                $values['user_id'] = $user_id;
+                $third->save($values);
+                Db::commit();
+                return true;
+            }
+
+
+        } catch (PDOException $e) {
+            Db::rollback();
+            $auth->logout();
+            return false;
+        }
+
+
+
+        Db::startTrans();
             try {
+
 
                 $values['user_id'] = $user_id;
                 Third::create($values);
@@ -223,10 +244,6 @@ class Service
                 $auth->logout();
                 return false;
             }
-
-            return false;
-            // 写入登录Cookies和Token
-            //return $auth->direct($user_id);
 
     }
 
