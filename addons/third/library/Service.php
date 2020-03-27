@@ -192,7 +192,7 @@ class Service
             'openname'      => isset($params['userinfo']['nickname']) ? $params['userinfo']['nickname'] : '',
             'access_token'  => $params['access_token'],
             'refresh_token' => $params['refresh_token'],
-            'expires_in'    => $params['expires_in'],
+            'expires_in'    => $time,
             'logintime'     => $time,
             'expiretime'    => $time + $params['expires_in'],
         ];
