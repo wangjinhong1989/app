@@ -100,6 +100,9 @@ class Article extends Backend
             $params = $this->request->post("row/a");
             if ($params) {
 
+                if($params["user_id"]==0){
+                    $this->error("用户不存在");
+                }
                 if($params["top"]=="置顶"||$params["top"]=="推广"||$params["top"]=="广告"){
                     if(empty($params["begin_time"])||empty($params["end_time"])){
                         $this->error("请填写置顶时间");
@@ -195,7 +198,9 @@ class Article extends Backend
         if ($this->request->isPost()) {
             $params = $this->request->post("row/a");
             if ($params) {
-
+                if($params["user_id"]==0){
+                    $this->error("用户不存在");
+                }
                 if($params["top"]=="置顶"||$params["top"]=="推广"||$params["top"]=="广告"){
                     if(empty($params["begin_time"])||empty($params["end_time"])){
                         $this->error("请填写置顶时间");
