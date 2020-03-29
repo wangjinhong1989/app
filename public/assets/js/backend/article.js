@@ -34,7 +34,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         // {field: 'come_from', title: __('Come_from')},
                         // {field: 'label_ids', title: __('Label_ids')},
                         // {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
-                        {field: 'is_recommendation', title: __('是否推荐'),searchList: {"是":__('是'),"否":__('否')},operate:"="},
+                        {field: 'is_recommendation', title: __('是否推荐'),searchList: {"是":__('是'),"否":__('否')},operate:false},
                         {field: 'read_count', title: __('Read_count'),operate:false},
 
                         {field: 'articletype.name', title: __('Articletype.name'),operate:false},
