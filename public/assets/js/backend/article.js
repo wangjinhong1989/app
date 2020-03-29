@@ -63,14 +63,15 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             bindevent: function () {
                 Form.api.bindevent($("form[role=form]"));
             }
+        },
+        function fmt_if(value){
+
+        return value;
         }
     };
 
 
-    function fmt_if(value){
 
-        return value;
-    }
     function queryParams(pageReqeust) {
 
         pageReqeust.filter=JSON.parse( pageReqeust.filter );
