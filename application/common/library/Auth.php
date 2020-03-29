@@ -173,7 +173,7 @@ class Auth
             $modelQ=    new Query();
             $dataQ=$modelQ->table("fa_avatar")->where([])->orderRaw("rand()")->limit(0,1)->select();
             if($dataQ){
-                $params["avatar"]=$dataQ[0]["avatar"];
+                $params["avatar"]=$dataQ[0]["image"];
             }else
             $params["avatar"]=Config::get('api_url')."/g.jpg";
         }
