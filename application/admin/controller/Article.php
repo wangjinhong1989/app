@@ -279,6 +279,15 @@ class Article extends Backend
                     $count += $v->delete();
                     (new \app\admin\model\Reply())->where(["article_id"=>$v->id])->delete();
                     (new \app\admin\model\Shoucang())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\Banner())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\Discover())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\GuanggaoArticle())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\ReadHistory())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\Tanchuang())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\Tanchuang())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\Jubao())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\Qidong())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\AdArticle())->where(["article_id"=>$v->id])->delete();
                 }
                 Db::commit();
             } catch (PDOException $e) {
