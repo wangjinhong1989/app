@@ -13,7 +13,7 @@ return [
     'Img'               => '封面',
     'Read_count'        => '阅读次数',
     'Show_count'        => '展示次数',
-    'Is_reply'          => '是否留言',
+    'Is_reply'          => '允许评论',
     'Is_mine'           => '是否是原创',
     'Is_recommendation' => '是否推荐',
     'Articletype.name'  => '分类名称',
