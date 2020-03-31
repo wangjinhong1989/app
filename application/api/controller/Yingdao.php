@@ -22,14 +22,14 @@ class Yingdao extends Api
     public function Lists()
     {
         $time=time();
-        $lists=(new \app\admin\model\Yingdao())->where([])->find();
+        $lists=(new \app\admin\model\Yingdao())->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->find();
 
 
             $temp=explode(",",$lists["files"]);
 
             $data=array();
             foreach ($temp as &$v){
-                //$v="http://app.bixiaogui.com".$v;
+                $v="http://app.bixiaogui.com".$v;
                 $t=[];
                 $t["files"]=$v;
                 array_push($data,$t);

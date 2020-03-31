@@ -140,14 +140,10 @@ class Service
 
             return "registered";
         } else {
-            // 先随机一个用户名,随后再变更为u+数字id
-            dd("registered1");
-            // 检测用户名或邮箱、手机号是否存在
 
             Db::startTrans();
             try {
                 $fields = [];
-                dd(122);
                 if (isset($params['userinfo']['nickname'])) {
                     $fields['nickname'] = $params['userinfo']['nickname'];
                     if (User::getByUsername($fields['nickname'])) {
@@ -157,33 +153,26 @@ class Service
                         $fields['username']=$fields['nickname'];
 
                 }
-                dd(323);
                 if (isset($params['userinfo']['avatar'])) {
                     $fields['avatar'] = (($params['userinfo']['avatar']));
                 }
-                dd(232);
                 if (isset($params['userinfo']['gender'])) {
                     $fields['gender'] =  $params['userinfo']['gender'];
                 }
-                dd(56);
 
                 // 保存第三方信息
                 $values['user_id'] = 0;
                 $values["user_info"]=json_encode($fields);
-                dd($fields);
-                dd($values);
                 if($third){
                     $third->save($values);
                 }else
                     $third=Third::create($values);
-                dd(3231);
 
                 Db::commit();
 
                 return $third->id;
 
             } catch (Exception $e) {
-                dd($e);
                 Db::rollback();
                 $auth->logout();
                 return false;
@@ -203,28 +192,30 @@ class Service
             'openname'      => isset($params['userinfo']['nickname']) ? $params['userinfo']['nickname'] : '',
             'access_token'  => $params['access_token'],
             'refresh_token' => $params['refresh_token'],
-            'expires_in'    => $params['expires_in'],
+            'expires_in'    => $time,
             'logintime'     => $time,
             'expiretime'    => $time + $params['expires_in'],
         ];
         $auth = \app\common\library\Auth::instance();
 
+        $third = Third::get(['platform' => $platform, 'openid' => $params['openid']]);
         $auth->keeptime($keeptime);
 
-            Db::startTrans();
-            try {
-
+        if ($third) {
                 $values['user_id'] = $user_id;
-                Third::create($values);
-                Db::commit();
-            } catch (PDOException $e) {
-                Db::rollback();
-                $auth->logout();
-                return false;
-            }
+                $third->save($values);
+                return true;
+        }
 
-            // 写入登录Cookies和Token
-            return $auth->direct($user_id);
+
+        $values['user_id'] = $user_id;
+        $values['user_info'] = \GuzzleHttp\json_encode([]);
+        $back=(new \app\admin\model\Third())->allowField(true)->save($values);
+        if($back)
+        return true;
+        else
+            return false;
+
 
     }
 
@@ -238,7 +229,6 @@ class Service
             Db::commit();
         } catch (PDOException $e) {
             Db::rollback();
-            $auth->logout();
             return false;
         }
 
