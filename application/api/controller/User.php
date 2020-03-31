@@ -597,6 +597,7 @@ class User extends Api
         if ($result) {
             $loginret = \addons\third\library\Service::bind($platform, $result,[],0,$this->auth->id);
 
+            dd($loginret);
             if ($loginret) {
                 $data = [
                     'userinfo'  => $this->auth->getUserinfo(),
