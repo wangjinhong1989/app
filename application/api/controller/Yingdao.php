@@ -22,7 +22,7 @@ class Yingdao extends Api
     public function Lists()
     {
         $time=time();
-        $lists=(new \app\admin\model\Yingdao())->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->find();
+        $lists=(new \app\admin\model\Yingdao())->where([])->find();
 
 
             $temp=explode(",",$lists["files"]);

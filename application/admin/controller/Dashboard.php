@@ -91,13 +91,13 @@ class Dashboard extends Backend
             ["gt",$start_time],
             ["lt",$end_time]
         ]])->count();
-        $this->view->assign('user_total', $user_total+Config::get("site.用户总数"));
-        $this->view->assign('user_total_today', $user_total_today+Config::get("site.新注册数"));
-        $this->view->assign('article_total', $article_total+Config::get("site.总发帖数"));
-        $this->view->assign('article_total_today', $article_total_today+Config::get("site.今日发帖数"));
-        $this->view->assign('user_login_total_today', $user_login_total_today+Config::get("site.今日登陆数"));
-        $this->view->assign('jubao_total_today', $jubao_total_today+Config::get("site.总举报数"));
-        $this->view->assign('jubao_total', $jubao_total+Config::get("site.今日举报数"));
+        $this->view->assign('user_total', $user_total);
+        $this->view->assign('user_total_today', $user_total_today);
+        $this->view->assign('article_total', $article_total);
+        $this->view->assign('article_total_today', $article_total_today);
+        $this->view->assign('user_login_total_today', $user_login_total_today);
+        $this->view->assign('jubao_total_today', $jubao_total_today);
+        $this->view->assign('jubao_total', $jubao_total);
 
         return $this->view->fetch();
     }

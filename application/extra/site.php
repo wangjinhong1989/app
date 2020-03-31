@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'name' => '盘结',
+  'name' => 'FastAdmin',
   'beian' => '',
   'cdnurl' => '',
   'version' => '1.0.1',
@@ -36,11 +36,4 @@ return array (
   'mail_verify_type' => '2',
   'mail_from' => '10000@qq.com',
   'article_numer' => '3',
-  '用户总数' => '1000',
-  '新注册数' => '1000',
-  '总发帖数' => '1000',
-  '今日发帖数' => '1000',
-  '今日登陆数' => '1000',
-  '总举报数' => '1000',
-  '今日举报数' => '1000',
 );
