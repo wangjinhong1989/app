@@ -200,14 +200,9 @@ class Service
 
         $third = Third::get(['platform' => $platform, 'openid' => $params['openid']]);
         $auth->keeptime($keeptime);
-        dd("test1");
-        dd($third);
-        dd("test2");
         if ($third) {
-            dd("test3");
                 $values['user_id'] = $user_id;
                 $third->save($values);
-            dd("test4");
                 return true;
         }
 
