@@ -223,6 +223,11 @@ class Reply extends Api
     {
 
 
+        $info=$this->auth->getUserinfo();
+        if($info->status=="hidden"){
+            return $this->error("您已经被封号，不能发言");
+        }
+
         try{
             $data=[];
             $model=new \app\admin\model\Reply();
@@ -311,6 +316,7 @@ class Reply extends Api
     public function update()
     {
 
+
         try{
             $model=new \app\admin\model\Reply();
             $user = $this->auth->getUser();
@@ -336,6 +342,11 @@ class Reply extends Api
     * **/
     public function reply_content()
     {
+
+        $info=$this->auth->getUserinfo();
+        if($info->status=="hidden"){
+            return $this->error("您已经被封号，不能回复");
+        }
 
         try{
             $model=new \app\admin\model\Reply();
