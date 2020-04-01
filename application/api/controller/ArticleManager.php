@@ -852,7 +852,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
     {
 
         $info=$this->auth->getUserinfo();
-        if($info->status=="hidden"){
+        if($info["status"]=="hidden"){
             return $this->error("您已经被封号，不能发文");
         }
         $userModel=new \app\admin\model\User();

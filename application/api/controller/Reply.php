@@ -224,7 +224,7 @@ class Reply extends Api
 
 
         $info=$this->auth->getUserinfo();
-        if($info->status=="hidden"){
+        if($info["status"]=="hidden"){
             return $this->error("您已经被封号，不能发言");
         }
 
@@ -344,7 +344,7 @@ class Reply extends Api
     {
 
         $info=$this->auth->getUserinfo();
-        if($info->status=="hidden"){
+        if($info["status"]=="hidden"){
             return $this->error("您已经被封号，不能回复");
         }
 
