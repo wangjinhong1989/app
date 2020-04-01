@@ -218,10 +218,10 @@ class Auth
             return false;
         }
 
-        if ($user->status != 'normal') {
-            $this->setError('Account is locked');
-            return false;
-        }
+//        if ($user->status != 'normal') {
+//            $this->setError('Account is locked');
+//            return false;
+//        }
         if ($user->password != $this->getEncryptPassword($password, $user->salt)) {
             $this->setError('Password is incorrect');
             return false;
