@@ -135,6 +135,15 @@ class Jubao extends Backend
 
                     if($params["status"]=="有效"||$params["status"]=="无效"){
                         (new \app\admin\model\Jubao())->where(["id"=>$ids])->delete();
+                        $modelSystem=(new \app\admin\model\SystemMessage());
+                        $modelSystem->create(
+                            [
+                                "user_id"=>$params["user_id"],
+                                "status"=>"未读",
+                                "time"=>time(),
+                                "content"=>$params["status"]?"举报成功":"举报失败",
+                            ]
+                        );
                     }
 
                     Db::commit();
