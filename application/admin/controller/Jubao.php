@@ -141,7 +141,7 @@ class Jubao extends Backend
                                 "user_id"=>$params["user_id"],
                                 "status"=>"未读",
                                 "time"=>time(),
-                                "content"=>$params["status"]?"举报成功":"举报失败",
+                                "content"=>$params["status"]=="有效"?"举报成功":"举报失败",
                             ]
                         );
 
