@@ -27,7 +27,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'id', title: __('Id')},
                         {field: 'feedback_type', title: __('Feedback_type'), searchList: {"功能反馈":__('功能反馈'),"体验反馈":__('体验反馈'),"其它":__('其它')}, formatter: Table.api.formatter.normal},
                         {field: 'content', title: __('Content')},
-                        {field: 'files', title: __('Files')},
+                        {field: 'files', title: __('Files'),formatter: formart_img},
                         {field: 'time', title: __('Time'), operate:'RANGE', addclass:'datetimerange', formatter: Table.api.formatter.datetime},
                         {field: 'user.username', title: __('User.username')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
