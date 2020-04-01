@@ -144,6 +144,8 @@ class Jubao extends Backend
                                 "content"=>$params["status"]?"举报成功":"举报失败",
                             ]
                         );
+
+                        $flag=(new \app\admin\model\FlagMessage())->save(["system_flag"=>1],["user_id"=>$params["user_id"]]);
                     }
 
                     Db::commit();
