@@ -107,13 +107,13 @@ class User extends Backend
                     if($params["status"]=="hidden"){
                         $modelMessage=new \app\admin\model\SystemMessage();
                         $modelMessage->create([
-                            "user_id"=>$params["user_id"],
+                            "user_id"=>$params["id"],
                             "status"=>"未读",
                             "time"=>time(),
                             "content"=>"您已经被封号"
                         ]);
                     }
-                    $flag=(new \app\admin\model\FlagMessage())->save(["system_flag"=>1],["user_id"=>$params["user_id"]]);
+                    $flag=(new \app\admin\model\FlagMessage())->save(["system_flag"=>1],["user_id"=>$params["id"]]);
 
                     Db::commit();
                 } catch (ValidateException $e) {
