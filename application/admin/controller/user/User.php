@@ -103,6 +103,18 @@ class User extends Backend
                         $row->validateFailException(true)->validate($validate);
                     }
                     $result = $row->allowField(true)->save($params);
+
+                    if($params["status"]=="hidden"){
+                        $modelMessage=new \app\admin\model\SystemMessage();
+                        $modelMessage->create([
+                            "user_id"=>$params["user_id"],
+                            "status"=>"未读",
+                            "time"=>time(),
+                            "content"=>"您已经被封号"
+                        ]);
+                    }
+                    $flag=(new \app\admin\model\FlagMessage())->save(["system_flag"=>1],["user_id"=>$params["user_id"]]);
+
                     Db::commit();
                 } catch (ValidateException $e) {
                     Db::rollback();
