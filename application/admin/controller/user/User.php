@@ -238,5 +238,51 @@ class User extends Backend
     }
 
 
+    /**
+     * 删除
+     */
+    public function clear_data($ids = "")
+    {
+        if ($ids) {
+            $pk = $this->model->getPk();
+            $adminIds = $this->getDataLimitAdminIds();
+            if (is_array($adminIds)) {
+                $this->model->where($this->dataLimitField, 'in', $adminIds);
+            }
+            $list = $this->model->where($pk, 'in', $ids)->select();
+
+            $count = 0;
+            Db::startTrans();
+            try {
+                foreach ($list as $k => $v) {
+//                    $count += $v->delete();
+
+                    (new Article())->where(["user_id"=>$v->id])->delete();
+//                    (new Third())->where(["user_id"=>$v->id])->delete();
+                    (new Guanzhu())->where(["user_id"=>$v->id])->delete();
+                    (new Guanzhu())->where(["follow_id"=>$v->id])->delete();
+                    (new Reply())->where(["user_id"=>$v->id])->delete();
+                    (new Dianzan())->where(["user_id"=>$v->id])->delete();
+                    (new Jubao())->where(["user_id"=>$v->id])->delete();
+//                    (new GuangfangUser())->where(["user_id"=>$v->id])->delete();
+                }
+                Db::commit();
+            } catch (PDOException $e) {
+                Db::rollback();
+                $this->error($e->getMessage());
+            } catch (Exception $e) {
+                Db::rollback();
+                $this->error($e->getMessage());
+            }
+            if ($count) {
+                $this->success();
+            } else {
+                $this->error(__('No rows were deleted'));
+            }
+        }
+        $this->error(__('Parameter %s can not be empty', 'ids'));
+    }
+
+
 
 }
