@@ -63,8 +63,8 @@ class SendMsg extends Backend
                     $query->table("fa_user")->chunk(100,function ($user) use ($params){
 
                         foreach ($user as $u){
-                            if($u->mobile)
-                            sendTemplateSMS($u->mobile,[$u->username,$params["content"]],580604);
+                            if($u["mobile"])
+                            sendTemplateSMS($u["mobile"],[$u["username"],$params["content"]],580604);
                         }
 
                     });
