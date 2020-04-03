@@ -46,7 +46,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                                 name: 'id',
                                 text: '清空数据',
                                 title: '清空数据',
-                                icon: 'fa-flash',
                                 classname: 'btn btn-xs btn-danger btn-gogo',
                                 extend: 'data-toggle="tooltip" data-url="user/user/clear_data"',
                                 }
