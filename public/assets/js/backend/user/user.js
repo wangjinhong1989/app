@@ -46,8 +46,9 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                                 name: 'id',
                                 text: '清空数据',
                                 title: '清空数据',
-                                classname: 'btn btn-xs btn-danger btn-gogo',
+                                classname: 'btn btn-xs btn-danger btn-delone',
                                 extend: 'data-toggle="tooltip" data-url="user/user/clear_data"',
+                                url:"user/user/clear_data"
                                 }
                             ],events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
