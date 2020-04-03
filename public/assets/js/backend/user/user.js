@@ -47,7 +47,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                                 text: '清空数据',
                                 title: '清空数据',
                                 icon: 'fa-flash',
-                                classname: 'btn btn-xs btn-danger btn-delone',
+                                classname: 'btn btn-xs btn-danger btn-gogo',
                                 extend: 'data-toggle="tooltip" data-url="user/user/clear_data"',
                                 }
                             ],events: Table.api.events.operate, formatter: Table.api.formatter.operate}
