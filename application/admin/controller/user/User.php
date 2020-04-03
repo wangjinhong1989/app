@@ -104,7 +104,7 @@ class User extends Backend
                     }
                     $result = $row->allowField(true)->save($params);
 
-                    if($row->status=="normal"&&$params["status"]=="hidden"){
+                    if($params["status"]=="hidden"){
                         $modelMessage=new \app\admin\model\SystemMessage();
                         $modelMessage->create([
                             "user_id"=>$ids,
