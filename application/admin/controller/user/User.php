@@ -83,6 +83,7 @@ class User extends Backend
         if (!$row) {
             $this->error(__('No Results were found'));
         }
+        $temp=$temp->toArray();
         $adminIds = $this->getDataLimitAdminIds();
         if (is_array($adminIds)) {
             if (!in_array($row[$this->dataLimitField], $adminIds)) {
