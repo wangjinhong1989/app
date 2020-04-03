@@ -110,16 +110,16 @@ class User extends Backend
                             "user_id"=>$ids,
                             "status"=>"未读",
                             "time"=>time(),
-                            "content"=>"您已经被封号"
+                            "content"=>"您的账号涉嫌违规已被封号"
                         ]);
                     }
-                    if($row->status=="hidden"&&$params["status"]=="normal"){
+                    if($params["status"]=="normal"){
                         $modelMessage=new \app\admin\model\SystemMessage();
                         $modelMessage->create([
                             "user_id"=>$ids,
                             "status"=>"未读",
                             "time"=>time(),
-                            "content"=>"您已经解封"
+                            "content"=>"您账号已解封"
                         ]);
                     }
                     $flag=(new \app\admin\model\FlagMessage())->save(["system_flag"=>1],["user_id"=>$ids]);
@@ -136,7 +136,7 @@ class User extends Backend
                     $this->error($e->getMessage());
                 }
                 if ($result !== false) {
-                    $this->success();
+                    $this->success($row);
                 } else {
                     $this->error(__('No rows were updated'));
                 }
