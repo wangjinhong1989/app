@@ -255,7 +255,7 @@ class User extends Backend
             Db::startTrans();
             try {
                 foreach ($list as $k => $v) {
-//                    $count += $v->delete();
+                    $count++;
 
                     (new Article())->where(["user_id"=>$v->id])->delete();
 //                    (new Third())->where(["user_id"=>$v->id])->delete();
