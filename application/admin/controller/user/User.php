@@ -79,7 +79,7 @@ class User extends Backend
         $this->view->assign('groupList', build_select('row[group_id]', \app\admin\model\UserGroup::column('id,name'), $row['group_id'], ['class' => 'form-control selectpicker']));
 //        return parent::edit($ids);
 
-        $row = $this->model->get($ids);
+        $temp=$row = $this->model->get($ids);
         if (!$row) {
             $this->error(__('No Results were found'));
         }
@@ -104,7 +104,8 @@ class User extends Backend
                     }
                     $result = $row->allowField(true)->save($params);
 
-                    if($row["status"]=="normal"&&$params["status"]=="hidden"){
+
+                    if($temp["status"]=="normal"&&$params["status"]=="hidden"){
                         $modelMessage=new \app\admin\model\SystemMessage();
                         $modelMessage->create([
                             "user_id"=>$ids,
@@ -113,7 +114,7 @@ class User extends Backend
                             "content"=>"您的账号涉嫌违规已被封号"
                         ]);
                     }
-                    if($row["status"]=="hidden"&&$params["status"]=="normal"){
+                    if($temp["status"]=="hidden"&&$params["status"]=="normal"){
                         $modelMessage=new \app\admin\model\SystemMessage();
                         $modelMessage->create([
                             "user_id"=>$ids,
