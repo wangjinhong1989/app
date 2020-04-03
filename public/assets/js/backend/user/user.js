@@ -41,7 +41,16 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'jointime', title: __('Jointime'), formatter: Table.api.formatter.datetime, operate: 'RANGE', addclass: 'datetimerange', sortable: true},
                         {field: 'joinip', title: __('Joinip'), formatter: Table.api.formatter.search},
                         {field: 'status', title: __('Status'), formatter: Table.api.formatter.status, searchList: {normal: __('Normal'), hidden: __('封号')}},
-                        {field: 'operate', title: __('Operate'), table: table, buttons:[{name: 'id', text: '清空数据', title: '清空数据', icon: 'fa-flash', classname: 'btn btn-xs btn-danger btn-delone',extend: 'data-toggle="tooltip"', url: 'user/user/clear_data'}],events: Table.api.events.operate, formatter: Table.api.formatter.operate}
+                        {field: 'operate', title: __('Operate'), table: table, buttons:[
+                            {
+                                name: 'id',
+                                text: '清空数据',
+                                title: '清空数据',
+                                icon: 'fa-flash',
+                                classname: 'btn btn-xs btn-danger btn-delone',
+                                extend: 'data-toggle="tooltip" data-url="user/user/clear_data"',
+                                }
+                            ],events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
             });
