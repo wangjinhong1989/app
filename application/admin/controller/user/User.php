@@ -259,8 +259,8 @@ class User extends Backend
 
                     (new Article())->where(["user_id"=>$v->id])->delete();
 //                    (new Third())->where(["user_id"=>$v->id])->delete();
-                    (new Guanzhu())->where(["user_id"=>$v->id])->delete();
-                    (new Guanzhu())->where(["follow_id"=>$v->id])->delete();
+//                    (new Guanzhu())->where(["user_id"=>$v->id])->delete();
+//                    (new Guanzhu())->where(["follow_id"=>$v->id])->delete();
                     (new Reply())->where(["user_id"=>$v->id])->delete();
                     (new Dianzan())->where(["user_id"=>$v->id])->delete();
                     (new Jubao())->where(["user_id"=>$v->id])->delete();
