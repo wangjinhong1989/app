@@ -65,7 +65,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
 
     function fmt_clear(index,row) {
 
-        return '<a href="/admin.php/user/clear_data?id='+row.id+'">清空</a>';
+        return '<a target="_blank" href="/admin.php/user/clear_data?id='+row.id+'">清空</a>';
 
     }
 
