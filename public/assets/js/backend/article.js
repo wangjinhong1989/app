@@ -42,7 +42,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'label.name', title: __('Label.name'),operate:false},
                         {field: 'user.username', title: __('User.username')},
                         {field: 'create_time_text', title: __('发布时间')},
-                        {field: '清空数据', title: __('清空数据'),formatter:fmt_clear},
+
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
@@ -78,9 +78,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         return pageReqeust;
     }
 
-    function fmt_clear(index,row) {
 
-        return row.id
-    }
     return Controller;
 });
