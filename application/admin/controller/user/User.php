@@ -125,7 +125,7 @@ class User extends Backend
                         ]);
                     }
 
-                    var_dump($temp);
+                    //var_dump($temp);
                     $flag=(new \app\admin\model\FlagMessage())->save(["system_flag"=>1],["user_id"=>$ids]);
 
                     Db::commit();
