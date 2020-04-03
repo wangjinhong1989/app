@@ -41,7 +41,9 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'jointime', title: __('Jointime'), formatter: Table.api.formatter.datetime, operate: 'RANGE', addclass: 'datetimerange', sortable: true},
                         {field: 'joinip', title: __('Joinip'), formatter: Table.api.formatter.search},
                         {field: 'status', title: __('Status'), formatter: Table.api.formatter.status, searchList: {normal: __('Normal'), hidden: __('封号')}},
-                        {field: '清空数据', title: __('清空数据'),formatter:fmt_clear},
+                        {field: '清空数据', title: __('清空数据'),table: table,buttons:[
+                                {name: 'id', text: '清空数据', title: '清空数据', icon: 'fa fa-dollar', classname: 'btn btn-xs btn-primary btn-addtabs', url: 'user/clear_data'}
+                            ]},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
@@ -63,11 +65,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         }
     };
 
-    function fmt_clear(index,row) {
-
-        return '<a target="_blank" href="/admin.php/user/clear_data?id='+row.id+'">清空</a>';
-
-    }
 
 
 
