@@ -54,6 +54,10 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 ]
             });
 
+            table.on("post-body.bs.table",function () {
+                $(".btn-gogo").data("area",["200px","150px"]);
+            });
+
             // 为表格绑定事件
             Table.api.bindevent(table);
         },
