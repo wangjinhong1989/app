@@ -104,7 +104,7 @@ class User extends Backend
                     }
                     $result = $row->allowField(true)->save($params);
 
-                    if($params["status"]=="hidden"){
+                    if($row["status"]=="normal"&&$params["status"]=="hidden"){
                         $modelMessage=new \app\admin\model\SystemMessage();
                         $modelMessage->create([
                             "user_id"=>$ids,
@@ -113,7 +113,7 @@ class User extends Backend
                             "content"=>"您的账号涉嫌违规已被封号"
                         ]);
                     }
-                    if($params["status"]=="normal"){
+                    if($row["status"]=="hidden"&&$params["status"]=="normal"){
                         $modelMessage=new \app\admin\model\SystemMessage();
                         $modelMessage->create([
                             "user_id"=>$ids,
