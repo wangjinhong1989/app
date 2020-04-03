@@ -124,6 +124,8 @@ class User extends Backend
                             "content"=>"您账号已解封"
                         ]);
                     }
+
+                    var_dump($temp);
                     $flag=(new \app\admin\model\FlagMessage())->save(["system_flag"=>1],["user_id"=>$ids]);
 
                     Db::commit();
