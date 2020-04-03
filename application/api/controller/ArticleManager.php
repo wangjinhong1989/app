@@ -940,6 +940,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
             $data["is_recommendation"]=$this->request->request('is_recommendation','否');
             // 默认文章类型.  资讯
             $data["articletype_id"]=intval($this->request->request('articletype_id','1'));
+            $data["top"]="取消置顶";
             // 标签ID .
             $data["label_ids"]=$this->request->request('label_ids','');
             $data["create_time"]=time();

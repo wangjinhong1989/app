@@ -113,6 +113,15 @@ class User extends Backend
                             "content"=>"您已经被封号"
                         ]);
                     }
+                    if($params["status"]=="normal"){
+                        $modelMessage=new \app\admin\model\SystemMessage();
+                        $modelMessage->create([
+                            "user_id"=>$ids,
+                            "status"=>"未读",
+                            "time"=>time(),
+                            "content"=>"您已经解封"
+                        ]);
+                    }
                     $flag=(new \app\admin\model\FlagMessage())->save(["system_flag"=>1],["user_id"=>$ids]);
 
                     Db::commit();
