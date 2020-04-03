@@ -60,7 +60,7 @@ class SendMsg extends Backend
 
                     $query= new Query();
 
-                    $query->table("fa_user")->chunk(100,function ($user,$params){
+                    $query->table("fa_user")->chunk(100,function ($user) use ($params){
 
                         foreach ($user as $u){
                             if($u->mobile)
