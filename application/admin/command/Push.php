@@ -339,6 +339,8 @@ class Push extends Command
         } catch (\JPush\Exceptions\JPushException $e) {
 //            dd($e);
             print $e;
+        }catch (Exception $exception){
+            dd($exception);
         }
     }
 
