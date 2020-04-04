@@ -263,39 +263,45 @@ class Reply extends Api
             $article->reply_count=$article->reply_count+1;
             $article->is_read_reply_count=$article->is_read_reply_count+1;
             $article->save();
+
+            $status="审核";
+            if($article->user_id==$user_id){
+                $status="有效";
+            }
             $test=$model->create([
                 //'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>"审核"
-                'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>"审核"
+                'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>$status
             ]);
 
 
-            // 点赞的信息列表。
-            $pushModel=new PushList();
+            if($article->user_id!=$user_id) {
+                // 点赞的信息列表。
+                $pushModel = new PushList();
 
-            $temp=[
-                "user_id"=>$this->auth->id,
-                "push_type_id"=>1,
-                "user_ids"=>$article->user_id,//
-                "content"=>$this->auth->username."评论了您的文章",
-                "param_json"=>json_encode($test)
-            ];
-            $pushModel->create($temp);
+                $temp = [
+                    "user_id" => $this->auth->id,
+                    "push_type_id" => 1,
+                    "user_ids" => $article->user_id,//
+                    "content" => $this->auth->username . "评论了您的文章",
+                    "param_json" => json_encode($test)
+                ];
+                $pushModel->create($temp);
 
 
+                // 查找作者。
+                $article = (new Article())->where(["id" => $article_id])->find();
+                if (empty($article)) {
+                    return $this->success();
+                }
+                // 为作者添加评论
+                $flag = (new \app\admin\model\FlagMessage())->where(["user_id" => $article->user_id])->find();
+                if (empty($flag)) {
+                    return $this->success();
+                }
 
-            // 查找作者。
-            $article=(new Article())->where(["id"=>$article_id])->find();
-            if(empty($article)){
-                return $this->success();
+                $flag->comment_flag = 1;
+                $flag->save();
             }
-            // 为作者添加评论
-            $flag=(new \app\admin\model\FlagMessage())->where(["user_id"=>$article->user_id])->find();
-            if(empty($flag)){
-                return $this->success();
-            }
-
-            $flag->comment_flag=1;
-            $flag->save();
             return $this->success();
         }catch (Exception $e){
             return  $this->error($e->getMessage());
