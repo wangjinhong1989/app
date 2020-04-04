@@ -311,31 +311,33 @@ class Push extends Command
                     ->addAndroidNotification($value["content"],"",null,$data)
                     ->send();
 
-            }
-
-
-            if(is_array($alias)){
-                foreach ($alias as $v){
+                if(is_array($alias)){
+                    foreach ($alias as $v){
+                        $model=new SystemMessage();
+                        $model->create([
+                            "user_id"=>str_replace("user","",$v),
+                            "status"=>"未读",
+                            "time"=>time(),
+                            "content"=>$value["content"]
+                        ]);
+                        FlagMessage::updateFlag(str_replace("user","",$v),$value["push_type_id"],1);
+                    }
+                }else {
                     $model=new SystemMessage();
                     $model->create([
-                        "user_id"=>str_replace("user","",$v),
+                        "user_id"=>str_replace("user","",$alias),
                         "status"=>"未读",
                         "time"=>time(),
                         "content"=>$value["content"]
                     ]);
-                    FlagMessage::updateFlag(str_replace("user","",$v),$value["push_type_id"],1);
-                }
-            }else {
-                $model=new SystemMessage();
-                $model->create([
-                    "user_id"=>str_replace("user","",$alias),
-                    "status"=>"未读",
-                    "time"=>time(),
-                    "content"=>$value["content"]
-                ]);
 
-                FlagMessage::updateFlag(str_replace("user","",$alias),$value["push_type_id"],1);
+                    FlagMessage::updateFlag(str_replace("user","",$alias),$value["push_type_id"],1);
+                }
+
             }
+
+
+
 
 
         } catch (\JPush\Exceptions\JPushException $e) {

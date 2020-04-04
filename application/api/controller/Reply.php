@@ -286,7 +286,7 @@ class Reply extends Api
                     "user_id" => $this->auth->id,
                     "push_type_id" => 1,
                     "user_ids" => $article->user_id,//
-                    "content" => $this->auth->username . "评论了您的文章",
+                    "content" => $this->auth->username . "留言了您的文章",
                     "param_json" => json_encode($test)
                 ];
                 $pushModel->create($temp);
@@ -362,7 +362,7 @@ class Reply extends Api
                 return $this->success();
             }
 
-            $flag->reply_flag = 1;
+            $flag->system_flag = 1;
             $flag->save();
 
             if($status=="有效"){
