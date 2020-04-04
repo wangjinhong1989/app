@@ -200,7 +200,7 @@ class Reply extends Api
         $query=new Query();
         $lists=$query->table("fa_my_reply_count")->alias("my_reply")->field("*")
             ->where($where)
-            ->limit($offset,$page_size)->order("id desc")->select();
+            ->limit($offset,$page_size)->order("is_read_reply_count desc")->select();
 
         $count=$query->table("fa_my_reply_count")->alias("my_reply")->field("id")
             ->where($where)
