@@ -280,10 +280,7 @@ class Push extends Command
                 if(empty($value["param_json"])||$value["param_json"]==""){
 
                     return "";
-                }else {
-                    var_dump($value["param_json"]);
                 }
-                var_dump($value["param_json"]);
 
                 $params=json_decode($value["param_json"],true);
                 if(!$params){
@@ -359,6 +356,9 @@ class Push extends Command
         $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
 
         try {
+            if(!$value["param_json"]){
+                return "";
+            }
             $params=\GuzzleHttp\json_decode($value["param_json"],true);
             if($params["des"]==""){$params["des"]="通知";
             }
