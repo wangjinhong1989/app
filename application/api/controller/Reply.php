@@ -354,6 +354,26 @@ class Reply extends Api
             }
             $reply->status=$status;
             $reply->save();
+
+
+            // 为作者添加评论
+            $flag = (new \app\admin\model\FlagMessage())->where(["user_id" => $reply->user_id])->find();
+            if (empty($flag)) {
+                return $this->success();
+            }
+
+            $flag->reply_flag = 1;
+            $flag->save();
+
+            if($status=="有效"){
+                $modelMessage=new \app\admin\model\SystemMessage();
+                $modelMessage->create([
+                    "user_id"=>$reply->user_id,
+                    "status"=>"未读",
+                    "time"=>time(),
+                    "content"=>"恭喜您的留言入选为精选留言"
+                ]);
+            }
             return $this->success();
         }catch (Exception $e){
             return  $this->error($e->getMessage());
