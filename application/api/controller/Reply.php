@@ -209,6 +209,7 @@ class Reply extends Api
 
         foreach ($lists as &$l){
             $l["create_time"]=formart_time($l["createtime"]);
+            $l["reply_count"]=$l["is_read_reply_count"];
 
 
         }
