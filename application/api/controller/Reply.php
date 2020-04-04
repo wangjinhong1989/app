@@ -260,13 +260,17 @@ class Reply extends Api
             if($article->is_reply=="否"){
                 return $this->error(__('文章不允许评论'));
             }
-            $article->reply_count=$article->reply_count+1;
-            $article->is_read_reply_count=$article->is_read_reply_count+1;
-            $article->save();
+
 
             $status="审核";
             if($article->user_id==$user_id){
                 $status="有效";
+                $article->reply_count=$article->reply_count+1;
+                $article->save();
+            }else{
+                $article->reply_count=$article->reply_count+1;
+                $article->is_read_reply_count=$article->is_read_reply_count+1;
+                $article->save();
             }
             $test=$model->create([
                 //'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>"审核"
