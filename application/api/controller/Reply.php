@@ -77,6 +77,15 @@ class Reply extends Api
         foreach ($lists as &$l){
             if($l["author_id"]==$my_id){
                 $l["is_my_article"]="是";
+                if($article_id){
+                    $article=(new Article())->where(["id"=>$article_id])->find();
+                    if($article){
+                        $article->is_read_reply_count=0;
+                        $article->save();
+                    }
+
+                }
+
 
             }else {
                 $l["is_my_article"]="否";
@@ -181,6 +190,7 @@ class Reply extends Api
 
         $where=[];
         $where["reply_count"]=["gt",0];
+        $where["is_read"]=["gt",0];
         $user_id=$this->auth->id;
         if($user_id){
             $where["user_id"]=["eq",$user_id];
@@ -249,6 +259,9 @@ class Reply extends Api
             if($article->is_reply=="否"){
                 return $this->error(__('文章不允许评论'));
             }
+            $article->reply_count=$article->reply_count+1;
+            $article->is_read_reply_count=$article->is_read_reply_count+1;
+            $article->save();
             $test=$model->create([
                 //'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>"审核"
                 'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>"审核"
