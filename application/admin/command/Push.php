@@ -278,6 +278,9 @@ class Push extends Command
 
             if($data["type"]==6||$data["type"]==7){
                 $params=\GuzzleHttp\json_decode($value["param_json"],true);
+                if($params){
+                    return "";
+                }
                 if($params["des"]==""){$params["des"]="通知";
                 }
 
@@ -331,6 +334,7 @@ class Push extends Command
 
 
         } catch (\JPush\Exceptions\JPushException $e) {
+//            dd($e);
             print $e;
         }
     }
