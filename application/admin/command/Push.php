@@ -283,7 +283,7 @@ class Push extends Command
                 }else {
                     var_dump($value["param_json"]);
                 }
-                $params=\GuzzleHttp\json_decode($value["param_json"],true);
+                $params=json_decode($value["param_json"],true);
                 if(!$params){
                     return "";
                 }
