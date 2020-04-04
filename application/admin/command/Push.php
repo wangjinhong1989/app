@@ -277,7 +277,7 @@ class Push extends Command
         try {
 
             if($data["type"]==6||$data["type"]==7){
-                $params=\GuzzleHttp\json_decode($value["param_json"],true);
+                $params=@\GuzzleHttp\json_decode($value["param_json"],true);
                 if($params){
                     return "";
                 }
