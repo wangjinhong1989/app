@@ -190,7 +190,7 @@ class Reply extends Api
 
         $where=[];
         $where["reply_count"]=["gt",0];
-        $where["is_read"]=["gt",0];
+        $where["is_read_reply_count"]=["gt",0];
         $user_id=$this->auth->id;
         if($user_id){
             $where["user_id"]=["eq",$user_id];
