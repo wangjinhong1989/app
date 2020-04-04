@@ -283,6 +283,8 @@ class Push extends Command
                 }else {
                     var_dump($value["param_json"]);
                 }
+                var_dump($value["param_json"]);
+
                 $params=json_decode($value["param_json"],true);
                 if(!$params){
                     return "";
