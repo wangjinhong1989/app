@@ -121,7 +121,7 @@ class ZhengjianQiye extends Backend
                             "content"=>"企业认证".$params["status"]
                         ]);
                     }
-
+                    $flag=(new \app\admin\model\FlagMessage())->save(["system_flag"=>1],["user_id"=>$params["user_id"]]);
 
                     Db::commit();
                 } catch (ValidateException $e) {
@@ -184,7 +184,7 @@ class ZhengjianQiye extends Backend
                             "content"=>"企业认证".$params["status"]
                         ]);
                     }
-
+                    $flag=(new \app\admin\model\FlagMessage())->save(["system_flag"=>1],["user_id"=>$params["user_id"]]);
                     Db::commit();
                 } catch (ValidateException $e) {
                     Db::rollback();

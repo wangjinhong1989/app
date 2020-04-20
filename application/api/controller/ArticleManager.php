@@ -64,6 +64,11 @@ class ArticleManager extends Api
             }
         }
 
+        // 查询某个人的文章。
+        $is_recommendation=$this->request->request("is_recommendation","");
+        if($is_recommendation){
+            $where["article.is_recommendation"]=["eq",$is_recommendation];
+        }
 
         // 单独查询.
         $title=$this->request->request("title","");
@@ -244,6 +249,9 @@ class ArticleManager extends Api
         if($articletype_id){
 
         }
+
+
+
 
         $where["article.articletype_id"]=["eq",2];
         // keyword 检索. 关键字检索.
@@ -843,6 +851,10 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
     public function add()
     {
 
+        $info=$this->auth->getUserinfo();
+        if($info["status"]=="hidden"){
+            return $this->error("您已经被封号，不能发文");
+        }
         $userModel=new \app\admin\model\User();
 
         $configUser=(new ConfigUser())->where([])->find();
@@ -928,6 +940,7 @@ span.s2 {font-family: 'Helvetica'; font-weight: normal; font-style: normal; font
             $data["is_recommendation"]=$this->request->request('is_recommendation','否');
             // 默认文章类型.  资讯
             $data["articletype_id"]=intval($this->request->request('articletype_id','1'));
+            $data["top"]="取消置顶";
             // 标签ID .
             $data["label_ids"]=$this->request->request('label_ids','');
             $data["create_time"]=time();

@@ -29,7 +29,7 @@ class Yingdao extends Api
 
             $data=array();
             foreach ($temp as &$v){
-              //  $v="http://app.bixiaogui.com".$v;
+                //$v="http://app.bixiaogui.com".$v;
                 $t=[];
                 $t["files"]=$v;
                 array_push($data,$t);

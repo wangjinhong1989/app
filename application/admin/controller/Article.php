@@ -69,7 +69,7 @@ class Article extends Backend
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(['id','title','description','status','come_from',"top",'label_ids','url','img','read_count','show_count']);
+                $row->visible(['id','title','description','status','come_from',"top",'label_ids','url','img','read_count','show_count','is_recommendation']);
                 $row->visible(['articletype']);
 				$row->getRelation('articletype')->visible(['name']);
 				$row->visible(['label']);
@@ -100,6 +100,9 @@ class Article extends Backend
             $params = $this->request->post("row/a");
             if ($params) {
 
+                if($params["user_id"]==0){
+                    $this->error("用户不存在");
+                }
                 if($params["top"]=="置顶"||$params["top"]=="推广"||$params["top"]=="广告"){
                     if(empty($params["begin_time"])||empty($params["end_time"])){
                         $this->error("请填写置顶时间");
@@ -195,7 +198,9 @@ class Article extends Backend
         if ($this->request->isPost()) {
             $params = $this->request->post("row/a");
             if ($params) {
-
+                if($params["user_id"]==0){
+                    $this->error("用户不存在");
+                }
                 if($params["top"]=="置顶"||$params["top"]=="推广"||$params["top"]=="广告"){
                     if(empty($params["begin_time"])||empty($params["end_time"])){
                         $this->error("请填写置顶时间");
@@ -274,6 +279,14 @@ class Article extends Backend
                     $count += $v->delete();
                     (new \app\admin\model\Reply())->where(["article_id"=>$v->id])->delete();
                     (new \app\admin\model\Shoucang())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\Banner())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\Discover())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\GuanggaoArticle())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\ReadHistory())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\Tanchuang())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\Tanchuang())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\Jubao())->where(["article_id"=>$v->id])->delete();
+                    (new \app\admin\model\Qidong())->where(["article_id"=>$v->id])->delete();
                 }
                 Db::commit();
             } catch (PDOException $e) {

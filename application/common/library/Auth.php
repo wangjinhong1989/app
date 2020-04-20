@@ -2,6 +2,7 @@
 
 namespace app\common\library;
 
+use app\admin\model\Avatar;
 use app\admin\model\GuangfangUser;
 use app\admin\model\Guanggao;
 use app\api\controller\Guanzhu;
@@ -10,6 +11,7 @@ use app\common\model\UserRule;
 use fast\Random;
 use think\Config;
 use think\Db;
+use think\db\Query;
 use think\Exception;
 use think\Hook;
 use think\Request;
@@ -98,10 +100,10 @@ class Auth
                 $this->setError('Account not exist');
                 return false;
             }
-            if ($user['status'] != 'normal') {
-                $this->setError('Account is locked');
-                return false;
-            }
+//            if ($user['status'] != 'normal') {
+//                $this->setError('Account is locked');
+//                return false;
+//            }
             $this->_user = $user;
             $this->_logined = true;
             $this->_token = $token;
@@ -166,6 +168,13 @@ class Auth
         ]);
 
         if($params["avatar"]==""){
+
+            //
+            $modelQ=    new Query();
+            $dataQ=$modelQ->table("fa_avatar")->where([])->orderRaw("rand()")->limit(0,1)->select();
+            if($dataQ){
+                $params["avatar"]=$dataQ[0]["image"];
+            }else
             $params["avatar"]=Config::get('api_url')."/g.jpg";
         }
         $params['password'] = $this->getEncryptPassword($password, $params['salt']);
@@ -209,10 +218,10 @@ class Auth
             return false;
         }
 
-        if ($user->status != 'normal') {
-            $this->setError('Account is locked');
-            return false;
-        }
+//        if ($user->status != 'normal') {
+//            $this->setError('Account is locked');
+//            return false;
+//        }
         if ($user->password != $this->getEncryptPassword($password, $user->salt)) {
             $this->setError('Password is incorrect');
             return false;

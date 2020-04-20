@@ -35,15 +35,15 @@ class ProblemPlatform extends Api
             $where["reason"]=["like","%".$keyword."%"];
         }
 
-        $data["rows"]=(new Problem())->where($where)->limit($offset,$page_size)->order("id","desc")->select();
+        $data["rows"]=(new Problem())->where($where)->limit($offset,$page_size)->order("time","desc")->select();
         $data["count"]=(new Problem())->where($where)->count();
 
         $data["page"]=$page;
         $data["rows"]=collection($data["rows"])->toArray();
 
-//        foreach ($data["rows"] as $key=>&$row){
-//            $row["time"]=formart_time($row["time"]);
-//        }
+        foreach ($data["rows"] as $key=>&$row){
+            $row["date"]=date("Y-m-d",$row["time"]);
+        }
         $data["total_page"]=ceil($data["count"]/$page_size);
         $this->success("成功",$data);
     }

@@ -180,7 +180,7 @@ class Push extends Command
                 // 需要推送的列表.
                 $temp=[];
                 foreach ($list as  $l){
-                    $back=$this->checkUser($l["id"],$value["push_type_id"],$value["user_id"]);
+                    $back=$this->checkUser($l["user_id"],$value["push_type_id"],$value["user_id"]);
                     if($back!=""&&!empty($back))
                     $temp[]=$back;
                 }
@@ -277,7 +277,15 @@ class Push extends Command
         try {
 
             if($data["type"]==6||$data["type"]==7){
-                $params=\GuzzleHttp\json_decode($value["param_json"],true);
+                if(empty($value["param_json"])||$value["param_json"]==""){
+
+                    return "";
+                }
+
+                $params=json_decode($value["param_json"],true);
+                if(!$params){
+                    return "";
+                }
                 if($params["des"]==""){$params["des"]="通知";
                 }
 
@@ -303,35 +311,40 @@ class Push extends Command
                     ->addAndroidNotification($value["content"],"",null,$data)
                     ->send();
 
-            }
-
-
-            if(is_array($alias)){
-                foreach ($alias as $v){
+                if(is_array($alias)){
+                    foreach ($alias as $v){
+                        $model=new SystemMessage();
+                        $model->create([
+                            "user_id"=>str_replace("user","",$v),
+                            "status"=>"未读",
+                            "time"=>time(),
+                            "content"=>$value["content"]
+                        ]);
+                        FlagMessage::updateFlag(str_replace("user","",$v),$value["push_type_id"],1);
+                    }
+                }else {
                     $model=new SystemMessage();
                     $model->create([
-                        "user_id"=>str_replace("user","",$v),
+                        "user_id"=>str_replace("user","",$alias),
                         "status"=>"未读",
                         "time"=>time(),
                         "content"=>$value["content"]
                     ]);
-                    FlagMessage::updateFlag(str_replace("user","",$v),$value["push_type_id"],1);
-                }
-            }else {
-                $model=new SystemMessage();
-                $model->create([
-                    "user_id"=>str_replace("user","",$alias),
-                    "status"=>"未读",
-                    "time"=>time(),
-                    "content"=>$value["content"]
-                ]);
 
-                FlagMessage::updateFlag(str_replace("user","",$alias),$value["push_type_id"],1);
+                    FlagMessage::updateFlag(str_replace("user","",$alias),$value["push_type_id"],1);
+                }
+
             }
 
 
+
+
+
         } catch (\JPush\Exceptions\JPushException $e) {
+//            dd($e);
             print $e;
+        }catch (Exception $exception){
+            dd($exception);
         }
     }
 
@@ -345,6 +358,9 @@ class Push extends Command
         $client =   new \JPush\Client( Config::get("jiguang_app_key"),  Config::get("jiguang_master_secret"));
 
         try {
+            if(!$value["param_json"]){
+                return "";
+            }
             $params=\GuzzleHttp\json_decode($value["param_json"],true);
             if($params["des"]==""){$params["des"]="通知";
             }

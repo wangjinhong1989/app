@@ -22,6 +22,16 @@ class Index extends Api
         $this->success('请求成功');
     }
 
+    /**
+     * 首页
+     *
+     */
+    public function file()
+    {
+       file_put_contents("1.ass","aaa");
+
+    }
+
     public function test()
     {
         $flag=sendTemplateSMS("17380613281",['1234','5678']);

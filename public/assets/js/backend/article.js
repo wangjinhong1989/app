@@ -30,17 +30,19 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'id', title: __('Id')},
                         {field: 'title', title: __('Title'),operate:'LIKE'},
                         {field: 'status', title: __('Status'), searchList: {"显示":__('显示'),"隐藏":__('隐藏')}, formatter: Table.api.formatter.status},
-                        {field: 'top', title: __('置顶')},
+                        {field: 'top', title: __('置顶'),searchList: {"取消置顶":__('无'),"置顶":__('置顶'),"推广":__('推广'),"广告":__('广告')},formatter:Table.api.formatter.search},
                         // {field: 'come_from', title: __('Come_from')},
                         // {field: 'label_ids', title: __('Label_ids')},
                         // {field: 'url', title: __('Url'), formatter: Table.api.formatter.url},
-                        {field: 'is_recommendation_text', title: __('是否推荐')},
+                        {field: 'is_recommendation', title: __('是否推荐'),searchList: {"是":__('是'),"否":__('否')},formatter:Table.api.formatter.search},
+
                         {field: 'read_count', title: __('Read_count'),operate:false},
 
                         {field: 'articletype.name', title: __('Articletype.name'),operate:false},
                         {field: 'label.name', title: __('Label.name'),operate:false},
                         {field: 'user.username', title: __('User.username')},
                         {field: 'create_time_text', title: __('发布时间')},
+
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
@@ -75,5 +77,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         pageReqeust.filter=JSON.stringify( pageReqeust.filter );
         return pageReqeust;
     }
+
+
     return Controller;
 });

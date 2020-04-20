@@ -77,6 +77,15 @@ class Reply extends Api
         foreach ($lists as &$l){
             if($l["author_id"]==$my_id){
                 $l["is_my_article"]="是";
+                if($article_id){
+                    $article=(new Article())->where(["id"=>$article_id])->find();
+                    if($article){
+                        $article->is_read_reply_count=0;
+                        $article->save();
+                    }
+
+                }
+
 
             }else {
                 $l["is_my_article"]="否";
@@ -181,6 +190,7 @@ class Reply extends Api
 
         $where=[];
         $where["reply_count"]=["gt",0];
+//        $where["is_read_reply_count"]=["gt",0];
         $user_id=$this->auth->id;
         if($user_id){
             $where["user_id"]=["eq",$user_id];
@@ -190,7 +200,7 @@ class Reply extends Api
         $query=new Query();
         $lists=$query->table("fa_my_reply_count")->alias("my_reply")->field("*")
             ->where($where)
-            ->limit($offset,$page_size)->order("id desc")->select();
+            ->limit($offset,$page_size)->order("is_read_reply_count desc")->select();
 
         $count=$query->table("fa_my_reply_count")->alias("my_reply")->field("id")
             ->where($where)
@@ -199,6 +209,7 @@ class Reply extends Api
 
         foreach ($lists as &$l){
             $l["create_time"]=formart_time($l["createtime"]);
+            $l["reply_count"]=$l["is_read_reply_count"];
 
 
         }
@@ -223,6 +234,11 @@ class Reply extends Api
     {
 
 
+        $info=$this->auth->getUserinfo();
+        if($info["status"]=="hidden"){
+            return $this->error("您已经被封号，不能发言");
+        }
+
         try{
             $data=[];
             $model=new \app\admin\model\Reply();
@@ -244,39 +260,52 @@ class Reply extends Api
             if($article->is_reply=="否"){
                 return $this->error(__('文章不允许评论'));
             }
+
+
+            $status="审核";
+            if($article->user_id==$user_id){
+                $status="有效";
+                $article->reply_count=$article->reply_count+1;
+                $article->save();
+            }else{
+                $article->reply_count=$article->reply_count+1;
+                $article->is_read_reply_count=$article->is_read_reply_count+1;
+                $article->save();
+            }
             $test=$model->create([
                 //'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>"审核"
-                'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>"审核"
+                'user_id'=>$user_id,'article_id'=>$article_id,"parent_id"=>$parent_id,"content"=>$content,'createtime'=>time(),"status"=>$status
             ]);
 
 
-            // 点赞的信息列表。
-            $pushModel=new PushList();
+            if($article->user_id!=$user_id) {
+                // 点赞的信息列表。
+                $pushModel = new PushList();
 
-            $temp=[
-                "user_id"=>$this->auth->id,
-                "push_type_id"=>1,
-                "user_ids"=>$article->user_id,//
-                "content"=>$this->auth->username."评论了您的文章",
-                "param_json"=>json_encode($test)
-            ];
-            $pushModel->create($temp);
+                $temp = [
+                    "user_id" => $this->auth->id,
+                    "push_type_id" => 1,
+                    "user_ids" => $article->user_id,//
+                    "content" => $this->auth->username . "留言了您的文章",
+                    "param_json" => json_encode($test)
+                ];
+                $pushModel->create($temp);
 
 
+                // 查找作者。
+                $article = (new Article())->where(["id" => $article_id])->find();
+                if (empty($article)) {
+                    return $this->success();
+                }
+                // 为作者添加评论
+                $flag = (new \app\admin\model\FlagMessage())->where(["user_id" => $article->user_id])->find();
+                if (empty($flag)) {
+                    return $this->success();
+                }
 
-            // 查找作者。
-            $article=(new Article())->where(["id"=>$article_id])->find();
-            if(empty($article)){
-                return $this->success();
+                $flag->comment_flag = 1;
+                $flag->save();
             }
-            // 为作者添加评论
-            $flag=(new \app\admin\model\FlagMessage())->where(["user_id"=>$article->user_id])->find();
-            if(empty($flag)){
-                return $this->success();
-            }
-
-            $flag->comment_flag=1;
-            $flag->save();
             return $this->success();
         }catch (Exception $e){
             return  $this->error($e->getMessage());
@@ -311,6 +340,7 @@ class Reply extends Api
     public function update()
     {
 
+
         try{
             $model=new \app\admin\model\Reply();
             $user = $this->auth->getUser();
@@ -324,6 +354,26 @@ class Reply extends Api
             }
             $reply->status=$status;
             $reply->save();
+
+
+            // 为作者添加评论
+            $flag = (new \app\admin\model\FlagMessage())->where(["user_id" => $reply->user_id])->find();
+            if (empty($flag)) {
+                return $this->success();
+            }
+
+            $flag->system_flag = 1;
+            $flag->save();
+
+            if($status=="有效"){
+                $modelMessage=new \app\admin\model\SystemMessage();
+                $modelMessage->create([
+                    "user_id"=>$reply->user_id,
+                    "status"=>"未读",
+                    "time"=>time(),
+                    "content"=>"恭喜您的留言入选为精选留言"
+                ]);
+            }
             return $this->success();
         }catch (Exception $e){
             return  $this->error($e->getMessage());
@@ -336,6 +386,11 @@ class Reply extends Api
     * **/
     public function reply_content()
     {
+
+        $info=$this->auth->getUserinfo();
+        if($info["status"]=="hidden"){
+            return $this->error("您已经被封号，不能回复");
+        }
 
         try{
             $model=new \app\admin\model\Reply();
