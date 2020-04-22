@@ -991,7 +991,7 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
                "data"=>"",
                 "code"=>1,
                 "time"=>time(),
-                "url"=> "http://app.biyouliao8.com//index/article/index",
+                "url"=> "http://app.xwxyq.cn//index/article/index",
                 "wait"=> 3
             ]);
             //return $this->success();
@@ -1022,8 +1022,8 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
             $detail["likong_count"]=(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利空"])->count();
             $detail["lihao_count"]=(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利好"])->count();
 
-            $detail["image"]="http://app.biyouliao.com/bj.png";
-            //$detail["url"]="http://app.biyouliao.com/uploads/20191224/1c68375a95c34071687ca6a56f5f8933.png";
+            $detail["image"]="http://app.xwxyq.cn/bj.png";
+            //$detail["url"]="http://app.xwxyq.cn/uploads/20191224/1c68375a95c34071687ca6a56f5f8933.png";
             //$detail["create_time"]=date("Y-m-d H:i:s",$detail["create_time"]);
             $detail["create_time"]=formart_time($detail["create_time"]);
         }

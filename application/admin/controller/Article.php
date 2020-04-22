@@ -151,7 +151,7 @@ class Article extends Backend
                         "push_type_id"=>7,
                         "user_ids"=>"all",// 给关注我的人，发所有信息。
                         "content"=>$params["title"],
-                        "param_json"=>json_encode(["article_id"=>$id,"image"=>"http://app.biyouliao8.com/logo.png","des"=>$params["description"]])
+                        "param_json"=>json_encode(["article_id"=>$id,"image"=>"http://app.xwxyq.cn/logo.png","des"=>$params["description"]])
                     ];
                     $pushModel->create($temp);
 

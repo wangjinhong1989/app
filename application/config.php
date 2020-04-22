@@ -298,5 +298,5 @@ return [
 //d536088255f79affba271290
     "jiguang_app_key"=>"6215ae4917cb8c6db9262a45",
     "jiguang_master_secret"=>"d536088255f79affba271290",
-    'api_url'             => 'http://app.biyouliao8.com',
+    'api_url'             => 'http://app.xwxyq.cn',
 ];

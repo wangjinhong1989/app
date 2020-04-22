@@ -293,7 +293,7 @@ class Push extends Command
 
                     $image=(new Article())->where(["id"=>$params["article_id"]])->find();
                     if($image){
-                        $params["image"]=$this->thumb_image(str_replace("http://app.biyouliao8.com","",$image->img));
+                        $params["image"]=$this->thumb_image(str_replace("http://app.xwxyq.cn","",$image->img));
                     }
                 }
                 $back=$client->push()
@@ -380,9 +380,9 @@ class Push extends Command
     public function thumb_image($file){
         $thumb_path=ROOT_PATH . '/public/thumb' . $file ."";
         if (file_exists($thumb_path)){
-            return "http://app.biyouliao8.com/thumb/".$file;
+            return "http://app.xwxyq.cn/thumb/".$file;
         }else {
-            return "http://app.biyouliao8.com/logo.png";
+            return "http://app.xwxyq.cn/logo.png";
         }
     }
     public function push_all($value,$user_id){
