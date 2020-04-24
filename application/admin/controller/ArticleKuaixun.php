@@ -126,7 +126,7 @@ class ArticleKuaixun extends Backend
                         "push_type_id"=>6,
                         "user_ids"=>"all",// 给关注我的人，发所有信息。
                         "content"=>"".$params["title"],
-                        "param_json"=>json_encode(["article_id"=>$id,"image"=>"http://app.biyouliao8.com/logo.png","des"=>substr($params["content"],0,50)])
+                        "param_json"=>json_encode(["article_id"=>$id,"image"=>"http://app.xwxyq.cn/logo.png","des"=>mb_substr($params["content"],0,50,"utf-8")])
                     ];
                     $pushModel->create($temp);
 
