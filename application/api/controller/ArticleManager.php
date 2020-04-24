@@ -90,10 +90,19 @@ class ArticleManager extends Api
             $search->save_data($history);
             }
         }
+
+
+
         // 查询某个人的文章。
         $user_id=$this->request->request("user_id","");
         if($user_id){
             $where["article.user_id"]=["eq",$user_id];
+        }
+
+         // 查询某个人的文章。
+        $is_recommendation=$this->request->request("is_recommendation","");
+        if($is_recommendation){
+            $where["article.is_recommendation"]=["eq",$is_recommendation];
         }
 
         // 查询某个人的文章。
