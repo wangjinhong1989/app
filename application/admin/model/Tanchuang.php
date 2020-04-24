@@ -101,7 +101,7 @@ class Tanchuang extends Model
         return $this->belongsTo('Article', 'article_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 
-    public function getOne($notIn){
+    public function getOne($notIn=''){
 
         $where=$data=[];
         $where["status"]=["eq","显示"];
