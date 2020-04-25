@@ -57,6 +57,9 @@ class Caiji extends Command
     protected function kuaixun(){
 
         $ids=file_get_contents("ids.txt");
+        if(!$ids){
+            echo "input set ids  error \r\n";die;
+        }
         $ids=intval($ids);
         if(!is_numeric($ids)){
 
