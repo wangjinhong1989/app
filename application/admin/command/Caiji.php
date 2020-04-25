@@ -70,7 +70,20 @@ class Caiji extends Command
         curl_close($ch);
         $json = json_decode($curlRes, true);
 
-        var_dump($json);
+        //var_dump($json);
+
+        foreach ($json as $j){
+
+            \app\admin\model\Caiji::create(
+                [
+                    "type"=>"快讯",
+                    "contentjson"=>json_encode($j),
+                    "status"=>"写入",
+                    "create_time"=>date("Y-m-d H:i:s",time())
+                ]
+            );
+
+        }
     }
 
 }
