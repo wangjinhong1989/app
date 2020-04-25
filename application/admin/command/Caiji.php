@@ -98,9 +98,10 @@ class Caiji extends Command
 
                 foreach ($j["lives"] as $v){
 
+
                     \app\admin\model\Article::create(
                         [
-                            "title"=>mb_strstr($v["content"],0,50),
+                            "title"=>mb_strstr($v["content"],0,50,"utf-8"),
                             "content"=>$v["content"],
                             "lk_count"=>$v["down_counts"],
                             "lh_count"=>$v["up_counts"],
