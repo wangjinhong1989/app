@@ -97,15 +97,7 @@ class Caiji extends Command
             if($json["top_id"]!=$ids){
 
                 foreach ($j["lives"] as $v){
-                    \app\admin\model\Caiji::create(
-                        [
-                            "type"=>"快讯",
-                            "contentjson"=>json_encode($v),
-                            "status"=>"写入",
-                            "create_time"=>date("Y-m-d H:i:s",time())
-                        ]
-                    );
-                    //
+
                     \app\admin\model\Article::create(
                         [
                             "title"=>mb_strstr($v["content"],0,50),
@@ -118,6 +110,7 @@ class Caiji extends Command
                             "create_time"=>date("Y-m-d H:i:s",time())
                         ]
                     );
+                    var_dump($v);
                 }
 
 
