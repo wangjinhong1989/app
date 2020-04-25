@@ -101,7 +101,7 @@ class Caiji extends Command
 
                     \app\admin\model\Article::create(
                         [
-                            "title"=>mb_strstr($v["content"],"】")."】",
+                            "title"=>mb_strstr($v["content"],"】",true)."】",
                             "content"=>$v["content"],
                             "lk_count"=>$v["down_counts"],
                             "lh_count"=>$v["up_counts"],
