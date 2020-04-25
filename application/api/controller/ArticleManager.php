@@ -394,7 +394,7 @@ class ArticleManager extends Api
                         $lists[0]["avatar"]="";
                         $lists[0]["is_ad"]=true;
                         $lists[0]["img"]=$lists[0]["images"];
-                        $lists[0]["create_time"]=formart_time($lists[0]["begin_time"]);
+                        $lists[0]["create_time"]=formart_time_kuaixun($lists[0]["begin_time"]);
                         $dataTemp=[];
                         //
                         foreach ($data["rows"] as $key=>$row){

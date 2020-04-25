@@ -461,3 +461,21 @@ if (!function_exists('formart_time')) {
     }
 }
 
+
+// 记录打印 .
+if (!function_exists('formart_time_kuaixun')) {
+
+    function formart_time_kuaixun($time){
+
+        if(!is_numeric($time)){
+            return $time;
+        }
+        $temp=time()-$time;
+        if($temp>24*3600){
+            return date("Y-m-d",$time);
+        }else {
+           return date("H:i",$time);
+        }
+        return date("Y-m-d",$time);
+    }
+}
