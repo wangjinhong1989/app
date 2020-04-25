@@ -90,7 +90,7 @@ class Caiji extends Command
         curl_close($ch);
         $json = json_decode($curlRes, true);
 
-        //var_dump($json);
+        var_dump($json);
 
         foreach ($json["list"] as $j){
 
