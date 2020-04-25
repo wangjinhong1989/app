@@ -19,4 +19,5 @@ return [
     'app\admin\command\Api',
     'app\admin\command\Push',
     'app\admin\command\Top',
+    'app\admin\command\Caiji',
 ];
