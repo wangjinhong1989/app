@@ -90,7 +90,7 @@ class Caiji extends Command
         curl_close($ch);
         $json = json_decode($curlRes, true);
 
-        var_dump($json);
+      //  var_dump($json);
 
         foreach ($json["list"] as $j){
 
@@ -102,6 +102,19 @@ class Caiji extends Command
                             "type"=>"快讯",
                             "contentjson"=>json_encode($v),
                             "status"=>"写入",
+                            "create_time"=>date("Y-m-d H:i:s",time())
+                        ]
+                    );
+                    //
+                    \app\admin\model\Article::create(
+                        [
+                            "title"=>mb_strstr($v["content"],0,50),
+                            "content"=>$v["content"],
+                            "lk_count"=>$v["down_counts"],
+                            "lh_count"=>$v["up_counts"],
+                            "articletype_id"=>2,
+                            "is_recommendation"=>"否",
+                            "status"=>"显示",
                             "create_time"=>date("Y-m-d H:i:s",time())
                         ]
                     );
