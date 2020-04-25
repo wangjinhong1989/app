@@ -91,7 +91,7 @@ class Caiji extends Command
 
         foreach ($json["list"] as $j){
 
-            if($j["top_id"]!=$ids){
+            if($json["top_id"]!=$ids){
 
                 \app\admin\model\Caiji::create(
                     [
@@ -101,7 +101,7 @@ class Caiji extends Command
                         "create_time"=>date("Y-m-d H:i:s",time())
                     ]
                 );
-                file_put_contents("ids.txt",$j["top_id"]);
+                file_put_contents("ids.txt",$json["top_id"]);
             }
 
 
