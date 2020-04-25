@@ -30,6 +30,7 @@ class Caiji extends Command
         $this
             ->setName('caiji')
             ->addOption('type', 't', Option::VALUE_OPTIONAL, 'default caiji url', '')
+            ->addOption('set', 's', Option::VALUE_OPTIONAL, 'default set ids', '')
             ->setDescription('cai ji');
     }
 
@@ -39,6 +40,11 @@ class Caiji extends Command
         set_time_limit(0);
 
         $type=$input->getOption("type");
+        $set=$input->getOption("set");
+        if($set){
+            $set=intval($set);
+            file_put_contents("ids.txt",$set);
+        }
         switch ($type){
             case "kuaixun":$this->kuaixun();break;
             default : break;
@@ -49,12 +55,68 @@ class Caiji extends Command
     }
 
     protected function kuaixun(){
+
+        $ids=file_get_contents("ids.txt");
+        $ids=intval($ids);
+        if(!is_numeric($ids)){
+
+            echo "ids error \r\n";die;
+        }
+
+        $httpParams = array(
+            'access_key' => $this->key,
+            'date' => time(),
+            "id"=>$ids,
+            "flag"=>"up",
+            "limit"=>1
+        );
+
+        $signParams = array_merge($httpParams, array('secret_key' => $this->secret_key));
+
+        ksort($signParams);
+        $signString = http_build_query($signParams);
+
+        $httpParams['sign'] = strtolower(md5($signString));
+
+        $url = 'http://api.coindog.com/live/list?'.http_build_query($httpParams);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $curlRes = curl_exec($ch);
+        curl_close($ch);
+        $json = json_decode($curlRes, true);
+
+        //var_dump($json);
+
+        foreach ($json["list"] as $j){
+
+            if($j["top_id"]!=$ids){
+
+                \app\admin\model\Caiji::create(
+                    [
+                        "type"=>"快讯",
+                        "contentjson"=>json_encode($j),
+                        "status"=>"写入",
+                        "create_time"=>date("Y-m-d H:i:s",time())
+                    ]
+                );
+                file_put_contents("ids.txt",$j["top_id"]);
+            }
+
+
+        }
+    }
+
+
+    protected function article(){
+
         $httpParams = array(
             'access_key' => $this->key,
             'date' => time()
         );
 
-        $signParams = array_merge($httpParams, array('secret_key' => $this->secret_key));
+        $signParams = array_merge($httpParams, array('secret_key' => $secretKey));
 
         ksort($signParams);
         $signString = http_build_query($signParams);
@@ -68,9 +130,9 @@ class Caiji extends Command
 
         $curlRes = curl_exec($ch);
         curl_close($ch);
+
         $json = json_decode($curlRes, true);
 
-        //var_dump($json);
 
         foreach ($json as $j){
 
@@ -85,5 +147,6 @@ class Caiji extends Command
 
         }
     }
+
 
 }
