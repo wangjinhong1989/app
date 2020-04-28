@@ -22,7 +22,7 @@ use traits\controller\Jump;
  */
 class ArticleManager extends Api
 {
-    protected $noNeedLogin = ["lists","recommendation","Lists1","detail","Lists_kuaixun"];
+    protected $noNeedLogin = ["lists","recommendation","Lists1","detail","Lists_kuaixun","detail_kuaixun"];
     protected $noNeedRight = ['*'];
 
     /**
