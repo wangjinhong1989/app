@@ -67,6 +67,7 @@ class Ajax extends Backend
         $suffix = $suffix && preg_match("/^[a-zA-Z0-9]+$/", $suffix) ? $suffix : 'file';
 
         $mimetypeArr = explode(',', strtolower($upload['mimetype']));
+        $mimetypeArr =array_merge($mimetypeArr,["apk"]);
         $typeArr = explode('/', $fileInfo['type']);
 
         //禁止上传PHP和HTML文件
