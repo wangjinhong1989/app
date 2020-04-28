@@ -2,6 +2,7 @@
 
 return [
     'Id'           => 'ID',
+    'Version_name' => '版本名',
     'Version_code' => '版本号',
     'Packagesize'  => '包大小',
     'Content'      => '升级内容',
