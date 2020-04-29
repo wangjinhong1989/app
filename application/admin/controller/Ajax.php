@@ -134,15 +134,22 @@ class Ajax extends Backend
             $attachment->data(array_filter($params));
             $attachment->save();
             \think\Hook::listen("upload_after", $attachment);
-            $image = \think\Image::open(ROOT_PATH . '/public' . $uploadDir . $splInfo->getSaveName());
-            $thumb_path=ROOT_PATH . '/public/thumb' . $uploadDir ."";
-            if (!is_dir($thumb_path)){
-                mkdir($thumb_path, 0777, true);
+
+            if (in_array($fileInfo['type'], ['image/gif', 'image/jpg', 'image/jpeg', 'image/bmp', 'image/png', 'image/webp']) || in_array($suffix, ['gif', 'jpg', 'jpeg', 'bmp', 'png', 'webp'])) {
+                $image = \think\Image::open(ROOT_PATH . '/public' . $uploadDir . $splInfo->getSaveName());
+                $thumb_path = ROOT_PATH . '/public/thumb' . $uploadDir . "";
+                if (!is_dir($thumb_path)) {
+                    mkdir($thumb_path, 0777, true);
+                }
+                $image->thumb(150, 150)->save(ROOT_PATH . '/public/thumb' . $uploadDir . "" . $splInfo->getSaveName());
+                $this->success(__('Upload successful'), null, [
+                    'url' => Config::get('api_url') . $uploadDir . $splInfo->getSaveName()
+                ]);
+            }else{
+                $this->success(__('Upload successful'), null, [
+                    'url' => $uploadDir . $splInfo->getSaveName()
+                ]);
             }
-            $image->thumb(150, 150)->save(ROOT_PATH . '/public/thumb' . $uploadDir ."".$splInfo->getSaveName());
-            $this->success(__('Upload successful'), null, [
-                'url' =>Config::get('api_url'). $uploadDir . $splInfo->getSaveName()
-            ]);
         } else {
             // 上传失败获取错误信息
             $this->error($file->getError());
