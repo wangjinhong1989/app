@@ -178,7 +178,7 @@ class Caiji extends Command
                     \app\admin\model\Article::create(
                         [
                             "title"=>$j["title"],
-                            "content"=>$j["content"],
+                            "content"=>preg_replace('/<a .*?href="(.*?)".*?>金色财经</a>/is',"金色财经",$j["content"]),
                             "img"=>$j["thumbnail"],
                             "description"=>$j["summary"],
                             "user_id"=>Config::get("site.采集发文用户ID"),
