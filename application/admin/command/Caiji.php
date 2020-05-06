@@ -31,6 +31,7 @@ class Caiji extends Command
             ->setName('caiji')
             ->addOption('type', 't', Option::VALUE_OPTIONAL, 'default caiji url', '')
             ->addOption('set', 's', Option::VALUE_OPTIONAL, 'default set ids', '')
+            ->addOption('begin', 'b', Option::VALUE_OPTIONAL, 'default set article ids', '')
             ->setDescription('cai ji');
     }
 
@@ -41,12 +42,18 @@ class Caiji extends Command
 
         $type=$input->getOption("type");
         $set=$input->getOption("set");
+        $begin=$input->getOption("begin");
         if($set){
             $set=intval($set);
             file_put_contents("ids.txt",$set);
         }
+        if($begin){
+            $begin=intval($begin);
+            file_put_contents("begin.txt",$begin);
+        }
         switch ($type){
             case "kuaixun":$this->kuaixun();break;
+            case "article":$this->article();break;
             default : break;
         }
 
@@ -125,12 +132,24 @@ class Caiji extends Command
 
     protected function article(){
 
+        $ids=file_get_contents("begin.txt");
+        if(!$ids){
+            echo "input set begin ids  error \r\n";die;
+        }
+        $ids=intval($ids);
+        if(!is_numeric($ids)){
+
+            echo "begin ids error \r\n";die;
+        }
+
+
         $httpParams = array(
             'access_key' => $this->key,
-            'date' => time()
+            'date' => time(),
+            'last_id' => $ids,
         );
 
-        $signParams = array_merge($httpParams, array('secret_key' => $secretKey));
+        $signParams = array_merge($httpParams, array('secret_key' => $this->secret_key));
 
         ksort($signParams);
         $signString = http_build_query($signParams);
@@ -148,18 +167,29 @@ class Caiji extends Command
         $json = json_decode($curlRes, true);
 
 
-        foreach ($json as $j){
+        var_dump($json);
 
-            \app\admin\model\Caiji::create(
-                [
-                    "type"=>"快讯",
-                    "contentjson"=>json_encode($j),
-                    "status"=>"写入",
-                    "create_time"=>date("Y-m-d H:i:s",time())
-                ]
-            );
+        foreach ($json as $k=>$j){
 
-        }
+            if($k==0&&$j["id"]!=$ids){
+                file_put_contents("begin.txt",$j["id"]);
+            }
+                    \app\admin\model\Article::create(
+                        [
+                            "title"=>$j["title"],
+                            "content"=>$j["content"],
+                            "img"=>$j["thumbnail"],
+                            "description"=>$j["summary"],
+                            "user_id"=>550266,
+                            "articletype_id"=>1,
+                            "is_recommendation"=>"否",
+                            "status"=>"显示",
+                            "create_time"=>date("Y-m-d H:i:s",time())
+                        ]
+                    );
+
+                }
+
     }
 
 
