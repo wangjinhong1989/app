@@ -175,7 +175,10 @@ class Caiji extends Command
                 file_put_contents("begin.txt",$j["id"]);
             }
 
-            if(Config::get("site.采集开关")==0)continue;
+            if(Config::get("site.采集开关")==0){
+                echo "采集到了，不入库";
+                continue;
+            }
                     \app\admin\model\Article::create(
                         [
                             "title"=>$j["title"],
