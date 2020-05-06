@@ -174,13 +174,14 @@ class Caiji extends Command
             if($k==0&&$j["id"]!=$ids){
                 file_put_contents("begin.txt",$j["id"]);
             }
+
                     \app\admin\model\Article::create(
                         [
                             "title"=>$j["title"],
                             "content"=>$j["content"],
                             "img"=>$j["thumbnail"],
                             "description"=>$j["summary"],
-                            "user_id"=>550266,
+                            "user_id"=>Config::get("site.采集发文用户ID"),
                             "articletype_id"=>1,
                             "is_recommendation"=>"否",
                             "status"=>"显示",
