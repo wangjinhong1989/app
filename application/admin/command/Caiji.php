@@ -175,6 +175,7 @@ class Caiji extends Command
                 file_put_contents("begin.txt",$j["id"]);
             }
 
+            if(Config::get("site.采集开关")==0)continue;
                     \app\admin\model\Article::create(
                         [
                             "title"=>$j["title"],
