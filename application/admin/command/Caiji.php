@@ -179,6 +179,10 @@ class Caiji extends Command
                 echo "采集到了，不入库";
                 continue;
             }
+            if(Config::get("site.采集开关")==1){
+                echo "采集到了，入库";
+
+            }
                     \app\admin\model\Article::create(
                         [
                             "title"=>$j["title"],
