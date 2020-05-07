@@ -184,6 +184,8 @@ class Caiji extends Command
 
             }
             $model= new \app\admin\model\Article;
+            $id=$model->getLastInsID();
+            var_dump($id);
                     \app\admin\model\Article::create(
                         [
                             "title"=>$j["title"],
@@ -193,7 +195,7 @@ class Caiji extends Command
                             "user_id"=>Config::get("site.采集发文用户ID"),
                             "articletype_id"=>1,
                             "is_recommendation"=>"否",
-                            "weigh"=>$model->getLastInsID(),
+                            "weigh"=>$id,
                             "status"=>"显示",
                             "create_time"=>date("Y-m-d H:i:s",time())
                         ]
