@@ -199,7 +199,7 @@ class Caiji extends Command
                         ]
                     );
 
-            var_dump($bak);
+            var_dump($bak->id);
 //            $model= new \app\admin\model\Article;
 //            $id=$model->getLastInsID();
 //            var_dump($id);
