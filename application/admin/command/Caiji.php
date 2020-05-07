@@ -199,6 +199,9 @@ class Caiji extends Command
                         ]
                     );
 
+            $bak->weigh=$bak->id;
+            $bak->save();
+            var_dump($bak->weigh);
             var_dump($bak->id);
 //            $model= new \app\admin\model\Article;
 //            $id=$model->getLastInsID();
