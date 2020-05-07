@@ -10,6 +10,7 @@ use app\admin\model\Lihaokong;
 use app\admin\model\PushList;
 use app\admin\model\ReadHistory;
 use app\admin\model\SearchHistory;
+use app\admin\model\Shoucang;
 use app\common\controller\Api;
 use think\Cache;
 use think\Db;
@@ -1052,6 +1053,9 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
 
         $model=new ReadHistory();
 
+        $model->where(["user_id"=>$this->auth->id,"article_id"=>$id])->delete();
+
+        $model=new Shoucang();
         $model->where(["user_id"=>$this->auth->id,"article_id"=>$id])->delete();
 
         $this->success();
