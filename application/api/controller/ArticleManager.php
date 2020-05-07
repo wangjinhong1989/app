@@ -12,13 +12,12 @@ use app\admin\model\ReadHistory;
 use app\admin\model\SearchHistory;
 use app\admin\model\Shoucang;
 use app\common\controller\Api;
-use app\common\model\Config;
 use think\Cache;
 use think\Db;
 use think\db\Query;
 use think\view\driver\Think;
 use traits\controller\Jump;
-
+use think\Config;
 /**
  * 首页接口
  */
