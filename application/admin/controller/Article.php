@@ -69,7 +69,7 @@ class Article extends Backend
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(['id','title','description','status','come_from',"top",'label_ids','url','img','read_count','show_count','is_recommendation']);
+                $row->visible(['id','title','description','status','come_from',"top",'label_ids','url','img','read_count','show_count','is_recommendation','is_reply']);
                 $row->visible(['articletype']);
 				$row->getRelation('articletype')->visible(['name']);
 				$row->visible(['label']);
