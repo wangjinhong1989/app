@@ -63,6 +63,7 @@ class Feedback extends Api
             $feedback_type=$this->request->request('feedback_type');
             $content=$this->request->request('content');
             $files=$this->request->request('files');
+            $phone=$this->request->request('phone');
 
             if(!$content||!$feedback_type){
                 return $this->error(__('参数存在空'));
@@ -72,7 +73,7 @@ class Feedback extends Api
 
 
             $model->create([
-                'user_id'=>$user_id,'feedback_type'=>$feedback_type,'files'=>$files,'content'=>$content,'time'=>time()
+                'user_id'=>$user_id,'feedback_type'=>$feedback_type,'files'=>$files,"phone"=>$phone,'content'=>$content,'time'=>time()
             ]);
 
             return $this->success();
