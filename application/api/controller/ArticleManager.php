@@ -115,7 +115,7 @@ class ArticleManager extends Api
         // 查询我关注的人的文章列表.
         $my_follow=$this->request->request("my_follow",'');
         if($my_follow){
-            $my_follow=(new \app\admin\model\Guanzhu())->field("follow_id")->where(["user_id"=>$this->auth->id])->select();
+            $my_follow=(new \app\admin\model\Guanzhu())->cache(60)->field("follow_id")->where(["user_id"=>$this->auth->id])->select();
             $temp=array();
             foreach ($my_follow as $value){
                 $temp[]=$value['follow_id'];
@@ -151,7 +151,7 @@ class ArticleManager extends Api
         // 请求的标签.
 
         $query=new Query();
-        $data["rows"]=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.count_lihao,kong_hao.count_likong")
+        $data["rows"]=$query->table("fa_article")->cache(120)->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.count_lihao,kong_hao.count_likong")
             ->where($where)
             ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
@@ -162,7 +162,7 @@ class ArticleManager extends Api
 
         //dd($query->getLastSql());
 
-        $data["count"]=$query->table("fa_article")->alias("article")
+        $data["count"]=$query->table("fa_article")->cache(120)->alias("article")
             ->where($where)
             ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
@@ -346,7 +346,7 @@ class ArticleManager extends Api
         // 请求的标签.
 
         $query=new Query();
-        $data["rows"]=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.count_lihao,kong_hao.count_likong")
+        $data["rows"]=$query->table("fa_article")->cache(120)->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.count_lihao,kong_hao.count_likong")
             ->where($where)
             ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
@@ -356,7 +356,7 @@ class ArticleManager extends Api
 
 
 
-        $data["count"]=$query->table("fa_article")->alias("article")
+        $data["count"]=$query->table("fa_article")->cache(120)->alias("article")
             ->where($where)
             ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
@@ -532,7 +532,7 @@ class ArticleManager extends Api
         // 请求的标签.
 
         $query=new Query();
-        $data["rows"]=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.count_lihao,kong_hao.count_likong")
+        $data["rows"]=$query->table("fa_article")->cache(120)->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.count_lihao,kong_hao.count_likong")
             ->where($where)
             ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
@@ -542,7 +542,7 @@ class ArticleManager extends Api
 
 
 
-        $data["count"]=$query->table("fa_article")->alias("article")
+        $data["count"]=$query->table("fa_article")->cache(120)->alias("article")
             ->where($where)
             ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
@@ -669,7 +669,7 @@ class ArticleManager extends Api
         $offset=($page-1)*$page_size;
         $data=[];
         $query=new Query();
-        $lists= $query->table("fa_read_history")->alias("his")
+        $lists= $query->table("fa_read_history")->cache(120)->alias("his")
             ->field("article.*,user.username,user.avatar,articletype.name,his.time")
             ->join("fa_article article","article.id=his.article_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
@@ -679,7 +679,7 @@ class ArticleManager extends Api
             ->limit($offset,$page_size)->select();
 
 
-        $count= $query->table("fa_read_history")->alias("his")
+        $count= $query->table("fa_read_history")->cache(120)->alias("his")
             ->where(['his.user_id'=>$this->auth->getUser()->id])
             ->count();
 
@@ -728,7 +728,7 @@ class ArticleManager extends Api
         $where["article.id"]=$id;
 
         $query=new Query();
-        $detail=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
+        $detail=$query->table("fa_article")->cache(120)->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
             ->where($where)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
@@ -1020,7 +1020,7 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
         $where["article.id"]=$id;
 
         $query=new Query();
-        $detail=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
+        $detail=$query->table("fa_article")->cache(120)->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
             ->where($where)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
