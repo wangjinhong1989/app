@@ -28,10 +28,10 @@ class SystemMessage extends Api
         $where=["user_id"=>$this->auth->id];
 
         $query=new Query();
-        $data["rows"]=$query->table("fa_system_message")->alias("message")->field("*")
+        $data["rows"]=$query->table("fa_system_message")->cache(60)->alias("message")->field("*")
             ->where($where)
             ->limit($offset,$page_size)->order("id desc")->select();
-        $data["count"]=$query->table("fa_system_message")->alias("message")->field("*")
+        $data["count"]=$query->table("fa_system_message")->cache(60)->alias("message")->field("*")
             ->where($where)
             ->count();
         // 结束.

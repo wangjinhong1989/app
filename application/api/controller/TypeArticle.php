@@ -31,7 +31,7 @@ class TypeArticle extends Api
             $whereExp='find_in_set("'.$show_page.'",show_page)';
 
         }
-        $lists=( new Articletype())->where($where)->whereExp('',$whereExp)->order("weigh","desc")->select();
+        $lists=( new Articletype())->cache(600)->where($where)->whereExp('',$whereExp)->order("weigh","desc")->select();
         $this->success("",$lists);
     }
 
@@ -42,7 +42,7 @@ class TypeArticle extends Api
     public function neq_kuaixun_guanzhu()
     {
         $where=['status'=>"显示"];
-        $lists=( new Query())->table("fa_articletype")->where($where)->order("weigh","desc")->select();
+        $lists=( new Query())->cache(600)->table("fa_articletype")->where($where)->order("weigh","desc")->select();
         $data=[];
         foreach ($lists as $key=>$list){
             if($list["id"]==2||$list["id"]==7){
@@ -61,7 +61,7 @@ class TypeArticle extends Api
     public function neq_kuaixun_guanzhu1()
     {
         $where=['status'=>"显示"];
-        $lists=( new Articletype())->where($where)->order("weigh","desc")->select();
+        $lists=( new Articletype())->cache(600)->where($where)->order("weigh","desc")->select();
 
         $this->success("",$lists);
     }

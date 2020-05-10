@@ -35,8 +35,8 @@ class Discover extends Api
 
         $time=time();
         $data=[];
-        $lists=( new \app\admin\model\Discover())->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->limit($offset,$page_size)->order($order,$sort)->select();
-        $count=( new \app\admin\model\Discover())->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->count();
+        $lists=( new \app\admin\model\Discover())->cache(120)->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->limit($offset,$page_size)->order($order,$sort)->select();
+        $count=( new \app\admin\model\Discover())->cache(120)->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->count();
 
 
         $data["page"]=$page;

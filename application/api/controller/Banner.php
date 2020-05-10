@@ -35,8 +35,8 @@ class Banner extends Api
             $where["bannername.name"]=["eq",$name];
         }
 
-        $lists=(new \app\admin\model\Banner())->with("bannername")->where($where)->order("weigh","asc")->limit($offset,$page_size)->select();
-        $count=(new \app\admin\model\Banner())->with("bannername")->where($where)->count();
+        $lists=(new \app\admin\model\Banner())->cache(120)->with("bannername")->where($where)->order("weigh","asc")->limit($offset,$page_size)->select();
+        $count=(new \app\admin\model\Banner())->cache(120)->with("bannername")->where($where)->count();
 
 
         foreach ($lists as &$l){

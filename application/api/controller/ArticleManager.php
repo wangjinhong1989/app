@@ -728,7 +728,7 @@ class ArticleManager extends Api
         $where["article.id"]=$id;
 
         $query=new Query();
-        $detail=$query->table("fa_article")->cache(120)->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
+        $detail=$query->table("fa_article")->cache(180)->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
             ->where($where)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")

@@ -24,7 +24,7 @@ class Agreement extends Api
 
         $id=$this->request->param("id",1);
         $model= new \app\admin\model\Agreement();
-        $lists=$model->where(["id"=>$id])->find();
+        $lists=$model->cache(600)->where(["id"=>$id])->find();
         $this->success("成功",$lists);
     }
 }
