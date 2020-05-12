@@ -2,8 +2,8 @@
 
 namespace app\admin\controller;
 
-use app\admin\controller\general\Config;
 use app\common\controller\Backend;
+use think\Config;
 use think\Db;
 
 /**
