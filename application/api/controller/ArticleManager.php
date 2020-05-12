@@ -1029,8 +1029,8 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
 
             // 利空利好统计.
 
-            $detail["likong_count"]=$detail["likong_count"]+(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利空"])->count();
-            $detail["lihao_count"]=$detail["lihao_count"]+(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利好"])->count();
+            $detail["likong_count"]=$detail["lk_count"]+(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利空"])->count();
+            $detail["lihao_count"]=$detail["lh_count"]+(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利好"])->count();
 
             $detail["image"]=Config::get("site.快讯封面");
             $detail["erweima"]=Config::get("site.快讯二维码");
