@@ -115,7 +115,7 @@ class ArticleManager extends Api
         // 查询我关注的人的文章列表.
         $my_follow=$this->request->request("my_follow",'');
         if($my_follow){
-            $my_follow=(new \app\admin\model\Guanzhu())->cache(60)->field("follow_id")->where(["user_id"=>$this->auth->id])->select();
+            $my_follow=(new \app\admin\model\Guanzhu())->field("follow_id")->where(["user_id"=>$this->auth->id])->select();
             $temp=array();
             foreach ($my_follow as $value){
                 $temp[]=$value['follow_id'];
@@ -151,7 +151,7 @@ class ArticleManager extends Api
         // 请求的标签.
 
         $query=new Query();
-        $data["rows"]=$query->table("fa_article")->cache(120)->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.count_lihao,kong_hao.count_likong")
+        $data["rows"]=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.count_lihao,kong_hao.count_likong")
             ->where($where)
             ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
@@ -162,7 +162,7 @@ class ArticleManager extends Api
 
         //dd($query->getLastSql());
 
-        $data["count"]=$query->table("fa_article")->cache(120)->alias("article")
+        $data["count"]=$query->table("fa_article")->alias("article")
             ->where($where)
             ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
