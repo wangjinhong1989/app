@@ -4,6 +4,7 @@ namespace app\admin\controller;
 
 use app\admin\controller\general\Config;
 use app\common\controller\Backend;
+use think\Db;
 
 /**
  * 版本管理
