@@ -1029,7 +1029,7 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
         if($detail){
 
             // 利空利好统计.
-            $konghao=s(new KongHao())->where(["article_id"=>$detail["id"]])->find();
+            $konghao=(new KongHao())->where(["article_id"=>$detail["id"]])->find();
             $detail["likong_count"]=$detail["lk_count"]+$konghao["count_likong"];
             $detail["lihao_count"]=$detail["lh_count"]+$konghao["count_lihao"];
 
