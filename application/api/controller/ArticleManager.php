@@ -1020,20 +1020,17 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
         $where["article.id"]=$id;
 
         $query=new Query();
-        $detail=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.count_lihao,kong_hao.count_likong")
+        $detail=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar")
             ->where($where)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
-            ->join("fa_kong_hao kong_hao","kong_hao.article_id=article.id","left")
             ->find();
         if($detail){
 
             // 利空利好统计.
 
-         //   $detail["likong_count"]=(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利空"])->count();
-         //   $detail["lihao_count"]=(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利好"])->count();
-            $detail["likong_count"]=$detail["count_likong"];
-            $detail["lihao_count"]=$detail["count_lihao"];
+            $detail["likong_count"]=$detail["likong_count"]+(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利空"])->count();
+            $detail["lihao_count"]=$detail["lihao_count"]+(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利好"])->count();
 
             $detail["image"]=Config::get("site.快讯封面");
             $detail["erweima"]=Config::get("site.快讯二维码");
