@@ -6,6 +6,7 @@ use app\admin\model\Article;
 use app\admin\model\ConfigUser;
 use app\admin\model\Guanggao;
 use app\admin\model\HotSearch;
+use app\admin\model\KongHao;
 use app\admin\model\Lihaokong;
 use app\admin\model\PushList;
 use app\admin\model\ReadHistory;
@@ -1028,9 +1029,9 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
         if($detail){
 
             // 利空利好统计.
-
-            $detail["likong_count"]=$detail["lk_count"]+(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利空"])->count();
-            $detail["lihao_count"]=$detail["lh_count"]+(new Lihaokong())->where(["article_id"=>$detail["id"],"is_profit"=>"利好"])->count();
+            $konghao=s(new KongHao())->where(["article_id"=>$detail["id"]])->find();
+            $detail["likong_count"]=$detail["lk_count"]+$konghao["count_likong"];
+            $detail["lihao_count"]=$detail["lh_count"]+]+$konghao["count_lihao"];
 
             $detail["image"]=Config::get("site.快讯封面");
             $detail["erweima"]=Config::get("site.快讯二维码");
