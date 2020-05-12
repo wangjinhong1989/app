@@ -1034,6 +1034,8 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
             $detail["count_lihao"]=$detail["lh_count"]+$konghao["count_lihao"];
             $detail["likong_count"]=$detail["count_likong"];
             $detail["lihao_count"]=$detail["count_lihao"];
+            $detail["lk_count"]=$detail["count_likong"];
+            $detail["lh_count"]=$detail["count_lihao"];
             $detail["image"]=Config::get("site.快讯封面");
             $detail["erweima"]=Config::get("site.快讯二维码");
             //$detail["url"]="http://app.xwxyq.cn/uploads/20191224/1c68375a95c34071687ca6a56f5f8933.png";
