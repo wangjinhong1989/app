@@ -56,7 +56,7 @@ class Version extends Backend
                         $validate = is_bool($this->modelValidate) ? ($this->modelSceneValidate ? $name . '.add' : $name) : $this->modelValidate;
                         $this->model->validateFailException(true)->validate($validate);
                     }
-                    $params["downloadurl"]=Config::get("site.网址地址").$params["file"];
+                    $params["downloadurl"]=Config::get("site.网站地址").$params["file"];
                     $result = $this->model->allowField(true)->save($params);
                     Db::commit();
                 } catch (ValidateException $e) {
@@ -108,7 +108,7 @@ class Version extends Backend
                         $validate = is_bool($this->modelValidate) ? ($this->modelSceneValidate ? $name . '.edit' : $name) : $this->modelValidate;
                         $row->validateFailException(true)->validate($validate);
                     }
-                    $params["downloadurl"]=Config::get("site.网址地址").$params["file"];
+                    $params["downloadurl"]=Config::get("site.网站地址").$params["file"];
                     $result = $row->allowField(true)->save($params);
                     Db::commit();
                 } catch (ValidateException $e) {
