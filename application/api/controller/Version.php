@@ -24,7 +24,6 @@ class Version extends Api
         $model= new \app\admin\model\Version();
         $lists=$model->where(["status"=>"是"])->order("version_code","desc")->limit(0,1)->find();
 
-        $lists->downloadurl=Config::get("site.网址地址").$lists->file;
         $this->success("成功",$lists);
     }
 }
