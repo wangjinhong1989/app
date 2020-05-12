@@ -1030,8 +1030,8 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
 
             // 利空利好统计.
             $konghao=(new KongHao())->where(["article_id"=>$detail["id"]])->find();
-            $detail["likong_count"]=$detail["lk_count"]+$konghao["count_likong"];
-            $detail["lihao_count"]=$detail["lh_count"]+$konghao["count_lihao"];
+            $detail["count_likong"]=$detail["lk_count"]+$konghao["count_likong"];
+            $detail["count_lihao"]=$detail["lh_count"]+$konghao["count_lihao"];
 
             $detail["image"]=Config::get("site.快讯封面");
             $detail["erweima"]=Config::get("site.快讯二维码");
