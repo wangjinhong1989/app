@@ -1037,7 +1037,7 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
             $detail["erweima"]=Config::get("site.快讯二维码");
             //$detail["url"]="http://app.xwxyq.cn/uploads/20191224/1c68375a95c34071687ca6a56f5f8933.png";
             //$detail["create_time"]=date("Y-m-d H:i:s",$detail["create_time"]);
-            $detail["create_time"]=formart_time($detail["create_time"]);
+            $detail["create_time"]=date("Y-m-d H:i:s",$detail["create_time"]);
         }
 
 
