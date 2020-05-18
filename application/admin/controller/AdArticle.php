@@ -93,7 +93,7 @@ class AdArticle extends Backend
 
                 if($params["url_type"]=="外链"&&$params["url"]!=""){
                     if(!filter_var($params["url"], FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED))
-                        $this->error(__('类型为外链，必须填写链接地址'));
+                        $this->error(__('请输入有效的URL'));
                 }
 
                 $result = false;
@@ -151,7 +151,7 @@ class AdArticle extends Backend
 
                 if($params["url_type"]=="外链"&&$params["url"]!=""){
                     if(!filter_var($params["url"], FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED))
-                        $this->error(__('类型为外链，必须填写链接地址'));
+                        $this->error(__('请输入有效的URL'));
                 }
                 Db::startTrans();
                 try {
