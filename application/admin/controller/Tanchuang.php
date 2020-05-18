@@ -93,7 +93,7 @@ class Tanchuang extends Backend
                 }
 
                 if($params["url_type"]=="外链"&&$params["url"]!=""){
-                    if(!filter_var(&$params["url"], FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED))
+                    if(!filter_var($params["url"], FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED))
                         $this->error(__('类型为外链，必须填写链接地址'));
                 }
 
@@ -151,7 +151,7 @@ class Tanchuang extends Backend
                 $result = false;
 
                 if($params["url_type"]=="外链"&&$params["url"]!=""){
-                    if(!filter_var(&$params["url"], FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED))
+                    if(!filter_var($params["url"], FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED))
                         $this->error(__('类型为外链，必须填写链接地址'));
                 }
 
