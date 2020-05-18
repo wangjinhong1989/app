@@ -92,15 +92,7 @@ class Tanchuang extends Backend
                     $params[$this->dataLimitField] = $this->auth->id;
                 }
 
-                if($params["url_type"]=="外链"&&$params["url"]==""){
 
-                    $this->error(__('类型为外链，必须填写链接地址'));
-                }
-
-                if($params["url_type"]=="内链"&&$params["article_id"]==""){
-
-                    $this->error(__('类型为内链，必须填写文章'));
-                }
 
                 $result = false;
                 Db::startTrans();
@@ -155,15 +147,7 @@ class Tanchuang extends Backend
                 $params = $this->preExcludeFields($params);
                 $result = false;
 
-                if($params["url_type"]=="外链"&&$params["url"]==""){
 
-                    $this->error(__('类型为外链，必须填写链接地址'));
-                }
-
-                if($params["url_type"]=="内链"&&$params["article_id"]==""){
-
-                    $this->error(__('类型为内链，必须填写文章'));
-                }
 
                 Db::startTrans();
                 try {

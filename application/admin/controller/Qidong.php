@@ -90,15 +90,7 @@ class Qidong extends Backend
                 if ($this->dataLimit && $this->dataLimitFieldAutoFill) {
                     $params[$this->dataLimitField] = $this->auth->id;
                 }
-                if($params["url_type"]=="外链"&&$params["url"]==""){
 
-                    $this->error(__('类型为外链，必须填写链接地址'));
-                }
-
-                if($params["url_type"]=="内链"&&$params["article_id"]==""){
-
-                    $this->error(__('类型为内链，必须填写文章'));
-                }
                 $result = false;
                 Db::startTrans();
                 try {
@@ -150,15 +142,7 @@ class Qidong extends Backend
             $params = $this->request->post("row/a");
             if ($params) {
                 $params = $this->preExcludeFields($params);
-                if($params["url_type"]=="外链"&&$params["url"]==""){
 
-                    $this->error(__('类型为外链，必须填写链接地址'));
-                }
-
-                if($params["url_type"]=="内链"&&$params["article_id"]==""){
-
-                    $this->error(__('类型为内链，必须填写文章'));
-                }
                 $result = false;
                 Db::startTrans();
                 try {
