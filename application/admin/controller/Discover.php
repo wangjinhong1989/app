@@ -91,7 +91,10 @@ class Discover extends Backend
                     $params[$this->dataLimitField] = $this->auth->id;
                 }
                 $result = false;
-
+                if($params["url_type"]=="外链"&&$params["url"]!=""){
+                    if(!filter_var($params["url"], FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED))
+                        $this->error(__('请输入有效的URL'));
+                }
                 Db::startTrans();
                 try {
                     //是否采用模型验证
@@ -143,7 +146,10 @@ class Discover extends Backend
             if ($params) {
                 $params = $this->preExcludeFields($params);
                 $result = false;
-
+                if($params["url_type"]=="外链"&&$params["url"]!=""){
+                    if(!filter_var($params["url"], FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED))
+                        $this->error(__('请输入有效的URL'));
+                }
                 Db::startTrans();
                 try {
                     //是否采用模型验证
