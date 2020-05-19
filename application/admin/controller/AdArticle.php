@@ -64,7 +64,7 @@ class AdArticle extends Backend
                     ->limit($offset, $limit)
                     ->select();
 
-            echo $this->model->getLastSql();
+            //echo $this->model->getLastSql();
             foreach ($list as $row) {
 //                $row->visible(['id','title','paixu','images','status','url_type','url','begin_time','end_time']);
 //                $row->visible(['article']);
