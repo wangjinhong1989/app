@@ -65,9 +65,9 @@ class AdArticle extends Backend
                     ->select();
 
             foreach ($list as $row) {
-                $row->visible(['id','title','paixu','images','status','url_type','url','begin_time','end_time']);
-                $row->visible(['article']);
-				$row->getRelation('article')->visible(['title']);
+//                $row->visible(['id','title','paixu','images','status','url_type','url','begin_time','end_time']);
+//                $row->visible(['article']);
+//				$row->getRelation('article')->visible(['title']);
             }
             $list = collection($list)->toArray();
             $result = array("total" => $total, "rows" => $list);
