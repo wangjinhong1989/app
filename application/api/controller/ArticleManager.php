@@ -59,7 +59,7 @@ class ArticleManager extends Api
         if($keyword){
             $where["article.title|article.description|article.content"]=["like","%".$keyword."%"];
 
-            if(!empty($this->auth->id)){
+            if($this->auth->id){
                 //  写入关键字检索.
                 $history=["user_id"=>$this->auth->id, "word"=>$keyword, "type"=>"标题,描述,内容"];
                 $search->save_data($history);
@@ -71,7 +71,7 @@ class ArticleManager extends Api
         $title=$this->request->request("title","");
         if($title){
             $where["article.title"]=["like","%".$title."%"];
-            if(!empty($this->auth)){
+            if($this->auth->id){
                 $history=["user_id"=>$this->auth->id, "word"=>$title, "type"=>"标题"];
                 $search->save_data($history);
             }
@@ -79,7 +79,7 @@ class ArticleManager extends Api
         $description=$this->request->request("description","");
         if($description){
             $where["article.description"]=["like","%".$description."%"];
-            if(!empty($this->auth)) {
+            if($this->auth->id){
                 $history = ["user_id" => $this->auth->id, "word" => $description, "type" => "描述"];
                 $search->save_data($history);
             }
@@ -87,7 +87,7 @@ class ArticleManager extends Api
         $content=$this->request->request("content","");
         if($content){
             $where["article.content"]=["like","%".$content."%"];
-            if(!empty($this->auth)){
+            if($this->auth->id){
             $history=["user_id"=>$this->auth->id, "word"=>$content, "type"=>"内容"];
             $search->save_data($history);
             }
@@ -132,7 +132,7 @@ class ArticleManager extends Api
         $whereExp="";
         $label_ids=$this->request->request("label_ids",'');
         if($label_ids){
-            if(!empty($this->auth)) {
+            if($this->auth->id){
                 $history = ["user_id" => $this->auth->id, "word" => $label_ids, "type" => "标签"];
                 $search->save_data($history);
             }
