@@ -59,7 +59,7 @@ class ArticleManager extends Api
         if($keyword){
             $where["article.title|article.description|article.content"]=["like","%".$keyword."%"];
 
-            if(!empty($this->auth)){
+            if(!empty($this->auth->id)){
                 //  写入关键字检索.
                 $history=["user_id"=>$this->auth->id, "word"=>$keyword, "type"=>"标题,描述,内容"];
                 $search->save_data($history);
