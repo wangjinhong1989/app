@@ -18,6 +18,8 @@ class Index extends Api
      */
     public function index()
     {
+        var_dump($this->auth);
+        var_dump($this->auth->id);
         dd("test");
         $this->success('请求成功');
     }

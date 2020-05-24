@@ -86,6 +86,6 @@ class AdArticle extends Model
 
     public function article()
     {
-        return $this->belongsTo('Article', 'title', 'id', [], 'LEFT')->setEagerlyType(0);
+        return $this->belongsTo('Article', 'article_id', 'id', [], 'LEFT')->setEagerlyType(0);
     }
 }
