@@ -102,7 +102,7 @@ class Guanzhu extends Api
 
 
         $page=$this->request->request("page",1);
-        $page_size=100;//$this->request->request("page_size",100);
+        $page_size=$this->request->request("page_size",50);
         $offset=($page-1)*$page_size;
         $data=[];
 
