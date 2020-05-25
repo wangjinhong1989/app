@@ -33,6 +33,7 @@ class ArticleManager extends Api
      */
     public function Lists()
     {
+        $this->vistorLog("主页列表");
         $page=$this->request->request("page",1);
         $page_size=$this->request->request("page_size",10);
         $offset=($page-1)*$page_size;
