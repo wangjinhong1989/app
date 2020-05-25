@@ -43,9 +43,10 @@ return array (
   '今日登陆数' => '',
   '总举报数' => '',
   '今日举报数' => '',
-  '采集发文用户ID' => '550273',
+  '采集发文用户ID' => '550266',
   '快讯封面' => 'http://app.xwxyq.cn/uploads/20200510/df583e1c76023e163c9373c9fdc4d009.jpg',
   '采集开关' => '1',
-  '快讯二维码' => 'http://app.xwxyq.cn/uploads/20200510/b503a99c4ad6dac46fbced40c22da957.jpg',
+  '快讯二维码' => 'http://app.xwxyq.cn/uploads/20200521/a41e4873ce7125dcc18caf96bc77b884.jpg',
   '网站地址' => 'http://app.xwxyq.cn',
+  '测试2' => 'http://app.xwxyq.cn',
 );
