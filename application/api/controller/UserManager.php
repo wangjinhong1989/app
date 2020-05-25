@@ -75,8 +75,8 @@ class UserManager extends Api
                 $data["rows"][$k]["personal_status"]="审核中";
                 $data["rows"][$k]["enterprise_id"]="";
                 $data["rows"][$k]["enterprise_status"]="";
-                $data["rows"][$k]["	media_id"]="";
-                $data["rows"][$k]["	media_status"]="";
+                $data["rows"][$k]["media_id"]="";
+                $data["rows"][$k]["media_status"]="";
                 $data["rows"][$k]["authentication_type"]="";
                 if($value["personal_id"]){
                     $data["rows"][$k]["authentication_type"]="个人";
