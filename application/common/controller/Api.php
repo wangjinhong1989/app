@@ -2,6 +2,7 @@
 
 namespace app\common\controller;
 
+use app\admin\model\VistorLog;
 use app\common\library\Auth;
 use think\Config;
 use think\exception\HttpResponseException;
@@ -318,5 +319,19 @@ class Api
         }
 
         return true;
+    }
+
+    protected function vistorLog($page=""){
+
+        $user_id=$this->auth->id;
+        if(!$this->auth->id){
+            $user_id=0;
+        }
+        VistorLog::create([
+            "user_id"=>$user_id,
+            "IP"=>$this->request->ip(),
+            "page"=>$page,
+            "open_time"=>date("Y-m-d H:i:s"),
+        ]);
     }
 }
