@@ -239,6 +239,7 @@ class ArticleManager extends Api
      */
     public function Lists_kuaixun()
     {
+        $this->vistorLog("快讯列表");
         $page=$this->request->request("page",1);
         $page_size=$this->request->request("page_size",10);
         $offset=($page-1)*$page_size;
@@ -723,6 +724,7 @@ class ArticleManager extends Api
      */
     public function detail()
     {
+        $this->vistorLog("文章详情");
         $id=$this->request->request("id",0);
         $model=new Article();
 
@@ -1015,6 +1017,7 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
 
     public function detail_kuaixun()
     {
+        $this->vistorLog("快讯详情");
         $id=$this->request->request("id",0);
         $model=new Article();
 
