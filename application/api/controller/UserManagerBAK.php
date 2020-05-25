@@ -55,28 +55,19 @@ class UserManager extends Api
             //            $where["guanzhu.follow_id"]=["EXP","IS NULL"];
 
             $query=new Query();
-            $data["rows"]=$query->table("fa_user")->alias("info")->field("info.id,info.username,info.nickname,info.mobile,info.avatar,info.level,info.gender,info.birthday,info.bio,guanzhu.follow_id ")
+            $data["rows"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id ")
                 ->where($where)
                 ->whereNull("guanzhu.follow_id")
                 ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
                 ->limit($offset,$page_size)->order("info.id desc")->group("info.id")->select();
 
-            $data["count"]=$query->table("fa_user")->alias("info")->field("info.id,guanzhu.follow_id")
+            $data["count"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id")
                 ->where($where)
                 ->whereNull("guanzhu.follow_id")
                 ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
                 ->group("info.id")->count();
             foreach ($data["rows"] as $k=>&$value){
 
-                $data["rows"][$k]["my_follow"]=0;
-                $data["rows"][$k]["follow_me"]=0;
-                $data["rows"][$k]["count_my_article"]=0;
-                $data["rows"][$k]["personal_id"]=0;
-                $data["rows"][$k]["personal_status"]="审核中";
-                $data["rows"][$k]["enterprise_id"]="";
-                $data["rows"][$k]["enterprise_status"]="";
-                $data["rows"][$k]["	media_id"]="";
-                $data["rows"][$k]["	media_status"]="";
                 $data["rows"][$k]["authentication_type"]="";
                 if($value["personal_id"]){
                     $data["rows"][$k]["authentication_type"]="个人";
