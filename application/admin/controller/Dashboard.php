@@ -98,7 +98,7 @@ class Dashboard extends Backend
             ["lt",date("Y-m-d 23:59:59")]
         ],"user_id"=>0])->distinct("IP")->count();
 
-        $yingdao_total_today=Db::query('SELECT count(DISTINCT IP) FROM `fa_vistor_log` WHERE open_time< "'.date("Y-m-d").'23:59:59" AND open_time> "'.date("Y-m-d").' 00:00:00" and page="引导页"');
+        $yingdao_total_today=Db::query('SELECT count(DISTINCT IP) as total FROM `fa_vistor_log` WHERE open_time< "'.date("Y-m-d").'23:59:59" AND open_time> "'.date("Y-m-d").' 00:00:00" and page="引导页"');
 
 
         $query=new Query();
@@ -118,7 +118,7 @@ class Dashboard extends Backend
         $this->view->assign('jubao_total', $jubao_total+Config::get("site.今日举报数"));
         $this->view->assign('youke_total', $jubao_total+Config::get("site.今日举报数"));
         $this->view->assign('youke_total_today', $youke_total_today);
-        $this->view->assign('yingdao_total_today', $yingdao_total_today);
+        $this->view->assign('yingdao_total_today', $yingdao_total_today[0]["total"]);
         $this->view->assign('zhuye_total_today', $zhuye_total_today);
 
 
