@@ -97,11 +97,12 @@ class Dashboard extends Backend
             ["lt",date("Y-m-d 23:59:59")]
         ],"user_id"=>0])->distinct("IP")->count();
 
-        $query=new Query();
-        $yingdao_total_today= $query->table("fa_vistor_log")->where(["open_time"=>[
-            ["gt",date("Y-m-d 00:00:00")],
-            ["lt",date("Y-m-d 23:59:59")]
-        ],"user_id"=>0,"page"=>"引导页"])->distinct("IP")->count();
+        $yingdao_total_today=Db::query('SELECT count(DISTINCT IP) FROM `fa_vistor_log` WHERE open_time< '.date("Y-m-d").'"23:59:59" AND open_time> "'.date("Y-m-d").' 00:00:00" and page="引导页"');
+
+//            $query->table("fa_vistor_log")->where(["open_time"=>[
+//            ["gt",date("Y-m-d 00:00:00")],
+//            ["lt",date("Y-m-d 23:59:59")]
+//        ],"user_id"=>0,"page"=>"引导页"])->distinct("IP")->count();
 
         $query=new Query();
         $zhuye_total_today= $query->table("fa_vistor_log")->where(["open_time"=>[
@@ -109,6 +110,7 @@ class Dashboard extends Backend
             ["lt",date("Y-m-d 23:59:59")]
         ],"user_id"=>0,"page"=>"主页列表"])->distinct("IP")->count();
 //        echo $query->getLastSql();
+
         $this->view->assign('user_total', $user_total+Config::get("site.用户总数"));
         $this->view->assign('user_total_today', $user_total_today+Config::get("site.新注册数"));
         $this->view->assign('article_total', $article_total+Config::get("site.总发帖数"));
