@@ -95,7 +95,7 @@ class Dashboard extends Backend
         $youke_total_today= (new Query())->table("fa_vistor_log")->where(["open_time"=>[
             ["gt",date("Y-m-d 00:00:00")],
             ["lt",date("Y-m-d 23:59:59")]
-        ],"user_id"=>0])->distinct("IP")->count();
+        ],"user_id"=>0])->distinct("IP")->group("IP");
 
         $query=new Query();
         $yingdao_total_today= $query->table("fa_vistor_log")->where(["open_time"=>[
@@ -103,7 +103,7 @@ class Dashboard extends Backend
             ["lt",date("Y-m-d 23:59:59")]
         ],"user_id"=>0,"page"=>"引导页"])->distinct("IP")->group("IP")->count();
 
-        echo $query->getLastSql();
+//        echo $query->getLastSql();
         $this->view->assign('user_total', $user_total+Config::get("site.用户总数"));
         $this->view->assign('user_total_today', $user_total_today+Config::get("site.新注册数"));
         $this->view->assign('article_total', $article_total+Config::get("site.总发帖数"));
