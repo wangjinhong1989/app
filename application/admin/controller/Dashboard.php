@@ -101,7 +101,7 @@ class Dashboard extends Backend
         $yingdao_total_today= $query->table("fa_vistor_log")->where(["open_time"=>[
             ["gt",date("Y-m-d 00:00:00")],
             ["lt",date("Y-m-d 23:59:59")]
-        ],"user_id"=>0,"page"=>"引导页"])->distinct("IP")->count();
+        ],"user_id"=>0,"page"=>"引导页"])->field("distinct ip")->count();
 
         echo $query->getLastSql();
         $this->view->assign('user_total', $user_total+Config::get("site.用户总数"));
