@@ -94,12 +94,12 @@ class Dashboard extends Backend
 
         $youke_total_today= (new Query())->table("fa_vistor_log")->where(["open_time"=>[
             ["gt",date("Y-m-d 00:00:00")],
-            ["lt",date("Y-m-d 23:59:59"]
+            ["lt",date("Y-m-d 23:59:59")]
         ],"user_id"=>0])->distinct("IP")->count();
 
         $yingdao_total_today= (new Query())->table("fa_vistor_log")->where(["open_time"=>[
             ["gt",date("Y-m-d 00:00:00")],
-            ["lt",date("Y-m-d 23:59:59"]
+            ["lt",date("Y-m-d 23:59:59")]
         ],"user_id"=>0,"page"=>"引导页"])->distinct("IP")->count();
 
         $this->view->assign('user_total', $user_total+Config::get("site.用户总数"));
