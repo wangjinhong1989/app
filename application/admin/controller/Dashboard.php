@@ -98,12 +98,8 @@ class Dashboard extends Backend
             ["lt",date("Y-m-d 23:59:59")]
         ],"user_id"=>0])->distinct("IP")->count();
 
-        $yingdao_total_today=Db::query('SELECT count(DISTINCT IP) FROM `fa_vistor_log` WHERE open_time< '.date("Y-m-d").'"23:59:59" AND open_time> "'.date("Y-m-d").' 00:00:00" and page="引导页"');
+        $yingdao_total_today=Db::query('SELECT count(DISTINCT IP) FROM `fa_vistor_log` WHERE open_time< "'.date("Y-m-d").'23:59:59" AND open_time> "'.date("Y-m-d").' 00:00:00" and page="引导页"');
 
-//            $query->table("fa_vistor_log")->where(["open_time"=>[
-//            ["gt",date("Y-m-d 00:00:00")],
-//            ["lt",date("Y-m-d 23:59:59")]
-//        ],"user_id"=>0,"page"=>"引导页"])->distinct("IP")->count();
 
         $query=new Query();
         $zhuye_total_today= $query->table("fa_vistor_log")->where(["open_time"=>[
