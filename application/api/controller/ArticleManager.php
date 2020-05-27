@@ -672,7 +672,7 @@ class ArticleManager extends Api
         $offset=($page-1)*$page_size;
         $data=[];
         $query=new Query();
-        $lists= $query->table("fa_read_history")->cache(120)->alias("his")
+        $lists= $query->table("fa_read_history")->alias("his")
             ->field("article.*,user.username,user.avatar,articletype.name,his.time")
             ->join("fa_article article","article.id=his.article_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
@@ -682,7 +682,7 @@ class ArticleManager extends Api
             ->limit($offset,$page_size)->select();
 
 
-        $count= $query->table("fa_read_history")->cache(120)->alias("his")
+        $count= $query->table("fa_read_history")->alias("his")
             ->where(['his.user_id'=>$this->auth->getUser()->id])
             ->count();
 
