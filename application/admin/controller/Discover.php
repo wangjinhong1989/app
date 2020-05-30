@@ -91,14 +91,9 @@ class Discover extends Backend
                     $params[$this->dataLimitField] = $this->auth->id;
                 }
                 $result = false;
-                if($params["url_type"]=="外链"&&$params["url"]==""){
-
-                    $this->error(__('类型为外链，必须填写链接地址'));
-                }
-
-                if($params["url_type"]=="内链"&&$params["article_id"]==""){
-
-                    $this->error(__('类型为内链，必须填写文章'));
+                if($params["url_type"]=="外链"&&$params["url"]!=""){
+                    if(!filter_var($params["url"], FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED))
+                        $this->error(__('请输入有效的URL'));
                 }
                 Db::startTrans();
                 try {
@@ -151,14 +146,9 @@ class Discover extends Backend
             if ($params) {
                 $params = $this->preExcludeFields($params);
                 $result = false;
-                if($params["url_type"]=="外链"&&$params["url"]==""){
-
-                    $this->error(__('类型为外链，必须填写链接地址'));
-                }
-
-                if($params["url_type"]=="内链"&&$params["article_id"]==""){
-
-                    $this->error(__('类型为内链，必须填写文章'));
+                if($params["url_type"]=="外链"&&$params["url"]!=""){
+                    if(!filter_var($params["url"], FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED))
+                        $this->error(__('请输入有效的URL'));
                 }
                 Db::startTrans();
                 try {

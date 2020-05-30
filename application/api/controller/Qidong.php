@@ -29,6 +29,8 @@ class Qidong extends Api
 
             $lists[$k]["files"]=$list["files"];
         }
+        $this->vistorLog("引导页");
+
         $this->success("成功",$lists);
     }
 }

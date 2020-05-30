@@ -35,8 +35,14 @@ class ProblemPlatform extends Api
             $where["reason"]=["like","%".$keyword."%"];
         }
 
-        $data["rows"]=(new Problem())->where($where)->limit($offset,$page_size)->order("time","desc")->select();
-        $data["count"]=(new Problem())->where($where)->count();
+        if($keyword){
+            $data["rows"]=(new Problem())->where($where)->whereOr("platform","like","%".$keyword."%")->limit($offset,$page_size)->order("time","desc")->select();
+            $data["count"]=(new Problem())->where($where)->whereOr("platform","like","%".$keyword."%")->count();
+        }else{
+            $data["rows"]=(new Problem())->where($where)->limit($offset,$page_size)->order("time","desc")->select();
+            $data["count"]=(new Problem())->where($where)->count();
+        }
+
 
         $data["page"]=$page;
         $data["rows"]=collection($data["rows"])->toArray();

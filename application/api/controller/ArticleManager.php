@@ -33,6 +33,7 @@ class ArticleManager extends Api
      */
     public function Lists()
     {
+        $this->vistorLog("主页列表");
         $page=$this->request->request("page",1);
         $page_size=$this->request->request("page_size",10);
         $offset=($page-1)*$page_size;
@@ -59,7 +60,7 @@ class ArticleManager extends Api
         if($keyword){
             $where["article.title|article.description|article.content"]=["like","%".$keyword."%"];
 
-            if(!empty($this->auth)){
+            if($this->auth->id){
                 //  写入关键字检索.
                 $history=["user_id"=>$this->auth->id, "word"=>$keyword, "type"=>"标题,描述,内容"];
                 $search->save_data($history);
@@ -71,7 +72,7 @@ class ArticleManager extends Api
         $title=$this->request->request("title","");
         if($title){
             $where["article.title"]=["like","%".$title."%"];
-            if(!empty($this->auth)){
+            if($this->auth->id){
                 $history=["user_id"=>$this->auth->id, "word"=>$title, "type"=>"标题"];
                 $search->save_data($history);
             }
@@ -79,7 +80,7 @@ class ArticleManager extends Api
         $description=$this->request->request("description","");
         if($description){
             $where["article.description"]=["like","%".$description."%"];
-            if(!empty($this->auth)) {
+            if($this->auth->id){
                 $history = ["user_id" => $this->auth->id, "word" => $description, "type" => "描述"];
                 $search->save_data($history);
             }
@@ -87,7 +88,7 @@ class ArticleManager extends Api
         $content=$this->request->request("content","");
         if($content){
             $where["article.content"]=["like","%".$content."%"];
-            if(!empty($this->auth)){
+            if($this->auth->id){
             $history=["user_id"=>$this->auth->id, "word"=>$content, "type"=>"内容"];
             $search->save_data($history);
             }
@@ -132,7 +133,7 @@ class ArticleManager extends Api
         $whereExp="";
         $label_ids=$this->request->request("label_ids",'');
         if($label_ids){
-            if(!empty($this->auth)) {
+            if($this->auth->id){
                 $history = ["user_id" => $this->auth->id, "word" => $label_ids, "type" => "标签"];
                 $search->save_data($history);
             }
@@ -238,6 +239,7 @@ class ArticleManager extends Api
      */
     public function Lists_kuaixun()
     {
+        $this->vistorLog("快讯列表");
         $page=$this->request->request("page",1);
         $page_size=$this->request->request("page_size",10);
         $offset=($page-1)*$page_size;
@@ -670,7 +672,7 @@ class ArticleManager extends Api
         $offset=($page-1)*$page_size;
         $data=[];
         $query=new Query();
-        $lists= $query->table("fa_read_history")->cache(120)->alias("his")
+        $lists= $query->table("fa_read_history")->alias("his")
             ->field("article.*,user.username,user.avatar,articletype.name,his.time")
             ->join("fa_article article","article.id=his.article_id","left")
             ->join("fa_user user","user.id=article.user_id","left")
@@ -680,7 +682,7 @@ class ArticleManager extends Api
             ->limit($offset,$page_size)->select();
 
 
-        $count= $query->table("fa_read_history")->cache(120)->alias("his")
+        $count= $query->table("fa_read_history")->alias("his")
             ->where(['his.user_id'=>$this->auth->getUser()->id])
             ->count();
 
@@ -722,6 +724,7 @@ class ArticleManager extends Api
      */
     public function detail()
     {
+        $this->vistorLog("文章详情");
         $id=$this->request->request("id",0);
         $model=new Article();
 
@@ -1014,6 +1017,7 @@ span.s2 {font-family: \'Helvetica\'; font-weight: normal; font-style: normal; fo
 
     public function detail_kuaixun()
     {
+        $this->vistorLog("快讯详情");
         $id=$this->request->request("id",0);
         $model=new Article();
 

@@ -35,6 +35,11 @@ class Yingdao extends Api
                 array_push($data,$t);
             }
 
+        //  引导页。 如果存在，就记录下来。
+
+        $this->vistorLog("引导页");
+
+
         $this->success("成功",$data);
 
     }
