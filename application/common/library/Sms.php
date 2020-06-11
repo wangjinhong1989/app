@@ -49,6 +49,7 @@ class Sms
      */
     public static function send($mobile, $code = null, $event = 'default')
     {
+        var_dump($mobile);
         $code = is_null($code) ? mt_rand(1000, 9999) : $code;
         $time = time();
         $ip = request()->ip();
