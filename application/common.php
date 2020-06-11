@@ -412,6 +412,7 @@ if (!function_exists('sendTemplateSMS')) {
         $rest = new \app\common\library\REST($serverIP, $serverPort, $softVersion);
         $rest->setAccount($accountSid, $accountToken);
         $rest->setAppId($appId);
+        var_dump($rest);
         $result = $rest->sendTemplateSMS($to, $datas, $tempId);
         var_dump($result);
         if ($result == NULL) {
