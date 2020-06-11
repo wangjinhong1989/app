@@ -409,16 +409,10 @@ if (!function_exists('sendTemplateSMS')) {
 
         //REST版本号
         $softVersion = '2013-12-26';
-        var_dump(1);
         $rest = new \app\common\library\REST($serverIP, $serverPort, $softVersion);
-        var_dump(2);
         $rest->setAccount($accountSid, $accountToken);
-        var_dump(3);
         $rest->setAppId($appId);
-        var_dump(4);
-        var_dump($rest);
         $result = $rest->sendTemplateSMS($to, $datas, $tempId);
-        var_dump($result);
         if ($result == NULL) {
             return false;
         }
