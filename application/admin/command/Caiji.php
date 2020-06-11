@@ -94,6 +94,8 @@ class Caiji extends Command
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
         $curlRes = curl_exec($ch);
+
+        var_dump($curlRes);
         curl_close($ch);
         $json = json_decode($curlRes, true);
 
