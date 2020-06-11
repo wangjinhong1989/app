@@ -101,7 +101,6 @@ class Caiji extends Command
 
         var_dump($json);
 
-        die;
         foreach ($json["list"] as $j){
 
             if($json["top_id"]!=$ids){
