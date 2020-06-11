@@ -49,11 +49,12 @@ class Sms
      */
     public static function send($mobile, $code = null, $event = 'default')
     {
-        var_dump($mobile);
+
         $code = is_null($code) ? mt_rand(1000, 9999) : $code;
         $time = time();
         $ip = request()->ip();
         $sms = \app\common\model\Sms::create(['event' => $event, 'mobile' => $mobile, 'code' => $code, 'ip' => $ip, 'createtime' => $time]);
+        var_dump("在这儿");
         //$result = Hook::listen('sms_send', $sms, null, true);
         $result=sendTemplateSMS($mobile,[$code]);
         var_dump($result);
