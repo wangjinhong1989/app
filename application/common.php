@@ -413,6 +413,7 @@ if (!function_exists('sendTemplateSMS')) {
         $rest->setAccount($accountSid, $accountToken);
         $rest->setAppId($appId);
         $result = $rest->sendTemplateSMS($to, $datas, $tempId);
+        var_dump($result);
         if ($result == NULL) {
             return false;
         }
