@@ -124,7 +124,7 @@ class Ajax extends Backend
                 'imagetype'   => $suffix,
                 'imageframes' => 0,
                 'mimetype'    => $fileInfo['type'],
-                'url'         => $uploadDir . $splInfo->getSaveName(),
+                'url'         => Config::get('api_url').$uploadDir . $splInfo->getSaveName(),
                 'uploadtime'  => time(),
                 'storage'     => 'local',
                 'sha1'        => $sha1,
