@@ -90,7 +90,7 @@ class Article extends Frontend
         }else{
             $model=new \app\admin\model\Article();
             $res=$model->where(['id'=>$this->request->param('id')])->find();
-            $res['articletype_ids']=explode(',',$res['articletype_ids']);
+            $res['articletype_id']=explode(',',$res['articletype_id']);
             $this->view->assign('res',$res);
             return $this->view->fetch();
         }
