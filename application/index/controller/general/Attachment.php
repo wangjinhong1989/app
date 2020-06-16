@@ -14,6 +14,8 @@ use app\common\controller\Frontend;
 class Attachment extends Frontend
 {
 
+    protected $noNeedLogin = '*';
+    protected $noNeedRight = '*';
     /**
      * @var \app\common\model\Attachment
      */
