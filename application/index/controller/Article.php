@@ -106,9 +106,11 @@ class Article extends Frontend
     {
 
             $id=$this->request->get('id',0);
-            $model=new \app\admin\model\Article();
+            $model=\app\admin\model\Article::get($id);
 
-            $model->save(['status'=>"隐藏"],['id'=>$id]);
+
+        $model->status="隐藏";
+        $model->save();
 
             $this->redirect('/index/article');
 
