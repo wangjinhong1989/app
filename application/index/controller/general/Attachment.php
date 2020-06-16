@@ -11,7 +11,7 @@ use app\common\controller\Frontend;
  * @icon fa fa-circle-o
  * @remark 主要用于管理上传到又拍云的数据或上传至本服务的上传数据
  */
-class Attachment extends Frontend
+class Attachment extends Backend
 {
 
     protected $noNeedLogin = '*';
