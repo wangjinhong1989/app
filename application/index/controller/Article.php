@@ -27,6 +27,7 @@ class Article extends Frontend
         $model1=new \app\admin\model\Articletype();
         $this->view->assign("statusList", $this->model->getStatusList());
         $this->view->assign("TypeList",$model1->where(['id'=>['gt',1],"status"=>"显示"])->where(["id"=>["neq",7]])->select());
+        $this->view->assign('title', __("文章管理"));
     }
         /**
      * 文章列表
@@ -42,7 +43,7 @@ class Article extends Frontend
 //            $lists = collection($lists)->toArray();
             return json(['total'=>$total,'rows'=>$lists,$model->getLastSql()]);
         }else{
-            $this->view->assign('title', __(''));
+
             return $this->view->fetch();
         }
 
