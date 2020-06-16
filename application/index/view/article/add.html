@@ -27,12 +27,6 @@
                     </div>
 
 
-                    <div class="form-group">
-                        <label for="content" class="control-label col-xs-12 col-sm-2">{:__('是否允许回复')}:</label>
-                        <div class="col-xs-12 col-sm-8">
-                            {:build_radios('is_reply', ['否'=>__('否'), '是'=>__('是')],'是')}
-                        </div>
-                    </div>
                     <div class="form-group" >
                         <label class="control-label col-xs-12 col-sm-2">{:__('Title')}:</label>
                         <div class="col-xs-12 col-sm-8">
@@ -67,20 +61,6 @@
 
 
 
-                    <div class="form-group">
-                        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
-                        <div class="col-xs-12 col-sm-8">
-
-                            <div class="radio">
-                                {foreach name="statusList" item="vo"}
-                                <label for="row[status]-{$key}"><input id="row[status]-{$key}" name="status"
-                                                                       type="radio" value="{$key}" {in name="key"
-                                    value="0" }checked{/in} /> {$vo}</label>
-                                {/foreach}
-                            </div>
-
-                        </div>
-                    </div>
 
 
                     <div class="form-group">

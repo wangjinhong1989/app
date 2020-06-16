@@ -84,6 +84,8 @@ class Article extends Frontend
             $data['content']=($data['content']);
             $data['user_id']=$this->auth->getUser()->id;
             $data['create_time']=time();
+            $data['is_reply']="是";
+            $data['status']="显示";
             $res=$model->save($data,['id'=>$data['id']]);
             $this->success($res,'/index/article/index');
 
