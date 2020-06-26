@@ -50,7 +50,7 @@ class ArticleManager extends Api
         // 需要查找的类型. 可以设置多个.
         $articletype_id=$this->request->request("articletype_id","");
         if($articletype_id){
-            $where["article.articletype_id"]=[["in",explode(",",$articletype_id)],["neq",2]];
+            $where["article.articletype_id"]=[["in",explode(",",$articletype_id)]];
         }else {
             $where["article.articletype_id"]=["neq",2];
         }
