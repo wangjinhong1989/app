@@ -33,6 +33,7 @@ class ArticleManager extends Api
      */
     public function Lists()
     {
+        $time111=time();
         $this->vistorLog("主页列表");
         $page=$this->request->request("page",1);
         $page_size=$this->request->request("page_size",10);
@@ -228,7 +229,10 @@ class ArticleManager extends Api
         $data["page"]=$page;
 
         $data["total_page"]=ceil($data["count"]/$page_size);
-        $this->success("成功",$data);
+        $time222=time();
+
+        $aaaaa=$time222-$time111;
+        $this->success("成功执行时间".$aaaaa." s ",$data);
 
 
     }
