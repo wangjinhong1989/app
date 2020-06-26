@@ -17,7 +17,7 @@ class Attachment extends Backend
      * @var \app\common\model\Attachment
      */
     protected $model = null;
-
+    protected $noNeedLogin = ["select"];
     public function _initialize()
     {
         parent::_initialize();
