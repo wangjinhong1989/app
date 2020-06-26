@@ -31,7 +31,7 @@ class TypeArticle extends Api
             $whereExp='find_in_set("'.$show_page.'",show_page)';
 
         }
-        $lists=( new Articletype())->cache(600)->where($where)->whereExp('',$whereExp)->order("weigh","desc")->select();
+        $lists=( new Articletype())->where($where)->whereExp('',$whereExp)->order("weigh","desc")->select();
         $this->success("",$lists);
     }
 

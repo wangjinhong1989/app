@@ -64,6 +64,7 @@ class Articletype extends Backend
     {
 
         $where=[];
+
         $total = $this->model
             ->where($where)
             ->count();
@@ -76,7 +77,7 @@ class Articletype extends Backend
 
         $data=array();
         foreach ($list as $k=> &$l){
-            if($l["id"]==2||$l["id"]==7){
+            if($l["id"]==2||$l["id"]==7||$l["status"]=="隐藏"){
                 unset($list[$k]);
             }else {
                 array_push($data,["id"=>$l["id"],"name"=>$l["name"],"pid"=>0]);

@@ -26,7 +26,8 @@ class Article extends Frontend
         $this->model = new \app\admin\model\Article;
         $model1=new \app\admin\model\Articletype();
         $this->view->assign("statusList", $this->model->getStatusList());
-        $this->view->assign("TypeList",$model1->where(['id'=>['gt',1]])->select());
+        $this->view->assign("TypeList",$model1->where(['id'=>['gt',1],"status"=>"显示"])->where(["id"=>["neq",7]])->select());
+        $this->view->assign('title', __("文章管理"));
     }
         /**
      * 文章列表
@@ -37,12 +38,12 @@ class Article extends Frontend
             $model=new \app\admin\model\Article();
             $offset=$this->request->get('offset',1);
             $limit=$this->request->get('limit',10);
-            $lists=$model->alias('article')->with(['articletype','user'])->where(['article.user_id'=>$this->auth->getUser()->id])->limit($offset,$limit)->order('id desc')->select();
-            $total=$model->alias('article')->with(['articletype','user'])->where(['article.user_id'=>$this->auth->getUser()->id])->count();
+            $lists=$model->alias('article')->with(['articletype','user'])->where(['article.user_id'=>$this->auth->getUser()->id,"article.status"=>'显示'])->limit($offset,$limit)->order('id desc')->select();
+            $total=$model->alias('article')->with(['articletype','user'])->where(['article.user_id'=>$this->auth->getUser()->id,"article.status"=>'显示'])->count();
 //            $lists = collection($lists)->toArray();
             return json(['total'=>$total,'rows'=>$lists,$model->getLastSql()]);
         }else{
-            $this->view->assign('title', __(''));
+
             return $this->view->fetch();
         }
 
@@ -84,13 +85,15 @@ class Article extends Frontend
             $data['content']=($data['content']);
             $data['user_id']=$this->auth->getUser()->id;
             $data['create_time']=time();
+            $data['is_reply']="是";
+            $data['status']="显示";
             $res=$model->save($data,['id'=>$data['id']]);
             $this->success($res,'/index/article/index');
 
         }else{
             $model=new \app\admin\model\Article();
             $res=$model->where(['id'=>$this->request->param('id')])->find();
-            $res['articletype_ids']=explode(',',$res['articletype_ids']);
+            $res['articletype_id']=explode(',',$res['articletype_id']);
             $this->view->assign('res',$res);
             return $this->view->fetch();
         }
@@ -104,9 +107,11 @@ class Article extends Frontend
     {
 
             $id=$this->request->get('id',0);
-            $model=new \app\admin\model\Article();
+            $model=\app\admin\model\Article::get($id);
 
-            $model->save(['status'=>1],['id'=>$id]);
+
+        $model->status="隐藏";
+        $model->save();
 
             $this->redirect('/index/article');
 
