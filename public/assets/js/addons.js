@@ -41,7 +41,7 @@ require(['form', 'upload'], function (Form, Upload) {
                             contents: '<i class="fa fa-file"/>',
                             tooltip: __('Choose'),
                             click: function () {
-                                parent.Fast.api.open("general/attachment/select?element_id=&multiple=true&mimetype=*", __('Choose'), {
+                                parent.Fast.api.open("http://app.xwxyq.cn/ENcrpBsTSt.php/general/attachment/select?element_id=&multiple=true&mimetype=*", __('Choose'), {
                                     callback: function (data) {
                                         var urlArr = data.url.split(/\,/);
                                         $.each(urlArr, function () {
