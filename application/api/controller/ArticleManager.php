@@ -154,7 +154,7 @@ class ArticleManager extends Api
         // 请求的标签.
 
         $query=new Query();
-        $data["rows"]=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.count_lihao,kong_hao.count_likong")
+        $data["rows"]=$query->table("fa_article")->alias("article")->cache(600)->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.count_lihao,kong_hao.count_likong")
             ->where($where)
             ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
@@ -165,7 +165,7 @@ class ArticleManager extends Api
 
         //dd($query->getLastSql());
 
-        $data["count"]=$query->table("fa_article")->alias("article")
+        $data["count"]=$query->table("fa_article")->cache(600)->alias("article")
             ->where($where)
             ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
@@ -193,7 +193,7 @@ class ArticleManager extends Api
                     $model=    new Query();
                     $time=time();
 
-                    $lists=$model->table("fa_ad_article")->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->orderRaw("rand()")->limit(0,1)->select();
+                    $lists=$model->table("fa_ad_article")->cache(600)->where(["end_time"=>["egt",$time],"begin_time"=>["elt",$time]])->orderRaw("rand()")->limit(0,1)->select();
                     // 只在头条哪儿展示5个广告.
                     if(!empty($lists)&&$articletype_id==1){
                         $lists[0]["label_ids"]="";
@@ -354,7 +354,7 @@ class ArticleManager extends Api
         // 请求的标签.
 
         $query=new Query();
-        $data["rows"]=$query->table("fa_article")->alias("article")->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.count_lihao,kong_hao.count_likong")
+        $data["rows"]=$query->table("fa_article")->alias("article")->cache(600)->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.count_lihao,kong_hao.count_likong")
             ->where($where)
             ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
@@ -364,7 +364,7 @@ class ArticleManager extends Api
 
 
 
-        $data["count"]=$query->table("fa_article")->alias("article")
+        $data["count"]=$query->table("fa_article")->cache(600)->alias("article")
             ->where($where)
             ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
