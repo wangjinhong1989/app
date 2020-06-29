@@ -154,7 +154,7 @@ class ArticleManager extends Api
         // 请求的标签.
 
         $query=new Query();
-        $data["rows"]=$query->table("fa_article")->alias("article")->cache(600)->field("article.*,articletype.name as articletype_name,user.username,user.avatar,kong_hao.article,article.count_likong")
+        $data["rows"]=$query->table("fa_article")->alias("article")->cache(600)->field("article.*,articletype.name as articletype_name,user.username,user.avatar,article.count_lihao,article.count_likong")
             ->where($where)
             ->whereExp('',$whereExp)
             ->join("fa_articletype articletype","articletype.id=article.articletype_id","left")
