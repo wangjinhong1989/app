@@ -25,7 +25,7 @@ class UserManager extends Api
     public function Lists()
     {
         $page=$this->request->request("page",1);
-        $page_size=$this->request->request("page_size",20);
+        $page_size=$this->request->request("page_size",100);
         $offset=($page-1)*$page_size;
 
         if($offset<0){
@@ -49,6 +49,9 @@ class UserManager extends Api
         //  非空.
         $follow_id=$this->request->request("follow_id","未关注");
         if($follow_id=="已关注"){
+            $where["guanzhu.follow_id"]=["gt",0];
+
+        }else if($follow_id=="未关注"){
             //            $where["guanzhu.follow_id"]=["EXP","IS NULL"];
 
             $query=new Query();
@@ -93,12 +96,12 @@ class UserManager extends Api
 
         }
         $query=new Query();
-        $data["rows"]=$query->table("fa_user")->alias("info")->field("info.*,guanzhu.follow_id ")
+        $data["rows"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id ")
             ->where($where)
             ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
             ->limit($offset,$page_size)->order("info.id desc")->group("info.id")->select();
 
-        $data["count"]=$query->table("fa_user")->alias("info")->field("info.*,guanzhu.follow_id")
+        $data["count"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id")
             ->where($where)
             ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
             ->group("info.id")->count();
