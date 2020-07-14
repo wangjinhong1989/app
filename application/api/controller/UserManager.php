@@ -49,9 +49,6 @@ class UserManager extends Api
         //  非空.
         $follow_id=$this->request->request("follow_id","未关注");
         if($follow_id=="已关注"){
-            $where["guanzhu.follow_id"]=["gt",0];
-
-        }else if($follow_id=="未关注"){
             //            $where["guanzhu.follow_id"]=["EXP","IS NULL"];
 
             $query=new Query();
