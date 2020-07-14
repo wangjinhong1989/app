@@ -13,7 +13,7 @@ use think\view\driver\Think;
 /**
  * 首页接口
  */
-class UserManager extends Api
+class UserTest extends Api
 {
     protected $noNeedLogin = ["*"];
     protected $noNeedRight = ['*'];
@@ -61,11 +61,7 @@ class UserManager extends Api
                 ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
                 ->limit($offset,$page_size)->order("info.id desc")->group("info.id")->select();
 
-            $data["count"]=$query->table("fa_user")->alias("info")->field("info.id,guanzhu.follow_id")
-                ->where($where)
-                ->whereNull("guanzhu.follow_id")
-                ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
-                ->group("info.id")->count();
+            $data["count"]=100;
             foreach ($data["rows"] as $k=>&$value){
 
                 $data["rows"][$k]["my_follow"]=0;
