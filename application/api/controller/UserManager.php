@@ -49,7 +49,7 @@ class UserManager extends Api
         //  非空.
         $follow_id=$this->request->request("follow_id","未关注");
 
-        $this->error($follow_id);
+
         if($follow_id=="已关注"){
             $where["guanzhu.follow_id"]=["gt",0];
 
@@ -63,11 +63,7 @@ class UserManager extends Api
                 ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
                 ->limit($offset,$page_size)->order("info.id desc")->group("info.id")->select();
 
-            $data["count"]=$query->table("fa_user")->alias("info")->field("info.id,guanzhu.follow_id")
-                ->where($where)
-                ->whereNull("guanzhu.follow_id")
-                ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
-                ->group("info.id")->count();
+            $data["count"]=100;
             foreach ($data["rows"] as $k=>&$value){
 
                 $data["rows"][$k]["my_follow"]=0;
@@ -103,10 +99,7 @@ class UserManager extends Api
             ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
             ->limit($offset,$page_size)->order("info.id desc")->group("info.id")->select();
 
-        $data["count"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id")
-            ->where($where)
-            ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
-            ->group("info.id")->count();
+        $data["count"]=100;
         foreach ($data["rows"] as $k=>&$value){
 
             $data["rows"][$k]["authentication_type"]="";

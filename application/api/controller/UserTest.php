@@ -97,10 +97,7 @@ class UserTest extends Api
             ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
             ->limit($offset,$page_size)->order("info.id desc")->group("info.id")->select();
 
-        $data["count"]=$query->table("user_base_info")->alias("info")->field("info.*,guanzhu.follow_id")
-            ->where($where)
-            ->join("fa_guanzhu guanzhu","guanzhu.user_id= ".$my_id." and guanzhu.follow_id=info.id" ,"left")
-            ->group("info.id")->count();
+        $data["count"]=100;
         foreach ($data["rows"] as $k=>&$value){
 
             $data["rows"][$k]["authentication_type"]="";
